@@ -788,6 +788,9 @@
     <BundleResource Include="Resources\ic_show_chart.png" />
     <BundleResource Include="Resources\ic_show_chart%402x.png" />
     <BundleResource Include="Resources\ic_show_chart%403x.png" />
+    <BundleResource Include="Resources\ic_filter_list%403x.png" />
+    <BundleResource Include="Resources\ic_filter_list%402x.png" />
+    <BundleResource Include="Resources\ic_filter_list.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.5.235-pre2\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.5.235-pre2\build\netstandard1.0\Xamarin.Forms.targets')" />

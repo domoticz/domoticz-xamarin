@@ -8,9 +8,9 @@
         <ToolbarItem Text="{resources:Translate filter}" Order="Primary" Activated="ToolbarItem_Activated">
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource"
-                            iOS="ic_sort.png"
-                            Android="ic_sort.png"
-                            WinPhone="ic_sort.png" />
+                            iOS="ic_filter_list.png"
+                            Android="ic_filter_list.png"
+                            WinPhone="ic_filter_list.png" />
             </ToolbarItem.Icon>
         </ToolbarItem>
     </TabbedPage.ToolbarItems>

@@ -34,5 +34,6 @@
             </ListView.ItemTemplate>
         </ListView>
 
+      <Button x:Name="btnOK" Text="{resources:Translate ok}" HorizontalOptions="Fill" IsEnabled="True" Clicked="btnOK_Clicked"/>
     </StackLayout>
 </pages:PopupPage>

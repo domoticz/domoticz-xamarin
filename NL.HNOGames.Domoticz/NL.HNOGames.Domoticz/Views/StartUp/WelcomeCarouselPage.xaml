@@ -162,7 +162,7 @@
             <Button x:Name="btnFinish" Text="{resources:Translate welcome_button_finish}" HorizontalOptions="FillAndExpand" IsVisible="False" Margin="0,20,0,0" Clicked="btnFinish_Clicked"/>
             <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal" Padding="20">
                 <Button  Text="{resources:Translate welcome_button_previous}" HorizontalOptions="Start" VerticalOptions="End" Clicked="btnPrevious_Clicked" />
-                <Button  Text="{resources:Translate welcome_button_next}" HorizontalOptions="End" VerticalOptions="End" Clicked="btnNext_Clicked" IsVisible="True" />
+                <Button  Text="{resources:Translate welcome_button_next}" HorizontalOptions="End" VerticalOptions="End" Clicked="btnNext_Clicked" IsVisible="False" />
             </StackLayout>
         </StackLayout>
     </ContentPage>

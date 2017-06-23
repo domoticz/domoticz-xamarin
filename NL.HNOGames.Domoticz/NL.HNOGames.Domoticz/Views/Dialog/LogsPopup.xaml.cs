@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using NL.HNOGames.Domoticz.Models;
 using Acr.UserDialogs;
 using NL.HNOGames.Domoticz.Resources;
+using Rg.Plugins.Popup.Services;
 
 namespace NL.HNOGames.Domoticz.Views.Dialog
 {
@@ -51,6 +52,11 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
                 UserDialogs.Instance.Toast(AppResources.error_logs);
                 await Navigation.PopAsync();
             }
+        }
+
+        private void btnOK_Clicked(object sender, EventArgs e)
+        {
+            PopupNavigation.PopAsync();
         }
     }
 }

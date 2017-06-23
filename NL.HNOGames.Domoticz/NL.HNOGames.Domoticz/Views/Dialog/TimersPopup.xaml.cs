@@ -6,6 +6,7 @@ using Rg.Plugins.Popup.Pages;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using NL.HNOGames.Domoticz.Models;
+using Rg.Plugins.Popup.Services;
 
 namespace NL.HNOGames.Domoticz.Views.Dialog
 {
@@ -42,6 +43,11 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
                     timerList.Add(t);
                 listView.ItemsSource = timerList;
             }
+        }
+
+        private void btnOK_Clicked(object sender, EventArgs e)
+        {
+            PopupNavigation.PopAsync();
         }
     }
 }

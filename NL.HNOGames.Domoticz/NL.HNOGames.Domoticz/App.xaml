@@ -17,6 +17,7 @@
             <Color x:Key="WhiteTextColor">#FFFFFF</Color>
             <Color x:Key="HeaderTextColor">#009688</Color>
             <Color x:Key="HeaderDarkTextColor">#000000</Color>
+            <Color x:Key="DarkButtonColor">#1A2C35</Color>
 
             <!-- Dark Theme
             <Color x:Key="Primary">#0D0D0D</Color>
@@ -31,7 +32,13 @@
             <Color x:Key="WhiteTextColor">#FFFFFF</Color>
             <Color x:Key="HeaderTextColor">#bdc3c7</Color>
             <Color x:Key="HeaderDarkTextColor">#000000</Color>
+            <Color x:Key="DarkButtonColor">#1A2C35</Color>
             -->
+
+            <Style x:Key="DarkButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{DynamicResource DarkButtonColor}"/>
+                <Setter Property="TextColor" Value="{DynamicResource WhiteTextColor}"/>
+            </Style>
             
             <Style x:Key="ContentPageType" TargetType="ContentPage">
                 <Setter Property="BackgroundColor" Value="{DynamicResource LightBackgroundColor}" />

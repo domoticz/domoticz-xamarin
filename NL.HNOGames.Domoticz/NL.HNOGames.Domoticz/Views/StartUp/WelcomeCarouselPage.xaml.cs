@@ -31,7 +31,6 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
             }
         }
 
-
         public WelcomeCarouselPage()
         {
             ServerSettings = App.AppSettings.ActiveServerSettings;
@@ -203,6 +202,33 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
                 btnImportSettings.IsVisible = true;
             else
                 btnImportSettings.IsVisible = false;
+        }
+
+        private void btnNext_Clicked(object sender, EventArgs e)
+        {
+            var pageCount = this.Children.Count;
+            if (pageCount < 2)
+                return;
+
+            var index = this.Children.IndexOf(this.CurrentPage);
+            index++;
+            if (index >= pageCount)
+                index = 0;
+
+            this.CurrentPage = this.Children[index];
+        }
+
+        private void btnPrevious_Clicked(object sender, EventArgs e)
+        {
+            var pageCount = this.Children.Count;
+            if (pageCount < 2)
+                return;
+
+            var index = this.Children.IndexOf(this.CurrentPage);
+            index--;
+            if (index <= 0)
+                index = 0;
+            this.CurrentPage = this.Children[index];
         }
     }
 }

@@ -5,28 +5,36 @@
              xmlns:resx="clr-namespace:NL.HNOGames.Domoticz.Properties"
 		     xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
              xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
-             Title="Welcome!">
+             Title="Welcome!"
+             x:Name="carouselPage">
     <ContentPage BackgroundColor="Black">
-        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="20,20,20,20" >
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20,20,20,20" >
             <custcontrol:TintedCachedImage WidthRequest="75" HeightRequest="75" Source="ic_launcher.png" />
             <Label TextColor="White" HorizontalOptions="CenterAndExpand" Style="Bold" FontSize="Large" Text="Domoticz" Margin="0,20,0,0"/>
             <Label TextColor="White" HorizontalOptions="CenterAndExpand" Text="{resources:Translate welcome_info_domoticz}" Margin="0,10,0,0"/>
             <Label TextColor="White" HorizontalOptions="End" Text="{resources:Translate welcome_info_swipe}" Margin="0,30,0,0"/>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal" Padding="20">
+                <Button Style="{StaticResource DarkButton}" Text="{resources:Translate welcome_button_previous}" HorizontalOptions="Start" VerticalOptions="End" Clicked="btnPrevious_Clicked" IsVisible="False"/>
+                <Button Style="{StaticResource DarkButton}" Text="{resources:Translate welcome_button_next}" HorizontalOptions="End" VerticalOptions="End" Clicked="btnNext_Clicked" />
+            </StackLayout>
         </StackLayout>
     </ContentPage>
-    <ContentPage Appearing="ContentPage_Appearing"
-             Style="{StaticResource ContentPageType}">
-        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="20">
+    <ContentPage Appearing="ContentPage_Appearing" Style="{StaticResource ContentPageType}">
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
             <Label Style="{StaticResource HeaderType}" HorizontalOptions="CenterAndExpand" FontSize="Large" Text="{resources:Translate title_activity_server_settings}" Margin="0,20,0,0"/>
             <Label Style="{StaticResource DetailType}" HorizontalOptions="StartAndExpand" Text="{resources:Translate welcome_info_settings1}" Margin="0,10,0,0" LineBreakMode="WordWrap" />
             <Label Style="{StaticResource DetailType}" HorizontalOptions="StartAndExpand" Text="{resources:Translate welcome_info_settings2}" Margin="0,10,0,0" LineBreakMode="WordWrap" />
             <Button x:Name="btnImportSettings" Text="{resources:Translate import_settings}" Clicked="btnImportSettings_Clicked" IsVisible="False"/>
+            
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal" Padding="20">
+                <Button  Text="{resources:Translate welcome_button_previous}" HorizontalOptions="Start" VerticalOptions="End" Clicked="btnPrevious_Clicked" />
+                <Button  Text="{resources:Translate welcome_button_next}" HorizontalOptions="End" VerticalOptions="End" Clicked="btnNext_Clicked" />
+            </StackLayout>
         </StackLayout>
     </ContentPage>
-    <ContentPage
-             Style="{StaticResource ContentPageType}">
+    <ContentPage Style="{StaticResource ContentPageType}">
         <ScrollView >
-            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="20">
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
                 <Label Style="{StaticResource HeaderType}" HorizontalOptions="CenterAndExpand" Text="{resources:Translate title_activity_server_settings}" Margin="0,20,0,0"/>
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Vertical" Padding="0,20,0,0">
                     <Label Style="{StaticResource DetailType}" Text="{resources:Translate welcome_remote_server_address}"/>
@@ -135,19 +143,27 @@
                         <Entry Style="{StaticResource EntryType}" x:Name="txtLocalDirectory" AutomationId="txtLocalPort" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Text="{Binding LOCAL_SERVER_DIRECTORY}"></Entry>
                     </StackLayout>
                 </StackLayout>
+
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal" Padding="20">
+                    <Button  Text="{resources:Translate welcome_button_previous}" HorizontalOptions="Start" VerticalOptions="End" Clicked="btnPrevious_Clicked" />
+                    <Button  Text="{resources:Translate welcome_button_next}" HorizontalOptions="End" VerticalOptions="End" Clicked="btnNext_Clicked" />
+                </StackLayout>
             </StackLayout>
+            
         </ScrollView>
     </ContentPage>
-
-    <ContentPage x:Name="cpResultPage"
-             Style="{StaticResource ContentPageType}">
-        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="20">
+    <ContentPage x:Name="cpResultPage" Style="{StaticResource ContentPageType}">
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
             <Label Style="{StaticResource HeaderType}" HorizontalOptions="CenterAndExpand" Text="{resources:Translate title_activity_server_settings}" Margin="0,20,0,0"/>
             <Button x:Name="btnCheck" Text="{resources:Translate welcome_info_checkingConnection}" HorizontalOptions="FillAndExpand" IsVisible="True" Margin="0,20,0,0" Clicked="btnCheck_Clicked"/>
 
             <custcontrol:TintedCachedImage x:Name="imFinish" IsVisible="False" WidthRequest="60" HeightRequest="60" Source="ic_validate_settings.png" HorizontalOptions="CenterAndExpand" Margin="0,40,0,0" />
             <Label Style="{StaticResource DetailType}" x:Name="lblResult" HorizontalOptions="CenterAndExpand"/>
             <Button x:Name="btnFinish" Text="{resources:Translate welcome_button_finish}" HorizontalOptions="FillAndExpand" IsVisible="False" Margin="0,20,0,0" Clicked="btnFinish_Clicked"/>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal" Padding="20">
+                <Button  Text="{resources:Translate welcome_button_previous}" HorizontalOptions="Start" VerticalOptions="End" Clicked="btnPrevious_Clicked" />
+                <Button  Text="{resources:Translate welcome_button_next}" HorizontalOptions="End" VerticalOptions="End" Clicked="btnNext_Clicked" IsVisible="True" />
+            </StackLayout>
         </StackLayout>
     </ContentPage>
 </CarouselPage>

@@ -57,14 +57,14 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         {
             if (String.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_URL))
                 return false;
-            if (String.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_PORT))
-                return false;
+            //if (String.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_PORT))
+            //    return false;
             if (ServerSettings.IS_LOCAL_SERVER_ADDRESS_DIFFERENT)
             {
                 if (String.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_URL))
                     return false;
-                if (String.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_PORT))
-                    return false;
+                //if (String.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_PORT))
+                //    return false;
             }
             return true;
         }

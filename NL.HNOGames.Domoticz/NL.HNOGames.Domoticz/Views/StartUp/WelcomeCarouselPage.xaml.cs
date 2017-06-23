@@ -31,6 +31,9 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
             }
         }
 
+        /// <summary>
+        /// INit welcome screens
+        /// </summary>
         public WelcomeCarouselPage()
         {
             ServerSettings = App.AppSettings.ActiveServerSettings;
@@ -57,6 +60,9 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
             return text;
         }
 
+        /// <summary>
+        /// Show local settings
+        /// </summary>
         private void swEnableLocalSettings_Toggled(object sender, ToggledEventArgs e)
         {
             if (swEnableLocalSettings.IsToggled)
@@ -72,14 +78,14 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
         {
             if (String.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_URL))
                 return false;
-            if (String.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_PORT))
-                return false;
+            //if (String.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_PORT))
+            //    return false;
             if (ServerSettings.IS_LOCAL_SERVER_ADDRESS_DIFFERENT)
             {
                 if (String.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_URL))
                     return false;
-                if (String.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_PORT))
-                    return false;
+                //if (String.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_PORT))
+                //    return false;
             }
             return true;
         }
@@ -95,11 +101,10 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
             return true;
         }
 
-
         /// <summary>
         /// Connection Finished
         /// </summary>
-        private async Task btnFinish_Clicked(object sender, EventArgs e)
+        private void btnFinish_Clicked(object sender, EventArgs e)
         {
             App.AppSettings.WelcomeCompleted = true;
             App.SetMainPage();
@@ -204,6 +209,9 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
                 btnImportSettings.IsVisible = false;
         }
 
+        /// <summary>
+        /// show next page
+        /// </summary>
         private void btnNext_Clicked(object sender, EventArgs e)
         {
             var pageCount = this.Children.Count;
@@ -217,7 +225,10 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
 
             this.CurrentPage = this.Children[index];
         }
-
+         
+        /// <summary>
+        /// show previous page
+        /// </summary>
         private void btnPrevious_Clicked(object sender, EventArgs e)
         {
             var pageCount = this.Children.Count;

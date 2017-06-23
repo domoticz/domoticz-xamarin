@@ -31,6 +31,7 @@ namespace NL.HNOGames.Domoticz.Droid.Renderer
 
                 var requestbuilder = new Android.Gms.Ads.AdRequest.Builder();
                 ad.LoadAd(requestbuilder.Build());
+                App.ShowAds = true;
 
                 SetNativeControl(ad);
             }

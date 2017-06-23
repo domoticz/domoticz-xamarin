@@ -418,7 +418,7 @@
                       IsPullToRefreshEnabled="true" SeparatorVisibility="None" 
                       IsRefreshing="{Binding IsBusy, Mode=OneWay}" 
                       CachingStrategy="RecycleElement" ItemSelected="OnItemSelected"></ListView>
-            <custcontrol:AdMobView x:Name="adView" HorizontalOptions="FillAndExpand" HeightRequest="50" />
+            <custcontrol:AdMobView x:Name="adView" HorizontalOptions="FillAndExpand" HeightRequest="70" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

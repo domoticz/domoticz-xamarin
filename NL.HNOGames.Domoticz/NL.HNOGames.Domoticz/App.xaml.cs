@@ -14,6 +14,8 @@ namespace NL.HNOGames.Domoticz
 {
     public partial class App : Application
     {
+        public static bool ShowAds { get; set; }
+
         public static ConnectionService ConnectionService { get; private set; }
         public static DataService ApiService { get; private set; }
         public static Settings AppSettings { get; set; }
@@ -58,6 +60,8 @@ namespace NL.HNOGames.Domoticz
 
         public App()
         {
+            ShowAds = false;//default
+
             InitializeComponent();
 
             AppSettings = new Settings();

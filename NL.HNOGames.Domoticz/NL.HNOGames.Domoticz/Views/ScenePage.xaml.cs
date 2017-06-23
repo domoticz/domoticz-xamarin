@@ -25,7 +25,6 @@ namespace NL.HNOGames.Domoticz.Views
             BindingContext = viewModel = new SceneViewModel();
         }
 
-
         /// <summary>
         /// Show a actionsheet on item selected
         /// </summary>

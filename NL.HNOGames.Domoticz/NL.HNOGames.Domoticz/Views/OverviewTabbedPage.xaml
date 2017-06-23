@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NL.HNOGames.Domoticz.Views.OverviewTabbedPage"
+		     xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
+             xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
+             Title="Domoticz">
+    <TabbedPage.ToolbarItems>
+        
+        <ToolbarItem Text="{resources:Translate title_plans}" Order="Primary" Activated="OnShowPlansClick">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource"
+                            iOS="ic_home.png"
+                            Android="ic_home.png"
+                            WinPhone="ic_home.png" />
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        
+        <ToolbarItem Text="{resources:Translate action_settings}" Order="Primary" Activated="OnSettingsClick">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource"
+                            iOS="ic_settings.png"
+                            Android="ic_settings.png"
+                            WinPhone="ic_settings.png" />
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        
+    </TabbedPage.ToolbarItems>
+</TabbedPage>

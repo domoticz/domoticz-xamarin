@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NL.HNOGames.Domoticz.Views.Settings.SettingsPage"
+		     xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
+             xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
+             Style="{StaticResource ContentPageType}"
+             x:Name="SettingsPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout HorizontalOptions="FillAndExpand" Padding="20" Orientation="Vertical">
+                <Label Text="{resources:Translate category_generic}" LineBreakMode="NoWrap" Style="{StaticResource HeaderType}"/>
+
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,10,0,10">
+                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical" >
+                        <Label Text="{resources:Translate startup_screen}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" LineBreakMode="NoWrap" Style="{StaticResource SettingsDetailType}" />
+                    </StackLayout>
+                    <Picker Style="{StaticResource PickerType}" x:Name="txtStartScherm" HorizontalOptions="End" MinimumWidthRequest="100" />
+                </StackLayout>
+
+                <Label Text="{resources:Translate title_dashboard}" LineBreakMode="NoWrap" Style="{StaticResource HeaderType}" Margin="0,10,0,0" />
+
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,10,0,0">
+                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical" >
+                        <Label Text="{resources:Translate enable_items}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" LineBreakMode="NoWrap" Style="{StaticResource SettingsDetailType}" />
+                    </StackLayout>
+                    <Button x:Name="btnEnableScreens" Text="Ok" HorizontalOptions="End" VerticalOptions="Center" Clicked="btnEnableScreens_Clicked">
+                        <Button.WidthRequest>
+                            <OnPlatform x:TypeArguments="x:Double" iOS="50" Android="60" WinPhone="60" />
+                        </Button.WidthRequest>
+                        <Button.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double" iOS="35" Android="50" WinPhone="50" />
+                        </Button.HeightRequest>
+                    </Button>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,10,0,0">
+                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical" >
+                        <Label Text="{resources:Translate sort_dashboardLikeServer_title}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"  Style="{StaticResource SettingsDetailType}" />
+                        <Label x:Name="lblSort" Text="{resources:Translate sort_dashboardLikeServer_on}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Style="{StaticResource DetailSmallType}" />
+                    </StackLayout>
+                    <Switch x:Name="swNoSort"  VerticalOptions="Center" HorizontalOptions="End"/>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,10,0,0">
+                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical" >
+                        <Label Text="{resources:Translate switch_buttons_title}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"  Style="{StaticResource SettingsDetailType}" />
+                        <Label x:Name="lblShowSwitch" Text="{resources:Translate switch_buttons_on}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Style="{StaticResource DetailSmallType}" />
+                    </StackLayout>
+                    <Switch x:Name="swShowSwitch"  VerticalOptions="Center" HorizontalOptions="End"/>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,10,0,10">
+                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical" >
+                        <Label Text="{resources:Translate extra_data_title}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Style="{StaticResource SettingsDetailType}" />
+                        <Label x:Name="lblExtraData" Text="{resources:Translate show_extra_data_on}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Style="{StaticResource DetailSmallType}" />
+                    </StackLayout>
+                    <Switch x:Name="swExtraData"  VerticalOptions="Center" HorizontalOptions="End"/>
+                </StackLayout>
+
+                <Label Text="{resources:Translate category_server}" LineBreakMode="NoWrap" Style="{StaticResource HeaderType}" Margin="0,10,0,0"/>
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,10,0,10">
+                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical" >
+                        <Label Text="{resources:Translate server_settings}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" LineBreakMode="NoWrap" Style="{StaticResource SettingsDetailType}" />
+                    </StackLayout>
+                    <Button x:Name="btnServerSetup" Text="Ok" HorizontalOptions="End" VerticalOptions="Center" Clicked="btnServerSetup_Clicked">
+                        <Button.WidthRequest>
+                            <OnPlatform x:TypeArguments="x:Double" iOS="50" Android="60" WinPhone="60" />
+                        </Button.WidthRequest>
+                        <Button.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double" iOS="35" Android="50" WinPhone="50" />
+                        </Button.HeightRequest>
+                    </Button>
+                </StackLayout>
+
+                <Label Text="{resources:Translate notification_screen_title}" LineBreakMode="NoWrap" Style="{StaticResource HeaderType}" Margin="0,10,0,0"/>
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,10,0,10">
+                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical" >
+                        <Label Text="{resources:Translate enable_notifications_title}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Style="{StaticResource SettingsDetailType}" />
+                        <Label Text="{resources:Translate enable_notifications}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Style="{StaticResource DetailSmallType}" />
+                    </StackLayout>
+                    <Switch x:Name="swEnableNotifications"  VerticalOptions="Center" HorizontalOptions="End"/>
+                </StackLayout>
+
+                <Label Text="{resources:Translate category_advanced}" LineBreakMode="NoWrap" Style="{StaticResource HeaderType}"  Margin="0,10,0,0"/>
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,10,0,0">
+                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical" >
+                        <Label Text="{resources:Translate button_status_log}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" LineBreakMode="NoWrap" Style="{StaticResource SettingsDetailType}" />
+                    </StackLayout>
+                    <Button x:Name="btnShowLog" Text="Ok" HorizontalOptions="End" VerticalOptions="Center" Clicked="btnShowLog_Clicked">
+                        <Button.WidthRequest>
+                            <OnPlatform x:TypeArguments="x:Double" iOS="50" Android="60" WinPhone="60" />
+                        </Button.WidthRequest>
+                        <Button.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double" iOS="35" Android="50" WinPhone="50" />
+                        </Button.HeightRequest>
+                    </Button>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,10,0,0">
+                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical" >
+                        <Label Text="{resources:Translate title_vars}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" LineBreakMode="NoWrap" Style="{StaticResource SettingsDetailType}" />
+                    </StackLayout>
+                    <Button x:Name="btnUserVars" Text="Ok" HorizontalOptions="End" VerticalOptions="Center" Clicked="btnUserVars_Clicked">
+                        <Button.WidthRequest>
+                            <OnPlatform x:TypeArguments="x:Double" iOS="50" Android="60" WinPhone="60" />
+                        </Button.WidthRequest>
+                        <Button.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double" iOS="35" Android="50" WinPhone="50" />
+                        </Button.HeightRequest>
+                    </Button>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,10,0,0">
+                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical" >
+                        <Label Text="{resources:Translate title_events}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" LineBreakMode="NoWrap" Style="{StaticResource SettingsDetailType}" />
+                    </StackLayout>
+                    <Button x:Name="btnEvents" Text="Ok" HorizontalOptions="End" VerticalOptions="Center" Clicked="btnEvents_Clicked">
+                        <Button.WidthRequest>
+                            <OnPlatform x:TypeArguments="x:Double" iOS="50" Android="60" WinPhone="60" />
+                        </Button.WidthRequest>
+                        <Button.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double" iOS="35" Android="50" WinPhone="50" />
+                        </Button.HeightRequest>
+                    </Button>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,10,0,0">
+                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical" >
+                        <Label Text="{resources:Translate export_settings}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" LineBreakMode="NoWrap" Style="{StaticResource SettingsDetailType}" />
+                    </StackLayout>
+                    <Button x:Name="btnExportSettings" Text="Ok" HorizontalOptions="End" VerticalOptions="Center" Clicked="btnExportSettings_Clicked">
+                        <Button.WidthRequest>
+                            <OnPlatform x:TypeArguments="x:Double" iOS="50" Android="60" WinPhone="60" />
+                        </Button.WidthRequest>
+                        <Button.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double" iOS="35" Android="50" WinPhone="50" />
+                        </Button.HeightRequest>
+                    </Button>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,10,0,0">
+                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical" >
+                        <Label Text="{resources:Translate import_settings}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" LineBreakMode="NoWrap" Style="{StaticResource SettingsDetailType}" />
+                    </StackLayout>
+                    <Button x:Name="btnImportSettings" Text="Ok" HorizontalOptions="End" VerticalOptions="Center" Clicked="btnImportSettings_Clicked">
+                        <Button.WidthRequest>
+                            <OnPlatform x:TypeArguments="x:Double" iOS="50" Android="60" WinPhone="60" />
+                        </Button.WidthRequest>
+                        <Button.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double" iOS="35" Android="50" WinPhone="50" />
+                        </Button.HeightRequest>
+                    </Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

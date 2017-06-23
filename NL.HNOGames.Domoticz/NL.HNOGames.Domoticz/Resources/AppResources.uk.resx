@@ -1,0 +1,1647 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="premium_category" xml:space="preserve">
+    <value>Купити преміум-версію!</value>
+  </data>
+  <data name="premium_title" xml:space="preserve">
+    <value>Отримати преміум-версію!</value>
+  </data>
+  <data name="premium_feature" xml:space="preserve">
+    <value>is a premium feature, please buy the paid version to support the developers!</value>
+  </data>
+  <data name="drawer_open" xml:space="preserve">
+    <value>Open navigation drawer</value>
+  </data>
+  <data name="drawer_close" xml:space="preserve">
+    <value>Close navigation drawer</value>
+  </data>
+  <data name="msg_please_wait" xml:space="preserve">
+    <value>Будь ласка, зачекайте…</value>
+  </data>
+  <data name="changelog" xml:space="preserve">
+    <value>Changelog</value>
+  </data>
+  <data name="button_state_on" xml:space="preserve">
+    <value>Увімкнено</value>
+  </data>
+  <data name="button_state_off" xml:space="preserve">
+    <value>Вимкнено</value>
+  </data>
+  <data name="button_state_closed" xml:space="preserve">
+    <value>Closed</value>
+  </data>
+  <data name="button_state_open" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="button_status_log" xml:space="preserve">
+    <value>Log</value>
+  </data>
+  <data name="button_status_day" xml:space="preserve">
+    <value>Day</value>
+  </data>
+  <data name="button_status_week" xml:space="preserve">
+    <value>Week</value>
+  </data>
+  <data name="button_status_month" xml:space="preserve">
+    <value>Month</value>
+  </data>
+  <data name="button_status_year" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="button_status_timer" xml:space="preserve">
+    <value>Timer</value>
+  </data>
+  <data name="button_status_notifications" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="button_color" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="button_arm" xml:space="preserve">
+    <value>Arm</value>
+  </data>
+  <data name="button_disarm" xml:space="preserve">
+    <value>Disarm</value>
+  </data>
+  <data name="last_update" xml:space="preserve">
+    <value>Last seen</value>
+  </data>
+  <data name="signal_level" xml:space="preserve">
+    <value>Signal level</value>
+  </data>
+  <data name="battery_level" xml:space="preserve">
+    <value>Battery level</value>
+  </data>
+  <data name="data" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="hardware" xml:space="preserve">
+    <value>Hardware</value>
+  </data>
+  <data name="status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="set_point" xml:space="preserve">
+    <value>Set point</value>
+  </data>
+  <data name="set_point_min" xml:space="preserve">
+    <value>Set point min value</value>
+  </data>
+  <data name="set_point_min_description" xml:space="preserve">
+    <value>Min temperature that you can set for your thermostat</value>
+  </data>
+  <data name="set_point_max" xml:space="preserve">
+    <value>Set point max value</value>
+  </data>
+  <data name="set_point_max_description" xml:space="preserve">
+    <value>Max temperature that you can set for your thermostat</value>
+  </data>
+  <data name="action_success" xml:space="preserve">
+    <value>Action successful</value>
+  </data>
+  <data name="action_failed" xml:space="preserve">
+    <value>Action failed</value>
+  </data>
+  <data name="action_unknown" xml:space="preserve">
+    <value>Action result unknown</value>
+  </data>
+  <data name="choose_status" xml:space="preserve">
+    <value>Choose state</value>
+  </data>
+  <data name="normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="economy" xml:space="preserve">
+    <value>Economy</value>
+  </data>
+  <data name="away" xml:space="preserve">
+    <value>Away</value>
+  </data>
+  <data name="day_off" xml:space="preserve">
+    <value>Day off</value>
+  </data>
+  <data name="custom" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="heating_off" xml:space="preserve">
+    <value>Heating off</value>
+  </data>
+  <data name="selector_value" xml:space="preserve">
+    <value>Selector values</value>
+  </data>
+  <data name="debug_textview_title" xml:space="preserve">
+    <value>Debugging info</value>
+  </data>
+  <data name="msg_copiedToClipboard" xml:space="preserve">
+    <value>Text copied to clipboard</value>
+  </data>
+  <data name="favorite" xml:space="preserve">
+    <value>Favorite</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="are_you_sure" xml:space="preserve">
+    <value>Are you sure?</value>
+  </data>
+  <data name="are_you_sure_clear_settings" xml:space="preserve">
+    <value>Are you sure?? This also clears all homescreen widget settings, so you should re-add them afterwards..</value>
+  </data>
+  <data name="add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="request_again" xml:space="preserve">
+    <value>Request Again</value>
+  </data>
+  <data name="upgrade" xml:space="preserve">
+    <value>UPGRADE</value>
+  </data>
+  <data name="something_went_wrong" xml:space="preserve">
+    <value>Something went wrong</value>
+  </data>
+  <data name="no_network_available" xml:space="preserve">
+    <value>Error: No network connection available</value>
+  </data>
+  <data name="oops" xml:space="preserve">
+    <value>OOPS!</value>
+  </data>
+  <data name="to" xml:space="preserve">
+    <value>"to"</value>
+  </data>
+  <data name="retry" xml:space="preserve">
+    <value>Retry</value>
+  </data>
+  <data name="undo" xml:space="preserve">
+    <value>Undo</value>
+  </data>
+  <data name="something_deleted" xml:space="preserve">
+    <value>%1$s deleted</value>
+  </data>
+  <data name="switch_on" xml:space="preserve">
+    <value>Turning switch on</value>
+  </data>
+  <data name="switch_off" xml:space="preserve">
+    <value>Turning switch off</value>
+  </data>
+  <data name="blind_up" xml:space="preserve">
+    <value>Turning blind up</value>
+  </data>
+  <data name="blind_down" xml:space="preserve">
+    <value>Turning blind down</value>
+  </data>
+  <data name="blind_stop" xml:space="preserve">
+    <value>Stop blind</value>
+  </data>
+  <data name="filter_on" xml:space="preserve">
+    <value>Filter on</value>
+  </data>
+  <data name="filterOn_on" xml:space="preserve">
+    <value>Status on</value>
+  </data>
+  <data name="filterOn_off" xml:space="preserve">
+    <value>Status off</value>
+  </data>
+  <data name="filterOn_static" xml:space="preserve">
+    <value>Static devices</value>
+  </data>
+  <data name="filterOn_all" xml:space="preserve">
+    <value>All devices</value>
+  </data>
+  <data name="filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="filter_devices" xml:space="preserve">
+    <value>Filter devices</value>
+  </data>
+  <data name="filter_graph_empty" xml:space="preserve">
+    <value>Please specify a filter</value>
+  </data>
+  <data name="choose_color" xml:space="preserve">
+    <value>Choose color</value>
+  </data>
+  <data name="no_data_on_domoticz" xml:space="preserve">
+    <value>No data on Domoticz server</value>
+  </data>
+  <data name="row_icon_description" xml:space="preserve">
+    <value>row icon</value>
+  </data>
+  <data name="error_image_description" xml:space="preserve">
+    <value>Error image</value>
+  </data>
+  <data name="device_image_description" xml:space="preserve">
+    <value>Device image</value>
+  </data>
+  <data name="white" xml:space="preserve">
+    <value>White</value>
+  </data>
+  <data name="refresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="domoticz_logo" xml:space="preserve">
+    <value>Domoticz logo</value>
+  </data>
+  <data name="this_take_minutes" xml:space="preserve">
+    <value>This could take several minutes.</value>
+  </data>
+  <data name="continue_question" xml:space="preserve">
+    <value>Continue?</value>
+  </data>
+  <data name="cant_remove_default_server" xml:space="preserve">
+    <value>Can\'t remove the default server</value>
+  </data>
+  <data name="restart_required_msg" xml:space="preserve">
+    <value>For the language settings to become to effect an application restart is required</value>
+  </data>
+  <data name="action_switch_server" xml:space="preserve">
+    <value>Сервер перемикачів</value>
+  </data>
+  <data name="action_settings" xml:space="preserve">
+    <value>Налаштування</value>
+  </data>
+  <data name="action_filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="action_camera_play" xml:space="preserve">
+    <value>Play</value>
+  </data>
+  <data name="action_camera_pause" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="action_qrcode_scan" xml:space="preserve">
+    <value>Scan QR Code</value>
+  </data>
+  <data name="action_speech" xml:space="preserve">
+    <value>Speech Recognition</value>
+  </data>
+  <data name="title_cameras" xml:space="preserve">
+    <value>Камера</value>
+  </data>
+  <data name="title_dashboard" xml:space="preserve">
+    <value>Панель управління</value>
+  </data>
+  <data name="usage" xml:space="preserve">
+    <value>Використання</value>
+  </data>
+  <data name="today" xml:space="preserve">
+    <value>Сьогодні</value>
+  </data>
+  <data name="total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="favorite_added" xml:space="preserve">
+    <value>added to dashboard.</value>
+  </data>
+  <data name="favorite_removed" xml:space="preserve">
+    <value>Видалити з головного екрану</value>
+  </data>
+  <data name="error_authentication" xml:space="preserve">
+    <value>Неприпустимі облікові дані</value>
+  </data>
+  <data name="error_timeout" xml:space="preserve">
+    <value>Перевищений час очікування або відсутнє підключення</value>
+  </data>
+  <data name="error_server" xml:space="preserve">
+    <value>Сервер помилок</value>
+  </data>
+  <data name="error_network" xml:space="preserve">
+    <value>Network error, status code %1$d</value>
+  </data>
+  <data name="error_parse" xml:space="preserve">
+    <value>Parse error</value>
+  </data>
+  <data name="error_notConnected" xml:space="preserve">
+    <value>Помилка: не під\'єднані до жодної мережі</value>
+  </data>
+  <data name="title_events" xml:space="preserve">
+    <value>Події</value>
+  </data>
+  <data name="action_not_supported_yet" xml:space="preserve">
+    <value>Ця дія ще не підтримується!</value>
+  </data>
+  <data name="title_add_location" xml:space="preserve">
+    <value>Додати розташування</value>
+  </data>
+  <data name="title_edit_location" xml:space="preserve">
+    <value>Змінити розташування</value>
+  </data>
+  <data name="longitude" xml:space="preserve">
+    <value>Довгота</value>
+  </data>
+  <data name="latitude" xml:space="preserve">
+    <value>Latitude</value>
+  </data>
+  <data name="radius" xml:space="preserve">
+    <value>Radius (meter)</value>
+  </data>
+  <data name="connectedSwitch" xml:space="preserve">
+    <value>Підключений вимикач</value>
+  </data>
+  <data name="unable_to_get_switches" xml:space="preserve">
+    <value>Не вдалося отримати всі перемикачі, будь ласка, спробуйте ще раз</value>
+  </data>
+  <data name="delete_short" xml:space="preserve">
+    <value>Видалити</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>Видалити</value>
+  </data>
+  <data name="Location_name" xml:space="preserve">
+    <value>Назва місцезнаходження</value>
+  </data>
+  <data name="currentLocation" xml:space="preserve">
+    <value>Current location</value>
+  </data>
+  <data name="manual" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="getLocation" xml:space="preserve">
+    <value>GET</value>
+  </data>
+  <data name="locationAddress" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="unknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="not_available" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="no_valid_latLong" xml:space="preserve">
+    <value>Not a valid latitude or longitude</value>
+  </data>
+  <data name="starting_geofence_service" xml:space="preserve">
+    <value>Starting Geofence service</value>
+  </data>
+  <data name="could_not_find_location" xml:space="preserve">
+    <value>Could not find location, please try again.</value>
+  </data>
+  <data name="google_play_services_unavailable" xml:space="preserve">
+    <value>Google Play services unavailable.</value>
+  </data>
+  <data name="location_not_found" xml:space="preserve">
+    <value>No location found.</value>
+  </data>
+  <data name="geofence" xml:space="preserve">
+    <value>Geofencing</value>
+  </data>
+  <data name="title_geofence" xml:space="preserve">
+    <value>Enable Geofencing</value>
+  </data>
+  <data name="description_geofence" xml:space="preserve">
+    <value>Enable and config geofences</value>
+  </data>
+  <data name="title_geofence_notifications" xml:space="preserve">
+    <value>Enable notifications</value>
+  </data>
+  <data name="description_geofence_notifications" xml:space="preserve">
+    <value>Enable notifications for triggering events</value>
+  </data>
+  <data name="geofence_place" xml:space="preserve">
+    <value>Place: %s</value>
+  </data>
+  <data name="geofence_location_entering" xml:space="preserve">
+    <value>"Entering %1$s"</value>
+  </data>
+  <data name="geofence_location_leaving" xml:space="preserve">
+    <value>Leaving  %1$s</value>
+  </data>
+  <data name="geofence_location_entering_text" xml:space="preserve">
+    <value>Entering one of the locations</value>
+  </data>
+  <data name="geofence_location_leaving_text" xml:space="preserve">
+    <value>Leaving one of the locations</value>
+  </data>
+  <data name="geofence_error_recreateLocations" xml:space="preserve">
+    <value>Due to changes on Geofencing, please recreate your locations</value>
+  </data>
+  <data name="noSwitchSelected_title" xml:space="preserve">
+    <value>No switch selected</value>
+  </data>
+  <data name="noSwitchSelected_explanation" xml:space="preserve">
+    <value>For GeoFencing to have effect, a switch should be connected to an GeoFence</value>
+  </data>
+  <data name="noSwitchSelected_connectOneNow" xml:space="preserve">
+    <value>Connect one now?</value>
+  </data>
+  <data name="geofencing_disabled_no_enabled_fences" xml:space="preserve">
+    <value>Geofencing disabled since no geofences are enabled</value>
+  </data>
+  <data name="geofence_not_available" xml:space="preserve">
+    <value>Geofence service is not available now</value>
+  </data>
+  <data name="geofence_too_many_geofences" xml:space="preserve">
+    <value>App registered too many geofences</value>
+  </data>
+  <data name="geofence_too_many_pending_intents" xml:space="preserve">
+    <value>Too many PendingIntents provided</value>
+  </data>
+  <data name="unknown_geofence_error" xml:space="preserve">
+    <value>Unknown error</value>
+  </data>
+  <data name="title_logs" xml:space="preserve">
+    <value>Журнали подій</value>
+  </data>
+  <data name="nfc_not_supported" xml:space="preserve">
+    <value>Цей пристрій не підтримує NFC </value>
+  </data>
+  <data name="nfc_register" xml:space="preserve">
+    <value>Зареєструвати NFC тег</value>
+  </data>
+  <data name="nfc_tag_found" xml:space="preserve">
+    <value>New NFC Tag found</value>
+  </data>
+  <data name="nfc_tag_edit" xml:space="preserve">
+    <value>Edit NFC Tag</value>
+  </data>
+  <data name="nfc_tag_name" xml:space="preserve">
+    <value>Give this NFC a proper name. </value>
+  </data>
+  <data name="nfc_exists" xml:space="preserve">
+    <value>NFC тег вже зареєстрований. </value>
+  </data>
+  <data name="nfc_saved" xml:space="preserve">
+    <value>Зберегти нову позначку NFC. </value>
+  </data>
+  <data name="nfc" xml:space="preserve">
+    <value>NFC</value>
+  </data>
+  <data name="noSwitchSelected_explanation_nfc" xml:space="preserve">
+    <value>Для роботи NFC, перемикачі повинні бути пов\'язані з NFC тегами</value>
+  </data>
+  <data name="priority" xml:space="preserve">
+    <value>Пріорітет</value>
+  </data>
+  <data name="emergency" xml:space="preserve">
+    <value>Надзвичайний стан</value>
+  </data>
+  <data name="high" xml:space="preserve">
+    <value>High</value>
+  </data>
+  <data name="low" xml:space="preserve">
+    <value>Low</value>
+  </data>
+  <data name="verylow" xml:space="preserve">
+    <value>Very Low</value>
+  </data>
+  <data name="allsystems" xml:space="preserve">
+    <value>Всі системи</value>
+  </data>
+  <data name="systems" xml:space="preserve">
+    <value>Системи</value>
+  </data>
+  <data name="permission_title" xml:space="preserve">
+    <value>Permissions Denied</value>
+  </data>
+  <data name="permission_prefs_title" xml:space="preserve">
+    <value>Permissions</value>
+  </data>
+  <data name="permission_config" xml:space="preserve">
+    <value>Configure the Permissions for this app</value>
+  </data>
+  <data name="permission_desc_storage" xml:space="preserve">
+    <value>These storage permissions are needed for saving cache file, settings and save snapshots from the camera.</value>
+  </data>
+  <data name="permission_desc_location" xml:space="preserve">
+    <value>These location permissions are needed for Geofencing and to get the Wifi SSID\'s around you!</value>
+  </data>
+  <data name="permission_desc_phone" xml:space="preserve">
+    <value>These phone state permissions are needed for enabling notifications!</value>
+  </data>
+  <data name="permission_desc_camera" xml:space="preserve">
+    <value>These camera permissions are needed for scanning QR Codes!</value>
+  </data>
+  <data name="permission_desc_audio" xml:space="preserve">
+    <value>These audio permissions are needed for Voice Recognition!</value>
+  </data>
+  <data name="permission_desc_finger" xml:space="preserve">
+    <value>These fingerprint permissions are needed for enabling Fingerprint Security!</value>
+  </data>
+  <data name="title_plans" xml:space="preserve">
+    <value>Плани</value>
+  </data>
+  <data name="qrcode_not_supported" xml:space="preserve">
+    <value>QR-код на цьому пристрої не підтримується</value>
+  </data>
+  <data name="qrcode_register" xml:space="preserve">
+    <value>Зареєструвати QR-код </value>
+  </data>
+  <data name="qrcode_found" xml:space="preserve">
+    <value>New QR Code found</value>
+  </data>
+  <data name="qrcode_edit" xml:space="preserve">
+    <value>Edit QR Code</value>
+  </data>
+  <data name="qrcode_name" xml:space="preserve">
+    <value>Give this QR Code a proper name. </value>
+  </data>
+  <data name="qrcode_desc" xml:space="preserve">
+    <value>Scan a QR Code. </value>
+  </data>
+  <data name="qrcode_exists" xml:space="preserve">
+    <value>QR-код вже зареєстрований. </value>
+  </data>
+  <data name="qrcode_saved" xml:space="preserve">
+    <value>Зберегти новий QR-код. </value>
+  </data>
+  <data name="qrcode" xml:space="preserve">
+    <value>QR-код</value>
+  </data>
+  <data name="qrcode_new_found" xml:space="preserve">
+    <value>Виявлено новий QR-код, будь ласка, використай його в налаштуваннях.</value>
+  </data>
+  <data name="qr_code_disabled" xml:space="preserve">
+    <value>QR Code disabled, please setup via settings.</value>
+  </data>
+  <data name="noSwitchSelected_explanation_qrcode" xml:space="preserve">
+    <value>For QR Code Scan to have effect, a switch should be linked to an QR Code</value>
+  </data>
+  <data name="permission_camera_rationale" xml:space="preserve">
+    <value>Access to the camera is needed for detection</value>
+  </data>
+  <data name="low_storage_error" xml:space="preserve">
+    <value>QR Code dependencies cannot be downloaded due to low device storage</value>
+  </data>
+  <data name="no_camera_permission" xml:space="preserve">
+    <value>This application cannot run because it does not have the camera permission.  The application will now exit.</value>
+  </data>
+  <data name="title_scenes" xml:space="preserve">
+    <value>Сцени</value>
+  </data>
+  <data name="title_security_panel" xml:space="preserve">
+    <value>Панель охорони</value>
+  </data>
+  <data name="security_pin" xml:space="preserve">
+    <value>PIN-код</value>
+  </data>
+  <data name="security_disarm" xml:space="preserve">
+    <value>Disarm</value>
+  </data>
+  <data name="security_arm_home" xml:space="preserve">
+    <value>Arm home</value>
+  </data>
+  <data name="security_arm_away" xml:space="preserve">
+    <value>Arm away</value>
+  </data>
+  <data name="security_wrong_code" xml:space="preserve">
+    <value>Введено неправильний код!</value>
+  </data>
+  <data name="security_generic_error" xml:space="preserve">
+    <value>Не вдалося змінити стан безпеки</value>
+  </data>
+  <data name="security_wrong_password_fingerprint" xml:space="preserve">
+    <value>Wrong password entered, your domoticz account password is the failover for your fingerprint...!</value>
+  </data>
+  <data name="show_password" xml:space="preserve">
+    <value>Показувати пароль</value>
+  </data>
+  <data name="choose_server" xml:space="preserve">
+    <value>Виберіть сервер</value>
+  </data>
+  <data name="dont_save_new_server" xml:space="preserve">
+    <value>Не зберігати новий сервер?</value>
+  </data>
+  <data name="server_must_be_unique" xml:space="preserve">
+    <value>Server name must be unique</value>
+  </data>
+  <data name="switch_to_server" xml:space="preserve">
+    <value>"Switching server to %1$s"</value>
+  </data>
+  <data name="cant_disable_default_server" xml:space="preserve">
+    <value>Can\'t disable the default server</value>
+  </data>
+  <data name="settingsActivity_name" xml:space="preserve">
+    <value>Налаштування</value>
+  </data>
+  <data name="cameraActivity_name" xml:space="preserve">
+    <value>Камера</value>
+  </data>
+  <data name="category_generic" xml:space="preserve">
+    <value>Загальні</value>
+  </data>
+  <data name="category_wear" xml:space="preserve">
+    <value>Android Wear</value>
+  </data>
+  <data name="category_auto" xml:space="preserve">
+    <value>Android Auto</value>
+  </data>
+  <data name="category_server" xml:space="preserve">
+    <value>Server</value>
+  </data>
+  <data name="category_geofencing" xml:space="preserve">
+    <value>Geofencing</value>
+  </data>
+  <data name="category_info" xml:space="preserve">
+    <value>Інформація</value>
+  </data>
+  <data name="category_advanced" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
+  <data name="category_language" xml:space="preserve">
+    <value>Мова</value>
+  </data>
+  <data name="category_talk_back" xml:space="preserve">
+    <value>Talk Back</value>
+  </data>
+  <data name="category_notification" xml:space="preserve">
+    <value>Сповіщення</value>
+  </data>
+  <data name="category_debug" xml:space="preserve">
+    <value>Налагодження</value>
+  </data>
+  <data name="category_export" xml:space="preserve">
+    <value>Export/Import Settings</value>
+  </data>
+  <data name="category_theme" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="category_nfc" xml:space="preserve">
+    <value>NFC Connections</value>
+  </data>
+  <data name="category_startup_security" xml:space="preserve">
+    <value>Security</value>
+  </data>
+  <data name="category_account" xml:space="preserve">
+    <value>Accounts</value>
+  </data>
+  <data name="category_QRCode" xml:space="preserve">
+    <value>QR Code</value>
+  </data>
+  <data name="category_Speech" xml:space="preserve">
+    <value>Speech</value>
+  </data>
+  <data name="category_Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="startup_screen" xml:space="preserve">
+    <value>Startup screen</value>
+  </data>
+  <data name="enable_items" xml:space="preserve">
+    <value>Enable/Disable Items</value>
+  </data>
+  <data name="sort_dashboardLikeServer_title" xml:space="preserve">
+    <value>Dashboard sorting</value>
+  </data>
+  <data name="sort_dashboardLikeServer_on" xml:space="preserve">
+    <value>Sort dashboard like server</value>
+  </data>
+  <data name="sort_dashboardLikeServer_off" xml:space="preserve">
+    <value>Sort dashboard alphabetically</value>
+  </data>
+  <data name="extra_data_title" xml:space="preserve">
+    <value>Extra data on dashboard</value>
+  </data>
+  <data name="show_extra_data_on" xml:space="preserve">
+    <value>Show extra data on dashboard</value>
+  </data>
+  <data name="show_extra_data_off" xml:space="preserve">
+    <value>Hide extra data on dashboard</value>
+  </data>
+  <data name="always_on_title" xml:space="preserve">
+    <value>Wake Lock</value>
+  </data>
+  <data name="always_on_on" xml:space="preserve">
+    <value>Lock the screen always On</value>
+  </data>
+  <data name="always_on_off" xml:space="preserve">
+    <value>Don\'t lock the screen to always On</value>
+  </data>
+  <data name="switch_buttons_title" xml:space="preserve">
+    <value>Switches</value>
+  </data>
+  <data name="switch_buttons_on" xml:space="preserve">
+    <value>Show switches with on/off switch</value>
+  </data>
+  <data name="switch_buttons_off" xml:space="preserve">
+    <value>Show switches with on/off buttons</value>
+  </data>
+  <data name="dashboard_list_title" xml:space="preserve">
+    <value>Dashboard Grid</value>
+  </data>
+  <data name="show_dashboard_list_on" xml:space="preserve">
+    <value>Show dashboard as list</value>
+  </data>
+  <data name="show_dashboard_list_off" xml:space="preserve">
+    <value>Show dashboard as grid</value>
+  </data>
+  <data name="enable_wear_select" xml:space="preserve">
+    <value>Android Wear custom items</value>
+  </data>
+  <data name="custom_wear_select" xml:space="preserve">
+    <value>Select Wear switches</value>
+  </data>
+  <data name="custom_wear_select_desc" xml:space="preserve">
+    <value>Select which switches you like to see on your Android Wear device</value>
+  </data>
+  <data name="wear_custom_on" xml:space="preserve">
+    <value>Enable Android Wear custom items</value>
+  </data>
+  <data name="wear_custom_off" xml:space="preserve">
+    <value>Disable Android Wear custom items</value>
+  </data>
+  <data name="auto_custom_on" xml:space="preserve">
+    <value>Enable Android Auto Notifications</value>
+  </data>
+  <data name="auto_custom_off" xml:space="preserve">
+    <value>Disable Android Auto Notifications</value>
+  </data>
+  <data name="geofencing_configure" xml:space="preserve">
+    <value>Configure Geofencing</value>
+  </data>
+  <data name="config_theme" xml:space="preserve">
+    <value>Set Theme</value>
+  </data>
+  <data name="set_dark_theme" xml:space="preserve">
+    <value>Switch app theme to Dark</value>
+  </data>
+  <data name="set_light_theme" xml:space="preserve">
+    <value>Switch app theme to Light</value>
+  </data>
+  <data name="set_talk_back_on" xml:space="preserve">
+    <value>Let Domoticz talk back to you</value>
+  </data>
+  <data name="set_talk_back_off" xml:space="preserve">
+    <value>Turn talk back off</value>
+  </data>
+  <data name="settings_imported" xml:space="preserve">
+    <value>Settings imported, please restart Domoticz</value>
+  </data>
+  <data name="settings_import_failed" xml:space="preserve">
+    <value>Failed to import Settings</value>
+  </data>
+  <data name="settings_exported" xml:space="preserve">
+    <value>Settings exported, please restart Domoticz</value>
+  </data>
+  <data name="settings_export_failed" xml:space="preserve">
+    <value>Failed to export Settings</value>
+  </data>
+  <data name="server_settings" xml:space="preserve">
+    <value>Server connection settings</value>
+  </data>
+  <data name="server_force_fetch_config" xml:space="preserve">
+    <value>Fetch server configuration</value>
+  </data>
+  <data name="nfc_settings" xml:space="preserve">
+    <value>Setup NFC Connections</value>
+  </data>
+  <data name="speech_settings" xml:space="preserve">
+    <value>Setup Speech Commands</value>
+  </data>
+  <data name="title_activity_server_settings" xml:space="preserve">
+    <value>Server settings</value>
+  </data>
+  <data name="multi_server" xml:space="preserve">
+    <value>Multi Server</value>
+  </data>
+  <data name="enable_nfc" xml:space="preserve">
+    <value>Enable NFC</value>
+  </data>
+  <data name="enable_speech" xml:space="preserve">
+    <value>Enable Speech Recognition</value>
+  </data>
+  <data name="export_settings" xml:space="preserve">
+    <value>Export settings</value>
+  </data>
+  <data name="reset_settings" xml:space="preserve">
+    <value>Reset all app settings (WARNING!!)</value>
+  </data>
+  <data name="import_settings" xml:space="preserve">
+    <value>Import settings</value>
+  </data>
+  <data name="multi_server_settings" xml:space="preserve">
+    <value>Enable multiple server support</value>
+  </data>
+  <data name="nfc_enable_settings" xml:space="preserve">
+    <value>Enable NFC Connections</value>
+  </data>
+  <data name="speech_enable_settings" xml:space="preserve">
+    <value>Enable Speech Recognition</value>
+  </data>
+  <data name="server" xml:space="preserve">
+    <value>Server</value>
+  </data>
+  <data name="qrcode_settings" xml:space="preserve">
+    <value>Setup QR Codes</value>
+  </data>
+  <data name="enable_qrcode" xml:space="preserve">
+    <value>Enable QR Codes</value>
+  </data>
+  <data name="qrcode_enable_settings" xml:space="preserve">
+    <value>Enable QR Codes functionality</value>
+  </data>
+  <data name="security_settings" xml:space="preserve">
+    <value>Setup Security</value>
+  </data>
+  <data name="enable_security" xml:space="preserve">
+    <value>Enable fingerprint protection on startup</value>
+  </data>
+  <data name="disable_security" xml:space="preserve">
+    <value>Disable fingerprint protection on startup</value>
+  </data>
+  <data name="setup_fingerprints" xml:space="preserve">
+    <value>Setup fingerprints via Android Settings screens</value>
+  </data>
+  <data name="fingerprint_not_supported" xml:space="preserve">
+    <value>Fingerprint Security is not supported on this device</value>
+  </data>
+  <data name="fingerprint_not_setup_in_android" xml:space="preserve">
+    <value>First configure/connect a Fingerprint to this device</value>
+  </data>
+  <data name="fingerprint_sure" xml:space="preserve">
+    <value>Are you sure? The failover password is the password of your Domoticz account.</value>
+  </data>
+  <data name="notification_settings_id" xml:space="preserve">
+    <value>Google Cloud Messaging ID</value>
+  </data>
+  <data name="notification_settings_push" xml:space="preserve">
+    <value>Push your registration id to Domoticz</value>
+  </data>
+  <data name="notification_settings_pushed" xml:space="preserve">
+    <value>Your registration id is now saved in Domoticz</value>
+  </data>
+  <data name="notification_settings_push_failed" xml:space="preserve">
+    <value>Could not save your registration id in Domoticz, please try again later.</value>
+  </data>
+  <data name="notification_show_title" xml:space="preserve">
+    <value>Last Notifications</value>
+  </data>
+  <data name="notification_show_nothing" xml:space="preserve">
+    <value>No notifications found</value>
+  </data>
+  <data name="notification_show" xml:space="preserve">
+    <value>Show last couple of Notifications</value>
+  </data>
+  <data name="overwrite_notifications_title" xml:space="preserve">
+    <value>Overwrite Notifications</value>
+  </data>
+  <data name="overwrite_notifications" xml:space="preserve">
+    <value>Overwrite previous notifications on this device</value>
+  </data>
+  <data name="enable_notifications_title" xml:space="preserve">
+    <value>Enable Notifications</value>
+  </data>
+  <data name="enable_notifications" xml:space="preserve">
+    <value>Enable notifications on this device</value>
+  </data>
+  <data name="notification_screen_title" xml:space="preserve">
+    <value>Notification settings</value>
+  </data>
+  <data name="notification_vibrate_title" xml:space="preserve">
+    <value>Vibrate</value>
+  </data>
+  <data name="notification_vibrate_on" xml:space="preserve">
+    <value>Vibrate when an notification is received</value>
+  </data>
+  <data name="notification_vibrate_off" xml:space="preserve">
+    <value>Do not vibrate</value>
+  </data>
+  <data name="notification_sound_title" xml:space="preserve">
+    <value>Sound</value>
+  </data>
+  <data name="notification_sound_summary" xml:space="preserve">
+    <value>Use notification sound when notification arrives</value>
+  </data>
+  <data name="suppress_notifications_select" xml:space="preserve">
+    <value>Select Notifications to Suppress</value>
+  </data>
+  <data name="suppress_notifications" xml:space="preserve">
+    <value>Suppress specific Notifications on this device</value>
+  </data>
+  <data name="suppress_notifications_title" xml:space="preserve">
+    <value>Suppress Notifications</value>
+  </data>
+  <data name="alarm_notifications_select" xml:space="preserve">
+    <value>Select Notifications to Alarm</value>
+  </data>
+  <data name="alarm_notifications" xml:space="preserve">
+    <value>Sound an Alarm for specific Notifications</value>
+  </data>
+  <data name="clear_notifications" xml:space="preserve">
+    <value>Clean notification logs</value>
+  </data>
+  <data name="alarm_notifications_title" xml:space="preserve">
+    <value>Alarm Notifications</value>
+  </data>
+  <data name="alarm" xml:space="preserve">
+    <value>Alarm</value>
+  </data>
+  <data name="alarmtimer_title" xml:space="preserve">
+    <value>Alarm Timer</value>
+  </data>
+  <data name="alarmtimer" xml:space="preserve">
+    <value>Number of seconds to time the alarm</value>
+  </data>
+  <data name="default_values" xml:space="preserve">
+    <value>Default values</value>
+  </data>
+  <data name="default_values_min_error" xml:space="preserve">
+    <value>Max value should be higher than Min value</value>
+  </data>
+  <data name="default_values_max_error" xml:space="preserve">
+    <value>Max value should be higher than Min value</value>
+  </data>
+  <data name="info_version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="info_domoticz_version" xml:space="preserve">
+    <value>Domoticz version</value>
+  </data>
+  <data name="info_about" xml:space="preserve">
+    <value>About Domoticz</value>
+  </data>
+  <data name="info_credits" xml:space="preserve">
+    <value>Credits</value>
+  </data>
+  <data name="info_credits_text" xml:space="preserve">
+    <value>Domoticz for Android is made possible with several open source libraries</value>
+  </data>
+  <data name="debug_switch_title" xml:space="preserve">
+    <value>Debugging</value>
+  </data>
+  <data name="debug_switch_summary_on" xml:space="preserve">
+    <value>Debugging enabled</value>
+  </data>
+  <data name="debug_switch_summary_off" xml:space="preserve">
+    <value>Debugging disabled</value>
+  </data>
+  <data name="error_atLeastOneItemInDrawer" xml:space="preserve">
+    <value>You need at least one item in the drawer</value>
+  </data>
+  <data name="title_activity_update" xml:space="preserve">
+    <value>Update server</value>
+  </data>
+  <data name="error_couldNotCheckForUpdates" xml:space="preserve">
+    <value>"Could not check for updates: %1$s"</value>
+  </data>
+  <data name="error_couldNotCheckForConfig" xml:space="preserve">
+    <value>"Could not get Domoticz server configuration: %1$s"</value>
+  </data>
+  <data name="update_available_enhanced" xml:space="preserve">
+    <value>Server update available: %1$s to version: %2$s</value>
+  </data>
+  <data name="check_for_update_title" xml:space="preserve">
+    <value>Check for Updates</value>
+  </data>
+  <data name="check_for_update" xml:space="preserve">
+    <value>Would you like us to check for Domoticz system updates?</value>
+  </data>
+  <data name="update_server_warning" xml:space="preserve">
+    <value>While your server is updating this app will not function properly.</value>
+  </data>
+  <data name="update_server_downloadNotReady1" xml:space="preserve">
+    <value>The update isn\'t (completely) downloaded yet.</value>
+  </data>
+  <data name="update_server_downloadNotReady2" xml:space="preserve">
+    <value>Please try again later.</value>
+  </data>
+  <data name="server_update_available" xml:space="preserve">
+    <value>Server update available</value>
+  </data>
+  <data name="update_server" xml:space="preserve">
+    <value>Update server</value>
+  </data>
+  <data name="server_update_revision" xml:space="preserve">
+    <value>Server update revision</value>
+  </data>
+  <data name="server_version" xml:space="preserve">
+    <value>Server version</value>
+  </data>
+  <data name="server_update" xml:space="preserve">
+    <value>Server update</value>
+  </data>
+  <data name="please_wait_while_we_check" xml:space="preserve">
+    <value>Please wait while we check if your server is ready to update</value>
+  </data>
+  <data name="server_update_not_ready" xml:space="preserve">
+    <value>Server update not downloaded</value>
+  </data>
+  <data name="please_wait_while_server_updated" xml:space="preserve">
+    <value>Please wait while the server is being updated.</value>
+  </data>
+  <data name="server_update_done" xml:space="preserve">
+    <value>Server update done</value>
+  </data>
+  <data name="update_not_started" xml:space="preserve">
+    <value>Update not started</value>
+  </data>
+  <data name="update_not_started_unknown_error" xml:space="preserve">
+    <value>Update not started due to an unknown error</value>
+  </data>
+  <data name="server_update_not_available" xml:space="preserve">
+    <value>Server update not available</value>
+  </data>
+  <data name="click_to_update_server" xml:space="preserve">
+    <value>Click here to update your server</value>
+  </data>
+  <data name="debug_test_text" xml:space="preserve">
+    <value>Debugging test</value>
+  </data>
+  <data name="restart_required_title" xml:space="preserve">
+    <value>Restart required</value>
+  </data>
+  <data name="restart_now" xml:space="preserve">
+    <value>Restart now?</value>
+  </data>
+  <data name="Speech_not_supported" xml:space="preserve">
+    <value>Speech is not supported on this device</value>
+  </data>
+  <data name="Speech_register" xml:space="preserve">
+    <value>Register a Speech Command</value>
+  </data>
+  <data name="Speech_found" xml:space="preserve">
+    <value>New Speech Command found</value>
+  </data>
+  <data name="Speech_edit" xml:space="preserve">
+    <value>Edit Speech Command</value>
+  </data>
+  <data name="Speech_name" xml:space="preserve">
+    <value>Give this Speech Command a proper name. </value>
+  </data>
+  <data name="Speech_exists" xml:space="preserve">
+    <value>Speech Command already registered. </value>
+  </data>
+  <data name="Speech_saved" xml:space="preserve">
+    <value>Saved a New Speech Command. </value>
+  </data>
+  <data name="Speech_desc" xml:space="preserve">
+    <value>Do a new voice command. </value>
+  </data>
+  <data name="Speech" xml:space="preserve">
+    <value>Speech</value>
+  </data>
+  <data name="Speech_disabled" xml:space="preserve">
+    <value>Speech Command disabled, please setup via settings.</value>
+  </data>
+  <data name="noSwitchSelected_explanation_Speech" xml:space="preserve">
+    <value>For Speech Command to have effect, a switch should be linked</value>
+  </data>
+  <data name="title_switches" xml:space="preserve">
+    <value>Перемикачі</value>
+  </data>
+  <data name="txt_notAvailable" xml:space="preserve">
+    <value>Недоступно</value>
+  </data>
+  <data name="idx" xml:space="preserve">
+    <value>IDX</value>
+  </data>
+  <data name="placeholder_value" xml:space="preserve">
+    <value>255</value>
+  </data>
+  <data name="color_set" xml:space="preserve">
+    <value>Color set for</value>
+  </data>
+  <data name="state_set" xml:space="preserve">
+    <value>Встановити стан для</value>
+  </data>
+  <data name="error_favorite" xml:space="preserve">
+    <value>Не вдалося установити улюблений</value>
+  </data>
+  <data name="error_logs" xml:space="preserve">
+    <value>Не вдалося знайти будь-яких журналів, щоб показати</value>
+  </data>
+  <data name="error_color" xml:space="preserve">
+    <value>Не вдалося змінити колір</value>
+  </data>
+  <data name="error_state" xml:space="preserve">
+    <value>Could not change the state</value>
+  </data>
+  <data name="error_timer" xml:space="preserve">
+    <value>Could not show the timers</value>
+  </data>
+  <data name="error_notifications" xml:space="preserve">
+    <value>Could not show the notifications</value>
+  </data>
+  <data name="set_level_switch" xml:space="preserve">
+    <value>"Setting level for switch: %1$s to %2$d"</value>
+  </data>
+  <data name="title_temperature" xml:space="preserve">
+    <value>Температура</value>
+  </data>
+  <data name="cancel_override" xml:space="preserve">
+    <value>Скасувати виправлення тексту</value>
+  </data>
+  <data name="wind" xml:space="preserve">
+    <value>Wind</value>
+  </data>
+  <data name="error_log" xml:space="preserve">
+    <value>Could not get log data for</value>
+  </data>
+  <data name="follow_schedule" xml:space="preserve">
+    <value>Follow schedule</value>
+  </data>
+  <data name="command" xml:space="preserve">
+    <value>Команди</value>
+  </data>
+  <data name="type" xml:space="preserve">
+    <value>Тип</value>
+  </data>
+  <data name="notapplicable" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="timer_before_sunset" xml:space="preserve">
+    <value>Before sunset</value>
+  </data>
+  <data name="timer_after_sunset" xml:space="preserve">
+    <value>After sunset</value>
+  </data>
+  <data name="timer_ontime" xml:space="preserve">
+    <value>Вчасно</value>
+  </data>
+  <data name="timer_before_sunrise" xml:space="preserve">
+    <value>До сходу сонця</value>
+  </data>
+  <data name="timer_after_sunrise" xml:space="preserve">
+    <value>Після сходу сонця</value>
+  </data>
+  <data name="timer_fixed" xml:space="preserve">
+    <value>Фіксована дата/час</value>
+  </data>
+  <data name="odd_day_numbers" xml:space="preserve">
+    <value>Odd Day Numbers</value>
+  </data>
+  <data name="even_day_numbers" xml:space="preserve">
+    <value>Even Day Numbers</value>
+  </data>
+  <data name="odd_week_numbers" xml:space="preserve">
+    <value>Odd Week Numbers</value>
+  </data>
+  <data name="even_week_numbers" xml:space="preserve">
+    <value>Even Week Numbers</value>
+  </data>
+  <data name="monthly" xml:space="preserve">
+    <value>Monthly</value>
+  </data>
+  <data name="monthly_weekday" xml:space="preserve">
+    <value>Monthly (Weekday)</value>
+  </data>
+  <data name="yearly" xml:space="preserve">
+    <value>Yearly</value>
+  </data>
+  <data name="yearly_weekday" xml:space="preserve">
+    <value>Yearly (Weekday)</value>
+  </data>
+  <data name="timer_every_days" xml:space="preserve">
+    <value>Every day</value>
+  </data>
+  <data name="timer_working_days" xml:space="preserve">
+    <value>Working days</value>
+  </data>
+  <data name="timer_weekend" xml:space="preserve">
+    <value>Weekend</value>
+  </data>
+  <data name="timer_other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="timers" xml:space="preserve">
+    <value>Timers</value>
+  </data>
+  <data name="title_utilities" xml:space="preserve">
+    <value>Утиліти</value>
+  </data>
+  <data name="set_temperature" xml:space="preserve">
+    <value>Призначити</value>
+  </data>
+  <data name="title_vars" xml:space="preserve">
+    <value>Змінні</value>
+  </data>
+  <data name="var_input" xml:space="preserve">
+    <value>Input value is not valid</value>
+  </data>
+  <data name="var_input_error" xml:space="preserve">
+    <value>Failed to update user variable</value>
+  </data>
+  <data name="title_weather" xml:space="preserve">
+    <value>Погода</value>
+  </data>
+  <data name="dewPoint" xml:space="preserve">
+    <value>Точка роси</value>
+  </data>
+  <data name="temp" xml:space="preserve">
+    <value>Temp</value>
+  </data>
+  <data name="pressure" xml:space="preserve">
+    <value>Pressure</value>
+  </data>
+  <data name="chill" xml:space="preserve">
+    <value>Chill</value>
+  </data>
+  <data name="direction" xml:space="preserve">
+    <value>Напрямок</value>
+  </data>
+  <data name="humidity" xml:space="preserve">
+    <value>Hum</value>
+  </data>
+  <data name="speed" xml:space="preserve">
+    <value>Швидкість</value>
+  </data>
+  <data name="forecast" xml:space="preserve">
+    <value>Прогноз погоди</value>
+  </data>
+  <data name="rain" xml:space="preserve">
+    <value>Rain</value>
+  </data>
+  <data name="rainrate" xml:space="preserve">
+    <value>Rain Rate</value>
+  </data>
+  <data name="co2" xml:space="preserve">
+    <value>CO2</value>
+  </data>
+  <data name="co2min" xml:space="preserve">
+    <value>CO2 Min</value>
+  </data>
+  <data name="co2max" xml:space="preserve">
+    <value>CO2 Max</value>
+  </data>
+  <data name="welcome_title_activity_welcome" xml:space="preserve">
+    <value>Вітаємо</value>
+  </data>
+  <data name="welcome_info_domoticz" xml:space="preserve">
+    <value>Domoticz є Системю автоматизації, яка дозволяє контролювати і налаштовувати різниі пристрої, такі як: освітлення, перемикачі, різні датчики (температура, дощ, вітер, УФ, Електра, газ, вода і багато іншого). Сповіщення може бути відправлене до будь-який мобільний пристрій.</value>
+  </data>
+  <data name="welcome_info_swipe" xml:space="preserve">
+    <value>Swipe to the right or use the navigation buttons at the bottom to continue</value>
+  </data>
+  <data name="welcome_info_settings1" xml:space="preserve">
+    <value>The next page is for your Domoticz settings.</value>
+  </data>
+  <data name="welcome_info_settings2" xml:space="preserve">
+    <value> You can specify a local and a remote server setting. The local settings are for when you are connected to your home wifi network. Remote settings are used when not connected to your home wifi network or when connected to cellular data (2G, 3G, 4G etc).</value>
+  </data>
+  <data name="welcome_info_checkingConnection" xml:space="preserve">
+    <value>Перевірка настройки підключення</value>
+  </data>
+  <data name="welcome_msg_connectionDataIncomplete" xml:space="preserve">
+    <value>Дані про зєднання неповні або пусті</value>
+  </data>
+  <data name="welcome_msg_connectionDataInvalid" xml:space="preserve">
+    <value>URL-адреса не може розпочатися з http</value>
+  </data>
+  <data name="welcome_msg_correctOnPreviousPage" xml:space="preserve">
+    <value>Будь ласка, виправте даниі на попередній сторінці</value>
+  </data>
+  <data name="welcome_msg_serverVersion" xml:space="preserve">
+    <value>Domoticz version</value>
+  </data>
+  <data name="welcome_msg_numberOfDevices" xml:space="preserve">
+    <value>%1$d devices found</value>
+  </data>
+  <data name="welcome_msg_no_ssid_found" xml:space="preserve">
+    <value>No wifi SSID\'s found</value>
+  </data>
+  <data name="welcome_ssid_spinner_prompt" xml:space="preserve">
+    <value>Select home SSID\'s</value>
+  </data>
+  <data name="welcome_ssid_button_prompt" xml:space="preserve">
+    <value>Add home SSID\'s</value>
+  </data>
+  <data name="welcome_server_settings_title" xml:space="preserve">
+    <value>Server settings</value>
+  </data>
+  <data name="welcome_server_startScreen" xml:space="preserve">
+    <value>Start screen</value>
+  </data>
+  <data name="welcome_button_next" xml:space="preserve">
+    <value>next</value>
+  </data>
+  <data name="welcome_button_previous" xml:space="preserve">
+    <value>prev</value>
+  </data>
+  <data name="welcome_button_finish" xml:space="preserve">
+    <value>finish</value>
+  </data>
+  <data name="welcome_remote_server_address" xml:space="preserve">
+    <value>Server address</value>
+  </data>
+  <data name="welcome_remote_server_protocol" xml:space="preserve">
+    <value>Protocol</value>
+  </data>
+  <data name="welcome_remote_server_port" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="welcome_remote_server_username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="welcome_remote_server_password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="welcome_remote_server_directory" xml:space="preserve">
+    <value>Directory</value>
+  </data>
+  <data name="remote" xml:space="preserve">
+    <value>Remote</value>
+  </data>
+  <data name="local" xml:space="preserve">
+    <value>Local</value>
+  </data>
+  <data name="servername" xml:space="preserve">
+    <value>Server Name</value>
+  </data>
+  <data name="welcome_local_server_used_switch_title" xml:space="preserve">
+    <value>Different server address</value>
+  </data>
+  <data name="welcome_local_server_used_switch_summary" xml:space="preserve">
+    <value>Use different address for local connection</value>
+  </data>
+  <data name="welcome_advancedSettings" xml:space="preserve">
+    <value>Advanced server settings</value>
+  </data>
+  <data name="welcome_advancedSettings_summary" xml:space="preserve">
+    <value>Only used for non-standard Domoticz servers</value>
+  </data>
+  <data name="welcome_local_server_ssid" xml:space="preserve">
+    <value>Local wifi SSID\'s</value>
+  </data>
+  <data name="welcome_local_server_address" xml:space="preserve">
+    <value>Local server address</value>
+  </data>
+  <data name="welcome_local_server_protocol" xml:space="preserve">
+    <value>Local protocol</value>
+  </data>
+  <data name="welcome_local_server_port" xml:space="preserve">
+    <value>Local port</value>
+  </data>
+  <data name="welcome_local_server_directory" xml:space="preserve">
+    <value>Local directory (leave empty if not used)</value>
+  </data>
+  <data name="welcome_local_server_username" xml:space="preserve">
+    <value>Local username (leave empty if not used)</value>
+  </data>
+  <data name="welcome_local_server_password" xml:space="preserve">
+    <value>Local password (leave empty if not used)</value>
+  </data>
+  <data name="pick_device_title" xml:space="preserve">
+    <value>Pick a device</value>
+  </data>
+  <data name="choose_switch" xml:space="preserve">
+    <value>Choose device</value>
+  </data>
+  <data name="failed_to_get_securitypanel" xml:space="preserve">
+    <value>No security panel found under your switches</value>
+  </data>
+  <data name="failed_to_get_switches" xml:space="preserve">
+    <value>Failed to get devices</value>
+  </data>
+  <data name="failed_toggle_switch" xml:space="preserve">
+    <value>Failed to toggle device</value>
+  </data>
+  <data name="switch_toggled" xml:space="preserve">
+    <value>"Switch device"</value>
+  </data>
+  <data name="text_loading" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="text_go" xml:space="preserve">
+    <value>GO</value>
+  </data>
+  <data name="widget_background" xml:space="preserve">
+    <value>Background</value>
+  </data>
+  <data name="widget_dark" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="widget_light" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="widget_transparent_dark" xml:space="preserve">
+    <value>Dark Transparent</value>
+  </data>
+  <data name="widget_transparent_light" xml:space="preserve">
+    <value>Light Transparent</value>
+  </data>
+  <data name="title_wizard" xml:space="preserve">
+    <value>Майстер налаштуваннь</value>
+  </data>
+  <data name="wizard_welcome" xml:space="preserve">
+    <value>Вітаємо</value>
+  </data>
+  <data name="wizard_welcome_description" xml:space="preserve">
+    <value>Domoticz is a very light weight home automation system that lets you monitor and configure various devices.</value>
+  </data>
+  <data name="wizard_favorites" xml:space="preserve">
+    <value>Favorites</value>
+  </data>
+  <data name="wizard_favorites_description" xml:space="preserve">
+    <value>You can add devices to the Dashboard by saving them as favorites. Long click an item to save them as favorite!</value>
+  </data>
+  <data name="wizard_startup" xml:space="preserve">
+    <value>Початковий екран</value>
+  </data>
+  <data name="wizard_startup_description" xml:space="preserve">
+    <value>В налаштуваннях можна встановити початковий екран!</value>
+  </data>
+  <data name="wizard_notifications" xml:space="preserve">
+    <value>Налаштування сповіщень</value>
+  </data>
+  <data name="wizard_notifications_description" xml:space="preserve">
+    <value>Тепер ви можете отримувати сповіщення про пристрої Android! Змініть спосіб, оповіщення в налаштуваннях</value>
+  </data>
+  <data name="wizard_multiserver" xml:space="preserve">
+    <value>Using Multiple Servers</value>
+  </data>
+  <data name="wizard_multiserver_description" xml:space="preserve">
+    <value>You can configure multiple Domoticz servers in the settings.</value>
+  </data>
+  <data name="wizard_geo" xml:space="preserve">
+    <value>Geofencing</value>
+  </data>
+  <data name="wizard_geo_description" xml:space="preserve">
+    <value>You can set your startup screen in the settings!</value>
+  </data>
+  <data name="wizard_wear" xml:space="preserve">
+    <value>Android Wear</value>
+  </data>
+  <data name="wizard_wear_description" xml:space="preserve">
+    <value>You can specify which switches you would like to control from your Android wear device!</value>
+  </data>
+  <data name="wizard_auto" xml:space="preserve">
+    <value>Android Auto</value>
+  </data>
+  <data name="wizard_auto_description" xml:space="preserve">
+    <value>Receive the Domoticz notifications right on your Android Auto device!</value>
+  </data>
+  <data name="wizard_graph" xml:space="preserve">
+    <value>Graphs</value>
+  </data>
+  <data name="wizard_graph_description" xml:space="preserve">
+    <value>You can see the history graph of an Utility, Weather or Temperature!</value>
+  </data>
+  <data name="wizard_filter" xml:space="preserve">
+    <value>Filters</value>
+  </data>
+  <data name="wizard_filter_description" xml:space="preserve">
+    <value>You can filter devices per status (on/off). Check the right upper menu icon for filtering!</value>
+  </data>
+  <data name="wizard_widgets" xml:space="preserve">
+    <value>Widgets!!</value>
+  </data>
+  <data name="wizard_widgets_description" xml:space="preserve">
+    <value>You can put some widgets on your home screen!</value>
+  </data>
+  <data name="wizard_menuitem" xml:space="preserve">
+    <value>Disable Wizard</value>
+  </data>
+  <data name="wizard_menuitem_description" xml:space="preserve">
+    <value>You can now remove this Wizard from the navigation menu!</value>
+  </data>
+  <data name="wizard_nfc" xml:space="preserve">
+    <value>NFC</value>
+  </data>
+  <data name="wizard_nfc_description" xml:space="preserve">
+    <value>You are able to toggle switches via NFC!</value>
+  </data>
+  <data name="wizard_qrcode" xml:space="preserve">
+    <value>QR Code</value>
+  </data>
+  <data name="wizard_qrcode_description" xml:space="preserve">
+    <value>Toggle switches by scanning a QR Code (or barcode)!</value>
+  </data>
+  <data name="wizard_speech" xml:space="preserve">
+    <value>Speech Commands</value>
+  </data>
+  <data name="wizard_speech_description" xml:space="preserve">
+    <value>Toggle switches with your voice! Configure speech commands via the settings screens and connect switches.</value>
+  </data>
+  <data name="wizard_button_nice" xml:space="preserve">
+    <value>Nice</value>
+  </data>
+  <data name="wizard_button_switches" xml:space="preserve">
+    <value>Switches</value>
+  </data>
+  <data name="wizard_button_settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="wizard_button_wizard" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="wizard_button_utilities" xml:space="preserve">
+    <value>Utilities</value>
+  </data>
+  <data name="wizard_button_done" xml:space="preserve">
+    <value>Done</value>
+  </data>
+</root>

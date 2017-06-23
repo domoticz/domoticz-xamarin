@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
+             xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
+             xmlns:selector="clr-namespace:NL.HNOGames.Domoticz.ViewSelector;assembly=NL.HNOGames.Domoticz"
+             xmlns:range="clr-namespace:Xamarin.RangeSlider.Forms;assembly=Xamarin.RangeSlider.Forms"
+             x:Class="NL.HNOGames.Domoticz.Views.Dialog.NotificationsPopup">
+
+    <StackLayout VerticalOptions="Center" 
+        HorizontalOptions="FillAndExpand"
+        Orientation="Vertical"
+        Padding="20, 10, 20, 20"
+        BackgroundColor="{StaticResource LightBackgroundColor}"
+        Margin="20, 10, 20, 20"
+        Opacity="1">
+
+        <Label x:Name="lvlTitle" Text="{resources:Translate button_status_notifications}" Style="{StaticResource HeaderType}" Margin="0,20,0,10"/>
+
+        <ListView x:Name="listView" BackgroundColor="{DynamicResource LightBackgroundColor}"
+                  VerticalOptions="FillAndExpand" 
+                  ItemSelected="OnItemSelected" HasUnevenRows="true" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <custcontrol:CustomViewCell>
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="10">
+                            <Label Text="{Binding CustomMessage}" Style="{StaticResource HeaderDarkType}" />
+                            <Label Text="{Binding PriorityDescription}" Style="{StaticResource DetailType}"/>
+                            <Label Text="{Binding SystemsDescription}" Style="{StaticResource DetailType}"/>
+                        </StackLayout>
+                    </custcontrol:CustomViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+</pages:PopupPage>

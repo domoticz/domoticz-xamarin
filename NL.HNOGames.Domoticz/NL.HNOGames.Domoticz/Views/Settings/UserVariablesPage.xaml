@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
+             xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
+             xmlns:selector="clr-namespace:NL.HNOGames.Domoticz.ViewSelector;assembly=NL.HNOGames.Domoticz"
+             xmlns:range="clr-namespace:Xamarin.RangeSlider.Forms;assembly=Xamarin.RangeSlider.Forms"
+             x:Class="NL.HNOGames.Domoticz.Views.Settings.UserVariablesPage"
+             Style="{StaticResource ContentPageType}"
+             Title="{resources:Translate title_vars}">
+
+    <ContentPage.Content>
+
+        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+            <SearchBar Style="{StaticResource SearchBarType}" x:Name="sbSearch" Placeholder="{resources:Translate filter}" CancelButtonColor="Red" TextChanged="sbSearch_TextChanged" />
+            <ListView x:Name="listView" BackgroundColor="{DynamicResource LightBackgroundColor}" VerticalOptions="FillAndExpand" HasUnevenRows="true" SeparatorVisibility="None" ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <custcontrol:CustomViewCell>
+                            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="5" Padding="10"
+                BackgroundColor="{StaticResource CardBackgroundColor}">
+                                <Label Text="{Binding Name}" Style="{StaticResource HeaderDarkType}" />
+                                <Label Text="{Binding Data}" Style="{StaticResource DetailType}"/>
+                            </StackLayout>
+                        </custcontrol:CustomViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

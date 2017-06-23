@@ -26,10 +26,19 @@ namespace NL.HNOGames.Domoticz.iOS.Renderer
  
             if (e.OldElement == null)
             {
+                UIViewController viewCtrl = null;
+                foreach (UIWindow v in UIApplication.SharedApplication.Windows)
+                {
+                    if (v.RootViewController != null)
+                    {
+                        viewCtrl = v.RootViewController;
+                    }
+                }
+
                 adView = new BannerView()
                 {
                     AdUnitID = AdmobID,
-                    RootViewController = UIApplication.SharedApplication.Windows[0].RootViewController
+                    RootViewController = viewCtrl
                 };
  
                 adView.AdReceived += (sender, args) =>
@@ -39,8 +48,7 @@ namespace NL.HNOGames.Domoticz.iOS.Renderer
                     App.ShowAds = true;
                 };
 
-                Request request = Request.GetDefaultRequest();
-                adView.LoadRequest(request);
+                adView.LoadRequest(Request.GetDefaultRequest());
                 base.SetNativeControl(adView);
             }
         }

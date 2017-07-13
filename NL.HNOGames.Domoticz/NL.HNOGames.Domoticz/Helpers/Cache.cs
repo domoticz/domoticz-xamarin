@@ -30,7 +30,7 @@ namespace NL.HNOGames.Domoticz.Helpers
                 if (String.IsNullOrEmpty(key))
                     return default(T);
 
-                String resultCache = AppCache.GetValueOrDefault<String>(key, String.Empty);
+                String resultCache = AppCache.GetValueOrDefault(key, String.Empty);
                 if (!String.IsNullOrEmpty(resultCache))
                 {
                     var value = JsonConvert.DeserializeObject<T>(resultCache);
@@ -50,7 +50,7 @@ namespace NL.HNOGames.Domoticz.Helpers
         {
             if (String.IsNullOrEmpty(key) || value == null)
                 return;
-            AppCache.AddOrUpdateValue<string>(key, JsonConvert.SerializeObject(value));
+            AppCache.AddOrUpdateValue(key, JsonConvert.SerializeObject(value));
         }
     }
 }

@@ -49,11 +49,11 @@ namespace NL.HNOGames.Domoticz.Helpers
         {
             get
             {
-                return AppSettings.GetValueOrDefault<bool>(WelcomeSettingsKey, false);
+                return AppSettings.GetValueOrDefault(WelcomeSettingsKey, false);
             }
             set
             {
-                AppSettings.AddOrUpdateValue<bool>(WelcomeSettingsKey, value);
+                AppSettings.AddOrUpdateValue(WelcomeSettingsKey, value);
             }
         }
 
@@ -64,14 +64,14 @@ namespace NL.HNOGames.Domoticz.Helpers
         {
             get
             {
-                string settingJSON = AppSettings.GetValueOrDefault<string>(SeverSettingsKey, null);
+                string settingJSON = AppSettings.GetValueOrDefault(SeverSettingsKey, null);
                 if (string.IsNullOrEmpty(settingJSON))
                     return null;
                 return JsonConvert.DeserializeObject<ServerSettings>(settingJSON);
             }
             set
             {
-                AppSettings.AddOrUpdateValue<string>(SeverSettingsKey, JsonConvert.SerializeObject(value));
+                AppSettings.AddOrUpdateValue(SeverSettingsKey, JsonConvert.SerializeObject(value));
             }
         }
 
@@ -82,14 +82,14 @@ namespace NL.HNOGames.Domoticz.Helpers
         {
             get
             {
-                string settingJSON = AppSettings.GetValueOrDefault<string>(ConfigSettingsKey, null);
+                string settingJSON = AppSettings.GetValueOrDefault(ConfigSettingsKey, null);
                 if (string.IsNullOrEmpty(settingJSON))
                     return null;
                 return JsonConvert.DeserializeObject<ConfigModel>(settingJSON);
             }
             set
             {
-                AppSettings.AddOrUpdateValue<string>(ConfigSettingsKey, JsonConvert.SerializeObject(value));
+                AppSettings.AddOrUpdateValue(ConfigSettingsKey, JsonConvert.SerializeObject(value));
             }
         }
 
@@ -100,14 +100,14 @@ namespace NL.HNOGames.Domoticz.Helpers
         {
             get
             {
-                string settingJSON = AppSettings.GetValueOrDefault<string>(EnableScreenItems, null);
+                string settingJSON = AppSettings.GetValueOrDefault(EnableScreenItems, null);
                 if (string.IsNullOrEmpty(settingJSON))
                     return null;
                 return JsonConvert.DeserializeObject<List<ScreenModel>>(settingJSON);
             }
             set
             {
-                AppSettings.AddOrUpdateValue<string>(EnableScreenItems, JsonConvert.SerializeObject(value));
+                AppSettings.AddOrUpdateValue(EnableScreenItems, JsonConvert.SerializeObject(value));
             }
         }
 
@@ -118,11 +118,11 @@ namespace NL.HNOGames.Domoticz.Helpers
         {
             get
             {
-                return AppSettings.GetValueOrDefault<DateTime>(ConfigDateTimeSettingsKey, DateTime.Now.AddDays(-10));
+                return AppSettings.GetValueOrDefault(ConfigDateTimeSettingsKey, DateTime.Now.AddDays(-10));
             }
             set
             {
-                AppSettings.AddOrUpdateValue<DateTime>(ConfigDateTimeSettingsKey, value);
+                AppSettings.AddOrUpdateValue(ConfigDateTimeSettingsKey, value);
             }
         }
 
@@ -133,11 +133,11 @@ namespace NL.HNOGames.Domoticz.Helpers
         {
             get
             {
-                return AppSettings.GetValueOrDefault<int>(StartUpScreenSettingsKey, 0);
+                return AppSettings.GetValueOrDefault(StartUpScreenSettingsKey, 0);
             }
             set
             {
-                AppSettings.AddOrUpdateValue<int>(StartUpScreenSettingsKey, value);
+                AppSettings.AddOrUpdateValue(StartUpScreenSettingsKey, value);
             }
         }
 
@@ -149,11 +149,11 @@ namespace NL.HNOGames.Domoticz.Helpers
         {
             get
             {
-                return AppSettings.GetValueOrDefault<bool>(NoSortSettingsKey, true);
+                return AppSettings.GetValueOrDefault(NoSortSettingsKey, true);
             }
             set
             {
-                AppSettings.AddOrUpdateValue<bool>(NoSortSettingsKey, value);
+                AppSettings.AddOrUpdateValue(NoSortSettingsKey, value);
             }
         }
 
@@ -164,11 +164,11 @@ namespace NL.HNOGames.Domoticz.Helpers
         {
             get
             {
-                return AppSettings.GetValueOrDefault<bool>(ShowSwitchesSettingsKey, true);
+                return AppSettings.GetValueOrDefault(ShowSwitchesSettingsKey, true);
             }
             set
             {
-                AppSettings.AddOrUpdateValue<bool>(ShowSwitchesSettingsKey, value);
+                AppSettings.AddOrUpdateValue(ShowSwitchesSettingsKey, value);
             }
         }
 
@@ -179,11 +179,11 @@ namespace NL.HNOGames.Domoticz.Helpers
         {
             get
             {
-                return AppSettings.GetValueOrDefault<bool>(EnableNotificationsSettingsKey, true);
+                return AppSettings.GetValueOrDefault(EnableNotificationsSettingsKey, true);
             }
             set
             {
-                AppSettings.AddOrUpdateValue<bool>(EnableNotificationsSettingsKey, value);
+                AppSettings.AddOrUpdateValue(EnableNotificationsSettingsKey, value);
             }
         }
         
@@ -194,11 +194,11 @@ namespace NL.HNOGames.Domoticz.Helpers
         {
             get
             {
-                return AppSettings.GetValueOrDefault<bool>(ExtraDataSettingsKey, true);
+                return AppSettings.GetValueOrDefault(ExtraDataSettingsKey, true);
             }
             set
             {
-                AppSettings.AddOrUpdateValue<bool>(ExtraDataSettingsKey, value);
+                AppSettings.AddOrUpdateValue(ExtraDataSettingsKey, value);
             }
         }
     }

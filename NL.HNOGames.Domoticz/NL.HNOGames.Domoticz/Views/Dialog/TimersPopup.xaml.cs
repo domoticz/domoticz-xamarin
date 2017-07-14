@@ -12,10 +12,10 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
 {
     public partial class TimersPopup : PopupPage
     {
-        private Models.Device selectedDevice;
+        private object selectedDevice;
         private List<Timer> timerList;
 
-        public TimersPopup(Models.Device device)
+        public TimersPopup(object device)
         {
             selectedDevice = device;
             InitializeComponent();
@@ -36,7 +36,13 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
         {
             timerList = new List<Timer>();
 
-            var timers = await App.ApiService.GetTimers(selectedDevice);
+            string idx = "";
+            if (selectedDevice is Models.Device)
+                idx = ((Models.Device)selectedDevice).idx;
+            else if (selectedDevice is Models.Scene)
+                idx = ((Models.Scene)selectedDevice).idx;
+
+            var timers = await App.ApiService.GetTimers(idx);
             if (timers != null && timers.result != null)
             {
                 foreach (Timer t in timers.result)

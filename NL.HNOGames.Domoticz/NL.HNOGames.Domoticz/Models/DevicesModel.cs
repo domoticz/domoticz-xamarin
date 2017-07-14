@@ -191,11 +191,11 @@ namespace NL.HNOGames.Domoticz.Models
                     dataText += !String.IsNullOrEmpty(dataText) ? ", " + AppResources.chill + ": " + this.Chill + " " + App.getServerConfig().TempSign : AppResources.chill + ": " + this.Chill + " " + App.getServerConfig().TempSign;
                 if (!String.IsNullOrEmpty(this.HumidityStatus))
                     dataText += !String.IsNullOrEmpty(dataText) ? ", " + AppResources.humidity + ": " + this.HumidityStatus : AppResources.humidity + ": " + this.HumidityStatus;
+
                 if (!String.IsNullOrEmpty(this.Rain))
                     dataText = AppResources.rain + ": " + this.Rain;
                 if (!String.IsNullOrEmpty(this.RainRate))
                     dataText += ", " + AppResources.rainrate + ": " + this.Rain;
-
                 if (String.IsNullOrEmpty(dataText))
                     dataText = Data;
 

@@ -177,11 +177,11 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz get timers for a device
         /// </summary>
-        public async Task<TimerModel> GetTimers(Models.Device device)
+        public async Task<TimerModel> GetTimers(String idx)
         {
             if (Server == null)
                 return null;
-            String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.SWITCHTIMER) + device.idx;
+            String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.SWITCHTIMER) + idx;
 
             try
             {
@@ -281,15 +281,15 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz get logs for a device
         /// </summary>
-        public async Task<LogModel> GetLogs(Models.Device device, bool isScene = false, bool textLog = false)
+        public async Task<LogModel> GetLogs(string deviceIDX, bool isScene = false, bool textLog = false)
         {
             if (Server == null)
                 return null;
-            String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.SWITCHLOG) + device.idx;
+            String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.SWITCHLOG) + deviceIDX;
             if (isScene)
-                url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.SCENELOG) + device.idx;
+                url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.SCENELOG) + deviceIDX;
             else if (textLog)
-                url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.TEXTLOG) + device.idx;
+                url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.TEXTLOG) + deviceIDX;
 
             try
             {

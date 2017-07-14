@@ -14,10 +14,10 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
 {
     public partial class LogsPopup : PopupPage
     {
-        private Models.Device selectedDevice;
+        private object selectedDevice;
         private List<Log> logList;
 
-        public LogsPopup(Models.Device device)
+        public LogsPopup(object device)
         {
             selectedDevice = device;
             InitializeComponent();
@@ -36,10 +36,16 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
 
         async Task ExecuteLoadNotificationsCommand()
         {
+            string idx = "";
+            if (selectedDevice is Models.Device)
+                idx = ((Models.Device)selectedDevice).idx;
+            else if (selectedDevice is Models.Scene)
+                idx = ((Models.Scene)selectedDevice).idx;
+
             logList = new List<Log>();
-            var logs = await App.ApiService.GetLogs(selectedDevice, selectedDevice.IsScene);
+            var logs = await App.ApiService.GetLogs(idx, selectedDevice is Models.Scene);
             if (logs == null || logs.result == null)
-                logs = await App.ApiService.GetLogs(selectedDevice, false, true);
+                logs = await App.ApiService.GetLogs(idx, false, true);
 
             if (logs != null && logs.result != null)
             {

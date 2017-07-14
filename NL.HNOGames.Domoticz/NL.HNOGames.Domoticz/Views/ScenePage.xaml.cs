@@ -41,7 +41,7 @@ namespace NL.HNOGames.Domoticz.Views
             if (!String.IsNullOrEmpty(item.Timers) && String.Compare(item.Timers, "true", StringComparison.OrdinalIgnoreCase) == 0)
                 actions.Add(AppResources.button_status_timer);
 
-            Models.Device tempDevice = new Models.Device();
+            Models.Scene tempDevice = new Models.Scene();
             tempDevice.idx = item.idx;
             tempDevice.Type = item.Type;
             tempDevice.Name = item.Name;
@@ -110,40 +110,6 @@ namespace NL.HNOGames.Domoticz.Views
             }
         }
 
-
-
-        #region Selector
-
-        /// <summary>
-        /// Set Selector value to Domoticz
-        /// </summary>
-        private async Task pSelector_Unfocused(object sender, FocusEventArgs e)
-        {
-            if (viewModel.OldData)
-                return;
-            Picker oPicker = (Picker)sender;
-            await NewSelectorValueAsync((Models.Device)oPicker.BindingContext, oPicker);
-        }
-
-        /// <summary>
-        /// Set Selector value to Domoticz
-        /// </summary>
-        public async Task NewSelectorValueAsync(Models.Device pair, Picker oPicker)
-        {
-            int newValue = 0;
-            if (oPicker.SelectedIndex > 0)
-                newValue = oPicker.SelectedIndex * 10;
-
-            if (pair.LevelInt != newValue)
-            {
-                await App.ApiService.SetDimmer(pair.idx, newValue);
-                viewModel.RefreshFavoriteCommand.Execute(null);
-            }
-        }
-
-        #endregion Selector
-
-
         #region On Off Switches
 
         /// <summary>
@@ -154,7 +120,7 @@ namespace NL.HNOGames.Domoticz.Views
             if (viewModel.OldData)
                 return;
             Button oButton = (Button)sender;
-            Models.Device oDevice = (Models.Device)oButton.BindingContext;
+            Models.Scene oDevice = (Models.Scene)oButton.BindingContext;
             UserDialogs.Instance.Toast(AppResources.switch_on + ": " + oDevice.Name);
 
             await App.ApiService.SetSwitch(oDevice.idx, true, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false);
@@ -167,19 +133,20 @@ namespace NL.HNOGames.Domoticz.Views
         private async Task btnOffButton_Clicked(object sender, EventArgs e)
         {
             Button oButton = (Button)sender;
-            Models.Device oDevice = (Models.Device)oButton.BindingContext;
+            Models.Scene oDevice = (Models.Scene)oButton.BindingContext;
             UserDialogs.Instance.Toast(AppResources.switch_off + ": " + oDevice.Name);
 
             await App.ApiService.SetSwitch(oDevice.idx, false, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false);
             viewModel.RefreshFavoriteCommand.Execute(null);
         }
+
         /// <summary>
         /// Toggle switch
         /// </summary>
         private async Task btnSwitch_Toggled(object sender, ToggledEventArgs e)
         {
             Switch oSwitch = (Switch)sender;
-            Models.Device oDevice = (Models.Device)oSwitch.BindingContext;
+            Models.Scene oDevice = (Models.Scene)oSwitch.BindingContext;
 
             if (oSwitch.IsToggled != oDevice.StatusBoolean)
             {
@@ -192,93 +159,47 @@ namespace NL.HNOGames.Domoticz.Views
                 viewModel.RefreshFavoriteCommand.Execute(null);
             }
         }
+
         #endregion On Off Switches
 
 
-        #region Set (Temperature)
+        #region Selector
 
         /// <summary>
-        /// set a specific value in a switch (temperature for example)
+        /// Set Selector value to Domoticz
         /// </summary>
-        private async Task txtSetValue_Completed(object sender, EventArgs e)
+        private void pSelector_Unfocused(object sender, FocusEventArgs e)
         {
-            if (viewModel.OldData)
-                return;
-            Entry oEntry = (Entry)sender;
-            Models.Device oDevice = (Models.Device)oEntry.BindingContext;
-            if (Helpers.UsefulBits.IsNumeric(oEntry.Text))
-            {
-                float newValue = float.Parse(oEntry.Text);
-                await App.ApiService.SetPoint(oDevice.idx, newValue, float.Parse(oDevice.SetPoint));
-                viewModel.RefreshFavoriteCommand.Execute(null);
-            }
         }
 
-        #endregion Set (Temperature)
+        /// <summary>
+        /// Set Selector value to Domoticz
+        /// </summary>
+        public void NewSelectorValueAsync(Models.Scene pair, Picker oPicker)
+        {
+        }
 
+        #endregion Selector
 
         #region Blinds
 
         /// <summary>
         /// Turn blinds ON/DOWN
         /// </summary>
-        private async Task btnBlindOnButton_Clicked(object sender, EventArgs e)
-        {
-            if (viewModel.OldData)
-                return;
-            Button oButton = (Button)sender;
-            Models.Device oDevice = (Models.Device)oButton.BindingContext;
-
-            int action = ConstantValues.Device.Switch.Action.ON;
-            if (oDevice.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDINVERTED)
-            {
-                action = ConstantValues.Device.Switch.Action.OFF;
-                UserDialogs.Instance.Toast(AppResources.blind_up + ": " + oDevice.Name);
-            }
-            else
-                UserDialogs.Instance.Toast(AppResources.blind_down + ": " + oDevice.Name);
-
-            await App.ApiService.SetBlind(oDevice.idx, action);
-            viewModel.RefreshFavoriteCommand.Execute(null);
-        }
+        private void btnBlindOnButton_Clicked(object sender, EventArgs e)
+        { }
 
         /// <summary>
         /// Turn blinds OFF/UP
         /// </summary>
-        private async Task btnBlindOffButton_Clicked(object sender, EventArgs e)
-        {
-            if (viewModel.OldData)
-                return;
-            Button oButton = (Button)sender;
-            Models.Device oDevice = (Models.Device)oButton.BindingContext;
-
-            int action = ConstantValues.Device.Switch.Action.OFF;
-            if (oDevice.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDINVERTED)
-            {
-                action = ConstantValues.Device.Switch.Action.ON;
-                UserDialogs.Instance.Toast(AppResources.blind_down + ": " + oDevice.Name);
-            }
-            else
-                UserDialogs.Instance.Toast(AppResources.blind_up + ": " + oDevice.Name);
-
-            await App.ApiService.SetBlind(oDevice.idx, action);
-            viewModel.RefreshFavoriteCommand.Execute(null);
-        }
+        private void btnBlindOffButton_Clicked(object sender, EventArgs e)
+        {}
 
         /// <summary>
         /// Turn blinds Stop
         /// </summary>
-        private async Task btnBlindStopButton_Clicked(object sender, EventArgs e)
-        {
-            if (viewModel.OldData)
-                return;
-            Button oButton = (Button)sender;
-            Models.Device oDevice = (Models.Device)oButton.BindingContext;
-            UserDialogs.Instance.Toast(AppResources.blind_stop + ": " + oDevice.Name);
-
-            await App.ApiService.SetBlind(oDevice.idx, ConstantValues.Device.Blind.Action.STOP);
-            viewModel.RefreshFavoriteCommand.Execute(null);
-        }
+        private void btnBlindStopButton_Clicked(object sender, EventArgs e)
+        { }
 
         #endregion Blinds
 
@@ -288,14 +209,8 @@ namespace NL.HNOGames.Domoticz.Views
         /// <summary>
         /// Slider value of the dimmer
         /// </summary>
-        private async Task btnLevelButton_Clicked(object sender, EventArgs e)
-        {
-            Button oButton = (Button)sender;
-            Models.Device oDevice = (Models.Device)oButton.BindingContext;
-
-            SliderPopup oSlider = new SliderPopup(oDevice, viewModel.RefreshFavoriteCommand);
-            await PopupNavigation.PushAsync(oSlider);
-        }
+        private void btnLevelButton_Clicked(object sender, EventArgs e)
+        {}
 
         #endregion Dimmer
 

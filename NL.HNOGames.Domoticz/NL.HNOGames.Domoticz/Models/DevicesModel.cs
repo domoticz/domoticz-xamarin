@@ -74,7 +74,7 @@ namespace NL.HNOGames.Domoticz.Models
             get
             {
                 double opacity = 1.0;
-                if(!StatusBoolean)
+                if (!StatusBoolean)
                     opacity = 0.5;
                 return opacity;
             }
@@ -166,34 +166,38 @@ namespace NL.HNOGames.Domoticz.Models
         {
             get
             {
-                String dataText = Data;
+                String dataText = String.Empty;
                 if (!String.IsNullOrEmpty(this.Usage))
                     dataText = AppResources.usage + ": " + this.Usage;
-
                 if (!String.IsNullOrEmpty(this.CounterToday))
                     dataText += " " + AppResources.today + ": " + this.CounterToday;
-
                 if (!String.IsNullOrEmpty(this.Counter) &&
                     String.Compare(this.Counter, this.Data, StringComparison.OrdinalIgnoreCase) != 0)
                     dataText += " " + AppResources.total + ": " + this.Counter;
-
                 if (!String.IsNullOrEmpty(this.Type) && String.Compare(this.Type, ConstantValues.Device.Type.Name.WIND, StringComparison.OrdinalIgnoreCase) == 0)
                     dataText = AppResources.direction + ": " + this.Direction + " " + this.DirectionStr;
 
                 if (!String.IsNullOrEmpty(this.ForecastStr))
                     dataText = this.ForecastStr;
                 if (!String.IsNullOrEmpty(this.Speed))
-                    dataText += ", " + AppResources.speed + ": " + this.Speed + " " + App.getServerConfig().WindSign;
+                    dataText += !String.IsNullOrEmpty(dataText) ? ", " + AppResources.speed + ": " + this.Speed + " " + App.getServerConfig().WindSign : AppResources.speed + ": " + this.Speed + " " + App.getServerConfig().WindSign;
                 if (!String.IsNullOrEmpty(this.DewPoint))
-                    dataText += ", " + AppResources.dewPoint + ": " + this.DewPoint + " " + App.getServerConfig().TempSign;
+                    dataText += !String.IsNullOrEmpty(dataText) ? ", " + AppResources.dewPoint + ": " + this.DewPoint + " " + App.getServerConfig().TempSign : AppResources.dewPoint + ": " + this.DewPoint + " " + App.getServerConfig().TempSign;
                 if (this.Temp.HasValue)
-                    dataText += ", " + AppResources.temp + ": " + this.Temp + " " + App.getServerConfig().TempSign;
+                    dataText += !String.IsNullOrEmpty(dataText) ? ", " + AppResources.temp + ": " + this.Temp + " " + App.getServerConfig().TempSign : AppResources.temp + ": " + this.Temp + " " + App.getServerConfig().TempSign;
                 if (this.Barometer.HasValue)
-                    dataText += ", " + AppResources.pressure + ": " + this.Barometer;
+                    dataText += !String.IsNullOrEmpty(dataText) ? ", " + AppResources.pressure + ": " + this.Barometer : AppResources.pressure + ": " + this.Barometer;
                 if (this.Chill.HasValue)
-                    dataText += ", " + AppResources.chill + ": " + this.Chill + " " + App.getServerConfig().TempSign;
+                    dataText += !String.IsNullOrEmpty(dataText) ? ", " + AppResources.chill + ": " + this.Chill + " " + App.getServerConfig().TempSign : AppResources.chill + ": " + this.Chill + " " + App.getServerConfig().TempSign;
                 if (!String.IsNullOrEmpty(this.HumidityStatus))
-                    dataText += ", " + AppResources.humidity + ": " + this.HumidityStatus;
+                    dataText += !String.IsNullOrEmpty(dataText) ? ", " + AppResources.humidity + ": " + this.HumidityStatus : AppResources.humidity + ": " + this.HumidityStatus;
+                if (!String.IsNullOrEmpty(this.Rain))
+                    dataText = AppResources.rain + ": " + this.Rain;
+                if (!String.IsNullOrEmpty(this.RainRate))
+                    dataText += ", " + AppResources.rainrate + ": " + this.Rain;
+
+                if (String.IsNullOrEmpty(dataText))
+                    dataText = Data;
 
                 return String.Format("{0}: {1}", AppResources.status, dataText);
             }

@@ -33,7 +33,6 @@
                     </Grid>
                 </custcontrol:CustomViewCell>
             </DataTemplate>
-            
             <DataTemplate x:Key="SelectorTemplate">
                 <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
                     <Grid Style="{StaticResource DashboardDeviceCardType}">
@@ -136,7 +135,7 @@
                                     <Label Text="{Binding LastUpdateDescription}" LineBreakMode="TailTruncation" Style="{StaticResource DetailSmallType}" IsVisible="{Binding ShowExtraData}" HorizontalOptions="Start" VerticalOptions="End"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="0,-5,5,0">
-                                     <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
                                         <Button x:Name="btnOffButton" Text="{resources:Translate button_state_off}" HorizontalOptions="End" VerticalOptions="End" Clicked="btnOffButton_Clicked">
                                             <Button.WidthRequest>
                                                 <OnPlatform x:TypeArguments="x:Double" iOS="50" Android="60" WinPhone="60" />
@@ -152,7 +151,6 @@
                     </Grid>
                 </custcontrol:CustomViewCell>
             </DataTemplate>
-
             <DataTemplate x:Key="OnOffButtonTemplate">
                 <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
                     <Grid Style="{StaticResource DashboardDeviceCardType}">
@@ -195,7 +193,6 @@
                     </Grid>
                 </custcontrol:CustomViewCell>
             </DataTemplate>
-
             <DataTemplate x:Key="OnOffSwitchTemplate">
                 <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
                     <Grid Style="{StaticResource DashboardDeviceCardType}">
@@ -223,7 +220,6 @@
                     </Grid>
                 </custcontrol:CustomViewCell>
             </DataTemplate>
-
             <DataTemplate x:Key="BlindTemplate">
                 <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
                     <Grid Style="{StaticResource DashboardDeviceCardType}">
@@ -274,7 +270,6 @@
                     </Grid>
                 </custcontrol:CustomViewCell>
             </DataTemplate>
-
             <DataTemplate x:Key="DimmerTemplate">
                 <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
                     <Grid Style="{StaticResource DashboardDeviceCardType}">
@@ -327,7 +322,6 @@
                     </Grid>
                 </custcontrol:CustomViewCell>
             </DataTemplate>
-
             <DataTemplate x:Key="SwitchDimmerTemplate">
                 <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
                     <Grid Style="{StaticResource DashboardDeviceCardType}">
@@ -345,7 +339,7 @@
                                     <custcontrol:MultiLineLabel Text="{Binding DataDescription}" Lines="2" Style="{StaticResource DetailType}" LineBreakMode="WordWrap" />
                                     <Label Text="{Binding LastUpdateDescription}" LineBreakMode="TailTruncation" Style="{StaticResource DetailSmallType}" IsVisible="{Binding ShowExtraData}" HorizontalOptions="Start" VerticalOptions="End"/>
                                 </StackLayout>
-                                
+
                                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="0,-5,5,0">
                                     <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
                                         <Switch x:Name="btnSwitch" HorizontalOptions="End" VerticalOptions="End" IsToggled="{Binding StatusBoolean}" Toggled="btnSwitch_Toggled" />
@@ -365,7 +359,6 @@
                     </Grid>
                 </custcontrol:CustomViewCell>
             </DataTemplate>
-
             <DataTemplate x:Key="SecurityPanelTemplate">
                 <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
                     <Grid Style="{StaticResource DashboardDeviceCardType}">

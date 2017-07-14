@@ -25,7 +25,6 @@ namespace NL.HNOGames.Domoticz.ViewSelector
         public DataTemplate SwitchDimmerRGBButtonTemplate { get; set; }
         public DataTemplate SecurityPanelTemplate { get; set; }
 
-        
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         {
             DataTemplate oReturnvalue = DefaultTemplate;

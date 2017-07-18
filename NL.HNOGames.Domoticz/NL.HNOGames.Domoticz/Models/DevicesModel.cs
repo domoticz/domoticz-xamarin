@@ -195,7 +195,7 @@ namespace NL.HNOGames.Domoticz.Models
                 if (!String.IsNullOrEmpty(this.Rain))
                     dataText = AppResources.rain + ": " + this.Rain;
                 if (!String.IsNullOrEmpty(this.RainRate))
-                    dataText += ", " + AppResources.rainrate + ": " + this.Rain;
+                    dataText += ", " + AppResources.rainrate + ": " + this.RainRate;
                 if (String.IsNullOrEmpty(dataText))
                     dataText = Data;
 

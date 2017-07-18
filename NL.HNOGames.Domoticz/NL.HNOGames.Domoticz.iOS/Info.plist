@@ -9,7 +9,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>nl.hnogames.domoticz</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.0.6</string>
+	<string>0.0.7</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MinimumOSVersion</key>
@@ -56,6 +56,6 @@
 		<true/>
 	</dict>
 	<key>CFBundleVersion</key>
-	<string>6</string>
+	<string>7</string>
 </dict>
 </plist>

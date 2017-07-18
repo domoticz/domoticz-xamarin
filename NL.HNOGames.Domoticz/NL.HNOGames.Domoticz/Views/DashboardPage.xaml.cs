@@ -142,11 +142,11 @@ namespace NL.HNOGames.Domoticz.Views
 
             if (viewModel.screenType != DashboardViewModel.ScreenType.Dashboard || App.AppSettings.ShowExtraData)
             {
-                listView.HeightRequest = 130;
+                listView.RowHeight = 130;
             }
             else
             {
-                listView.HeightRequest = 80;
+                listView.RowHeight = 80;
             }
         }
 

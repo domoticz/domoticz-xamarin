@@ -80,8 +80,7 @@ namespace NL.HNOGames.Domoticz.Views
 
             if (viewModel.Devices == null || viewModel.OldData)
                 viewModel.RefreshFavoriteCommand.Execute(null);
-
-            listView.HeightRequest = 130;
+            listView.RowHeight = 130;
         }
 
         /// <summary>

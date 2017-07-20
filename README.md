@@ -26,12 +26,13 @@ You can download Domoticz from the Google Play Store. There is a premium and fre
 [![google-play-badge](https://cloud.githubusercontent.com/assets/14561640/22199304/96017fa6-e15a-11e6-99bd-6fd3412eac8e.png)](https://play.google.com/store/apps/details?id=nl.hnogames.domoticz.premium)
 
 
-# Screenshots
+# iOS Screenshots
 -----
-Some screenshots
-
-![2](https://cloud.githubusercontent.com/assets/14561640/11994848/3e03224c-aa46-11e5-85c2-6833b6891baf.png)
-![1](https://cloud.githubusercontent.com/assets/14561640/11994849/3e27abd0-aa46-11e5-9d28-47185ffb53f6.png)
+Some iOS screenshots
+![settings](https://cloud.githubusercontent.com/assets/14561640/24851299/6d2d0554-1dd3-11e7-97a1-fda525389ab6.png)  
+![dashboard](https://cloud.githubusercontent.com/assets/14561640/25741261/374a7a96-318a-11e7-811d-e4318b94349c.png)  
+![plan](https://cloud.githubusercontent.com/assets/14561640/25741258/3733119e-318a-11e7-8acb-578eb27793d5.png)  
+![graph](https://user-images.githubusercontent.com/14561640/27278154-d2422cd2-54e0-11e7-861f-5876f32f1ecd.png)
 
 
 

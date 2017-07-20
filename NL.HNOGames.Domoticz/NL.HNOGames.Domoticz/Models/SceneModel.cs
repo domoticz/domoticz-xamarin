@@ -92,12 +92,13 @@ namespace NL.HNOGames.Domoticz.Models
                 return Favorite == 1;
             }
         }
-
         public String LastUpdateDescription
         {
             get
             {
-                return String.Format("{0}: {1}", AppResources.last_update, DateTime.ParseExact(LastUpdate, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture).TimeOfDay.Humanize(2));
+                DateTime d = DateTime.ParseExact(LastUpdate, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
+                //System.Diagnostics.Debug.WriteLine("LastUpdateDescription" + (DateTime.Now - d).Humanize(2) + " | " + d.ToString() + " | " + DateTime.Now.ToString());
+                return String.Format("{0}: {1} ago", AppResources.last_update, (DateTime.Now - d).Humanize(2));
             }
         }
 

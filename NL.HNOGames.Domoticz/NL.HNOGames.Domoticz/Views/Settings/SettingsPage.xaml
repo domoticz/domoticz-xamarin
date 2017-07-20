@@ -122,7 +122,7 @@
                         </Button.HeightRequest>
                     </Button>
                 </StackLayout>
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,10,0,0">
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,10,0,0" IsVisible="False">
                     <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical" >
                         <Label Text="{resources:Translate export_settings}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" LineBreakMode="NoWrap" Style="{StaticResource SettingsDetailType}" />
                     </StackLayout>
@@ -135,7 +135,7 @@
                         </Button.HeightRequest>
                     </Button>
                 </StackLayout>
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,10,0,0">
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,10,0,0" IsVisible="False">
                     <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical" >
                         <Label Text="{resources:Translate import_settings}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" LineBreakMode="NoWrap" Style="{StaticResource SettingsDetailType}" />
                     </StackLayout>

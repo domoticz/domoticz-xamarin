@@ -14,6 +14,7 @@ using NL.HNOGames.Domoticz.Data;
 using Rg.Plugins.Popup.Services;
 using NL.HNOGames.Domoticz.Views.Dialog;
 using System.Globalization;
+using System.Diagnostics;
 
 namespace NL.HNOGames.Domoticz.Views
 {
@@ -142,11 +143,11 @@ namespace NL.HNOGames.Domoticz.Views
 
             if (viewModel.screenType != DashboardViewModel.ScreenType.Dashboard || App.AppSettings.ShowExtraData)
             {
-                listView.HeightRequest = 130;
+                listView.RowHeight = 130;
             }
             else
             {
-                listView.HeightRequest = 80;
+                listView.RowHeight = 80;
             }
         }
 
@@ -179,6 +180,7 @@ namespace NL.HNOGames.Domoticz.Views
                 UserDialogs.Instance.Toast(pair.Name + " " + AppResources.error_favorite);
 
             viewModel.RefreshFavoriteCommand.Execute(null);
+            sbSearch.Text = string.Empty;
         }
 
         /// <summary>
@@ -186,24 +188,26 @@ namespace NL.HNOGames.Domoticz.Views
         /// </summary>
         private void sbSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            try
+            if (e.NewTextValue == string.Empty)
             {
-                String filterText = e.NewTextValue.ToLower().Trim();
-                if (filterText == string.Empty)
+                Debug.WriteLine("Cancel Pressed");
+                listView.ItemsSource = this.viewModel.Devices;
+                sbSearch.Unfocus();
+            }
+            else
+            {
+                try
                 {
-                    listView.ItemsSource = null;
+                    String filterText = e.NewTextValue.ToLower().Trim();
+                    if (filterText == string.Empty)
+                        listView.ItemsSource = this.viewModel.Devices;
+                    else
+                        listView.ItemsSource = this.viewModel.Devices.Where(i => i.Name.ToLower().Trim().Contains(filterText));
+                }
+                catch (Exception)
+                {
                     listView.ItemsSource = this.viewModel.Devices;
                 }
-                else
-                {
-                    listView.ItemsSource = null;
-                    listView.ItemsSource = this.viewModel.Devices.Where(i => i.Name.ToLower().Trim().Contains(filterText));
-                }
-            }
-            catch (Exception)
-            {
-                listView.ItemsSource = null;
-                listView.ItemsSource = this.viewModel.Devices;
             }
         }
 
@@ -242,12 +246,14 @@ namespace NL.HNOGames.Domoticz.Views
                         if (!result)
                             UserDialogs.Instance.Toast(AppResources.security_wrong_code);
                         viewModel.RefreshFavoriteCommand.Execute(null);
+                        sbSearch.Text = string.Empty;
                     }
                 }
                 else
                 {
                     await App.ApiService.SetDimmer(pair.idx, newValue);
                     viewModel.RefreshFavoriteCommand.Execute(null);
+                    sbSearch.Text = string.Empty;
                 }
             }
         }
@@ -278,6 +284,7 @@ namespace NL.HNOGames.Domoticz.Views
                         UserDialogs.Instance.Toast(AppResources.security_wrong_code);
 
                     viewModel.RefreshFavoriteCommand.Execute(null);
+                    sbSearch.Text = string.Empty;
                 }
             }
             else
@@ -285,6 +292,7 @@ namespace NL.HNOGames.Domoticz.Views
                 UserDialogs.Instance.Toast(AppResources.switch_on + ": " + oDevice.Name);
                 var result = await App.ApiService.SetSwitch(oDevice.idx, true, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false);
                 viewModel.RefreshFavoriteCommand.Execute(null);
+                sbSearch.Text = string.Empty;
             }
         }
 
@@ -307,6 +315,7 @@ namespace NL.HNOGames.Domoticz.Views
                         UserDialogs.Instance.Toast(AppResources.security_wrong_code);
 
                     viewModel.RefreshFavoriteCommand.Execute(null);
+                    sbSearch.Text = string.Empty;
                 }
             }
             else
@@ -314,6 +323,7 @@ namespace NL.HNOGames.Domoticz.Views
                 UserDialogs.Instance.Toast(AppResources.switch_off + ": " + oDevice.Name);
                 var result = await App.ApiService.SetSwitch(oDevice.idx, false, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false);
                 viewModel.RefreshFavoriteCommand.Execute(null);
+                sbSearch.Text = string.Empty;
             }
         }
 
@@ -344,6 +354,7 @@ namespace NL.HNOGames.Domoticz.Views
                             UserDialogs.Instance.Toast(AppResources.security_wrong_code);
 
                         viewModel.RefreshFavoriteCommand.Execute(null);
+                        sbSearch.Text = string.Empty;
                     }
                 }
                 else
@@ -355,6 +366,7 @@ namespace NL.HNOGames.Domoticz.Views
 
                     var result = await App.ApiService.SetSwitch(oDevice.idx, oSwitch.IsToggled, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false);
                     viewModel.RefreshFavoriteCommand.Execute(null);
+                    sbSearch.Text = string.Empty;
                 }
             }
         }
@@ -387,12 +399,14 @@ namespace NL.HNOGames.Domoticz.Views
                             UserDialogs.Instance.Toast(AppResources.security_wrong_code);
 
                         viewModel.RefreshFavoriteCommand.Execute(null);
+                        sbSearch.Text = string.Empty;
                     }
                 }
                 else
                 {
                     var result = await App.ApiService.SetPoint(oDevice.idx, newValue, Double.Parse(oDevice.SetPoint, CultureInfo.InvariantCulture));
                     viewModel.RefreshFavoriteCommand.Execute(null);
+                    sbSearch.Text = string.Empty;
                 }
             }
         }
@@ -432,12 +446,14 @@ namespace NL.HNOGames.Domoticz.Views
                         UserDialogs.Instance.Toast(AppResources.security_wrong_code);
 
                     viewModel.RefreshFavoriteCommand.Execute(null);
+                    sbSearch.Text = string.Empty;
                 }
             }
             else
             {
                 var result = await App.ApiService.SetBlind(oDevice.idx, action);
                 viewModel.RefreshFavoriteCommand.Execute(null);
+                sbSearch.Text = string.Empty;
             }
         }
 
@@ -471,12 +487,14 @@ namespace NL.HNOGames.Domoticz.Views
                         UserDialogs.Instance.Toast(AppResources.security_wrong_code);
 
                     viewModel.RefreshFavoriteCommand.Execute(null);
+                    sbSearch.Text = string.Empty;
                 }
             }
             else
             {
                 var result = await App.ApiService.SetBlind(oDevice.idx, action);
                 viewModel.RefreshFavoriteCommand.Execute(null);
+                sbSearch.Text = string.Empty;
             }
         }
 
@@ -502,12 +520,14 @@ namespace NL.HNOGames.Domoticz.Views
                         UserDialogs.Instance.Toast(AppResources.security_wrong_code);
 
                     viewModel.RefreshFavoriteCommand.Execute(null);
+                    sbSearch.Text = string.Empty;
                 }
             }
             else
             {
                 var result = await App.ApiService.SetBlind(oDevice.idx, ConstantValues.Device.Blind.Action.STOP);
                 viewModel.RefreshFavoriteCommand.Execute(null);
+                sbSearch.Text = string.Empty;
             }
         }
 
@@ -526,9 +546,10 @@ namespace NL.HNOGames.Domoticz.Views
 
             SliderPopup oSlider = new SliderPopup(oDevice, viewModel.RefreshFavoriteCommand);
             await PopupNavigation.PushAsync(oSlider);
+            viewModel.RefreshFavoriteCommand.Execute(null);
+            sbSearch.Text = string.Empty;
         }
 
         #endregion Dimmer
-
     }
 }

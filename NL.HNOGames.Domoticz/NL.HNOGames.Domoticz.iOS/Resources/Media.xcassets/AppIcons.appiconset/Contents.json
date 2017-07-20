@@ -77,9 +77,45 @@
       "size": "83.5x83.5",
       "idiom": "ipad",
       "filename": "ipad-pro-app-83.5pt@2x.png"
+    },
+    {
+      "scale": "1x",
+      "size": "50x50",
+      "idiom": "ipad"
+    },
+    {
+      "scale": "2x",
+      "size": "50x50",
+      "idiom": "ipad"
+    },
+    {
+      "scale": "1x",
+      "size": "72x72",
+      "idiom": "ipad"
+    },
+    {
+      "scale": "2x",
+      "size": "72x72",
+      "idiom": "ipad"
+    },
+    {
+      "scale": "1x",
+      "size": "29x29",
+      "idiom": "iphone"
+    },
+    {
+      "scale": "1x",
+      "size": "57x57",
+      "idiom": "iphone"
+    },
+    {
+      "scale": "2x",
+      "size": "57x57",
+      "idiom": "iphone"
     }
   ],
   "properties": {
+    "pre-rendered": true,
     "pre-rendered": false
   },
   "info": {

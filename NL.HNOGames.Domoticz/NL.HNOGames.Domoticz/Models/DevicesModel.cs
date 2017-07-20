@@ -138,7 +138,8 @@ namespace NL.HNOGames.Domoticz.Models
         {
             get
             {
-                return String.Format("{0}: {1}", AppResources.last_update, DateTime.ParseExact(LastUpdate, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture).TimeOfDay.Humanize(2));
+                DateTime d = DateTime.ParseExact(LastUpdate, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
+                return String.Format("{0}: {1}", AppResources.last_update, (DateTime.Now - d).Humanize(2));
             }
         }
 
@@ -176,7 +177,6 @@ namespace NL.HNOGames.Domoticz.Models
                     dataText += " " + AppResources.total + ": " + this.Counter;
                 if (!String.IsNullOrEmpty(this.Type) && String.Compare(this.Type, ConstantValues.Device.Type.Name.WIND, StringComparison.OrdinalIgnoreCase) == 0)
                     dataText = AppResources.direction + ": " + this.Direction + " " + this.DirectionStr;
-
                 if (!String.IsNullOrEmpty(this.ForecastStr))
                     dataText = this.ForecastStr;
                 if (!String.IsNullOrEmpty(this.Speed))
@@ -191,14 +191,12 @@ namespace NL.HNOGames.Domoticz.Models
                     dataText += !String.IsNullOrEmpty(dataText) ? ", " + AppResources.chill + ": " + this.Chill + " " + App.getServerConfig().TempSign : AppResources.chill + ": " + this.Chill + " " + App.getServerConfig().TempSign;
                 if (!String.IsNullOrEmpty(this.HumidityStatus))
                     dataText += !String.IsNullOrEmpty(dataText) ? ", " + AppResources.humidity + ": " + this.HumidityStatus : AppResources.humidity + ": " + this.HumidityStatus;
-
                 if (!String.IsNullOrEmpty(this.Rain))
-                    dataText = AppResources.rain + ": " + this.Rain;
+                    dataText = AppResources.rain + ": " + this.Rain + " mm";
                 if (!String.IsNullOrEmpty(this.RainRate))
-                    dataText += ", " + AppResources.rainrate + ": " + this.Rain;
+                    dataText += ", " + AppResources.rainrate + ": " + this.RainRate + " mm/h";
                 if (String.IsNullOrEmpty(dataText))
                     dataText = Data;
-
                 return String.Format("{0}: {1}", AppResources.status, dataText);
             }
         }

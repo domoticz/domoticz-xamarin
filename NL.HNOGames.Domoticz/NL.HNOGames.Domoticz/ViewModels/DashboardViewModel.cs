@@ -96,9 +96,8 @@ namespace NL.HNOGames.Domoticz.ViewModels
 
                     foreach (Models.Device d in items.result)
                     {
-                        if (!App.AppSettings.ShowExtraData)
-                            d.ShowExtraData = false;
-                        d.IsDashboard = true;
+                        d.ShowExtraData = screenType == ScreenType.Dashboard ? App.AppSettings.ShowExtraData : true;
+                        d.IsDashboard = screenType == ScreenType.Dashboard ? true : false;
                     }
 
                     Devices.ReplaceRange(items.result);

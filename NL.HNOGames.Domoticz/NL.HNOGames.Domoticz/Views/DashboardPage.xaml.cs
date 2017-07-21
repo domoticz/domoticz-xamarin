@@ -48,6 +48,7 @@ namespace NL.HNOGames.Domoticz.Views
         {
             List<String> actions = AddActionMenuItems(item);
             var result = await this.DisplayActionSheet(item.Name, AppResources.cancel, null, actions.ToArray());
+
             if (result == AppResources.favorite)
                 await setFavorite(item);
             else if (result == AppResources.button_status_notifications)
@@ -99,7 +100,7 @@ namespace NL.HNOGames.Domoticz.Views
                     if (!await App.ApiService.SetSecurityPanel(status, md5Pass))
                         UserDialogs.Instance.Toast(AppResources.security_generic_error);
                     else
-                        viewModel.RefreshFavoriteCommand.Execute(null);
+                        RefreshListView();
                 }
             }
         }
@@ -116,11 +117,14 @@ namespace NL.HNOGames.Domoticz.Views
                 actions.Add(AppResources.security_arm_home);
                 actions.Add(AppResources.security_disarm);
             }
+
             actions.Add(AppResources.favorite);
             if (!String.IsNullOrEmpty(item.Notifications) && String.Compare(item.Notifications, "true", StringComparison.OrdinalIgnoreCase) == 0)
                 actions.Add(AppResources.button_status_notifications);
+
             if (!String.IsNullOrEmpty(item.Timers) && String.Compare(item.Timers, "true", StringComparison.OrdinalIgnoreCase) == 0)
                 actions.Add(AppResources.button_status_timer);
+
             if (viewModel.screenType == DashboardViewModel.ScreenType.Switches)
                 actions.Add(AppResources.button_status_log);
 
@@ -128,6 +132,7 @@ namespace NL.HNOGames.Domoticz.Views
                 viewModel.screenType == DashboardViewModel.ScreenType.Weather ||
                 viewModel.screenType == DashboardViewModel.ScreenType.Utilities)
                 actions.Add(AppResources.wizard_graph);
+
             return actions;
         }
 
@@ -142,13 +147,9 @@ namespace NL.HNOGames.Domoticz.Views
                 viewModel.RefreshFavoriteCommand.Execute(null);
 
             if (viewModel.screenType != DashboardViewModel.ScreenType.Dashboard || App.AppSettings.ShowExtraData)
-            {
                 listView.RowHeight = 130;
-            }
             else
-            {
                 listView.RowHeight = 80;
-            }
         }
 
         /// <summary>
@@ -178,7 +179,14 @@ namespace NL.HNOGames.Domoticz.Views
             var result = await App.ApiService.SetFavorite(pair.idx, pair.IsScene, newValue);
             if (!result)
                 UserDialogs.Instance.Toast(pair.Name + " " + AppResources.error_favorite);
+            RefreshListView();
+        }
 
+        /// <summary>
+        /// Refresh ListView
+        /// </summary>
+        private void RefreshListView()
+        {
             viewModel.RefreshFavoriteCommand.Execute(null);
             sbSearch.Text = string.Empty;
         }
@@ -210,7 +218,6 @@ namespace NL.HNOGames.Domoticz.Views
                 }
             }
         }
-
 
         #region Selector
 
@@ -245,15 +252,13 @@ namespace NL.HNOGames.Domoticz.Views
                         var result = await App.ApiService.SetDimmer(pair.idx, newValue, r.Text);
                         if (!result)
                             UserDialogs.Instance.Toast(AppResources.security_wrong_code);
-                        viewModel.RefreshFavoriteCommand.Execute(null);
-                        sbSearch.Text = string.Empty;
+                        RefreshListView();
                     }
                 }
                 else
                 {
                     await App.ApiService.SetDimmer(pair.idx, newValue);
-                    viewModel.RefreshFavoriteCommand.Execute(null);
-                    sbSearch.Text = string.Empty;
+                    RefreshListView();
                 }
             }
         }
@@ -283,16 +288,15 @@ namespace NL.HNOGames.Domoticz.Views
                     if (!result)
                         UserDialogs.Instance.Toast(AppResources.security_wrong_code);
 
-                    viewModel.RefreshFavoriteCommand.Execute(null);
-                    sbSearch.Text = string.Empty;
+                    RefreshListView();
                 }
             }
             else
             {
                 UserDialogs.Instance.Toast(AppResources.switch_on + ": " + oDevice.Name);
                 var result = await App.ApiService.SetSwitch(oDevice.idx, true, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false);
-                viewModel.RefreshFavoriteCommand.Execute(null);
-                sbSearch.Text = string.Empty;
+
+                RefreshListView();
             }
         }
 
@@ -313,17 +317,14 @@ namespace NL.HNOGames.Domoticz.Views
                     var result = await App.ApiService.SetSwitch(oDevice.idx, false, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false, r.Text);
                     if (!result)
                         UserDialogs.Instance.Toast(AppResources.security_wrong_code);
-
-                    viewModel.RefreshFavoriteCommand.Execute(null);
-                    sbSearch.Text = string.Empty;
+                    RefreshListView();
                 }
             }
             else
             {
                 UserDialogs.Instance.Toast(AppResources.switch_off + ": " + oDevice.Name);
                 var result = await App.ApiService.SetSwitch(oDevice.idx, false, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false);
-                viewModel.RefreshFavoriteCommand.Execute(null);
-                sbSearch.Text = string.Empty;
+                RefreshListView();
             }
         }
 
@@ -353,8 +354,7 @@ namespace NL.HNOGames.Domoticz.Views
                         if (!result)
                             UserDialogs.Instance.Toast(AppResources.security_wrong_code);
 
-                        viewModel.RefreshFavoriteCommand.Execute(null);
-                        sbSearch.Text = string.Empty;
+                        RefreshListView();
                     }
                 }
                 else
@@ -365,8 +365,7 @@ namespace NL.HNOGames.Domoticz.Views
                         UserDialogs.Instance.Toast(AppResources.switch_on + ": " + oDevice.Name);
 
                     var result = await App.ApiService.SetSwitch(oDevice.idx, oSwitch.IsToggled, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false);
-                    viewModel.RefreshFavoriteCommand.Execute(null);
-                    sbSearch.Text = string.Empty;
+                    RefreshListView();
                 }
             }
         }
@@ -397,16 +396,13 @@ namespace NL.HNOGames.Domoticz.Views
                         var result = await App.ApiService.SetPoint(oDevice.idx, newValue, Double.Parse(oDevice.SetPoint, CultureInfo.InvariantCulture), r.Text);
                         if (!result)
                             UserDialogs.Instance.Toast(AppResources.security_wrong_code);
-
-                        viewModel.RefreshFavoriteCommand.Execute(null);
-                        sbSearch.Text = string.Empty;
+                        RefreshListView();
                     }
                 }
                 else
                 {
                     var result = await App.ApiService.SetPoint(oDevice.idx, newValue, Double.Parse(oDevice.SetPoint, CultureInfo.InvariantCulture));
-                    viewModel.RefreshFavoriteCommand.Execute(null);
-                    sbSearch.Text = string.Empty;
+                    RefreshListView();
                 }
             }
         }
@@ -444,16 +440,13 @@ namespace NL.HNOGames.Domoticz.Views
                     var result = await App.ApiService.SetBlind(oDevice.idx, action, r.Text);
                     if (!result)
                         UserDialogs.Instance.Toast(AppResources.security_wrong_code);
-
-                    viewModel.RefreshFavoriteCommand.Execute(null);
-                    sbSearch.Text = string.Empty;
+                    RefreshListView();
                 }
             }
             else
             {
                 var result = await App.ApiService.SetBlind(oDevice.idx, action);
-                viewModel.RefreshFavoriteCommand.Execute(null);
-                sbSearch.Text = string.Empty;
+                RefreshListView();
             }
         }
 
@@ -485,16 +478,13 @@ namespace NL.HNOGames.Domoticz.Views
                     var result = await App.ApiService.SetBlind(oDevice.idx, action, r.Text);
                     if (!result)
                         UserDialogs.Instance.Toast(AppResources.security_wrong_code);
-
-                    viewModel.RefreshFavoriteCommand.Execute(null);
-                    sbSearch.Text = string.Empty;
+                    RefreshListView();
                 }
             }
             else
             {
                 var result = await App.ApiService.SetBlind(oDevice.idx, action);
-                viewModel.RefreshFavoriteCommand.Execute(null);
-                sbSearch.Text = string.Empty;
+                RefreshListView();
             }
         }
 
@@ -518,16 +508,13 @@ namespace NL.HNOGames.Domoticz.Views
                     var result = await App.ApiService.SetBlind(oDevice.idx, ConstantValues.Device.Blind.Action.STOP, r.Text);
                     if (!result)
                         UserDialogs.Instance.Toast(AppResources.security_wrong_code);
-
-                    viewModel.RefreshFavoriteCommand.Execute(null);
-                    sbSearch.Text = string.Empty;
+                    RefreshListView();
                 }
             }
             else
             {
                 var result = await App.ApiService.SetBlind(oDevice.idx, ConstantValues.Device.Blind.Action.STOP);
-                viewModel.RefreshFavoriteCommand.Execute(null);
-                sbSearch.Text = string.Empty;
+                RefreshListView();
             }
         }
 
@@ -546,8 +533,7 @@ namespace NL.HNOGames.Domoticz.Views
 
             SliderPopup oSlider = new SliderPopup(oDevice, viewModel.RefreshFavoriteCommand);
             await PopupNavigation.PushAsync(oSlider);
-            viewModel.RefreshFavoriteCommand.Execute(null);
-            sbSearch.Text = string.Empty;
+            RefreshListView();
         }
 
         #endregion Dimmer

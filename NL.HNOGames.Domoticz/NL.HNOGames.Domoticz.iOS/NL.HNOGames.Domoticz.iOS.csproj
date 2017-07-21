@@ -273,6 +273,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <BundleResource Include="GoogleService-Info.plist" />
     <None Include="Info.plist">
       <SubType>Designer</SubType>
     </None>

@@ -8,6 +8,7 @@ using MTiRate;
 using PushNotification.Plugin;
 using NL.HNOGames.Domoticz.Helpers;
 using UserNotifications;
+using Firebase.CloudMessaging;
 
 namespace NL.HNOGames.Domoticz.iOS
 {
@@ -26,7 +27,6 @@ namespace NL.HNOGames.Domoticz.iOS
             OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();
 
             CrossPushNotification.Initialize<CrossPushNotificationListener>();
-
             if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
             {
                 // Ask the user for permission to get notifications on iOS 10.0+
@@ -43,11 +43,43 @@ namespace NL.HNOGames.Domoticz.iOS
 
                 UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
             }
+            UIApplication.SharedApplication.RegisterForRemoteNotifications();
+
+
+            // Firebase component initialize
+            Firebase.Analytics.App.Configure();
+
+            Firebase.InstanceID.InstanceId.Notifications.ObserveTokenRefresh((sender, e) => {
+                var newToken = Firebase.InstanceID.InstanceId.SharedInstance.Token;
+                // if you want to send notification per user, use this token
+                System.Diagnostics.Debug.WriteLine(newToken);
+
+                connectFCM();
+            });
+
 
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
+        }
+
+        private void connectFCM()
+        {
+            Messaging.SharedInstance.Connect((error) =>
+            {
+                if (error == null)
+                {
+                    Messaging.SharedInstance.Subscribe("/topics/all");
+                }
+                System.Diagnostics.Debug.WriteLine(error != null ? "error occured" : "connect success");
+            });
+        }
+
+        public override void OnActivated(UIApplication uiApplication)
+        {
+            connectFCM();
+            base.OnActivated(uiApplication);
         }
     }
 

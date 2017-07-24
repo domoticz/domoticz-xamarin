@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>705545900899-k4k0899rs8kgjse0j7k3kc6sf1gjpa9o.apps.googleusercontent.com</string>
+	<string>705545900899-cla3sk6btvsd90f44blhba483908s70u.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.705545900899-k4k0899rs8kgjse0j7k3kc6sf1gjpa9o</string>
+	<string>com.googleusercontent.apps.705545900899-cla3sk6btvsd90f44blhba483908s70u</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDWcvVgM_bXhV8_0hUC-eS2pk6MCLSoZYs</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>domoticz</string>
+	<string>nl.hnogames.domoticz</string>
 	<key>PROJECT_ID</key>
 	<string>domoticz-1191</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:705545900899:ios:7afacd4208f796e0</string>
+	<string>1:705545900899:ios:b74c4323e1f98430</string>
 	<key>DATABASE_URL</key>
 	<string>https://domoticz-1191.firebaseio.com</string>
 </dict>

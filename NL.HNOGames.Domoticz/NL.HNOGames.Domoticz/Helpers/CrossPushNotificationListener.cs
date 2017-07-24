@@ -30,9 +30,7 @@ namespace NL.HNOGames.Domoticz.Helpers
             String deviceid = values["deviceid"].ToString();
 
             if (App.AppSettings.EnableNotifications)
-            {
                 CrossLocalNotifications.Current.Show(subject, message);
-            }
             UserDialogs.Instance.Toast(message);
         }
 
@@ -63,7 +61,6 @@ namespace NL.HNOGames.Domoticz.Helpers
 
         public bool ShouldShowNotification()
         {
-            //return true;
             return false;//we've implemented our own notifications onReceive method
         }
     }

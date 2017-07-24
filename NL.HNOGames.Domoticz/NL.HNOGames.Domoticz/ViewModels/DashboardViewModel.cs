@@ -112,7 +112,7 @@ namespace NL.HNOGames.Domoticz.ViewModels
                 if (!OverviewTabbedPage.EmptyDialogShown)
                 {
                     OverviewTabbedPage.EmptyDialogShown = true;
-                    UserDialogs.Instance.Alert("Unable to load items.");
+                    UserDialogs.Instance.Toast(AppResources.error_notConnected);
                 }
             }
 

@@ -43,20 +43,22 @@ namespace NL.HNOGames.Domoticz.iOS
 
                 UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
             }
+
             UIApplication.SharedApplication.RegisterForRemoteNotifications();
-
-
+            
             // Firebase component initialize
             Firebase.Analytics.App.Configure();
-
             Firebase.InstanceID.InstanceId.Notifications.ObserveTokenRefresh((sender, e) => {
                 var newToken = Firebase.InstanceID.InstanceId.SharedInstance.Token;
                 // if you want to send notification per user, use this token
                 System.Diagnostics.Debug.WriteLine(newToken);
-
                 connectFCM();
-            });
 
+                if (CrossPushNotification.Current is IPushNotificationHandler)
+                {
+                    ((IPushNotificationHandler)CrossPushNotification.Current).OnRegisteredSuccess(newToken);
+                }
+            });
 
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());

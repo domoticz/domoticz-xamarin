@@ -69,6 +69,13 @@ namespace NL.HNOGames.Domoticz
             ApiService = new DataService();
             ApiService.Server = App.AppSettings.ActiveServerSettings;
 
+            if (App.Current.Resources == null)
+                App.Current.Resources = new ResourceDictionary();
+            if (App.AppSettings.DarkTheme)
+                App.Current.Resources.MergedWith = (new Themes.Dark()).GetType();
+            else
+                App.Current.Resources.MergedWith = (new Themes.Base()).GetType();
+
             SetMainPage();
         }
 

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NL.HNOGames.Domoticz.Themes.Base">
+    <Color x:Key="Primary">#263238</Color>
+    <Color x:Key="PrimaryDark">#22272B</Color>
+    <Color x:Key="Accent">#22272B</Color>
+    <Color x:Key="CardBackgroundColor">#FFFFFF</Color>
+    <Color x:Key="LightBackgroundColor">#FAFAFA</Color>
+    <Color x:Key="DarkBackgroundColor">#C0C0C0</Color>
+    <Color x:Key="MediumGrayTextColor">#4d4d4d</Color>
+    <Color x:Key="LightTextColor">#999999</Color>
+    <Color x:Key="GreyTextColor">#757575</Color>
+    <Color x:Key="WhiteTextColor">#FFFFFF</Color>
+    <Color x:Key="HeaderTextColor">#009688</Color>
+    <Color x:Key="HeaderDarkTextColor">#000000</Color>
+    <Color x:Key="DarkButtonColor">#1A2C35</Color>
+    <Color x:Key="ButtonOutlineColor">#B0BEC5</Color>
+    <Style x:Key="DarkButton" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{DynamicResource DarkButtonColor}" />
+        <Setter Property="TextColor" Value="{DynamicResource WhiteTextColor}" />
+    </Style>
+    <Style x:Key="ContentPageType" TargetType="ContentPage">
+        <Setter Property="BackgroundColor" Value="{DynamicResource LightBackgroundColor}" />
+    </Style>
+    <Style x:Key="SearchBarType" TargetType="SearchBar">
+        <Setter Property="TextColor" Value="{DynamicResource HeaderDarkTextColor}" />
+        <Setter Property="PlaceholderColor" Value="{DynamicResource HeaderDarkTextColor}" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource LightBackgroundColor}" />
+    </Style>
+    <Style x:Key="EntryType" TargetType="Entry">
+        <Setter Property="TextColor" Value="{DynamicResource HeaderDarkTextColor}" />
+        <Setter Property="PlaceholderColor" Value="{DynamicResource HeaderDarkTextColor}" />
+    </Style>
+    <Style x:Key="PickerType" TargetType="Picker">
+        <Setter Property="TextColor" Value="{DynamicResource HeaderDarkTextColor}" />
+    </Style>
+    <Style x:Key="DashboardDeviceCardType" TargetType="Grid">
+        <Setter Property="BackgroundColor" Value="{DynamicResource CardBackgroundColor}" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="Padding" Value="10" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+    </Style>
+    <Style TargetType="NavigationPage">
+        <Setter Property="BarBackgroundColor" Value="{DynamicResource Primary}" />
+        <Setter Property="BarTextColor" Value="White" />
+    </Style>
+    <Style TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{DynamicResource CardBackgroundColor}" />
+        <Setter Property="TextColor" Value="{DynamicResource GreyTextColor}" />
+        <Setter Property="BorderRadius" Value="15" />
+        <Setter Property="BorderColor" Value="{DynamicResource ButtonOutlineColor}" />
+        <Setter Property="BorderWidth" Value="1" />
+        <Setter Property="MinimumWidthRequest" Value="50" />
+    </Style>
+    <Style TargetType="Entry">
+        <Setter Property="TextColor" Value="{DynamicResource GreyTextColor}" />
+    </Style>
+    <Style TargetType="Picker">
+        <Setter Property="TextColor" Value="{DynamicResource GreyTextColor}" />
+    </Style>
+    <Style x:Key="HeaderType" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource HeaderTextColor}" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="LineBreakMode" Value="NoWrap" />
+    </Style>
+    <Style x:Key="HeaderDarkType" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource HeaderTextColor}" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="LineBreakMode" Value="NoWrap" />
+    </Style>
+    <Style x:Key="DetailType" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource GreyTextColor}" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="LineBreakMode" Value="NoWrap" />
+    </Style>
+    <Style x:Key="DetailSmallType" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource GreyTextColor}" />
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="FontAttributes" Value="Italic" />
+    </Style>
+    <Style x:Key="SettingsDetailType" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource GreyTextColor}" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="LineBreakMode" Value="NoWrap" />
+    </Style>
+</ResourceDictionary>

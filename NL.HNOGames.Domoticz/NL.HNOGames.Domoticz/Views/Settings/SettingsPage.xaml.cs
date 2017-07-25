@@ -39,7 +39,6 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                 App.AppSettings.StartupScreen = txtStartScherm.SelectedIndex;
             };
 
-
             //Dashboard sort
             swNoSort.IsToggled = App.AppSettings.NoSort;
             lblSort.Text = App.AppSettings.NoSort ? AppResources.sort_dashboardLikeServer_on : AppResources.sort_dashboardLikeServer_off;
@@ -49,6 +48,17 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                 lblSort.Text = App.AppSettings.NoSort ? AppResources.sort_dashboardLikeServer_on : AppResources.sort_dashboardLikeServer_off;
             };
 
+            //DarkTheme
+            swDarkTheme.IsToggled = App.AppSettings.DarkTheme;
+            swDarkTheme.Toggled += (sender, args) =>
+            {
+                App.AppSettings.DarkTheme = swDarkTheme.IsToggled;
+                if (App.AppSettings.DarkTheme)
+                    App.Current.Resources.MergedWith = (new Themes.Dark()).GetType();
+                else
+                    App.Current.Resources.MergedWith = (new Themes.Base()).GetType();
+            };
+            
             //Dashboard show switches
             swShowSwitch.IsToggled = App.AppSettings.ShowSwitches;
             lblShowSwitch.Text = App.AppSettings.ShowSwitches ? AppResources.switch_buttons_on : AppResources.switch_buttons_off;

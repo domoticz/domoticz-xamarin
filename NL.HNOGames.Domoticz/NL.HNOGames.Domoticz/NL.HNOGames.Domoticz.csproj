@@ -213,6 +213,12 @@
     </Compile>
     <Compile Include="Resources\TranslateExtension.cs" />
     <Compile Include="Models\ServerSettings.cs" />
+    <Compile Include="Themes\Dark.xaml.cs">
+      <DependentUpon>Dark.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Themes\Base.xaml.cs">
+      <DependentUpon>Base.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\OverviewViewModel.cs" />
     <Compile Include="ViewModels\SceneViewModel.cs" />
@@ -618,6 +624,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\GraphTabbedPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Themes\Base.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Themes\Dark.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

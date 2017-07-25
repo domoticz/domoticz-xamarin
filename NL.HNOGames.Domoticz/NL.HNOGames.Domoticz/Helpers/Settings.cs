@@ -14,7 +14,7 @@ namespace NL.HNOGames.Domoticz.Helpers
     /// of your client applications. All settings are laid out the same exact way with getters
     /// and setters. 
     /// </summary>
-    public  class Settings
+    public class Settings
     {
         private ISettings AppSettings
         {
@@ -34,18 +34,19 @@ namespace NL.HNOGames.Domoticz.Helpers
 
         private const string StartUpScreenSettingsKey = "startup_settings_key";
         private const string NoSortSettingsKey = "nosort_settings_key";
+        private const string DarkThemeSettingsKey = "darktheme_settings_key";
         private const string EnableNotificationsSettingsKey = "gcmnotifications_settings_key";
         private const string ShowSwitchesSettingsKey = "showswitches_settings_key";
         private const string ExtraDataSettingsKey = "extradata_settings_key";
 
         private const string EnableScreenItems = "enablescreens_settings_key";
-        
+
         #endregion
 
         /// <summary>
         /// Welcome completed
         /// </summary>
-        public  bool WelcomeCompleted
+        public bool WelcomeCompleted
         {
             get
             {
@@ -60,7 +61,7 @@ namespace NL.HNOGames.Domoticz.Helpers
         /// <summary>
         /// Get all server settings
         /// </summary>
-        public  ServerSettings ActiveServerSettings
+        public ServerSettings ActiveServerSettings
         {
             get
             {
@@ -114,7 +115,7 @@ namespace NL.HNOGames.Domoticz.Helpers
         /// <summary>
         /// Get server config settings
         /// </summary>
-        public  DateTime ServerConfigDateTime
+        public DateTime ServerConfigDateTime
         {
             get
             {
@@ -129,7 +130,7 @@ namespace NL.HNOGames.Domoticz.Helpers
         /// <summary>
         /// Get server startup screen index
         /// </summary>
-        public  int StartupScreen
+        public int StartupScreen
         {
             get
             {
@@ -154,6 +155,21 @@ namespace NL.HNOGames.Domoticz.Helpers
             set
             {
                 AppSettings.AddOrUpdateValue(NoSortSettingsKey, value);
+            }
+        }
+
+        /// <summary>
+        /// Dark theme
+        /// </summary>
+        public bool DarkTheme
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(DarkThemeSettingsKey, false);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(DarkThemeSettingsKey, value);
             }
         }
 
@@ -186,11 +202,11 @@ namespace NL.HNOGames.Domoticz.Helpers
                 AppSettings.AddOrUpdateValue(EnableNotificationsSettingsKey, value);
             }
         }
-        
+
         /// <summary>
         /// Extra data on dashboard
         /// </summary>
-        public  bool ShowExtraData
+        public bool ShowExtraData
         {
             get
             {

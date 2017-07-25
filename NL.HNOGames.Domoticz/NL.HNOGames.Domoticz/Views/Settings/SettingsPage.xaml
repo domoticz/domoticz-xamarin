@@ -82,6 +82,14 @@
                     <Switch x:Name="swEnableNotifications"  VerticalOptions="Center" HorizontalOptions="End"/>
                 </StackLayout>
 
+                <Label Text="{resources:Translate category_theme}" LineBreakMode="NoWrap" Style="{StaticResource HeaderType}" Margin="0,10,0,0" />
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,10,0,0">
+                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical" >
+                        <Label Text="{resources:Translate set_dark_theme}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" LineBreakMode="NoWrap" Style="{StaticResource SettingsDetailType}" />
+                    </StackLayout>
+                    <Switch x:Name="swDarkTheme"  VerticalOptions="Center" HorizontalOptions="End"/>
+                </StackLayout>
+
                 <Label Text="{resources:Translate category_advanced}" LineBreakMode="NoWrap" Style="{StaticResource HeaderType}"  Margin="0,10,0,0"/>
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,10,0,0">
                     <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical" >

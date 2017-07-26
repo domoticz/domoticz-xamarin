@@ -329,7 +329,7 @@ namespace NL.HNOGames.Domoticz.Views
                 var result = await this.DisplayActionSheet(AppResources.filter, AppResources.cancel, null, actions.ToArray());
                 if (String.Compare(AppResources.filterOn_all, result, StringComparison.OrdinalIgnoreCase) == 0)
                     RevertOriginalSource();
-                else
+                else if (String.Compare(AppResources.cancel, result, StringComparison.OrdinalIgnoreCase) != 0)
                 {
                     BackupSource();
                     model.Series.Clear();//remove list

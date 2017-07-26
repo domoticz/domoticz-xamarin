@@ -3,6 +3,7 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using NL.HNOGames.Domoticz.Helpers;
 using NL.HNOGames.Domoticz.Models;
+using Plugin.DeviceInfo;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -713,6 +714,9 @@ namespace NL.HNOGames.Domoticz.Data
             String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.System.ADD_MOBILE_DEVICE);
             url += "&uuid=" + DeviceID;
             url += "&senderid=" + SenderId;
+            url += "&name=" + CrossDeviceInfo.Current.Model;
+            url += "&devicetype=" + CrossDeviceInfo.Current.Platform.ToString() + " / " + CrossDeviceInfo.Current.Version;
+            System.Diagnostics.Debug.WriteLine("Domoticz Full Url: " + url);
 
             try
             {

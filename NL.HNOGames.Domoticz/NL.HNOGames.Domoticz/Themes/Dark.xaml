@@ -22,16 +22,18 @@
         <Setter Property="BackgroundColor" Value="{DynamicResource LightBackgroundColor}" />
     </Style>
     <Style x:Key="SearchBarType" TargetType="SearchBar">
-        <Setter Property="TextColor" Value="{DynamicResource HeaderDarkTextColor}" />
-        <Setter Property="PlaceholderColor" Value="{DynamicResource HeaderDarkTextColor}" />
+        <Setter Property="TextColor" Value="{DynamicResource WhiteTextColor}" />
+        <Setter Property="PlaceholderColor" Value="{DynamicResource WhiteTextColor}" />
         <Setter Property="BackgroundColor" Value="{DynamicResource LightBackgroundColor}" />
     </Style>
     <Style x:Key="EntryType" TargetType="Entry">
-        <Setter Property="TextColor" Value="{DynamicResource HeaderDarkTextColor}" />
-        <Setter Property="PlaceholderColor" Value="{DynamicResource HeaderDarkTextColor}" />
+        <Setter Property="TextColor" Value="{DynamicResource WhiteTextColor}" />
+        <Setter Property="PlaceholderColor" Value="{DynamicResource WhiteTextColor}" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource LightBackgroundColor}" />
     </Style>
     <Style x:Key="PickerType" TargetType="Picker">
-        <Setter Property="TextColor" Value="{DynamicResource HeaderDarkTextColor}" />
+        <Setter Property="TextColor" Value="{DynamicResource WhiteTextColor}" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource LightBackgroundColor}" />
     </Style>
     <Style x:Key="DashboardDeviceCardType" TargetType="Grid">
         <Setter Property="BackgroundColor" Value="{DynamicResource CardBackgroundColor}" />
@@ -53,10 +55,12 @@
         <Setter Property="MinimumWidthRequest" Value="50" />
     </Style>
     <Style TargetType="Entry">
-        <Setter Property="TextColor" Value="{DynamicResource GreyTextColor}" />
+        <Setter Property="TextColor" Value="{DynamicResource WhiteTextColor}" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource CardBackgroundColor}" />
     </Style>
     <Style TargetType="Picker">
-        <Setter Property="TextColor" Value="{DynamicResource GreyTextColor}" />
+        <Setter Property="TextColor" Value="{DynamicResource WhiteTextColor}" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource CardBackgroundColor}" />
     </Style>
     <Style x:Key="HeaderType" TargetType="Label">
         <Setter Property="TextColor" Value="{DynamicResource HeaderTextColor}" />

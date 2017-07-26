@@ -27,7 +27,14 @@ namespace NL.HNOGames.Domoticz.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            viewModel.RefreshPlansCommand.Execute(null);
+
+            if (settingsOpened)
+            {
+                settingsOpened = false;
+                BreakingSettingsChanged();
+            }
+            else
+                viewModel.RefreshPlansCommand.Execute(null);
         }
 
         /// <summary>
@@ -40,18 +47,23 @@ namespace NL.HNOGames.Domoticz.Views
                 List<String> plans = new List<string>();
                 foreach (Plan p in viewModel.Plans)
                     plans.Add(p.Name);
-                var selectedPlanName = await DisplayActionSheet(AppResources.title_plans, null, null, plans.ToArray());
+
+                var selectedPlanName = await DisplayActionSheet(AppResources.title_plans, AppResources.cancel, null, plans.ToArray());
                 var selectedPlan = viewModel.Plans.Where(q => q.Name == selectedPlanName).FirstOrDefault();
                 if (selectedPlan != null)
-                    await Navigation.PushAsync(new DashboardPage( DashboardViewModel.ScreenType.Switches, selectedPlan));
+                {
+                    await Navigation.PushAsync(new DashboardPage(DashboardViewModel.ScreenType.Switches, selectedPlan));
+                }
             }
         }
 
+        private bool settingsOpened = false;
         /// <summary>
         /// Show all settings
         /// </summary>
         public async void OnSettingsClick(object o, EventArgs e)
         {
+            settingsOpened = true;
             await Navigation.PushAsync(new Settings.SettingsPage(new Command(async () => await BreakingSettingsChanged())));
         }
 

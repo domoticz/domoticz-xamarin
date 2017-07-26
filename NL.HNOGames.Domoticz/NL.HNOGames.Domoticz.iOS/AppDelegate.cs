@@ -137,24 +137,29 @@ namespace NL.HNOGames.Domoticz.iOS
         // iOS 9 <=, fire when recieve notification foreground
         public override void DidReceiveRemoteNotification(UIApplication application, NSDictionary userInfo, Action<UIBackgroundFetchResult> completionHandler)
         {
-            Messaging.SharedInstance.AppDidReceiveMessage(userInfo);
-
-            // Generate custom event
-            NSString[] keys = { new NSString("Event_type") };
-            NSObject[] values = { new NSString("Recieve_Notification") };
-            var parameters = NSDictionary<NSString, NSObject>.FromObjectsAndKeys(keys, values, keys.Length);
-
-            // Send custom event
-            Firebase.Analytics.Analytics.LogEvent("CustomEvent", parameters);
-
-            if (application.ApplicationState == UIApplicationState.Active)
+            if (App.AppSettings.EnableNotifications)
             {
-                System.Diagnostics.Debug.WriteLine(userInfo);
-                var aps_d = userInfo["aps"] as NSDictionary;
-                var alert_d = aps_d["alert"] as NSDictionary;
-                var body = alert_d["body"] as NSString;
-                var title = alert_d["title"] as NSString;
-                debugAlert(title, body);
+                Messaging.SharedInstance.AppDidReceiveMessage(userInfo);
+
+                // Generate custom event
+                NSString[] keys = { new NSString("Event_type") };
+                NSObject[] values = { new NSString("Recieve_Notification") };
+                var parameters = NSDictionary<NSString, NSObject>.FromObjectsAndKeys(keys, values, keys.Length);
+
+                // Send custom event
+                Firebase.Analytics.Analytics.LogEvent("CustomEvent", parameters);
+
+                if (application.ApplicationState == UIApplicationState.Active)
+                {
+                    System.Diagnostics.Debug.WriteLine(userInfo);
+                    var aps_d = userInfo["aps"] as NSDictionary;
+                    var alert_d = aps_d["alert"] as NSDictionary;
+                    var body = alert_d["body"] as NSString;
+                    var title = alert_d["title"] as NSString;
+                    if (String.IsNullOrEmpty(title))
+                        title = alert_d["subject"] as NSString;
+                    debugAlert(title, body);
+                }
             }
         }
 
@@ -162,9 +167,12 @@ namespace NL.HNOGames.Domoticz.iOS
         [Export("userNotificationCenter:willPresentNotification:withCompletionHandler:")]
         public void WillPresentNotification(UNUserNotificationCenter center, UNNotification notification, Action<UNNotificationPresentationOptions> completionHandler)
         {
-            var title = notification.Request.Content.Title;
-            var body = notification.Request.Content.Body;
-            debugAlert(title, body);
+            if (App.AppSettings.EnableNotifications)
+            {
+                var title = notification.Request.Content.Title;
+                var body = notification.Request.Content.Body;
+                debugAlert(title, body);
+            }
         }
 
         private void debugAlert(string title, string message)

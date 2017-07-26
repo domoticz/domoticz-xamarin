@@ -17,6 +17,16 @@ namespace NL.HNOGames.Domoticz.iOS
     {
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            global::Xamarin.Forms.Forms.Init();
+            UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, false);
+            UIApplication.SharedApplication.SetStatusBarHidden(false, false);
+
+            UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes()
+            {
+                Font = UIFont.FromName("HelveticaNeue-Light", (nfloat)20f),
+                TextColor = UIColor.White
+            });
+
             iRate.SharedInstance.DaysUntilPrompt = 10;
             iRate.SharedInstance.UsesUntilPrompt = 20;
 
@@ -25,7 +35,6 @@ namespace NL.HNOGames.Domoticz.iOS
             CachedImageRenderer.Init();
             SlideOverKit.iOS.SlideOverKit.Init();
             OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();
-
             CrossPushNotification.Initialize<CrossPushNotificationListener>();
             if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
             {
@@ -48,21 +57,21 @@ namespace NL.HNOGames.Domoticz.iOS
             
             // Firebase component initialize
             Firebase.Analytics.App.Configure();
-            Firebase.InstanceID.InstanceId.Notifications.ObserveTokenRefresh((sender, e) => {
-                var newToken = Firebase.InstanceID.InstanceId.SharedInstance.Token;
-                // if you want to send notification per user, use this token
-                System.Diagnostics.Debug.WriteLine(newToken);
-                connectFCM();
 
-                if (CrossPushNotification.Current is IPushNotificationHandler)
+            Firebase.InstanceID.InstanceId.Notifications.ObserveTokenRefresh((sender, e) => {
+                connectFCM();
+                var newToken = Firebase.InstanceID.InstanceId.SharedInstance.Token;
+                if (newToken != null)
                 {
-                    ((IPushNotificationHandler)CrossPushNotification.Current).OnRegisteredSuccess(newToken);
+                    System.Diagnostics.Debug.WriteLine("Token received: " + newToken);
+                    if (CrossPushNotification.Current is IPushNotificationHandler)
+                        ((IPushNotificationHandler)CrossPushNotification.Current).OnRegisteredSuccess(newToken);
                 }
+                else
+                    System.Diagnostics.Debug.WriteLine("No new token received.");
             });
 
-            global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
-
             return base.FinishedLaunching(app, options);
         }
 
@@ -120,7 +129,6 @@ namespace NL.HNOGames.Domoticz.iOS
 
         public override void ReceivedRemoteNotification(UIApplication application, NSDictionary userInfo)
         {
-
             if (CrossPushNotification.Current is IPushNotificationHandler)
             {
                 ((IPushNotificationHandler)CrossPushNotification.Current).OnMessageReceived(userInfo);

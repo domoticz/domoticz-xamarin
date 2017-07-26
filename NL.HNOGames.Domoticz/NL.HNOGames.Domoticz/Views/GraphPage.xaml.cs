@@ -311,10 +311,12 @@ namespace NL.HNOGames.Domoticz.Views
             model.LegendOrientation = LegendOrientation.Horizontal;
             model.LegendPlacement = LegendPlacement.Outside;
             model.LegendPosition = LegendPosition.BottomCenter;
-            model.LegendBackground = OxyColor.FromAColor(200, OxyColors.White);
+            if (App.AppSettings.DarkTheme)
+                model.LegendBackground = OxyColor.FromAColor(200, OxyColors.Black);
+            else
+                model.LegendBackground = OxyColor.FromAColor(200, OxyColors.White);
             model.LegendBorder = OxyColors.Black;
         }
-
 
         /// <summary>
         /// Filter the graph

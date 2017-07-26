@@ -9,11 +9,12 @@ using PushNotification.Plugin;
 using NL.HNOGames.Domoticz.Helpers;
 using UserNotifications;
 using Firebase.CloudMessaging;
+using System.Diagnostics;
 
 namespace NL.HNOGames.Domoticz.iOS
 {
     [Register("AppDelegate")]
-    public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
+    public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate, IUNUserNotificationCenterDelegate
     {
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
@@ -35,31 +36,34 @@ namespace NL.HNOGames.Domoticz.iOS
             CachedImageRenderer.Init();
             SlideOverKit.iOS.SlideOverKit.Init();
             OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();
+
+            LoadApplication(new App());
             CrossPushNotification.Initialize<CrossPushNotificationListener>();
+
+            // get permission for notification
             if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
             {
-                // Ask the user for permission to get notifications on iOS 10.0+
-                UNUserNotificationCenter.Current.RequestAuthorization(
-                        UNAuthorizationOptions.Alert | UNAuthorizationOptions.Badge | UNAuthorizationOptions.Sound,
-                        (approved, error) => { });
-            }
-            else if (UIDevice.CurrentDevice.CheckSystemVersion(8, 0))
-            {
-                // Ask the user for permission to get notifications on iOS 8.0+
-                var settings = UIUserNotificationSettings.GetSettingsForTypes(
-                        UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound,
-                        new NSSet());
+                // iOS 10
+                var authOptions = UNAuthorizationOptions.Alert | UNAuthorizationOptions.Badge | UNAuthorizationOptions.Sound;
+                UNUserNotificationCenter.Current.RequestAuthorization(authOptions, (granted, error) =>
+                {
+                    Console.WriteLine(granted);
+                });
 
+                // For iOS 10 display notification (sent via APNS)
+                UNUserNotificationCenter.Current.Delegate = this;
+                UIApplication.SharedApplication.RegisterForRemoteNotifications();
+            }
+            else
+            {
+                var allNotificationTypes = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound;
+                var settings = UIUserNotificationSettings.GetSettingsForTypes(allNotificationTypes, null);
                 UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
             }
 
-            UIApplication.SharedApplication.RegisterForRemoteNotifications();
-            
             // Firebase component initialize
             Firebase.Analytics.App.Configure();
-
-            Firebase.InstanceID.InstanceId.Notifications.ObserveTokenRefresh((sender, e) => {
-                connectFCM();
+            /* Firebase.InstanceID.InstanceId.Notifications.ObserveTokenRefresh((sender, e) => {
                 var newToken = Firebase.InstanceID.InstanceId.SharedInstance.Token;
                 if (newToken != null)
                 {
@@ -69,10 +73,35 @@ namespace NL.HNOGames.Domoticz.iOS
                 }
                 else
                     System.Diagnostics.Debug.WriteLine("No new token received.");
-            });
+            });*/
 
-            LoadApplication(new App());
+            connectFCM();
+
+            var token = Firebase.InstanceID.InstanceId.SharedInstance.Token;
+            if (token != null)
+                registerAsync(token);
+
             return base.FinishedLaunching(app, options);
+        }
+
+        private async void registerAsync(String token)
+        {
+            Debug.WriteLine(string.Format("Push Notification - Device Registered - Token : {0}", token));
+            String Id = Helpers.UsefulBits.GetDeviceID();
+            bool bSuccess = await App.ApiService.CleanRegisteredDevice(Id);
+            if (bSuccess)
+            {
+                bSuccess = await App.ApiService.RegisterDevice(Id, token);
+                if (bSuccess)
+                    Debug.WriteLine("Device registered on Domoticz");
+                else
+                    Debug.WriteLine("Device not registered on Domoticz");
+            }
+        }
+
+        public override void DidEnterBackground(UIApplication uiApplication)
+        {
+            Messaging.SharedInstance.Disconnect();
         }
 
         private void connectFCM()
@@ -81,10 +110,22 @@ namespace NL.HNOGames.Domoticz.iOS
             {
                 if (error == null)
                 {
+                    //TODO: Change Topic to what is required
                     Messaging.SharedInstance.Subscribe("/topics/all");
                 }
                 System.Diagnostics.Debug.WriteLine(error != null ? "error occured" : "connect success");
             });
+        }
+
+        public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
+        {
+#if DEBUG
+            Firebase.InstanceID.InstanceId.SharedInstance.SetApnsToken(deviceToken, Firebase.InstanceID.ApnsTokenType.Sandbox);
+#endif
+#if RELEASE
+			Firebase.InstanceID.InstanceId.SharedInstance.SetApnsToken(deviceToken, Firebase.InstanceID.ApnsTokenType.Prod);
+#endif
+
         }
 
         public override void OnActivated(UIApplication uiApplication)
@@ -92,7 +133,47 @@ namespace NL.HNOGames.Domoticz.iOS
             connectFCM();
             base.OnActivated(uiApplication);
         }
+
+        // iOS 9 <=, fire when recieve notification foreground
+        public override void DidReceiveRemoteNotification(UIApplication application, NSDictionary userInfo, Action<UIBackgroundFetchResult> completionHandler)
+        {
+            Messaging.SharedInstance.AppDidReceiveMessage(userInfo);
+
+            // Generate custom event
+            NSString[] keys = { new NSString("Event_type") };
+            NSObject[] values = { new NSString("Recieve_Notification") };
+            var parameters = NSDictionary<NSString, NSObject>.FromObjectsAndKeys(keys, values, keys.Length);
+
+            // Send custom event
+            Firebase.Analytics.Analytics.LogEvent("CustomEvent", parameters);
+
+            if (application.ApplicationState == UIApplicationState.Active)
+            {
+                System.Diagnostics.Debug.WriteLine(userInfo);
+                var aps_d = userInfo["aps"] as NSDictionary;
+                var alert_d = aps_d["alert"] as NSDictionary;
+                var body = alert_d["body"] as NSString;
+                var title = alert_d["title"] as NSString;
+                debugAlert(title, body);
+            }
+        }
+
+        // iOS 10, fire when recieve notification foreground
+        [Export("userNotificationCenter:willPresentNotification:withCompletionHandler:")]
+        public void WillPresentNotification(UNUserNotificationCenter center, UNNotification notification, Action<UNNotificationPresentationOptions> completionHandler)
+        {
+            var title = notification.Request.Content.Title;
+            var body = notification.Request.Content.Body;
+            debugAlert(title, body);
+        }
+
+        private void debugAlert(string title, string message)
+        {
+            var alert = new UIAlertView(title ?? "Title", message ?? "Message", null, "Cancel", "OK");
+            alert.Show();
+        }
     }
+
 
     public partial class PushNotificationApplicationDelegate : UIApplicationDelegate
     {

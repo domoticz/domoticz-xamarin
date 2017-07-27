@@ -97,7 +97,7 @@ namespace NL.HNOGames.Domoticz.Models
             get
             {
                 DateTime d = DateTime.ParseExact(LastUpdate, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
-                //System.Diagnostics.Debug.WriteLine("LastUpdateDescription" + (DateTime.Now - d).Humanize(2) + " | " + d.ToString() + " | " + DateTime.Now.ToString());
+                //App.AddLog("LastUpdateDescription" + (DateTime.Now - d).Humanize(2) + " | " + d.ToString() + " | " + DateTime.Now.ToString());
                 return String.Format("{0}: {1} ago", AppResources.last_update, (DateTime.Now - d).Humanize(2));
             }
         }

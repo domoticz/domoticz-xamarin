@@ -17,23 +17,23 @@ namespace NL.HNOGames.Domoticz.Helpers
 
         public void OnMessage(JObject values, DeviceType deviceType)
         {
-            Debug.WriteLine("Message Arrived");
+            App.AddLog("Message Arrived");
         }
 
         public void OnRegistered(string token, DeviceType deviceType)
         {
-            Debug.WriteLine(string.Format("Push Notification - Device Registered - Token : {0}", token));
+            App.AddLog(string.Format("Push Notification - Device Registered - Token : {0}", token));
         }
 
         public void OnUnregistered(DeviceType deviceType)
         {
-            Debug.WriteLine("Push Notification - Device Unnregistered");
+            App.AddLog("Push Notification - Device Unnregistered");
        
         }
 
         public void OnError(string message, DeviceType deviceType)
         {
-            Debug.WriteLine(string.Format("Push notification error - {0}",message));
+            App.AddLog(string.Format("Push notification error - {0}",message));
         }
 
         public bool ShouldShowNotification()

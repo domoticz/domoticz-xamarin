@@ -96,7 +96,7 @@ namespace NL.HNOGames.Domoticz.Data
                 String.IsNullOrEmpty(directory) ? "" : "/" + directory, 
                 jsonUrl);
 
-            System.Diagnostics.Debug.WriteLine("Domoticz Url: " + fullString);
+            App.AddLog("JSON Call: " + fullString);
             return fullString;
         }
 
@@ -321,7 +321,7 @@ namespace NL.HNOGames.Domoticz.Data
                 String.IsNullOrEmpty(directory) ? "" : "/" + directory,
                 jsonUrl);
 
-            System.Diagnostics.Debug.WriteLine("Domoticz Action Url: " + fullString);
+            App.AddLog("JSON Action Call: " + fullString);
             return fullString;
         }
 

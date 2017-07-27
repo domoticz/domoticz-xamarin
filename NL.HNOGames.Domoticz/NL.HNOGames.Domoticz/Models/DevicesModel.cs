@@ -64,7 +64,7 @@ namespace NL.HNOGames.Domoticz.Models
                 StatusBoolean,
                 CustomImage != null && CustomImage.HasValue ? true : false,
                 this.Image);
-                //System.Diagnostics.Debug.WriteLine(selectedIcon);
+                //App.AddLog(selectedIcon);
                 return selectedIcon;
             }
         }

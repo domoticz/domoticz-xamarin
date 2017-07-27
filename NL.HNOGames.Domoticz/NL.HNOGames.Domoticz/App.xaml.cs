@@ -65,6 +65,8 @@ namespace NL.HNOGames.Domoticz
             InitializeComponent();
 
             AppSettings = new Settings();
+            AppSettings.DebugInfo = String.Empty;
+
             ConnectionService = new ConnectionService();
             ApiService = new DataService();
             ApiService.Server = App.AppSettings.ActiveServerSettings;
@@ -77,6 +79,22 @@ namespace NL.HNOGames.Domoticz
                 App.Current.Resources.MergedWith = (new Themes.Base()).GetType();
 
             SetMainPage();
+        }
+
+        /// <summary>
+        /// Log information
+        /// </summary>
+        public static void AddLog(String text)
+        {
+            try
+            {
+                System.Diagnostics.Debug.WriteLine(text);
+                App.AppSettings.AddDebugInfo(text);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("cant write log: " + ex.Message);
+            }
         }
 
         public static void SetMainPage()
@@ -154,8 +172,9 @@ namespace NL.HNOGames.Domoticz
                     Current.MainPage = new NavigationPage(oOverviewTabbedPage);
                 }
             }
-            catch (Exception ex) {
-                System.Diagnostics.Debug.WriteLine(ex.Message);
+            catch (Exception ex)
+            {
+                App.AddLog(ex.Message);
             }
         }
     }

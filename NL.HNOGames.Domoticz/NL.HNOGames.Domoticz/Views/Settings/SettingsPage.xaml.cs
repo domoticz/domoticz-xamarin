@@ -98,45 +98,6 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         }
 
         /// <summary>
-        /// Import settings
-        /// </summary>
-        private async Task btnImportSettings_Clicked(object sender, EventArgs e)
-        {
-            try
-            {
-                var rootFolder = SpecialFolder.Current.Pictures;
-                IFolder folder = await rootFolder.CreateFolderAsync("Domoticz",
-                   CreationCollisionOption.OpenIfExists);
-
-                string fileContent = await this.ReadFileContent("domoticz_settings.txt", folder);
-                var settingsObject = JsonConvert.DeserializeObject<Helpers.Settings>(fileContent);
-                App.AppSettings = settingsObject;
-
-                UserDialogs.Instance.Toast(AppResources.settings_imported);
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// Export settings
-        /// </summary>
-        private async Task btnExportSettings_Clicked(object sender, EventArgs e)
-        {
-            var rootFolder = SpecialFolder.Current.Pictures;
-            IFolder folder = await rootFolder.CreateFolderAsync("Domoticz",
-                CreationCollisionOption.OpenIfExists);
-            IFile file = await folder.CreateFileAsync("domoticz_settings.txt",
-                CreationCollisionOption.ReplaceExisting);
-
-            await file.WriteAllTextAsync(JsonConvert.SerializeObject(App.AppSettings));
-
-            UserDialogs.Instance.Toast(AppResources.settings_exported);
-        }
-
-        /// <summary>
         /// Read File Content
         /// </summary>
         public async Task<string> ReadFileContent(string fileName, IFolder rootFolder)
@@ -194,6 +155,17 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         private async Task btnEvents_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new EventsPage());
+        }
+
+        private async Task btnDebugInfo_Clicked(object sender, EventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine("Clicked Debug setting");
+            await Navigation.PushAsync(new DebugInfoPage());
+        }
+
+        private void btnDebugInfo_Clicked_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

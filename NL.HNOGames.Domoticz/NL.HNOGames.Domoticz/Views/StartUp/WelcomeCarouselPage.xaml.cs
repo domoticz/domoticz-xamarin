@@ -189,7 +189,7 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
         }
 

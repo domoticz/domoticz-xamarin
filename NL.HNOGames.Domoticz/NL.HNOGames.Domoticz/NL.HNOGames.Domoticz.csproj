@@ -230,6 +230,9 @@
     <Compile Include="Views\GraphTabbedPage.xaml.cs">
       <DependentUpon>GraphTabbedPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Settings\DebugInfoPage.xaml.cs">
+      <DependentUpon>DebugInfoPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Settings\EventsPage.xaml.cs">
       <DependentUpon>EventsPage.xaml</DependentUpon>
     </Compile>
@@ -637,6 +640,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Themes\Dark.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Settings\DebugInfoPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

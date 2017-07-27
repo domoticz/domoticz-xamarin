@@ -39,7 +39,11 @@ namespace NL.HNOGames.Domoticz.Helpers
         private const string ShowSwitchesSettingsKey = "showswitches_settings_key";
         private const string ExtraDataSettingsKey = "extradata_settings_key";
 
-        private const string EnableScreenItems = "enablescreens_settings_key";
+        private const string EnableScreenItemsSettingsKey = "enablescreens_settings_key";
+
+        private const string EnableDebugInfoSettingsKey = "Enable_DebugInfo_settings_key";
+        private const string EnableJSONDebugInfoSettingsKey = "Enable_JSON_DebugInfo_settings_key";
+        private const string DebugInfoSettingsKey = "DebugInfo_settings_key";
 
         #endregion
 
@@ -101,14 +105,14 @@ namespace NL.HNOGames.Domoticz.Helpers
         {
             get
             {
-                string settingJSON = AppSettings.GetValueOrDefault(EnableScreenItems, null);
+                string settingJSON = AppSettings.GetValueOrDefault(EnableScreenItemsSettingsKey, null);
                 if (string.IsNullOrEmpty(settingJSON))
                     return null;
                 return JsonConvert.DeserializeObject<List<ScreenModel>>(settingJSON);
             }
             set
             {
-                AppSettings.AddOrUpdateValue(EnableScreenItems, JsonConvert.SerializeObject(value));
+                AppSettings.AddOrUpdateValue(EnableScreenItemsSettingsKey, JsonConvert.SerializeObject(value));
             }
         }
 
@@ -216,6 +220,59 @@ namespace NL.HNOGames.Domoticz.Helpers
             {
                 AppSettings.AddOrUpdateValue(ExtraDataSettingsKey, value);
             }
+        }
+
+        /// <summary>
+        /// Enable Debugging
+        /// </summary>
+        public bool EnableDebugging
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(EnableDebugInfoSettingsKey, false);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(EnableDebugInfoSettingsKey, value);
+            }
+        }
+
+        /// <summary>
+        /// Enable JSON Debugging
+        /// </summary>
+        public bool EnableJSONDebugging
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(EnableJSONDebugInfoSettingsKey, false);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(EnableJSONDebugInfoSettingsKey, value);
+            }
+        }
+
+        /// <summary>
+        /// Debug Trace
+        /// </summary>
+        public String DebugInfo
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(DebugInfoSettingsKey, "");
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(DebugInfoSettingsKey, value);
+            }
+        }
+
+        /// <summary>
+        /// Add new info to debug info
+        /// </summary>
+        public void AddDebugInfo(String text)
+        {
+            DebugInfo = String.IsNullOrEmpty(DebugInfo) ? text : DebugInfo + Environment.NewLine + text;
         }
     }
 }

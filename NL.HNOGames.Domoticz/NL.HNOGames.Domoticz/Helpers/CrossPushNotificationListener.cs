@@ -20,7 +20,7 @@ namespace NL.HNOGames.Domoticz.Helpers
     {
         public void OnMessage(JObject values, DeviceType deviceType)
         {
-            Debug.WriteLine("Message Arrived" + values.ToString());
+            App.AddLog("Message Arrived" + values.ToString());
             String subject = System.Net.WebUtility.UrlDecode(values["subject"].ToString());
             String message = System.Net.WebUtility.UrlDecode(values["message"].ToString());
             if (subject == message)
@@ -37,28 +37,28 @@ namespace NL.HNOGames.Domoticz.Helpers
         {
             if (deviceType == DeviceType.Android)
             {
-                Debug.WriteLine(string.Format("Push Notification - Device Registered - Token : {0}", token));
+                App.AddLog(string.Format("Push Notification - Device Registered - Token : {0}", token));
                 String Id = Helpers.UsefulBits.GetDeviceID();
                 bool bSuccess = await App.ApiService.CleanRegisteredDevice(Id);
                 if (bSuccess)
                 {
                     bSuccess = await App.ApiService.RegisterDevice(Id, token);
                     if (bSuccess)
-                        Debug.WriteLine("Device registered on Domoticz");
+                        App.AddLog("Device registered on Domoticz");
                     else
-                        Debug.WriteLine("Device not registered on Domoticz");
+                        App.AddLog("Device not registered on Domoticz");
                 }
             }
         }
 
         public void OnUnregistered(DeviceType deviceType)
         {
-            Debug.WriteLine("Push Notification - Device Unnregistered");
+            App.AddLog("Push Notification - Device Unnregistered");
         }
 
         public void OnError(string message, DeviceType deviceType)
         {
-            Debug.WriteLine(string.Format("Push notification error - {0}", message));
+            App.AddLog(string.Format("Push notification error - {0}", message));
         }
 
         public bool ShouldShowNotification()

@@ -67,12 +67,12 @@ namespace NL.HNOGames.Domoticz.iOS
                 var newToken = Firebase.InstanceID.InstanceId.SharedInstance.Token;
                 if (newToken != null)
                 {
-                    System.Diagnostics.Debug.WriteLine("Token received: " + newToken);
+                    System.Diagnostics.App.AddLog("Token received: " + newToken);
                     if (CrossPushNotification.Current is IPushNotificationHandler)
                         ((IPushNotificationHandler)CrossPushNotification.Current).OnRegisteredSuccess(newToken);
                 }
                 else
-                    System.Diagnostics.Debug.WriteLine("No new token received.");
+                    System.Diagnostics.App.AddLog("No new token received.");
             });*/
 
             connectFCM();
@@ -86,16 +86,16 @@ namespace NL.HNOGames.Domoticz.iOS
 
         private async void registerAsync(String token)
         {
-            Debug.WriteLine(string.Format("Push Notification - Device Registered - Token : {0}", token));
+            App.AddLog(string.Format("GCM: Push Notification - Device Registered - Token : {0}", token));
             String Id = Helpers.UsefulBits.GetDeviceID();
             bool bSuccess = await App.ApiService.CleanRegisteredDevice(Id);
             if (bSuccess)
             {
                 bSuccess = await App.ApiService.RegisterDevice(Id, token);
                 if (bSuccess)
-                    Debug.WriteLine("Device registered on Domoticz");
+                    App.AddLog("GCM: Device registered on Domoticz");
                 else
-                    Debug.WriteLine("Device not registered on Domoticz");
+                    App.AddLog("GCM: Device not registered on Domoticz");
             }
         }
 
@@ -113,7 +113,7 @@ namespace NL.HNOGames.Domoticz.iOS
                     //TODO: Change Topic to what is required
                     Messaging.SharedInstance.Subscribe("/topics/all");
                 }
-                System.Diagnostics.Debug.WriteLine(error != null ? "error occured" : "connect success");
+                App.AddLog(error != null ? "GCM: error occured: " + error.Description : "GCM: connect success");
             });
         }
 
@@ -125,7 +125,6 @@ namespace NL.HNOGames.Domoticz.iOS
 #if RELEASE
 			Firebase.InstanceID.InstanceId.SharedInstance.SetApnsToken(deviceToken, Firebase.InstanceID.ApnsTokenType.Prod);
 #endif
-
         }
 
         public override void OnActivated(UIApplication uiApplication)
@@ -151,7 +150,7 @@ namespace NL.HNOGames.Domoticz.iOS
 
                 if (application.ApplicationState == UIApplicationState.Active)
                 {
-                    System.Diagnostics.Debug.WriteLine(userInfo);
+                    App.AddLog(userInfo.ToString());
                     var aps_d = userInfo["aps"] as NSDictionary;
                     var alert_d = aps_d["alert"] as NSDictionary;
                     var body = alert_d["body"] as NSString;

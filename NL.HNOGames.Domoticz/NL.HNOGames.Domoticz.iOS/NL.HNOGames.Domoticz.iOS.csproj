@@ -40,6 +40,7 @@
     <OptimizePNGs>True</OptimizePNGs>
     <MtouchFloat32>False</MtouchFloat32>
     <CodesignProvision>9fc409f3-0ecc-4faa-acf7-1ed7ecf7c596</CodesignProvision>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>pdbonly</DebugType>
@@ -839,6 +840,9 @@
     <BundleResource Include="Resources\ic_filter_list%403x.png" />
     <BundleResource Include="Resources\ic_filter_list%402x.png" />
     <BundleResource Include="Resources\ic_filter_list.png" />
+    <BundleResource Include="Resources\ic_content_copy.png" />
+    <BundleResource Include="Resources\ic_content_copy%402x.png" />
+    <BundleResource Include="Resources\ic_content_copy%403x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.5.235-pre2\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.5.235-pre2\build\netstandard1.0\Xamarin.Forms.targets')" />

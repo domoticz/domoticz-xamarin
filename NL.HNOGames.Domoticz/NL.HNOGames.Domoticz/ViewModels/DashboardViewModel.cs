@@ -107,8 +107,7 @@ namespace NL.HNOGames.Domoticz.ViewModels
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex);
-
+                App.AddLog(ex.Message);
                 if (!OverviewTabbedPage.EmptyDialogShown)
                 {
                     OverviewTabbedPage.EmptyDialogShown = true;

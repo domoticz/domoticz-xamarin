@@ -55,12 +55,13 @@ namespace NL.HNOGames.Domoticz.Data
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<VersionModel>(content);
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
 
             return null;
@@ -85,13 +86,14 @@ namespace NL.HNOGames.Domoticz.Data
                     if (response.IsSuccessStatusCode)
                     {
                         var content = await response.Content.ReadAsStringAsync();
+                        if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                         App.AppSettings.ServerConfig = JsonConvert.DeserializeObject<ConfigModel>(content);
                         App.AppSettings.ServerConfigDateTime = DateTime.Now;
                     }
                 }
                 catch (Exception ex)
                 {
-                    Debug.WriteLine(ex.Message);
+                    App.AddLog(ex.Message);
                 }
             }
         }
@@ -111,12 +113,13 @@ namespace NL.HNOGames.Domoticz.Data
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<PlansModel>(content);
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
         }
@@ -140,12 +143,13 @@ namespace NL.HNOGames.Domoticz.Data
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<DevicesModel>(content);
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
         }
@@ -165,12 +169,13 @@ namespace NL.HNOGames.Domoticz.Data
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<NotificationModel>(content);
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
         }
@@ -190,12 +195,13 @@ namespace NL.HNOGames.Domoticz.Data
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<TimerModel>(content);
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
         }
@@ -215,13 +221,14 @@ namespace NL.HNOGames.Domoticz.Data
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<ServerLogsModel>(content);
                 }
             }
 
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
         }
@@ -242,13 +249,14 @@ namespace NL.HNOGames.Domoticz.Data
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<UserVariableModel>(content);
                 }
             }
 
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
         }
@@ -268,13 +276,14 @@ namespace NL.HNOGames.Domoticz.Data
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<EventModel>(content);
                 }
             }
 
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
         }
@@ -298,13 +307,14 @@ namespace NL.HNOGames.Domoticz.Data
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<LogModel>(content);
                 }
             }
 
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
 
@@ -327,12 +337,13 @@ namespace NL.HNOGames.Domoticz.Data
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<SceneModel>(content);
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
         }
@@ -354,12 +365,13 @@ namespace NL.HNOGames.Domoticz.Data
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<DevicesModel>(content);
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
         }
@@ -381,12 +393,13 @@ namespace NL.HNOGames.Domoticz.Data
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<DevicesModel>(content);
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
         }
@@ -408,12 +421,13 @@ namespace NL.HNOGames.Domoticz.Data
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<DevicesModel>(content);
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
         }
@@ -435,12 +449,13 @@ namespace NL.HNOGames.Domoticz.Data
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<DevicesModel>(content);
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
         }
@@ -463,12 +478,13 @@ namespace NL.HNOGames.Domoticz.Data
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<GraphModel>(content);
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
         }
@@ -495,12 +511,13 @@ namespace NL.HNOGames.Domoticz.Data
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<ActionModel>(content);
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
         }
@@ -525,7 +542,7 @@ namespace NL.HNOGames.Domoticz.Data
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
 
             return false;
@@ -550,7 +567,7 @@ namespace NL.HNOGames.Domoticz.Data
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
 
             return false;
@@ -587,7 +604,7 @@ namespace NL.HNOGames.Domoticz.Data
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
 
             return false;
@@ -612,7 +629,7 @@ namespace NL.HNOGames.Domoticz.Data
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
 
             return false;
@@ -637,7 +654,7 @@ namespace NL.HNOGames.Domoticz.Data
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
 
             return false;
@@ -662,6 +679,7 @@ namespace NL.HNOGames.Domoticz.Data
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     var result = JsonConvert.DeserializeObject<ActionModel>(content);
                     if (result != null &&
                     String.Compare(result.status, "ok", StringComparison.OrdinalIgnoreCase) == 0)
@@ -670,7 +688,7 @@ namespace NL.HNOGames.Domoticz.Data
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
 
             return false;
@@ -692,12 +710,13 @@ namespace NL.HNOGames.Domoticz.Data
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return true;
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
 
             return true;
@@ -716,7 +735,7 @@ namespace NL.HNOGames.Domoticz.Data
             url += "&senderid=" + SenderId;
             url += "&name=" + CrossDeviceInfo.Current.Model;
             url += "&devicetype=" + CrossDeviceInfo.Current.Platform.ToString() + " / " + CrossDeviceInfo.Current.Version;
-            System.Diagnostics.Debug.WriteLine("Domoticz Full Url: " + url);
+            App.AddLog("Domoticz Full Url: " + url);
 
             try
             {
@@ -724,12 +743,13 @@ namespace NL.HNOGames.Domoticz.Data
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return true;
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
 
             return true;

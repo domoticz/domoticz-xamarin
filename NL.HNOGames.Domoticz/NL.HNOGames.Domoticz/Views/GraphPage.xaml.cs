@@ -53,7 +53,7 @@ namespace NL.HNOGames.Domoticz.Views
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
         }
 

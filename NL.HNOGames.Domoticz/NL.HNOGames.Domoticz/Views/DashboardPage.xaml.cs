@@ -198,7 +198,7 @@ namespace NL.HNOGames.Domoticz.Views
         {
             if (e.NewTextValue == string.Empty)
             {
-                Debug.WriteLine("Cancel Pressed");
+                App.AddLog("Cancel Pressed");
                 listView.ItemsSource = this.viewModel.Devices;
                 sbSearch.Unfocus();
             }

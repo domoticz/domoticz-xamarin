@@ -49,7 +49,7 @@ namespace NL.HNOGames.Domoticz.ViewModels
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex);
+                App.AddLog(ex.Message);
                 UserDialogs.Instance.Alert("Unable to load items.");
             }
 

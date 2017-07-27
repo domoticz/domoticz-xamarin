@@ -8,6 +8,18 @@
              x:Class="NL.HNOGames.Domoticz.Views.Settings.DebugInfoPage"
              Style="{StaticResource ContentPageType}"
              Title="{resources:Translate category_debug}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Share" Order="Primary" Activated="ToolbarItem_Activated">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource"
+                            iOS="ic_content_copy.png"
+                            Android="ic_content_copy.png"
+                            WinPhone="ic_content_copy.png" />
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">

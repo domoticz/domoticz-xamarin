@@ -98,6 +98,7 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="ic_content_copy.png" />
     <Content Include="ic_filter_list.png" />
     <Content Include="ic_show_chart.png" />
     <Content Include="smoke.png" />

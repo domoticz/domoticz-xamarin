@@ -733,8 +733,8 @@ namespace NL.HNOGames.Domoticz.Data
             String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.System.ADD_MOBILE_DEVICE);
             url += "&uuid=" + DeviceID;
             url += "&senderid=" + SenderId;
-            url += "&name=" + CrossDeviceInfo.Current.Model;
-            url += "&devicetype=" + CrossDeviceInfo.Current.Platform.ToString() + " / " + CrossDeviceInfo.Current.Version;
+            url += "&name=" + CrossDeviceInfo.Current.Model.Replace(" ","");
+            url += "&devicetype=" + (CrossDeviceInfo.Current.Platform.ToString() + CrossDeviceInfo.Current.Version).Replace(" ", "");
             App.AddLog("Domoticz Full Url: " + url);
 
             try

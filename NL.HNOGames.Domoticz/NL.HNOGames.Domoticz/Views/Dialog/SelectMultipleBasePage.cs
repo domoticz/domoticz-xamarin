@@ -88,17 +88,25 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
         {
             cmFinish = finish;
             WrappedItems = items.Select(item => new WrappedSelection<T>() { Item = item }).ToList();
+
             this.Style = (Style)Application.Current.Resources["ContentPageType"];
+            if(App.AppSettings.DarkTheme)
+                this.BackgroundColor = Color.FromHex("#263238");
 
             StackLayout ly = new StackLayout();
             ly.Orientation = StackOrientation.Vertical;
             ly.Padding = new Thickness(10);
+            if (App.AppSettings.DarkTheme)
+                ly.BackgroundColor = Color.FromHex("#263238");
 
             ListView mainList = new ListView()
             {
                 ItemsSource = WrappedItems,
                 ItemTemplate = new DataTemplate(typeof(WrappedItemSelectionTemplate)),
             };
+
+            if (App.AppSettings.DarkTheme)
+                mainList.BackgroundColor = Color.FromHex("#263238");
             mainList.ItemSelected += (sender, e) =>
             {
                 if (e.SelectedItem == null) return;

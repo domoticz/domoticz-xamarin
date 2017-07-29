@@ -184,7 +184,7 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
                 var settingsObject = JsonConvert.DeserializeObject<Helpers.Settings>(fileContent);
                 App.AppSettings = settingsObject;
 
-                UserDialogs.Instance.Toast(AppResources.settings_imported);
+                App.ShowToast(AppResources.settings_imported);
                 ServerSettings = App.AppSettings.ActiveServerSettings;
             }
             catch (Exception ex)

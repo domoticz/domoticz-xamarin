@@ -48,6 +48,13 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                 lblSort.Text = App.AppSettings.NoSort ? AppResources.sort_dashboardLikeServer_on : AppResources.sort_dashboardLikeServer_off;
             };
 
+            //Talk Back
+            swEnableTalkBack.IsToggled = App.AppSettings.TalkBackEnabled;
+            swEnableTalkBack.Toggled += (sender, args) =>
+            {
+                App.AppSettings.TalkBackEnabled = swEnableTalkBack.IsToggled;
+            };
+
             //DarkTheme
             swDarkTheme.IsToggled = App.AppSettings.DarkTheme;
             swDarkTheme.Toggled += (sender, args) =>

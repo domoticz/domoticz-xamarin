@@ -49,7 +49,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             else
             {
                 App.HideLoading();
-                UserDialogs.Instance.Toast(AppResources.error_logs);
+                App.ShowToast(AppResources.error_logs);
                 await Navigation.PopAsync();
             }
         }

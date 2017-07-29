@@ -64,13 +64,13 @@ namespace NL.HNOGames.Domoticz.Views
         {
             bool newValue = !pair.FavoriteBoolean;
             if (newValue)
-                UserDialogs.Instance.Toast(pair.Name + " " + AppResources.favorite_added);
+                App.ShowToast(pair.Name + " " + AppResources.favorite_added);
             else
-                UserDialogs.Instance.Toast(pair.Name + " " + AppResources.favorite_removed);
+                App.ShowToast(pair.Name + " " + AppResources.favorite_removed);
 
             var result = await App.ApiService.SetFavorite(pair.idx, true, newValue);
             if (!result)
-                UserDialogs.Instance.Toast(pair.Name + " " + AppResources.error_favorite);
+                App.ShowToast(pair.Name + " " + AppResources.error_favorite);
 
             viewModel.RefreshFavoriteCommand.Execute(null);
         }
@@ -121,7 +121,7 @@ namespace NL.HNOGames.Domoticz.Views
                 return;
             Button oButton = (Button)sender;
             Models.Scene oDevice = (Models.Scene)oButton.BindingContext;
-            UserDialogs.Instance.Toast(AppResources.switch_on + ": " + oDevice.Name);
+            App.ShowToast(AppResources.switch_on + ": " + oDevice.Name);
 
             await App.ApiService.SetSwitch(oDevice.idx, true, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false);
             viewModel.RefreshFavoriteCommand.Execute(null);
@@ -134,7 +134,7 @@ namespace NL.HNOGames.Domoticz.Views
         {
             Button oButton = (Button)sender;
             Models.Scene oDevice = (Models.Scene)oButton.BindingContext;
-            UserDialogs.Instance.Toast(AppResources.switch_off + ": " + oDevice.Name);
+            App.ShowToast(AppResources.switch_off + ": " + oDevice.Name);
 
             await App.ApiService.SetSwitch(oDevice.idx, false, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false);
             viewModel.RefreshFavoriteCommand.Execute(null);
@@ -151,9 +151,9 @@ namespace NL.HNOGames.Domoticz.Views
             if (oSwitch.IsToggled != oDevice.StatusBoolean)
             {
                 if (oDevice.StatusBoolean)
-                    UserDialogs.Instance.Toast(AppResources.switch_off + ": " + oDevice.Name);
+                    App.ShowToast(AppResources.switch_off + ": " + oDevice.Name);
                 else
-                    UserDialogs.Instance.Toast(AppResources.switch_on + ": " + oDevice.Name);
+                    App.ShowToast(AppResources.switch_on + ": " + oDevice.Name);
 
                 await App.ApiService.SetSwitch(oDevice.idx, oSwitch.IsToggled, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false);
                 viewModel.RefreshFavoriteCommand.Execute(null);

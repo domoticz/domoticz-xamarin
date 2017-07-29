@@ -4,6 +4,7 @@ using NL.HNOGames.Domoticz.Helpers;
 using NL.HNOGames.Domoticz.Resources;
 using NL.HNOGames.Domoticz.Views;
 using NL.HNOGames.Domoticz.Views.StartUp;
+using Plugin.TextToSpeech;
 using System;
 using System.Linq;
 using Xamarin.Forms;
@@ -94,6 +95,26 @@ namespace NL.HNOGames.Domoticz
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine("cant write log: " + ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Show toast information
+        /// </summary>
+        public static void ShowToast(String text)
+        {
+            if (String.IsNullOrEmpty(text))
+                return;
+            try
+            {
+                AddLog(text);
+                UserDialogs.Instance.Toast(text);
+                if (AppSettings.TalkBackEnabled)
+                    Device.BeginInvokeOnMainThread(async () => { await CrossTextToSpeech.Current.Speak(text); });
+            }
+            catch (Exception ex)
+            {
+                AddLog("cant show toast: " + ex.Message);
             }
         }
 

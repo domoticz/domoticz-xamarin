@@ -55,7 +55,7 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
             }
             else
             {
-                UserDialogs.Instance.Toast(AppResources.error_logs);
+                App.ShowToast(AppResources.error_logs);
                 await Navigation.PopAsync();
             }
         }

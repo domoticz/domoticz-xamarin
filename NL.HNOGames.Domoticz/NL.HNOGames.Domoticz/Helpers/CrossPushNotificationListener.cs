@@ -30,7 +30,7 @@ namespace NL.HNOGames.Domoticz.Helpers
 
             if (App.AppSettings.EnableNotifications)
                 CrossLocalNotifications.Current.Show(subject, message);
-            UserDialogs.Instance.Toast(message);
+            App.ShowToast(message);
         }
 
         public async void OnRegistered(string token, DeviceType deviceType)

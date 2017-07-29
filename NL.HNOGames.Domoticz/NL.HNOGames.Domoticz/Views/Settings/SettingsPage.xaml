@@ -9,17 +9,8 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout HorizontalOptions="FillAndExpand" Padding="20" Orientation="Vertical">
-                <Label Text="{resources:Translate category_generic}" LineBreakMode="NoWrap" Style="{StaticResource HeaderType}"/>
-
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,10,0,10">
-                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical" >
-                        <Label Text="{resources:Translate startup_screen}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" LineBreakMode="NoWrap" Style="{StaticResource SettingsDetailType}" />
-                    </StackLayout>
-                    <Picker Style="{StaticResource PickerType}" x:Name="txtStartScherm" HorizontalOptions="End" MinimumWidthRequest="100" />
-                </StackLayout>
-
+                
                 <Label Text="{resources:Translate title_dashboard}" LineBreakMode="NoWrap" Style="{StaticResource HeaderType}" Margin="0,10,0,0" />
-
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,10,0,0">
                     <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical" >
                         <Label Text="{resources:Translate enable_items}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" LineBreakMode="NoWrap" Style="{StaticResource SettingsDetailType}" />
@@ -71,6 +62,22 @@
                             <OnPlatform x:TypeArguments="x:Double" iOS="35" Android="50" WinPhone="50" />
                         </Button.HeightRequest>
                     </Button>
+                </StackLayout>
+
+                <Label Text="{resources:Translate category_generic}" LineBreakMode="NoWrap" Style="{StaticResource HeaderType}"/>
+
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,10,0,10">
+                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical" >
+                        <Label Text="{resources:Translate startup_screen}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" LineBreakMode="NoWrap" Style="{StaticResource SettingsDetailType}" />
+                    </StackLayout>
+                    <Picker Style="{StaticResource PickerType}" x:Name="txtStartScherm" HorizontalOptions="End" MinimumWidthRequest="100" />
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,10,0,10">
+                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical" >
+                        <Label Text="{resources:Translate category_talk_back}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Style="{StaticResource SettingsDetailType}" />
+                        <Label Text="{resources:Translate set_talk_back_on}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Style="{StaticResource DetailSmallType}" />
+                    </StackLayout>
+                    <Switch x:Name="swEnableTalkBack"  VerticalOptions="Center" HorizontalOptions="End"/>
                 </StackLayout>
 
                 <Label Text="{resources:Translate notification_screen_title}" LineBreakMode="NoWrap" Style="{StaticResource HeaderType}" Margin="0,10,0,0"/>

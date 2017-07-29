@@ -99,7 +99,7 @@ namespace NL.HNOGames.Domoticz.Views
 
                     String md5Pass = Helpers.UsefulBits.GetMD5String(r.Text);
                     if (!await App.ApiService.SetSecurityPanel(status, md5Pass))
-                        UserDialogs.Instance.Toast(AppResources.security_generic_error);
+                        App.ShowToast(AppResources.security_generic_error);
                     else
                         RefreshListView();
                 }
@@ -173,13 +173,13 @@ namespace NL.HNOGames.Domoticz.Views
         {
             bool newValue = !pair.FavoriteBoolean;
             if (newValue)
-                UserDialogs.Instance.Toast(pair.Name + " " + AppResources.favorite_added);
+                App.ShowToast(pair.Name + " " + AppResources.favorite_added);
             else
-                UserDialogs.Instance.Toast(pair.Name + " " + AppResources.favorite_removed);
+                App.ShowToast(pair.Name + " " + AppResources.favorite_removed);
 
             var result = await App.ApiService.SetFavorite(pair.idx, pair.IsScene, newValue);
             if (!result)
-                UserDialogs.Instance.Toast(pair.Name + " " + AppResources.error_favorite);
+                App.ShowToast(pair.Name + " " + AppResources.error_favorite);
             RefreshListView();
         }
 
@@ -252,7 +252,7 @@ namespace NL.HNOGames.Domoticz.Views
                     {
                         var result = await App.ApiService.SetDimmer(pair.idx, newValue, r.Text);
                         if (!result)
-                            UserDialogs.Instance.Toast(AppResources.security_wrong_code);
+                            App.ShowToast(AppResources.security_wrong_code);
                         RefreshListView();
                     }
                 }
@@ -284,17 +284,17 @@ namespace NL.HNOGames.Domoticz.Views
                 await Task.Delay(500);
                 if (r.Ok)
                 {
-                    UserDialogs.Instance.Toast(AppResources.switch_on + ": " + oDevice.Name);
+                    App.ShowToast(AppResources.switch_on + ": " + oDevice.Name);
                     var result = await App.ApiService.SetSwitch(oDevice.idx, true, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false, r.Text);
                     if (!result)
-                        UserDialogs.Instance.Toast(AppResources.security_wrong_code);
+                        App.ShowToast(AppResources.security_wrong_code);
 
                     RefreshListView();
                 }
             }
             else
             {
-                UserDialogs.Instance.Toast(AppResources.switch_on + ": " + oDevice.Name);
+                App.ShowToast(AppResources.switch_on + ": " + oDevice.Name);
                 var result = await App.ApiService.SetSwitch(oDevice.idx, true, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false);
 
                 RefreshListView();
@@ -314,16 +314,16 @@ namespace NL.HNOGames.Domoticz.Views
                 await Task.Delay(500);
                 if (r.Ok)
                 {
-                    UserDialogs.Instance.Toast(AppResources.switch_off + ": " + oDevice.Name);
+                    App.ShowToast(AppResources.switch_off + ": " + oDevice.Name);
                     var result = await App.ApiService.SetSwitch(oDevice.idx, false, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false, r.Text);
                     if (!result)
-                        UserDialogs.Instance.Toast(AppResources.security_wrong_code);
+                        App.ShowToast(AppResources.security_wrong_code);
                     RefreshListView();
                 }
             }
             else
             {
-                UserDialogs.Instance.Toast(AppResources.switch_off + ": " + oDevice.Name);
+                App.ShowToast(AppResources.switch_off + ": " + oDevice.Name);
                 var result = await App.ApiService.SetSwitch(oDevice.idx, false, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false);
                 RefreshListView();
             }
@@ -346,14 +346,14 @@ namespace NL.HNOGames.Domoticz.Views
                     if (r.Ok)
                     {
                         if (oDevice.StatusBoolean)
-                            UserDialogs.Instance.Toast(AppResources.switch_off + ": " + oDevice.Name);
+                            App.ShowToast(AppResources.switch_off + ": " + oDevice.Name);
                         else
-                            UserDialogs.Instance.Toast(AppResources.switch_on + ": " + oDevice.Name);
+                            App.ShowToast(AppResources.switch_on + ": " + oDevice.Name);
 
                         var result = await App.ApiService.SetSwitch(oDevice.idx, oSwitch.IsToggled,
                             oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false, r.Text);
                         if (!result)
-                            UserDialogs.Instance.Toast(AppResources.security_wrong_code);
+                            App.ShowToast(AppResources.security_wrong_code);
 
                         RefreshListView();
                     }
@@ -361,9 +361,9 @@ namespace NL.HNOGames.Domoticz.Views
                 else
                 {
                     if (oDevice.StatusBoolean)
-                        UserDialogs.Instance.Toast(AppResources.switch_off + ": " + oDevice.Name);
+                        App.ShowToast(AppResources.switch_off + ": " + oDevice.Name);
                     else
-                        UserDialogs.Instance.Toast(AppResources.switch_on + ": " + oDevice.Name);
+                        App.ShowToast(AppResources.switch_on + ": " + oDevice.Name);
 
                     var result = await App.ApiService.SetSwitch(oDevice.idx, oSwitch.IsToggled, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false);
                     RefreshListView();
@@ -396,7 +396,7 @@ namespace NL.HNOGames.Domoticz.Views
                     {
                         var result = await App.ApiService.SetPoint(oDevice.idx, newValue, Double.Parse(oDevice.SetPoint, CultureInfo.InvariantCulture), r.Text);
                         if (!result)
-                            UserDialogs.Instance.Toast(AppResources.security_wrong_code);
+                            App.ShowToast(AppResources.security_wrong_code);
                         RefreshListView();
                     }
                 }
@@ -427,10 +427,10 @@ namespace NL.HNOGames.Domoticz.Views
             if (oDevice.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDINVERTED)
             {
                 action = ConstantValues.Device.Switch.Action.OFF;
-                UserDialogs.Instance.Toast(AppResources.blind_up + ": " + oDevice.Name);
+                App.ShowToast(AppResources.blind_up + ": " + oDevice.Name);
             }
             else
-                UserDialogs.Instance.Toast(AppResources.blind_down + ": " + oDevice.Name);
+                App.ShowToast(AppResources.blind_down + ": " + oDevice.Name);
 
             if (oDevice.Protected)
             {
@@ -440,7 +440,7 @@ namespace NL.HNOGames.Domoticz.Views
                 {
                     var result = await App.ApiService.SetBlind(oDevice.idx, action, r.Text);
                     if (!result)
-                        UserDialogs.Instance.Toast(AppResources.security_wrong_code);
+                        App.ShowToast(AppResources.security_wrong_code);
                     RefreshListView();
                 }
             }
@@ -465,10 +465,10 @@ namespace NL.HNOGames.Domoticz.Views
             if (oDevice.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDINVERTED)
             {
                 action = ConstantValues.Device.Switch.Action.ON;
-                UserDialogs.Instance.Toast(AppResources.blind_down + ": " + oDevice.Name);
+                App.ShowToast(AppResources.blind_down + ": " + oDevice.Name);
             }
             else
-                UserDialogs.Instance.Toast(AppResources.blind_up + ": " + oDevice.Name);
+                App.ShowToast(AppResources.blind_up + ": " + oDevice.Name);
 
             if (oDevice.Protected)
             {
@@ -478,7 +478,7 @@ namespace NL.HNOGames.Domoticz.Views
                 {
                     var result = await App.ApiService.SetBlind(oDevice.idx, action, r.Text);
                     if (!result)
-                        UserDialogs.Instance.Toast(AppResources.security_wrong_code);
+                        App.ShowToast(AppResources.security_wrong_code);
                     RefreshListView();
                 }
             }
@@ -498,7 +498,7 @@ namespace NL.HNOGames.Domoticz.Views
                 return;
             Button oButton = (Button)sender;
             Models.Device oDevice = (Models.Device)oButton.BindingContext;
-            UserDialogs.Instance.Toast(AppResources.blind_stop + ": " + oDevice.Name);
+            App.ShowToast(AppResources.blind_stop + ": " + oDevice.Name);
 
             if (oDevice.Protected)
             {
@@ -508,7 +508,7 @@ namespace NL.HNOGames.Domoticz.Views
                 {
                     var result = await App.ApiService.SetBlind(oDevice.idx, ConstantValues.Device.Blind.Action.STOP, r.Text);
                     if (!result)
-                        UserDialogs.Instance.Toast(AppResources.security_wrong_code);
+                        App.ShowToast(AppResources.security_wrong_code);
                     RefreshListView();
                 }
             }

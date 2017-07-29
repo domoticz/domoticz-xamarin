@@ -40,6 +40,8 @@ namespace NL.HNOGames.Domoticz.Helpers
         private const string ExtraDataSettingsKey = "extradata_settings_key";
 
         private const string EnableScreenItemsSettingsKey = "enablescreens_settings_key";
+        private const string EnableTalkBackSettingsKey = "enable_talkback_settings_key";
+
 
         private const string EnableDebugInfoSettingsKey = "Enable_DebugInfo_settings_key";
         private const string EnableJSONDebugInfoSettingsKey = "Enable_JSON_DebugInfo_settings_key";
@@ -159,6 +161,22 @@ namespace NL.HNOGames.Domoticz.Helpers
             set
             {
                 AppSettings.AddOrUpdateValue(NoSortSettingsKey, value);
+            }
+        }
+
+
+        /// <summary>
+        /// Is the talk back feature enabled?
+        /// </summary>
+        public bool TalkBackEnabled
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(EnableTalkBackSettingsKey, false);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(EnableTalkBackSettingsKey, value);
             }
         }
 

@@ -66,7 +66,7 @@ namespace NL.HNOGames.Domoticz.ViewModels
                 if (!OverviewTabbedPage.EmptyDialogShown)
                 {
                     OverviewTabbedPage.EmptyDialogShown = true;
-                    UserDialogs.Instance.Toast(AppResources.error_notConnected);
+                    App.ShowToast(AppResources.error_notConnected);
                 }
             }
 

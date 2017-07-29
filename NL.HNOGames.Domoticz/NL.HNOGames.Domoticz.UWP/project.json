@@ -10,14 +10,15 @@
     "Rg.Plugins.Popup": "1.0.4",
     "SlideOverKit": "2.1.4",
     "Splat": "2.0.0",
-    "Xam.Plugin.Connectivity": "3.0.1",
+    "Xam.Plugin.Connectivity": "3.0.2",
     "Xam.Plugin.PushNotification": "1.2.5-beta",
     "Xam.Plugins.Notifier": "2.1.0",
     "Xam.Plugins.Settings": "3.0.1",
+    "Xam.Plugins.TextToSpeech": "3.0.1",
     "Xamarin.FFImageLoading.Forms": "2.2.9",
     "Xamarin.FFImageLoading.Transformations": "2.2.9",
     "Xamarin.Forms": "2.3.5.235-pre2",
-    "Xamarin.Forms.RangeSlider": "0.6.17"
+    "Xamarin.Forms.RangeSlider": "0.6.18"
   },
   "frameworks": {
     "uap10.0": {}

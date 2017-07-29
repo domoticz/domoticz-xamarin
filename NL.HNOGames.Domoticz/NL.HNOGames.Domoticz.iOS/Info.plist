@@ -9,11 +9,11 @@
 	<key>CFBundleIdentifier</key>
 	<string>nl.hnogames.domoticz</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.0.14</string>
+	<string>0.0.15</string>
 	<key>MinimumOSVersion</key>
 	<string>8.0</string>
 	<key>CFBundleVersion</key>
-	<string>14</string>
+	<string>15</string>
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
@@ -44,9 +44,9 @@
 	<string>YES</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-  <key>UIStatusBarHidden</key>
-  <true/>
-  <key>FirebaseAppDelegateProxyEnabled</key>
-  <false/>
+	<key>UIStatusBarHidden</key>
+	<true/>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<false/>
 </dict>
 </plist>

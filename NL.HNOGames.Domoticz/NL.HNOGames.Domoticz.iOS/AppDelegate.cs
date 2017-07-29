@@ -11,6 +11,8 @@ using UserNotifications;
 using Firebase.CloudMessaging;
 using System.Diagnostics;
 using Firebase.InstanceID;
+using System.Net;
+using Plugin.LocalNotifications;
 
 namespace NL.HNOGames.Domoticz.iOS
 {
@@ -45,8 +47,9 @@ namespace NL.HNOGames.Domoticz.iOS
             if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
             {
                 var authOptions = UNAuthorizationOptions.Alert | UNAuthorizationOptions.Badge | UNAuthorizationOptions.Sound;
-                UNUserNotificationCenter.Current.RequestAuthorization(authOptions, (granted, error) => {
-                    Console.WriteLine(granted);
+                UNUserNotificationCenter.Current.RequestAuthorization(authOptions, (granted, error) =>
+                {
+                    App.AddLog("GC Authorization granted");
                 });
 
                 UNUserNotificationCenter.Current.Delegate = this;
@@ -58,12 +61,12 @@ namespace NL.HNOGames.Domoticz.iOS
                 var settings = UIUserNotificationSettings.GetSettingsForTypes(allNotificationTypes, null);
                 UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
             }
-
             UIApplication.SharedApplication.RegisterForRemoteNotifications();
 
             // Firebase component initialize
             Firebase.Analytics.App.Configure();
-            Firebase.InstanceID.InstanceId.Notifications.ObserveTokenRefresh((sender, e) => {
+            Firebase.InstanceID.InstanceId.Notifications.ObserveTokenRefresh((sender, e) =>
+            {
                 var refreshedToken = Firebase.InstanceID.InstanceId.SharedInstance.Token;
                 tokenUploaded = false;
                 SaveToken();
@@ -76,8 +79,6 @@ namespace NL.HNOGames.Domoticz.iOS
 
         public override void DidEnterBackground(UIApplication application)
         {
-            // Use this method to release shared resources, save user data, invalidate timers and store the application state.
-            // If your application supports background exection this method is called instead of WillTerminate when the user quits.
             Messaging.SharedInstance.Disconnect();
             Console.WriteLine("Disconnected from FCM");
         }
@@ -87,15 +88,11 @@ namespace NL.HNOGames.Domoticz.iOS
             tokenUploaded = true;
             App.AddLog(string.Format("GCM: Push Notification - Device Registered - Token : {0}", token));
             String Id = Helpers.UsefulBits.GetDeviceID();
-            //bool bSuccess = await App.ApiService.CleanRegisteredDevice(Id);
-            //if (bSuccess)
-            //{
-                bool bSuccess = await App.ApiService.RegisterDevice(Id, token);
-                if (bSuccess)
-                    App.AddLog("GCM: Device registered on Domoticz");
-                else
-                    App.AddLog("GCM: Device not registered on Domoticz");
-            //}
+            bool bSuccess = await App.ApiService.RegisterDevice(Id, token);
+            if (bSuccess)
+                App.AddLog("GCM: Device registered on Domoticz");
+            else
+                App.AddLog("GCM: Device not registered on Domoticz");
         }
 
         private Boolean tokenUploaded = false;
@@ -104,10 +101,7 @@ namespace NL.HNOGames.Domoticz.iOS
             Messaging.SharedInstance.Connect((error) =>
             {
                 if (error == null)
-                {
-                    //TODO: Change Topic to what is required
                     Messaging.SharedInstance.Subscribe("/topics/all");
-                }
 
                 App.AddLog(error != null ? "GCM: error occured: " + error.Description : "GCM: connect success");
                 if (error != null && !tokenUploaded)
@@ -140,25 +134,17 @@ namespace NL.HNOGames.Domoticz.iOS
             if (App.AppSettings.EnableNotifications)
             {
                 App.AddLog("GCM: Notification received");
-                Messaging.SharedInstance.AppDidReceiveMessage(userInfo);
-
-                // Generate custom event
-                NSString[] keys = { new NSString("Event_type") };
-                NSObject[] values = { new NSString("Recieve_Notification") };
-                var parameters = NSDictionary<NSString, NSObject>.FromObjectsAndKeys(keys, values, keys.Length);
-
-                // Send custom event
-                Firebase.Analytics.Analytics.LogEvent("CustomEvent", parameters);
-
+                App.AddLog(userInfo.ToString());
+                var body = WebUtility.UrlDecode(userInfo["gcm.notification.message"] as NSString);
+                var title = WebUtility.UrlDecode(userInfo["gcm.notification.title"] as NSString);
+                if (String.IsNullOrEmpty(title))
+                    title = WebUtility.UrlDecode(userInfo["gcm.notification.subject"] as NSString);
+                if (String.Compare(title, body, true) == 0)
+                    title = "Domoticz";
                 if (application.ApplicationState == UIApplicationState.Active)
-                {
-                    App.AddLog(userInfo.ToString());
-                    var body = userInfo["gcm.notification.message"] as NSString;
-                    var title = userInfo["gcm.notification.title"] as NSString;
-                    if (String.IsNullOrEmpty(title))
-                        title = userInfo["gcm.notification.subject"] as NSString;
                     debugAlert(title, body);
-                }
+                else if (App.AppSettings.EnableNotifications)
+                    CrossLocalNotifications.Current.Show(title, body);
             }
         }
 
@@ -169,8 +155,8 @@ namespace NL.HNOGames.Domoticz.iOS
             if (App.AppSettings.EnableNotifications)
             {
                 App.AddLog("GCM: Notification received");
-                var title = notification.Request.Content.Title;
-                var body = notification.Request.Content.Body;
+                var title = WebUtility.UrlDecode(notification.Request.Content.Title);
+                var body = WebUtility.UrlDecode(notification.Request.Content.Body);
                 debugAlert(title, body);
             }
         }
@@ -181,9 +167,11 @@ namespace NL.HNOGames.Domoticz.iOS
             alert.Show();
         }
 
+        // Receive data message on iOS 10 devices.
         public void ApplicationReceivedRemoteMessage(RemoteMessage remoteMessage)
         {
-            Console.WriteLine(remoteMessage.AppData);
+            App.AddLog("GCM: Notification received");
+            App.AddLog(remoteMessage.AppData.ToString());
         }
     }
 }

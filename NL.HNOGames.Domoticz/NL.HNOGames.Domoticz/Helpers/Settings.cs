@@ -272,7 +272,8 @@ namespace NL.HNOGames.Domoticz.Helpers
         /// </summary>
         public void AddDebugInfo(String text)
         {
-            DebugInfo = String.IsNullOrEmpty(DebugInfo) ? text : DebugInfo + Environment.NewLine + text;
+            if(EnableDebugging)
+                DebugInfo = String.IsNullOrEmpty(DebugInfo) ? text : DebugInfo + Environment.NewLine + text;
         }
     }
 }

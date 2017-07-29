@@ -10,11 +10,12 @@ using NL.HNOGames.Domoticz.Helpers;
 using UserNotifications;
 using Firebase.CloudMessaging;
 using System.Diagnostics;
+using Firebase.InstanceID;
 
 namespace NL.HNOGames.Domoticz.iOS
 {
     [Register("AppDelegate")]
-    public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate, IUNUserNotificationCenterDelegate
+    public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate, IUNUserNotificationCenterDelegate, IMessagingDelegate
     {
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
@@ -40,19 +41,16 @@ namespace NL.HNOGames.Domoticz.iOS
             LoadApplication(new App());
             CrossPushNotification.Initialize<CrossPushNotificationListener>();
 
-            // get permission for notification
+            // Register your app for remote notifications.
             if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
             {
-                // iOS 10
                 var authOptions = UNAuthorizationOptions.Alert | UNAuthorizationOptions.Badge | UNAuthorizationOptions.Sound;
-                UNUserNotificationCenter.Current.RequestAuthorization(authOptions, (granted, error) =>
-                {
+                UNUserNotificationCenter.Current.RequestAuthorization(authOptions, (granted, error) => {
                     Console.WriteLine(granted);
                 });
 
-                // For iOS 10 display notification (sent via APNS)
                 UNUserNotificationCenter.Current.Delegate = this;
-                UIApplication.SharedApplication.RegisterForRemoteNotifications();
+                Messaging.SharedInstance.RemoteMessageDelegate = this;
             }
             else
             {
@@ -61,11 +59,27 @@ namespace NL.HNOGames.Domoticz.iOS
                 UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
             }
 
+            UIApplication.SharedApplication.RegisterForRemoteNotifications();
+
             // Firebase component initialize
             Firebase.Analytics.App.Configure();
+            Firebase.InstanceID.InstanceId.Notifications.ObserveTokenRefresh((sender, e) => {
+                var refreshedToken = Firebase.InstanceID.InstanceId.SharedInstance.Token;
+                tokenUploaded = false;
+                SaveToken();
+            });
+
             connectFCM();
 
             return base.FinishedLaunching(app, options);
+        }
+
+        public override void DidEnterBackground(UIApplication application)
+        {
+            // Use this method to release shared resources, save user data, invalidate timers and store the application state.
+            // If your application supports background exection this method is called instead of WillTerminate when the user quits.
+            Messaging.SharedInstance.Disconnect();
+            Console.WriteLine("Disconnected from FCM");
         }
 
         private async void registerAsync(String token)
@@ -73,20 +87,15 @@ namespace NL.HNOGames.Domoticz.iOS
             tokenUploaded = true;
             App.AddLog(string.Format("GCM: Push Notification - Device Registered - Token : {0}", token));
             String Id = Helpers.UsefulBits.GetDeviceID();
-            bool bSuccess = await App.ApiService.CleanRegisteredDevice(Id);
-            if (bSuccess)
-            {
-                bSuccess = await App.ApiService.RegisterDevice(Id, token);
+            //bool bSuccess = await App.ApiService.CleanRegisteredDevice(Id);
+            //if (bSuccess)
+            //{
+                bool bSuccess = await App.ApiService.RegisterDevice(Id, token);
                 if (bSuccess)
                     App.AddLog("GCM: Device registered on Domoticz");
                 else
                     App.AddLog("GCM: Device not registered on Domoticz");
-            }
-        }
-
-        public override void DidEnterBackground(UIApplication uiApplication)
-        {
-            Messaging.SharedInstance.Disconnect();
+            //}
         }
 
         private Boolean tokenUploaded = false;
@@ -99,38 +108,24 @@ namespace NL.HNOGames.Domoticz.iOS
                     //TODO: Change Topic to what is required
                     Messaging.SharedInstance.Subscribe("/topics/all");
                 }
-                App.AddLog(error != null ? "GCM: error occured: " + error.Description : "GCM: connect success");
 
-                if(error != null && !tokenUploaded)
-                {
-                    var token = Firebase.InstanceID.InstanceId.SharedInstance.Token;
-                    if (token != null)
-                        registerAsync(token);
-                    else
-                        App.AddLog("GCM: No token available");
-                }
+                App.AddLog(error != null ? "GCM: error occured: " + error.Description : "GCM: connect success");
+                if (error != null && !tokenUploaded)
+                    SaveToken();
             });
         }
 
-        public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
+        /// <summary>
+        /// Save token to domoticz
+        /// </summary>
+        private void SaveToken()
         {
-            App.AddLog("GCM: Registered For Remote Notifications");
-
-#if DEBUG
-            Firebase.InstanceID.InstanceId.SharedInstance.SetApnsToken(deviceToken, Firebase.InstanceID.ApnsTokenType.Sandbox);
-#endif
-#if RELEASE
-			Firebase.InstanceID.InstanceId.SharedInstance.SetApnsToken(deviceToken, Firebase.InstanceID.ApnsTokenType.Prod);
-#endif
-
-            if (!tokenUploaded)
-            {
-                var token = Firebase.InstanceID.InstanceId.SharedInstance.Token;
-                if (token != null)
-                    registerAsync(token);
-                else
-                    App.AddLog("GCM: No token available");
-            }
+            var token = Firebase.InstanceID.InstanceId.SharedInstance.Token;
+            if (token != null)
+                registerAsync(token);
+            else
+                App.AddLog("GCM: No token available");
+            tokenUploaded = true;
         }
 
         public override void OnActivated(UIApplication uiApplication)
@@ -158,12 +153,10 @@ namespace NL.HNOGames.Domoticz.iOS
                 if (application.ApplicationState == UIApplicationState.Active)
                 {
                     App.AddLog(userInfo.ToString());
-                    var aps_d = userInfo["aps"] as NSDictionary;
-                    var alert_d = aps_d["alert"] as NSDictionary;
-                    var body = alert_d["body"] as NSString;
-                    var title = alert_d["title"] as NSString;
+                    var body = userInfo["gcm.notification.message"] as NSString;
+                    var title = userInfo["gcm.notification.title"] as NSString;
                     if (String.IsNullOrEmpty(title))
-                        title = alert_d["subject"] as NSString;
+                        title = userInfo["gcm.notification.subject"] as NSString;
                     debugAlert(title, body);
                 }
             }
@@ -187,49 +180,10 @@ namespace NL.HNOGames.Domoticz.iOS
             var alert = new UIAlertView(title ?? "Title", message ?? "Message", null, "Cancel", "OK");
             alert.Show();
         }
-    }
 
-
-    public partial class PushNotificationApplicationDelegate : UIApplicationDelegate
-    {
-        const string TAG = "PushNotification-APN";
-
-        public override void FailedToRegisterForRemoteNotifications(UIApplication application, NSError error)
+        public void ApplicationReceivedRemoteMessage(RemoteMessage remoteMessage)
         {
-            if (CrossPushNotification.Current is IPushNotificationHandler)
-            {
-                ((IPushNotificationHandler)CrossPushNotification.Current).OnErrorReceived(error);
-            }
-        }
-
-        public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
-        {
-            if (CrossPushNotification.Current is IPushNotificationHandler)
-            {
-                ((IPushNotificationHandler)CrossPushNotification.Current).OnRegisteredSuccess(deviceToken);
-            }
-        }
-
-        public override void DidRegisterUserNotificationSettings(UIApplication application, UIUserNotificationSettings notificationSettings)
-        {
-            application.RegisterForRemoteNotifications();
-        }
-
-        public override void DidReceiveRemoteNotification(UIApplication application, NSDictionary userInfo, Action<UIBackgroundFetchResult> completionHandler)
-        {
-            if (CrossPushNotification.Current is IPushNotificationHandler)
-            {
-                ((IPushNotificationHandler)CrossPushNotification.Current).OnMessageReceived(userInfo);
-            }
-        }
-
-        public override void ReceivedRemoteNotification(UIApplication application, NSDictionary userInfo)
-        {
-            if (CrossPushNotification.Current is IPushNotificationHandler)
-            {
-                ((IPushNotificationHandler)CrossPushNotification.Current).OnMessageReceived(userInfo);
-
-            }
+            Console.WriteLine(remoteMessage.AppData);
         }
     }
 }

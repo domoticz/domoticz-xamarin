@@ -402,6 +402,7 @@
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
             <SearchBar Style="{StaticResource SearchBarType}" x:Name="sbSearch" Placeholder="{resources:Translate filter}" CancelButtonColor="Red" TextChanged="sbSearch_TextChanged" />
+            
             <ListView x:Name="listView" ItemsSource="{Binding Devices}" 
                       BackgroundColor="{DynamicResource LightBackgroundColor}"
                       VerticalOptions="FillAndExpand" HasUnevenRows="true" 
@@ -410,6 +411,7 @@
                       IsPullToRefreshEnabled="true" SeparatorVisibility="None" 
                       IsRefreshing="{Binding IsBusy, Mode=OneWay}" 
                       CachingStrategy="RecycleElement" ItemSelected="OnItemSelected"></ListView>
+            
             <custcontrol:AdMobView x:Name="adView" HorizontalOptions="FillAndExpand" HeightRequest="70" />
         </StackLayout>
     </ContentPage.Content>

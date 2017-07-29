@@ -39,15 +39,15 @@ namespace NL.HNOGames.Domoticz.Helpers
             {
                 App.AddLog(string.Format("Push Notification - Device Registered - Token : {0}", token));
                 String Id = Helpers.UsefulBits.GetDeviceID();
-                bool bSuccess = await App.ApiService.CleanRegisteredDevice(Id);
-                if (bSuccess)
-                {
-                    bSuccess = await App.ApiService.RegisterDevice(Id, token);
+                //bool bSuccess = await App.ApiService.CleanRegisteredDevice(Id);
+                //if (bSuccess)
+                //{
+                    bool bSuccess = await App.ApiService.RegisterDevice(Id, token);
                     if (bSuccess)
                         App.AddLog("Device registered on Domoticz");
                     else
                         App.AddLog("Device not registered on Domoticz");
-                }
+                //}
             }
         }
 

@@ -23,6 +23,7 @@ namespace NL.HNOGames.Domoticz.Views
         {
             InitializeComponent();
             BindingContext = viewModel = new SceneViewModel();
+            App.AddLog("Loading screen: Scenes");
         }
 
         /// <summary>

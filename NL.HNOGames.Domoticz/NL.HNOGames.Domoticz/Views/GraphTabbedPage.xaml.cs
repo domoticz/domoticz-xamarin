@@ -21,6 +21,7 @@ namespace NL.HNOGames.Domoticz.Views
             String sensor = "temp")
         {
             InitializeComponent();
+            App.AddLog("Loading screen: Graph");
             this.Title = device.Name;
             BarBackgroundColor = Color.FromHex("#22272B");
             BarTextColor = Color.White;

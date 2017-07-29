@@ -26,6 +26,7 @@ namespace NL.HNOGames.Domoticz.Views
         {
             InitializeComponent();
             BindingContext = viewModel = new DashboardViewModel(screentype, plan);
+            App.AddLog("Loading screen: " + screentype.ToString());
         }
 
         /// <summary>

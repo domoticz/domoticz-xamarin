@@ -143,8 +143,9 @@ namespace NL.HNOGames.Domoticz.iOS
                     title = "Domoticz";
                 if (application.ApplicationState == UIApplicationState.Active)
                     debugAlert(title, body);
-                else if (App.AppSettings.EnableNotifications)
-                    CrossLocalNotifications.Current.Show(title, body);
+                
+                //else if (App.AppSettings.EnableNotifications)
+                //    CrossLocalNotifications.Current.Show(title, body);
             }
         }
 

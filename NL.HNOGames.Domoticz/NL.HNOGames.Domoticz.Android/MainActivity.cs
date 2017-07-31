@@ -27,7 +27,7 @@ namespace NL.HNOGames.Domoticz.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
-            LoadApplication(new App());
+            LoadApplication(new App(null));
             AndroidPlaystoreAudit.Instance.Run(this);
         }
     }

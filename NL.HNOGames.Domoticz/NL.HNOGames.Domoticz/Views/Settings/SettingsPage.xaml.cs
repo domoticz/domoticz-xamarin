@@ -18,6 +18,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
     {
         private SelectMultipleBasePage<ScreenModel> oEnableScreenPage;
         private Command GoToMainScreen;
+        public bool NotificationSettingsChanged = false;
 
         public SettingsPage(Command mainScreen)
         {
@@ -80,6 +81,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             swEnableNotifications.Toggled += (sender, args) =>
             {
                 App.AppSettings.EnableNotifications = swEnableNotifications.IsToggled;
+                NotificationSettingsChanged = true;
             };
 
             //Dashboard extra data

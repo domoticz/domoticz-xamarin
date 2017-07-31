@@ -15,6 +15,9 @@ namespace NL.HNOGames.Domoticz
 {
     public partial class App : Application
     {
+        private static InitFirebase _initFirebase;
+        public delegate void InitFirebase();
+
         public static bool ShowAds { get; set; }
 
         public static ConnectionService ConnectionService { get; private set; }
@@ -23,6 +26,15 @@ namespace NL.HNOGames.Domoticz
 
         public static NL.HNOGames.Domoticz.Models.ConfigModel ServerConfig { get; set; }
         private static IProgressDialog loadingDialog = null;
+
+        /// <summary>
+        /// Restart Firebase
+        /// </summary>
+        public static void RestartFirebase()
+        {
+            if (_initFirebase == null)
+                _initFirebase();
+        }
 
         /// <summary>
         /// Load the server config
@@ -59,8 +71,9 @@ namespace NL.HNOGames.Domoticz
                 loadingDialog.Hide();
         }
 
-        public App()
+        public App(InitFirebase firebase)
         {
+            _initFirebase = firebase;
             ShowAds = false;//default
 
             InitializeComponent();

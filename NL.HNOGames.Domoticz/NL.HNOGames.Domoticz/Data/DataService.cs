@@ -735,6 +735,7 @@ namespace NL.HNOGames.Domoticz.Data
             url += "&senderid=" + SenderId;
             url += "&name=" + CrossDeviceInfo.Current.Model.Replace(" ","");
             url += "&devicetype=" + (CrossDeviceInfo.Current.Platform.ToString() + CrossDeviceInfo.Current.Version).Replace(" ", "");
+            url += "&active=" + (App.AppSettings.EnableNotifications ? "1" : "0");
             App.AddLog("Domoticz Full Url: " + url);
 
             try

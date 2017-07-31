@@ -73,6 +73,7 @@ namespace NL.HNOGames.Domoticz.Views
         async Task BreakingSettingsChanged()
         {
             App.SetMainPage();
+            App.RestartFirebase();
         }
     }
 }

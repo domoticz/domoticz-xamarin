@@ -37,7 +37,7 @@
                     <Switch x:Name="swEnableJSONDebugging"  VerticalOptions="Center" HorizontalOptions="End"/>
                 </StackLayout>
 
-                <Editor x:Name="txtInfo" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Margin="20,20,20,0" Style="{StaticResource EditorType}" BackgroundColor="{StaticResource CardBackgroundColor}"/>
+                <Editor x:Name="txtInfo" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="20,20,20,0" Style="{StaticResource EditorType}" BackgroundColor="{StaticResource CardBackgroundColor}"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

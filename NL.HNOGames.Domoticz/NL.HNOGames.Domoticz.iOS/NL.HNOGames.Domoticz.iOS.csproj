@@ -305,6 +305,7 @@
     <Compile Include="RangeSliderInitialization.cs" />
     <Compile Include="Renderer\AdMobRenderer.cs" />
     <Compile Include="Renderer\CustomMultiLineLabelRenderer.cs" />
+    <Compile Include="Renderer\CustomSearchBarRenderer .cs" />
     <Compile Include="Renderer\CustomSliderRenderer .cs" />
   </ItemGroup>
   <ItemGroup>

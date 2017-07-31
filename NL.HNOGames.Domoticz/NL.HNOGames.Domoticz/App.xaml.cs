@@ -32,7 +32,7 @@ namespace NL.HNOGames.Domoticz
         /// </summary>
         public static void RestartFirebase()
         {
-            if (_initFirebase == null)
+            if (_initFirebase != null)
                 _initFirebase();
         }
 

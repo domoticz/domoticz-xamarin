@@ -40,7 +40,7 @@ namespace NL.HNOGames.Domoticz.iOS
             SlideOverKit.iOS.SlideOverKit.Init();
             OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();
 
-            LoadApplication(new App(SetupFirebase));
+            LoadApplication(new App(SaveToken));
             CrossPushNotification.Initialize<CrossPushNotificationListener>();
 
             // Register your app for remote notifications.
@@ -63,17 +63,7 @@ namespace NL.HNOGames.Domoticz.iOS
             }
 
             UIApplication.SharedApplication.RegisterForRemoteNotifications();
-            SetupFirebase();
-
-            return base.FinishedLaunching(app, options);
-        }
-
-        /// <summary>
-        /// Setup Firebase
-        /// </summary>
-        public void SetupFirebase()
-        {
-
+            App.AddLog("GCM: Setup Firebase");
             // Firebase component initialize
             Firebase.Analytics.App.Configure();
             Firebase.InstanceID.InstanceId.Notifications.ObserveTokenRefresh((sender, e) =>
@@ -83,9 +73,9 @@ namespace NL.HNOGames.Domoticz.iOS
                 SaveToken();
             });
 
-            connectFCM();
+            return base.FinishedLaunching(app, options);
         }
-
+        
         public override void DidEnterBackground(UIApplication application)
         {
             Messaging.SharedInstance.Disconnect();

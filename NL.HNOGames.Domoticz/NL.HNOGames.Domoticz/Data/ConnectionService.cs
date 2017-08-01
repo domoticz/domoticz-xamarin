@@ -31,7 +31,7 @@ namespace NL.HNOGames.Domoticz.Data
         {
             client = new HttpClient();
             client.MaxResponseContentBufferSize = 256000;
-            client.Timeout = TimeSpan.FromMilliseconds(5000);
+            client.Timeout = TimeSpan.FromMilliseconds(15000);
         }
 
         /// <summary>

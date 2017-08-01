@@ -812,6 +812,12 @@
     <BundleResource Include="Resources\slider-default-handle-highlighted.png" />
     <BundleResource Include="Resources\slider-default-handle-disabled%402x.png" />
     <BundleResource Include="Resources\slider-default-handle-disabled.png" />
+    <BundleResource Include="Resources\ic_arrow_drop_down.png" />
+    <BundleResource Include="Resources\ic_arrow_drop_down%402x.png" />
+    <BundleResource Include="Resources\ic_arrow_drop_down%403x.png" />
+    <BundleResource Include="Resources\ic_arrow_drop_up.png" />
+    <BundleResource Include="Resources\ic_arrow_drop_up%402x.png" />
+    <BundleResource Include="Resources\ic_arrow_drop_up%403x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.5.235-pre2\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.5.235-pre2\build\netstandard1.0\Xamarin.Forms.targets')" />

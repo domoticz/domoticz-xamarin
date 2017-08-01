@@ -14,6 +14,7 @@ using NL.HNOGames.Domoticz.Data;
 using Rg.Plugins.Popup.Services;
 using NL.HNOGames.Domoticz.Views.Dialog;
 using System.Globalization;
+using System.Threading;
 using System.Diagnostics;
 
 namespace NL.HNOGames.Domoticz.Views
@@ -386,26 +387,67 @@ namespace NL.HNOGames.Domoticz.Views
             Entry oEntry = (Entry)sender;
             Models.Device oDevice = (Models.Device)oEntry.BindingContext;
             if (Helpers.UsefulBits.IsNumeric(oEntry.Text))
+                await SetPointValue(oEntry, oDevice);
+        }
+
+        /// <summary>
+        /// Setpoint action 
+        /// </summary>
+        private async Task SetPointValue(Entry oEntry, Models.Device oDevice, Boolean refresh = true)
+        {
+            Double newValue = Double.Parse(oEntry.Text, CultureInfo.InvariantCulture);
+            App.AddLog("Set idx " + oDevice.idx + " to " + newValue);
+            if (oDevice.Protected)
             {
-                Double newValue = Double.Parse(oEntry.Text, CultureInfo.InvariantCulture);
-                if (oDevice.Protected)
+                var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password, inputType: InputType.Password);
+                await Task.Delay(500);
+                if (r.Ok)
                 {
-                    var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password, inputType: InputType.Password);
-                    await Task.Delay(500);
-                    if (r.Ok)
-                    {
-                        var result = await App.ApiService.SetPoint(oDevice.idx, newValue, Double.Parse(oDevice.SetPoint, CultureInfo.InvariantCulture), r.Text);
-                        if (!result)
-                            App.ShowToast(AppResources.security_wrong_code);
-                        RefreshListView();
-                    }
-                }
-                else
-                {
-                    var result = await App.ApiService.SetPoint(oDevice.idx, newValue, Double.Parse(oDevice.SetPoint, CultureInfo.InvariantCulture));
-                    RefreshListView();
+                    var result = await App.ApiService.SetPoint(oDevice.idx, newValue, Double.Parse(oDevice.SetPoint, CultureInfo.InvariantCulture), r.Text);
+                    if (!result)
+                        App.ShowToast(AppResources.security_wrong_code);
+                    if (refresh) RefreshListView();
                 }
             }
+            else
+            {
+                var result = await App.ApiService.SetPoint(oDevice.idx, newValue, Double.Parse(oDevice.SetPoint, CultureInfo.InvariantCulture));
+                if (refresh) RefreshListView();
+            }
+        }
+
+        /// <summary>
+        /// min 0.5 from temp
+        /// </summary>
+        private async Task btnMinTemp_Clicked(object sender, EventArgs e)
+        {
+            if (viewModel.OldData)
+                return;
+            Button btnMinTemp = (Button)sender;
+            var entry = ((Entry)((StackLayout)btnMinTemp.Parent).Children.Where(o => o.GetType() == typeof(Entry)).FirstOrDefault());
+
+            var currentValue = Double.Parse(entry.Text, CultureInfo.InvariantCulture);
+            var changedValue = currentValue - 0.5;
+            entry.Text = changedValue.ToString(CultureInfo.InvariantCulture);
+
+            await SetPointValue(entry, (Models.Device)btnMinTemp.BindingContext, false);
+        }
+
+        /// <summary>
+        /// Add 0.5 to temp
+        /// </summary>
+        private async Task btnPlusTemp_Clicked(object sender, EventArgs e)
+        {
+            if (viewModel.OldData)
+                return;
+            Button btnPlusTemp = (Button)sender;
+            var entry = ((Entry)((StackLayout)btnPlusTemp.Parent).Children.Where(o => o.GetType() == typeof(Entry)).FirstOrDefault());
+
+            var currentValue = Double.Parse(entry.Text, CultureInfo.InvariantCulture);
+            var changedValue = currentValue + 0.5;
+            entry.Text = changedValue.ToString(CultureInfo.InvariantCulture);
+
+            await SetPointValue(entry, (Models.Device)btnPlusTemp.BindingContext, false);
         }
 
         #endregion Set (Temperature)
@@ -538,5 +580,6 @@ namespace NL.HNOGames.Domoticz.Views
         }
 
         #endregion Dimmer
+
     }
 }

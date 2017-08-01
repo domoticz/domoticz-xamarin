@@ -146,6 +146,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.it.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\AppResources.kab.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.kab.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\AppResources.nl.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -347,6 +352,11 @@
     <EmbeddedResource Include="Resources\AppResources.it.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.it.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AppResources.kab.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.kab.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\AppResources.nl.resx">

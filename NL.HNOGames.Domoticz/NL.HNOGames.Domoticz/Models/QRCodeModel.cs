@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NL.HNOGames.Domoticz.Resources;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,5 +16,13 @@ namespace NL.HNOGames.Domoticz.Models
         public string SwitchIDX { get; set; }
         public string SwitchPassword { get; set; }
         public string Value { get; set; }
+
+        public String SwitchDescription
+        {
+            get
+            {
+                return AppResources.connectedSwitch + " " + SwitchIDX;
+            }
+        }
     }
 }

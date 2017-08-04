@@ -41,8 +41,9 @@ namespace NL.HNOGames.Domoticz.Helpers
 
         private const string EnableScreenItemsSettingsKey = "enablescreens_settings_key";
         private const string EnableTalkBackSettingsKey = "enable_talkback_settings_key";
-        private const string EnableQRCodeSettingsKey = "enable_qrcode_settings_key";
 
+        private const string EnableQRCodeSettingsKey = "enable_qrcode_settings_key";
+        private const string QRCodesSettingsKey = "qrcode_settings_key";
 
         private const string EnableDebugInfoSettingsKey = "Enable_DebugInfo_settings_key";
         private const string EnableJSONDebugInfoSettingsKey = "Enable_JSON_DebugInfo_settings_key";
@@ -193,6 +194,35 @@ namespace NL.HNOGames.Domoticz.Helpers
             set
             {
                 AppSettings.AddOrUpdateValue(EnableQRCodeSettingsKey, value);
+            }
+        }
+
+        /// <summary>
+        /// Specify QR Code objects
+        /// </summary>
+        public List<QRCodeModel> QRCodes
+        {
+            get
+            {
+                try
+                {
+                    String resultCache = AppSettings.GetValueOrDefault(QRCodesSettingsKey, String.Empty);
+                    if (!String.IsNullOrEmpty(resultCache))
+                    {
+                        var value = JsonConvert.DeserializeObject<List<QRCodeModel>>(resultCache);
+                        return value;
+                    }
+                    else
+                        return new List<QRCodeModel>();
+                }
+                catch (Exception) { }
+                return new List<QRCodeModel>();
+            }
+            set
+            {
+                if (value == null)
+                    return;
+                AppSettings.AddOrUpdateValue(QRCodesSettingsKey, JsonConvert.SerializeObject(value));
             }
         }
 

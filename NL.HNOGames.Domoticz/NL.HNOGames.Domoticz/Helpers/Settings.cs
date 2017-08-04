@@ -41,6 +41,7 @@ namespace NL.HNOGames.Domoticz.Helpers
 
         private const string EnableScreenItemsSettingsKey = "enablescreens_settings_key";
         private const string EnableTalkBackSettingsKey = "enable_talkback_settings_key";
+        private const string EnableQRCodeSettingsKey = "enable_qrcode_settings_key";
 
 
         private const string EnableDebugInfoSettingsKey = "Enable_DebugInfo_settings_key";
@@ -177,6 +178,21 @@ namespace NL.HNOGames.Domoticz.Helpers
             set
             {
                 AppSettings.AddOrUpdateValue(EnableTalkBackSettingsKey, value);
+            }
+        }
+
+        /// <summary>
+        /// Enable the QRCode feature
+        /// </summary>
+        public bool QRCodeEnabled
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(EnableQRCodeSettingsKey, false);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(EnableQRCodeSettingsKey, value);
             }
         }
 

@@ -33,7 +33,7 @@ namespace NL.HNOGames.Domoticz.iOS
 
             iRate.SharedInstance.DaysUntilPrompt = 10;
             iRate.SharedInstance.UsesUntilPrompt = 20;
-
+            ZXing.Net.Mobile.Forms.iOS.Platform.Init();
             System.Net.ServicePointManager.ServerCertificateValidationCallback += (o, certificate, chain, errors) => true;
 
             CachedImageRenderer.Init();

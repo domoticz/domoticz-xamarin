@@ -19,6 +19,7 @@ namespace NL.HNOGames.Domoticz.Droid
             CachedImageRenderer.Init();
             UserDialogs.Init(this);
             OxyPlot.Xamarin.Forms.Platform.Android.PlotViewRenderer.Init();
+            ZXing.Net.Mobile.Forms.Android.Platform.Init();
 
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
@@ -29,6 +30,11 @@ namespace NL.HNOGames.Domoticz.Droid
 
             LoadApplication(new App(null));
             AndroidPlaystoreAudit.Instance.Run(this);
+        }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+        {
+            global::ZXing.Net.Mobile.Forms.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }

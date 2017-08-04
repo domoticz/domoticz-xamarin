@@ -168,13 +168,12 @@ namespace NL.HNOGames.Domoticz.Views.Settings
 
         private async Task btnDebugInfo_Clicked(object sender, EventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine("Clicked Debug setting");
             await Navigation.PushAsync(new DebugInfoPage());
         }
 
-        private void btnDebugInfo_Clicked_1(object sender, EventArgs e)
+        private async Task btnQRCode_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new QRCodeSettingsPage());
         }
     }
 }

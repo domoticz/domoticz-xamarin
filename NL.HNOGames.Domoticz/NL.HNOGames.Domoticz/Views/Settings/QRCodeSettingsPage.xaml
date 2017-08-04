@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
+             xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
+             xmlns:selector="clr-namespace:NL.HNOGames.Domoticz.ViewSelector;assembly=NL.HNOGames.Domoticz"
+             xmlns:range="clr-namespace:Xamarin.RangeSlider.Forms;assembly=Xamarin.RangeSlider.Forms"
+             x:Class="NL.HNOGames.Domoticz.Views.Settings.QRCodeSettingsPage"
+             Style="{StaticResource ContentPageType}"
+             Title="{resources:Translate category_QRCode}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="{resources:Translate add}" Order="Primary" Activated="ToolbarItem_Activated"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Margin="20">
+                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical" >
+                        <Label Text="{resources:Translate qrcode_enable_settings}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"  Style="{StaticResource SettingsDetailType}" />
+                    </StackLayout>
+                    <Switch x:Name="swEnableQRCode"  VerticalOptions="Center" HorizontalOptions="End"/>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Margin="20,0,20,0">
+                    <!--
+                    ADD LISTVIEW!!
+                    -->
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+    
+</ContentPage>

@@ -18,6 +18,9 @@ namespace NL.HNOGames.Domoticz.Views.Settings
     {
         private List<QRCodeModel> oListSource = new List<QRCodeModel>();
 
+        /// <summary>
+        /// Constructor of QRCode page
+        /// </summary>
         public QRCodeSettingsPage()
         {
             InitializeComponent();
@@ -39,6 +42,12 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// </summary>
         async Task OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
+            var item = args.SelectedItem as QRCodeModel;
+            if (!String.IsNullOrEmpty(item.SwitchIDX))
+            {
+                //connect a switch
+
+            }
         }
 
         /// <summary>
@@ -46,6 +55,9 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// </summary>
         private async Task ToolbarItem_Activated(object sender, EventArgs e)
         {
+            if (!App.AppSettings.QRCodeEnabled)
+                return;
+
             var scanPage = new ZXingScannerPage();
             scanPage.OnScanResult += (result) =>
             {

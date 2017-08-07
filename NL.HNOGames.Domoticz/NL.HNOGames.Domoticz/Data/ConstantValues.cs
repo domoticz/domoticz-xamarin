@@ -11,6 +11,72 @@ namespace NL.HNOGames.Domoticz.Data
             Year
         }
 
+        public static bool CanHandleAutomatedToggle(Models.Device mDeviceInfo)
+        {
+            if (mDeviceInfo == null)
+                return false;
+            if (mDeviceInfo.SwitchTypeVal == 0 &&
+                    (mDeviceInfo.SwitchType == null))
+            {
+                if (mDeviceInfo.SubType != null && mDeviceInfo.SubType == ConstantValues.Device.Utility.SubType.SMARTWARES)
+                    return true;
+                else
+                {
+                    switch (mDeviceInfo.Type)
+                    {
+                        case ConstantValues.Device.Scene.Type.GROUP:
+                            return true;
+                        case ConstantValues.Device.Scene.Type.SCENE:
+                            return true;
+                        case ConstantValues.Device.Utility.Type.THERMOSTAT:
+                            return false;
+                        case ConstantValues.Device.Utility.Type.HEATING:
+                            return false;
+                        default:
+                            return false;
+                    }
+                }
+            }
+            else if ((mDeviceInfo.SwitchType == null))
+                return false;
+            else
+            {
+                switch (mDeviceInfo.SwitchTypeVal)
+                {
+                    case ConstantValues.Device.Type.Value.ON_OFF:
+                    case ConstantValues.Device.Type.Value.MEDIAPLAYER:
+                    case ConstantValues.Device.Type.Value.DOORLOCK:
+                    case ConstantValues.Device.Type.Value.DOORCONTACT:
+                        switch (mDeviceInfo.SwitchType)
+                        {
+                            case ConstantValues.Device.Type.Name.SECURITY:
+                                return false;
+                            default:
+                                return true;
+                        }
+                    case ConstantValues.Device.Type.Value.X10SIREN:
+                    case ConstantValues.Device.Type.Value.MOTION:
+                    case ConstantValues.Device.Type.Value.CONTACT:
+                    case ConstantValues.Device.Type.Value.DUSKSENSOR:
+                    case ConstantValues.Device.Type.Value.SMOKE_DETECTOR:
+                    case ConstantValues.Device.Type.Value.DOORBELL:
+                    case ConstantValues.Device.Type.Value.PUSH_ON_BUTTON:
+                    case ConstantValues.Device.Type.Value.PUSH_OFF_BUTTON:
+                    case ConstantValues.Device.Type.Value.DIMMER:
+                    case ConstantValues.Device.Type.Value.BLINDPERCENTAGE:
+                    case ConstantValues.Device.Type.Value.BLINDPERCENTAGEINVERTED:
+                    case ConstantValues.Device.Type.Value.SELECTOR:
+                    case ConstantValues.Device.Type.Value.BLINDS:
+                    case ConstantValues.Device.Type.Value.BLINDINVERTED:
+                    case ConstantValues.Device.Type.Value.BLINDVENETIAN:
+                    case ConstantValues.Device.Type.Value.BLINDVENETIANUS:
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+        }
+
         public static bool CanHandleStopButton(Models.Device mDeviceInfo)
         {
             return (mDeviceInfo.SubType.Contains("RAEX")) ||

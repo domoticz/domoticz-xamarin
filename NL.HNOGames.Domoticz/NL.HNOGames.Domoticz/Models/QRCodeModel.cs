@@ -21,7 +21,7 @@ namespace NL.HNOGames.Domoticz.Models
         {
             get
             {
-                return AppResources.connectedSwitch + " " + SwitchIDX;
+                return  String.IsNullOrEmpty(SwitchIDX) ? AppResources.connectedSwitch + ": -" : AppResources.connectedSwitch + ": " + SwitchIDX;
             }
         }
     }

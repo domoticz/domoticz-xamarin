@@ -6,6 +6,7 @@ using FFImageLoading.Forms.Droid;
 using AuditApp.Common;
 using AuditApp.Android;
 using System;
+using ZXing.Mobile;
 
 namespace NL.HNOGames.Domoticz.Droid
 {
@@ -20,6 +21,7 @@ namespace NL.HNOGames.Domoticz.Droid
             UserDialogs.Init(this);
             OxyPlot.Xamarin.Forms.Platform.Android.PlotViewRenderer.Init();
             ZXing.Net.Mobile.Forms.Android.Platform.Init();
+            MobileBarcodeScanner.Initialize(Application);
 
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;

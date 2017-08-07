@@ -230,6 +230,9 @@
     <Compile Include="ViewModels\SceneViewModel.cs" />
     <Compile Include="ViewModels\DashboardViewModel.cs" />
     <Compile Include="ViewSelector\DeviceDataTemplateSelector.cs" />
+    <Compile Include="Views\Dialog\SwitchPopup.xaml.cs">
+      <DependentUpon>SwitchPopup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\GraphPage.xaml.cs">
       <DependentUpon>GraphPage.xaml</DependentUpon>
     </Compile>
@@ -689,6 +692,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\Settings\QRCodeSettingsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Dialog\SwitchPopup.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
+             xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
+             xmlns:selector="clr-namespace:NL.HNOGames.Domoticz.ViewSelector;assembly=NL.HNOGames.Domoticz"
+             xmlns:range="clr-namespace:Xamarin.RangeSlider.Forms;assembly=Xamarin.RangeSlider.Forms"
+             x:Class="NL.HNOGames.Domoticz.Views.Dialog.SwitchPopup">
+
+  <StackLayout VerticalOptions="Center"
+      HorizontalOptions="FillAndExpand"
+      Orientation="Vertical"
+      Padding="20, 10, 20, 20"
+      BackgroundColor="{StaticResource LightBackgroundColor}"
+      Margin="20, 10, 20, 20"
+      Opacity="1">
+
+    <Label x:Name="lvlTitle" Text="Connect Switch" Style="{StaticResource HeaderType}" Margin="0,20,0,10"/>
+    <ListView x:Name="listView" BackgroundColor="{DynamicResource LightBackgroundColor}"
+                VerticalOptions="FillAndExpand" HasUnevenRows="true" ItemSelected="OnItemSelected">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <custcontrol:CustomViewCell RowHeight="75">
+            <Grid Style="{StaticResource DashboardDeviceCardType}">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+              <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                <custcontrol:TintedCachedImage WidthRequest="30" HeightRequest="30" ErrorPlaceholder="ic_launcher.png" Source="{Binding Icon}" Opacity="{Binding Opacity}" />
+              </StackLayout>
+              <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                  <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="0,10,0,0">
+                    <Label Text="{Binding Name}" LineBreakMode="TailTruncation" Style="{StaticResource HeaderType}" />
+                  </StackLayout>
+                </StackLayout>
+              </StackLayout>
+            </Grid>
+          </custcontrol:CustomViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+
+    <Button x:Name="btnCancel" Text="{resources:Translate cancel}" HorizontalOptions="Fill" IsEnabled="True" Clicked="btnCancel_Clicked"/>
+  </StackLayout>
+</pages:PopupPage>

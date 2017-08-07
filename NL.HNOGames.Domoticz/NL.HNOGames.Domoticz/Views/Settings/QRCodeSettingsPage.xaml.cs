@@ -19,6 +19,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
     public partial class QRCodeSettingsPage : ContentPage
     {
         private List<QRCodeModel> oListSource = new List<QRCodeModel>();
+        private QRCodeModel oSelectedQRCode = null;
 
         /// <summary>
         /// Constructor of QRCode page
@@ -129,9 +130,28 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             listView.ItemsSource = oListSource;
         }
 
+        
+        /// <summary>
+        /// Connect device to QR Code
+        /// </summary>
         private async Task btnConnect_Clicked(object sender, EventArgs e)
         {
-            await PopupNavigation.PushAsync(new SwitchPopup());
+            oSelectedQRCode = (QRCodeModel)((Button)sender).BindingContext;
+            SwitchPopup oSwitchPopup = new SwitchPopup();
+            oSwitchPopup.DeviceSelectedMethod += DelegateMethod;
+            await PopupNavigation.PushAsync(oSwitchPopup);
+        }
+
+        /// <summary>
+        /// Connect device to QR Code
+        /// </summary>
+        public void DelegateMethod(Models.Device device)
+        {
+            App.ShowToast("Connecting " + oSelectedQRCode.Name + " with switch " + device.Name);
+            oSelectedQRCode.SwitchIDX = device.idx;
+            oSelectedQRCode.SwitchName = device.Name;
+            oSelectedQRCode.IsScene = device.IsScene;
+            SaveAndRefresh();
         }
     }
 }

@@ -14,6 +14,7 @@ namespace NL.HNOGames.Domoticz.Models
         public string Id { get; set; }
         public string Name { get; set; }
         public string SwitchIDX { get; set; }
+        public string SwitchName { get; set; }
         public string SwitchPassword { get; set; }
         public string Value { get; set; }
 
@@ -21,7 +22,7 @@ namespace NL.HNOGames.Domoticz.Models
         {
             get
             {
-                return  String.IsNullOrEmpty(SwitchIDX) ? AppResources.connectedSwitch + ": -" : AppResources.connectedSwitch + ": " + SwitchIDX;
+                return  String.IsNullOrEmpty(SwitchName) ? AppResources.connectedSwitch + ": -" : AppResources.connectedSwitch + ": " + SwitchName;
             }
         }
     }

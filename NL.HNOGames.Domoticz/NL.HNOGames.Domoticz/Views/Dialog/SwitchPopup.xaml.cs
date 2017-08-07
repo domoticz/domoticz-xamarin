@@ -15,6 +15,9 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
 {
     public partial class SwitchPopup : PopupPage
     {
+        public delegate void DeviceSelected(Models.Device device);
+        public DeviceSelected DeviceSelectedMethod { get; set; }
+
         public SwitchPopup()
         {
             InitializeComponent();
@@ -22,7 +25,14 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
 
         void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
+            var item = args.SelectedItem as Models.Device;
+            if (item == null)
+                return;
+            if(DeviceSelectedMethod != null)
+                DeviceSelectedMethod(item);
+
             listView.SelectedItem = null;
+            PopupNavigation.PopAsync();
         }
 
         protected override void OnAppearing()

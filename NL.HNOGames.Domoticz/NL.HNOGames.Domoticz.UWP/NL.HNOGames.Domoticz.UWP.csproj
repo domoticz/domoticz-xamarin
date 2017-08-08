@@ -102,6 +102,7 @@
     <Content Include="ic_arrow_drop_up.png" />
     <Content Include="ic_content_copy.png" />
     <Content Include="ic_filter_list.png" />
+    <Content Include="ic_qrcode.png" />
     <Content Include="ic_show_chart.png" />
     <Content Include="smoke.png" />
     <Content Include="speaker.png" />

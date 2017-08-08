@@ -15,7 +15,7 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
 {
     public partial class SwitchPopup : PopupPage
     {
-        public delegate void DeviceSelected(Models.Device device);
+        public delegate void DeviceSelected(Models.Device device, String pasword, String value);
         public DeviceSelected DeviceSelectedMethod { get; set; }
 
         public SwitchPopup()
@@ -23,16 +23,34 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
             InitializeComponent();
         }
 
-        void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        async Task OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
             var item = args.SelectedItem as Models.Device;
             if (item == null)
                 return;
-            if(DeviceSelectedMethod != null)
-                DeviceSelectedMethod(item);
+
+            String password = null;
+            String value = null;
+            if (item.Protected)
+            {
+                var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password, inputType: InputType.Password);
+                await Task.Delay(500);
+                if (r.Ok)
+                    password = r.Text;
+            }
+
+            if (item.SwitchTypeVal == Data.ConstantValues.Device.Type.Value.SELECTOR)
+            {
+                //show value popup
+                if (item.LevelNamesArray != null && item.LevelNames.Length > 0)
+                    value = await DisplayActionSheet(AppResources.title_plans, AppResources.cancel, null, item.LevelNamesArray);
+            }
+
+            if (DeviceSelectedMethod != null)
+                DeviceSelectedMethod(item, password, value);
 
             listView.SelectedItem = null;
-            PopupNavigation.PopAsync();
+            await PopupNavigation.PopAsync();
         }
 
         protected override void OnAppearing()

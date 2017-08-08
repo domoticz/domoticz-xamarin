@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using ZXing.Net.Mobile.Forms;
 
 namespace NL.HNOGames.Domoticz.Views
 {
@@ -24,6 +25,9 @@ namespace NL.HNOGames.Domoticz.Views
             BindingContext = viewModel = new OverviewViewModel();
         }
 
+        /// <summary>
+        /// On Appearing of this screen
+        /// </summary>
         protected override void OnAppearing()
         {
             base.OnAppearing();
@@ -35,6 +39,11 @@ namespace NL.HNOGames.Domoticz.Views
             }
             else
                 viewModel.RefreshPlansCommand.Execute(null);
+
+            if (!App.AppSettings.QRCodeEnabled)
+                ToolbarItems.Remove(tiQRCode);
+            else if(!ToolbarItems.Contains(tiQRCode))
+                ToolbarItems.Insert(1, tiQRCode);
         }
 
         /// <summary>
@@ -74,6 +83,58 @@ namespace NL.HNOGames.Domoticz.Views
         {
             App.SetMainPage();
             App.RestartFirebase();
+        }
+
+        /// <summary>
+        /// Scan QR Code
+        /// </summary>
+        private async Task tiQRCode_Activated(object sender, EventArgs e)
+        {
+            if (!App.AppSettings.QRCodeEnabled)
+                return;
+
+            var expectedFormat = ZXing.BarcodeFormat.QR_CODE;
+            var opts = new ZXing.Mobile.MobileBarcodeScanningOptions
+            {
+                PossibleFormats = new List<ZXing.BarcodeFormat> { expectedFormat }
+            };
+            System.Diagnostics.Debug.WriteLine("Scanning " + expectedFormat);
+
+            var scanPage = new ZXingScannerPage(opts);
+            scanPage.OnScanResult += (result) =>
+            {
+                scanPage.IsScanning = false;
+
+                Xamarin.Forms.Device.BeginInvokeOnMainThread(async () =>
+                {
+                    await Navigation.PopAsync();
+                    try
+                    {
+                        String QRCodeID = result.Text.ToString().GetHashCode() + "";
+                        var QRCode = App.AppSettings.QRCodes.Where(o => o.Id == QRCodeID).FirstOrDefault();
+                        if(QRCode != null && QRCode.Enabled)
+                        {
+                            App.AddLog("QR Code ID Found: " + QRCodeID);
+                            App.ShowToast(AppResources.qrcode + " " + QRCode.Name);
+                            await App.ApiService.HandleSwitch(QRCode.SwitchIDX, QRCode.SwitchPassword, -1, QRCode.Value, QRCode.IsScene);
+                        }
+                        else
+                        {
+                            App.AddLog("QR Code ID not registered: " + QRCodeID);
+                            if (QRCode == null)
+                                App.ShowToast(AppResources.qrcode_new_found);
+                            else
+                                App.ShowToast(AppResources.qr_code_disabled);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        App.AddLog(ex.Message);
+                    }
+                });
+            };
+
+            await Navigation.PushAsync(scanPage);
         }
     }
 }

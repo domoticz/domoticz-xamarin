@@ -833,6 +833,9 @@
     <BundleResource Include="Resources\ic_arrow_drop_up.png" />
     <BundleResource Include="Resources\ic_arrow_drop_up%402x.png" />
     <BundleResource Include="Resources\ic_arrow_drop_up%403x.png" />
+    <BundleResource Include="Resources\ic_qrcode.png" />
+    <BundleResource Include="Resources\ic_qrcode%402x.png" />
+    <BundleResource Include="Resources\ic_qrcode%403x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.5.235-pre2\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.5.235-pre2\build\netstandard1.0\Xamarin.Forms.targets')" />

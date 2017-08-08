@@ -39,7 +39,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             if (oListSource != null)
                 listView.ItemsSource = oListSource;
         }
-        
+
         /// <summary>
         /// Add new qr code to system
         /// </summary>
@@ -47,7 +47,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         {
             if (!App.AppSettings.QRCodeEnabled)
                 return;
-            
+
             var expectedFormat = ZXing.BarcodeFormat.QR_CODE;
             var opts = new ZXing.Mobile.MobileBarcodeScanningOptions
             {
@@ -56,7 +56,8 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             System.Diagnostics.Debug.WriteLine("Scanning " + expectedFormat);
 
             var scanPage = new ZXingScannerPage(opts);
-            scanPage.OnScanResult += (result) => {
+            scanPage.OnScanResult += (result) =>
+            {
                 scanPage.IsScanning = false;
 
                 Xamarin.Forms.Device.BeginInvokeOnMainThread(async () =>
@@ -130,7 +131,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             listView.ItemsSource = oListSource;
         }
 
-        
+
         /// <summary>
         /// Connect device to QR Code
         /// </summary>
@@ -145,12 +146,18 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// <summary>
         /// Connect device to QR Code
         /// </summary>
-        public void DelegateMethod(Models.Device device)
+        public void DelegateMethod(Models.Device device, String password, String value)
         {
             App.ShowToast("Connecting " + oSelectedQRCode.Name + " with switch " + device.Name);
             oSelectedQRCode.SwitchIDX = device.idx;
             oSelectedQRCode.SwitchName = device.Name;
+            oSelectedQRCode.Value = value;
+            oSelectedQRCode.SwitchPassword = password;
             oSelectedQRCode.IsScene = device.IsScene;
+            oSelectedQRCode.IsScene = device.IsScene;
+
+            
+
             SaveAndRefresh();
         }
     }

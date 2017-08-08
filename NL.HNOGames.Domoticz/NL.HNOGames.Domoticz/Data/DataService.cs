@@ -10,6 +10,7 @@ using System.Diagnostics;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
 
 namespace NL.HNOGames.Domoticz.Data
@@ -125,9 +126,25 @@ namespace NL.HNOGames.Domoticz.Data
         }
 
         /// <summary>
+        /// Domoticz get a specific device object
+        /// </summary>
+        public async Task<Models.Device> GetDevice(String idx, bool isSceneOrGroup)
+        {
+            if (Server == null)
+                return null;
+            var devices = await GetDevices();
+
+            if (devices == null || devices.result == null)
+                return null;
+            else
+                return devices.result.Where(o => String.Compare(o.idx, idx, StringComparison.OrdinalIgnoreCase) == 0 && o.IsScene == isSceneOrGroup).FirstOrDefault();
+        }
+
+
+        /// <summary>
         /// Domoticz get all devices
         /// </summary>
-        public async Task<DevicesModel> GetDevices(int plan, String filter)
+        public async Task<DevicesModel> GetDevices(int plan = 0, String filter = null)
         {
             if (Server == null)
                 return null;
@@ -733,7 +750,7 @@ namespace NL.HNOGames.Domoticz.Data
             String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.System.ADD_MOBILE_DEVICE);
             url += "&uuid=" + DeviceID;
             url += "&senderid=" + SenderId;
-            url += "&name=" + CrossDeviceInfo.Current.Model.Replace(" ","");
+            url += "&name=" + CrossDeviceInfo.Current.Model.Replace(" ", "");
             url += "&devicetype=" + (CrossDeviceInfo.Current.Platform.ToString() + CrossDeviceInfo.Current.Version).Replace(" ", "");
             url += "&active=" + (App.AppSettings.EnableNotifications ? "1" : "0");
             App.AddLog("Domoticz Full Url: " + url);
@@ -754,6 +771,133 @@ namespace NL.HNOGames.Domoticz.Data
             }
 
             return true;
+        }
+
+        /// <summary>
+        /// Handle a toggle of a switch from a service like qrcode/speech/geo
+        /// </summary>
+        public async Task<bool> HandleSwitch(string idx, String password, int inputJSONAction, String value, bool isSceneOrGroup = false)
+        {
+            if (String.IsNullOrEmpty(idx))
+                return false;
+
+            var mDevicesInfo = await GetDevice(idx, isSceneOrGroup);
+            if (mDevicesInfo == null)
+                return false;
+
+            int jsonAction;
+            int jsonUrl = ConstantValues.Json.Url.Set.SWITCHES;
+            int jsonValue = 0;
+
+            if (!isSceneOrGroup)
+            {
+                if (inputJSONAction < 0)
+                {
+                    if (mDevicesInfo.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDS ||
+                            mDevicesInfo.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDPERCENTAGE)
+                    {
+                        if (!mDevicesInfo.StatusBoolean)
+                            jsonAction = ConstantValues.Device.Switch.Action.OFF;
+                        else
+                        {
+                            jsonAction = ConstantValues.Device.Switch.Action.ON;
+                            if (!String.IsNullOrEmpty(value))
+                            {
+                                jsonAction = ConstantValues.Device.Dimmer.Action.DIM_LEVEL;
+                                jsonValue = ConstantValues.GetSelectorValue(mDevicesInfo, value);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (!mDevicesInfo.StatusBoolean)
+                        {
+                            jsonAction = ConstantValues.Device.Switch.Action.ON;
+                            if (!String.IsNullOrEmpty(value))
+                            {
+                                jsonAction = ConstantValues.Device.Dimmer.Action.DIM_LEVEL;
+                                jsonValue = ConstantValues.GetSelectorValue(mDevicesInfo, value);
+                            }
+                        }
+                        else
+                            jsonAction = ConstantValues.Device.Switch.Action.OFF;
+                    }
+                }
+                else
+                {
+                    if (mDevicesInfo.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDS ||
+                            mDevicesInfo.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDPERCENTAGE)
+                    {
+                        if (inputJSONAction == 1)
+                            jsonAction = ConstantValues.Device.Switch.Action.OFF;
+                        else
+                        {
+                            jsonAction = ConstantValues.Device.Switch.Action.ON;
+                            if (!String.IsNullOrEmpty(value))
+                            {
+                                jsonAction = ConstantValues.Device.Dimmer.Action.DIM_LEVEL;
+                                jsonValue = ConstantValues.GetSelectorValue(mDevicesInfo, value);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (inputJSONAction == 1)
+                        {
+                            jsonAction = ConstantValues.Device.Switch.Action.ON;
+                            if (!String.IsNullOrEmpty(value))
+                            {
+                                jsonAction = ConstantValues.Device.Dimmer.Action.DIM_LEVEL;
+                                jsonValue = ConstantValues.GetSelectorValue(mDevicesInfo, value);
+                            }
+                        }
+                        else
+                            jsonAction = ConstantValues.Device.Switch.Action.OFF;
+                    }
+                }
+
+                switch (mDevicesInfo.SwitchTypeVal)
+                {
+                    case ConstantValues.Device.Type.Value.PUSH_ON_BUTTON:
+                        jsonAction = ConstantValues.Device.Switch.Action.ON;
+                        break;
+                    case ConstantValues.Device.Type.Value.PUSH_OFF_BUTTON:
+                        jsonAction = ConstantValues.Device.Switch.Action.OFF;
+                        break;
+                }
+            }
+            else
+            {
+                jsonUrl = ConstantValues.Json.Url.Set.SCENES;
+                if (inputJSONAction < 0)
+                {
+                    if (!mDevicesInfo.StatusBoolean)
+                    {
+                        jsonAction = ConstantValues.Device.Scene.Action.ON;
+                    }
+                    else
+                        jsonAction = ConstantValues.Device.Scene.Action.OFF;
+                }
+                else
+                {
+                    if (inputJSONAction == 1)
+                    {
+                        jsonAction = ConstantValues.Device.Scene.Action.ON;
+                    }
+                    else
+                        jsonAction = ConstantValues.Device.Scene.Action.OFF;
+                }
+
+                if (String.Compare(mDevicesInfo.Type, ConstantValues.Device.Scene.Type.SCENE, StringComparison.OrdinalIgnoreCase) == 0)
+                    jsonAction = ConstantValues.Device.Scene.Action.ON;
+            }
+
+            var result = await this.SetAction(idx, jsonUrl, jsonAction, jsonValue, password);
+            if (result != null &&
+                String.Compare(result.status, "ok", StringComparison.OrdinalIgnoreCase) == 0)
+                return true;
+
+            return false;
         }
 
         #endregion Actions

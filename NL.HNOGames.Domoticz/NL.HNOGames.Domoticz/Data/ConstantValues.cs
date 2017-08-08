@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace NL.HNOGames.Domoticz.Data
 {
@@ -9,6 +10,28 @@ namespace NL.HNOGames.Domoticz.Data
             Day,
             Month,
             Year
+        }
+
+        public static int GetSelectorValue(Models.Device mDevicesInfo, String value)
+        {
+            if (mDevicesInfo == null || mDevicesInfo.LevelNamesArray == null)
+                return 0;
+
+            int jsonValue = 0;
+            if (!String.IsNullOrEmpty(value))
+            {
+                List<String> levelNames = new List<String>(mDevicesInfo.LevelNamesArray);
+                int counter = 0;
+                foreach (String l in levelNames)
+                {
+                    if (String.Compare(l, value, StringComparison.OrdinalIgnoreCase) == 0)
+                        break;
+                    else
+                        counter += 10;
+                }
+                jsonValue = counter;
+            }
+            return jsonValue;
         }
 
         public static bool CanHandleAutomatedToggle(Models.Device mDeviceInfo)

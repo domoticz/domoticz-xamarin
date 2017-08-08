@@ -15,7 +15,16 @@
                             WinPhone="ic_home.png" />
             </ToolbarItem.Icon>
         </ToolbarItem>
-        
+
+        <ToolbarItem x:Name="tiQRCode" Text="{resources:Translate action_qrcode_scan}" Order="Primary" Activated="tiQRCode_Activated">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource"
+                            iOS="ic_qrcode.png"
+                            Android="ic_qrcode.png"
+                            WinPhone="ic_qrcode.png" />
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+
         <ToolbarItem Text="{resources:Translate action_settings}" Order="Primary" Activated="OnSettingsClick">
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource"
@@ -24,6 +33,6 @@
                             WinPhone="ic_settings.png" />
             </ToolbarItem.Icon>
         </ToolbarItem>
-        
+
     </TabbedPage.ToolbarItems>
 </TabbedPage>

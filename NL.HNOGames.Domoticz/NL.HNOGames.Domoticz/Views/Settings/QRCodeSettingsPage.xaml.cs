@@ -57,37 +57,23 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             if (!App.AppSettings.QRCodeEnabled)
                 return;
 
-            var expectedFormat = ZXing.BarcodeFormat.QR_CODE;
-            var opts = new ZXing.Mobile.MobileBarcodeScanningOptions
-            {
-                PossibleFormats = new List<ZXing.BarcodeFormat> { expectedFormat }
-            };
-            System.Diagnostics.Debug.WriteLine("Scanning " + expectedFormat);
+            var scanner = new ZXing.Mobile.MobileBarcodeScanner();
+            var result = await scanner.Scan();
 
-            var scanPage = new ZXingScannerPage(opts);
-            scanPage.OnScanResult += (result) =>
-            {
-                scanPage.IsScanning = false;
-
-                Xamarin.Forms.Device.BeginInvokeOnMainThread(async () =>
+            if (result != null) {
+                try
                 {
-                    await Navigation.PopAsync();
-                    try
-                    {
-                        String QRCodeID = result.Text.ToString().GetHashCode() + "";
-                        if (oListSource.Any(o => String.Compare(o.Id, QRCodeID, StringComparison.OrdinalIgnoreCase) == 0))
-                            App.ShowToast(AppResources.qrcode_exists);
-                        else
-                            AddNewRecord(result, QRCodeID);
-                    }
-                    catch (Exception ex)
-                    {
-                        App.AddLog(ex.Message);
-                    }
-                });
-            };
-
-            await Navigation.PushAsync(scanPage);
+                    String QRCodeID = result.Text.ToString().GetHashCode() + "";
+                    if (oListSource.Any(o => String.Compare(o.Id, QRCodeID, StringComparison.OrdinalIgnoreCase) == 0))
+                        App.ShowToast(AppResources.qrcode_exists);
+                    else
+                        AddNewRecord(result, QRCodeID);
+                }
+                catch (Exception ex)
+                {
+                    App.AddLog(ex.Message);
+                }
+            }
         }
 
         /// <summary>
@@ -165,7 +151,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             oSelectedQRCode.IsScene = device.IsScene;
             oSelectedQRCode.IsScene = device.IsScene;
 
-            
+
 
             SaveAndRefresh();
         }

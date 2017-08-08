@@ -28,6 +28,7 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
             var item = args.SelectedItem as Models.Device;
             if (item == null)
                 return;
+            listView.SelectedItem = null;
 
             String password = null;
             String value = null;
@@ -37,19 +38,23 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
                 await Task.Delay(500);
                 if (r.Ok)
                     password = r.Text;
+                else
+                    return;
             }
 
             if (item.SwitchTypeVal == Data.ConstantValues.Device.Type.Value.SELECTOR)
             {
                 //show value popup
                 if (item.LevelNamesArray != null && item.LevelNames.Length > 0)
-                    value = await DisplayActionSheet(AppResources.title_plans, AppResources.cancel, null, item.LevelNamesArray);
+                {
+                    value = await DisplayActionSheet(AppResources.selector_value, AppResources.cancel, null, item.LevelNamesArray);
+                    if (String.IsNullOrEmpty(value))
+                        return;
+                }
             }
 
             if (DeviceSelectedMethod != null)
                 DeviceSelectedMethod(item, password, value);
-
-            listView.SelectedItem = null;
             await PopupNavigation.PopAsync();
         }
 

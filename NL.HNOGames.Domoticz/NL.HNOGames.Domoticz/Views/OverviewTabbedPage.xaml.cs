@@ -117,6 +117,7 @@ namespace NL.HNOGames.Domoticz.Views
                             App.AddLog("QR Code ID Found: " + QRCodeID);
                             App.ShowToast(AppResources.qrcode + " " + QRCode.Name);
                             await App.ApiService.HandleSwitch(QRCode.SwitchIDX, QRCode.SwitchPassword, -1, QRCode.Value, QRCode.IsScene);
+                            App.SetMainPage();//refresh page
                         }
                         else
                         {

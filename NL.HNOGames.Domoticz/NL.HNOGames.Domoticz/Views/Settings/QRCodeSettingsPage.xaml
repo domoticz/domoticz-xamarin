@@ -20,7 +20,7 @@
                     </StackLayout>
                     <Switch x:Name="swEnableQRCode"  VerticalOptions="Center" HorizontalOptions="End"/>
                 </StackLayout>
-                <ListView x:Name="listView" SeparatorVisibility="None" RowHeight="130" HasUnevenRows="True">
+                <ListView x:Name="listView" SeparatorVisibility="None" RowHeight="130" HasUnevenRows="True" SelectedItem="OnItemSelected">
                     <ListView.ItemTemplate VerticalOptions="StartAndExpand">
                         <DataTemplate>
                             <ViewCell>

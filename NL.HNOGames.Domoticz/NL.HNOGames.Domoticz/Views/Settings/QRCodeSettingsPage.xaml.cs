@@ -40,6 +40,15 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                 listView.ItemsSource = oListSource;
         }
 
+
+        /// <summary>
+        /// Deselect item
+        /// </summary>
+        async Task OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        {
+            listView.SelectedItem = null;
+        }
+
         /// <summary>
         /// Add new qr code to system
         /// </summary>

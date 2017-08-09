@@ -175,5 +175,10 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         {
             await Navigation.PushAsync(new QRCodeSettingsPage());
         }
+
+        private async Task btnSpeechSettings_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SpeechSettingsPage());
+        }
     }
 }

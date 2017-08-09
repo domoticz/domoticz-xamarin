@@ -59,6 +59,7 @@
     <Compile Include="Models\EventModel.cs" />
     <Compile Include="Models\LogModel.cs" />
     <Compile Include="Models\NotificationModel.cs" />
+    <Compile Include="Models\SpeechModel.cs" />
     <Compile Include="Models\ScreenModel.cs" />
     <Compile Include="Models\ActionModel.cs" />
     <Compile Include="Models\BaseDataObject.cs" />
@@ -238,6 +239,9 @@
     </Compile>
     <Compile Include="Views\GraphTabbedPage.xaml.cs">
       <DependentUpon>GraphTabbedPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\SpeechSettingsPage.xaml.cs">
+      <DependentUpon>SpeechSettingsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Settings\QRCodeSettingsPage.xaml.cs">
       <DependentUpon>QRCodeSettingsPage.xaml</DependentUpon>
@@ -698,6 +702,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\Dialog\SwitchPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Settings\SpeechSettingsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

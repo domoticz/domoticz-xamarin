@@ -45,6 +45,9 @@ namespace NL.HNOGames.Domoticz.Helpers
         private const string EnableQRCodeSettingsKey = "enable_qrcode_settings_key";
         private const string QRCodesSettingsKey = "qrcode_settings_key";
 
+        private const string EnableSpeechSettingsKey = "enable_speech_settings_key";
+        private const string SpeechSettingsKey = "speech_settings_key";
+
         private const string EnableDebugInfoSettingsKey = "Enable_DebugInfo_settings_key";
         private const string EnableJSONDebugInfoSettingsKey = "Enable_JSON_DebugInfo_settings_key";
         private const string DebugInfoSettingsKey = "DebugInfo_settings_key";
@@ -223,6 +226,52 @@ namespace NL.HNOGames.Domoticz.Helpers
                 if (value == null)
                     return;
                 AppSettings.AddOrUpdateValue(QRCodesSettingsKey, JsonConvert.SerializeObject(value));
+            }
+        }
+
+
+        /// <summary>
+        /// Enable the Speech feature
+        /// </summary>
+        public bool SpeechEnabled
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(EnableSpeechSettingsKey, false);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(EnableSpeechSettingsKey, value);
+            }
+        }
+
+
+        /// <summary>
+        /// Specify Speech models
+        /// </summary>
+        public List<SpeechModel> SpeechCommands
+        {
+            get
+            {
+                try
+                {
+                    String resultCache = AppSettings.GetValueOrDefault(SpeechSettingsKey, String.Empty);
+                    if (!String.IsNullOrEmpty(resultCache))
+                    {
+                        var value = JsonConvert.DeserializeObject<List<SpeechModel>>(resultCache);
+                        return value;
+                    }
+                    else
+                        return new List<SpeechModel>();
+                }
+                catch (Exception) { }
+                return new List<SpeechModel>();
+            }
+            set
+            {
+                if (value == null)
+                    return;
+                AppSettings.AddOrUpdateValue(SpeechSettingsKey, JsonConvert.SerializeObject(value));
             }
         }
 

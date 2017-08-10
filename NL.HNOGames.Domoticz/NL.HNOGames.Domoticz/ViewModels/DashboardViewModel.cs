@@ -27,11 +27,12 @@ namespace NL.HNOGames.Domoticz.ViewModels
         public ScreenType screenType = ScreenType.Dashboard;
 
         public ObservableRangeCollection<Models.Device> Devices { get; set; }
+
         public Command LoadFavoriteCommand { get; set; }
         public Command RefreshFavoriteCommand { get; set; }
+        public Command RefreshActionCommand { get; set; }
 
         public bool OldData = false;
-
         public Plan screenPlan = null;
 
         public DashboardViewModel(ScreenType type, Plan plan)
@@ -43,6 +44,7 @@ namespace NL.HNOGames.Domoticz.ViewModels
 
             LoadFavoriteCommand = new Command(async () => await ExecuteLoadFavoritesCommand(false));
             RefreshFavoriteCommand = new Command(async () => await ExecuteLoadFavoritesCommand(true));
+            RefreshActionCommand = new Command(async () => await ExecuteLoadFavoritesCommand(false));
 
             if (this.LoadCache)
             {

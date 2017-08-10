@@ -26,6 +26,13 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             InitializeComponent();
             Title = AppResources.action_settings;
 
+            //these features are not yet working correctly!!
+#if DEBUG
+            lyWorkInProgress.IsVisible = true;
+#else
+            lyWorkInProgress.IsVisible = false;
+#endif
+
             //Startup Settings
             txtStartScherm.Items.Clear();
             txtStartScherm.Items.Add(AppResources.title_dashboard);

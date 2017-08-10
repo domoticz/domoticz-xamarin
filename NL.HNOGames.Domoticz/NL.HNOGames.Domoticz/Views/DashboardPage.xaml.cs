@@ -22,6 +22,7 @@ namespace NL.HNOGames.Domoticz.Views
     public partial class DashboardPage : ContentPage
     {
         DashboardViewModel viewModel;
+        private object _scrollItem { get; set; }
 
         public DashboardPage(DashboardViewModel.ScreenType screentype, Plan plan = null)
         {
@@ -36,6 +37,8 @@ namespace NL.HNOGames.Domoticz.Views
         async Task OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
             var item = args.SelectedItem as Models.Device;
+            this._scrollItem = args.SelectedItem;
+
             if (item == null)
                 return;
             await ShowActionMenu(item);
@@ -102,7 +105,7 @@ namespace NL.HNOGames.Domoticz.Views
                     if (!await App.ApiService.SetSecurityPanel(status, md5Pass))
                         App.ShowToast(AppResources.security_generic_error);
                     else
-                        RefreshListView();
+                        RefreshListView(true);
                 }
             }
         }
@@ -181,16 +184,26 @@ namespace NL.HNOGames.Domoticz.Views
             var result = await App.ApiService.SetFavorite(pair.idx, pair.IsScene, newValue);
             if (!result)
                 App.ShowToast(pair.Name + " " + AppResources.error_favorite);
-            RefreshListView();
+            RefreshListView(false);
         }
 
         /// <summary>
         /// Refresh ListView
         /// </summary>
-        private void RefreshListView()
+        private void RefreshListView(bool afterAction)
         {
-            viewModel.RefreshFavoriteCommand.Execute(null);
+            if(!afterAction)
+                viewModel.RefreshFavoriteCommand.Execute(null);
+            else
+                viewModel.RefreshActionCommand.Execute(null);
+
             sbSearch.Text = string.Empty;
+
+            if (this._scrollItem != null)
+            {
+                listView.ScrollTo(_scrollItem, ScrollToPosition.Center, true);
+                _scrollItem = null;
+            }
         }
 
         /// <summary>
@@ -254,13 +267,13 @@ namespace NL.HNOGames.Domoticz.Views
                         var result = await App.ApiService.SetDimmer(pair.idx, newValue, r.Text);
                         if (!result)
                             App.ShowToast(AppResources.security_wrong_code);
-                        RefreshListView();
+                        RefreshListView(true);
                     }
                 }
                 else
                 {
                     await App.ApiService.SetDimmer(pair.idx, newValue);
-                    RefreshListView();
+                    RefreshListView(true);
                 }
             }
         }
@@ -290,7 +303,7 @@ namespace NL.HNOGames.Domoticz.Views
                     if (!result)
                         App.ShowToast(AppResources.security_wrong_code);
 
-                    RefreshListView();
+                    RefreshListView(true);
                 }
             }
             else
@@ -298,7 +311,7 @@ namespace NL.HNOGames.Domoticz.Views
                 App.ShowToast(AppResources.switch_on + ": " + oDevice.Name);
                 var result = await App.ApiService.SetSwitch(oDevice.idx, true, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false);
 
-                RefreshListView();
+                RefreshListView(true);
             }
         }
 
@@ -319,14 +332,14 @@ namespace NL.HNOGames.Domoticz.Views
                     var result = await App.ApiService.SetSwitch(oDevice.idx, false, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false, r.Text);
                     if (!result)
                         App.ShowToast(AppResources.security_wrong_code);
-                    RefreshListView();
+                    RefreshListView(true);
                 }
             }
             else
             {
                 App.ShowToast(AppResources.switch_off + ": " + oDevice.Name);
                 var result = await App.ApiService.SetSwitch(oDevice.idx, false, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false);
-                RefreshListView();
+                RefreshListView(true);
             }
         }
 
@@ -356,7 +369,7 @@ namespace NL.HNOGames.Domoticz.Views
                         if (!result)
                             App.ShowToast(AppResources.security_wrong_code);
 
-                        RefreshListView();
+                        RefreshListView(true);
                     }
                 }
                 else
@@ -367,7 +380,7 @@ namespace NL.HNOGames.Domoticz.Views
                         App.ShowToast(AppResources.switch_on + ": " + oDevice.Name);
 
                     var result = await App.ApiService.SetSwitch(oDevice.idx, oSwitch.IsToggled, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false);
-                    RefreshListView();
+                    RefreshListView(true);
                 }
             }
         }
@@ -406,13 +419,13 @@ namespace NL.HNOGames.Domoticz.Views
                     var result = await App.ApiService.SetPoint(oDevice.idx, newValue, Double.Parse(oDevice.SetPoint, CultureInfo.InvariantCulture), r.Text);
                     if (!result)
                         App.ShowToast(AppResources.security_wrong_code);
-                    if (refresh) RefreshListView();
+                    if (refresh) RefreshListView(true);
                 }
             }
             else
             {
                 var result = await App.ApiService.SetPoint(oDevice.idx, newValue, Double.Parse(oDevice.SetPoint, CultureInfo.InvariantCulture));
-                if (refresh) RefreshListView();
+                if (refresh) RefreshListView(true);
             }
         }
 
@@ -483,13 +496,13 @@ namespace NL.HNOGames.Domoticz.Views
                     var result = await App.ApiService.SetBlind(oDevice.idx, action, r.Text);
                     if (!result)
                         App.ShowToast(AppResources.security_wrong_code);
-                    RefreshListView();
+                    RefreshListView(true);
                 }
             }
             else
             {
                 var result = await App.ApiService.SetBlind(oDevice.idx, action);
-                RefreshListView();
+                RefreshListView(true);
             }
         }
 
@@ -521,13 +534,13 @@ namespace NL.HNOGames.Domoticz.Views
                     var result = await App.ApiService.SetBlind(oDevice.idx, action, r.Text);
                     if (!result)
                         App.ShowToast(AppResources.security_wrong_code);
-                    RefreshListView();
+                    RefreshListView(true);
                 }
             }
             else
             {
                 var result = await App.ApiService.SetBlind(oDevice.idx, action);
-                RefreshListView();
+                RefreshListView(true);
             }
         }
 
@@ -551,13 +564,13 @@ namespace NL.HNOGames.Domoticz.Views
                     var result = await App.ApiService.SetBlind(oDevice.idx, ConstantValues.Device.Blind.Action.STOP, r.Text);
                     if (!result)
                         App.ShowToast(AppResources.security_wrong_code);
-                    RefreshListView();
+                    RefreshListView(true);
                 }
             }
             else
             {
                 var result = await App.ApiService.SetBlind(oDevice.idx, ConstantValues.Device.Blind.Action.STOP);
-                RefreshListView();
+                RefreshListView(true);
             }
         }
 
@@ -576,7 +589,7 @@ namespace NL.HNOGames.Domoticz.Views
 
             SliderPopup oSlider = new SliderPopup(oDevice, viewModel.RefreshFavoriteCommand);
             await PopupNavigation.PushAsync(oSlider);
-            RefreshListView();
+            RefreshListView(true);
         }
 
         #endregion Dimmer

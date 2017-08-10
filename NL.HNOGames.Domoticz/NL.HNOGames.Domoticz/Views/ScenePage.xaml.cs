@@ -124,7 +124,7 @@ namespace NL.HNOGames.Domoticz.Views
             App.ShowToast(AppResources.switch_on + ": " + oDevice.Name);
 
             await App.ApiService.SetSwitch(oDevice.idx, true, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false);
-            viewModel.RefreshFavoriteCommand.Execute(null);
+            viewModel.RefreshActionCommand.Execute(null);
         }
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace NL.HNOGames.Domoticz.Views
             App.ShowToast(AppResources.switch_off + ": " + oDevice.Name);
 
             await App.ApiService.SetSwitch(oDevice.idx, false, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false);
-            viewModel.RefreshFavoriteCommand.Execute(null);
+            viewModel.RefreshActionCommand.Execute(null);
         }
 
         /// <summary>
@@ -156,7 +156,7 @@ namespace NL.HNOGames.Domoticz.Views
                     App.ShowToast(AppResources.switch_on + ": " + oDevice.Name);
 
                 await App.ApiService.SetSwitch(oDevice.idx, oSwitch.IsToggled, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false);
-                viewModel.RefreshFavoriteCommand.Execute(null);
+                viewModel.RefreshActionCommand.Execute(null);
             }
         }
 

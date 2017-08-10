@@ -18,8 +18,6 @@ namespace NL.HNOGames.Domoticz
         private static InitFirebase _initFirebase;
         public delegate void InitFirebase();
 
-        public static bool ShowAds { get; set; }
-
         public static ConnectionService ConnectionService { get; private set; }
         public static DataService ApiService { get; private set; }
         public static Settings AppSettings { get; set; }
@@ -71,13 +69,24 @@ namespace NL.HNOGames.Domoticz
                 loadingDialog.Hide();
         }
 
+        public App()
+        {
+            Init();
+        }
+
         public App(InitFirebase firebase)
         {
             _initFirebase = firebase;
-            ShowAds = false;//default
+            Init();
+        }
 
+        /// <summary>
+        /// Init the page
+        /// </summary>
+        /// <param name="firebase"></param>
+        private void Init()
+        {
             InitializeComponent();
-
             AppSettings = new Settings();
             AppSettings.DebugInfo = String.Empty;
 

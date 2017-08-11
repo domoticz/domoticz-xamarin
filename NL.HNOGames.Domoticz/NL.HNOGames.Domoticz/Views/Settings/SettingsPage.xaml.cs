@@ -1,6 +1,4 @@
-﻿using Acr.UserDialogs;
-using Newtonsoft.Json;
-using NL.HNOGames.Domoticz.Models;
+﻿using NL.HNOGames.Domoticz.Models;
 using NL.HNOGames.Domoticz.Resources;
 using NL.HNOGames.Domoticz.Views.Dialog;
 using PCLStorage;
@@ -14,15 +12,15 @@ using Xamarin.Forms.Xaml;
 namespace NL.HNOGames.Domoticz.Views.Settings
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SettingsPage : ContentPage
+    public partial class SettingsPage
     {
-        private SelectMultipleBasePage<ScreenModel> oEnableScreenPage;
-        private Command GoToMainScreen;
-        public bool NotificationSettingsChanged = false;
+        private SelectMultipleBasePage<ScreenModel> _oEnableScreenPage;
+        private readonly Command _goToMainScreen;
+        public bool NotificationSettingsChanged;
 
         public SettingsPage(Command mainScreen)
         {
-            this.GoToMainScreen = mainScreen;
+            _goToMainScreen = mainScreen;
             InitializeComponent();
             Title = AppResources.action_settings;
 
@@ -68,10 +66,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             swDarkTheme.Toggled += (sender, args) =>
             {
                 App.AppSettings.DarkTheme = swDarkTheme.IsToggled;
-                if (App.AppSettings.DarkTheme)
-                    App.Current.Resources.MergedWith = (new Themes.Dark()).GetType();
-                else
-                    App.Current.Resources.MergedWith = (new Themes.Base()).GetType();
+                Application.Current.Resources.MergedWith = App.AppSettings.DarkTheme ? (new Themes.Dark()).GetType() : (new Themes.Base()).GetType();
             };
             
             //Dashboard show switches
@@ -104,13 +99,11 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// <summary>
         /// Save the enable screen selection
         /// </summary>
-        void ExecuteSaveEnableScreensCommand()
+        private void ExecuteSaveEnableScreensCommand()
         {
-            if (oEnableScreenPage != null)
-            {
-                App.AppSettings.EnabledScreens = oEnableScreenPage.GetAllItems();
-                GoToMainScreen.Execute(null);
-            }
+            if (_oEnableScreenPage == null) return;
+            App.AppSettings.EnabledScreens = _oEnableScreenPage.GetAllItems();
+            _goToMainScreen.Execute(null);
         }
 
         /// <summary>
@@ -118,72 +111,66 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// </summary>
         public async Task<string> ReadFileContent(string fileName, IFolder rootFolder)
         {
-            ExistenceCheckResult exist = await rootFolder.CheckExistsAsync(fileName);
-            string text = null;
-            if (exist == ExistenceCheckResult.FileExists)
-            {
-                IFile file = await rootFolder.GetFileAsync(fileName);
-                text = await file.ReadAllTextAsync();
-            }
+            var exist = await rootFolder.CheckExistsAsync(fileName);
+            if (exist != ExistenceCheckResult.FileExists) return null;
+            var file = await rootFolder.GetFileAsync(fileName);
+            var text = await file.ReadAllTextAsync();
             return text;
         }
 
         /// <summary>
         /// Enable or Disable screens
         /// </summary>
-        private async Task btnEnableScreens_Clicked(object sender, EventArgs e)
+        private async void btnEnableScreens_Clicked(object sender, EventArgs e)
         {
-            var items = App.AppSettings.EnabledScreens;
-            if (items == null)
+            var items = App.AppSettings.EnabledScreens ?? new List<ScreenModel>
             {
-                //setup default screens, all turned on!
-                items = new List<ScreenModel>();
-                items.Add(new ScreenModel { ID = "Dashboard", Name = AppResources.title_dashboard, IsSelected = true });
-                items.Add(new ScreenModel { ID = "Switch", Name = AppResources.title_switches, IsSelected = true });
-                items.Add(new ScreenModel { ID = "Scene", Name = AppResources.title_scenes, IsSelected = true });
-                items.Add(new ScreenModel { ID = "Temperature", Name = AppResources.title_temperature, IsSelected = true });
-                items.Add(new ScreenModel { ID = "Weather", Name = AppResources.title_weather, IsSelected = true });
-                items.Add(new ScreenModel { ID = "Utilities", Name = AppResources.title_utilities, IsSelected = true });
-            }
+                new ScreenModel {ID = "Dashboard", Name = AppResources.title_dashboard, IsSelected = true},
+                new ScreenModel {ID = "Switch", Name = AppResources.title_switches, IsSelected = true},
+                new ScreenModel {ID = "Scene", Name = AppResources.title_scenes, IsSelected = true},
+                new ScreenModel {ID = "Temperature", Name = AppResources.title_temperature, IsSelected = true},
+                new ScreenModel {ID = "Weather", Name = AppResources.title_weather, IsSelected = true},
+                new ScreenModel {ID = "Utilities", Name = AppResources.title_utilities, IsSelected = true}
+            };
 
-            oEnableScreenPage = new SelectMultipleBasePage<ScreenModel>(items, new Command(() => ExecuteSaveEnableScreensCommand()))
+            _oEnableScreenPage = new SelectMultipleBasePage<ScreenModel>(items, new Command(ExecuteSaveEnableScreensCommand))
             {
                 Title = AppResources.enable_items
             };
-            await Navigation.PushAsync(oEnableScreenPage);
+            await Navigation.PushAsync(_oEnableScreenPage);
         }
 
-        private async Task btnServerSetup_Clicked(object sender, EventArgs e)
+        private async void btnServerSetup_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new ServerSettingsPage());
         }
 
-        private async Task btnShowLog_Clicked(object sender, EventArgs e)
+        private async void btnShowLog_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new ServerLogsPage());
         }
 
-        private async Task btnUserVars_Clicked(object sender, EventArgs e)
+        private async void btnUserVars_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new UserVariablesPage());
         }
 
-        private async Task btnEvents_Clicked(object sender, EventArgs e)
+        private async void btnEvents_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new EventsPage());
         }
 
-        private async Task btnDebugInfo_Clicked(object sender, EventArgs e)
+        private async void btnDebugInfo_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new DebugInfoPage());
         }
 
-        private async Task btnQRCode_Clicked(object sender, EventArgs e)
+        private async void btnQRCode_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new QRCodeSettingsPage());
+            await Navigation.PushAsync(new QrCodeSettingsPage());
         }
 
-        private async Task btnSpeechSettings_Clicked(object sender, EventArgs e)
+        private async void btnSpeechSettings_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new SpeechSettingsPage());
         }

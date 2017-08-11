@@ -1,11 +1,7 @@
 ﻿using System;
 
-using NL.HNOGames.Domoticz.ViewModels;
 using Xamarin.Forms;
-using Rg.Plugins.Popup.Pages;
 using System.Threading.Tasks;
-using System.Collections.Generic;
-using NL.HNOGames.Domoticz.Models;
 using Acr.UserDialogs;
 using NL.HNOGames.Domoticz.Resources;
 using Rg.Plugins.Popup.Services;
@@ -13,9 +9,9 @@ using System.Linq;
 
 namespace NL.HNOGames.Domoticz.Views.Dialog
 {
-    public partial class SwitchPopup : PopupPage
+    public partial class SwitchPopup
     {
-        public delegate void DeviceSelected(Models.Device device, String pasword, String value);
+        public delegate void DeviceSelected(Models.Device device, string pasword, string value);
         public DeviceSelected DeviceSelectedMethod { get; set; }
 
         public SwitchPopup()
@@ -23,15 +19,15 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
             InitializeComponent();
         }
 
-        async Task OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        private async Task OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
             var item = args.SelectedItem as Models.Device;
             if (item == null)
                 return;
             listView.SelectedItem = null;
 
-            String password = null;
-            String value = null;
+            string password = null;
+            string value = null;
             if (item.Protected)
             {
                 var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password, inputType: InputType.Password);
@@ -48,13 +44,12 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
                 if (item.LevelNamesArray != null && item.LevelNames.Length > 0)
                 {
                     value = await DisplayActionSheet(AppResources.selector_value, AppResources.cancel, null, item.LevelNamesArray);
-                    if (String.IsNullOrEmpty(value))
+                    if (string.IsNullOrEmpty(value))
                         return;
                 }
             }
 
-            if (DeviceSelectedMethod != null)
-                DeviceSelectedMethod(item, password, value);
+            DeviceSelectedMethod?.Invoke(item, password, value);
             await PopupNavigation.PopAsync();
         }
 
@@ -64,14 +59,14 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
             new Command(async () => await ExecuteGetSwitchesCommand()).Execute(null);
         }
 
-        async Task ExecuteGetSwitchesCommand()
+        private async Task ExecuteGetSwitchesCommand()
         {
             listView.IsRefreshing = true;
             var result = await App.ApiService.GetDevices(0, "all");
             if (result == null)
                 return;
 
-            var switchList = result.result.Where(o => Data.ConstantValues.CanHandleAutomatedToggle(o));
+            var switchList = result.result.Where(Data.ConstantValues.CanHandleAutomatedToggle);
             listView.ItemsSource = switchList;
             listView.IsRefreshing = false;
         }

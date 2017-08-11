@@ -1,10 +1,8 @@
-﻿using NL.HNOGames.Domoticz.Models;
-using NL.HNOGames.Domoticz.Resources;
+﻿using NL.HNOGames.Domoticz.Resources;
 using NL.HNOGames.Domoticz.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -14,15 +12,15 @@ using ZXing.Net.Mobile.Forms;
 namespace NL.HNOGames.Domoticz.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class OverviewTabbedPage : TabbedPage
+    public partial class OverviewTabbedPage
     {
-        OverviewViewModel viewModel;
+        private readonly OverviewViewModel _viewModel;
         public static bool EmptyDialogShown = false;
 
         public OverviewTabbedPage()
         {
             InitializeComponent();
-            BindingContext = viewModel = new OverviewViewModel();
+            BindingContext = _viewModel = new OverviewViewModel();
         }
 
         /// <summary>
@@ -32,17 +30,17 @@ namespace NL.HNOGames.Domoticz.Views
         {
             base.OnAppearing();
 
-            if (settingsOpened)
+            if (_settingsOpened)
             {
-                settingsOpened = false;
+                _settingsOpened = false;
                 BreakingSettingsChanged();
             }
             else
-                viewModel.RefreshPlansCommand.Execute(null);
+                _viewModel.RefreshPlansCommand.Execute(null);
 
             if (!App.AppSettings.QRCodeEnabled)
                 ToolbarItems.Remove(tiQRCode);
-            else if(!ToolbarItems.Contains(tiQRCode))
+            else if (!ToolbarItems.Contains(tiQRCode))
                 ToolbarItems.Insert(1, tiQRCode);
         }
 
@@ -51,35 +49,29 @@ namespace NL.HNOGames.Domoticz.Views
         /// </summary>
         public async void OnShowPlansClick(object o, EventArgs e)
         {
-            if (viewModel.Plans != null && viewModel.Plans.Count > 0)
+            if (_viewModel.Plans == null || _viewModel.Plans.Count <= 0) return;
+            var selectedPlanName = await DisplayActionSheet(AppResources.title_plans, AppResources.cancel, null, _viewModel.Plans.Select(p => p.Name).ToArray());
+            var selectedPlan = _viewModel.Plans.FirstOrDefault(q => q.Name == selectedPlanName);
+            if (selectedPlan != null)
             {
-                List<String> plans = new List<string>();
-                foreach (Plan p in viewModel.Plans)
-                    plans.Add(p.Name);
-
-                var selectedPlanName = await DisplayActionSheet(AppResources.title_plans, AppResources.cancel, null, plans.ToArray());
-                var selectedPlan = viewModel.Plans.Where(q => q.Name == selectedPlanName).FirstOrDefault();
-                if (selectedPlan != null)
-                {
-                    await Navigation.PushAsync(new DashboardPage(DashboardViewModel.ScreenType.Switches, selectedPlan));
-                }
+                await Navigation.PushAsync(new DashboardPage(DashboardViewModel.ScreenTypeEnum.Switches, selectedPlan));
             }
         }
 
-        private bool settingsOpened = false;
+        private bool _settingsOpened;
         /// <summary>
         /// Show all settings
         /// </summary>
         public async void OnSettingsClick(object o, EventArgs e)
         {
-            settingsOpened = true;
-            await Navigation.PushAsync(new Settings.SettingsPage(new Command(async () => await BreakingSettingsChanged())));
+            _settingsOpened = true;
+            await Navigation.PushAsync(new Settings.SettingsPage(new Command(BreakingSettingsChanged)));
         }
 
         /// <summary>
         /// Refresh mainscreen
         /// </summary>
-        async Task BreakingSettingsChanged()
+        private static void BreakingSettingsChanged()
         {
             App.SetMainPage();
             App.RestartFirebase();
@@ -105,27 +97,25 @@ namespace NL.HNOGames.Domoticz.Views
             {
                 scanPage.IsScanning = false;
 
-                Xamarin.Forms.Device.BeginInvokeOnMainThread(async () =>
+                Device.BeginInvokeOnMainThread(async () =>
                 {
                     await Navigation.PopAsync();
                     try
                     {
-                        String QRCodeID = result.Text.ToString().GetHashCode() + "";
-                        var QRCode = App.AppSettings.QRCodes.Where(o => o.Id == QRCodeID).FirstOrDefault();
-                        if(QRCode != null && QRCode.Enabled)
+                        var qrCodeId = result.Text.GetHashCode() + "";
+                        var qrCode = App.AppSettings.QRCodes.FirstOrDefault(o => o.Id == qrCodeId);
+                        if(qrCode != null && qrCode.Enabled)
                         {
-                            App.AddLog("QR Code ID Found: " + QRCodeID);
-                            App.ShowToast(AppResources.qrcode + " " + QRCode.Name);
-                            await App.ApiService.HandleSwitch(QRCode.SwitchIDX, QRCode.SwitchPassword, -1, QRCode.Value, QRCode.IsScene);
-                            App.SetMainPage();//refresh page
+                            App.AddLog("QR Code ID Found: " + qrCodeId);
+                            App.ShowToast(AppResources.qrcode + " " + qrCode.Name);
+                            await App.ApiService.HandleSwitch(qrCode.SwitchIDX, qrCode.SwitchPassword, -1, qrCode.Value, qrCode.IsScene);
+                            App.SetMainPage();
                         }
                         else
                         {
-                            App.AddLog("QR Code ID not registered: " + QRCodeID);
-                            if (QRCode == null)
-                                App.ShowToast(AppResources.qrcode_new_found);
-                            else
-                                App.ShowToast(AppResources.qr_code_disabled);
+                            App.AddLog("QR Code ID not registered: " + qrCodeId);
+                            App.ShowToast(
+                                qrCode == null ? AppResources.qrcode_new_found : AppResources.qr_code_disabled);
                         }
                     }
                     catch (Exception ex)

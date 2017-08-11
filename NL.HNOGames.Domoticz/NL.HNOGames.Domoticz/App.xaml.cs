@@ -13,7 +13,7 @@ using Xamarin.Forms.Xaml;
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace NL.HNOGames.Domoticz
 {
-    public partial class App : Application
+    public partial class App
     {
         private static InitFirebase _initFirebase;
         public delegate void InitFirebase();
@@ -22,29 +22,26 @@ namespace NL.HNOGames.Domoticz
         public static DataService ApiService { get; private set; }
         public static Settings AppSettings { get; set; }
 
-        public static NL.HNOGames.Domoticz.Models.ConfigModel ServerConfig { get; set; }
-        private static IProgressDialog loadingDialog = null;
+        public static Models.ConfigModel ServerConfig { get; set; }
+        private static IProgressDialog _loadingDialog;
 
         /// <summary>
         /// Restart Firebase
         /// </summary>
         public static void RestartFirebase()
         {
-            if (_initFirebase != null)
-                _initFirebase();
+            _initFirebase?.Invoke();
         }
 
         /// <summary>
         /// Load the server config
         /// </summary>
         /// <returns></returns>
-        public static NL.HNOGames.Domoticz.Models.ConfigModel getServerConfig()
+        public static Models.ConfigModel GetServerConfig()
         {
-            if (ServerConfig == null)
-            {
-                ApiService.RefreshConfig();
-                ServerConfig = AppSettings.ServerConfig;
-            }
+            if (ServerConfig != null) return ServerConfig;
+            ApiService.RefreshConfig();
+            ServerConfig = AppSettings.ServerConfig;
             return ServerConfig;
         }
 
@@ -53,9 +50,9 @@ namespace NL.HNOGames.Domoticz
         /// </summary>
         public static void ShowLoading()
         {
-            if (loadingDialog == null)
-                loadingDialog = UserDialogs.Instance.Loading("Loading", maskType: MaskType.Gradient);
-            loadingDialog.Show();
+            if (_loadingDialog == null)
+                _loadingDialog = UserDialogs.Instance.Loading("Loading", maskType: MaskType.Gradient);
+            _loadingDialog.Show();
         }
 
         /// <summary>
@@ -63,10 +60,7 @@ namespace NL.HNOGames.Domoticz
         /// </summary>
         public static void HideLoading()
         {
-            if (loadingDialog == null)
-                return;//nothing to hide
-            else
-                loadingDialog.Hide();
+            _loadingDialog?.Hide();
         }
 
         public App()
@@ -83,36 +77,30 @@ namespace NL.HNOGames.Domoticz
         /// <summary>
         /// Init the page
         /// </summary>
-        /// <param name="firebase"></param>
         private void Init()
         {
             InitializeComponent();
-            AppSettings = new Settings();
-            AppSettings.DebugInfo = String.Empty;
+            AppSettings = new Settings {DebugInfo = string.Empty};
 
             ConnectionService = new ConnectionService();
-            ApiService = new DataService();
-            ApiService.Server = App.AppSettings.ActiveServerSettings;
+            ApiService = new DataService {Server = AppSettings.ActiveServerSettings};
 
-            if (App.Current.Resources == null)
-                App.Current.Resources = new ResourceDictionary();
-            if (App.AppSettings.DarkTheme)
-                App.Current.Resources.MergedWith = (new Themes.Dark()).GetType();
-            else
-                App.Current.Resources.MergedWith = (new Themes.Base()).GetType();
+            if (Current.Resources == null)
+                Current.Resources = new ResourceDictionary();
 
+            Current.Resources.MergedWith = AppSettings.DarkTheme ? (new Themes.Dark()).GetType() : (new Themes.Base()).GetType();
             SetMainPage();
         }
 
         /// <summary>
         /// Log information
         /// </summary>
-        public static void AddLog(String text)
+        public static void AddLog(string text)
         {
             try
             {
                 System.Diagnostics.Debug.WriteLine(text);
-                App.AppSettings.AddDebugInfo(text);
+                AppSettings.AddDebugInfo(text);
             }
             catch (Exception ex)
             {
@@ -123,9 +111,9 @@ namespace NL.HNOGames.Domoticz
         /// <summary>
         /// Show toast information
         /// </summary>
-        public static void ShowToast(String text)
+        public static void ShowToast(string text)
         {
-            if (String.IsNullOrEmpty(text))
+            if (string.IsNullOrEmpty(text))
                 return;
             try
             {
@@ -140,11 +128,14 @@ namespace NL.HNOGames.Domoticz
             }
         }
 
+        /// <summary>
+        /// Setup mainpage
+        /// </summary>
         public static void SetMainPage()
         {
             try
             {
-                if (!App.AppSettings.WelcomeCompleted || App.AppSettings.ActiveServerSettings == null)
+                if (!AppSettings.WelcomeCompleted || AppSettings.ActiveServerSettings == null)
                 {
                     //show welcome settings screens
                     Current.MainPage = new NavigationPage(new WelcomeCarouselPage());
@@ -153,9 +144,9 @@ namespace NL.HNOGames.Domoticz
                 {
                     //check if we need a refresh of the config
                     ApiService.RefreshConfig();
-                    getServerConfig();
+                    GetServerConfig();
 
-                    OverviewTabbedPage oOverviewTabbedPage = new OverviewTabbedPage
+                    var oOverviewTabbedPage = new OverviewTabbedPage
                     {
                         BarBackgroundColor = Color.FromHex("#22272B"),
                         BarTextColor = Color.White,
@@ -164,7 +155,7 @@ namespace NL.HNOGames.Domoticz
                     var screens = AppSettings.EnabledScreens;
                     if (screens == null || screens.Any(o => o.IsSelected && o.ID == "Dashboard"))
                     {
-                        oOverviewTabbedPage.Children.Add(new DashboardPage(ViewModels.DashboardViewModel.ScreenType.Dashboard)
+                        oOverviewTabbedPage.Children.Add(new DashboardPage(ViewModels.DashboardViewModel.ScreenTypeEnum.Dashboard)
                         {
                             Title = AppResources.title_dashboard,
                             Icon = Device.RuntimePlatform == Device.iOS ? "ic_dashboard_white.png" : null,
@@ -172,7 +163,7 @@ namespace NL.HNOGames.Domoticz
                     }
                     if (screens == null || screens.Any(o => o.IsSelected && o.ID == "Switch"))
                     {
-                        oOverviewTabbedPage.Children.Add(new DashboardPage(ViewModels.DashboardViewModel.ScreenType.Switches)
+                        oOverviewTabbedPage.Children.Add(new DashboardPage(ViewModels.DashboardViewModel.ScreenTypeEnum.Switches)
                         {
                             Title = AppResources.title_switches,
                             Icon = Device.RuntimePlatform == Device.iOS ? "ic_view_carousel_white.png" : null,
@@ -188,7 +179,7 @@ namespace NL.HNOGames.Domoticz
                     }
                     if (screens == null || screens.Any(o => o.IsSelected && o.ID == "Temperature"))
                     {
-                        oOverviewTabbedPage.Children.Add(new DashboardPage(ViewModels.DashboardViewModel.ScreenType.Temperature)
+                        oOverviewTabbedPage.Children.Add(new DashboardPage(ViewModels.DashboardViewModel.ScreenTypeEnum.Temperature)
                         {
                             Title = AppResources.title_temperature,
                             Icon = Device.RuntimePlatform == Device.iOS ? "ic_wb_sunny_white.png" : null,
@@ -196,7 +187,7 @@ namespace NL.HNOGames.Domoticz
                     }
                     if (screens == null || screens.Any(o => o.IsSelected && o.ID == "Weather"))
                     {
-                        oOverviewTabbedPage.Children.Add(new DashboardPage(ViewModels.DashboardViewModel.ScreenType.Weather)
+                        oOverviewTabbedPage.Children.Add(new DashboardPage(ViewModels.DashboardViewModel.ScreenTypeEnum.Weather)
                         {
                             Title = AppResources.title_weather,
                             Icon = Device.RuntimePlatform == Device.iOS ? "ic_wb_cloudy_white.png" : null,
@@ -204,20 +195,20 @@ namespace NL.HNOGames.Domoticz
                     }
                     if (screens == null || screens.Any(o => o.IsSelected && o.ID == "Utilities"))
                     {
-                        oOverviewTabbedPage.Children.Add(new DashboardPage(ViewModels.DashboardViewModel.ScreenType.Utilities)
+                        oOverviewTabbedPage.Children.Add(new DashboardPage(ViewModels.DashboardViewModel.ScreenTypeEnum.Utilities)
                         {
                             Title = AppResources.title_utilities,
                             Icon = Device.RuntimePlatform == Device.iOS ? "ic_highlight_white.png" : null,
                         });
                     }
 
-                    oOverviewTabbedPage.SelectedItem = oOverviewTabbedPage.Children[App.AppSettings.StartupScreen];
+                    oOverviewTabbedPage.SelectedItem = oOverviewTabbedPage.Children[AppSettings.StartupScreen];
                     Current.MainPage = new NavigationPage(oOverviewTabbedPage);
                 }
             }
             catch (Exception ex)
             {
-                App.AddLog(ex.Message);
+                AddLog(ex.Message);
             }
         }
     }

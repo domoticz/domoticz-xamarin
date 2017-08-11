@@ -1,29 +1,27 @@
 ﻿using System;
 
-using NL.HNOGames.Domoticz.ViewModels;
 using Xamarin.Forms;
-using Rg.Plugins.Popup.Pages;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using NL.HNOGames.Domoticz.Models;
-using Acr.UserDialogs;
 using NL.HNOGames.Domoticz.Resources;
 using Rg.Plugins.Popup.Services;
+using Device = NL.HNOGames.Domoticz.Models.Device;
 
 namespace NL.HNOGames.Domoticz.Views.Dialog
 {
-    public partial class LogsPopup : PopupPage
+    public partial class LogsPopup
     {
-        private object selectedDevice;
-        private List<Log> logList;
+        private readonly object _selectedDevice;
+        private List<Log> _logList;
 
         public LogsPopup(object device)
         {
-            selectedDevice = device;
+            _selectedDevice = device;
             InitializeComponent();
         }
 
-        void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        private void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
             listView.SelectedItem = null;
         }
@@ -34,24 +32,23 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
             new Command(async () => await ExecuteLoadNotificationsCommand()).Execute(null);
         }
 
-        async Task ExecuteLoadNotificationsCommand()
+        private async Task ExecuteLoadNotificationsCommand()
         {
-            string idx = "";
-            if (selectedDevice is Models.Device)
-                idx = ((Models.Device)selectedDevice).idx;
-            else if (selectedDevice is Models.Scene)
-                idx = ((Models.Scene)selectedDevice).idx;
+            var idx = "";
+            if (_selectedDevice is Device device)
+                idx = device.idx;
+            else if (_selectedDevice is Scene)
+                idx = ((Scene)_selectedDevice).idx;
 
-            logList = new List<Log>();
-            var logs = await App.ApiService.GetLogs(idx, selectedDevice is Models.Scene);
-            if (logs == null || logs.result == null)
+            _logList = new List<Log>();
+            var logs = await App.ApiService.GetLogs(idx, _selectedDevice is Scene);
+            if (logs?.result == null)
                 logs = await App.ApiService.GetLogs(idx, false, true);
-
-            if (logs != null && logs.result != null)
+            if (logs?.result != null)
             {
-                foreach (Log n in logs.result)
-                    logList.Add(n);
-                listView.ItemsSource = logList;
+                foreach (var n in logs.result)
+                    _logList.Add(n);
+                listView.ItemsSource = _logList;
             }
             else
             {

@@ -1,31 +1,26 @@
 ﻿using System;
 
-using NL.HNOGames.Domoticz.ViewModels;
 using Xamarin.Forms;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-using Plugin.Share;
 using NL.HNOGames.Domoticz.Resources;
-using ZXing.Mobile;
-using ZXing.Net.Mobile.Forms;
-using System.Linq;
 using NL.HNOGames.Domoticz.Models;
-using Acr.UserDialogs;
 using Rg.Plugins.Popup.Services;
 using NL.HNOGames.Domoticz.Views.Dialog;
 
 namespace NL.HNOGames.Domoticz.Views.Settings
 {
-    public partial class SpeechSettingsPage : ContentPage
+    public partial class SpeechSettingsPage
     {
-        private List<SpeechModel> oListSource = new List<SpeechModel>();
-        private SpeechModel oSelectedSpeechCommand = null;
+        private readonly List<SpeechModel> _oListSource;
+        private SpeechModel _oSelectedSpeechCommand;
 
         /// <summary>
         /// Constructor of QRCode page
         /// </summary>
         public SpeechSettingsPage()
         {
+            _oSelectedSpeechCommand = null;
             InitializeComponent();
 
             App.ShowToast(AppResources.Speech_register);
@@ -35,29 +30,16 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                 App.AppSettings.SpeechEnabled = swEnableSpeech.IsToggled;
             };
 
-            oListSource = App.AppSettings.SpeechCommands;
-            if (oListSource != null)
-                listView.ItemsSource = oListSource;
-        }
-
-
-        /// <summary>
-        /// Deselect item
-        /// </summary>
-        async Task OnItemSelected(object sender, SelectedItemChangedEventArgs args)
-        {
-            listView.SelectedItem = null;
+            _oListSource = App.AppSettings.SpeechCommands;
+            if (_oListSource != null)
+                listView.ItemsSource = _oListSource;
         }
 
         /// <summary>
         /// Add new Speech Command to system
         /// </summary>
-        private async Task ToolbarItem_Activated(object sender, EventArgs e)
+        private void ToolbarItem_Activated(object sender, EventArgs e)
         {
-            if (!App.AppSettings.SpeechEnabled)
-                return;
-
-            //todo record speech commad
         }
 
         /// <summary>
@@ -65,9 +47,9 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// </summary>
         private void btnDeleteButton_Clicked(object sender, EventArgs e)
         {
-            SpeechModel oSpeechCommand = (SpeechModel)((Button)sender).BindingContext;
+            var oSpeechCommand = (SpeechModel)((Button)sender).BindingContext;
             App.ShowToast(AppResources.something_deleted.Replace("%1$s", oSpeechCommand.Name));
-            oListSource.Remove(oSpeechCommand);
+            _oListSource.Remove(oSpeechCommand);
             SaveAndRefresh();
         }
 
@@ -76,18 +58,18 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// </summary>
         private void SaveAndRefresh()
         {
-            App.AppSettings.SpeechCommands = oListSource;
+            App.AppSettings.SpeechCommands = _oListSource;
             listView.ItemsSource = null;
-            listView.ItemsSource = oListSource;
+            listView.ItemsSource = _oListSource;
         }
 
         /// <summary>
         /// Connect device to Speech Command
         /// </summary>
-        private async Task btnConnect_Clicked(object sender, EventArgs e)
+        private async void btnConnect_Clicked(object sender, EventArgs e)
         {
-            oSelectedSpeechCommand = (SpeechModel)((Button)sender).BindingContext;
-            SwitchPopup oSwitchPopup = new SwitchPopup();
+            _oSelectedSpeechCommand = (SpeechModel)((Button)sender).BindingContext;
+            var oSwitchPopup = new SwitchPopup();
             oSwitchPopup.DeviceSelectedMethod += DelegateMethod;
             await PopupNavigation.PushAsync(oSwitchPopup);
         }
@@ -97,13 +79,13 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// </summary>
         public void DelegateMethod(Models.Device device, String password, String value)
         {
-            App.ShowToast("Connecting " + oSelectedSpeechCommand.Name + " with switch " + device.Name);
-            oSelectedSpeechCommand.SwitchIDX = device.idx;
-            oSelectedSpeechCommand.SwitchName = device.Name;
-            oSelectedSpeechCommand.Value = value;
-            oSelectedSpeechCommand.SwitchPassword = password;
-            oSelectedSpeechCommand.IsScene = device.IsScene;
-            oSelectedSpeechCommand.IsScene = device.IsScene;
+            App.ShowToast("Connecting " + _oSelectedSpeechCommand.Name + " with switch " + device.Name);
+            _oSelectedSpeechCommand.SwitchIDX = device.idx;
+            _oSelectedSpeechCommand.SwitchName = device.Name;
+            _oSelectedSpeechCommand.Value = value;
+            _oSelectedSpeechCommand.SwitchPassword = password;
+            _oSelectedSpeechCommand.IsScene = device.IsScene;
+            _oSelectedSpeechCommand.IsScene = device.IsScene;
             SaveAndRefresh();
         }
     }

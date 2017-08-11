@@ -406,12 +406,12 @@
                                                  SetButtonTemplate="{StaticResource SetButtonTemplate}" 
                                                  OffButtonTemplate="{StaticResource OffButtonTemplate}" 
                                                  ModalButtonTemplate="{StaticResource DefaultTemplate}" 
-                                                 DimmerRGBButtonTemplate="{StaticResource DimmerTemplate}" 
+                                                 DimmerRgbButtonTemplate="{StaticResource DimmerTemplate}" 
                                                  DimmerButtonTemplate="{StaticResource DimmerTemplate}" 
                                                  BlindsButtonTemplate="{StaticResource BlindTemplate}"
                                                  SwitchDimmerTemplate="{StaticResource SwitchDimmerTemplate}"
                                                  SecurityPanelTemplate="{StaticResource SecurityPanelTemplate}"
-                                                 SwitchDimmerRGBButtonTemplate="{StaticResource SwitchDimmerTemplate}"  />
+                                                 SwitchDimmerRgbButtonTemplate="{StaticResource SwitchDimmerTemplate}"  />
         </ResourceDictionary>
     </ContentPage.Resources>
     

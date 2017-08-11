@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Threading.Tasks;
-
 using NL.HNOGames.Domoticz.Helpers;
-using NL.HNOGames.Domoticz.Models;
-using NL.HNOGames.Domoticz.Views;
-
 using Xamarin.Forms;
-using NL.HNOGames.Domoticz.Resources;
 using Acr.UserDialogs;
 
 namespace NL.HNOGames.Domoticz.ViewModels
@@ -22,17 +16,11 @@ namespace NL.HNOGames.Domoticz.ViewModels
         {
             Title = "Domoticz";
             Plans = new ObservableRangeCollection<Models.Plan>();
-
             LoadPlansCommand = new Command(async () => await ExecuteLoadPlansCommand(false));
             RefreshPlansCommand = new Command(async () => await ExecuteLoadPlansCommand(true));
         }
 
-        async Task ExecuteRefreshFavoritesCommand()
-        {
-            await ExecuteLoadPlansCommand(true);
-        }
-
-        async Task ExecuteLoadPlansCommand(Boolean refresh)
+        private async Task ExecuteLoadPlansCommand(bool refresh)
         {
             if (Plans == null || refresh)
             {
@@ -45,7 +33,9 @@ namespace NL.HNOGames.Domoticz.ViewModels
             {
                 var items = await App.ApiService.GetPlans();
                 if (items.result != null && items.result.Length > 0)
-                    Plans.ReplaceRange(items.result);
+                {
+                    Plans?.ReplaceRange(items.result);
+                }
             }
             catch (Exception ex)
             {

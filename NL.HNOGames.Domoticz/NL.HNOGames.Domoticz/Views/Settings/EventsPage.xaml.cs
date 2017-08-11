@@ -1,27 +1,24 @@
 ﻿using System;
 
-using NL.HNOGames.Domoticz.ViewModels;
 using Xamarin.Forms;
-using Rg.Plugins.Popup.Pages;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using NL.HNOGames.Domoticz.Models;
-using Acr.UserDialogs;
 using NL.HNOGames.Domoticz.Resources;
 using System.Linq;
 
 namespace NL.HNOGames.Domoticz.Views.Settings
 {
-    public partial class EventsPage : ContentPage
+    public partial class EventsPage
     {
-        private List<Event> eventList;
+        private List<Event> _eventList;
 
         public EventsPage()
         {
             InitializeComponent();
         }
 
-        void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        private void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
             listView.SelectedItem = null;
         }
@@ -32,17 +29,16 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             new Command(async () => await ExecuteLoadLogsCommand()).Execute(null);
         }
 
-        async Task ExecuteLoadLogsCommand()
+        private async Task ExecuteLoadLogsCommand()
         {
             App.ShowLoading();
-            eventList = new List<Event>();
+            _eventList = new List<Event>();
             var events = await App.ApiService.GetEvents();
-
-            if (events != null && events.result != null)
+            if (events?.result != null)
             {
-                foreach (Event n in events.result)
-                    eventList.Add(n);
-                listView.ItemsSource = eventList;
+                foreach (var n in events.result)
+                    _eventList.Add(n);
+                listView.ItemsSource = _eventList;
                 App.HideLoading();
             }
             else
@@ -60,22 +56,22 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         {
             try
             {
-                String filterText = e.NewTextValue.ToLower().Trim();
+                var filterText = e.NewTextValue.ToLower().Trim();
                 if (filterText == string.Empty)
                 {
                     listView.ItemsSource = null;
-                    listView.ItemsSource = eventList;
+                    listView.ItemsSource = _eventList;
                 }
                 else
                 {
                     listView.ItemsSource = null;
-                    listView.ItemsSource = eventList.Where(i => i.Name.ToLower().Trim().Contains(filterText));
+                    listView.ItemsSource = _eventList.Where(i => i.Name.ToLower().Trim().Contains(filterText));
                 }
             }
             catch (Exception)
             {
                 listView.ItemsSource = null;
-                listView.ItemsSource = eventList;
+                listView.ItemsSource = _eventList;
             }
         }
     }

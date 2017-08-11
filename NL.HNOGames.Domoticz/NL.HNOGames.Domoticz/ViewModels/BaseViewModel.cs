@@ -1,39 +1,35 @@
 ﻿using NL.HNOGames.Domoticz.Helpers;
-using NL.HNOGames.Domoticz.Models;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using Xamarin.Forms;
 
 namespace NL.HNOGames.Domoticz.ViewModels
 {
     public class BaseViewModel : ObservableObject
     {
-        bool isBusy = false;
-        bool loadCache = true;
+        private bool _isBusy;
+        private bool _loadCache = true;
 
         public bool IsBusy
         {
-            get { return isBusy; }
-            set { SetProperty(ref isBusy, value); }
+            get => _isBusy;
+            set => SetProperty(ref _isBusy, value);
         }
 
         public bool LoadCache
         {
-            get { return loadCache; }
-            set { SetProperty(ref loadCache, value); }
+            get => _loadCache;
+            set => SetProperty(ref _loadCache, value);
         }
 
         /// <summary>
         /// Private backing field to hold the title
         /// </summary>
-        string title = string.Empty;
+        private string _title = string.Empty;
         /// <summary>
         /// Public property to set and get the title of the item
         /// </summary>
         public string Title
         {
-            get { return title; }
-            set { SetProperty(ref title, value); }
+            get => _title;
+            set => SetProperty(ref _title, value);
         }
     }
 }

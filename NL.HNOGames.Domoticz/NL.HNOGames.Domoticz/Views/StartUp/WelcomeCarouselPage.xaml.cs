@@ -1,14 +1,10 @@
 ﻿using Acr.UserDialogs;
 using Newtonsoft.Json;
-using NL.HNOGames.Domoticz.Helpers;
 using NL.HNOGames.Domoticz.Models;
 using NL.HNOGames.Domoticz.Resources;
 using PCLStorage;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -17,17 +13,17 @@ using Xamarin.Forms.Xaml;
 namespace NL.HNOGames.Domoticz.Views.StartUp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class WelcomeCarouselPage : CarouselPage, INotifyPropertyChanged
+    public partial class WelcomeCarouselPage
     {
-        private ServerSettings oServerSettings;
+        private ServerSettings _oServerSettings;
 
         public ServerSettings ServerSettings
         { //Property that will be used to get and set the item
-            get { return oServerSettings; }
+            get => _oServerSettings;
             set
             {
-                oServerSettings = value;
-                this.BindingContext = oServerSettings;
+                _oServerSettings = value;
+                BindingContext = _oServerSettings;
             }
         }
 
@@ -36,12 +32,9 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
         /// </summary>
         public WelcomeCarouselPage()
         {
-            ServerSettings = App.AppSettings.ActiveServerSettings;
-            if (ServerSettings == null)
-                ServerSettings = new ServerSettings();
-
+            ServerSettings = App.AppSettings.ActiveServerSettings ?? new ServerSettings();
             InitializeComponent();
-            this.BindingContext = ServerSettings;
+            BindingContext = ServerSettings;
             btnCheck.IsVisible = true;
         }
 
@@ -50,13 +43,10 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
         /// </summary>
         public async Task<string> ReadFileContent(string fileName, IFolder rootFolder)
         {
-            ExistenceCheckResult exist = await rootFolder.CheckExistsAsync(fileName);
-            string text = null;
-            if (exist == ExistenceCheckResult.FileExists)
-            {
-                IFile file = await rootFolder.GetFileAsync(fileName);
-                text = await file.ReadAllTextAsync();
-            }
+            var exist = await rootFolder.CheckExistsAsync(fileName);
+            if (exist != ExistenceCheckResult.FileExists) return null;
+            var file = await rootFolder.GetFileAsync(fileName);
+            var text = await file.ReadAllTextAsync();
             return text;
         }
 
@@ -65,10 +55,7 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
         /// </summary>
         private void swEnableLocalSettings_Toggled(object sender, ToggledEventArgs e)
         {
-            if (swEnableLocalSettings.IsToggled)
-                lyLocalSettings.IsVisible = true;
-            else
-                lyLocalSettings.IsVisible = false;
+            lyLocalSettings.IsVisible = swEnableLocalSettings.IsToggled;
         }
 
         /// <summary>
@@ -76,18 +63,14 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
         /// </summary>
         public bool ValidateServerSettings()
         {
-            if (String.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_URL))
+            if (string.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_URL))
                 return false;
             //if (String.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_PORT))
             //    return false;
-            if (ServerSettings.IS_LOCAL_SERVER_ADDRESS_DIFFERENT)
-            {
-                if (String.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_URL))
-                    return false;
-                //if (String.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_PORT))
-                //    return false;
-            }
-            return true;
+            if (!ServerSettings.IS_LOCAL_SERVER_ADDRESS_DIFFERENT) return true;
+            return !string.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_URL);
+            //if (String.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_PORT))
+            //    return false;
         }
 
         /// <summary>
@@ -95,10 +78,7 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
         /// </summary>
         public bool ValidateServerUrl()
         {
-            if (ServerSettings.LOCAL_SERVER_URL.Contains("http") ||
-                ServerSettings.REMOTE_SERVER_URL.Contains("http"))
-                return false;
-            return true;
+            return !ServerSettings.LOCAL_SERVER_URL.Contains("http") && !ServerSettings.REMOTE_SERVER_URL.Contains("http");
         }
 
         /// <summary>
@@ -140,8 +120,8 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
                 if (result != null)
                 {
                     lblResult.Text = AppResources.welcome_msg_serverVersion + ": " + result.version;
-                    var devices = await App.ApiService.GetDevices(0, null);
-                    if (devices != null && devices.result != null)
+                    var devices = await App.ApiService.GetDevices();
+                    if (devices?.result != null)
                     {
                         lblResult.Text += Environment.NewLine + devices.result.Count() + AppResources.welcome_msg_numberOfDevices.Replace("%1$d", "");
                         btnFinish.IsVisible = true;
@@ -150,11 +130,11 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
                     }
                     else
                     {
-                        lblResult.Text = App.ApiService.response != null ? App.ApiService.response.ReasonPhrase.ToString() : AppResources.failed_to_get_switches;
+                        lblResult.Text = App.ApiService.response != null ? App.ApiService.response.ReasonPhrase : AppResources.failed_to_get_switches;
                     }
                 }
                 else
-                    lblResult.Text = App.ApiService.response != null ? App.ApiService.response.ReasonPhrase.ToString() : AppResources.error_timeout;
+                    lblResult.Text = App.ApiService.response != null ? App.ApiService.response.ReasonPhrase : AppResources.error_timeout;
 
                 App.HideLoading();
             }
@@ -177,10 +157,9 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
             try
             {
                 var rootFolder = SpecialFolder.Current.Pictures;
-                IFolder folder = await rootFolder.CreateFolderAsync("Domoticz",
+                var folder = await rootFolder.CreateFolderAsync("Domoticz",
                    CreationCollisionOption.OpenIfExists);
-
-                string fileContent = await this.ReadFileContent("domoticz_settings.txt", folder);
+                var fileContent = await ReadFileContent("domoticz_settings.txt", folder);
                 var settingsObject = JsonConvert.DeserializeObject<Helpers.Settings>(fileContent);
                 App.AppSettings = settingsObject;
 
@@ -199,14 +178,11 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
         private async Task ContentPage_Appearing(object sender, EventArgs e)
         {
             var rootFolder = SpecialFolder.Current.Pictures;
-            IFolder folder = await rootFolder.CreateFolderAsync("Domoticz",
+            var folder = await rootFolder.CreateFolderAsync("Domoticz",
                CreationCollisionOption.OpenIfExists);
 
-            ExistenceCheckResult exist = await folder.CheckExistsAsync("domoticz_settings.txt");
-            if (exist == ExistenceCheckResult.FileExists)
-                btnImportSettings.IsVisible = true;
-            else
-                btnImportSettings.IsVisible = false;
+            var exist = await folder.CheckExistsAsync("domoticz_settings.txt");
+            btnImportSettings.IsVisible = exist == ExistenceCheckResult.FileExists;
         }
 
         /// <summary>
@@ -214,16 +190,16 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
         /// </summary>
         private void btnNext_Clicked(object sender, EventArgs e)
         {
-            var pageCount = this.Children.Count;
+            var pageCount = Children.Count;
             if (pageCount < 2)
                 return;
 
-            var index = this.Children.IndexOf(this.CurrentPage);
+            var index = Children.IndexOf(CurrentPage);
             index++;
             if (index >= pageCount)
                 index = 0;
 
-            this.CurrentPage = this.Children[index];
+            CurrentPage = Children[index];
         }
          
         /// <summary>
@@ -231,15 +207,15 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
         /// </summary>
         private void btnPrevious_Clicked(object sender, EventArgs e)
         {
-            var pageCount = this.Children.Count;
+            var pageCount = Children.Count;
             if (pageCount < 2)
                 return;
 
-            var index = this.Children.IndexOf(this.CurrentPage);
+            var index = Children.IndexOf(CurrentPage);
             index--;
             if (index <= 0)
                 index = 0;
-            this.CurrentPage = this.Children[index];
+            CurrentPage = Children[index];
         }
     }
 }

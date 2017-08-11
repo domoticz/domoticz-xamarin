@@ -1,27 +1,26 @@
 ﻿using System;
 
-using NL.HNOGames.Domoticz.ViewModels;
 using Xamarin.Forms;
-using Rg.Plugins.Popup.Pages;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using NL.HNOGames.Domoticz.Models;
 using Rg.Plugins.Popup.Services;
+using Device = NL.HNOGames.Domoticz.Models.Device;
 
 namespace NL.HNOGames.Domoticz.Views.Dialog
 {
-    public partial class TimersPopup : PopupPage
+    public partial class TimersPopup
     {
-        private object selectedDevice;
-        private List<Timer> timerList;
+        private readonly object _selectedDevice;
+        private List<Timer> _timerList;
 
         public TimersPopup(object device)
         {
-            selectedDevice = device;
+            _selectedDevice = device;
             InitializeComponent();
         }
 
-        void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        private void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
             listView.SelectedItem = null;
         }
@@ -32,22 +31,22 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
             new Command(async () => await ExecuteLoadNotificationsCommand()).Execute(null);
         }
 
-        async Task ExecuteLoadNotificationsCommand()
+        private async Task ExecuteLoadNotificationsCommand()
         {
-            timerList = new List<Timer>();
+            _timerList = new List<Timer>();
 
-            string idx = "";
-            if (selectedDevice is Models.Device)
-                idx = ((Models.Device)selectedDevice).idx;
-            else if (selectedDevice is Models.Scene)
-                idx = ((Models.Scene)selectedDevice).idx;
+            var idx = "";
+            if (_selectedDevice is Device device)
+                idx = device.idx;
+            else if (_selectedDevice is Scene)
+                idx = ((Scene)_selectedDevice).idx;
 
             var timers = await App.ApiService.GetTimers(idx);
-            if (timers != null && timers.result != null)
+            if (timers?.result != null)
             {
-                foreach (Timer t in timers.result)
-                    timerList.Add(t);
-                listView.ItemsSource = timerList;
+                foreach (var t in timers.result)
+                    _timerList.Add(t);
+                listView.ItemsSource = _timerList;
             }
         }
 

@@ -1,10 +1,7 @@
 ﻿using NL.HNOGames.Domoticz.Data;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
+using Device = NL.HNOGames.Domoticz.Models.Device;
 
 namespace NL.HNOGames.Domoticz.ViewSelector
 {
@@ -18,27 +15,29 @@ namespace NL.HNOGames.Domoticz.ViewSelector
         public DataTemplate SetButtonTemplate { get; set; }
         public DataTemplate OffButtonTemplate { get; set; }
         public DataTemplate ModalButtonTemplate { get; set; }
-        public DataTemplate DimmerRGBButtonTemplate { get; set; }
+        public DataTemplate DimmerRgbButtonTemplate { get; set; }
         public DataTemplate DimmerButtonTemplate { get; set; }
         public DataTemplate BlindsButtonTemplate { get; set; }
         public DataTemplate SwitchDimmerTemplate { get; set; }
-        public DataTemplate SwitchDimmerRGBButtonTemplate { get; set; }
+        public DataTemplate SwitchDimmerRgbButtonTemplate { get; set; }
         public DataTemplate SecurityPanelTemplate { get; set; }
 
+        /// <summary>
+        /// Select templates
+        /// </summary>
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         {
-            DataTemplate oReturnvalue = DefaultTemplate;
+            var oReturnvalue = DefaultTemplate;
 
             try
             {
-                if (item is Models.Device)
+                if (item is Device info)
                 {
-                    Models.Device mDeviceInfo = (Models.Device)item;
+                    var mDeviceInfo = info;
                     oReturnvalue = GetDeviceTemplate(mDeviceInfo);
                 }
-                else if(item is Models.Scene)
+                else if (item is Models.Scene mDeviceInfo)
                 {
-                    Models.Scene mDeviceInfo = (Models.Scene)item;
                     oReturnvalue = GetSceneTemplate(mDeviceInfo);
                 }
                 return oReturnvalue;
@@ -49,14 +48,17 @@ namespace NL.HNOGames.Domoticz.ViewSelector
             }
         }
 
-        private DataTemplate GetDeviceTemplate(Models.Device mDeviceInfo)
+        /// <summary>
+        /// Get Device templates
+        /// </summary>
+        private DataTemplate GetDeviceTemplate(Device mDeviceInfo)
         {
-            DataTemplate oReturnvalue = DefaultTemplate;
+            DataTemplate oReturnvalue;
             if (mDeviceInfo.SwitchTypeVal == 0 &&
            (mDeviceInfo.SwitchType == null))
             {
                 if (mDeviceInfo.SubType != null &&
-                    String.Compare(mDeviceInfo.SubType, ConstantValues.Device.Utility.SubType.SMARTWARES, StringComparison.OrdinalIgnoreCase) == 0)
+                    string.Compare(mDeviceInfo.SubType, ConstantValues.Device.Utility.SubType.SMARTWARES, StringComparison.OrdinalIgnoreCase) == 0)
                 {
                     oReturnvalue = SetButtonTemplate;
                 }
@@ -65,10 +67,7 @@ namespace NL.HNOGames.Domoticz.ViewSelector
                     switch (mDeviceInfo.Type)
                     {
                         case ConstantValues.Device.Scene.Type.GROUP:
-                            if (App.AppSettings.ShowSwitches)
-                                oReturnvalue = OnOffSwitchTemplate;
-                            else
-                                oReturnvalue = OnOffButtonTemplate;
+                            oReturnvalue = App.AppSettings.ShowSwitches ? OnOffSwitchTemplate : OnOffButtonTemplate;
                             break;
                         case ConstantValues.Device.Scene.Type.SCENE:
                             oReturnvalue = OnButtonTemplate;
@@ -98,22 +97,13 @@ namespace NL.HNOGames.Domoticz.ViewSelector
                         switch (mDeviceInfo.SwitchType)
                         {
                             case ConstantValues.Device.Type.Name.SECURITY:
-                                if (String.Compare(mDeviceInfo.SubType, ConstantValues.Device.SubType.Name.SECURITYPANEL, StringComparison.OrdinalIgnoreCase) == 0)
-                                    oReturnvalue = SecurityPanelTemplate;
-                                else
-                                    oReturnvalue = DefaultTemplate;
+                                oReturnvalue = string.Compare(mDeviceInfo.SubType, ConstantValues.Device.SubType.Name.SECURITYPANEL, StringComparison.OrdinalIgnoreCase) == 0 ? SecurityPanelTemplate : DefaultTemplate;
                                 break;
                             case ConstantValues.Device.Type.Name.EVOHOME:
-                                if (String.Compare(mDeviceInfo.SubType, ConstantValues.Device.SubType.Name.EVOHOME, StringComparison.OrdinalIgnoreCase) == 0)
-                                    oReturnvalue = ModalButtonTemplate;
-                                else
-                                    oReturnvalue = DefaultTemplate;
+                                oReturnvalue = string.Compare(mDeviceInfo.SubType, ConstantValues.Device.SubType.Name.EVOHOME, StringComparison.OrdinalIgnoreCase) == 0 ? ModalButtonTemplate : DefaultTemplate;
                                 break;
                             default:
-                                if (App.AppSettings.ShowSwitches)
-                                    oReturnvalue = OnOffSwitchTemplate;
-                                else
-                                    oReturnvalue = OnOffButtonTemplate;
+                                oReturnvalue = App.AppSettings.ShowSwitches ? OnOffSwitchTemplate : OnOffButtonTemplate;
                                 break;
                         }
                         break;
@@ -138,16 +128,10 @@ namespace NL.HNOGames.Domoticz.ViewSelector
                     case ConstantValues.Device.Type.Value.BLINDPERCENTAGE:
                     case ConstantValues.Device.Type.Value.BLINDPERCENTAGEINVERTED:
                         if (mDeviceInfo.SubType.StartsWith(ConstantValues.Device.SubType.Name.RGB))
-                            if (App.AppSettings.ShowSwitches)
-                                oReturnvalue = SwitchDimmerRGBButtonTemplate;
-                            else
-                                oReturnvalue = DimmerRGBButtonTemplate;
+                            oReturnvalue = App.AppSettings.ShowSwitches ? SwitchDimmerRgbButtonTemplate : DimmerRgbButtonTemplate;
                         else
                         {
-                            if (App.AppSettings.ShowSwitches)
-                                oReturnvalue = SwitchDimmerTemplate;
-                            else
-                                oReturnvalue = DimmerButtonTemplate;
+                            oReturnvalue = App.AppSettings.ShowSwitches ? SwitchDimmerTemplate : DimmerButtonTemplate;
                         }
                         break;
 
@@ -161,10 +145,7 @@ namespace NL.HNOGames.Domoticz.ViewSelector
                             oReturnvalue = BlindsButtonTemplate;
                         else
                         {
-                            if (App.AppSettings.ShowSwitches)
-                                oReturnvalue = OnOffSwitchTemplate;
-                            else
-                                oReturnvalue = OnOffButtonTemplate;
+                            oReturnvalue = App.AppSettings.ShowSwitches ? OnOffSwitchTemplate : OnOffButtonTemplate;
                         }
                         break;
 
@@ -182,19 +163,19 @@ namespace NL.HNOGames.Domoticz.ViewSelector
             return oReturnvalue;
         }
 
+        /// <summary>
+        /// Get scene template (group or scene)
+        /// </summary>
         private DataTemplate GetSceneTemplate(Models.Scene mDeviceInfo)
         {
             if (mDeviceInfo == null)
                 return null;
 
-            DataTemplate oReturnvalue = DefaultTemplate;
+            var oReturnvalue = DefaultTemplate;
             switch (mDeviceInfo.Type)
             {
                 case ConstantValues.Device.Scene.Type.GROUP:
-                    if (App.AppSettings.ShowSwitches)
-                        oReturnvalue = OnOffSwitchTemplate;
-                    else
-                        oReturnvalue = OnOffButtonTemplate;
+                    oReturnvalue = App.AppSettings.ShowSwitches ? OnOffSwitchTemplate : OnOffButtonTemplate;
                     break;
                 case ConstantValues.Device.Scene.Type.SCENE:
                     oReturnvalue = OnButtonTemplate;

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Threading.Tasks;
 
 using NL.HNOGames.Domoticz.Helpers;
@@ -8,14 +7,13 @@ using NL.HNOGames.Domoticz.Views;
 
 using Xamarin.Forms;
 using NL.HNOGames.Domoticz.Resources;
-using Acr.UserDialogs;
 using System.Linq;
 
 namespace NL.HNOGames.Domoticz.ViewModels
 {
     public class DashboardViewModel : BaseViewModel
     {
-        public enum ScreenType
+        public enum ScreenTypeEnum
         {
             Dashboard,
             Switches,
@@ -24,7 +22,7 @@ namespace NL.HNOGames.Domoticz.ViewModels
             Weather,
         };
 
-        public ScreenType screenType = ScreenType.Dashboard;
+        public ScreenTypeEnum ScreenType;
 
         public ObservableRangeCollection<Models.Device> Devices { get; set; }
 
@@ -32,13 +30,13 @@ namespace NL.HNOGames.Domoticz.ViewModels
         public Command RefreshFavoriteCommand { get; set; }
         public Command RefreshActionCommand { get; set; }
 
-        public bool OldData = false;
-        public Plan screenPlan = null;
+        public bool OldData;
+        public Plan ScreenPlan;
 
-        public DashboardViewModel(ScreenType type, Plan plan)
+        public DashboardViewModel(ScreenTypeEnum type, Plan plan)
         {
-            screenPlan = plan;
-            screenType = type;
+            ScreenPlan = plan;
+            ScreenType = type;
             Title = plan != null ? plan.Name: AppResources.title_dashboard;
             Devices = new ObservableRangeCollection<Models.Device>();
 
@@ -46,22 +44,14 @@ namespace NL.HNOGames.Domoticz.ViewModels
             RefreshFavoriteCommand = new Command(async () => await ExecuteLoadFavoritesCommand(true));
             RefreshActionCommand = new Command(async () => await ExecuteLoadFavoritesCommand(false));
 
-            if (this.LoadCache)
-            {
-                OldData = true;
-                Devices = Helpers.Cache.GetCache<ObservableRangeCollection<Models.Device>>(screenPlan != null ? screenPlan.idx + screenType.ToString() : screenType.ToString());
-                if (Devices == null)
-                    Devices = new ObservableRangeCollection<Models.Device>();
-                this.LoadCache = false;
-            }
+            if (!LoadCache) return;
+            OldData = true;
+            Devices = Cache.GetCache<ObservableRangeCollection<Models.Device>>(ScreenPlan != null ? ScreenPlan.idx + ScreenType : ScreenType.ToString()) ??
+                      new ObservableRangeCollection<Models.Device>();
+            LoadCache = false;
         }
 
-        async Task ExecuteRefreshFavoritesCommand()
-        {
-            await ExecuteLoadFavoritesCommand(true);
-        }
-
-        async Task ExecuteLoadFavoritesCommand(Boolean refresh)
+        private async Task ExecuteLoadFavoritesCommand(bool refresh)
         {
             if (Devices == null || refresh)
             {
@@ -72,38 +62,43 @@ namespace NL.HNOGames.Domoticz.ViewModels
 
             try
             {
-                DevicesModel items = null;
-                switch(screenType)
+                DevicesModel items;
+                switch(ScreenType)
                 {
-                    case ScreenType.Dashboard:
+                    case ScreenTypeEnum.Dashboard:
                         items = await App.ApiService.GetFavorites(null);
                         break;
-                    case ScreenType.Switches:
-                        items = await App.ApiService.GetDevices(screenPlan == null ? 0 : int.Parse(screenPlan.idx), screenPlan == null ? "light" : null);
+                    case ScreenTypeEnum.Switches:
+                        items = await App.ApiService.GetDevices(ScreenPlan == null ? 0 : int.Parse(ScreenPlan.idx), ScreenPlan == null ? "light" : null);
                         break;
-                    case ScreenType.Weather:
+                    case ScreenTypeEnum.Weather:
                         items = await App.ApiService.GetWeather(null);
                         break;
-                    case ScreenType.Temperature:
+                    case ScreenTypeEnum.Temperature:
                         items = await App.ApiService.GetTemperature(null);
                         break;
-                    case ScreenType.Utilities:
+                    case ScreenTypeEnum.Utilities:
                         items = await App.ApiService.getUtilities(null);
                         break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
                 }
 
                 if (items.result != null && items.result.Length > 0) {
                     if (!App.AppSettings.NoSort)
                         items.result = items.result.OrderBy(o => o.Name).ToArray();
 
-                    foreach (Models.Device d in items.result)
+                    foreach (var d in items.result)
                     {
-                        d.ShowExtraData = screenType == ScreenType.Dashboard ? App.AppSettings.ShowExtraData : true;
-                        d.IsDashboard = screenType == ScreenType.Dashboard ? true : false;
+                        d.ShowExtraData = ScreenType != ScreenTypeEnum.Dashboard || App.AppSettings.ShowExtraData;
+                        d.IsDashboard = ScreenType == ScreenTypeEnum.Dashboard;
                     }
 
-                    Devices.ReplaceRange(items.result);
-                    Helpers.Cache.SetCache(screenPlan != null ? screenPlan.idx + screenType.ToString() : screenType.ToString(), Devices);
+                    if (Devices != null)
+                    {
+                        Devices.ReplaceRange(items.result);
+                        Cache.SetCache(ScreenPlan != null ? ScreenPlan.idx + ScreenType : ScreenType.ToString(), Devices);
+                    }
                     OldData = false;
                 }
             }

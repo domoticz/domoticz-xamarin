@@ -1,53 +1,42 @@
 ﻿using Acr.UserDialogs;
-using Newtonsoft.Json;
-using NL.HNOGames.Domoticz.Helpers;
 using NL.HNOGames.Domoticz.Models;
 using NL.HNOGames.Domoticz.Resources;
-using PCLStorage;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace NL.HNOGames.Domoticz.Views.Settings
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ServerSettingsPage : ContentPage, INotifyPropertyChanged
+    public partial class ServerSettingsPage
     {
-        private ServerSettings oServerSettings;
+        private ServerSettings _oServerSettings;
 
         public ServerSettings ServerSettings
         { //Property that will be used to get and set the item
-            get { return oServerSettings; }
+            get => _oServerSettings;
             set
             {
-                oServerSettings = value;
-                this.BindingContext = oServerSettings;
+                _oServerSettings = value;
+                BindingContext = _oServerSettings;
             }
         }
 
         public ServerSettingsPage()
         {
-            ServerSettings = App.AppSettings.ActiveServerSettings;
-            if (ServerSettings == null)
-                ServerSettings = new ServerSettings();
+            ServerSettings = App.AppSettings.ActiveServerSettings ?? new ServerSettings();
 
             InitializeComponent();
-            this.BindingContext = ServerSettings;
+            BindingContext = ServerSettings;
             btnCheck.IsVisible = true;
         }
 
+        /// <summary>
+        /// Enable local settings
+        /// </summary>
         private void swEnableLocalSettings_Toggled(object sender, ToggledEventArgs e)
         {
-            if (swEnableLocalSettings.IsToggled)
-                lyLocalSettings.IsVisible = true;
-            else
-                lyLocalSettings.IsVisible = false;
+            lyLocalSettings.IsVisible = swEnableLocalSettings.IsToggled;
         }
 
         /// <summary>
@@ -55,18 +44,14 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// </summary>
         public bool ValidateServerSettings()
         {
-            if (String.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_URL))
+            if (string.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_URL))
                 return false;
             //if (String.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_PORT))
             //    return false;
-            if (ServerSettings.IS_LOCAL_SERVER_ADDRESS_DIFFERENT)
-            {
-                if (String.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_URL))
-                    return false;
-                //if (String.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_PORT))
-                //    return false;
-            }
-            return true;
+            if (!ServerSettings.IS_LOCAL_SERVER_ADDRESS_DIFFERENT) return true;
+            return !string.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_URL);
+            //if (String.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_PORT))
+            //    return false;
         }
 
         /// <summary>
@@ -74,10 +59,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// </summary>
         public bool ValidateServerUrl()
         {
-            if (ServerSettings.LOCAL_SERVER_URL.Contains("http") ||
-                ServerSettings.REMOTE_SERVER_URL.Contains("http"))
-                return false;
-            return true;
+            return !ServerSettings.LOCAL_SERVER_URL.Contains("http") && !ServerSettings.REMOTE_SERVER_URL.Contains("http");
         }
 
         /// <summary>
@@ -88,6 +70,9 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             App.SetMainPage();
         }
 
+        /// <summary>
+        /// Process Server Settings
+        /// </summary>
         private async void ProcessServerSettings()
         {
             if (IsBusy)
@@ -118,21 +103,21 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                 if (result != null)
                 {
                     lblResult.Text = AppResources.welcome_msg_serverVersion + ": " + result.version;
-                    var devices = await App.ApiService.GetDevices(0, null);
-                    if (devices != null && devices.result != null)
+                    var devices = await App.ApiService.GetDevices();
+                    if (devices?.result != null)
                     {
-                        lblResult.Text += Environment.NewLine + devices.result.Count() + AppResources.welcome_msg_numberOfDevices.Replace("%1$d", "");
+                        lblResult.Text += Environment.NewLine + devices.result.Length + AppResources.welcome_msg_numberOfDevices.Replace("%1$d", "");
                         btnFinish.IsVisible = true;
                         btnCheck.IsVisible = false;
                         imFinish.IsVisible = true;
                     }
                     else
                     {
-                        lblResult.Text = App.ApiService.response != null ? App.ApiService.response.ReasonPhrase.ToString() : AppResources.failed_to_get_switches;
+                        lblResult.Text = App.ApiService.response != null ? App.ApiService.response.ReasonPhrase : AppResources.failed_to_get_switches;
                     }
                 }
                 else
-                    lblResult.Text = App.ApiService.response != null ? App.ApiService.response.ReasonPhrase.ToString() : AppResources.error_timeout;
+                    lblResult.Text = App.ApiService.response != null ? App.ApiService.response.ReasonPhrase : AppResources.error_timeout;
 
                 App.HideLoading();
             }

@@ -3,13 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
              xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
-             xmlns:selector="clr-namespace:NL.HNOGames.Domoticz.ViewSelector;assembly=NL.HNOGames.Domoticz"
-             xmlns:range="clr-namespace:Xamarin.RangeSlider.Forms;assembly=Xamarin.RangeSlider.Forms"
              x:Class="NL.HNOGames.Domoticz.Views.Settings.SpeechSettingsPage"
              Style="{StaticResource ContentPageType}"
              Title="{resources:Translate category_Speech}">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="{resources:Translate add}" Order="Primary" Activated="ToolbarItem_Activated"/>
+        <ToolbarItem Text="{resources:Translate add}" Order="Primary" Clicked="ToolbarItem_Activated"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView>
@@ -20,8 +18,8 @@
                     </StackLayout>
                     <Switch x:Name="swEnableSpeech"  VerticalOptions="Center" HorizontalOptions="End"/>
                 </StackLayout>
-                <ListView x:Name="listView" SeparatorVisibility="None" RowHeight="130" HasUnevenRows="True" SelectedItem="OnItemSelected">
-                    <ListView.ItemTemplate VerticalOptions="StartAndExpand">
+                <ListView x:Name="listView" SeparatorVisibility="None" RowHeight="130" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <Grid Style="{StaticResource DashboardDeviceCardType}">

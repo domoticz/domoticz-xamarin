@@ -186,6 +186,34 @@ namespace NL.HNOGames.Domoticz.Views
                 _model.Series.Add(line);
             }
 
+            var luxList = graphData.result.Select(item => item.getLux()).Where(item => item.HasValue).ToList();
+            if (luxList != null && luxList.Count > 0)
+            {
+                var line = CreateLine("Lux", luxList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
+            var luxMinList = graphData.result.Select(item => item.getLuxMin()).Where(item => item.HasValue).ToList();
+            if (luxMinList != null && luxMinList.Count > 0)
+            {
+                var line = CreateLine("Min Lux", luxMinList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
+            var luxMaxList = graphData.result.Select(item => item.getLuxMax()).Where(item => item.HasValue).ToList();
+            if (luxMaxList != null && luxMaxList.Count > 0)
+            {
+                var line = CreateLine("Max Lux", luxMaxList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
+            var luxAvgList = graphData.result.Select(item => item.getLuxAvg()).Where(item => item.HasValue).ToList();
+            if (luxAvgList != null && luxAvgList.Count > 0)
+            {
+                var line = CreateLine("Avg Lux", luxAvgList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
             MapTemperatureLines(graphData, dateTimeList);
         }
 

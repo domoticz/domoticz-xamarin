@@ -1,4 +1,5 @@
-﻿using NL.HNOGames.Domoticz.Models;
+﻿using Acr.UserDialogs;
+using NL.HNOGames.Domoticz.Models;
 using NL.HNOGames.Domoticz.Resources;
 using NL.HNOGames.Domoticz.Views.Dialog;
 using PCLStorage;
@@ -31,6 +32,8 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             lyWorkInProgress.IsVisible = false;
 #endif
 
+            PremiumScreenSetup();
+
             //Startup Settings
             txtStartScherm.Items.Clear();
             txtStartScherm.Items.Add(AppResources.title_dashboard);
@@ -59,6 +62,11 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             swEnableTalkBack.Toggled += (sender, args) =>
             {
                 App.AppSettings.TalkBackEnabled = swEnableTalkBack.IsToggled;
+                if (swEnableTalkBack.IsToggled && !App.AppSettings.PremiumBought)
+                {
+                    swEnableTalkBack.IsToggled = false;
+                    App.ShowToast(AppResources.category_talk_back + " " + AppResources.premium_feature);
+                }
             };
 
             //DarkTheme
@@ -67,8 +75,13 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             {
                 App.AppSettings.DarkTheme = swDarkTheme.IsToggled;
                 Application.Current.Resources.MergedWith = App.AppSettings.DarkTheme ? (new Themes.Dark()).GetType() : (new Themes.Base()).GetType();
+                if (swDarkTheme.IsToggled && !App.AppSettings.PremiumBought)
+                {
+                    swDarkTheme.IsToggled = false;
+                    App.ShowToast(AppResources.category_theme + " " + AppResources.premium_feature);
+                }
             };
-            
+
             //Dashboard show switches
             swShowSwitch.IsToggled = App.AppSettings.ShowSwitches;
             lblShowSwitch.Text = App.AppSettings.ShowSwitches ? AppResources.switch_buttons_on : AppResources.switch_buttons_off;
@@ -84,6 +97,11 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             {
                 App.AppSettings.EnableNotifications = swEnableNotifications.IsToggled;
                 NotificationSettingsChanged = true;
+                if (swEnableNotifications.IsToggled && !App.AppSettings.PremiumBought)
+                {
+                    swEnableNotifications.IsToggled = false;
+                    App.ShowToast(AppResources.notification_screen_title + " " + AppResources.premium_feature);
+                }
             };
 
             //Dashboard extra data
@@ -96,6 +114,18 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             };
         }
 
+        private void PremiumScreenSetup()
+        {
+            if (App.AppSettings.PremiumBought)
+            {
+                lyPremium.IsVisible = false;
+            }
+            else
+            {
+                lyPremium.IsVisible = true;
+            }
+        }
+
         /// <summary>
         /// Save the enable screen selection
         /// </summary>
@@ -104,18 +134,6 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             if (_oEnableScreenPage == null) return;
             App.AppSettings.EnabledScreens = _oEnableScreenPage.GetAllItems();
             _goToMainScreen.Execute(null);
-        }
-
-        /// <summary>
-        /// Read File Content
-        /// </summary>
-        public async Task<string> ReadFileContent(string fileName, IFolder rootFolder)
-        {
-            var exist = await rootFolder.CheckExistsAsync(fileName);
-            if (exist != ExistenceCheckResult.FileExists) return null;
-            var file = await rootFolder.GetFileAsync(fileName);
-            var text = await file.ReadAllTextAsync();
-            return text;
         }
 
         /// <summary>
@@ -167,12 +185,35 @@ namespace NL.HNOGames.Domoticz.Views.Settings
 
         private async void btnQRCode_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new QrCodeSettingsPage());
+            if (App.AppSettings.PremiumBought)
+                await Navigation.PushAsync(new QrCodeSettingsPage());
+            else
+                App.ShowToast(AppResources.qrcode + " " + AppResources.premium_feature);
         }
 
         private async void btnSpeechSettings_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new SpeechSettingsPage());
+            if (App.AppSettings.PremiumBought)
+                await Navigation.PushAsync(new SpeechSettingsPage());
+            else
+                App.ShowToast(AppResources.Speech + " " + AppResources.premium_feature);
+        }
+
+        private async void btnBuyPremium_Clicked(object sender, EventArgs e)
+        {
+            var result = await UserDialogs.Instance.ConfirmAsync(new ConfirmConfig
+            {
+                Message = "There are several features in the domoticz app that are locked until you buy the premium version\r\n- no ads!!\r\n-notification support\r\n- theming\r\n- talkback\r\n- qrcode scanning\r\n\r\n- and more features in the future",
+                OkText = "Buy",
+                CancelText = "Cancel"
+            });
+            if (result)
+            {
+                Helpers.InAppPurchaseHelper oPurchaser = new Helpers.InAppPurchaseHelper();
+                if(await oPurchaser.PurchaseItem())
+                    App.ShowToast("Thanks for buying premium!!");
+                PremiumScreenSetup();
+            }
         }
     }
 }

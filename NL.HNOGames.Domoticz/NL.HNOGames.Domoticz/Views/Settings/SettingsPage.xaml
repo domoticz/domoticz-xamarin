@@ -8,13 +8,29 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout HorizontalOptions="FillAndExpand" Padding="20" Orientation="Vertical">
-                
+                <StackLayout x:Name="lyPremium">
+                    <Label Text="{resources:Translate premium_category}" LineBreakMode="NoWrap" Style="{StaticResource HeaderType}" Margin="0,10,0,0" />
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,10,0,0">
+                        <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical" >
+                            <Label Text="{resources:Translate premium_title}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" LineBreakMode="NoWrap" Style="{StaticResource SettingsDetailType}" />
+                        </StackLayout>
+                        <Button x:Name="btnEnableScreens" Text="Ok" HorizontalOptions="End" VerticalOptions="Center" Clicked="btnBuyPremium_Clicked">
+                            <Button.WidthRequest>
+                                <OnPlatform x:TypeArguments="x:Double" iOS="50" Android="60" WinPhone="60" />
+                            </Button.WidthRequest>
+                            <Button.HeightRequest>
+                                <OnPlatform x:TypeArguments="x:Double" iOS="35" Android="50" WinPhone="50" />
+                            </Button.HeightRequest>
+                        </Button>
+                    </StackLayout>
+                </StackLayout>
+
                 <Label Text="{resources:Translate title_dashboard}" LineBreakMode="NoWrap" Style="{StaticResource HeaderType}" Margin="0,10,0,0" />
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,10,0,0">
                     <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical" >
                         <Label Text="{resources:Translate enable_items}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" LineBreakMode="NoWrap" Style="{StaticResource SettingsDetailType}" />
                     </StackLayout>
-                    <Button x:Name="btnEnableScreens" Text="Ok" HorizontalOptions="End" VerticalOptions="Center" Clicked="btnEnableScreens_Clicked">
+                    <Button x:Name="btnBuyPremium" Text="Ok" HorizontalOptions="End" VerticalOptions="Center" Clicked="btnBuyPremium_Clicked">
                         <Button.WidthRequest>
                             <OnPlatform x:TypeArguments="x:Double" iOS="50" Android="60" WinPhone="60" />
                         </Button.WidthRequest>
@@ -112,7 +128,7 @@
                         </Button>
                     </StackLayout>
                 </StackLayout>
-                
+
                 <Label Text="{resources:Translate category_QRCode}" LineBreakMode="NoWrap" Style="{StaticResource HeaderType}" Margin="0,10,0,0" />
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,10,0,0" IsVisible="True">
                     <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical" >
@@ -127,7 +143,7 @@
                         </Button.HeightRequest>
                     </Button>
                 </StackLayout>
-                
+
                 <Label Text="{resources:Translate category_advanced}" LineBreakMode="NoWrap" Style="{StaticResource HeaderType}"  Margin="0,10,0,0"/>
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,10,0,0">
                     <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical" >

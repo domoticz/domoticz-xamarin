@@ -52,6 +52,8 @@ namespace NL.HNOGames.Domoticz.Helpers
         private const string EnableJSONDebugInfoSettingsKey = "Enable_JSON_DebugInfo_settings_key";
         private const string DebugInfoSettingsKey = "DebugInfo_settings_key";
 
+        private const string PremiumSettingsKey = "premium_settings_key";
+
         #endregion
 
         /// <summary>
@@ -387,6 +389,23 @@ namespace NL.HNOGames.Domoticz.Helpers
         {
             if(EnableDebugging)
                 DebugInfo = String.IsNullOrEmpty(DebugInfo) ? text : DebugInfo + Environment.NewLine + text;
+        }
+
+
+
+        /// <summary>
+        /// Premium Bought ?
+        /// </summary>
+        public bool PremiumBought
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(PremiumSettingsKey, false);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(PremiumSettingsKey, value);
+            }
         }
     }
 }

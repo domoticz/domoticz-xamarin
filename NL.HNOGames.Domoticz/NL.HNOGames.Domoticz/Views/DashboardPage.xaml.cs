@@ -26,6 +26,7 @@ namespace NL.HNOGames.Domoticz.Views
             InitializeComponent();
             BindingContext = _viewModel = new DashboardViewModel(screentype, plan);
             App.AddLog("Loading screen: " + screentype);
+            adView.IsVisible = !App.AppSettings.PremiumBought;
         }
 
         public DashboardPage()
@@ -33,6 +34,7 @@ namespace NL.HNOGames.Domoticz.Views
             InitializeComponent();
             BindingContext = _viewModel = new DashboardViewModel(DashboardViewModel.ScreenTypeEnum.Dashboard, null);
             App.AddLog("Loading screen: Dashboard");
+            adView.IsVisible = !App.AppSettings.PremiumBought;
         }
 
         /// <summary>

@@ -24,6 +24,7 @@ namespace NL.HNOGames.Domoticz.Views
             InitializeComponent();
             BindingContext = viewModel = new SceneViewModel();
             App.AddLog("Loading screen: Scenes");
+            adView.IsVisible = !App.AppSettings.PremiumBought;
         }
 
         /// <summary>

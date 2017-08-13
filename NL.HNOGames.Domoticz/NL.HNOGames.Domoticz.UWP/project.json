@@ -6,6 +6,7 @@
     "modernhttpclient": "2.4.2",
     "Newtonsoft.Json": "10.0.3",
     "PCLStorage": "1.0.2",
+    "Plugin.InAppBilling": "1.2.2",
     "Plugin.Share": "7.0.1",
     "Rg.Plugins.Popup": "1.0.4",
     "SlideOverKit": "2.1.4",

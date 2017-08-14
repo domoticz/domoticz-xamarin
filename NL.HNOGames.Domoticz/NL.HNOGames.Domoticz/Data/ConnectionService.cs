@@ -1,16 +1,10 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
-using NL.HNOGames.Domoticz.Models;
+﻿using NL.HNOGames.Domoticz.Models;
 using Plugin.Connectivity;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Globalization;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-
 
 namespace NL.HNOGames.Domoticz.Data
 {
@@ -19,7 +13,7 @@ namespace NL.HNOGames.Domoticz.Data
     /// </summary>
     public class ConnectionService
     {
-        public HttpClient client;
+        public HttpClient Client;
 
         /// <summary>
         /// Constructor
@@ -27,75 +21,68 @@ namespace NL.HNOGames.Domoticz.Data
         public ConnectionService()
         { RefreshClient(); }
 
-        public void RefreshClient()
+        private void RefreshClient()
         {
-            client = new HttpClient();
-            client.MaxResponseContentBufferSize = 256000;
-            client.Timeout = TimeSpan.FromMilliseconds(15000);
+            Client = new HttpClient
+            {
+                MaxResponseContentBufferSize = 256000,
+                Timeout = TimeSpan.FromMilliseconds(15000)
+            };
         }
 
         /// <summary>
         /// Construct Domoticz API Url
         /// </summary>
-        public async Task<string> ConstructGetUrlAsync(ServerSettings server, String jsonUrl)
+        public async Task<string> ConstructGetUrlAsync(ServerSettings server, string jsonUrl)
         {
             if (server == null)
                 return null;
-            String protocol, url, port, directory;
+            string protocol, url, port, directory;
             if (await IsUserOnLocalWifiAsync(server))
             {
-                if(server.LOCAL_SERVER_PROTOCOL == 0)
-                    protocol = ConstantValues.Url.Protocol.HTTP;
-                else protocol = ConstantValues.Url.Protocol.HTTPS;
-
+                protocol = server.LOCAL_SERVER_PROTOCOL == 0 ? ConstantValues.Url.Protocol.HTTP : ConstantValues.Url.Protocol.HTTPS;
                 url = server.LOCAL_SERVER_URL;
                 port = server.LOCAL_SERVER_PORT;
                 directory = server.LOCAL_SERVER_DIRECTORY;
 
-                if (!String.IsNullOrEmpty(server.LOCAL_SERVER_USERNAME))
+                if (!string.IsNullOrEmpty(server.LOCAL_SERVER_USERNAME))
                 {
                     RefreshClient();
                     var byteArray = Encoding.UTF8.GetBytes(
                         server.LOCAL_SERVER_USERNAME +
                         ":" +
                         server.LOCAL_SERVER_PASSWORD);
-                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+                    Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
                 }
                 else
                 {
-                    if (!String.IsNullOrEmpty(server.REMOTE_SERVER_USERNAME))
+                    if (!string.IsNullOrEmpty(server.REMOTE_SERVER_USERNAME))
                     {
                         RefreshClient();
                         var byteArray = Encoding.UTF8.GetBytes(
                             server.REMOTE_SERVER_USERNAME +
                             ":" +
                             server.REMOTE_SERVER_PASSWORD);
-                        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+                        Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
                     }
                 }
             }
             else
             {
-                if (server.REMOTE_SERVER_PROTOCOL == 0)
-                    protocol = ConstantValues.Url.Protocol.HTTP;
-                else protocol = ConstantValues.Url.Protocol.HTTPS;
-
+                protocol = server.REMOTE_SERVER_PROTOCOL == 0 ? ConstantValues.Url.Protocol.HTTP : ConstantValues.Url.Protocol.HTTPS;
                 url = server.REMOTE_SERVER_URL;
                 port = server.REMOTE_SERVER_PORT;
                 directory = server.REMOTE_SERVER_DIRECTORY;
 
-                if (!String.IsNullOrEmpty(server.REMOTE_SERVER_USERNAME))
+                if (!string.IsNullOrEmpty(server.REMOTE_SERVER_USERNAME))
                 {
                     RefreshClient();
                     var byteArray = Encoding.UTF8.GetBytes(server.REMOTE_SERVER_USERNAME + ":" + server.REMOTE_SERVER_PASSWORD);
-                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+                    Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
                 }
             }
 
-            String fullString = String.Format("{0}{1}:{2}{3}{4}", protocol, url, port, 
-                String.IsNullOrEmpty(directory) ? "" : "/" + directory, 
-                jsonUrl);
-
+            var fullString = $"{protocol}{url}:{port}{(string.IsNullOrEmpty(directory) ? "" : "/" + directory)}{jsonUrl}";
             App.AddLog("JSON Call: " + fullString);
             return fullString;
         }
@@ -104,58 +91,52 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Create the Url for settings (Post) values
         /// </summary>
-        public async Task<string> ConstructSetUrlAsync(ServerSettings server, int jsonSetUrl, String idx, int action, double value)
+        public async Task<string> ConstructSetUrlAsync(ServerSettings server, int jsonSetUrl, string idx, int action, double value)
         {
             if (server == null)
                 return null;
-            String protocol, baseUrl, port, directory, jsonUrl = null, actionUrl;
+            string protocol, baseUrl, port, directory, jsonUrl = null, actionUrl;
             if (await IsUserOnLocalWifiAsync(server))
             {
-                if (server.LOCAL_SERVER_PROTOCOL == 0)
-                    protocol = ConstantValues.Url.Protocol.HTTP;
-                else protocol = ConstantValues.Url.Protocol.HTTPS;
-
+                protocol = server.LOCAL_SERVER_PROTOCOL == 0 ? ConstantValues.Url.Protocol.HTTP : ConstantValues.Url.Protocol.HTTPS;
                 baseUrl = server.LOCAL_SERVER_URL;
                 port = server.LOCAL_SERVER_PORT;
                 directory = server.LOCAL_SERVER_DIRECTORY;
 
-                if (!String.IsNullOrEmpty(server.LOCAL_SERVER_USERNAME))
+                if (!string.IsNullOrEmpty(server.LOCAL_SERVER_USERNAME))
                 {
                     RefreshClient();
                     var byteArray = Encoding.UTF8.GetBytes(
                         server.LOCAL_SERVER_USERNAME +
                         ":" +
                         server.LOCAL_SERVER_PASSWORD);
-                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+                    Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
                 }
                 else
                 {
-                    if (!String.IsNullOrEmpty(server.REMOTE_SERVER_USERNAME))
+                    if (!string.IsNullOrEmpty(server.REMOTE_SERVER_USERNAME))
                     {
                         RefreshClient();
                         var byteArray = Encoding.UTF8.GetBytes(
                             server.REMOTE_SERVER_USERNAME +
                             ":" +
                             server.REMOTE_SERVER_PASSWORD);
-                        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+                        Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
                     }
                 }
             }
             else
             {
-                if (server.REMOTE_SERVER_PROTOCOL == 0)
-                    protocol = ConstantValues.Url.Protocol.HTTP;
-                else protocol = ConstantValues.Url.Protocol.HTTPS;
-
+                protocol = server.REMOTE_SERVER_PROTOCOL == 0 ? ConstantValues.Url.Protocol.HTTP : ConstantValues.Url.Protocol.HTTPS;
                 baseUrl = server.REMOTE_SERVER_URL;
                 port = server.REMOTE_SERVER_PORT;
                 directory = server.REMOTE_SERVER_DIRECTORY;
 
-                if (!String.IsNullOrEmpty(server.REMOTE_SERVER_USERNAME))
+                if (!string.IsNullOrEmpty(server.REMOTE_SERVER_USERNAME))
                 {
                     RefreshClient();
                     var byteArray = Encoding.UTF8.GetBytes(server.REMOTE_SERVER_USERNAME + ":" + server.REMOTE_SERVER_PASSWORD);
-                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+                    Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
                 }
             }
 
@@ -258,54 +239,54 @@ namespace NL.HNOGames.Domoticz.Data
                             "Action not found in method Domoticz.ConstructSetUrl");
             }
 
-            String url = "";
+            string url;
             switch (jsonSetUrl)
             {
                 case ConstantValues.Json.Url.Set.SCENES:
                     url = ConstantValues.Url.Scene.GET;
                     jsonUrl = url
-                            +  idx
+                            + idx
                             + ConstantValues.Url.Switch.CMD + actionUrl;
                     break;
 
                 case ConstantValues.Json.Url.Set.SWITCHES:
                     url = ConstantValues.Url.Switch.GET;
                     jsonUrl = url
-                            +  idx
+                            + idx
                             + ConstantValues.Url.Switch.CMD + actionUrl;
                     break;
 
                 case ConstantValues.Json.Url.Set.MODAL_SWITCHES:
                     url = ConstantValues.Url.ModalSwitch.GET;
                     jsonUrl = url
-                            +  idx
+                            + idx
                             + ConstantValues.Url.ModalSwitch.STATUS + actionUrl;
                     break;
                 case ConstantValues.Json.Url.Set.TEMP:
                     url = ConstantValues.Url.Temp.GET;
                     jsonUrl = url
-                            +  idx
+                            + idx
                             + ConstantValues.Url.Temp.VALUE + actionUrl;
                     break;
 
                 case ConstantValues.Json.Url.Set.SCENEFAVORITE:
                     url = ConstantValues.Url.Favorite.SCENE;
                     jsonUrl = url
-                            +  idx
+                            + idx
                             + ConstantValues.Url.Favorite.VALUE + actionUrl;
                     break;
 
                 case ConstantValues.Json.Url.Set.FAVORITE:
                     url = ConstantValues.Url.Favorite.GET;
                     jsonUrl = url
-                            +  idx
+                            + idx
                             + ConstantValues.Url.Favorite.VALUE + actionUrl;
                     break;
 
                 case ConstantValues.Json.Url.Set.RGBCOLOR:
                     url = ConstantValues.Url.System.RGBCOLOR;
                     jsonUrl = url
-                            +  idx
+                            + idx
                             + actionUrl;
                     break;
 
@@ -317,10 +298,8 @@ namespace NL.HNOGames.Domoticz.Data
                     break;
             }
 
-            String fullString = String.Format("{0}{1}:{2}{3}{4}", protocol, baseUrl, port,
-                String.IsNullOrEmpty(directory) ? "" : "/" + directory,
-                jsonUrl);
-
+            var fullString =
+                $"{protocol}{baseUrl}:{port}{(string.IsNullOrEmpty(directory) ? "" : "/" + directory)}{jsonUrl}";
             App.AddLog("JSON Action Call: " + fullString);
             return fullString;
         }
@@ -328,9 +307,9 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Is User On Local Wifi Async
         /// </summary>
-        public async Task<bool> IsUserOnLocalWifiAsync(ServerSettings server)
+        private static async Task<bool> IsUserOnLocalWifiAsync(ServerSettings server)
         {
-            if (server != null && !String.IsNullOrEmpty(server.LOCAL_SERVER_URL))
+            if (!string.IsNullOrEmpty(server?.LOCAL_SERVER_URL))
                 return await CrossConnectivity.Current.IsReachable(server.LOCAL_SERVER_URL, 1000);
             return false;
         }

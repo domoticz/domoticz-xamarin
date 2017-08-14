@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
@@ -10,7 +11,7 @@
              Title="{resources:Translate category_debug}">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Share" Order="Primary" Activated="ToolbarItem_Activated">
+        <ToolbarItem Text="Share" Order="Primary" Clicked="ToolbarItem_Activated">
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource"
                             iOS="ic_content_copy.png"
@@ -19,25 +20,31 @@
             </ToolbarItem.Icon>
         </ToolbarItem>
     </ContentPage.ToolbarItems>
-    
+
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Margin="20">
-                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical" >
-                        <Label Text="{resources:Translate debug_switch_summary_on}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"  Style="{StaticResource SettingsDetailType}" />
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
+                             Orientation="Horizontal" Margin="20">
+                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
+                        <Label Text="{resources:Translate debug_switch_summary_on}" VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="Start" Style="{StaticResource SettingsDetailType}" />
                     </StackLayout>
-                    <Switch x:Name="swEnableDebugging"  VerticalOptions="Center" HorizontalOptions="End"/>
+                    <Switch x:Name="swEnableDebugging" VerticalOptions="Center" HorizontalOptions="End" />
                 </StackLayout>
 
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Horizontal" Margin="20,0,20,0">
-                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical" >
-                        <Label Text="Also log JSON results?" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"  Style="{StaticResource SettingsDetailType}" />
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
+                             Orientation="Horizontal" Margin="20,0,20,0">
+                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
+                        <Label Text="Also log JSON results?" VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="Start" Style="{StaticResource SettingsDetailType}" />
                     </StackLayout>
-                    <Switch x:Name="swEnableJSONDebugging"  VerticalOptions="Center" HorizontalOptions="End"/>
+                    <Switch x:Name="swEnableJSONDebugging" VerticalOptions="Center" HorizontalOptions="End" />
                 </StackLayout>
 
-                <Editor x:Name="txtInfo" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="20,20,20,0" Style="{StaticResource EditorType}" BackgroundColor="{StaticResource CardBackgroundColor}"/>
+                <Editor x:Name="txtInfo" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                        Margin="20,20,20,0" Style="{StaticResource EditorType}"
+                        BackgroundColor="{StaticResource CardBackgroundColor}" />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

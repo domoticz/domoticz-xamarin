@@ -1,5 +1,4 @@
 ﻿using System;
-
 using Xamarin.Forms;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
@@ -12,6 +11,7 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
     public partial class SwitchPopup
     {
         public delegate void DeviceSelected(Models.Device device, string pasword, string value);
+
         public DeviceSelected DeviceSelectedMethod { get; set; }
 
         public SwitchPopup()
@@ -19,7 +19,7 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
             InitializeComponent();
         }
 
-        private async Task OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        private async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
             var item = args.SelectedItem as Models.Device;
             if (item == null)
@@ -30,7 +30,8 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
             string value = null;
             if (item.Protected)
             {
-                var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password, inputType: InputType.Password);
+                var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password,
+                    inputType: InputType.Password);
                 await Task.Delay(500);
                 if (r.Ok)
                     password = r.Text;
@@ -43,7 +44,8 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
                 //show value popup
                 if (item.LevelNamesArray != null && item.LevelNames.Length > 0)
                 {
-                    value = await DisplayActionSheet(AppResources.selector_value, AppResources.cancel, null, item.LevelNamesArray);
+                    value = await DisplayActionSheet(AppResources.selector_value, AppResources.cancel, null,
+                        item.LevelNamesArray);
                     if (string.IsNullOrEmpty(value))
                         return;
                 }

@@ -22,7 +22,7 @@ namespace NL.HNOGames.Domoticz.Models
         {
             get
             {
-                return  String.IsNullOrEmpty(SwitchName) ? AppResources.connectedSwitch + ": -" : AppResources.connectedSwitch + ": " + SwitchName;
+                return  string.IsNullOrEmpty(SwitchName) ? AppResources.connectedSwitch + ": -" : AppResources.connectedSwitch + ": " + SwitchName;
             }
         }
     }

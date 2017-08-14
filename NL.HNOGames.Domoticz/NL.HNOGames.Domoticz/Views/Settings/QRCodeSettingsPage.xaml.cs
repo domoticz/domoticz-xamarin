@@ -1,5 +1,4 @@
 ﻿using System;
-
 using Xamarin.Forms;
 using System.Threading.Tasks;
 using System.Collections.Generic;
@@ -29,10 +28,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
 
             App.ShowToast(AppResources.qrcode_register);
             swEnableQRCode.IsToggled = App.AppSettings.QRCodeEnabled;
-            swEnableQRCode.Toggled += (sender, args) =>
-            {
-                App.AppSettings.QRCodeEnabled = swEnableQRCode.IsToggled;
-            };
+            swEnableQRCode.Toggled += (sender, args) => { App.AppSettings.QRCodeEnabled = swEnableQRCode.IsToggled; };
 
             _oListSource = App.AppSettings.QRCodes;
             if (_oListSource != null)
@@ -71,12 +67,13 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                 const BarcodeFormat expectedFormat = BarcodeFormat.QR_CODE;
                 var opts = new ZXing.Mobile.MobileBarcodeScanningOptions
                 {
-                    PossibleFormats = new List<BarcodeFormat> { expectedFormat }
+                    PossibleFormats = new List<BarcodeFormat> {expectedFormat}
                 };
                 System.Diagnostics.Debug.WriteLine("Scanning " + expectedFormat);
 
                 var scanPage = new ZXingScannerPage(opts);
-                scanPage.OnScanResult += (result) => {
+                scanPage.OnScanResult += (result) =>
+                {
                     scanPage.IsScanning = false;
 
                     Device.BeginInvokeOnMainThread(async () =>
@@ -85,7 +82,8 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                         try
                         {
                             var qrCodeId = result.Text.GetHashCode() + "";
-                            if (_oListSource.Any(o => string.Compare(o.Id, qrCodeId, StringComparison.OrdinalIgnoreCase) == 0))
+                            if (_oListSource.Any(
+                                o => string.Compare(o.Id, qrCodeId, StringComparison.OrdinalIgnoreCase) == 0))
                                 App.ShowToast(AppResources.qrcode_exists);
                             else
                                 AddNewRecord(qrCodeId);
@@ -131,7 +129,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// </summary>
         private void btnDeleteButton_Clicked(object sender, EventArgs e)
         {
-            var oQrCode = (QRCodeModel)((Button)sender).BindingContext;
+            var oQrCode = (QRCodeModel) ((Button) sender).BindingContext;
             App.ShowToast(AppResources.something_deleted.Replace("%1$s", oQrCode.Name));
             _oListSource.Remove(oQrCode);
             SaveAndRefresh();
@@ -150,9 +148,9 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// <summary>
         /// Connect device to QR Code
         /// </summary>
-        private async Task btnConnect_Clicked(object sender, EventArgs e)
+        private async void btnConnect_Clicked(object sender, EventArgs e)
         {
-            _oSelectedQrCode = (QRCodeModel)((Button)sender).BindingContext;
+            _oSelectedQrCode = (QRCodeModel) ((Button) sender).BindingContext;
             var oSwitchPopup = new SwitchPopup();
             oSwitchPopup.DeviceSelectedMethod += DelegateMethod;
             await PopupNavigation.PushAsync(oSwitchPopup);
@@ -161,7 +159,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// <summary>
         /// Connect device to QR Code
         /// </summary>
-        public void DelegateMethod(Models.Device device, string password, string value)
+        private void DelegateMethod(Models.Device device, string password, string value)
         {
             App.ShowToast("Connecting " + _oSelectedQrCode.Name + " with switch " + device.Name);
             _oSelectedQrCode.SwitchIDX = device.idx;

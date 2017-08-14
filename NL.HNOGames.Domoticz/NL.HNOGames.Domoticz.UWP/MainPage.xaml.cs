@@ -7,7 +7,7 @@
             this.InitializeComponent();
             LoadApplication(new NL.HNOGames.Domoticz.App());
 
-            OxyPlot.Xamarin.Forms.Platform.UWP.PlotViewRenderer.Init();
+            //OxyPlot.Xamarin.Forms.Platform.UWP.PlotViewRenderer.Init();
         }
     }
 }

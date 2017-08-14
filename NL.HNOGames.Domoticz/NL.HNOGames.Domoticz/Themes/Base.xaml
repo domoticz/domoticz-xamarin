@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NL.HNOGames.Domoticz.Themes.Base">
+
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NL.HNOGames.Domoticz.Themes.Base">
     <Color x:Key="Primary">#263238</Color>
     <Color x:Key="PrimaryDark">#22272B</Color>
     <Color x:Key="Accent">#22272B</Color>

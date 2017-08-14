@@ -62,7 +62,7 @@ namespace NL.HNOGames.Domoticz.Helpers
                 }
 
                 //Something else has gone wrong, log it
-                App.ShowToast(String.IsNullOrEmpty(message) ? "Issue with payment: " + purchaseEx.Message : "Issue with payment: " + message);
+                App.ShowToast(string.IsNullOrEmpty(message) ? "Issue with payment: " + purchaseEx.Message : "Issue with payment: " + message);
                 App.AddLog(purchaseEx.Message);
                 return false;
             }

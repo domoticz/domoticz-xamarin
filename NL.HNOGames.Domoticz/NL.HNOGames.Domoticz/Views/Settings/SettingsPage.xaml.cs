@@ -2,11 +2,8 @@
 using NL.HNOGames.Domoticz.Models;
 using NL.HNOGames.Domoticz.Resources;
 using NL.HNOGames.Domoticz.Views.Dialog;
-using PCLStorage;
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -17,7 +14,6 @@ namespace NL.HNOGames.Domoticz.Views.Settings
     {
         private SelectMultipleBasePage<ScreenModel> _oEnableScreenPage;
         private readonly Command _goToMainScreen;
-        public bool NotificationSettingsChanged;
 
         public SettingsPage(Command mainScreen)
         {
@@ -50,11 +46,15 @@ namespace NL.HNOGames.Domoticz.Views.Settings
 
             //Dashboard sort
             swNoSort.IsToggled = App.AppSettings.NoSort;
-            lblSort.Text = App.AppSettings.NoSort ? AppResources.sort_dashboardLikeServer_on : AppResources.sort_dashboardLikeServer_off;
+            lblSort.Text = App.AppSettings.NoSort
+                ? AppResources.sort_dashboardLikeServer_on
+                : AppResources.sort_dashboardLikeServer_off;
             swNoSort.Toggled += (sender, args) =>
             {
                 App.AppSettings.NoSort = swNoSort.IsToggled;
-                lblSort.Text = App.AppSettings.NoSort ? AppResources.sort_dashboardLikeServer_on : AppResources.sort_dashboardLikeServer_off;
+                lblSort.Text = App.AppSettings.NoSort
+                    ? AppResources.sort_dashboardLikeServer_on
+                    : AppResources.sort_dashboardLikeServer_off;
             };
 
             //Talk Back
@@ -74,7 +74,9 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             swDarkTheme.Toggled += (sender, args) =>
             {
                 App.AppSettings.DarkTheme = swDarkTheme.IsToggled;
-                Application.Current.Resources.MergedWith = App.AppSettings.DarkTheme ? (new Themes.Dark()).GetType() : (new Themes.Base()).GetType();
+                Application.Current.Resources.MergedWith = App.AppSettings.DarkTheme
+                    ? (new Themes.Dark()).GetType()
+                    : (new Themes.Base()).GetType();
                 if (swDarkTheme.IsToggled && !App.AppSettings.PremiumBought)
                 {
                     swDarkTheme.IsToggled = false;
@@ -84,11 +86,15 @@ namespace NL.HNOGames.Domoticz.Views.Settings
 
             //Dashboard show switches
             swShowSwitch.IsToggled = App.AppSettings.ShowSwitches;
-            lblShowSwitch.Text = App.AppSettings.ShowSwitches ? AppResources.switch_buttons_on : AppResources.switch_buttons_off;
+            lblShowSwitch.Text = App.AppSettings.ShowSwitches
+                ? AppResources.switch_buttons_on
+                : AppResources.switch_buttons_off;
             swShowSwitch.Toggled += (sender, args) =>
             {
                 App.AppSettings.ShowSwitches = swShowSwitch.IsToggled;
-                lblShowSwitch.Text = App.AppSettings.ShowSwitches ? AppResources.switch_buttons_on : AppResources.switch_buttons_off;
+                lblShowSwitch.Text = App.AppSettings.ShowSwitches
+                    ? AppResources.switch_buttons_on
+                    : AppResources.switch_buttons_off;
             };
 
             //Enable notifications
@@ -96,7 +102,6 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             swEnableNotifications.Toggled += (sender, args) =>
             {
                 App.AppSettings.EnableNotifications = swEnableNotifications.IsToggled;
-                NotificationSettingsChanged = true;
                 if (swEnableNotifications.IsToggled && !App.AppSettings.PremiumBought)
                 {
                     swEnableNotifications.IsToggled = false;
@@ -106,11 +111,15 @@ namespace NL.HNOGames.Domoticz.Views.Settings
 
             //Dashboard extra data
             swExtraData.IsToggled = App.AppSettings.ShowExtraData;
-            lblExtraData.Text = App.AppSettings.ShowExtraData ? AppResources.show_extra_data_on : AppResources.show_extra_data_off;
+            lblExtraData.Text = App.AppSettings.ShowExtraData
+                ? AppResources.show_extra_data_on
+                : AppResources.show_extra_data_off;
             swExtraData.Toggled += (sender, args) =>
             {
                 App.AppSettings.ShowExtraData = swExtraData.IsToggled;
-                lblExtraData.Text = App.AppSettings.ShowExtraData ? AppResources.show_extra_data_on : AppResources.show_extra_data_off;
+                lblExtraData.Text = App.AppSettings.ShowExtraData
+                    ? AppResources.show_extra_data_on
+                    : AppResources.show_extra_data_off;
             };
         }
 
@@ -151,10 +160,11 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                 new ScreenModel {ID = "Utilities", Name = AppResources.title_utilities, IsSelected = true}
             };
 
-            _oEnableScreenPage = new SelectMultipleBasePage<ScreenModel>(items, new Command(ExecuteSaveEnableScreensCommand))
-            {
-                Title = AppResources.enable_items
-            };
+            _oEnableScreenPage =
+                new SelectMultipleBasePage<ScreenModel>(items, new Command(ExecuteSaveEnableScreensCommand))
+                {
+                    Title = AppResources.enable_items
+                };
             await Navigation.PushAsync(_oEnableScreenPage);
         }
 
@@ -203,14 +213,15 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         {
             var result = await UserDialogs.Instance.ConfirmAsync(new ConfirmConfig
             {
-                Message = "There are several features in the domoticz app that are locked until you buy the premium version\r\n- no ads!!\r\n-notification support\r\n- theming\r\n- talkback\r\n- qrcode scanning\r\n\r\n- and more features in the future",
+                Message =
+                    "There are several features in the domoticz app that are locked until you buy the premium version\r\n- no ads!!\r\n-notification support\r\n- theming\r\n- talkback\r\n- qrcode scanning\r\n\r\n- and more features in the future",
                 OkText = "Buy",
                 CancelText = "Cancel"
             });
             if (result)
             {
                 Helpers.InAppPurchaseHelper oPurchaser = new Helpers.InAppPurchaseHelper();
-                if(await oPurchaser.PurchaseItem())
+                if (await oPurchaser.PurchaseItem())
                     App.ShowToast("Thanks for buying premium!!");
                 PremiumScreenSetup();
             }

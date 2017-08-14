@@ -59,7 +59,7 @@
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <PlatformTarget>x86</PlatformTarget>
     <BuildIpa>true</BuildIpa>
-    <CodesignProvision>0f3b8e4e-3046-47d4-b294-cda61710233a</CodesignProvision>
+    <CodesignProvision>1ac65bcc-0448-4c7a-b438-79817f89f428</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>pdbonly</DebugType>

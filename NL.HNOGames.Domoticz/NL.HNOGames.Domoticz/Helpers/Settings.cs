@@ -212,7 +212,7 @@ namespace NL.HNOGames.Domoticz.Helpers
                 try
                 {
                     String resultCache = AppSettings.GetValueOrDefault(QRCodesSettingsKey, String.Empty);
-                    if (!String.IsNullOrEmpty(resultCache))
+                    if (!string.IsNullOrEmpty(resultCache))
                     {
                         var value = JsonConvert.DeserializeObject<List<QRCodeModel>>(resultCache);
                         return value;
@@ -258,7 +258,7 @@ namespace NL.HNOGames.Domoticz.Helpers
                 try
                 {
                     String resultCache = AppSettings.GetValueOrDefault(SpeechSettingsKey, String.Empty);
-                    if (!String.IsNullOrEmpty(resultCache))
+                    if (!string.IsNullOrEmpty(resultCache))
                     {
                         var value = JsonConvert.DeserializeObject<List<SpeechModel>>(resultCache);
                         return value;
@@ -388,7 +388,7 @@ namespace NL.HNOGames.Domoticz.Helpers
         public void AddDebugInfo(String text)
         {
             if(EnableDebugging)
-                DebugInfo = String.IsNullOrEmpty(DebugInfo) ? text : DebugInfo + Environment.NewLine + text;
+                DebugInfo = string.IsNullOrEmpty(DebugInfo) ? text : DebugInfo + Environment.NewLine + text;
         }
 
 
@@ -400,6 +400,8 @@ namespace NL.HNOGames.Domoticz.Helpers
         {
             get
             {
+                if (Xamarin.Forms.Device.RuntimePlatform == Xamarin.Forms.Device.Android)
+                    return true;//only support paid/premium for iOS for now
                 return AppSettings.GetValueOrDefault(PremiumSettingsKey, false);
             }
             set

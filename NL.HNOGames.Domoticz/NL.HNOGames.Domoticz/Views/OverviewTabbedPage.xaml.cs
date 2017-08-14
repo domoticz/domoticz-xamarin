@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using ZXing.Net.Mobile.Forms;
@@ -47,10 +46,11 @@ namespace NL.HNOGames.Domoticz.Views
         /// <summary>
         /// Show action sheet with plans
         /// </summary>
-        public async void OnShowPlansClick(object o, EventArgs e)
+        private async void OnShowPlansClick(object o, EventArgs e)
         {
             if (_viewModel.Plans == null || _viewModel.Plans.Count <= 0) return;
-            var selectedPlanName = await DisplayActionSheet(AppResources.title_plans, AppResources.cancel, null, _viewModel.Plans.Select(p => p.Name).ToArray());
+            var selectedPlanName = await DisplayActionSheet(AppResources.title_plans, AppResources.cancel, null,
+                _viewModel.Plans.Select(p => p.Name).ToArray());
             var selectedPlan = _viewModel.Plans.FirstOrDefault(q => q.Name == selectedPlanName);
             if (selectedPlan != null)
             {
@@ -59,10 +59,11 @@ namespace NL.HNOGames.Domoticz.Views
         }
 
         private bool _settingsOpened;
+
         /// <summary>
         /// Show all settings
         /// </summary>
-        public async void OnSettingsClick(object o, EventArgs e)
+        private async void OnSettingsClick(object o, EventArgs e)
         {
             _settingsOpened = true;
             await Navigation.PushAsync(new Settings.SettingsPage(new Command(BreakingSettingsChanged)));
@@ -80,7 +81,7 @@ namespace NL.HNOGames.Domoticz.Views
         /// <summary>
         /// Scan QR Code
         /// </summary>
-        private async Task tiQRCode_Activated(object sender, EventArgs e)
+        private async void tiQRCode_Activated(object sender, EventArgs e)
         {
             if (!App.AppSettings.QRCodeEnabled)
                 return;
@@ -88,7 +89,7 @@ namespace NL.HNOGames.Domoticz.Views
             var expectedFormat = ZXing.BarcodeFormat.QR_CODE;
             var opts = new ZXing.Mobile.MobileBarcodeScanningOptions
             {
-                PossibleFormats = new List<ZXing.BarcodeFormat> { expectedFormat }
+                PossibleFormats = new List<ZXing.BarcodeFormat> {expectedFormat}
             };
             System.Diagnostics.Debug.WriteLine("Scanning " + expectedFormat);
 
@@ -104,11 +105,12 @@ namespace NL.HNOGames.Domoticz.Views
                     {
                         var qrCodeId = result.Text.GetHashCode() + "";
                         var qrCode = App.AppSettings.QRCodes.FirstOrDefault(o => o.Id == qrCodeId);
-                        if(qrCode != null && qrCode.Enabled)
+                        if (qrCode != null && qrCode.Enabled)
                         {
                             App.AddLog("QR Code ID Found: " + qrCodeId);
                             App.ShowToast(AppResources.qrcode + " " + qrCode.Name);
-                            await App.ApiService.HandleSwitch(qrCode.SwitchIDX, qrCode.SwitchPassword, -1, qrCode.Value, qrCode.IsScene);
+                            await App.ApiService.HandleSwitch(qrCode.SwitchIDX, qrCode.SwitchPassword, -1, qrCode.Value,
+                                qrCode.IsScene);
                             App.SetMainPage();
                         }
                         else

@@ -1,7 +1,5 @@
 ﻿using System;
-
 using Xamarin.Forms;
-using System.Threading.Tasks;
 using System.Collections.Generic;
 using NL.HNOGames.Domoticz.Resources;
 using NL.HNOGames.Domoticz.Models;
@@ -25,10 +23,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
 
             App.ShowToast(AppResources.Speech_register);
             swEnableSpeech.IsToggled = App.AppSettings.SpeechEnabled;
-            swEnableSpeech.Toggled += (sender, args) =>
-            {
-                App.AppSettings.SpeechEnabled = swEnableSpeech.IsToggled;
-            };
+            swEnableSpeech.Toggled += (sender, args) => { App.AppSettings.SpeechEnabled = swEnableSpeech.IsToggled; };
 
             _oListSource = App.AppSettings.SpeechCommands;
             if (_oListSource != null)
@@ -47,7 +42,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// </summary>
         private void btnDeleteButton_Clicked(object sender, EventArgs e)
         {
-            var oSpeechCommand = (SpeechModel)((Button)sender).BindingContext;
+            var oSpeechCommand = (SpeechModel) ((Button) sender).BindingContext;
             App.ShowToast(AppResources.something_deleted.Replace("%1$s", oSpeechCommand.Name));
             _oListSource.Remove(oSpeechCommand);
             SaveAndRefresh();
@@ -68,7 +63,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// </summary>
         private async void btnConnect_Clicked(object sender, EventArgs e)
         {
-            _oSelectedSpeechCommand = (SpeechModel)((Button)sender).BindingContext;
+            _oSelectedSpeechCommand = (SpeechModel) ((Button) sender).BindingContext;
             var oSwitchPopup = new SwitchPopup();
             oSwitchPopup.DeviceSelectedMethod += DelegateMethod;
             await PopupNavigation.PushAsync(oSwitchPopup);

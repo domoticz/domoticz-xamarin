@@ -1,5 +1,4 @@
 ﻿using System;
-
 using Xamarin.Forms;
 using System.Threading.Tasks;
 using System.Collections.Generic;

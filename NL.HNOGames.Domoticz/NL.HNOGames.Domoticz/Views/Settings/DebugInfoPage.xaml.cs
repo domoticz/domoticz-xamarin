@@ -1,6 +1,4 @@
 ﻿using System;
-
-using System.Threading.Tasks;
 using Plugin.Share;
 using NL.HNOGames.Domoticz.Resources;
 
@@ -17,7 +15,9 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             swEnableDebugging.Toggled += (sender, args) =>
             {
                 App.AppSettings.EnableDebugging = swEnableDebugging.IsToggled;
-                txtInfo.Text = App.AppSettings.EnableDebugging ? "Debugging started, we only save the debug information for 1 app sessions!!" : "";
+                txtInfo.Text = App.AppSettings.EnableDebugging
+                    ? "Debugging started, we only save the debug information for 1 app sessions!!"
+                    : "";
                 swEnableJSONDebugging.IsEnabled = App.AppSettings.EnableDebugging;
             };
 
@@ -28,7 +28,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             };
         }
 
-        private async Task ToolbarItem_Activated(object sender, EventArgs e)
+        private async void ToolbarItem_Activated(object sender, EventArgs e)
         {
             //App.AppSettings.EnableDebugging, AppResources.category_debug + " Domoticz"
             var oMessage = new Plugin.Share.Abstractions.ShareMessage

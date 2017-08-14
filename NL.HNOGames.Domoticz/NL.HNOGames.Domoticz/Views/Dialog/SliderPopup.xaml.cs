@@ -1,25 +1,27 @@
 ﻿using NL.HNOGames.Domoticz.Resources;
 using Rg.Plugins.Popup.Services;
 using System;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace NL.HNOGames.Domoticz.Views.Dialog
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SliderPopup
+    public sealed partial class SliderPopup
     {
-        readonly Models.Device _oDevice;
-        readonly Command _cmFinish;
+        private readonly Models.Device _oDevice;
+        private readonly Command _cmFinish;
 
         public SliderPopup(Models.Device device, Command finish = null)
         {
             _oDevice = device;
             _cmFinish = finish;
             InitializeComponent();
-            
-            lvlTitle.Text = string.Format(AppResources.set_level_switch.Replace("%1$s", "{0}").Replace(" to %2$d", "").Replace("\"",""), _oDevice.Name);
+
+            lvlTitle.Text =
+                string.Format(
+                    AppResources.set_level_switch.Replace("%1$s", "{0}").Replace("%2$d", "").Replace("\"", ""),
+                    _oDevice.Name);
 
             sDimmer.MaximumValue = device.MaxDimLevel;
             sDimmer.UpperValue = device.LevelInt;
@@ -28,25 +30,14 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
             sDimmer.ShowTextAboveThumbs = true;
         }
 
-        private async Task btnSave_Clicked(object sender, EventArgs e)
+        /// <summary>
+        /// Save the new slider value
+        /// </summary>
+        private async void btnSave_Clicked(object sender, EventArgs e)
         {
             await App.ApiService.SetDimmer(_oDevice.idx, sDimmer.UpperValue + 1);
             _cmFinish?.Execute(null);
             await PopupNavigation.PopAsync();
-        }
-
-        // Method for animation child in PopupPage
-        // Invoced after custom animation end
-        protected new virtual Task OnAppearingAnimationEnd()
-        {
-            return Content.FadeTo(0.5);
-        }
-
-        // Method for animation child in PopupPage
-        // Invoked before custom animation begin
-        protected new virtual Task OnDisappearingAnimationBegin()
-        {
-            return Content.FadeTo(1);
         }
 
         protected override bool OnBackButtonPressed()

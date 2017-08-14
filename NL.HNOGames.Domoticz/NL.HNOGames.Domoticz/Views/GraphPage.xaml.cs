@@ -67,28 +67,32 @@ namespace NL.HNOGames.Domoticz.Views
             if (graphData?.result == null || graphData.result.Length <= 0) return;
             var dateTimeList = graphData.result.Select(item => item.getDateTime()).ToList();
 
-            var temperatureList = graphData.result.Select(item => item.getTemperature()).Where(item => item.HasValue).ToList();
+            var temperatureList = graphData.result.Select(item => item.getTemperature()).Where(item => item.HasValue)
+                .ToList();
             if (temperatureList != null && temperatureList.Count > 0)
             {
                 var line = CreateLine("Temperature", temperatureList, dateTimeList);
                 _model.Series.Add(line);
             }
 
-            var humidityList = graphData.result.Select(item => item.getHumidity()).Where(item => item.HasValue).ToList();
+            var humidityList = graphData.result.Select(item => item.getHumidity()).Where(item => item.HasValue)
+                .ToList();
             if (humidityList != null && humidityList.Count > 0)
             {
                 var line = CreateLine("Humidity", humidityList, dateTimeList);
                 _model.Series.Add(line);
             }
 
-            var setPointList = graphData.result.Select(item => item.getSetPoint()).Where(item => item.HasValue).ToList();
+            var setPointList = graphData.result.Select(item => item.getSetPoint()).Where(item => item.HasValue)
+                .ToList();
             if (setPointList != null && setPointList.Count > 0)
             {
                 var line = CreateLine("SetPoint", setPointList, dateTimeList);
                 _model.Series.Add(line);
             }
 
-            var barometerList = graphData.result.Select(item => item.getBarometer()).Where(item => item.HasValue).ToList();
+            var barometerList = graphData.result.Select(item => item.getBarometer()).Where(item => item.HasValue)
+                .ToList();
             if (barometerList != null && barometerList.Count > 0)
             {
                 var line = CreateLine("Barometer", barometerList, dateTimeList);
@@ -102,21 +106,24 @@ namespace NL.HNOGames.Domoticz.Views
                 _model.Series.Add(line);
             }
 
-            var secondValueList = graphData.result.Select(item => item.getSecondValue()).Where(item => item.HasValue).ToList();
+            var secondValueList = graphData.result.Select(item => item.getSecondValue()).Where(item => item.HasValue)
+                .ToList();
             if (secondValueList != null && secondValueList.Count > 0)
             {
                 var line = CreateLine("Second Percentage", secondValueList, dateTimeList);
                 _model.Series.Add(line);
             }
 
-            var powerDeliveryList = graphData.result.Select(item => item.getPowerDelivery()).Where(item => item.HasValue).ToList();
+            var powerDeliveryList = graphData.result.Select(item => item.getPowerDelivery())
+                .Where(item => item.HasValue).ToList();
             if (powerDeliveryList != null && powerDeliveryList.Count > 0)
             {
                 var line = CreateLine("Power Delivery", powerDeliveryList, dateTimeList);
                 _model.Series.Add(line);
             }
 
-            var powerUsageList = graphData.result.Select(item => item.getPowerUsage()).Where(item => item.HasValue).ToList();
+            var powerUsageList = graphData.result.Select(item => item.getPowerUsage()).Where(item => item.HasValue)
+                .ToList();
             if (powerUsageList != null && powerUsageList.Count > 0)
             {
                 var line = CreateLine("Power Usage", powerUsageList, dateTimeList);
@@ -137,14 +144,16 @@ namespace NL.HNOGames.Domoticz.Views
                 _model.Series.Add(line);
             }
 
-            var directionList = graphData.result.Select(item => item.getDirection()).Where(item => item.HasValue).ToList();
+            var directionList = graphData.result.Select(item => item.getDirection()).Where(item => item.HasValue)
+                .ToList();
             if (directionList != null && directionList.Count > 0)
             {
                 var line = CreateLine("Direction", directionList, dateTimeList);
                 _model.Series.Add(line);
             }
 
-            var sunPowerList = graphData.result.Select(item => item.getSunPower()).Where(item => item.HasValue).ToList();
+            var sunPowerList = graphData.result.Select(item => item.getSunPower()).Where(item => item.HasValue)
+                .ToList();
             if (sunPowerList != null && sunPowerList.Count > 0)
             {
                 var line = CreateLine("SunPower", sunPowerList, dateTimeList);
@@ -224,7 +233,8 @@ namespace NL.HNOGames.Domoticz.Views
         {
             if (!graphData.result.Any(item => item.hasTemperatureRange())) return;
             {
-                var temperatureMinList = graphData.result.Select(item => item.getTemperatureMin()).Where(item => item.HasValue)
+                var temperatureMinList = graphData.result.Select(item => item.getTemperatureMin())
+                    .Where(item => item.HasValue)
                     .ToList();
                 if (temperatureMinList != null && temperatureMinList.Count > 0)
                 {
@@ -232,7 +242,8 @@ namespace NL.HNOGames.Domoticz.Views
                     _model.Series.Add(line);
                 }
 
-                var temperatureMaxList = graphData.result.Select(item => item.getTemperatureMax()).Where(item => item.HasValue)
+                var temperatureMaxList = graphData.result.Select(item => item.getTemperatureMax())
+                    .Where(item => item.HasValue)
                     .ToList();
                 if (temperatureMaxList == null || temperatureMaxList.Count <= 0) return;
                 {
@@ -245,7 +256,8 @@ namespace NL.HNOGames.Domoticz.Views
         /// <summary>
         /// Create Graph Line
         /// </summary>
-        private LineSeries CreateLine(string title, IEnumerable<double?> graphData, IReadOnlyList<DateTime?> graphDateTime)
+        private LineSeries CreateLine(string title, IEnumerable<double?> graphData,
+            IReadOnlyList<DateTime?> graphDateTime)
         {
             var lineTemperature = CreateLine(title);
             var counter = 0;
@@ -308,8 +320,9 @@ namespace NL.HNOGames.Domoticz.Views
             }
 
             _model.TextColor = OxyColor.Parse("#757575");
-            _model.Axes.Add(new DateTimeAxis { Title = "DateTime", Position = AxisPosition.Bottom, StringFormat = format });
-            _model.Axes.Add(new LinearAxis { Title = "Value", Position = AxisPosition.Left });
+            _model.Axes.Add(
+                new DateTimeAxis {Title = "DateTime", Position = AxisPosition.Bottom, StringFormat = format});
+            _model.Axes.Add(new LinearAxis {Title = "Value", Position = AxisPosition.Left});
             _model.Annotations.Add(new LineAnnotation()
             {
                 Type = LineAnnotationType.Vertical,
@@ -327,7 +340,8 @@ namespace NL.HNOGames.Domoticz.Views
             _model.LegendOrientation = LegendOrientation.Horizontal;
             _model.LegendPlacement = LegendPlacement.Outside;
             _model.LegendPosition = LegendPosition.BottomCenter;
-            _model.LegendBackground = OxyColor.FromAColor(200, App.AppSettings.DarkTheme ? OxyColors.Black : OxyColors.White);
+            _model.LegendBackground =
+                OxyColor.FromAColor(200, App.AppSettings.DarkTheme ? OxyColors.Black : OxyColors.White);
             _model.LegendBorder = OxyColors.Black;
         }
 
@@ -341,13 +355,14 @@ namespace NL.HNOGames.Domoticz.Views
             var actions = CreateFilterMenu();
             if (actions.Count > 0)
             {
-                var result = await DisplayActionSheet(AppResources.filter, AppResources.cancel, null, actions.ToArray());
+                var result = await DisplayActionSheet(AppResources.filter, AppResources.cancel, null,
+                    actions.ToArray());
                 if (string.Compare(AppResources.filterOn_all, result, StringComparison.OrdinalIgnoreCase) == 0)
                     RevertOriginalSource();
                 else if (string.Compare(AppResources.cancel, result, StringComparison.OrdinalIgnoreCase) != 0)
                 {
                     BackupSource();
-                    _model.Series.Clear();//remove list
+                    _model.Series.Clear(); //remove list
                     foreach (var serie in _originalSeries)
                     {
                         if (string.Compare(serie.Title, result, StringComparison.OrdinalIgnoreCase) == 0)
@@ -367,7 +382,7 @@ namespace NL.HNOGames.Domoticz.Views
         {
             _originalSeries = new List<Series>();
             foreach (var s in _model.Series)
-                _originalSeries.Add(s);//backup
+                _originalSeries.Add(s); //backup
         }
 
         /// <summary>
@@ -376,7 +391,7 @@ namespace NL.HNOGames.Domoticz.Views
         private void RevertOriginalSource()
         {
             if (_originalSeries == null) return;
-            _model.Series.Clear();//revert original
+            _model.Series.Clear(); //revert original
             foreach (var s in _originalSeries)
                 _model.Series.Add(s);
             _originalSeries = null;

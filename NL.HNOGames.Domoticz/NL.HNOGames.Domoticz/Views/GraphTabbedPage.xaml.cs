@@ -40,7 +40,7 @@ namespace NL.HNOGames.Domoticz.Views
         {
             base.OnCurrentPageChanged();
             if (CurrentPage.IsEnabled)
-                _lastKnownPage = (GraphPage)CurrentPage;
+                _lastKnownPage = (GraphPage) CurrentPage;
             else
                 CurrentPage = _lastKnownPage;
         }

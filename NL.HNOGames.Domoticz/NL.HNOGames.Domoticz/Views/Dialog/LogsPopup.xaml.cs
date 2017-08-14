@@ -1,5 +1,4 @@
 ﻿using System;
-
 using Xamarin.Forms;
 using System.Threading.Tasks;
 using System.Collections.Generic;
@@ -38,7 +37,7 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
             if (_selectedDevice is Device device)
                 idx = device.idx;
             else if (_selectedDevice is Scene)
-                idx = ((Scene)_selectedDevice).idx;
+                idx = ((Scene) _selectedDevice).idx;
 
             _logList = new List<Log>();
             var logs = await App.ApiService.GetLogs(idx, _selectedDevice is Scene);

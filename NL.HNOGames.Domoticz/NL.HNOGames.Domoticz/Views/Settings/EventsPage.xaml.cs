@@ -1,5 +1,4 @@
 ﻿using System;
-
 using Xamarin.Forms;
 using System.Threading.Tasks;
 using System.Collections.Generic;
@@ -29,6 +28,9 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             new Command(async () => await ExecuteLoadLogsCommand()).Execute(null);
         }
 
+        /// <summary>
+        /// Load all logs
+        /// </summary>
         private async Task ExecuteLoadLogsCommand()
         {
             App.ShowLoading();

@@ -27,11 +27,11 @@ namespace NL.HNOGames.Domoticz.Helpers
         {
             try
             {
-                if (String.IsNullOrEmpty(key))
+                if (string.IsNullOrEmpty(key))
                     return default(T);
 
                 String resultCache = AppCache.GetValueOrDefault(key, String.Empty);
-                if (!String.IsNullOrEmpty(resultCache))
+                if (!string.IsNullOrEmpty(resultCache))
                 {
                     var value = JsonConvert.DeserializeObject<T>(resultCache);
                     return value;
@@ -48,7 +48,7 @@ namespace NL.HNOGames.Domoticz.Helpers
         /// </summary>
         public static void SetCache(String key, object value)
         {
-            if (String.IsNullOrEmpty(key) || value == null)
+            if (string.IsNullOrEmpty(key) || value == null)
                 return;
             AppCache.AddOrUpdateValue(key, JsonConvert.SerializeObject(value));
         }

@@ -13,7 +13,8 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         private ServerSettings _oServerSettings;
 
         public ServerSettings ServerSettings
-        { //Property that will be used to get and set the item
+        {
+            //Property that will be used to get and set the item
             get => _oServerSettings;
             set
             {
@@ -46,11 +47,11 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         {
             if (string.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_URL))
                 return false;
-            //if (String.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_PORT))
+            //if (string.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_PORT))
             //    return false;
             if (!ServerSettings.IS_LOCAL_SERVER_ADDRESS_DIFFERENT) return true;
             return !string.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_URL);
-            //if (String.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_PORT))
+            //if (string.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_PORT))
             //    return false;
         }
 
@@ -59,7 +60,8 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// </summary>
         public bool ValidateServerUrl()
         {
-            return !ServerSettings.LOCAL_SERVER_URL.Contains("http") && !ServerSettings.REMOTE_SERVER_URL.Contains("http");
+            return !ServerSettings.LOCAL_SERVER_URL.Contains("http") &&
+                   !ServerSettings.REMOTE_SERVER_URL.Contains("http");
         }
 
         /// <summary>
@@ -88,9 +90,11 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             imFinish.IsVisible = false;
 
             if (!ValidateServerSettings())
-                UserDialogs.Instance.Alert(AppResources.welcome_msg_connectionDataIncomplete + "\n\n" + AppResources.welcome_msg_correctOnPreviousPage);
+                UserDialogs.Instance.Alert(AppResources.welcome_msg_connectionDataIncomplete + "\n\n" +
+                                           AppResources.welcome_msg_correctOnPreviousPage);
             else if (!ValidateServerUrl())
-                UserDialogs.Instance.Alert(AppResources.welcome_msg_connectionDataInvalid + "\n\n" + AppResources.welcome_msg_correctOnPreviousPage);
+                UserDialogs.Instance.Alert(AppResources.welcome_msg_connectionDataInvalid + "\n\n" +
+                                           AppResources.welcome_msg_correctOnPreviousPage);
             else
             {
                 lblResult.Text = AppResources.welcome_info_checkingConnection + Environment.NewLine;
@@ -106,18 +110,23 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                     var devices = await App.ApiService.GetDevices();
                     if (devices?.result != null)
                     {
-                        lblResult.Text += Environment.NewLine + devices.result.Length + AppResources.welcome_msg_numberOfDevices.Replace("%1$d", "");
+                        lblResult.Text += Environment.NewLine + devices.result.Length +
+                                          AppResources.welcome_msg_numberOfDevices.Replace("%1$d", "");
                         btnFinish.IsVisible = true;
                         btnCheck.IsVisible = false;
                         imFinish.IsVisible = true;
                     }
                     else
                     {
-                        lblResult.Text = App.ApiService.response != null ? App.ApiService.response.ReasonPhrase : AppResources.failed_to_get_switches;
+                        lblResult.Text = App.ApiService.response != null
+                            ? App.ApiService.response.ReasonPhrase
+                            : AppResources.failed_to_get_switches;
                     }
                 }
                 else
-                    lblResult.Text = App.ApiService.response != null ? App.ApiService.response.ReasonPhrase : AppResources.error_timeout;
+                    lblResult.Text = App.ApiService.response != null
+                        ? App.ApiService.response.ReasonPhrase
+                        : AppResources.error_timeout;
 
                 App.HideLoading();
             }
@@ -131,6 +140,5 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         {
             ProcessServerSettings();
         }
-
     }
 }

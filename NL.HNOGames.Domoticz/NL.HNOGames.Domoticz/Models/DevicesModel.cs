@@ -84,7 +84,7 @@ namespace NL.HNOGames.Domoticz.Models
         {
             get
             {
-                if (!String.IsNullOrEmpty(Type) &&
+                if (!string.IsNullOrEmpty(Type) &&
                     (String.Compare(Type, ConstantValues.Device.Scene.Type.SCENE, StringComparison.OrdinalIgnoreCase) == 0 || String.Compare(Type, ConstantValues.Device.Scene.Type.GROUP, StringComparison.OrdinalIgnoreCase) == 0))
                     return true;
                 else
@@ -168,37 +168,37 @@ namespace NL.HNOGames.Domoticz.Models
             get
             {
                 String dataText = String.Empty;
-                if (!String.IsNullOrEmpty(this.Usage))
+                if (!string.IsNullOrEmpty(this.Usage))
                     dataText = AppResources.usage + ": " + this.Usage;
-                if (!String.IsNullOrEmpty(this.CounterToday))
+                if (!string.IsNullOrEmpty(this.CounterToday))
                     dataText += " " + AppResources.today + ": " + this.CounterToday;
-                if (!String.IsNullOrEmpty(this.Counter) &&
+                if (!string.IsNullOrEmpty(this.Counter) &&
                     String.Compare(this.Counter, this.Data, StringComparison.OrdinalIgnoreCase) != 0)
                     dataText += " " + AppResources.total + ": " + this.Counter;
-                if (!String.IsNullOrEmpty(this.Type) && String.Compare(this.Type, ConstantValues.Device.Type.Name.WIND, StringComparison.OrdinalIgnoreCase) == 0)
+                if (!string.IsNullOrEmpty(this.Type) && String.Compare(this.Type, ConstantValues.Device.Type.Name.WIND, StringComparison.OrdinalIgnoreCase) == 0)
                     dataText = AppResources.direction + ": " + this.Direction + " " + this.DirectionStr;
-                if (!String.IsNullOrEmpty(this.ForecastStr))
+                if (!string.IsNullOrEmpty(this.ForecastStr))
                     dataText = this.ForecastStr;
 
                 if (this.Temp.HasValue)
-                    dataText += !String.IsNullOrEmpty(dataText) ? ", " + AppResources.temp + ": " + this.Temp + " " + App.GetServerConfig().TempSign : AppResources.temp + ": " + this.Temp + " " + App.GetServerConfig().TempSign;
-                if (!String.IsNullOrEmpty(this.HumidityStatus))
-                    dataText += !String.IsNullOrEmpty(dataText) ? ", " + AppResources.humidity + ": " + this.HumidityStatus : AppResources.humidity + ": " + this.HumidityStatus;
+                    dataText += !string.IsNullOrEmpty(dataText) ? ", " + AppResources.temp + ": " + this.Temp + " " + App.GetServerConfig().TempSign : AppResources.temp + ": " + this.Temp + " " + App.GetServerConfig().TempSign;
+                if (!string.IsNullOrEmpty(this.HumidityStatus))
+                    dataText += !string.IsNullOrEmpty(dataText) ? ", " + AppResources.humidity + ": " + this.HumidityStatus : AppResources.humidity + ": " + this.HumidityStatus;
 
-                if (!String.IsNullOrEmpty(this.Speed))
-                    dataText += !String.IsNullOrEmpty(dataText) ? ", " + AppResources.speed + ": " + this.Speed + " " + App.GetServerConfig().WindSign : AppResources.speed + ": " + this.Speed + " " + App.GetServerConfig().WindSign;
-                if (!String.IsNullOrEmpty(this.DewPoint))
-                    dataText += !String.IsNullOrEmpty(dataText) ? ", " + AppResources.dewPoint + ": " + this.DewPoint + " " + App.GetServerConfig().TempSign : AppResources.dewPoint + ": " + this.DewPoint + " " + App.GetServerConfig().TempSign;
+                if (!string.IsNullOrEmpty(this.Speed))
+                    dataText += !string.IsNullOrEmpty(dataText) ? ", " + AppResources.speed + ": " + this.Speed + " " + App.GetServerConfig().WindSign : AppResources.speed + ": " + this.Speed + " " + App.GetServerConfig().WindSign;
+                if (!string.IsNullOrEmpty(this.DewPoint))
+                    dataText += !string.IsNullOrEmpty(dataText) ? ", " + AppResources.dewPoint + ": " + this.DewPoint + " " + App.GetServerConfig().TempSign : AppResources.dewPoint + ": " + this.DewPoint + " " + App.GetServerConfig().TempSign;
                 if (this.Barometer.HasValue)
-                    dataText += !String.IsNullOrEmpty(dataText) ? ", " + AppResources.pressure + ": " + this.Barometer : AppResources.pressure + ": " + this.Barometer;
+                    dataText += !string.IsNullOrEmpty(dataText) ? ", " + AppResources.pressure + ": " + this.Barometer : AppResources.pressure + ": " + this.Barometer;
                 if (this.Chill.HasValue)
-                    dataText += !String.IsNullOrEmpty(dataText) ? ", " + AppResources.chill + ": " + this.Chill + " " + App.GetServerConfig().TempSign : AppResources.chill + ": " + this.Chill + " " + App.GetServerConfig().TempSign;
+                    dataText += !string.IsNullOrEmpty(dataText) ? ", " + AppResources.chill + ": " + this.Chill + " " + App.GetServerConfig().TempSign : AppResources.chill + ": " + this.Chill + " " + App.GetServerConfig().TempSign;
                 
-                if (!String.IsNullOrEmpty(this.Rain))
+                if (!string.IsNullOrEmpty(this.Rain))
                     dataText = AppResources.rain + ": " + this.Rain + " mm";
-                if (!String.IsNullOrEmpty(this.RainRate))
+                if (!string.IsNullOrEmpty(this.RainRate))
                     dataText += ", " + AppResources.rainrate + ": " + this.RainRate + " mm/h";
-                if (String.IsNullOrEmpty(dataText))
+                if (string.IsNullOrEmpty(dataText))
                     dataText = Data;
 
                 return String.Format("{0}: {1}", AppResources.status, dataText);

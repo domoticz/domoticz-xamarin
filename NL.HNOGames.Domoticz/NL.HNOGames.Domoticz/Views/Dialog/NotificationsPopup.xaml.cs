@@ -1,5 +1,4 @@
 ﻿using System;
-
 using Xamarin.Forms;
 using System.Threading.Tasks;
 using System.Collections.Generic;
@@ -46,6 +45,5 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
         {
             PopupNavigation.PopAsync();
         }
-
     }
 }

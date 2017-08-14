@@ -1,5 +1,4 @@
-﻿using NL.HNOGames.Domoticz.Helpers;
-using NL.HNOGames.Domoticz.Resources;
+﻿using NL.HNOGames.Domoticz.Resources;
 using OxyPlot;
 using OxyPlot.Annotations;
 using OxyPlot.Axes;
@@ -7,53 +6,55 @@ using OxyPlot.Series;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-
-using Xamarin.Forms;
+using NL.HNOGames.Domoticz.Data;
+using NL.HNOGames.Domoticz.Models;
 using Xamarin.Forms.Xaml;
 
 namespace NL.HNOGames.Domoticz.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class GraphPage : ContentPage
+    public partial class GraphPage
     {
-        private Data.ConstantValues.GraphRange range;
-        private PlotModel model;
-        private Models.Device selectedDevice;
-        private String type;
-        private Random random = new Random();
-        private List<Series> originalSeries;
+        private readonly ConstantValues.GraphRange _range;
+        private PlotModel _model;
+        private readonly Device _selectedDevice;
+        private readonly string _type;
+        private readonly Random _random = new Random();
+        private List<Series> _originalSeries;
 
-        public GraphPage(Models.Device device,
-            String sensor = "temp",
-            Data.ConstantValues.GraphRange showRange = Data.ConstantValues.GraphRange.Day)
+        public GraphPage(Device device,
+            string sensor = "temp",
+            ConstantValues.GraphRange showRange = ConstantValues.GraphRange.Day)
         {
-            this.Title = device.Name;
-            range = showRange;
-            selectedDevice = device;
-            type = sensor;
+            Title = device.Name;
+            _range = showRange;
+            _selectedDevice = device;
+            _type = sensor;
             InitializeComponent();
-            initGraphData();
+            InitGraphData();
         }
 
-        public async void initGraphData()
+        /// <summary>
+        /// Init graph objects/views
+        /// </summary>
+        public async void InitGraphData()
         {
-            if (selectedDevice == null)
+            if (_selectedDevice == null)
                 return;
 
             try
             {
-                var graphData = await App.ApiService.GetGraphData(selectedDevice.idx, type, range);
+                var graphData = await App.ApiService.GetGraphData(_selectedDevice.idx, _type, _range);
 
                 InitModel();
                 InitLegende();
                 ProcessData(graphData);
-                oGraphView.Model = model;
+                oGraphView.Model = _model;
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
         }
 
@@ -61,146 +62,193 @@ namespace NL.HNOGames.Domoticz.Views
         /// Process data to create the lines
         /// </summary>
         /// <param name="graphData"></param>
-        private void ProcessData(Models.GraphModel graphData)
+        private void ProcessData(GraphModel graphData)
         {
-            if (graphData != null && graphData.result != null && graphData.result.Length > 0)
+            if (graphData?.result == null || graphData.result.Length <= 0) return;
+            var dateTimeList = graphData.result.Select(item => item.getDateTime()).ToList();
+
+            var temperatureList = graphData.result.Select(item => item.getTemperature()).Where(item => item.HasValue)
+                .ToList();
+            if (temperatureList != null && temperatureList.Count > 0)
             {
-                var dateTimeList = graphData.result.Select(item => item.getDateTime()).ToList();
+                var line = CreateLine("Temperature", temperatureList, dateTimeList);
+                _model.Series.Add(line);
+            }
 
-                var temperatureList = graphData.result.Select(item => item.getTemperature()).Where(item => item.HasValue).ToList();
-                if (temperatureList != null && temperatureList.Count > 0)
+            var humidityList = graphData.result.Select(item => item.getHumidity()).Where(item => item.HasValue)
+                .ToList();
+            if (humidityList != null && humidityList.Count > 0)
+            {
+                var line = CreateLine("Humidity", humidityList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
+            var setPointList = graphData.result.Select(item => item.getSetPoint()).Where(item => item.HasValue)
+                .ToList();
+            if (setPointList != null && setPointList.Count > 0)
+            {
+                var line = CreateLine("SetPoint", setPointList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
+            var barometerList = graphData.result.Select(item => item.getBarometer()).Where(item => item.HasValue)
+                .ToList();
+            if (barometerList != null && barometerList.Count > 0)
+            {
+                var line = CreateLine("Barometer", barometerList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
+            var percentageList = graphData.result.Select(item => item.getValue()).Where(item => item.HasValue).ToList();
+            if (percentageList != null && percentageList.Count > 0)
+            {
+                var line = CreateLine("Percentage", percentageList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
+            var secondValueList = graphData.result.Select(item => item.getSecondValue()).Where(item => item.HasValue)
+                .ToList();
+            if (secondValueList != null && secondValueList.Count > 0)
+            {
+                var line = CreateLine("Second Percentage", secondValueList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
+            var powerDeliveryList = graphData.result.Select(item => item.getPowerDelivery())
+                .Where(item => item.HasValue).ToList();
+            if (powerDeliveryList != null && powerDeliveryList.Count > 0)
+            {
+                var line = CreateLine("Power Delivery", powerDeliveryList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
+            var powerUsageList = graphData.result.Select(item => item.getPowerUsage()).Where(item => item.HasValue)
+                .ToList();
+            if (powerUsageList != null && powerUsageList.Count > 0)
+            {
+                var line = CreateLine("Power Usage", powerUsageList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
+            var counterList = graphData.result.Select(item => item.getCounter()).Where(item => item.HasValue).ToList();
+            if (counterList != null && counterList.Count > 0)
+            {
+                var line = CreateLine("Counter", counterList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
+            var speedList = graphData.result.Select(item => item.getSpeed()).Where(item => item.HasValue).ToList();
+            if (speedList != null && speedList.Count > 0)
+            {
+                var line = CreateLine("Speed", speedList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
+            var directionList = graphData.result.Select(item => item.getDirection()).Where(item => item.HasValue)
+                .ToList();
+            if (directionList != null && directionList.Count > 0)
+            {
+                var line = CreateLine("Direction", directionList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
+            var sunPowerList = graphData.result.Select(item => item.getSunPower()).Where(item => item.HasValue)
+                .ToList();
+            if (sunPowerList != null && sunPowerList.Count > 0)
+            {
+                var line = CreateLine("SunPower", sunPowerList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
+            var usageList = graphData.result.Select(item => item.getUsage()).Where(item => item.HasValue).ToList();
+            if (usageList != null && usageList.Count > 0)
+            {
+                var line = CreateLine("Usage", usageList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
+            var rainList = graphData.result.Select(item => item.getRain()).Where(item => item.HasValue).ToList();
+            if (rainList != null && rainList.Count > 0)
+            {
+                var line = CreateLine("Rain", rainList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
+            var co2List = graphData.result.Select(item => item.getCo2()).Where(item => item.HasValue).ToList();
+            if (co2List != null && co2List.Count > 0)
+            {
+                var line = CreateLine("Co2", co2List, dateTimeList);
+                _model.Series.Add(line);
+            }
+
+            var co2MinList = graphData.result.Select(item => item.getCo2Min()).Where(item => item.HasValue).ToList();
+            if (co2MinList != null && co2MinList.Count > 0)
+            {
+                var line = CreateLine("Min Co2", co2MinList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
+            var co2MaxList = graphData.result.Select(item => item.getCo2Max()).Where(item => item.HasValue).ToList();
+            if (co2MaxList != null && co2MaxList.Count > 0)
+            {
+                var line = CreateLine("Max Co2", co2MaxList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
+            var luxList = graphData.result.Select(item => item.getLux()).Where(item => item.HasValue).ToList();
+            if (luxList != null && luxList.Count > 0)
+            {
+                var line = CreateLine("Lux", luxList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
+            var luxMinList = graphData.result.Select(item => item.getLuxMin()).Where(item => item.HasValue).ToList();
+            if (luxMinList != null && luxMinList.Count > 0)
+            {
+                var line = CreateLine("Min Lux", luxMinList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
+            var luxMaxList = graphData.result.Select(item => item.getLuxMax()).Where(item => item.HasValue).ToList();
+            if (luxMaxList != null && luxMaxList.Count > 0)
+            {
+                var line = CreateLine("Max Lux", luxMaxList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
+            var luxAvgList = graphData.result.Select(item => item.getLuxAvg()).Where(item => item.HasValue).ToList();
+            if (luxAvgList != null && luxAvgList.Count > 0)
+            {
+                var line = CreateLine("Avg Lux", luxAvgList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
+            MapTemperatureLines(graphData, dateTimeList);
+        }
+
+        /// <summary>
+        /// Map Temperature lines
+        /// </summary>
+        private void MapTemperatureLines(GraphModel graphData, IReadOnlyList<DateTime?> dateTimeList)
+        {
+            if (!graphData.result.Any(item => item.hasTemperatureRange())) return;
+            {
+                var temperatureMinList = graphData.result.Select(item => item.getTemperatureMin())
+                    .Where(item => item.HasValue)
+                    .ToList();
+                if (temperatureMinList != null && temperatureMinList.Count > 0)
                 {
-                    LineSeries line = CreateLine("Temperature", temperatureList, dateTimeList);
-                    model.Series.Add(line);
+                    var line = CreateLine("Min Temperature", temperatureMinList, dateTimeList);
+                    _model.Series.Add(line);
                 }
 
-                var humidityList = graphData.result.Select(item => item.getHumidity()).Where(item => item.HasValue).ToList();
-                if (humidityList != null && humidityList.Count > 0)
+                var temperatureMaxList = graphData.result.Select(item => item.getTemperatureMax())
+                    .Where(item => item.HasValue)
+                    .ToList();
+                if (temperatureMaxList == null || temperatureMaxList.Count <= 0) return;
                 {
-                    LineSeries line = CreateLine("Humidity", humidityList, dateTimeList);
-                    model.Series.Add(line);
-                }
-
-                var setPointList = graphData.result.Select(item => item.getSetPoint()).Where(item => item.HasValue).ToList();
-                if (setPointList != null && setPointList.Count > 0)
-                {
-                    LineSeries line = CreateLine("SetPoint", setPointList, dateTimeList);
-                    model.Series.Add(line);
-                }
-
-                var barometerList = graphData.result.Select(item => item.getBarometer()).Where(item => item.HasValue).ToList();
-                if (barometerList != null && barometerList.Count > 0)
-                {
-                    LineSeries line = CreateLine("Barometer", barometerList, dateTimeList);
-                    model.Series.Add(line);
-                }
-
-                var percentageList = graphData.result.Select(item => item.getValue()).Where(item => item.HasValue).ToList();
-                if (percentageList != null && percentageList.Count > 0)
-                {
-                    LineSeries line = CreateLine("Percentage", percentageList, dateTimeList);
-                    model.Series.Add(line);
-                }
-
-                var secondValueList = graphData.result.Select(item => item.getSecondValue()).Where(item => item.HasValue).ToList();
-                if (secondValueList != null && secondValueList.Count > 0)
-                {
-                    LineSeries line = CreateLine("Second Percentage", secondValueList, dateTimeList);
-                    model.Series.Add(line);
-                }
-
-                var PowerDeliveryList = graphData.result.Select(item => item.getPowerDelivery()).Where(item => item.HasValue).ToList();
-                if (PowerDeliveryList != null && PowerDeliveryList.Count > 0)
-                {
-                    LineSeries line = CreateLine("Power Delivery", PowerDeliveryList, dateTimeList);
-                    model.Series.Add(line);
-                }
-
-                var PowerUsageList = graphData.result.Select(item => item.getPowerUsage()).Where(item => item.HasValue).ToList();
-                if (PowerUsageList != null && PowerUsageList.Count > 0)
-                {
-                    LineSeries line = CreateLine("Power Usage", PowerUsageList, dateTimeList);
-                    model.Series.Add(line);
-                }
-
-                var CounterList = graphData.result.Select(item => item.getCounter()).Where(item => item.HasValue).ToList();
-                if (CounterList != null && CounterList.Count > 0)
-                {
-                    LineSeries line = CreateLine("Counter", CounterList, dateTimeList);
-                    model.Series.Add(line);
-                }
-
-                var SpeedList = graphData.result.Select(item => item.getSpeed()).Where(item => item.HasValue).ToList();
-                if (SpeedList != null && SpeedList.Count > 0)
-                {
-                    LineSeries line = CreateLine("Speed", SpeedList, dateTimeList);
-                    model.Series.Add(line);
-                }
-
-                var DirectionList = graphData.result.Select(item => item.getDirection()).Where(item => item.HasValue).ToList();
-                if (DirectionList != null && DirectionList.Count > 0)
-                {
-                    LineSeries line = CreateLine("Direction", DirectionList, dateTimeList);
-                    model.Series.Add(line);
-                }
-
-                var SunPowerList = graphData.result.Select(item => item.getSunPower()).Where(item => item.HasValue).ToList();
-                if (SunPowerList != null && SunPowerList.Count > 0)
-                {
-                    LineSeries line = CreateLine("SunPower", SunPowerList, dateTimeList);
-                    model.Series.Add(line);
-                }
-
-                var UsageList = graphData.result.Select(item => item.getUsage()).Where(item => item.HasValue).ToList();
-                if (UsageList != null && UsageList.Count > 0)
-                {
-                    LineSeries line = CreateLine("Usage", UsageList, dateTimeList);
-                    model.Series.Add(line);
-                }
-
-                var RainList = graphData.result.Select(item => item.getRain()).Where(item => item.HasValue).ToList();
-                if (RainList != null && RainList.Count > 0)
-                {
-                    LineSeries line = CreateLine("Rain", RainList, dateTimeList);
-                    model.Series.Add(line);
-                }
-
-                var Co2List = graphData.result.Select(item => item.getCo2()).Where(item => item.HasValue).ToList();
-                if (Co2List != null && Co2List.Count > 0)
-                {
-                    LineSeries line = CreateLine("Co2", Co2List, dateTimeList);
-                    model.Series.Add(line);
-                }
-
-                var Co2MinList = graphData.result.Select(item => item.getCo2Min()).Where(item => item.HasValue).ToList();
-                if (Co2MinList != null && Co2MinList.Count > 0)
-                {
-                    LineSeries line = CreateLine("Min Co2", Co2MinList, dateTimeList);
-                    model.Series.Add(line);
-                }
-
-                var Co2MaxList = graphData.result.Select(item => item.getCo2Max()).Where(item => item.HasValue).ToList();
-                if (Co2MaxList != null && Co2MaxList.Count > 0)
-                {
-                    LineSeries line = CreateLine("Max Co2", Co2MaxList, dateTimeList);
-                    model.Series.Add(line);
-                }
-
-                if (graphData.result.Any(item => item.hasTemperatureRange()))
-                {
-                    var TemperatureMinList = graphData.result.Select(item => item.getTemperatureMin()).Where(item => item.HasValue).ToList();
-                    if (TemperatureMinList != null && TemperatureMinList.Count > 0)
-                    {
-                        LineSeries line = CreateLine("Min Temperature", TemperatureMinList, dateTimeList);
-                        model.Series.Add(line);
-                    }
-
-                    var TemperatureMaxList = graphData.result.Select(item => item.getTemperatureMax()).Where(item => item.HasValue).ToList();
-                    if (TemperatureMaxList != null && TemperatureMaxList.Count > 0)
-                    {
-                        LineSeries line = CreateLine("Max Temperature", TemperatureMaxList, dateTimeList);
-                        model.Series.Add(line);
-                    }
+                    var line = CreateLine("Max Temperature", temperatureMaxList, dateTimeList);
+                    _model.Series.Add(line);
                 }
             }
         }
@@ -208,48 +256,20 @@ namespace NL.HNOGames.Domoticz.Views
         /// <summary>
         /// Create Graph Line
         /// </summary>
-        private LineSeries CreateLine(String title, List<double?> graphData, List<DateTime?> graphDateTime)
+        private LineSeries CreateLine(string title, IEnumerable<double?> graphData,
+            IReadOnlyList<DateTime?> graphDateTime)
         {
-            LineSeries lineTemperature = CreateLine(title);
-
-            int counter = 0;
+            var lineTemperature = CreateLine(title);
+            var counter = 0;
             foreach (var data in graphData)
             {
                 if (data.HasValue)
-                    lineTemperature.Points.Add(new DataPoint(DateTimeAxis.ToDouble(graphDateTime[counter].Value), data.Value));
-                counter++;
-            }
-
-            return lineTemperature;
-        }
-
-        /// <summary>
-        /// Create Graph Line
-        /// </summary>
-        private LineSeries CreateLine(String title, List<float?> graphData, List<DateTime?> graphDateTime)
-        {
-            LineSeries lineTemperature = CreateLine(title);
-            int counter = 0;
-            foreach (var data in graphData)
-            {
-                if (data.HasValue)
-                    lineTemperature.Points.Add(new DataPoint(DateTimeAxis.ToDouble(graphDateTime[counter].Value), Convert.ToDouble(data)));
-                counter++;
-            }
-
-            return lineTemperature;
-        }
-
-        /// <summary>
-        /// Create Graph Line
-        /// </summary>
-        private LineSeries CreateLine(String title, List<int> graphData, List<DateTime?> graphDateTime)
-        {
-            LineSeries lineTemperature = CreateLine(title);
-            int counter = 0;
-            foreach (var data in graphData)
-            {
-                lineTemperature.Points.Add(new DataPoint(DateTimeAxis.ToDouble(graphDateTime[counter].Value), Convert.ToDouble(data)));
+                {
+                    var dateTime = graphDateTime[counter];
+                    if (dateTime != null)
+                        lineTemperature.Points.Add(new DataPoint(DateTimeAxis.ToDouble(dateTime.Value),
+                            data.Value));
+                }
                 counter++;
             }
 
@@ -259,9 +279,9 @@ namespace NL.HNOGames.Domoticz.Views
         /// <summary>
         /// Init line object with values
         /// </summary>
-        private LineSeries CreateLine(String title)
+        private LineSeries CreateLine(string title)
         {
-            String lineColor = String.Format("#{0:X6}", random.Next(0x1000000));
+            var lineColor = $"#{_random.Next(0x1000000):X6}";
             return new LineSeries
             {
                 StrokeThickness = 1,
@@ -283,23 +303,32 @@ namespace NL.HNOGames.Domoticz.Views
         /// </summary>
         private void InitModel()
         {
-            model = new PlotModel();
-            String format = "HH:ss";
-            if (this.range == Data.ConstantValues.GraphRange.Month)
-                format = "dd/MM";
-            else if (this.range == Data.ConstantValues.GraphRange.Year)
-                format = "MM/yyyy";
+            _model = new PlotModel();
+            var format = "HH:ss";
+            switch (_range)
+            {
+                case ConstantValues.GraphRange.Month:
+                    format = "dd/MM";
+                    break;
+                case ConstantValues.GraphRange.Year:
+                    format = "MM/yyyy";
+                    break;
+                case ConstantValues.GraphRange.Day:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
 
-            model.TextColor = OxyColor.Parse("#757575");
-            model.Axes.Add(new DateTimeAxis { Title = "DateTime", Position = AxisPosition.Bottom, StringFormat = format });
-            model.Axes.Add(new LinearAxis { Title = "Value", Position = AxisPosition.Left });
-            model.Annotations.Add(new LineAnnotation()
+            _model.TextColor = OxyColor.Parse("#757575");
+            _model.Axes.Add(
+                new DateTimeAxis {Title = "DateTime", Position = AxisPosition.Bottom, StringFormat = format});
+            _model.Axes.Add(new LinearAxis {Title = "Value", Position = AxisPosition.Left});
+            _model.Annotations.Add(new LineAnnotation()
             {
                 Type = LineAnnotationType.Vertical,
                 Color = OxyColors.Green,
                 ClipByYAxis = false,
             });
-
         }
 
         /// <summary>
@@ -307,14 +336,14 @@ namespace NL.HNOGames.Domoticz.Views
         /// </summary>
         private void InitLegende()
         {
-            model.LegendTitle = "Legende";
-            model.LegendOrientation = LegendOrientation.Horizontal;
-            model.LegendPlacement = LegendPlacement.Outside;
-            model.LegendPosition = LegendPosition.BottomCenter;
-            model.LegendBackground = OxyColor.FromAColor(200, OxyColors.White);
-            model.LegendBorder = OxyColors.Black;
+            _model.LegendTitle = "Legende";
+            _model.LegendOrientation = LegendOrientation.Horizontal;
+            _model.LegendPlacement = LegendPlacement.Outside;
+            _model.LegendPosition = LegendPosition.BottomCenter;
+            _model.LegendBackground =
+                OxyColor.FromAColor(200, App.AppSettings.DarkTheme ? OxyColors.Black : OxyColors.White);
+            _model.LegendBorder = OxyColors.Black;
         }
-
 
         /// <summary>
         /// Filter the graph
@@ -323,24 +352,25 @@ namespace NL.HNOGames.Domoticz.Views
         {
             RevertOriginalSource();
 
-            List<string> actions = CreateFilterMenu();
+            var actions = CreateFilterMenu();
             if (actions.Count > 0)
             {
-                var result = await this.DisplayActionSheet(AppResources.filter, AppResources.cancel, null, actions.ToArray());
-                if (String.Compare(AppResources.filterOn_all, result, StringComparison.OrdinalIgnoreCase) == 0)
+                var result = await DisplayActionSheet(AppResources.filter, AppResources.cancel, null,
+                    actions.ToArray());
+                if (string.Compare(AppResources.filterOn_all, result, StringComparison.OrdinalIgnoreCase) == 0)
                     RevertOriginalSource();
-                else
+                else if (string.Compare(AppResources.cancel, result, StringComparison.OrdinalIgnoreCase) != 0)
                 {
                     BackupSource();
-                    model.Series.Clear();//remove list
-                    foreach (Series serie in originalSeries)
+                    _model.Series.Clear(); //remove list
+                    foreach (var serie in _originalSeries)
                     {
-                        if (String.Compare(serie.Title, result, StringComparison.OrdinalIgnoreCase) == 0)
-                            model.Series.Add(serie);
+                        if (string.Compare(serie.Title, result, StringComparison.OrdinalIgnoreCase) == 0)
+                            _model.Series.Add(serie);
                     }
                 }
 
-                oGraphView.Model = model;
+                oGraphView.Model = _model;
                 oGraphView.Model.InvalidatePlot(true);
             }
         }
@@ -350,9 +380,9 @@ namespace NL.HNOGames.Domoticz.Views
         /// </summary>
         private void BackupSource()
         {
-            originalSeries = new List<Series>();
-            foreach (Series s in model.Series)
-                originalSeries.Add(s);//backup
+            _originalSeries = new List<Series>();
+            foreach (var s in _model.Series)
+                _originalSeries.Add(s); //backup
         }
 
         /// <summary>
@@ -360,13 +390,11 @@ namespace NL.HNOGames.Domoticz.Views
         /// </summary>
         private void RevertOriginalSource()
         {
-            if (originalSeries != null)
-            {
-                model.Series.Clear();//revert original
-                foreach (Series s in originalSeries)
-                    model.Series.Add(s);
-                originalSeries = null;
-            }
+            if (_originalSeries == null) return;
+            _model.Series.Clear(); //revert original
+            foreach (var s in _originalSeries)
+                _model.Series.Add(s);
+            _originalSeries = null;
         }
 
         /// <summary>
@@ -374,14 +402,10 @@ namespace NL.HNOGames.Domoticz.Views
         /// </summary>
         private List<string> CreateFilterMenu()
         {
-            List<string> actions = new List<string>();
-            if (model != null)
-            {
-                actions.Add(AppResources.filterOn_all);
-                foreach (Series serie in model.Series)
-                    actions.Add(serie.Title);
-            }
-
+            var actions = new List<string>();
+            if (_model == null) return actions;
+            actions.Add(AppResources.filterOn_all);
+            actions.AddRange(_model.Series.Select(serie => serie.Title));
             return actions;
         }
     }

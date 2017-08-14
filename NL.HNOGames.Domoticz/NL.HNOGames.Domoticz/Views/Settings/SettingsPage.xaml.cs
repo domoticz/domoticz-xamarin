@@ -1,29 +1,34 @@
 ﻿using Acr.UserDialogs;
-using Newtonsoft.Json;
 using NL.HNOGames.Domoticz.Models;
 using NL.HNOGames.Domoticz.Resources;
 using NL.HNOGames.Domoticz.Views.Dialog;
-using PCLStorage;
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace NL.HNOGames.Domoticz.Views.Settings
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SettingsPage : ContentPage
+    public partial class SettingsPage
     {
-        private SelectMultipleBasePage<ScreenModel> oEnableScreenPage;
-        private Command GoToMainScreen;
+        private SelectMultipleBasePage<ScreenModel> _oEnableScreenPage;
+        private readonly Command _goToMainScreen;
 
         public SettingsPage(Command mainScreen)
         {
-            this.GoToMainScreen = mainScreen;
+            _goToMainScreen = mainScreen;
             InitializeComponent();
             Title = AppResources.action_settings;
+
+            //these features are not yet working correctly!!
+#if DEBUG
+            lyWorkInProgress.IsVisible = true;
+#else
+            lyWorkInProgress.IsVisible = false;
+#endif
+
+            PremiumScreenSetup();
 
             //Startup Settings
             txtStartScherm.Items.Clear();
@@ -39,23 +44,57 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                 App.AppSettings.StartupScreen = txtStartScherm.SelectedIndex;
             };
 
-
             //Dashboard sort
             swNoSort.IsToggled = App.AppSettings.NoSort;
-            lblSort.Text = App.AppSettings.NoSort ? AppResources.sort_dashboardLikeServer_on : AppResources.sort_dashboardLikeServer_off;
+            lblSort.Text = App.AppSettings.NoSort
+                ? AppResources.sort_dashboardLikeServer_on
+                : AppResources.sort_dashboardLikeServer_off;
             swNoSort.Toggled += (sender, args) =>
             {
                 App.AppSettings.NoSort = swNoSort.IsToggled;
-                lblSort.Text = App.AppSettings.NoSort ? AppResources.sort_dashboardLikeServer_on : AppResources.sort_dashboardLikeServer_off;
+                lblSort.Text = App.AppSettings.NoSort
+                    ? AppResources.sort_dashboardLikeServer_on
+                    : AppResources.sort_dashboardLikeServer_off;
+            };
+
+            //Talk Back
+            swEnableTalkBack.IsToggled = App.AppSettings.TalkBackEnabled;
+            swEnableTalkBack.Toggled += (sender, args) =>
+            {
+                App.AppSettings.TalkBackEnabled = swEnableTalkBack.IsToggled;
+                if (swEnableTalkBack.IsToggled && !App.AppSettings.PremiumBought)
+                {
+                    swEnableTalkBack.IsToggled = false;
+                    App.ShowToast(AppResources.category_talk_back + " " + AppResources.premium_feature);
+                }
+            };
+
+            //DarkTheme
+            swDarkTheme.IsToggled = App.AppSettings.DarkTheme;
+            swDarkTheme.Toggled += (sender, args) =>
+            {
+                App.AppSettings.DarkTheme = swDarkTheme.IsToggled;
+                Application.Current.Resources.MergedWith = App.AppSettings.DarkTheme
+                    ? (new Themes.Dark()).GetType()
+                    : (new Themes.Base()).GetType();
+                if (swDarkTheme.IsToggled && !App.AppSettings.PremiumBought)
+                {
+                    swDarkTheme.IsToggled = false;
+                    App.ShowToast(AppResources.category_theme + " " + AppResources.premium_feature);
+                }
             };
 
             //Dashboard show switches
             swShowSwitch.IsToggled = App.AppSettings.ShowSwitches;
-            lblShowSwitch.Text = App.AppSettings.ShowSwitches ? AppResources.switch_buttons_on : AppResources.switch_buttons_off;
+            lblShowSwitch.Text = App.AppSettings.ShowSwitches
+                ? AppResources.switch_buttons_on
+                : AppResources.switch_buttons_off;
             swShowSwitch.Toggled += (sender, args) =>
             {
                 App.AppSettings.ShowSwitches = swShowSwitch.IsToggled;
-                lblShowSwitch.Text = App.AppSettings.ShowSwitches ? AppResources.switch_buttons_on : AppResources.switch_buttons_off;
+                lblShowSwitch.Text = App.AppSettings.ShowSwitches
+                    ? AppResources.switch_buttons_on
+                    : AppResources.switch_buttons_off;
             };
 
             //Enable notifications
@@ -63,127 +102,129 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             swEnableNotifications.Toggled += (sender, args) =>
             {
                 App.AppSettings.EnableNotifications = swEnableNotifications.IsToggled;
+                if (swEnableNotifications.IsToggled && !App.AppSettings.PremiumBought)
+                {
+                    swEnableNotifications.IsToggled = false;
+                    App.ShowToast(AppResources.notification_screen_title + " " + AppResources.premium_feature);
+                }
             };
 
             //Dashboard extra data
             swExtraData.IsToggled = App.AppSettings.ShowExtraData;
-            lblExtraData.Text = App.AppSettings.ShowExtraData ? AppResources.show_extra_data_on : AppResources.show_extra_data_off;
+            lblExtraData.Text = App.AppSettings.ShowExtraData
+                ? AppResources.show_extra_data_on
+                : AppResources.show_extra_data_off;
             swExtraData.Toggled += (sender, args) =>
             {
                 App.AppSettings.ShowExtraData = swExtraData.IsToggled;
-                lblExtraData.Text = App.AppSettings.ShowExtraData ? AppResources.show_extra_data_on : AppResources.show_extra_data_off;
+                lblExtraData.Text = App.AppSettings.ShowExtraData
+                    ? AppResources.show_extra_data_on
+                    : AppResources.show_extra_data_off;
             };
+        }
+
+        private void PremiumScreenSetup()
+        {
+            if (App.AppSettings.PremiumBought)
+            {
+                lyPremium.IsVisible = false;
+            }
+            else
+            {
+                lyPremium.IsVisible = true;
+            }
         }
 
         /// <summary>
         /// Save the enable screen selection
         /// </summary>
-        void ExecuteSaveEnableScreensCommand()
+        private void ExecuteSaveEnableScreensCommand()
         {
-            if (oEnableScreenPage != null)
-            {
-                App.AppSettings.EnabledScreens = oEnableScreenPage.GetAllItems();
-                GoToMainScreen.Execute(null);
-            }
-        }
-
-        /// <summary>
-        /// Import settings
-        /// </summary>
-        private async Task btnImportSettings_Clicked(object sender, EventArgs e)
-        {
-            try
-            {
-                var rootFolder = SpecialFolder.Current.Pictures;
-                IFolder folder = await rootFolder.CreateFolderAsync("Domoticz",
-                   CreationCollisionOption.OpenIfExists);
-
-                string fileContent = await this.ReadFileContent("domoticz_settings.txt", folder);
-                var settingsObject = JsonConvert.DeserializeObject<Helpers.Settings>(fileContent);
-                App.AppSettings = settingsObject;
-
-                UserDialogs.Instance.Toast(AppResources.settings_imported);
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// Export settings
-        /// </summary>
-        private async Task btnExportSettings_Clicked(object sender, EventArgs e)
-        {
-            var rootFolder = SpecialFolder.Current.Pictures;
-            IFolder folder = await rootFolder.CreateFolderAsync("Domoticz",
-                CreationCollisionOption.OpenIfExists);
-            IFile file = await folder.CreateFileAsync("domoticz_settings.txt",
-                CreationCollisionOption.ReplaceExisting);
-
-            await file.WriteAllTextAsync(JsonConvert.SerializeObject(App.AppSettings));
-
-            UserDialogs.Instance.Toast(AppResources.settings_exported);
-        }
-
-        /// <summary>
-        /// Read File Content
-        /// </summary>
-        public async Task<string> ReadFileContent(string fileName, IFolder rootFolder)
-        {
-            ExistenceCheckResult exist = await rootFolder.CheckExistsAsync(fileName);
-            string text = null;
-            if (exist == ExistenceCheckResult.FileExists)
-            {
-                IFile file = await rootFolder.GetFileAsync(fileName);
-                text = await file.ReadAllTextAsync();
-            }
-            return text;
+            if (_oEnableScreenPage == null) return;
+            App.AppSettings.EnabledScreens = _oEnableScreenPage.GetAllItems();
+            _goToMainScreen.Execute(null);
         }
 
         /// <summary>
         /// Enable or Disable screens
         /// </summary>
-        private async Task btnEnableScreens_Clicked(object sender, EventArgs e)
+        private async void btnEnableScreens_Clicked(object sender, EventArgs e)
         {
-            var items = App.AppSettings.EnabledScreens;
-            if (items == null)
+            var items = App.AppSettings.EnabledScreens ?? new List<ScreenModel>
             {
-                //setup default screens, all turned on!
-                items = new List<ScreenModel>();
-                items.Add(new ScreenModel { ID = "Dashboard", Name = AppResources.title_dashboard, IsSelected = true });
-                items.Add(new ScreenModel { ID = "Switch", Name = AppResources.title_switches, IsSelected = true });
-                items.Add(new ScreenModel { ID = "Scene", Name = AppResources.title_scenes, IsSelected = true });
-                items.Add(new ScreenModel { ID = "Temperature", Name = AppResources.title_temperature, IsSelected = true });
-                items.Add(new ScreenModel { ID = "Weather", Name = AppResources.title_weather, IsSelected = true });
-                items.Add(new ScreenModel { ID = "Utilities", Name = AppResources.title_utilities, IsSelected = true });
-            }
-
-            oEnableScreenPage = new SelectMultipleBasePage<ScreenModel>(items, new Command(() => ExecuteSaveEnableScreensCommand()))
-            {
-                Title = AppResources.enable_items
+                new ScreenModel {ID = "Dashboard", Name = AppResources.title_dashboard, IsSelected = true},
+                new ScreenModel {ID = "Switch", Name = AppResources.title_switches, IsSelected = true},
+                new ScreenModel {ID = "Scene", Name = AppResources.title_scenes, IsSelected = true},
+                new ScreenModel {ID = "Temperature", Name = AppResources.title_temperature, IsSelected = true},
+                new ScreenModel {ID = "Weather", Name = AppResources.title_weather, IsSelected = true},
+                new ScreenModel {ID = "Utilities", Name = AppResources.title_utilities, IsSelected = true}
             };
-            await Navigation.PushAsync(oEnableScreenPage);
+
+            _oEnableScreenPage =
+                new SelectMultipleBasePage<ScreenModel>(items, new Command(ExecuteSaveEnableScreensCommand))
+                {
+                    Title = AppResources.enable_items
+                };
+            await Navigation.PushAsync(_oEnableScreenPage);
         }
 
-        private async Task btnServerSetup_Clicked(object sender, EventArgs e)
+        private async void btnServerSetup_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new ServerSettingsPage());
         }
 
-        private async Task btnShowLog_Clicked(object sender, EventArgs e)
+        private async void btnShowLog_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new ServerLogsPage());
         }
 
-        private async Task btnUserVars_Clicked(object sender, EventArgs e)
+        private async void btnUserVars_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new UserVariablesPage());
         }
 
-        private async Task btnEvents_Clicked(object sender, EventArgs e)
+        private async void btnEvents_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new EventsPage());
+        }
+
+        private async void btnDebugInfo_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new DebugInfoPage());
+        }
+
+        private async void btnQRCode_Clicked(object sender, EventArgs e)
+        {
+            if (App.AppSettings.PremiumBought)
+                await Navigation.PushAsync(new QrCodeSettingsPage());
+            else
+                App.ShowToast(AppResources.qrcode + " " + AppResources.premium_feature);
+        }
+
+        private async void btnSpeechSettings_Clicked(object sender, EventArgs e)
+        {
+            if (App.AppSettings.PremiumBought)
+                await Navigation.PushAsync(new SpeechSettingsPage());
+            else
+                App.ShowToast(AppResources.Speech + " " + AppResources.premium_feature);
+        }
+
+        private async void btnBuyPremium_Clicked(object sender, EventArgs e)
+        {
+            var result = await UserDialogs.Instance.ConfirmAsync(new ConfirmConfig
+            {
+                Message =
+                    "There are several features in the domoticz app that are locked until you buy the premium version\r\n- no ads!!\r\n-notification support\r\n- theming\r\n- talkback\r\n- qrcode scanning\r\n\r\n- and more features in the future",
+                OkText = "Buy",
+                CancelText = "Cancel"
+            });
+            if (result)
+            {
+                Helpers.InAppPurchaseHelper oPurchaser = new Helpers.InAppPurchaseHelper();
+                if (await oPurchaser.PurchaseItem())
+                    App.ShowToast("Thanks for buying premium!!");
+                PremiumScreenSetup();
+            }
         }
     }
 }

@@ -52,9 +52,15 @@ namespace NL.HNOGames.Domoticz.Models
         public String mm { get; set; }
         public String u { get; set; }
         public String u_max { get; set; }
+
         public String co2_min { get; set; }
         public String co2_max { get; set; }
         public String co2 { get; set; }
+
+        public String lux { get; set; }
+        public String lux_min { get; set; }
+        public String lux_max { get; set; }
+        public String lux_avg { get; set; }
 
         public double? getValue()
         {
@@ -218,6 +224,36 @@ namespace NL.HNOGames.Domoticz.Models
         public double? getCo2Min()
         {
             if (!double.TryParse(co2_min, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out double result))
+                return null;
+            return result;
+        }
+
+
+
+        public double? getLux()
+        {
+            if (!double.TryParse(lux, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out double result))
+                return null;
+            return result;
+        }
+
+        public double? getLuxMax()
+        {
+            if (!double.TryParse(lux_max, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out double result))
+                return null;
+            return result;
+        }
+
+        public double? getLuxMin()
+        {
+            if (!double.TryParse(lux_min, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out double result))
+                return null;
+            return result;
+        }
+
+        public double? getLuxAvg()
+        {
+            if (!double.TryParse(lux_avg, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out double result))
                 return null;
             return result;
         }

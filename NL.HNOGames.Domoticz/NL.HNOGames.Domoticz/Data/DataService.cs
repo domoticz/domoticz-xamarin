@@ -3,12 +3,14 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using NL.HNOGames.Domoticz.Helpers;
 using NL.HNOGames.Domoticz.Models;
+using Plugin.DeviceInfo;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
 
 namespace NL.HNOGames.Domoticz.Data
@@ -50,16 +52,17 @@ namespace NL.HNOGames.Domoticz.Data
             String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.VERSION);
             try
             {
-                response = await App.ConnectionService.client.GetAsync(new Uri(url));
+                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<VersionModel>(content);
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
 
             return null;
@@ -80,17 +83,18 @@ namespace NL.HNOGames.Domoticz.Data
                 String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.System.CONFIG);
                 try
                 {
-                    response = await App.ConnectionService.client.GetAsync(new Uri(url));
+                    response = await App.ConnectionService.Client.GetAsync(new Uri(url));
                     if (response.IsSuccessStatusCode)
                     {
                         var content = await response.Content.ReadAsStringAsync();
+                        if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                         App.AppSettings.ServerConfig = JsonConvert.DeserializeObject<ConfigModel>(content);
                         App.AppSettings.ServerConfigDateTime = DateTime.Now;
                     }
                 }
                 catch (Exception ex)
                 {
-                    Debug.WriteLine(ex.Message);
+                    App.AddLog(ex.Message);
                 }
             }
         }
@@ -106,45 +110,63 @@ namespace NL.HNOGames.Domoticz.Data
 
             try
             {
-                response = await App.ConnectionService.client.GetAsync(new Uri(url));
+                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<PlansModel>(content);
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
         }
 
         /// <summary>
+        /// Domoticz get a specific device object
+        /// </summary>
+        public async Task<Models.Device> GetDevice(String idx, bool isSceneOrGroup)
+        {
+            if (Server == null)
+                return null;
+            var devices = await GetDevices();
+
+            if (devices == null || devices.result == null)
+                return null;
+            else
+                return devices.result.Where(o => String.Compare(o.idx, idx, StringComparison.OrdinalIgnoreCase) == 0 && o.IsScene == isSceneOrGroup).FirstOrDefault();
+        }
+
+
+        /// <summary>
         /// Domoticz get all devices
         /// </summary>
-        public async Task<DevicesModel> GetDevices(int plan, String filter)
+        public async Task<DevicesModel> GetDevices(int plan = 0, String filter = null)
         {
             if (Server == null)
                 return null;
             String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.DEVICES);
-            if (!String.IsNullOrEmpty(filter))
+            if (!string.IsNullOrEmpty(filter))
                 url = url.Replace("filter=all", "filter=" + filter);
             if (plan > 0)
                 url += "&plan=" + plan;
 
             try
             {
-                response = await App.ConnectionService.client.GetAsync(new Uri(url));
+                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<DevicesModel>(content);
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
         }
@@ -160,16 +182,17 @@ namespace NL.HNOGames.Domoticz.Data
 
             try
             {
-                response = await App.ConnectionService.client.GetAsync(new Uri(url));
+                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<NotificationModel>(content);
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
         }
@@ -185,16 +208,17 @@ namespace NL.HNOGames.Domoticz.Data
 
             try
             {
-                response = await App.ConnectionService.client.GetAsync(new Uri(url));
+                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<TimerModel>(content);
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
         }
@@ -210,17 +234,18 @@ namespace NL.HNOGames.Domoticz.Data
 
             try
             {
-                response = await App.ConnectionService.client.GetAsync(new Uri(url));
+                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<ServerLogsModel>(content);
                 }
             }
 
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
         }
@@ -237,17 +262,18 @@ namespace NL.HNOGames.Domoticz.Data
 
             try
             {
-                response = await App.ConnectionService.client.GetAsync(new Uri(url));
+                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<UserVariableModel>(content);
                 }
             }
 
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
         }
@@ -263,17 +289,18 @@ namespace NL.HNOGames.Domoticz.Data
 
             try
             {
-                response = await App.ConnectionService.client.GetAsync(new Uri(url));
+                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<EventModel>(content);
                 }
             }
 
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
         }
@@ -293,17 +320,18 @@ namespace NL.HNOGames.Domoticz.Data
 
             try
             {
-                response = await App.ConnectionService.client.GetAsync(new Uri(url));
+                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<LogModel>(content);
                 }
             }
 
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
 
@@ -317,21 +345,22 @@ namespace NL.HNOGames.Domoticz.Data
             if (Server == null)
                 return null;
             String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.SCENES);
-            if (!String.IsNullOrEmpty(filter))
+            if (!string.IsNullOrEmpty(filter))
                 url = url.Replace("filter=all", "filter=" + filter);
 
             try
             {
-                response = await App.ConnectionService.client.GetAsync(new Uri(url));
+                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<SceneModel>(content);
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
         }
@@ -344,21 +373,22 @@ namespace NL.HNOGames.Domoticz.Data
             if (Server == null)
                 return null;
             String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.TEMPERATURE);
-            if (!String.IsNullOrEmpty(filter))
+            if (!string.IsNullOrEmpty(filter))
                 url = url.Replace("filter=all", "filter=" + filter);
 
             try
             {
-                response = await App.ConnectionService.client.GetAsync(new Uri(url));
+                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<DevicesModel>(content);
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
         }
@@ -371,21 +401,22 @@ namespace NL.HNOGames.Domoticz.Data
             if (Server == null)
                 return null;
             String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.WEATHER);
-            if (!String.IsNullOrEmpty(filter))
+            if (!string.IsNullOrEmpty(filter))
                 url = url.Replace("filter=all", "filter=" + filter);
 
             try
             {
-                response = await App.ConnectionService.client.GetAsync(new Uri(url));
+                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<DevicesModel>(content);
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
         }
@@ -398,21 +429,22 @@ namespace NL.HNOGames.Domoticz.Data
             if (Server == null)
                 return null;
             String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.UTILITIES);
-            if (!String.IsNullOrEmpty(filter))
+            if (!string.IsNullOrEmpty(filter))
                 url = url.Replace("filter=all", "filter=" + filter);
 
             try
             {
-                response = await App.ConnectionService.client.GetAsync(new Uri(url));
+                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<DevicesModel>(content);
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
         }
@@ -425,21 +457,22 @@ namespace NL.HNOGames.Domoticz.Data
             if (Server == null)
                 return null;
             String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.FAVORITES);
-            if (!String.IsNullOrEmpty(filter))
+            if (!string.IsNullOrEmpty(filter))
                 url = url.Replace("filter=all", "filter=" + filter);
 
             try
             {
-                response = await App.ConnectionService.client.GetAsync(new Uri(url));
+                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<DevicesModel>(content);
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
         }
@@ -458,16 +491,17 @@ namespace NL.HNOGames.Domoticz.Data
 
             try
             {
-                response = await App.ConnectionService.client.GetAsync(new Uri(url));
+                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<GraphModel>(content);
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
         }
@@ -486,20 +520,21 @@ namespace NL.HNOGames.Domoticz.Data
                 return null;
 
             String url = await App.ConnectionService.ConstructSetUrlAsync(Server, jsonUrl, idx, jsonAction, value);
-            url += !String.IsNullOrEmpty(password) ? "&passcode=" + password : "&passcode=";
+            url += !string.IsNullOrEmpty(password) ? "&passcode=" + password : "&passcode=";
 
             try
             {
-                response = await App.ConnectionService.client.GetAsync(new Uri(url));
+                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<ActionModel>(content);
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
             return null;
         }
@@ -524,7 +559,7 @@ namespace NL.HNOGames.Domoticz.Data
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
 
             return false;
@@ -549,7 +584,7 @@ namespace NL.HNOGames.Domoticz.Data
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
 
             return false;
@@ -586,7 +621,7 @@ namespace NL.HNOGames.Domoticz.Data
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
 
             return false;
@@ -611,7 +646,7 @@ namespace NL.HNOGames.Domoticz.Data
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
 
             return false;
@@ -636,7 +671,7 @@ namespace NL.HNOGames.Domoticz.Data
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
 
             return false;
@@ -657,10 +692,11 @@ namespace NL.HNOGames.Domoticz.Data
 
             try
             {
-                response = await App.ConnectionService.client.GetAsync(new Uri(url));
+                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     var result = JsonConvert.DeserializeObject<ActionModel>(content);
                     if (result != null &&
                     String.Compare(result.status, "ok", StringComparison.OrdinalIgnoreCase) == 0)
@@ -669,7 +705,7 @@ namespace NL.HNOGames.Domoticz.Data
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
 
             return false;
@@ -680,23 +716,24 @@ namespace NL.HNOGames.Domoticz.Data
         /// </summary>
         public async Task<bool> CleanRegisteredDevice(String DeviceID)
         {
-            if (Server == null || String.IsNullOrEmpty(DeviceID))
+            if (Server == null || string.IsNullOrEmpty(DeviceID))
                 return false;
 
             String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.System.CLEAN_MOBILE_DEVICE);
             url += "&uuid=" + DeviceID;
             try
             {
-                response = await App.ConnectionService.client.GetAsync(new Uri(url));
+                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return true;
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
 
             return true;
@@ -707,28 +744,160 @@ namespace NL.HNOGames.Domoticz.Data
         /// </summary>
         public async Task<bool> RegisterDevice(String DeviceID, String SenderId)
         {
-            if (Server == null || String.IsNullOrEmpty(DeviceID) || String.IsNullOrEmpty(SenderId))
+            if (Server == null || string.IsNullOrEmpty(DeviceID) || string.IsNullOrEmpty(SenderId))
                 return false;
 
             String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.System.ADD_MOBILE_DEVICE);
             url += "&uuid=" + DeviceID;
             url += "&senderid=" + SenderId;
+            url += "&name=" + CrossDeviceInfo.Current.Model.Replace(" ", "");
+            url += "&devicetype=" + (CrossDeviceInfo.Current.Platform.ToString() + CrossDeviceInfo.Current.Version).Replace(" ", "");
+            url += "&active=" + (App.AppSettings.EnableNotifications ? "1" : "0");
+            App.AddLog("Domoticz Full Url: " + url);
 
             try
             {
-                response = await App.ConnectionService.client.GetAsync(new Uri(url));
+                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return true;
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                App.AddLog(ex.Message);
             }
 
             return true;
+        }
+
+        /// <summary>
+        /// Handle a toggle of a switch from a service like qrcode/speech/geo
+        /// </summary>
+        public async Task<bool> HandleSwitch(string idx, String password, int inputJSONAction, String value, bool isSceneOrGroup = false)
+        {
+            if (string.IsNullOrEmpty(idx))
+                return false;
+
+            var mDevicesInfo = await GetDevice(idx, isSceneOrGroup);
+            if (mDevicesInfo == null)
+                return false;
+
+            int jsonAction;
+            int jsonUrl = ConstantValues.Json.Url.Set.SWITCHES;
+            int jsonValue = 0;
+
+            if (!isSceneOrGroup)
+            {
+                if (inputJSONAction < 0)
+                {
+                    if (mDevicesInfo.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDS ||
+                            mDevicesInfo.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDPERCENTAGE)
+                    {
+                        if (!mDevicesInfo.StatusBoolean)
+                            jsonAction = ConstantValues.Device.Switch.Action.OFF;
+                        else
+                        {
+                            jsonAction = ConstantValues.Device.Switch.Action.ON;
+                            if (!string.IsNullOrEmpty(value))
+                            {
+                                jsonAction = ConstantValues.Device.Dimmer.Action.DIM_LEVEL;
+                                jsonValue = ConstantValues.GetSelectorValue(mDevicesInfo, value);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (!mDevicesInfo.StatusBoolean)
+                        {
+                            jsonAction = ConstantValues.Device.Switch.Action.ON;
+                            if (!string.IsNullOrEmpty(value))
+                            {
+                                jsonAction = ConstantValues.Device.Dimmer.Action.DIM_LEVEL;
+                                jsonValue = ConstantValues.GetSelectorValue(mDevicesInfo, value);
+                            }
+                        }
+                        else
+                            jsonAction = ConstantValues.Device.Switch.Action.OFF;
+                    }
+                }
+                else
+                {
+                    if (mDevicesInfo.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDS ||
+                            mDevicesInfo.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDPERCENTAGE)
+                    {
+                        if (inputJSONAction == 1)
+                            jsonAction = ConstantValues.Device.Switch.Action.OFF;
+                        else
+                        {
+                            jsonAction = ConstantValues.Device.Switch.Action.ON;
+                            if (!string.IsNullOrEmpty(value))
+                            {
+                                jsonAction = ConstantValues.Device.Dimmer.Action.DIM_LEVEL;
+                                jsonValue = ConstantValues.GetSelectorValue(mDevicesInfo, value);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (inputJSONAction == 1)
+                        {
+                            jsonAction = ConstantValues.Device.Switch.Action.ON;
+                            if (!string.IsNullOrEmpty(value))
+                            {
+                                jsonAction = ConstantValues.Device.Dimmer.Action.DIM_LEVEL;
+                                jsonValue = ConstantValues.GetSelectorValue(mDevicesInfo, value);
+                            }
+                        }
+                        else
+                            jsonAction = ConstantValues.Device.Switch.Action.OFF;
+                    }
+                }
+
+                switch (mDevicesInfo.SwitchTypeVal)
+                {
+                    case ConstantValues.Device.Type.Value.PUSH_ON_BUTTON:
+                        jsonAction = ConstantValues.Device.Switch.Action.ON;
+                        break;
+                    case ConstantValues.Device.Type.Value.PUSH_OFF_BUTTON:
+                        jsonAction = ConstantValues.Device.Switch.Action.OFF;
+                        break;
+                }
+            }
+            else
+            {
+                jsonUrl = ConstantValues.Json.Url.Set.SCENES;
+                if (inputJSONAction < 0)
+                {
+                    if (!mDevicesInfo.StatusBoolean)
+                    {
+                        jsonAction = ConstantValues.Device.Scene.Action.ON;
+                    }
+                    else
+                        jsonAction = ConstantValues.Device.Scene.Action.OFF;
+                }
+                else
+                {
+                    if (inputJSONAction == 1)
+                    {
+                        jsonAction = ConstantValues.Device.Scene.Action.ON;
+                    }
+                    else
+                        jsonAction = ConstantValues.Device.Scene.Action.OFF;
+                }
+
+                if (String.Compare(mDevicesInfo.Type, ConstantValues.Device.Scene.Type.SCENE, StringComparison.OrdinalIgnoreCase) == 0)
+                    jsonAction = ConstantValues.Device.Scene.Action.ON;
+            }
+
+            var result = await this.SetAction(idx, jsonUrl, jsonAction, jsonValue, password);
+            if (result != null &&
+                String.Compare(result.status, "ok", StringComparison.OrdinalIgnoreCase) == 0)
+                return true;
+
+            return false;
         }
 
         #endregion Actions

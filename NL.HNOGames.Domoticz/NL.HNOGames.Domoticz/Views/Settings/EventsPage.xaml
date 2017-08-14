@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
@@ -12,15 +13,20 @@
     <ContentPage.Content>
 
         <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-            <SearchBar Style="{StaticResource SearchBarType}" x:Name="sbSearch" Placeholder="{resources:Translate filter}" CancelButtonColor="Red" TextChanged="sbSearch_TextChanged" />
-            <ListView x:Name="listView" BackgroundColor="{DynamicResource LightBackgroundColor}" VerticalOptions="FillAndExpand" HasUnevenRows="true" SeparatorVisibility="None" ItemSelected="OnItemSelected">
+            <SearchBar Style="{StaticResource SearchBarType}" x:Name="sbSearch"
+                       Placeholder="{resources:Translate filter}" CancelButtonColor="Red"
+                       TextChanged="sbSearch_TextChanged" />
+            <ListView x:Name="listView" BackgroundColor="{DynamicResource LightBackgroundColor}"
+                      VerticalOptions="FillAndExpand" HasUnevenRows="true" SeparatorVisibility="None"
+                      ItemSelected="OnItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <custcontrol:CustomViewCell>
-                            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="5" Padding="10"
-                BackgroundColor="{StaticResource CardBackgroundColor}">
+                            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                                         VerticalOptions="CenterAndExpand" Margin="5" Padding="10"
+                                         BackgroundColor="{StaticResource CardBackgroundColor}">
                                 <Label Text="{Binding Name}" Style="{StaticResource HeaderDarkType}" />
-                                <Label Text="{Binding Data}" Style="{StaticResource DetailType}"/>
+                                <Label Text="{Binding Data}" Style="{StaticResource DetailType}" />
                             </StackLayout>
                         </custcontrol:CustomViewCell>
                     </DataTemplate>

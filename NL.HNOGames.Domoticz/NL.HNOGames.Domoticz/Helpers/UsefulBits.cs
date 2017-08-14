@@ -22,7 +22,7 @@ namespace NL.HNOGames.Domoticz.Helpers
 
         public static String GetMD5String(String input)
         {
-            if (String.IsNullOrEmpty(input))
+            if (string.IsNullOrEmpty(input))
                 return null;
 
             return XLabs.Cryptography.MD5.GetMd5String(input);

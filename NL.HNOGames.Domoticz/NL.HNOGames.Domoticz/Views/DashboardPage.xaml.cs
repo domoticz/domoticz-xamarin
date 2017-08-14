@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-
 using NL.HNOGames.Domoticz.Models;
 using NL.HNOGames.Domoticz.ViewModels;
-
 using Xamarin.Forms;
-using NL.HNOGames.Domoticz.Controls;
 using Acr.UserDialogs;
 using NL.HNOGames.Domoticz.Resources;
 using System.Linq;
@@ -14,30 +11,41 @@ using NL.HNOGames.Domoticz.Data;
 using Rg.Plugins.Popup.Services;
 using NL.HNOGames.Domoticz.Views.Dialog;
 using System.Globalization;
-using System.Diagnostics;
 
 namespace NL.HNOGames.Domoticz.Views
 {
-    public partial class DashboardPage : ContentPage
+    public partial class DashboardPage
     {
-        DashboardViewModel viewModel;
+        private readonly DashboardViewModel _viewModel;
+        private object ScrollItem { get; set; }
 
-        public DashboardPage(DashboardViewModel.ScreenType screentype, Plan plan = null)
+        public DashboardPage(DashboardViewModel.ScreenTypeEnum screentype, Plan plan = null)
         {
             InitializeComponent();
-            BindingContext = viewModel = new DashboardViewModel(screentype, plan);
+            BindingContext = _viewModel = new DashboardViewModel(screentype, plan);
+            App.AddLog("Loading screen: " + screentype);
+            adView.IsVisible = !App.AppSettings.PremiumBought;
+        }
+
+        public DashboardPage()
+        {
+            InitializeComponent();
+            BindingContext = _viewModel = new DashboardViewModel(DashboardViewModel.ScreenTypeEnum.Dashboard, null);
+            App.AddLog("Loading screen: Dashboard");
+            adView.IsVisible = !App.AppSettings.PremiumBought;
         }
 
         /// <summary>
         /// Show a actionsheet on item selected
         /// </summary>
-        async Task OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        private async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
             var item = args.SelectedItem as Models.Device;
+            ScrollItem = args.SelectedItem;
+
             if (item == null)
                 return;
             await ShowActionMenu(item);
-
             listView.SelectedItem = null;
         }
 
@@ -46,10 +54,11 @@ namespace NL.HNOGames.Domoticz.Views
         /// </summary>
         private async Task ShowActionMenu(Models.Device item)
         {
-            List<String> actions = AddActionMenuItems(item);
-            var result = await this.DisplayActionSheet(item.Name, AppResources.cancel, null, actions.ToArray());
+            var actions = AddActionMenuItems(item);
+            var result = await DisplayActionSheet(item.Name, AppResources.cancel, null, actions.ToArray());
+
             if (result == AppResources.favorite)
-                await setFavorite(item);
+                await SetFavorite(item);
             else if (result == AppResources.button_status_notifications)
                 await PopupNavigation.PushAsync(new NotificationsPopup(item));
             else if (result == AppResources.button_status_timer)
@@ -58,48 +67,62 @@ namespace NL.HNOGames.Domoticz.Views
                 await PopupNavigation.PushAsync(new LogsPopup(item));
             else if (result == AppResources.wizard_graph)
             {
-                if (viewModel.screenType == DashboardViewModel.ScreenType.Temperature)
-                    await Navigation.PushAsync(new GraphTabbedPage(item, "temp"));
-                else if (viewModel.screenType == DashboardViewModel.ScreenType.Weather)
+                switch (_viewModel.ScreenType)
                 {
-                    String graphType = item.TypeImg
-                       .ToLower()
-                       .Replace("temperature", "temp")
-                       .Replace("visibility", "counter");
-                    await Navigation.PushAsync(new GraphTabbedPage(item, graphType));
-                }
-                else if (viewModel.screenType == DashboardViewModel.ScreenType.Utilities)
-                {
-                    String graphType = item.SubType
+                    case DashboardViewModel.ScreenTypeEnum.Temperature:
+                        await Navigation.PushAsync(new GraphTabbedPage(item));
+                        break;
+                    case DashboardViewModel.ScreenTypeEnum.Weather:
+                    {
+                        var graphType = item.TypeImg
+                            .ToLower()
+                            .Replace("temperature", "temp")
+                            .Replace("visibility", "counter");
+                        await Navigation.PushAsync(new GraphTabbedPage(item, graphType));
+                    }
+                        break;
+                    case DashboardViewModel.ScreenTypeEnum.Utilities:
+                    {
+                        var graphType = item.SubType
                             .Replace("Electric", "counter")
                             .Replace("kWh", "counter")
                             .Replace("Gas", "counter")
                             .Replace("Energy", "counter")
                             .Replace("Voltcraft", "counter")
+                            .Replace("Lux", "counter")
                             .Replace("SetPoint", "temp")
                             .Replace("YouLess counter", "counter");
-                    if (graphType.Contains("counter"))
-                        graphType = "counter";
-                    await Navigation.PushAsync(new GraphTabbedPage(item, graphType));
+                        if (graphType.Contains("counter"))
+                            graphType = "counter";
+                        await Navigation.PushAsync(new GraphTabbedPage(item, graphType));
+                    }
+                        break;
+                    case DashboardViewModel.ScreenTypeEnum.Dashboard:
+                        break;
+                    case DashboardViewModel.ScreenTypeEnum.Switches:
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
                 }
             }
-            else if (result == AppResources.security_disarm || result == AppResources.security_arm_home || result == AppResources.security_arm_away)
+            else if (result == AppResources.security_disarm || result == AppResources.security_arm_home ||
+                     result == AppResources.security_arm_away)
             {
-                var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password, inputType: InputType.NumericPassword);
+                var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password,
+                    inputType: InputType.NumericPassword);
                 await Task.Delay(500);
-                if (r.Ok && !String.IsNullOrEmpty(r.Text))
+                if (r.Ok && !string.IsNullOrEmpty(r.Text))
                 {
-                    int status = ConstantValues.Security.Status.DISARM;
+                    var status = ConstantValues.Security.Status.DISARM;
                     if (result == AppResources.security_arm_home)
                         status = ConstantValues.Security.Status.ARMHOME;
                     else if (result == AppResources.security_arm_away)
                         status = ConstantValues.Security.Status.ARMAWAY;
-
-                    String md5Pass = Helpers.UsefulBits.GetMD5String(r.Text);
+                    var md5Pass = Helpers.UsefulBits.GetMD5String(r.Text);
                     if (!await App.ApiService.SetSecurityPanel(status, md5Pass))
-                        UserDialogs.Instance.Toast(AppResources.security_generic_error);
+                        App.ShowToast(AppResources.security_generic_error);
                     else
-                        viewModel.RefreshFavoriteCommand.Execute(null);
+                        RefreshListView(true);
                 }
             }
         }
@@ -109,25 +132,32 @@ namespace NL.HNOGames.Domoticz.Views
         /// </summary>
         private List<string> AddActionMenuItems(Models.Device item)
         {
-            List<string> actions = new List<string>();
-            if (String.Compare(item.SubType, ConstantValues.Device.SubType.Name.SECURITYPANEL, StringComparison.OrdinalIgnoreCase) == 0)
+            var actions = new List<string>();
+            if (string.Compare(item.SubType, ConstantValues.Device.SubType.Name.SECURITYPANEL,
+                    StringComparison.OrdinalIgnoreCase) == 0)
             {
                 actions.Add(AppResources.security_arm_away);
                 actions.Add(AppResources.security_arm_home);
                 actions.Add(AppResources.security_disarm);
             }
+
             actions.Add(AppResources.favorite);
-            if (!String.IsNullOrEmpty(item.Notifications) && String.Compare(item.Notifications, "true", StringComparison.OrdinalIgnoreCase) == 0)
+            if (!string.IsNullOrEmpty(item.Notifications) &&
+                string.Compare(item.Notifications, "true", StringComparison.OrdinalIgnoreCase) == 0)
                 actions.Add(AppResources.button_status_notifications);
-            if (!String.IsNullOrEmpty(item.Timers) && String.Compare(item.Timers, "true", StringComparison.OrdinalIgnoreCase) == 0)
+
+            if (!string.IsNullOrEmpty(item.Timers) &&
+                string.Compare(item.Timers, "true", StringComparison.OrdinalIgnoreCase) == 0)
                 actions.Add(AppResources.button_status_timer);
-            if (viewModel.screenType == DashboardViewModel.ScreenType.Switches)
+
+            if (_viewModel.ScreenType == DashboardViewModel.ScreenTypeEnum.Switches)
                 actions.Add(AppResources.button_status_log);
 
-            if (viewModel.screenType == DashboardViewModel.ScreenType.Temperature ||
-                viewModel.screenType == DashboardViewModel.ScreenType.Weather ||
-                viewModel.screenType == DashboardViewModel.ScreenType.Utilities)
+            if (_viewModel.ScreenType == DashboardViewModel.ScreenTypeEnum.Temperature ||
+                _viewModel.ScreenType == DashboardViewModel.ScreenTypeEnum.Weather ||
+                _viewModel.ScreenType == DashboardViewModel.ScreenTypeEnum.Utilities)
                 actions.Add(AppResources.wizard_graph);
+
             return actions;
         }
 
@@ -138,49 +168,47 @@ namespace NL.HNOGames.Domoticz.Views
         {
             base.OnAppearing();
 
-            if (viewModel.Devices == null || viewModel.OldData)
-                viewModel.RefreshFavoriteCommand.Execute(null);
+            if (_viewModel.Devices == null || _viewModel.OldData)
+                _viewModel.RefreshFavoriteCommand.Execute(null);
 
-            if (viewModel.screenType != DashboardViewModel.ScreenType.Dashboard || App.AppSettings.ShowExtraData)
-            {
+            if (_viewModel.ScreenType != DashboardViewModel.ScreenTypeEnum.Dashboard || App.AppSettings.ShowExtraData)
                 listView.RowHeight = 130;
-            }
             else
-            {
                 listView.RowHeight = 80;
-            }
-        }
-
-        /// <summary>
-        /// set favorite true / false
-        /// </summary>
-        private async Task TapGestureRecognizer_Tapped(object sender, EventArgs e)
-        {
-            if (viewModel.OldData)
-                return;
-            TintedCachedImage oImage = (TintedCachedImage)sender;
-            oImage.IsVisible = false;
-            await setFavorite((Models.Device)oImage.BindingContext);
-            oImage.IsVisible = true;
         }
 
         /// <summary>
         /// Set Favorite
         /// </summary>
-        public async Task setFavorite(Models.Device pair)
+        public async Task SetFavorite(Models.Device pair)
         {
-            bool newValue = !pair.FavoriteBoolean;
+            var newValue = !pair.FavoriteBoolean;
             if (newValue)
-                UserDialogs.Instance.Toast(pair.Name + " " + AppResources.favorite_added);
+                App.ShowToast(pair.Name + " " + AppResources.favorite_added);
             else
-                UserDialogs.Instance.Toast(pair.Name + " " + AppResources.favorite_removed);
+                App.ShowToast(pair.Name + " " + AppResources.favorite_removed);
 
             var result = await App.ApiService.SetFavorite(pair.idx, pair.IsScene, newValue);
             if (!result)
-                UserDialogs.Instance.Toast(pair.Name + " " + AppResources.error_favorite);
+                App.ShowToast(pair.Name + " " + AppResources.error_favorite);
+            RefreshListView(false);
+        }
 
-            viewModel.RefreshFavoriteCommand.Execute(null);
+        /// <summary>
+        /// Refresh ListView
+        /// </summary>
+        private void RefreshListView(bool afterAction)
+        {
+            if (!afterAction)
+                _viewModel.RefreshFavoriteCommand.Execute(null);
+            else
+                _viewModel.RefreshActionCommand.Execute(null);
+
             sbSearch.Text = string.Empty;
+
+            if (ScrollItem == null) return;
+            listView.ScrollTo(ScrollItem, ScrollToPosition.Center, true);
+            ScrollItem = null;
         }
 
         /// <summary>
@@ -190,39 +218,37 @@ namespace NL.HNOGames.Domoticz.Views
         {
             if (e.NewTextValue == string.Empty)
             {
-                Debug.WriteLine("Cancel Pressed");
-                listView.ItemsSource = this.viewModel.Devices;
+                App.AddLog("Cancel Pressed");
+                listView.ItemsSource = _viewModel.Devices;
                 sbSearch.Unfocus();
             }
             else
             {
                 try
                 {
-                    String filterText = e.NewTextValue.ToLower().Trim();
-                    if (filterText == string.Empty)
-                        listView.ItemsSource = this.viewModel.Devices;
-                    else
-                        listView.ItemsSource = this.viewModel.Devices.Where(i => i.Name.ToLower().Trim().Contains(filterText));
+                    var filterText = e.NewTextValue.ToLower().Trim();
+                    listView.ItemsSource = filterText == string.Empty
+                        ? _viewModel.Devices
+                        : _viewModel.Devices.Where(i => i.Name.ToLower().Trim().Contains(filterText));
                 }
                 catch (Exception)
                 {
-                    listView.ItemsSource = this.viewModel.Devices;
+                    listView.ItemsSource = _viewModel.Devices;
                 }
             }
         }
-
 
         #region Selector
 
         /// <summary>
         /// Set Selector value to Domoticz
         /// </summary>
-        private async Task pSelector_Unfocused(object sender, FocusEventArgs e)
+        private async void pSelector_Unfocused(object sender, FocusEventArgs e)
         {
-            if (viewModel.OldData)
+            if (_viewModel.OldData)
                 return;
-            Picker oPicker = (Picker)sender;
-            await NewSelectorValueAsync((Models.Device)oPicker.BindingContext, oPicker);
+            var oPicker = (Picker) sender;
+            await NewSelectorValueAsync((Models.Device) oPicker.BindingContext, oPicker);
         }
 
         /// <summary>
@@ -230,7 +256,7 @@ namespace NL.HNOGames.Domoticz.Views
         /// </summary>
         public async Task NewSelectorValueAsync(Models.Device pair, Picker oPicker)
         {
-            int newValue = 0;
+            var newValue = 0;
             if (oPicker.SelectedIndex > 0)
                 newValue = oPicker.SelectedIndex * 10;
 
@@ -238,22 +264,21 @@ namespace NL.HNOGames.Domoticz.Views
             {
                 if (pair.Protected)
                 {
-                    var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password, inputType: InputType.Password);
+                    var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password,
+                        inputType: InputType.Password);
                     await Task.Delay(500);
                     if (r.Ok)
                     {
                         var result = await App.ApiService.SetDimmer(pair.idx, newValue, r.Text);
                         if (!result)
-                            UserDialogs.Instance.Toast(AppResources.security_wrong_code);
-                        viewModel.RefreshFavoriteCommand.Execute(null);
-                        sbSearch.Text = string.Empty;
+                            App.ShowToast(AppResources.security_wrong_code);
+                        RefreshListView(true);
                     }
                 }
                 else
                 {
                     await App.ApiService.SetDimmer(pair.idx, newValue);
-                    viewModel.RefreshFavoriteCommand.Execute(null);
-                    sbSearch.Text = string.Empty;
+                    RefreshListView(true);
                 }
             }
         }
@@ -266,107 +291,112 @@ namespace NL.HNOGames.Domoticz.Views
         /// <summary>
         /// Turn switch/device ON
         /// </summary>
-        private async Task btnOnButton_Clicked(object sender, EventArgs e)
+        private async void btnOnButton_Clicked(object sender, EventArgs e)
         {
-            if (viewModel.OldData)
+            if (_viewModel.OldData)
                 return;
-            Button oButton = (Button)sender;
-            Models.Device oDevice = (Models.Device)oButton.BindingContext;
+            var oButton = (Button) sender;
+            var oDevice = (Models.Device) oButton.BindingContext;
             if (oDevice.Protected)
             {
-                var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password, inputType: InputType.Password);
+                var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password,
+                    inputType: InputType.Password);
                 await Task.Delay(500);
                 if (r.Ok)
                 {
-                    UserDialogs.Instance.Toast(AppResources.switch_on + ": " + oDevice.Name);
-                    var result = await App.ApiService.SetSwitch(oDevice.idx, true, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false, r.Text);
+                    App.ShowToast(AppResources.switch_on + ": " + oDevice.Name);
+                    var result = await App.ApiService.SetSwitch(oDevice.idx, true,
+                        oDevice.Type == ConstantValues.Device.Scene.Type.GROUP ||
+                        oDevice.Type == ConstantValues.Device.Scene.Type.SCENE, r.Text);
                     if (!result)
-                        UserDialogs.Instance.Toast(AppResources.security_wrong_code);
+                        App.ShowToast(AppResources.security_wrong_code);
 
-                    viewModel.RefreshFavoriteCommand.Execute(null);
-                    sbSearch.Text = string.Empty;
+                    RefreshListView(true);
                 }
             }
             else
             {
-                UserDialogs.Instance.Toast(AppResources.switch_on + ": " + oDevice.Name);
-                var result = await App.ApiService.SetSwitch(oDevice.idx, true, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false);
-                viewModel.RefreshFavoriteCommand.Execute(null);
-                sbSearch.Text = string.Empty;
+                App.ShowToast(AppResources.switch_on + ": " + oDevice.Name);
+                await App.ApiService.SetSwitch(oDevice.idx, true,
+                    oDevice.Type == ConstantValues.Device.Scene.Type.GROUP ||
+                    oDevice.Type == ConstantValues.Device.Scene.Type.SCENE);
+                RefreshListView(true);
             }
         }
 
         /// <summary>
         /// Turn switch/device OFF
         /// </summary>
-        private async Task btnOffButton_Clicked(object sender, EventArgs e)
+        private async void btnOffButton_Clicked(object sender, EventArgs e)
         {
-            Button oButton = (Button)sender;
-            Models.Device oDevice = (Models.Device)oButton.BindingContext;
+            var oButton = (Button) sender;
+            var oDevice = (Models.Device) oButton.BindingContext;
             if (oDevice.Protected)
             {
-                var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password, inputType: InputType.Password);
+                var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password,
+                    inputType: InputType.Password);
                 await Task.Delay(500);
                 if (r.Ok)
                 {
-                    UserDialogs.Instance.Toast(AppResources.switch_off + ": " + oDevice.Name);
-                    var result = await App.ApiService.SetSwitch(oDevice.idx, false, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false, r.Text);
+                    App.ShowToast(AppResources.switch_off + ": " + oDevice.Name);
+                    var result = await App.ApiService.SetSwitch(oDevice.idx, false,
+                        oDevice.Type == ConstantValues.Device.Scene.Type.GROUP ||
+                        oDevice.Type == ConstantValues.Device.Scene.Type.SCENE, r.Text);
                     if (!result)
-                        UserDialogs.Instance.Toast(AppResources.security_wrong_code);
-
-                    viewModel.RefreshFavoriteCommand.Execute(null);
-                    sbSearch.Text = string.Empty;
+                        App.ShowToast(AppResources.security_wrong_code);
+                    RefreshListView(true);
                 }
             }
             else
             {
-                UserDialogs.Instance.Toast(AppResources.switch_off + ": " + oDevice.Name);
-                var result = await App.ApiService.SetSwitch(oDevice.idx, false, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false);
-                viewModel.RefreshFavoriteCommand.Execute(null);
-                sbSearch.Text = string.Empty;
+                App.ShowToast(AppResources.switch_off + ": " + oDevice.Name);
+                await App.ApiService.SetSwitch(oDevice.idx, false,
+                    oDevice.Type == ConstantValues.Device.Scene.Type.GROUP ||
+                    oDevice.Type == ConstantValues.Device.Scene.Type.SCENE);
+                RefreshListView(true);
             }
         }
 
         /// <summary>
         /// Toggle switch
         /// </summary>
-        private async Task btnSwitch_Toggled(object sender, ToggledEventArgs e)
+        private async void btnSwitch_Toggled(object sender, ToggledEventArgs e)
         {
-            Switch oSwitch = (Switch)sender;
-            Models.Device oDevice = (Models.Device)oSwitch.BindingContext;
-
+            var oSwitch = (Switch) sender;
+            var oDevice = (Models.Device) oSwitch.BindingContext;
             if (oSwitch.IsToggled != oDevice.StatusBoolean)
             {
                 if (oDevice.Protected)
                 {
-                    var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password, inputType: InputType.Password);
+                    var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password,
+                        inputType: InputType.Password);
                     await Task.Delay(500);
                     if (r.Ok)
                     {
                         if (oDevice.StatusBoolean)
-                            UserDialogs.Instance.Toast(AppResources.switch_off + ": " + oDevice.Name);
+                            App.ShowToast(AppResources.switch_off + ": " + oDevice.Name);
                         else
-                            UserDialogs.Instance.Toast(AppResources.switch_on + ": " + oDevice.Name);
+                            App.ShowToast(AppResources.switch_on + ": " + oDevice.Name);
 
                         var result = await App.ApiService.SetSwitch(oDevice.idx, oSwitch.IsToggled,
-                            oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false, r.Text);
+                            oDevice.Type == ConstantValues.Device.Scene.Type.GROUP ||
+                            oDevice.Type == ConstantValues.Device.Scene.Type.SCENE, r.Text);
                         if (!result)
-                            UserDialogs.Instance.Toast(AppResources.security_wrong_code);
+                            App.ShowToast(AppResources.security_wrong_code);
 
-                        viewModel.RefreshFavoriteCommand.Execute(null);
-                        sbSearch.Text = string.Empty;
+                        RefreshListView(true);
                     }
                 }
                 else
                 {
                     if (oDevice.StatusBoolean)
-                        UserDialogs.Instance.Toast(AppResources.switch_off + ": " + oDevice.Name);
+                        App.ShowToast(AppResources.switch_off + ": " + oDevice.Name);
                     else
-                        UserDialogs.Instance.Toast(AppResources.switch_on + ": " + oDevice.Name);
-
-                    var result = await App.ApiService.SetSwitch(oDevice.idx, oSwitch.IsToggled, oDevice.Type == ConstantValues.Device.Scene.Type.GROUP || oDevice.Type == ConstantValues.Device.Scene.Type.SCENE ? true : false);
-                    viewModel.RefreshFavoriteCommand.Execute(null);
-                    sbSearch.Text = string.Empty;
+                        App.ShowToast(AppResources.switch_on + ": " + oDevice.Name);
+                    await App.ApiService.SetSwitch(oDevice.idx, oSwitch.IsToggled,
+                        oDevice.Type == ConstantValues.Device.Scene.Type.GROUP ||
+                        oDevice.Type == ConstantValues.Device.Scene.Type.SCENE);
+                    RefreshListView(true);
                 }
             }
         }
@@ -379,36 +409,75 @@ namespace NL.HNOGames.Domoticz.Views
         /// <summary>
         /// set a specific value in a switch (temperature for example)
         /// </summary>
-        private async Task txtSetValue_Completed(object sender, EventArgs e)
+        private async void txtSetValue_Completed(object sender, EventArgs e)
         {
-            if (viewModel.OldData)
+            if (_viewModel.OldData)
                 return;
-            Entry oEntry = (Entry)sender;
-            Models.Device oDevice = (Models.Device)oEntry.BindingContext;
+            var oEntry = (Entry) sender;
+            var oDevice = (Models.Device) oEntry.BindingContext;
             if (Helpers.UsefulBits.IsNumeric(oEntry.Text))
-            {
-                Double newValue = Double.Parse(oEntry.Text, CultureInfo.InvariantCulture);
-                if (oDevice.Protected)
-                {
-                    var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password, inputType: InputType.Password);
-                    await Task.Delay(500);
-                    if (r.Ok)
-                    {
-                        var result = await App.ApiService.SetPoint(oDevice.idx, newValue, Double.Parse(oDevice.SetPoint, CultureInfo.InvariantCulture), r.Text);
-                        if (!result)
-                            UserDialogs.Instance.Toast(AppResources.security_wrong_code);
+                await SetPointValue(oEntry, oDevice);
+        }
 
-                        viewModel.RefreshFavoriteCommand.Execute(null);
-                        sbSearch.Text = string.Empty;
-                    }
-                }
-                else
+        /// <summary>
+        /// Setpoint action 
+        /// </summary>
+        private async Task SetPointValue(Entry oEntry, Models.Device oDevice, Boolean refresh = true)
+        {
+            var newValue = double.Parse(oEntry.Text, CultureInfo.InvariantCulture);
+            App.AddLog("Set idx " + oDevice.idx + " to " + newValue);
+            if (oDevice.Protected)
+            {
+                var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password,
+                    inputType: InputType.Password);
+                await Task.Delay(500);
+                if (r.Ok)
                 {
-                    var result = await App.ApiService.SetPoint(oDevice.idx, newValue, Double.Parse(oDevice.SetPoint, CultureInfo.InvariantCulture));
-                    viewModel.RefreshFavoriteCommand.Execute(null);
-                    sbSearch.Text = string.Empty;
+                    var result = await App.ApiService.SetPoint(oDevice.idx, newValue,
+                        double.Parse(oDevice.SetPoint, CultureInfo.InvariantCulture), r.Text);
+                    if (!result)
+                        App.ShowToast(AppResources.security_wrong_code);
+                    if (refresh) RefreshListView(true);
                 }
             }
+            else
+            {
+                await App.ApiService.SetPoint(oDevice.idx, newValue,
+                    double.Parse(oDevice.SetPoint, CultureInfo.InvariantCulture));
+                if (refresh) RefreshListView(true);
+            }
+        }
+
+        /// <summary>
+        /// min 0.5 from temp
+        /// </summary>
+        private async void btnMinTemp_Clicked(object sender, EventArgs e)
+        {
+            if (_viewModel.OldData)
+                return;
+            var btnMinTemp = (Button) sender;
+            var entry =
+                ((Entry) ((StackLayout) btnMinTemp.Parent).Children.FirstOrDefault(o => o.GetType() == typeof(Entry)));
+            var currentValue = double.Parse(entry.Text, CultureInfo.InvariantCulture);
+            var changedValue = currentValue - 0.5;
+            entry.Text = changedValue.ToString(CultureInfo.InvariantCulture);
+            await SetPointValue(entry, (Models.Device) btnMinTemp.BindingContext, false);
+        }
+
+        /// <summary>
+        /// Add 0.5 to temp
+        /// </summary>
+        private async void btnPlusTemp_Clicked(object sender, EventArgs e)
+        {
+            if (_viewModel.OldData)
+                return;
+            var btnPlusTemp = (Button) sender;
+            var entry =
+                ((Entry) ((StackLayout) btnPlusTemp.Parent).Children.FirstOrDefault(o => o.GetType() == typeof(Entry)));
+            var currentValue = double.Parse(entry.Text, CultureInfo.InvariantCulture);
+            var changedValue = currentValue + 0.5;
+            entry.Text = changedValue.ToString(CultureInfo.InvariantCulture);
+            await SetPointValue(entry, (Models.Device) btnPlusTemp.BindingContext, false);
         }
 
         #endregion Set (Temperature)
@@ -419,115 +488,108 @@ namespace NL.HNOGames.Domoticz.Views
         /// <summary>
         /// Turn blinds ON/DOWN
         /// </summary>
-        private async Task btnBlindOnButton_Clicked(object sender, EventArgs e)
+        private async void btnBlindOnButton_Clicked(object sender, EventArgs e)
         {
-            if (viewModel.OldData)
+            if (_viewModel.OldData)
                 return;
-            Button oButton = (Button)sender;
-            Models.Device oDevice = (Models.Device)oButton.BindingContext;
-
-            int action = ConstantValues.Device.Switch.Action.ON;
+            var oButton = (Button) sender;
+            var oDevice = (Models.Device) oButton.BindingContext;
+            var action = ConstantValues.Device.Switch.Action.ON;
             if (oDevice.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDINVERTED)
             {
                 action = ConstantValues.Device.Switch.Action.OFF;
-                UserDialogs.Instance.Toast(AppResources.blind_up + ": " + oDevice.Name);
+                App.ShowToast(AppResources.blind_up + ": " + oDevice.Name);
             }
             else
-                UserDialogs.Instance.Toast(AppResources.blind_down + ": " + oDevice.Name);
+                App.ShowToast(AppResources.blind_down + ": " + oDevice.Name);
 
             if (oDevice.Protected)
             {
-                var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password, inputType: InputType.Password);
+                var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password,
+                    inputType: InputType.Password);
                 await Task.Delay(500);
                 if (r.Ok)
                 {
                     var result = await App.ApiService.SetBlind(oDevice.idx, action, r.Text);
                     if (!result)
-                        UserDialogs.Instance.Toast(AppResources.security_wrong_code);
-
-                    viewModel.RefreshFavoriteCommand.Execute(null);
-                    sbSearch.Text = string.Empty;
+                        App.ShowToast(AppResources.security_wrong_code);
+                    RefreshListView(true);
                 }
             }
             else
             {
-                var result = await App.ApiService.SetBlind(oDevice.idx, action);
-                viewModel.RefreshFavoriteCommand.Execute(null);
-                sbSearch.Text = string.Empty;
+                await App.ApiService.SetBlind(oDevice.idx, action);
+                RefreshListView(true);
             }
         }
 
         /// <summary>
         /// Turn blinds OFF/UP
         /// </summary>
-        private async Task btnBlindOffButton_Clicked(object sender, EventArgs e)
+        private async void btnBlindOffButton_Clicked(object sender, EventArgs e)
         {
-            if (viewModel.OldData)
+            if (_viewModel.OldData)
                 return;
-            Button oButton = (Button)sender;
-            Models.Device oDevice = (Models.Device)oButton.BindingContext;
-
-            int action = ConstantValues.Device.Switch.Action.OFF;
+            var oButton = (Button) sender;
+            var oDevice = (Models.Device) oButton.BindingContext;
+            var action = ConstantValues.Device.Switch.Action.OFF;
             if (oDevice.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDINVERTED)
             {
                 action = ConstantValues.Device.Switch.Action.ON;
-                UserDialogs.Instance.Toast(AppResources.blind_down + ": " + oDevice.Name);
+                App.ShowToast(AppResources.blind_down + ": " + oDevice.Name);
             }
             else
-                UserDialogs.Instance.Toast(AppResources.blind_up + ": " + oDevice.Name);
+                App.ShowToast(AppResources.blind_up + ": " + oDevice.Name);
 
             if (oDevice.Protected)
             {
-                var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password, inputType: InputType.Password);
+                var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password,
+                    inputType: InputType.Password);
                 await Task.Delay(500);
                 if (r.Ok)
                 {
                     var result = await App.ApiService.SetBlind(oDevice.idx, action, r.Text);
                     if (!result)
-                        UserDialogs.Instance.Toast(AppResources.security_wrong_code);
-
-                    viewModel.RefreshFavoriteCommand.Execute(null);
-                    sbSearch.Text = string.Empty;
+                        App.ShowToast(AppResources.security_wrong_code);
+                    RefreshListView(true);
                 }
             }
             else
             {
-                var result = await App.ApiService.SetBlind(oDevice.idx, action);
-                viewModel.RefreshFavoriteCommand.Execute(null);
-                sbSearch.Text = string.Empty;
+                await App.ApiService.SetBlind(oDevice.idx, action);
+                RefreshListView(true);
             }
         }
 
         /// <summary>
         /// Turn blinds Stop
         /// </summary>
-        private async Task btnBlindStopButton_Clicked(object sender, EventArgs e)
+        private async void btnBlindStopButton_Clicked(object sender, EventArgs e)
         {
-            if (viewModel.OldData)
+            if (_viewModel.OldData)
                 return;
-            Button oButton = (Button)sender;
-            Models.Device oDevice = (Models.Device)oButton.BindingContext;
-            UserDialogs.Instance.Toast(AppResources.blind_stop + ": " + oDevice.Name);
 
+            var oButton = (Button) sender;
+            var oDevice = (Models.Device) oButton.BindingContext;
+            App.ShowToast(AppResources.blind_stop + ": " + oDevice.Name);
             if (oDevice.Protected)
             {
-                var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password, inputType: InputType.Password);
+                var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password,
+                    inputType: InputType.Password);
                 await Task.Delay(500);
                 if (r.Ok)
                 {
-                    var result = await App.ApiService.SetBlind(oDevice.idx, ConstantValues.Device.Blind.Action.STOP, r.Text);
+                    var result =
+                        await App.ApiService.SetBlind(oDevice.idx, ConstantValues.Device.Blind.Action.STOP, r.Text);
                     if (!result)
-                        UserDialogs.Instance.Toast(AppResources.security_wrong_code);
-
-                    viewModel.RefreshFavoriteCommand.Execute(null);
-                    sbSearch.Text = string.Empty;
+                        App.ShowToast(AppResources.security_wrong_code);
+                    RefreshListView(true);
                 }
             }
             else
             {
-                var result = await App.ApiService.SetBlind(oDevice.idx, ConstantValues.Device.Blind.Action.STOP);
-                viewModel.RefreshFavoriteCommand.Execute(null);
-                sbSearch.Text = string.Empty;
+                await App.ApiService.SetBlind(oDevice.idx, ConstantValues.Device.Blind.Action.STOP);
+                RefreshListView(true);
             }
         }
 
@@ -539,15 +601,13 @@ namespace NL.HNOGames.Domoticz.Views
         /// <summary>
         /// Slider value of the dimmer
         /// </summary>
-        private async Task btnLevelButton_Clicked(object sender, EventArgs e)
+        private async void btnLevelButton_Clicked(object sender, EventArgs e)
         {
-            Button oButton = (Button)sender;
-            Models.Device oDevice = (Models.Device)oButton.BindingContext;
-
-            SliderPopup oSlider = new SliderPopup(oDevice, viewModel.RefreshFavoriteCommand);
+            var oButton = (Button) sender;
+            var oDevice = (Models.Device) oButton.BindingContext;
+            var oSlider = new SliderPopup(oDevice, _viewModel.RefreshFavoriteCommand);
             await PopupNavigation.PushAsync(oSlider);
-            viewModel.RefreshFavoriteCommand.Execute(null);
-            sbSearch.Text = string.Empty;
+            RefreshListView(true);
         }
 
         #endregion Dimmer

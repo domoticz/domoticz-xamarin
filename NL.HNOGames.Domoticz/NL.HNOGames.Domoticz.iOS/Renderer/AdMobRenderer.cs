@@ -45,7 +45,6 @@ namespace NL.HNOGames.Domoticz.iOS.Renderer
                 {
                     if (!viewOnScreen) this.AddSubview(adView);
                     viewOnScreen = true;
-                    App.ShowAds = true;
                 };
 
                 adView.LoadRequest(Request.GetDefaultRequest());

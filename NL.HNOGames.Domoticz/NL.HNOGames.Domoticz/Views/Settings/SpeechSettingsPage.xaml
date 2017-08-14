@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
+             xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
+             x:Class="NL.HNOGames.Domoticz.Views.Settings.SpeechSettingsPage"
+             Style="{StaticResource ContentPageType}"
+             Title="{resources:Translate category_Speech}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="{resources:Translate add}" Order="Primary" Clicked="ToolbarItem_Activated" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
+                             Orientation="Horizontal" Margin="20">
+                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
+                        <Label Text="{resources:Translate speech_enable_settings}" VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="Start" Style="{StaticResource SettingsDetailType}" />
+                    </StackLayout>
+                    <Switch x:Name="swEnableSpeech" VerticalOptions="Center" HorizontalOptions="End" />
+                </StackLayout>
+                <ListView x:Name="listView" SeparatorVisibility="None" RowHeight="130" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Style="{StaticResource DashboardDeviceCardType}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Grid.Column="0" Orientation="Vertical"
+                                                 HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                                                     VerticalOptions="CenterAndExpand">
+                                            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                                                         VerticalOptions="CenterAndExpand" Padding="20,10,0,0">
+                                                <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
+                                                       Style="{StaticResource HeaderType}" />
+                                                <custcontrol:MultiLineLabel Text="{Binding SwitchDescription}"
+                                                                            Lines="2"
+                                                                            Style="{StaticResource DetailType}"
+                                                                            LineBreakMode="WordWrap" />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                                                         VerticalOptions="CenterAndExpand" Margin="0,-5,5,0">
+                                                <StackLayout Orientation="Vertical" HorizontalOptions="End"
+                                                             VerticalOptions="End">
+                                                    <Button x:Name="btnDeleteButton"
+                                                            Text="{resources:Translate delete}" HorizontalOptions="End"
+                                                            VerticalOptions="End" Clicked="btnDeleteButton_Clicked">
+                                                        <Button.WidthRequest>
+                                                            <OnPlatform x:TypeArguments="x:Double" iOS="100"
+                                                                        Android="120" WinPhone="100" />
+                                                        </Button.WidthRequest>
+                                                        <Button.HeightRequest>
+                                                            <OnPlatform x:TypeArguments="x:Double" iOS="35"
+                                                                        Android="50" WinPhone="50" />
+                                                        </Button.HeightRequest>
+                                                    </Button>
+                                                    <Button x:Name="btnConnect" Text="Connect" HorizontalOptions="End"
+                                                            VerticalOptions="End" Clicked="btnConnect_Clicked"
+                                                            Margin="0,-5,0,0">
+                                                        <Button.WidthRequest>
+                                                            <OnPlatform x:TypeArguments="x:Double" iOS="100"
+                                                                        Android="120" WinPhone="100" />
+                                                        </Button.WidthRequest>
+                                                        <Button.HeightRequest>
+                                                            <OnPlatform x:TypeArguments="x:Double" iOS="35"
+                                                                        Android="50" WinPhone="50" />
+                                                        </Button.HeightRequest>
+                                                    </Button>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

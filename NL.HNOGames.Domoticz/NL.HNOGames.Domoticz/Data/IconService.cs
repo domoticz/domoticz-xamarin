@@ -250,7 +250,7 @@ namespace NL.HNOGames.Domoticz.Data
                     break;
             }
 
-            if (!String.IsNullOrEmpty(iconDrawable) && !String.IsNullOrEmpty(devType))
+            if (!string.IsNullOrEmpty(iconDrawable) && !string.IsNullOrEmpty(devType))
             {
                 switch (devType.ToLower())
                 {

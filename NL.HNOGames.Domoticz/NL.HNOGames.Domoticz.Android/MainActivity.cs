@@ -6,6 +6,9 @@ using FFImageLoading.Forms.Droid;
 using AuditApp.Common;
 using AuditApp.Android;
 using System;
+using ZXing.Mobile;
+using Plugin.InAppBilling;
+using Android.Content;
 
 namespace NL.HNOGames.Domoticz.Droid
 {
@@ -19,6 +22,8 @@ namespace NL.HNOGames.Domoticz.Droid
             CachedImageRenderer.Init();
             UserDialogs.Init(this);
             OxyPlot.Xamarin.Forms.Platform.Android.PlotViewRenderer.Init();
+            ZXing.Net.Mobile.Forms.Android.Platform.Init();
+            MobileBarcodeScanner.Initialize(Application);
 
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
@@ -27,8 +32,19 @@ namespace NL.HNOGames.Domoticz.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
-            LoadApplication(new App());
+            LoadApplication(new App(null));
             AndroidPlaystoreAudit.Instance.Run(this);
+        }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+        {
+            global::ZXing.Net.Mobile.Forms.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+            InAppBillingImplementation.HandleActivityResult(requestCode, resultCode, data);
         }
     }
 }

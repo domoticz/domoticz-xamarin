@@ -1,44 +1,38 @@
-﻿using NL.HNOGames.Domoticz.Models;
-using NL.HNOGames.Domoticz.Resources;
-using NL.HNOGames.Domoticz.ViewModels;
+﻿using NL.HNOGames.Domoticz.Resources;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace NL.HNOGames.Domoticz.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class GraphTabbedPage : TabbedPage
+    public partial class GraphTabbedPage
     {
         private GraphPage _lastKnownPage;
 
         public GraphTabbedPage(Models.Device device,
-            String sensor = "temp")
+            string sensor = "temp")
         {
             InitializeComponent();
-            this.Title = device.Name;
+            App.AddLog("Loading screen: Graph");
+            Title = device.Name;
             BarBackgroundColor = Color.FromHex("#22272B");
             BarTextColor = Color.White;
 
-            this.Children.Add(new GraphPage(device, sensor, Data.ConstantValues.GraphRange.Day)
+            Children.Add(new GraphPage(device, sensor)
             {
                 Title = AppResources.button_status_day,
-                Icon = Xamarin.Forms.Device.RuntimePlatform == Xamarin.Forms.Device.iOS ? "ic_show_chart.png" : null,
+                Icon = Device.RuntimePlatform == Device.iOS ? "ic_show_chart.png" : null,
             });
-            this.Children.Add(new GraphPage(device, sensor, Data.ConstantValues.GraphRange.Month)
+            Children.Add(new GraphPage(device, sensor, Data.ConstantValues.GraphRange.Month)
             {
                 Title = AppResources.button_status_month,
-                Icon = Xamarin.Forms.Device.RuntimePlatform == Xamarin.Forms.Device.iOS ? "ic_show_chart.png" : null,
+                Icon = Device.RuntimePlatform == Device.iOS ? "ic_show_chart.png" : null,
             });
-            this.Children.Add(new GraphPage(device, sensor, Data.ConstantValues.GraphRange.Year)
+            Children.Add(new GraphPage(device, sensor, Data.ConstantValues.GraphRange.Year)
             {
                 Title = AppResources.button_status_year,
-                Icon = Xamarin.Forms.Device.RuntimePlatform == Xamarin.Forms.Device.iOS ? "ic_show_chart.png" : null,
+                Icon = Device.RuntimePlatform == Device.iOS ? "ic_show_chart.png" : null,
             });
         }
 
@@ -46,20 +40,14 @@ namespace NL.HNOGames.Domoticz.Views
         {
             base.OnCurrentPageChanged();
             if (CurrentPage.IsEnabled)
-                _lastKnownPage = (GraphPage)CurrentPage;
+                _lastKnownPage = (GraphPage) CurrentPage;
             else
                 CurrentPage = _lastKnownPage;
         }
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-        }
-
         private void ToolbarItem_Activated(object sender, EventArgs e)
         {
-            if(_lastKnownPage != null)
-                _lastKnownPage.FilterAsync();
+            _lastKnownPage?.FilterAsync();
         }
     }
 }

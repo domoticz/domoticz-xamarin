@@ -1,27 +1,23 @@
 ﻿using System;
-
-using NL.HNOGames.Domoticz.ViewModels;
 using Xamarin.Forms;
-using Rg.Plugins.Popup.Pages;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using NL.HNOGames.Domoticz.Models;
-using Acr.UserDialogs;
 using NL.HNOGames.Domoticz.Resources;
 using System.Linq;
 
 namespace NL.HNOGames.Domoticz.Views.Settings
 {
-    public partial class ServerLogsPage : ContentPage
+    public partial class ServerLogsPage
     {
-        private List<ServerLog> logList;
+        private List<ServerLog> _logList;
 
         public ServerLogsPage()
         {
             InitializeComponent();
         }
 
-        void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        private void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
             listView.SelectedItem = null;
         }
@@ -32,24 +28,24 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             new Command(async () => await ExecuteLoadLogsCommand()).Execute(null);
         }
 
-        async Task ExecuteLoadLogsCommand()
+        private async Task ExecuteLoadLogsCommand()
         {
             App.ShowLoading();
-            logList = new List<ServerLog>();
+            _logList = new List<ServerLog>();
             var logs = await App.ApiService.GetServerLogs();
 
-            if (logs != null && logs.result != null)
+            if (logs?.result != null)
             {
-                foreach (ServerLog n in logs.result)
-                    logList.Add(n);
-                logList.Reverse();
-                listView.ItemsSource = logList;
+                foreach (var n in logs.result)
+                    _logList.Add(n);
+                _logList.Reverse();
+                listView.ItemsSource = _logList;
                 App.HideLoading();
             }
             else
             {
                 App.HideLoading();
-                UserDialogs.Instance.Toast(AppResources.error_logs);
+                App.ShowToast(AppResources.error_logs);
                 await Navigation.PopAsync();
             }
         }
@@ -61,22 +57,22 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         {
             try
             {
-                String filterText = e.NewTextValue.ToLower().Trim();
+                var filterText = e.NewTextValue.ToLower().Trim();
                 if (filterText == string.Empty)
                 {
                     listView.ItemsSource = null;
-                    listView.ItemsSource = logList;
+                    listView.ItemsSource = _logList;
                 }
                 else
                 {
                     listView.ItemsSource = null;
-                    listView.ItemsSource = logList.Where(i => i.message.ToLower().Trim().Contains(filterText));
+                    listView.ItemsSource = _logList.Where(i => i.message.ToLower().Trim().Contains(filterText));
                 }
             }
             catch (Exception)
             {
                 listView.ItemsSource = null;
-                listView.ItemsSource = logList;
+                listView.ItemsSource = _logList;
             }
         }
     }

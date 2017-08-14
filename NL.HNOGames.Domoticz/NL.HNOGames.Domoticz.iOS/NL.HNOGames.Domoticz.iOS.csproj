@@ -40,6 +40,7 @@
     <OptimizePNGs>True</OptimizePNGs>
     <MtouchFloat32>False</MtouchFloat32>
     <CodesignProvision>9fc409f3-0ecc-4faa-acf7-1ed7ecf7c596</CodesignProvision>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>pdbonly</DebugType>
@@ -94,11 +95,11 @@
     <MtouchFloat32>true</MtouchFloat32>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>SdkOnly</MtouchLink>
-    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <PlatformTarget>x86</PlatformTarget>
-    <CodesignProvision>9fc409f3-0ecc-4faa-acf7-1ed7ecf7c596</CodesignProvision>
+    <CodesignProvision>1af40e31-3a47-43e0-a4b2-a7e782f3891b</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Acr.Support.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -129,13 +130,16 @@
       <HintPath>..\..\packages\Xamarin.FFImageLoading.Transformations.2.2.9\lib\Xamarin.iOS10\FFImageLoading.Transformations.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.Analytics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Firebase.iOS.Analytics.3.6.0.2\lib\Xamarin.iOS10\Firebase.Analytics.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Firebase.iOS.Analytics.3.7.0\lib\Xamarin.iOS10\Firebase.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.CloudMessaging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Firebase.iOS.CloudMessaging.1.2.2\lib\Xamarin.iOS10\Firebase.CloudMessaging.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Firebase.iOS.Core.3.4.6\lib\Xamarin.iOS10\Firebase.Core.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Firebase.iOS.Core.3.5.2\lib\Xamarin.iOS10\Firebase.Core.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.InstanceID, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Firebase.iOS.InstanceID.1.0.8.1\lib\Xamarin.iOS10\Firebase.InstanceID.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Firebase.iOS.InstanceID.1.0.9\lib\Xamarin.iOS10\Firebase.InstanceID.dll</HintPath>
     </Reference>
     <Reference Include="FrazzApps.Xamarin.AppRater, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\FrazzApps.Xamarin.Forms.AppRater.1.2.0\lib\Xamarin.iOS\FrazzApps.Xamarin.AppRater.dll</HintPath>
@@ -144,10 +148,10 @@
       <HintPath>..\..\packages\FrazzApps.Xamarin.Forms.AppRater.1.2.0\lib\Xamarin.iOS\FrazzApps.Xamarin.AppRater.iOSUnified.dll</HintPath>
     </Reference>
     <Reference Include="Google.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Google.iOS.Core.3.0.3.3\lib\Xamarin.iOS10\Google.Core.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Google.iOS.Core.3.0.3.5\lib\Xamarin.iOS10\Google.Core.dll</HintPath>
     </Reference>
     <Reference Include="Google.MobileAds, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Google.iOS.MobileAds.7.16.0\lib\Xamarin.iOS10\Google.MobileAds.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Google.iOS.MobileAds.7.19.0\lib\Xamarin.iOS10\Google.MobileAds.dll</HintPath>
     </Reference>
     <Reference Include="Humanizer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Humanizer.Core.2.2.0\lib\netstandard1.0\Humanizer.dll</HintPath>
@@ -180,17 +184,23 @@
     <Reference Include="PCLStorage.Abstractions, Version=1.0.2.0, Culture=neutral, PublicKeyToken=286fe515a2c35b64, processorArchitecture=MSIL">
       <HintPath>..\..\packages\PCLStorage.1.0.2\lib\portable-Xamarin.iOS+Xamarin.Mac\PCLStorage.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="Plugin.Connectivity, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xam.Plugin.Connectivity.3.0.1\lib\Xamarin.iOS10\Plugin.Connectivity.dll</HintPath>
+    <Reference Include="Plugin.Connectivity, Version=3.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Connectivity.3.0.2\lib\Xamarin.iOS10\Plugin.Connectivity.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.Connectivity.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xam.Plugin.Connectivity.3.0.1\lib\Xamarin.iOS10\Plugin.Connectivity.Abstractions.dll</HintPath>
+      <HintPath>..\..\packages\Xam.Plugin.Connectivity.3.0.2\lib\Xamarin.iOS10\Plugin.Connectivity.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.DeviceInfo, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugin.DeviceInfo.3.0.1\lib\Xamarin.iOS10\Plugin.DeviceInfo.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.DeviceInfo.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugin.DeviceInfo.3.0.1\lib\Xamarin.iOS10\Plugin.DeviceInfo.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.InAppBilling, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.InAppBilling.1.2.2\lib\Xamarin.iOS10\Plugin.InAppBilling.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.InAppBilling.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.InAppBilling.1.2.2\lib\Xamarin.iOS10\Plugin.InAppBilling.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.LocalNotifications, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugins.Notifier.2.1.0\lib\Xamarin.iOS10\Plugin.LocalNotifications.dll</HintPath>
@@ -203,6 +213,18 @@
     </Reference>
     <Reference Include="Plugin.Settings.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugins.Settings.3.0.1\lib\Xamarin.iOS10\Plugin.Settings.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Share, Version=7.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.Share.7.0.1\lib\Xamarin.iOS10\Plugin.Share.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Share.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.Share.7.0.1\lib\Xamarin.iOS10\Plugin.Share.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.TextToSpeech, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugins.TextToSpeech.3.0.1\lib\Xamarin.iOS10\Plugin.TextToSpeech.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.TextToSpeech.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugins.TextToSpeech.3.0.1\lib\Xamarin.iOS10\Plugin.TextToSpeech.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="PushNotification.Plugin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugin.PushNotification.1.2.5-beta\lib\Xamarin.iOS10\PushNotification.Plugin.dll</HintPath>
@@ -256,20 +278,36 @@
     <Reference Include="Xamarin.iOS" />
     <Reference Include="System.Net.Http" />
     <Reference Include="Xamarin.RangeSlider.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.RangeSlider.0.6.17\lib\Xamarin.iOS10\Xamarin.RangeSlider.Common.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.RangeSlider.0.6.18\lib\Xamarin.iOS10\Xamarin.RangeSlider.Common.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.RangeSlider.Forms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.RangeSlider.0.6.17\lib\Xamarin.iOS10\Xamarin.RangeSlider.Forms.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Forms.RangeSlider.0.6.18\lib\Xamarin.iOS10\Xamarin.RangeSlider.Forms.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.RangeSlider.Forms.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.RangeSlider.0.6.17\lib\Xamarin.iOS10\Xamarin.RangeSlider.Forms.iOS.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Forms.RangeSlider.0.6.18\lib\Xamarin.iOS10\Xamarin.RangeSlider.Forms.iOS.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.RangeSlider.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.RangeSlider.0.6.17\lib\Xamarin.iOS10\Xamarin.RangeSlider.iOS.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.RangeSlider.0.6.18\lib\Xamarin.iOS10\Xamarin.RangeSlider.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXing.Net.Mobile.Core, Version=2.2.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ZXing.Net.Mobile.2.2.9\lib\Xamarin.iOS10\ZXing.Net.Mobile.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXing.Net.Mobile.Forms, Version=2.2.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ZXing.Net.Mobile.Forms.2.2.9\lib\Xamarin.iOS10\ZXing.Net.Mobile.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXing.Net.Mobile.Forms.iOS, Version=2.2.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ZXing.Net.Mobile.Forms.2.2.9\lib\Xamarin.iOS10\ZXing.Net.Mobile.Forms.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.portable, Version=2.2.9.0, Culture=neutral, PublicKeyToken=830ae994e36ac27d, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ZXing.Net.Mobile.2.2.9\lib\Xamarin.iOS10\zxing.portable.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXingNetMobile, Version=2.2.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ZXing.Net.Mobile.2.2.9\lib\Xamarin.iOS10\ZXingNetMobile.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <BundleResource Include="GoogleService-Info.plist" />
     <None Include="Info.plist">
       <SubType>Designer</SubType>
     </None>
@@ -288,6 +326,7 @@
     <Compile Include="RangeSliderInitialization.cs" />
     <Compile Include="Renderer\AdMobRenderer.cs" />
     <Compile Include="Renderer\CustomMultiLineLabelRenderer.cs" />
+    <Compile Include="Renderer\CustomSearchBarRenderer .cs" />
     <Compile Include="Renderer\CustomSliderRenderer .cs" />
   </ItemGroup>
   <ItemGroup>
@@ -595,6 +634,27 @@
     <BundleResource Include="Resources\ic_view_carousel_white%403x.png" />
   </ItemGroup>
   <ItemGroup>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\100x100.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\114x114.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\144x144.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\29x29.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\50x50.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\57x57x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\72x72.png">
+      <InProject>false</InProject>
+    </ImageAsset>
     <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\Contents.json">
       <InProject>false</InProject>
     </ImageAsset>
@@ -741,72 +801,6 @@
     <BundleResource Include="Resources\ic_settings%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\slider-default_trackBackground%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default7-trackCrossedOver%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default7-trackCrossedOver.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default7-trackBackground%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default7-trackBackground.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default7-track%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default7-track.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default7-handle%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default7-handle.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default7-handle-disabled%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default7-handle-disabled.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default-trackCrossedOver%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default-trackCrossedOver.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default-trackBackground.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default-track%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default-track.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default-handle%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default-handle.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default-handle-highlighted%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default-handle-highlighted.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default-handle-disabled%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default-handle-disabled.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="PushNotificationApplicationDelegate.txt" />
     <BundleResource Include="Resources\ic_show_chart.png" />
     <BundleResource Include="Resources\ic_show_chart%402x.png" />
@@ -814,6 +808,40 @@
     <BundleResource Include="Resources\ic_filter_list%403x.png" />
     <BundleResource Include="Resources\ic_filter_list%402x.png" />
     <BundleResource Include="Resources\ic_filter_list.png" />
+    <BundleResource Include="Resources\ic_content_copy.png" />
+    <BundleResource Include="Resources\ic_content_copy%402x.png" />
+    <BundleResource Include="Resources\ic_content_copy%403x.png" />
+    <BundleResource Include="Resources\slider-default_trackBackground%402x.png" />
+    <BundleResource Include="Resources\slider-default7-trackCrossedOver%402x.png" />
+    <BundleResource Include="Resources\slider-default7-trackCrossedOver.png" />
+    <BundleResource Include="Resources\slider-default7-trackBackground%402x.png" />
+    <BundleResource Include="Resources\slider-default7-trackBackground.png" />
+    <BundleResource Include="Resources\slider-default7-track%402x.png" />
+    <BundleResource Include="Resources\slider-default7-track.png" />
+    <BundleResource Include="Resources\slider-default7-handle%402x.png" />
+    <BundleResource Include="Resources\slider-default7-handle.png" />
+    <BundleResource Include="Resources\slider-default7-handle-disabled%402x.png" />
+    <BundleResource Include="Resources\slider-default7-handle-disabled.png" />
+    <BundleResource Include="Resources\slider-default-trackCrossedOver%402x.png" />
+    <BundleResource Include="Resources\slider-default-trackCrossedOver.png" />
+    <BundleResource Include="Resources\slider-default-trackBackground.png" />
+    <BundleResource Include="Resources\slider-default-track%402x.png" />
+    <BundleResource Include="Resources\slider-default-track.png" />
+    <BundleResource Include="Resources\slider-default-handle%402x.png" />
+    <BundleResource Include="Resources\slider-default-handle.png" />
+    <BundleResource Include="Resources\slider-default-handle-highlighted%402x.png" />
+    <BundleResource Include="Resources\slider-default-handle-highlighted.png" />
+    <BundleResource Include="Resources\slider-default-handle-disabled%402x.png" />
+    <BundleResource Include="Resources\slider-default-handle-disabled.png" />
+    <BundleResource Include="Resources\ic_arrow_drop_down.png" />
+    <BundleResource Include="Resources\ic_arrow_drop_down%402x.png" />
+    <BundleResource Include="Resources\ic_arrow_drop_down%403x.png" />
+    <BundleResource Include="Resources\ic_arrow_drop_up.png" />
+    <BundleResource Include="Resources\ic_arrow_drop_up%402x.png" />
+    <BundleResource Include="Resources\ic_arrow_drop_up%403x.png" />
+    <BundleResource Include="Resources\ic_qrcode.png" />
+    <BundleResource Include="Resources\ic_qrcode%402x.png" />
+    <BundleResource Include="Resources\ic_qrcode%403x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.5.235-pre2\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.5.235-pre2\build\netstandard1.0\Xamarin.Forms.targets')" />
@@ -822,18 +850,22 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\..\packages\Xamarin.Forms.2.3.5.235-pre2\build\netstandard1.0\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.2.3.5.235-pre2\build\netstandard1.0\Xamarin.Forms.targets'))" />
-    <Error Condition="!Exists('..\..\packages\Xamarin.Google.iOS.MobileAds.7.16.0\build\Xamarin.Google.iOS.MobileAds.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Google.iOS.MobileAds.7.16.0\build\Xamarin.Google.iOS.MobileAds.targets'))" />
-    <Error Condition="!Exists('..\..\packages\Xamarin.Firebase.iOS.Core.3.4.6\build\Xamarin.Firebase.iOS.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Firebase.iOS.Core.3.4.6\build\Xamarin.Firebase.iOS.Core.targets'))" />
-    <Error Condition="!Exists('..\..\packages\Xamarin.Firebase.iOS.InstanceID.1.0.8.1\build\Xamarin.Firebase.iOS.InstanceID.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Firebase.iOS.InstanceID.1.0.8.1\build\Xamarin.Firebase.iOS.InstanceID.targets'))" />
-    <Error Condition="!Exists('..\..\packages\Xamarin.Firebase.iOS.Analytics.3.6.0.2\build\Xamarin.Firebase.iOS.Analytics.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Firebase.iOS.Analytics.3.6.0.2\build\Xamarin.Firebase.iOS.Analytics.targets'))" />
-    <Error Condition="!Exists('..\..\packages\Xamarin.Google.iOS.Core.3.0.3.3\build\Xamarin.Google.iOS.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Google.iOS.Core.3.0.3.3\build\Xamarin.Google.iOS.Core.targets'))" />
     <Error Condition="!Exists('..\..\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.props'))" />
     <Error Condition="!Exists('..\..\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Firebase.iOS.Core.3.5.2\build\Xamarin.Firebase.iOS.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Firebase.iOS.Core.3.5.2\build\Xamarin.Firebase.iOS.Core.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Firebase.iOS.InstanceID.1.0.9\build\Xamarin.Firebase.iOS.InstanceID.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Firebase.iOS.InstanceID.1.0.9\build\Xamarin.Firebase.iOS.InstanceID.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Firebase.iOS.Analytics.3.7.0\build\Xamarin.Firebase.iOS.Analytics.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Firebase.iOS.Analytics.3.7.0\build\Xamarin.Firebase.iOS.Analytics.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Firebase.iOS.CloudMessaging.1.2.2\build\Xamarin.Firebase.iOS.CloudMessaging.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Firebase.iOS.CloudMessaging.1.2.2\build\Xamarin.Firebase.iOS.CloudMessaging.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Google.iOS.Core.3.0.3.5\build\Xamarin.Google.iOS.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Google.iOS.Core.3.0.3.5\build\Xamarin.Google.iOS.Core.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Google.iOS.MobileAds.7.19.0\build\Xamarin.Google.iOS.MobileAds.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Google.iOS.MobileAds.7.19.0\build\Xamarin.Google.iOS.MobileAds.targets'))" />
+    <Error Condition="!Exists('..\..\packages\NETStandard.Library.2.0.0\build\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\NETStandard.Library.2.0.0\build\NETStandard.Library.targets'))" />
   </Target>
-  <Import Project="..\..\packages\Xamarin.Google.iOS.MobileAds.7.16.0\build\Xamarin.Google.iOS.MobileAds.targets" Condition="Exists('..\..\packages\Xamarin.Google.iOS.MobileAds.7.16.0\build\Xamarin.Google.iOS.MobileAds.targets')" />
-  <Import Project="..\..\packages\Xamarin.Firebase.iOS.Core.3.4.6\build\Xamarin.Firebase.iOS.Core.targets" Condition="Exists('..\..\packages\Xamarin.Firebase.iOS.Core.3.4.6\build\Xamarin.Firebase.iOS.Core.targets')" />
-  <Import Project="..\..\packages\Xamarin.Firebase.iOS.InstanceID.1.0.8.1\build\Xamarin.Firebase.iOS.InstanceID.targets" Condition="Exists('..\..\packages\Xamarin.Firebase.iOS.InstanceID.1.0.8.1\build\Xamarin.Firebase.iOS.InstanceID.targets')" />
-  <Import Project="..\..\packages\Xamarin.Firebase.iOS.Analytics.3.6.0.2\build\Xamarin.Firebase.iOS.Analytics.targets" Condition="Exists('..\..\packages\Xamarin.Firebase.iOS.Analytics.3.6.0.2\build\Xamarin.Firebase.iOS.Analytics.targets')" />
-  <Import Project="..\..\packages\Xamarin.Google.iOS.Core.3.0.3.3\build\Xamarin.Google.iOS.Core.targets" Condition="Exists('..\..\packages\Xamarin.Google.iOS.Core.3.0.3.3\build\Xamarin.Google.iOS.Core.targets')" />
   <Import Project="..\..\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.targets" Condition="Exists('..\..\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.targets')" />
+  <Import Project="..\..\packages\Xamarin.Firebase.iOS.Core.3.5.2\build\Xamarin.Firebase.iOS.Core.targets" Condition="Exists('..\..\packages\Xamarin.Firebase.iOS.Core.3.5.2\build\Xamarin.Firebase.iOS.Core.targets')" />
+  <Import Project="..\..\packages\Xamarin.Firebase.iOS.InstanceID.1.0.9\build\Xamarin.Firebase.iOS.InstanceID.targets" Condition="Exists('..\..\packages\Xamarin.Firebase.iOS.InstanceID.1.0.9\build\Xamarin.Firebase.iOS.InstanceID.targets')" />
+  <Import Project="..\..\packages\Xamarin.Firebase.iOS.Analytics.3.7.0\build\Xamarin.Firebase.iOS.Analytics.targets" Condition="Exists('..\..\packages\Xamarin.Firebase.iOS.Analytics.3.7.0\build\Xamarin.Firebase.iOS.Analytics.targets')" />
+  <Import Project="..\..\packages\Xamarin.Firebase.iOS.CloudMessaging.1.2.2\build\Xamarin.Firebase.iOS.CloudMessaging.targets" Condition="Exists('..\..\packages\Xamarin.Firebase.iOS.CloudMessaging.1.2.2\build\Xamarin.Firebase.iOS.CloudMessaging.targets')" />
+  <Import Project="..\..\packages\Xamarin.Google.iOS.Core.3.0.3.5\build\Xamarin.Google.iOS.Core.targets" Condition="Exists('..\..\packages\Xamarin.Google.iOS.Core.3.0.3.5\build\Xamarin.Google.iOS.Core.targets')" />
+  <Import Project="..\..\packages\Xamarin.Google.iOS.MobileAds.7.19.0\build\Xamarin.Google.iOS.MobileAds.targets" Condition="Exists('..\..\packages\Xamarin.Google.iOS.MobileAds.7.19.0\build\Xamarin.Google.iOS.MobileAds.targets')" />
+  <Import Project="..\..\packages\NETStandard.Library.2.0.0\build\NETStandard.Library.targets" Condition="Exists('..\..\packages\NETStandard.Library.2.0.0\build\NETStandard.Library.targets')" />
 </Project>

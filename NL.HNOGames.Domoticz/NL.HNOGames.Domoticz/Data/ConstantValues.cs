@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace NL.HNOGames.Domoticz.Data
 {
@@ -11,173 +13,249 @@ namespace NL.HNOGames.Domoticz.Data
             Year
         }
 
+        public static int GetSelectorValue(Models.Device mDevicesInfo, string value)
+        {
+            if (mDevicesInfo?.LevelNamesArray == null)
+                return 0;
+            var jsonValue = 0;
+            if (string.IsNullOrEmpty(value)) return jsonValue;
+            var levelNames = new List<string>(mDevicesInfo.LevelNamesArray);
+            var counter = levelNames.TakeWhile(l => string.Compare(l, value, StringComparison.OrdinalIgnoreCase) != 0).Sum(l => 10);
+            jsonValue = counter;
+            return jsonValue;
+        }
+
+        public static bool CanHandleAutomatedToggle(Models.Device mDeviceInfo)
+        {
+            if (mDeviceInfo == null)
+                return false;
+            if (mDeviceInfo.SwitchTypeVal == 0 &&
+                (mDeviceInfo.SwitchType == null))
+            {
+                if (mDeviceInfo.SubType != null && mDeviceInfo.SubType ==
+                    Device.Utility.SubType.SMARTWARES)
+                    return true;
+                switch (mDeviceInfo.Type)
+                {
+                    case Device.Scene.Type.GROUP:
+                        return true;
+                    case Device.Scene.Type.SCENE:
+                        return true;
+                    case Device.Utility.Type.THERMOSTAT:
+                        return false;
+                    case Device.Utility.Type.HEATING:
+                        return false;
+                    default:
+                        return false;
+                }
+            }
+            if ((mDeviceInfo.SwitchType == null))
+                return false;
+            switch (mDeviceInfo.SwitchTypeVal)
+            {
+                case Device.Type.Value.ON_OFF:
+                case Device.Type.Value.MEDIAPLAYER:
+                case Device.Type.Value.DOORLOCK:
+                case Device.Type.Value.DOORCONTACT:
+                    switch (mDeviceInfo.SwitchType)
+                    {
+                        case Device.Type.Name.SECURITY:
+                            return false;
+                        default:
+                            return true;
+                    }
+                case Device.Type.Value.X10SIREN:
+                case Device.Type.Value.MOTION:
+                case Device.Type.Value.CONTACT:
+                case Device.Type.Value.DUSKSENSOR:
+                case Device.Type.Value.SMOKE_DETECTOR:
+                case Device.Type.Value.DOORBELL:
+                case Device.Type.Value.PUSH_ON_BUTTON:
+                case Device.Type.Value.PUSH_OFF_BUTTON:
+                case Device.Type.Value.DIMMER:
+                case Device.Type.Value.BLINDPERCENTAGE:
+                case Device.Type.Value.BLINDPERCENTAGEINVERTED:
+                case Device.Type.Value.SELECTOR:
+                case Device.Type.Value.BLINDS:
+                case Device.Type.Value.BLINDINVERTED:
+                case Device.Type.Value.BLINDVENETIAN:
+                case Device.Type.Value.BLINDVENETIANUS:
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
         public static bool CanHandleStopButton(Models.Device mDeviceInfo)
         {
             return (mDeviceInfo.SubType.Contains("RAEX")) ||
-                    (mDeviceInfo.SubType.Contains("A-OK")) ||
-                    (mDeviceInfo.SubType.Contains("Harrison")) ||
-                    (mDeviceInfo.SubType.Contains("RFY")) ||
-                    (mDeviceInfo.SubType.Contains("ASA")) ||
-                    (mDeviceInfo.SubType.Contains("Hasta")) ||
-                    (mDeviceInfo.SubType.Contains("Media Mount")) ||
-                    (mDeviceInfo.SubType.Contains("Forest")) ||
-                    (mDeviceInfo.SubType.Contains("Chamberlain")) ||
-                    (mDeviceInfo.SubType.Contains("Sunpery")) ||
-                    (mDeviceInfo.SubType.Contains("Dolat")) ||
-                    (mDeviceInfo.SubType.Contains("DC106")) ||
-                    (mDeviceInfo.SubType.Contains("Confexx")) ||
-                    (mDeviceInfo.SubType.Contains("ASP"));
+                   (mDeviceInfo.SubType.Contains("A-OK")) ||
+                   (mDeviceInfo.SubType.Contains("Harrison")) ||
+                   (mDeviceInfo.SubType.Contains("RFY")) ||
+                   (mDeviceInfo.SubType.Contains("ASA")) ||
+                   (mDeviceInfo.SubType.Contains("Hasta")) ||
+                   (mDeviceInfo.SubType.Contains("Media Mount")) ||
+                   (mDeviceInfo.SubType.Contains("Forest")) ||
+                   (mDeviceInfo.SubType.Contains("Chamberlain")) ||
+                   (mDeviceInfo.SubType.Contains("Sunpery")) ||
+                   (mDeviceInfo.SubType.Contains("Dolat")) ||
+                   (mDeviceInfo.SubType.Contains("DC106")) ||
+                   (mDeviceInfo.SubType.Contains("Confexx")) ||
+                   (mDeviceInfo.SubType.Contains("ASP"));
         }
 
         public static class Url
         {
             public static class Action
             {
-                public const String ON = "On";
-                public const String OFF = "Off";
-                public const String UP = "Up";
-                public const String STOP = "Stop";
-                public const String DOWN = "Down";
-                public const String PLUS = "Plus";
-                public const String MIN = "Min";
+                public const string ON = "On";
+                public const string OFF = "Off";
+                public const string UP = "Up";
+                public const string STOP = "Stop";
+                public const string DOWN = "Down";
+                public const string PLUS = "Plus";
+                public const string MIN = "Min";
             }
 
             public static class ModalAction
             {
-                public const String AUTO = "Auto";
-                public const String ECONOMY = "AutoWithEco";
-                public const String AWAY = "Away";
-                public const String DAY_OFF = "DayOff";
-                public const String CUSTOM = "Custom";
-                public const String HEATING_OFF = "HeatingOff";
+                public const string AUTO = "Auto";
+                public const string ECONOMY = "AutoWithEco";
+                public const string AWAY = "Away";
+                public const string DAY_OFF = "DayOff";
+                public const string CUSTOM = "Custom";
+                public const string HEATING_OFF = "HeatingOff";
             }
 
             public static class Category
             {
-                public const String ALLDEVICES = "/json.htm?type=devices";
-                public const String DEVICES = "/json.htm?type=devices&filter=all&used=true";
-                public const String FAVORITES = "/json.htm?type=devices&filter=all&used=true&favorite=1";
-                public const String VERSION = "/json.htm?type=command&param=getversion";
-                public const String DASHBOARD = ALLDEVICES + "&filter=all";
-                public const String SCENES = "/json.htm?type=scenes";
-                public const String SWITCHES = "/json.htm?type=command&param=getlightswitches";
-                public const String WEATHER = ALLDEVICES + "&filter=weather&used=true";
-                public const String CAMERAS = "/json.htm?type=cameras";
-                public const String CAMERA = "/camsnapshot.jpg?idx=";
-                public const String UTILITIES = ALLDEVICES + "&filter=utility&used=true";
-                public const String PLANS = "/json.htm?type=plans";
-                public const String TEMPERATURE = ALLDEVICES + "&filter=temp&used=true";
-                public const String SWITCHLOG = "/json.htm?type=lightlog&idx=";
-                public const String TEXTLOG = "/json.htm?type=textlog&idx=";
-                public const String SCENELOG = "/json.htm?type=scenelog&idx=";
-                public const String SWITCHTIMER = "/json.htm?type=timers&idx=";
+                public const string ALLDEVICES = "/json.htm?type=devices";
+                public const string DEVICES = "/json.htm?type=devices&filter=all&used=true";
+                public const string FAVORITES = "/json.htm?type=devices&filter=all&used=true&favorite=1";
+                public const string VERSION = "/json.htm?type=command&param=getversion";
+                public const string DASHBOARD = ALLDEVICES + "&filter=all";
+                public const string SCENES = "/json.htm?type=scenes";
+                public const string SWITCHES = "/json.htm?type=command&param=getlightswitches";
+                public const string WEATHER = ALLDEVICES + "&filter=weather&used=true";
+                public const string CAMERAS = "/json.htm?type=cameras";
+                public const string CAMERA = "/camsnapshot.jpg?idx=";
+                public const string UTILITIES = ALLDEVICES + "&filter=utility&used=true";
+                public const string PLANS = "/json.htm?type=plans";
+                public const string TEMPERATURE = ALLDEVICES + "&filter=temp&used=true";
+                public const string SWITCHLOG = "/json.htm?type=lightlog&idx=";
+                public const string TEXTLOG = "/json.htm?type=textlog&idx=";
+                public const string SCENELOG = "/json.htm?type=scenelog&idx=";
+                public const string SWITCHTIMER = "/json.htm?type=timers&idx=";
             }
 
             public static class Switch
             {
-                public const String DIM_LEVEL = "Set%20Level&level=";
-                public const String COLOR = "&hue=%hue%&brightness=%bright%&iswhite=false";
-                public const String GET = "/json.htm?type=command&param=switchlight&idx=";
-                public const String CMD = "&switchcmd=";
-                public const String LEVEL = "&level=";
+                public const string DIM_LEVEL = "Set%20Level&level=";
+                public const string COLOR = "&hue=%hue%&brightness=%bright%&iswhite=false";
+                public const string GET = "/json.htm?type=command&param=switchlight&idx=";
+                public const string CMD = "&switchcmd=";
+                public const string LEVEL = "&level=";
             }
 
             public static class ModalSwitch
             {
-                public const String GET = "/json.htm?type=command&param=switchmodal&idx=";
-                public const String STATUS = "&status=";
+                public const string GET = "/json.htm?type=command&param=switchmodal&idx=";
+                public const string STATUS = "&status=";
             }
 
             public static class Scene
             {
-                public const String GET = "/json.htm?type=command&param=switchscene&idx=";
+                public const string GET = "/json.htm?type=command&param=switchscene&idx=";
             }
 
             public static class Temp
             {
-                public const String GET = "/json.htm?type=command&param=udevice&idx=";
-                public const String VALUE = "&nvalue=0&svalue=";
+                public const string GET = "/json.htm?type=command&param=udevice&idx=";
+                public const string VALUE = "&nvalue=0&svalue=";
             }
 
             public static class Favorite
             {
-                public const String GET = "/json.htm?type=command&param=makefavorite&idx=";
-                public const String SCENE = "/json.htm?type=command&param=makescenefavorite&idx=";
-                public const String VALUE = "&isfavorite=";
+                public const string GET = "/json.htm?type=command&param=makefavorite&idx=";
+                public const string SCENE = "/json.htm?type=command&param=makescenefavorite&idx=";
+                public const string VALUE = "&isfavorite=";
             }
 
             public static class Protocol
             {
-                public const String HTTP = "http://";
-                public const String HTTPS = "https://";
+                public const string HTTP = "http://";
+                public const string HTTPS = "https://";
             }
 
             public static class Device
             {
-                public const String STATUS = "/json.htm?type=devices&rid=";
-                public const String SET_USED = "/json.htm?type=setused&idx=";
+                public const string STATUS = "/json.htm?type=devices&rid=";
+                public const string SET_USED = "/json.htm?type=setused&idx=";
             }
 
             public static class Sunrise
             {
-                public const String GET = "/json.htm?type=command&param=getSunRiseSet";
+                public const string GET = "/json.htm?type=command&param=getSunRiseSet";
             }
 
             public static class Plan
             {
-                public const String GET = "/json.htm?type=plans";
-                public const String DEVICES = "/json.htm?type=command&param=getplandevices&idx=";
+                public const string GET = "/json.htm?type=plans";
+                public const string DEVICES = "/json.htm?type=command&param=getplandevices&idx=";
             }
 
             public static class Log
             {
-                public const String GRAPH = "/json.htm?type=graph&idx=";
-                public const String GRAPH_RANGE = "&range=";
-                public const String GRAPH_TYPE = "&sensor=";
+                public const string GRAPH = "/json.htm?type=graph&idx=";
+                public const string GRAPH_RANGE = "&range=";
+                public const string GRAPH_TYPE = "&sensor=";
 
-                public const String GET_LOG = "/json.htm?type=command&param=getlog";
-                public const String GET_FROMLASTLOGTIME = "/json.htm?type=command&param=getlog&lastlogtime=";
+                public const string GET_LOG = "/json.htm?type=command&param=getlog";
+                public const string GET_FROMLASTLOGTIME = "/json.htm?type=command&param=getlog&lastlogtime=";
             }
 
             public static class Notification
             {
-                public const String NOTIFICATION = "/json.htm?type=notifications&idx=";
+                public const string NOTIFICATION = "/json.htm?type=notifications&idx=";
             }
 
             public static class Security
             {
-                public const String GET = "/json.htm?type=command&param=getsecstatus";
+                public const string GET = "/json.htm?type=command&param=getsecstatus";
             }
 
             public static class UserVariable
             {
-                public const String UPDATE = "/json.htm?type=command&param=updateuservariable";
+                public const string UPDATE = "/json.htm?type=command&param=updateuservariable";
             }
 
             public static class System
             {
-                public const String UPDATE = "/json.htm?type=command&param=checkforupdate&forced=true";
-                public const String USERVARIABLES = "/json.htm?type=command&param=getuservariables";
-                public const String EVENTS = "/json.htm?type=events&param=list";
-                public const String EVENTS_UPDATE_STATUS = "/json.htm?type=events&param=updatestatus&eventid=";
-                public const String RGBCOLOR = "/json.htm?type=command&param=setcolbrightnessvalue&idx=";
-                public const String SETTINGS = "/json.htm?type=settings";
-                public const String CONFIG = "/json.htm?type=command&param=getconfig";
-                public const String SETSECURITY = "/json.htm?type=command&param=setsecstatus";
-                public const String DOWNLOAD_READY = "/json.htm?type=command&param=downloadready";
-                public const String UPDATE_DOMOTICZ_SERVER = "/json.htm?type=command&param=execute_script&scriptname=update_domoticz&direct=true";
-                public const String ADD_MOBILE_DEVICE = "/json.htm?type=command&param=addmobiledevice";
-                public const String CLEAN_MOBILE_DEVICE = "/json.htm?type=command&param=deletemobiledevice";
-                public const String LANGUAGE_TRANSLATIONS = "/i18n/domoticz-";
-                public const String USERS = "/json.htm?type=users";
-                public const String AUTH = "/json.htm?type=command&param=getauth";
-                public const String LOGOFF = "/json.htm?type=command&param=dologout";
+                public const string UPDATE = "/json.htm?type=command&param=checkforupdate&forced=true";
+                public const string USERVARIABLES = "/json.htm?type=command&param=getuservariables";
+                public const string EVENTS = "/json.htm?type=events&param=list";
+                public const string EVENTS_UPDATE_STATUS = "/json.htm?type=events&param=updatestatus&eventid=";
+                public const string RGBCOLOR = "/json.htm?type=command&param=setcolbrightnessvalue&idx=";
+                public const string SETTINGS = "/json.htm?type=settings";
+                public const string CONFIG = "/json.htm?type=command&param=getconfig";
+                public const string SETSECURITY = "/json.htm?type=command&param=setsecstatus";
+                public const string DOWNLOAD_READY = "/json.htm?type=command&param=downloadready";
+
+                public const string UPDATE_DOMOTICZ_SERVER =
+                    "/json.htm?type=command&param=execute_script&scriptname=update_domoticz&direct=true";
+
+                public const string ADD_MOBILE_DEVICE = "/json.htm?type=command&param=addmobiledevice";
+                public const string CLEAN_MOBILE_DEVICE = "/json.htm?type=command&param=deletemobiledevice";
+                public const string LANGUAGE_TRANSLATIONS = "/i18n/domoticz-";
+                public const string USERS = "/json.htm?type=users";
+                public const string AUTH = "/json.htm?type=command&param=getauth";
+                public const string LOGOFF = "/json.htm?type=command&param=dologout";
             }
 
             public static class Event
             {
-                public const String ON = "&eventstatus=1";
-                public const String OFF = "&eventstatus=0";
+                public const string ON = "&eventstatus=1";
+                public const string OFF = "&eventstatus=0";
             }
         }
 
@@ -185,7 +263,7 @@ namespace NL.HNOGames.Domoticz.Data
         {
             public static class Type
             {
-                public const String EVENT = "Event";
+                public const string EVENT = "Event";
             }
 
             public static class Action
@@ -207,13 +285,12 @@ namespace NL.HNOGames.Domoticz.Data
 
         public static class Device
         {
-
             public static class Scene
             {
                 public static class Type
                 {
-                    public const String GROUP = "Group";
-                    public const String SCENE = "Scene";
+                    public const string GROUP = "Group";
+                    public const string SCENE = "Scene";
                 }
 
                 public static class Action
@@ -235,7 +312,7 @@ namespace NL.HNOGames.Domoticz.Data
 
             public static class Hardware
             {
-                public const String EVOHOME = "evohome";
+                public const string EVOHOME = "evohome";
             }
 
             public static class Dimmer
@@ -251,22 +328,22 @@ namespace NL.HNOGames.Domoticz.Data
             {
                 public static class Type
                 {
-                    public const String HEATING = "Heating";
-                    public const String THERMOSTAT = "Thermostat";
+                    public const string HEATING = "Heating";
+                    public const string THERMOSTAT = "Thermostat";
                 }
 
                 public static class SubType
                 {
-                    public const String TEXT = "Text";
-                    public const String PERCENTAGE = "Percentage";
-                    public const String ENERGY = "Energy";
-                    public const String KWH = "kWh";
-                    public const String GAS = "Gas";
-                    public const String ELECTRIC = "Electric";
-                    public const String VOLTCRAFT = "Voltcraft";
-                    public const String SETPOINT = "SetPoint";
-                    public const String YOULESS = "YouLess";
-                    public const String SMARTWARES = "Smartwares";
+                    public const string TEXT = "Text";
+                    public const string PERCENTAGE = "Percentage";
+                    public const string ENERGY = "Energy";
+                    public const string KWH = "kWh";
+                    public const string GAS = "Gas";
+                    public const string ELECTRIC = "Electric";
+                    public const string VOLTCRAFT = "Voltcraft";
+                    public const string SETPOINT = "SetPoint";
+                    public const string YOULESS = "YouLess";
+                    public const string SMARTWARES = "Smartwares";
                 }
             }
 
@@ -274,11 +351,11 @@ namespace NL.HNOGames.Domoticz.Data
             {
                 public static class State
                 {
-                    public const String CLOSED = "Closed";
-                    public const String OPEN = "Open";
-                    public const String STOPPED = "Stopped";
-                    public const String ON = "On";
-                    public const String OFF = "Off";
+                    public const string CLOSED = "Closed";
+                    public const string OPEN = "Open";
+                    public const string STOPPED = "Stopped";
+                    public const string ON = "On";
+                    public const string OFF = "Off";
                 }
 
                 public static class Action
@@ -342,30 +419,30 @@ namespace NL.HNOGames.Domoticz.Data
 
                 public static class Name
                 {
-                    public const String DOORBELL = "Doorbell";
-                    public const String CONTACT = "Contact";
-                    public const String BLINDS = "Blinds";
-                    public const String SMOKE_DETECTOR = "Smoke Detector";
-                    public const String DIMMER = "Dimmer";
-                    public const String MOTION = "Motion Sensor";
-                    public const String PUSH_ON_BUTTON = "Push On Button";
-                    public const String PUSH_OFF_BUTTON = "Push Off Button";
-                    public const String ON_OFF = "On/Off";
-                    public const String SECURITY = "Security";
-                    public const String X10SIREN = "X10 Siren";
-                    public const String MEDIAPLAYER = "Media Player";
-                    public const String DUSKSENSOR = "Dusk Sensor";
-                    public const String DOORLOCK = "Door Lock";
-                    public const String DOORCONTACT = "Door Contact";
-                    public const String BLINDPERCENTAGE = "Blinds Percentage";
-                    public const String BLINDVENETIAN = "Venetian Blinds EU";
-                    public const String BLINDVENETIANUS = "Venetian Blinds US";
-                    public const String BLINDINVERTED = "Blinds Inverted";
-                    public const String BLINDPERCENTAGEINVERTED = "Blinds Percentage Inverted";
-                    public const String TEMPHUMIDITYBARO = "Temp + Humidity + Baro";
-                    public const String WIND = "Wind";
-                    public const String SELECTOR = "Selector";
-                    public const String EVOHOME = "evohome";
+                    public const string DOORBELL = "Doorbell";
+                    public const string CONTACT = "Contact";
+                    public const string BLINDS = "Blinds";
+                    public const string SMOKE_DETECTOR = "Smoke Detector";
+                    public const string DIMMER = "Dimmer";
+                    public const string MOTION = "Motion Sensor";
+                    public const string PUSH_ON_BUTTON = "Push On Button";
+                    public const string PUSH_OFF_BUTTON = "Push Off Button";
+                    public const string ON_OFF = "On/Off";
+                    public const string SECURITY = "Security";
+                    public const string X10SIREN = "X10 Siren";
+                    public const string MEDIAPLAYER = "Media Player";
+                    public const string DUSKSENSOR = "Dusk Sensor";
+                    public const string DOORLOCK = "Door Lock";
+                    public const string DOORCONTACT = "Door Contact";
+                    public const string BLINDPERCENTAGE = "Blinds Percentage";
+                    public const string BLINDVENETIAN = "Venetian Blinds EU";
+                    public const string BLINDVENETIANUS = "Venetian Blinds US";
+                    public const string BLINDINVERTED = "Blinds Inverted";
+                    public const string BLINDPERCENTAGEINVERTED = "Blinds Percentage Inverted";
+                    public const string TEMPHUMIDITYBARO = "Temp + Humidity + Baro";
+                    public const string WIND = "Wind";
+                    public const string SELECTOR = "Selector";
+                    public const string EVOHOME = "evohome";
                 }
             }
 
@@ -380,9 +457,9 @@ namespace NL.HNOGames.Domoticz.Data
 
                 public static class Name
                 {
-                    public const String RGB = "RGB";
-                    public const String SECURITYPANEL = "Security Panel";
-                    public const String EVOHOME = "Evohome";
+                    public const string RGB = "RGB";
+                    public const string SECURITYPANEL = "Security Panel";
+                    public const string EVOHOME = "Evohome";
                 }
             }
 
@@ -397,11 +474,11 @@ namespace NL.HNOGames.Domoticz.Data
         {
             public static class Field
             {
-                public const String RESULT = "result";
-                public const String STATUS = "status";
-                public const String VERSION = "version";
-                public const String MESSAGE = "message";
-                public const String ERROR = "ERROR";
+                public const string RESULT = "result";
+                public const string STATUS = "status";
+                public const string VERSION = "version";
+                public const string MESSAGE = "message";
+                public const string ERROR = "ERROR";
             }
 
             public static class Url
@@ -471,8 +548,8 @@ namespace NL.HNOGames.Domoticz.Data
         {
             public static class Action
             {
-                public const String ON = "1";
-                public const String OFF = "0";
+                public const string ON = "1";
+                public const string OFF = "0";
             }
         }
     }

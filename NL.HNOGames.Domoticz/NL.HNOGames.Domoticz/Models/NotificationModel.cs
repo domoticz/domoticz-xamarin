@@ -48,7 +48,7 @@ namespace NL.HNOGames.Domoticz.Models
             get
             {
                 String type = "";
-                if (String.IsNullOrEmpty(ActiveSystems))
+                if (string.IsNullOrEmpty(ActiveSystems))
                     type = AppResources.allsystems;
                 else
                     type += AppResources.systems + ": " + ActiveSystems.Replace(";", ", ");

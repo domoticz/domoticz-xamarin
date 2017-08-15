@@ -30,10 +30,11 @@ You can download Domoticz from the Google Play Store. There is a premium and fre
 -----
 Some iOS screenshots
 ![settings](https://cloud.githubusercontent.com/assets/14561640/24851299/6d2d0554-1dd3-11e7-97a1-fda525389ab6.png)  
-![dashboard](https://cloud.githubusercontent.com/assets/14561640/25741261/374a7a96-318a-11e7-811d-e4318b94349c.png)  
-![plan](https://cloud.githubusercontent.com/assets/14561640/25741258/3733119e-318a-11e7-8acb-578eb27793d5.png)  
-![graph](https://user-images.githubusercontent.com/14561640/27278154-d2422cd2-54e0-11e7-861f-5876f32f1ecd.png)
-
+![5](https://user-images.githubusercontent.com/14561640/29310108-ca32305c-81ac-11e7-916d-973a1fb0e4fa.jpg)
+![1](https://user-images.githubusercontent.com/14561640/29310106-ca32251c-81ac-11e7-8477-f3524ab81b2a.jpg)
+![2](https://user-images.githubusercontent.com/14561640/29310105-ca309e22-81ac-11e7-924a-171d65912367.jpg)
+![3](https://user-images.githubusercontent.com/14561640/29310109-ca33f8ba-81ac-11e7-81bc-b55716aaa1b4.jpg)
+![4](https://user-images.githubusercontent.com/14561640/29310107-ca324394-81ac-11e7-9b7f-092a44681602.jpg)
 
 
 # Credits

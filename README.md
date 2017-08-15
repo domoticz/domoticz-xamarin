@@ -29,11 +29,11 @@ You can download Domoticz from the Google Play Store. There is a premium and fre
 # iOS Screenshots
 -----
 Some iOS screenshots
-![5](https://user-images.githubusercontent.com/14561640/29310108-ca32305c-81ac-11e7-916d-973a1fb0e4fa.jpg width="48")
-![1](https://user-images.githubusercontent.com/14561640/29310106-ca32251c-81ac-11e7-8477-f3524ab81b2a.jpg width="48")
-![2](https://user-images.githubusercontent.com/14561640/29310105-ca309e22-81ac-11e7-924a-171d65912367.jpg width="48")
-![3](https://user-images.githubusercontent.com/14561640/29310109-ca33f8ba-81ac-11e7-81bc-b55716aaa1b4.jpg width="48")
-![4](https://user-images.githubusercontent.com/14561640/29310107-ca324394-81ac-11e7-9b7f-092a44681602.jpg width="48")
+![5](https://user-images.githubusercontent.com/14561640/29310108-ca32305c-81ac-11e7-916d-973a1fb0e4fa.jpg){:height="36px" width="36px"}.
+![1](https://user-images.githubusercontent.com/14561640/29310106-ca32251c-81ac-11e7-8477-f3524ab81b2a.jpg){:height="36px" width="36px"}.
+![2](https://user-images.githubusercontent.com/14561640/29310105-ca309e22-81ac-11e7-924a-171d65912367.jpg){:height="36px" width="36px"}.
+![3](https://user-images.githubusercontent.com/14561640/29310109-ca33f8ba-81ac-11e7-81bc-b55716aaa1b4.jpg){:height="36px" width="36px"}.
+![4](https://user-images.githubusercontent.com/14561640/29310107-ca324394-81ac-11e7-9b7f-092a44681602.jpg){:height="36px" width="36px"}.
 
 
 # Credits

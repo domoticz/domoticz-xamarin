@@ -321,7 +321,7 @@ namespace NL.HNOGames.Domoticz.Data
         /// </summary>
         private static async Task<bool> IsUserOnLocalWifiAsync(ServerSettings server)
         {
-            if (!string.IsNullOrEmpty(server?.LOCAL_SERVER_URL))
+            if (server.IS_LOCAL_SERVER_ADDRESS_DIFFERENT && !string.IsNullOrEmpty(server?.LOCAL_SERVER_URL))
                 return await CrossConnectivity.Current.IsReachable(server.LOCAL_SERVER_URL, 1000);
             return false;
         }

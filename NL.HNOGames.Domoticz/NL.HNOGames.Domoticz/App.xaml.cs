@@ -7,6 +7,7 @@ using NL.HNOGames.Domoticz.Views.StartUp;
 using Plugin.TextToSpeech;
 using System;
 using System.Linq;
+using DLToolkit.Forms.Controls;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -80,10 +81,11 @@ namespace NL.HNOGames.Domoticz
         private void Init()
         {
             InitializeComponent();
-            AppSettings = new Settings {DebugInfo = string.Empty};
+            FlowListView.Init();
+            AppSettings = new Settings { DebugInfo = string.Empty };
 
             ConnectionService = new ConnectionService();
-            ApiService = new DataService {Server = AppSettings.ActiveServerSettings};
+            ApiService = new DataService { Server = AppSettings.ActiveServerSettings };
 
             if (Current.Resources == null)
                 Current.Resources = new ResourceDictionary();
@@ -195,11 +197,12 @@ namespace NL.HNOGames.Domoticz
                     }
                     if (screens == null || screens.Any(o => o.IsSelected && o.ID == "Utilities"))
                     {
-                        oOverviewTabbedPage.Children.Add(new DashboardPage(ViewModels.DashboardViewModel.ScreenTypeEnum.Utilities)
-                        {
-                            Title = AppResources.title_utilities,
-                            Icon = Device.RuntimePlatform == Device.iOS ? "ic_highlight_white.png" : null,
-                        });
+                        oOverviewTabbedPage.Children.Add(
+                            new DashboardPage(ViewModels.DashboardViewModel.ScreenTypeEnum.Utilities)
+                            {
+                                Title = AppResources.title_utilities,
+                                Icon = Device.RuntimePlatform == Device.iOS ? "ic_highlight_white.png" : null,
+                            });
                     }
 
                     oOverviewTabbedPage.SelectedItem = oOverviewTabbedPage.Children[AppSettings.StartupScreen];

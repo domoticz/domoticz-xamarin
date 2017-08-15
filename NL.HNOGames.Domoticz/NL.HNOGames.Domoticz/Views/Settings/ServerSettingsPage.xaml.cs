@@ -118,14 +118,14 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                     }
                     else
                     {
-                        lblResult.Text = App.ApiService.response != null
-                            ? App.ApiService.response.ReasonPhrase
+                        lblResult.Text = App.ApiService.Response != null
+                            ? App.ApiService.Response.ReasonPhrase
                             : AppResources.failed_to_get_switches;
                     }
                 }
                 else
-                    lblResult.Text = App.ApiService.response != null
-                        ? App.ApiService.response.ReasonPhrase
+                    lblResult.Text = App.ApiService.Response != null
+                        ? App.ApiService.Response.ReasonPhrase
                         : AppResources.error_timeout;
 
                 App.HideLoading();

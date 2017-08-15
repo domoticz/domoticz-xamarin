@@ -78,7 +78,7 @@ namespace NL.HNOGames.Domoticz.ViewModels
                         items = await App.ApiService.GetTemperature(null);
                         break;
                     case ScreenTypeEnum.Utilities:
-                        items = await App.ApiService.getUtilities(null);
+                        items = await App.ApiService.GetUtilities(null);
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();

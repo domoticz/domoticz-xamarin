@@ -14,6 +14,7 @@ namespace NL.HNOGames.Domoticz.Data
     public class ConnectionService
     {
         public HttpClient Client;
+        private string _latestUsedbaseUrl = string.Empty;
 
         /// <summary>
         /// Constructor
@@ -28,6 +29,18 @@ namespace NL.HNOGames.Domoticz.Data
                 MaxResponseContentBufferSize = 256000,
                 Timeout = TimeSpan.FromMilliseconds(15000)
             };
+        }
+
+        /// <summary>
+        /// Construct Domoticz API Url
+        /// </summary>
+        public string ConstructGetUrlBasedOnPrevious(string jsonUrl)
+        {
+            if (string.IsNullOrEmpty(jsonUrl) || string.IsNullOrEmpty(_latestUsedbaseUrl))
+                return null;
+            var fullString = $"{_latestUsedbaseUrl}{jsonUrl}";
+            App.AddLog("JSON Call: " + fullString);
+            return fullString;
         }
 
         /// <summary>
@@ -82,11 +95,11 @@ namespace NL.HNOGames.Domoticz.Data
                 }
             }
 
-            var fullString = $"{protocol}{url}:{port}{(string.IsNullOrEmpty(directory) ? "" : "/" + directory)}{jsonUrl}";
+            _latestUsedbaseUrl = $"{protocol}{url}:{port}{(string.IsNullOrEmpty(directory) ? "" : "/" + directory)}";
+            var fullString = $"{_latestUsedbaseUrl}{jsonUrl}";
             App.AddLog("JSON Call: " + fullString);
             return fullString;
         }
-
 
         /// <summary>
         /// Create the Url for settings (Post) values
@@ -298,9 +311,8 @@ namespace NL.HNOGames.Domoticz.Data
                     break;
             }
 
-            var fullString =
-                $"{protocol}{baseUrl}:{port}{(string.IsNullOrEmpty(directory) ? "" : "/" + directory)}{jsonUrl}";
-            App.AddLog("JSON Action Call: " + fullString);
+            _latestUsedbaseUrl = $"{protocol}{baseUrl}:{port}{(string.IsNullOrEmpty(directory) ? "" : "/" + directory)}";
+            var fullString = $"{_latestUsedbaseUrl}{jsonUrl}";
             return fullString;
         }
 

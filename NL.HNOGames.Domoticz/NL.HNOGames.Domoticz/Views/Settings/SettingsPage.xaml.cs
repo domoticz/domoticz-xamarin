@@ -226,5 +226,10 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                 PremiumScreenSetup();
             }
         }
+
+        private async void BtnCameras_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CameraPage());
+        }
     }
 }

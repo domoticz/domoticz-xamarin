@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             x:Class="NL.HNOGames.Domoticz.Views.CameraPage"
+             Title="{Binding Title}">
+    <ContentPage.Content>
+        <StackLayout>
+            <controls:FlowListView x:Name="listView" 
+                                   FlowColumnCount="2" 
+                                   SeparatorVisibility="None" 
+                                   HasUnevenRows="false"
+                                   FlowItemTapped="ListView_OnFlowItemTapped"
+                                   BackgroundColor="White"
+                                   FlowItemsSource="{Binding Cameras}">
+                <controls:FlowListView.FlowColumnTemplate>
+                    <DataTemplate>
+                        <Grid Padding="3">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image>
+                                <Image.Source>
+                                    <StreamImageSource Stream="{Binding ImageStream}"  />
+                                </Image.Source>
+                            </Image>
+                            <Label HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="End" Text="{Binding Name}" Style="{StaticResource DetailType}"/>
+                        </Grid>
+                    </DataTemplate>
+                </controls:FlowListView.FlowColumnTemplate>
+            </controls:FlowListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

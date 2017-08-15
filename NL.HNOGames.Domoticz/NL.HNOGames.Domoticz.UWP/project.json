@@ -1,6 +1,7 @@
 ﻿{
   "dependencies": {
     "Acr.UserDialogs": "6.5.1",
+    "DLToolkit.Forms.Controls.FlowListView": "2.0.5",
     "Humanizer": "2.2.0",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.4.0",
     "modernhttpclient": "2.4.2",

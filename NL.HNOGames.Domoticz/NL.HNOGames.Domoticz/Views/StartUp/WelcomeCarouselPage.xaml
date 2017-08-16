@@ -25,7 +25,7 @@
             </StackLayout>
         </StackLayout>
     </ContentPage>
-    <ContentPage Appearing="ContentPage_Appearing" Style="{StaticResource ContentPageType}">
+    <ContentPage Style="{StaticResource ContentPageType}">
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
             <Label Style="{StaticResource HeaderType}" HorizontalOptions="CenterAndExpand" FontSize="Large"
                    Text="{resources:Translate title_activity_server_settings}" Margin="0,20,0,0" />
@@ -33,8 +33,6 @@
                    Text="{resources:Translate welcome_info_settings1}" Margin="0,10,0,0" LineBreakMode="WordWrap" />
             <Label Style="{StaticResource DetailType}" HorizontalOptions="StartAndExpand"
                    Text="{resources:Translate welcome_info_settings2}" Margin="0,10,0,0" LineBreakMode="WordWrap" />
-            <Button x:Name="btnImportSettings" Text="{resources:Translate import_settings}"
-                    Clicked="btnImportSettings_Clicked" IsVisible="False" />
 
             <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal"
                          Padding="20">

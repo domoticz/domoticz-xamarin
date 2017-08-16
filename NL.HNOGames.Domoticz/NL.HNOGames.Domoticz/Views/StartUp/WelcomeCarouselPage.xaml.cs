@@ -2,7 +2,6 @@
 using Newtonsoft.Json;
 using NL.HNOGames.Domoticz.Models;
 using NL.HNOGames.Domoticz.Resources;
-using PCLStorage;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -39,18 +38,6 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
         }
 
         /// <summary>
-        /// Read File Content
-        /// </summary>
-        public async Task<string> ReadFileContent(string fileName, IFolder rootFolder)
-        {
-            var exist = await rootFolder.CheckExistsAsync(fileName);
-            if (exist != ExistenceCheckResult.FileExists) return null;
-            var file = await rootFolder.GetFileAsync(fileName);
-            var text = await file.ReadAllTextAsync();
-            return text;
-        }
-
-        /// <summary>
         /// Show local settings
         /// </summary>
         private void swEnableLocalSettings_Toggled(object sender, ToggledEventArgs e)
@@ -65,12 +52,8 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
         {
             if (string.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_URL))
                 return false;
-            //if (string.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_PORT))
-            //    return false;
             if (!ServerSettings.IS_LOCAL_SERVER_ADDRESS_DIFFERENT) return true;
             return !string.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_URL);
-            //if (string.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_PORT))
-            //    return false;
         }
 
         /// <summary>
@@ -97,8 +80,6 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
                 return;
 
             IsBusy = true;
-
-            //save latest version
             App.AppSettings.ActiveServerSettings = ServerSettings;
             lblResult.Text = "";
             btnFinish.IsVisible = false;
@@ -156,43 +137,7 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
         {
             ProcessServerSettings();
         }
-
-        /// <summary>
-        /// IMport settings
-        /// </summary>
-        private async void btnImportSettings_Clicked(object sender, EventArgs e)
-        {
-            try
-            {
-                var rootFolder = SpecialFolder.Current.Pictures;
-                var folder = await rootFolder.CreateFolderAsync("Domoticz",
-                    CreationCollisionOption.OpenIfExists);
-                var fileContent = await ReadFileContent("domoticz_settings.txt", folder);
-                var settingsObject = JsonConvert.DeserializeObject<Helpers.Settings>(fileContent);
-                App.AppSettings = settingsObject;
-
-                App.ShowToast(AppResources.settings_imported);
-                ServerSettings = App.AppSettings.ActiveServerSettings;
-            }
-            catch (Exception ex)
-            {
-                App.AddLog(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// check if we have a settings file that can be imported
-        /// </summary>
-        private async void ContentPage_Appearing(object sender, EventArgs e)
-        {
-            var rootFolder = SpecialFolder.Current.Pictures;
-            var folder = await rootFolder.CreateFolderAsync("Domoticz",
-                CreationCollisionOption.OpenIfExists);
-
-            var exist = await folder.CheckExistsAsync("domoticz_settings.txt");
-            btnImportSettings.IsVisible = exist == ExistenceCheckResult.FileExists;
-        }
-
+        
         /// <summary>
         /// show next page
         /// </summary>

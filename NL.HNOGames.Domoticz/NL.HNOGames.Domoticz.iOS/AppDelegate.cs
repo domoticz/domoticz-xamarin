@@ -9,10 +9,7 @@ using PushNotification.Plugin;
 using NL.HNOGames.Domoticz.Helpers;
 using UserNotifications;
 using Firebase.CloudMessaging;
-using System.Diagnostics;
-using Firebase.InstanceID;
 using System.Net;
-using Plugin.LocalNotifications;
 
 namespace NL.HNOGames.Domoticz.iOS
 {

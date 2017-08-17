@@ -52,7 +52,9 @@ namespace NL.HNOGames.Domoticz.Helpers
             }
             catch (Exception ex)
             {
-                //Something has gone wrong
+                //Something else has gone wrong, log it
+                App.AddLog("Issue connecting: " + ex);
+                return false;
             }
             finally
             {

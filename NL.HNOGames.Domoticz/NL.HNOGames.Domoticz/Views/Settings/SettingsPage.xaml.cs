@@ -220,11 +220,23 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             });
             if (result)
             {
-                Helpers.InAppPurchaseHelper oPurchaser = new Helpers.InAppPurchaseHelper();
+                var oPurchaser = new Helpers.InAppPurchaseHelper();
                 if (await oPurchaser.PurchaseItem())
                     App.ShowToast("Thanks for buying premium!!");
                 PremiumScreenSetup();
             }
+        }
+
+        private async void BtnRestore_OnClicked(object sender, EventArgs e)
+        {
+            var oPurchaser = new Helpers.InAppPurchaseHelper();
+            if (await oPurchaser.WasItemPurchased())
+            {
+                App.ShowToast("Thanks for buying premium!!");
+                PremiumScreenSetup();
+            }
+            else
+                App.ShowToast("Could not restore your premium account.");
         }
 
         private async void BtnCameras_OnClicked(object sender, EventArgs e)

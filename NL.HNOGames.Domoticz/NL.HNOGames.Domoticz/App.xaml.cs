@@ -81,6 +81,7 @@ namespace NL.HNOGames.Domoticz
         private void Init()
         {
             InitializeComponent();
+
             FlowListView.Init();
             AppSettings = new Settings { DebugInfo = string.Empty };
 

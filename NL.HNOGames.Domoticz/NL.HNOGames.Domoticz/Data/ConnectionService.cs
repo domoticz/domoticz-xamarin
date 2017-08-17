@@ -24,7 +24,7 @@ namespace NL.HNOGames.Domoticz.Data
 
         private void RefreshClient()
         {
-            Client = new HttpClient
+            Client = new HttpClient()
             {
                 MaxResponseContentBufferSize = 256000,
                 Timeout = TimeSpan.FromMilliseconds(15000)

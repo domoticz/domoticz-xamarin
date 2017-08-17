@@ -1,12 +1,66 @@
 ﻿using Plugin.InAppBilling;
 using Plugin.InAppBilling.Abstractions;
 using System;
+using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace NL.HNOGames.Domoticz.Helpers
 {
     public class InAppPurchaseHelper
     {
+
+        public async Task<bool> WasItemPurchased(string productId = "134845")
+        {
+            var billing = CrossInAppBilling.Current;
+            try
+            {
+                var connected = await billing.ConnectAsync();
+
+                if (!connected)
+                {
+                    //Couldn't connect
+                    return false;
+                }
+
+#if DEBUG
+                CrossInAppBilling.Current.InTestingMode = true;
+#else
+            CrossInAppBilling.Current.InTestingMode = false;
+#endif
+
+                //check purchases
+                var purchases = await billing.GetPurchasesAsync(ItemType.InAppPurchase);
+
+                //check for null just incase
+                if (purchases?.Any(p => p.ProductId == productId) ?? false)
+                {
+                    //did not purchase
+                    App.AppSettings.PremiumBought = false;
+                }
+                else
+                {
+                    //purchased!
+                    App.AppSettings.PremiumBought = true;
+                    return true;
+                }
+            }
+            catch (InAppBillingPurchaseException purchaseEx)
+            {
+                //Billing Exception handle this based on the type
+                Debug.WriteLine("Error: " + purchaseEx);
+            }
+            catch (Exception ex)
+            {
+                //Something has gone wrong
+            }
+            finally
+            {
+                await billing.DisconnectAsync();
+            }
+
+            return false;
+        }
 
         public async Task<bool> PurchaseItem(string productId = "134845", string payload = "nl.hnogames.domoticz")
         {

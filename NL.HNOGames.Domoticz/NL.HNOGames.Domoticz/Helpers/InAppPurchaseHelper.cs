@@ -1,7 +1,6 @@
 ﻿using Plugin.InAppBilling;
 using Plugin.InAppBilling.Abstractions;
 using System;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,61 +9,58 @@ namespace NL.HNOGames.Domoticz.Helpers
     public class InAppPurchaseHelper
     {
 
-        public async Task<bool> WasItemPurchased(string productId = "134845")
+        /// <summary>
+        /// Is Premium Account already bought??"
+        /// </summary>
+        public async Task<bool> PremiumAccountPurchased(string productId = "134845")
         {
-            var billing = CrossInAppBilling.Current;
             try
             {
-                var connected = await billing.ConnectAsync();
-
+                var connected = await CrossInAppBilling.Current.ConnectAsync();
                 if (!connected)
-                {
-                    //Couldn't connect
                     return false;
-                }
 
-#if DEBUG
-                CrossInAppBilling.Current.InTestingMode = true;
-#else
-            CrossInAppBilling.Current.InTestingMode = false;
-#endif
-
-                //check purchases
-                var purchases = await billing.GetPurchasesAsync(ItemType.InAppPurchase);
-
-                //check for null just incase
-                if (purchases?.Any(p => p.ProductId == productId) ?? false)
-                {
-                    //did not purchase
-                    App.AppSettings.PremiumBought = false;
-                }
-                else
-                {
-                    //purchased!
-                    App.AppSettings.PremiumBought = true;
+                var purchases = await CrossInAppBilling.Current.GetPurchasesAsync(ItemType.InAppPurchase);
+                var inAppBillingPurchases = purchases as InAppBillingPurchase[] ?? purchases.ToArray();
+                if (inAppBillingPurchases.Any())
                     return true;
-                }
             }
             catch (InAppBillingPurchaseException purchaseEx)
             {
-                //Billing Exception handle this based on the type
-                Debug.WriteLine("Error: " + purchaseEx);
+                var message = string.Empty;
+                switch (purchaseEx.PurchaseError)
+                {
+                    case PurchaseError.AppStoreUnavailable:
+                        message = "Currently the app store seems to be unavailble. Try again later.";
+                        break;
+                    case PurchaseError.BillingUnavailable:
+                        message = "Billing seems to be unavailable, please try again later.";
+                        break;
+                    case PurchaseError.PaymentInvalid:
+                        message = "Payment seems to be invalid, please try again.";
+                        break;
+                    case PurchaseError.PaymentNotAllowed:
+                        message = "Payment does not seem to be enabled/allowed, please try again.";
+                        break;
+                }
+                App.AddLog(!string.IsNullOrEmpty(message) ? message + " " + purchaseEx.Message : purchaseEx.Message);
+                return false;
             }
             catch (Exception ex)
             {
-                //Something else has gone wrong, log it
-                App.AddLog("Issue connecting: " + ex);
-                return false;
+                App.AddLog(ex.Message);
             }
             finally
             {
-                await billing.DisconnectAsync();
+                await CrossInAppBilling.Current.DisconnectAsync();
             }
-
             return false;
         }
 
-        public async Task<bool> PurchaseItem(string productId = "134845", string payload = "nl.hnogames.domoticz")
+        /// <summary>
+        /// Purchase item
+        /// </summary>
+        public static async Task<bool> PurchaseItem(string productId = "134845", string payload = "nl.hnogames.domoticz")
         {
             if (!CrossInAppBilling.IsSupported)
             {
@@ -85,18 +81,8 @@ namespace NL.HNOGames.Domoticz.Helpers
                 if (!connected)
                     return false;
 
-                //check purchases
                 var purchase = await billing.PurchaseAsync(productId, ItemType.InAppPurchase, payload);
-                if (purchase == null)
-                {
-                    //did not purchase
-                    App.AppSettings.PremiumBought = false;
-                }
-                else
-                {
-                    //purchased!
-                    App.AppSettings.PremiumBought = true;
-                }
+                App.AppSettings.PremiumBought = purchase != null;
             }
             catch (InAppBillingPurchaseException purchaseEx)
             {

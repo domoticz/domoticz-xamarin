@@ -1,10 +1,12 @@
-﻿using NL.HNOGames.Domoticz.Models;
+﻿using ModernHttpClient;
+using NL.HNOGames.Domoticz.Models;
 using Plugin.Connectivity;
 using System;
 using System.Globalization;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace NL.HNOGames.Domoticz.Data
 {
@@ -20,15 +22,31 @@ namespace NL.HNOGames.Domoticz.Data
         /// Constructor
         /// </summary>
         public ConnectionService()
-        { RefreshClient(); }
-
-        private void RefreshClient()
         {
-            Client = new HttpClient()
+            RefreshClient(false);//default 
+        }
+
+        /// <summary>
+        /// Refresh client object
+        /// </summary>
+        private void RefreshClient(bool isHttps)
+        {
+            if (isHttps)
             {
-                MaxResponseContentBufferSize = 256000,
-                Timeout = TimeSpan.FromMilliseconds(15000)
-            };
+                Client = new HttpClient(new HttpClientHandler())
+                {
+                    MaxResponseContentBufferSize = 25600000,
+                    Timeout = TimeSpan.FromMilliseconds(30000)
+                };
+            }
+            else
+            {
+                Client = new HttpClient(new NativeMessageHandler())
+                {
+                    MaxResponseContentBufferSize = 25600000,
+                    Timeout = TimeSpan.FromMilliseconds(30000)
+                };
+            }
         }
 
         /// <summary>
@@ -60,7 +78,7 @@ namespace NL.HNOGames.Domoticz.Data
 
                 if (!string.IsNullOrEmpty(server.LOCAL_SERVER_USERNAME))
                 {
-                    RefreshClient();
+                    RefreshClient(protocol == ConstantValues.Url.Protocol.HTTPS);
                     var byteArray = Encoding.UTF8.GetBytes(
                         server.LOCAL_SERVER_USERNAME +
                         ":" +
@@ -71,7 +89,7 @@ namespace NL.HNOGames.Domoticz.Data
                 {
                     if (!string.IsNullOrEmpty(server.REMOTE_SERVER_USERNAME))
                     {
-                        RefreshClient();
+                        RefreshClient(protocol == ConstantValues.Url.Protocol.HTTPS);
                         var byteArray = Encoding.UTF8.GetBytes(
                             server.REMOTE_SERVER_USERNAME +
                             ":" +
@@ -89,7 +107,7 @@ namespace NL.HNOGames.Domoticz.Data
 
                 if (!string.IsNullOrEmpty(server.REMOTE_SERVER_USERNAME))
                 {
-                    RefreshClient();
+                    RefreshClient(protocol == ConstantValues.Url.Protocol.HTTPS);
                     var byteArray = Encoding.UTF8.GetBytes(server.REMOTE_SERVER_USERNAME + ":" + server.REMOTE_SERVER_PASSWORD);
                     Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
                 }
@@ -118,7 +136,7 @@ namespace NL.HNOGames.Domoticz.Data
 
                 if (!string.IsNullOrEmpty(server.LOCAL_SERVER_USERNAME))
                 {
-                    RefreshClient();
+                    RefreshClient(protocol == ConstantValues.Url.Protocol.HTTPS);
                     var byteArray = Encoding.UTF8.GetBytes(
                         server.LOCAL_SERVER_USERNAME +
                         ":" +
@@ -129,7 +147,7 @@ namespace NL.HNOGames.Domoticz.Data
                 {
                     if (!string.IsNullOrEmpty(server.REMOTE_SERVER_USERNAME))
                     {
-                        RefreshClient();
+                        RefreshClient(protocol == ConstantValues.Url.Protocol.HTTPS);
                         var byteArray = Encoding.UTF8.GetBytes(
                             server.REMOTE_SERVER_USERNAME +
                             ":" +
@@ -147,7 +165,7 @@ namespace NL.HNOGames.Domoticz.Data
 
                 if (!string.IsNullOrEmpty(server.REMOTE_SERVER_USERNAME))
                 {
-                    RefreshClient();
+                    RefreshClient(protocol == ConstantValues.Url.Protocol.HTTPS);
                     var byteArray = Encoding.UTF8.GetBytes(server.REMOTE_SERVER_USERNAME + ":" + server.REMOTE_SERVER_PASSWORD);
                     Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
                 }

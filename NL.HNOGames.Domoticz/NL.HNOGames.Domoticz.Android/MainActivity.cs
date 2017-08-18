@@ -9,6 +9,7 @@ using System;
 using ZXing.Mobile;
 using Plugin.InAppBilling;
 using Android.Content;
+using System.Net;
 
 namespace NL.HNOGames.Domoticz.Droid
 {
@@ -17,7 +18,14 @@ namespace NL.HNOGames.Domoticz.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
-            System.Net.ServicePointManager.ServerCertificateValidationCallback += (o, certificate, chain, errors) => true;
+            System.Net.ServicePointManager.ServerCertificateValidationCallback +=
+                (sender, cert, chain, sslPolicyErrors) =>
+                {
+                    System.Diagnostics.Debug.WriteLine(cert.GetSerialNumberString());
+                    System.Diagnostics.Debug.WriteLine(cert.Issuer);
+                    System.Diagnostics.Debug.WriteLine(cert.Subject);
+                    return true;
+                };
 
             CachedImageRenderer.Init();
             UserDialogs.Init(this);

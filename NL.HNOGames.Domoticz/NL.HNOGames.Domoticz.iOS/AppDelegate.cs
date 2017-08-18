@@ -19,7 +19,16 @@ namespace NL.HNOGames.Domoticz.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            System.Net.ServicePointManager.ServerCertificateValidationCallback += (o, certificate, chain, errors) => true;
+
+            System.Net.ServicePointManager.ServerCertificateValidationCallback +=
+                (sender, cert, chain, sslPolicyErrors) =>
+                {
+                    System.Diagnostics.Debug.WriteLine(cert.GetSerialNumberString());
+                    System.Diagnostics.Debug.WriteLine(cert.Issuer);
+                    System.Diagnostics.Debug.WriteLine(cert.Subject);
+                    return true;
+                };
+
             UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, false);
             UIApplication.SharedApplication.SetStatusBarHidden(false, false);
 

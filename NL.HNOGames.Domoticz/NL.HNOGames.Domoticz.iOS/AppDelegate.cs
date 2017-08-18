@@ -18,9 +18,7 @@ namespace NL.HNOGames.Domoticz.iOS
     {
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            global::Xamarin.Forms.Forms.Init();
-
-            System.Net.ServicePointManager.ServerCertificateValidationCallback +=
+            ServicePointManager.ServerCertificateValidationCallback +=
                 (sender, cert, chain, sslPolicyErrors) =>
                 {
                     System.Diagnostics.Debug.WriteLine(cert.GetSerialNumberString());
@@ -37,6 +35,8 @@ namespace NL.HNOGames.Domoticz.iOS
                 Font = UIFont.FromName("HelveticaNeue-Light", (nfloat)20f),
                 TextColor = UIColor.White
             });
+
+            global::Xamarin.Forms.Forms.Init();
 
             iRate.SharedInstance.DaysUntilPrompt = 10;
             iRate.SharedInstance.UsesUntilPrompt = 20;

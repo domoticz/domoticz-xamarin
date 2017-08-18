@@ -30,6 +30,8 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             InitializeComponent();
             BindingContext = ServerSettings;
             btnCheck.IsVisible = true;
+            lblSSLWarning.IsVisible = string.Compare(txtRemoteProtocol.Items[txtRemoteProtocol.SelectedIndex], "https",
+                                          StringComparison.OrdinalIgnoreCase) == 0;
         }
 
         /// <summary>
@@ -139,6 +141,15 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         private void btnCheck_Clicked(object sender, EventArgs e)
         {
             ProcessServerSettings();
+        }
+
+        /// <summary>
+        /// Check if HTTPS is selected
+        /// </summary>
+        private void TxtRemoteProtocol_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblSSLWarning.IsVisible = string.Compare(txtRemoteProtocol.Items[txtRemoteProtocol.SelectedIndex], "https",
+                                          StringComparison.OrdinalIgnoreCase) == 0;
         }
     }
 }

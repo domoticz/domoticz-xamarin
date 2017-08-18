@@ -23,6 +23,7 @@ namespace NL.HNOGames.Domoticz.Views
         {
             InitializeComponent();
             BindingContext = _viewModel = new DashboardViewModel(screentype, plan);
+            _viewModel.SetListViewVisibilityMethod += DelegateListViewMethod;
             App.AddLog("Loading screen: " + screentype);
             adView.IsVisible = !App.AppSettings.PremiumBought;
         }
@@ -31,9 +32,20 @@ namespace NL.HNOGames.Domoticz.Views
         {
             InitializeComponent();
             BindingContext = _viewModel = new DashboardViewModel(DashboardViewModel.ScreenTypeEnum.Dashboard, null);
+            _viewModel.SetListViewVisibilityMethod += DelegateListViewMethod;
             App.AddLog("Loading screen: Dashboard");
             adView.IsVisible = !App.AppSettings.PremiumBought;
         }
+
+        /// <summary>
+        /// Set listview visibility (no items found)
+        /// </summary>
+        /// <param name="isvisible"></param>
+        private void DelegateListViewMethod(bool isvisible)
+        {
+            listView.IsVisible = isvisible;
+        }
+
 
         /// <summary>
         /// Show a actionsheet on item selected
@@ -177,6 +189,7 @@ namespace NL.HNOGames.Domoticz.Views
                 listView.RowHeight = 80;
         }
 
+
         /// <summary>
         /// Set Favorite
         /// </summary>
@@ -205,10 +218,11 @@ namespace NL.HNOGames.Domoticz.Views
                 _viewModel.RefreshActionCommand.Execute(null);
 
             sbSearch.Text = string.Empty;
-
-            if (ScrollItem == null) return;
+            if (ScrollItem == null)
+                return;
             listView.ScrollTo(ScrollItem, ScrollToPosition.Center, true);
             ScrollItem = null;
+            
         }
 
         /// <summary>

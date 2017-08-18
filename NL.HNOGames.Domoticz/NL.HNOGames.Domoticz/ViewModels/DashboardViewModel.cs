@@ -8,6 +8,7 @@ using NL.HNOGames.Domoticz.Views;
 using Xamarin.Forms;
 using NL.HNOGames.Domoticz.Resources;
 using System.Linq;
+using Device = NL.HNOGames.Domoticz.Models.Device;
 
 namespace NL.HNOGames.Domoticz.ViewModels
 {
@@ -22,6 +23,10 @@ namespace NL.HNOGames.Domoticz.ViewModels
             Weather,
         };
 
+        public delegate void SetListViewVisibility(bool visible);
+
+        public SetListViewVisibility SetListViewVisibilityMethod { get; set; }
+
         public ScreenTypeEnum ScreenType;
 
         public ObservableRangeCollection<Models.Device> Devices { get; set; }
@@ -30,6 +35,7 @@ namespace NL.HNOGames.Domoticz.ViewModels
         public Command RefreshFavoriteCommand { get; set; }
         public Command RefreshActionCommand { get; set; }
 
+        public bool SomethingFound = true;
         public bool OldData;
         public Plan ScreenPlan;
 
@@ -84,7 +90,9 @@ namespace NL.HNOGames.Domoticz.ViewModels
                         throw new ArgumentOutOfRangeException();
                 }
 
-                if (items.result != null && items.result.Length > 0) {
+                if (items.result != null && items.result.Length > 0)
+                {
+                    SomethingFound = true;
                     if (!App.AppSettings.NoSort)
                         items.result = items.result.OrderBy(o => o.Name).ToArray();
 
@@ -101,6 +109,13 @@ namespace NL.HNOGames.Domoticz.ViewModels
                     }
                     OldData = false;
                 }
+                else
+                {
+                    SomethingFound = false;
+                    Devices = new ObservableRangeCollection<Device>();
+                    Cache.SetCache(ScreenPlan != null ? ScreenPlan.idx + ScreenType : ScreenType.ToString(), Devices);
+                }
+                SetListViewVisibilityMethod?.Invoke(SomethingFound);
             }
             catch (Exception ex)
             {

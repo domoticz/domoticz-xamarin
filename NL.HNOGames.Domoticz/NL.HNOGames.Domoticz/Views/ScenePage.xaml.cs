@@ -19,9 +19,20 @@ namespace NL.HNOGames.Domoticz.Views
         {
             InitializeComponent();
             BindingContext = _viewModel = new SceneViewModel();
+            _viewModel.SetListViewVisibilityMethod += DelegateListViewMethod;
             App.AddLog("Loading screen: Scenes");
             adView.IsVisible = !App.AppSettings.PremiumBought;
         }
+
+        /// <summary>
+        /// Set listview visibility (no items found)
+        /// </summary>
+        /// <param name="isvisible"></param>
+        private void DelegateListViewMethod(bool isvisible)
+        {
+            listView.IsVisible = isvisible;
+        }
+
 
         /// <summary>
         /// Show a actionsheet on item selected

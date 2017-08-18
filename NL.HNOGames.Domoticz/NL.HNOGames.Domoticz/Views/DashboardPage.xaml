@@ -590,7 +590,6 @@
             <SearchBar Style="{StaticResource SearchBarType}" x:Name="sbSearch"
                        Placeholder="{resources:Translate filter}" CancelButtonColor="Red"
                        TextChanged="sbSearch_TextChanged" />
-
             <ListView x:Name="listView" ItemsSource="{Binding Devices}"
                       BackgroundColor="{DynamicResource LightBackgroundColor}"
                       VerticalOptions="FillAndExpand" HasUnevenRows="true"
@@ -598,6 +597,7 @@
                       RefreshCommand="{Binding RefreshFavoriteCommand}"
                       IsPullToRefreshEnabled="true" SeparatorVisibility="None"
                       IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                      IsVisible="{Binding SomethingFound}"
                       CachingStrategy="RecycleElement" ItemSelected="OnItemSelected" />
 
             <custcontrol:AdMobView x:Name="adView" HorizontalOptions="FillAndExpand" HeightRequest="70" />

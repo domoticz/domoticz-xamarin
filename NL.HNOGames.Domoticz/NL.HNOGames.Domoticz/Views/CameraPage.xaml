@@ -22,9 +22,9 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Image>
+                            <Image BackgroundColor="Green" WidthRequest="200" HeightRequest="150">
                                 <Image.Source>
-                                    <StreamImageSource Stream="{Binding ImageStream}"  />
+                                    <StreamImageSource Stream="{Binding ImageStream}" />
                                 </Image.Source>
                             </Image>
                             <Label HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="End" Text="{Binding Name}" Style="{StaticResource DetailType}"/>

@@ -48,5 +48,10 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Can we use your camera</string>
+  <key>NSAppTransportSecurity</key>
+  <dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+  </dict>
 </dict>
 </plist>

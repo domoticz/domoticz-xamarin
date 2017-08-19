@@ -6,7 +6,7 @@ using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Linq;
-
+using System.Net;
 
 namespace NL.HNOGames.Domoticz.Data
 {
@@ -156,16 +156,29 @@ namespace NL.HNOGames.Domoticz.Data
             if (Server == null || string.IsNullOrEmpty(idx))
                 return null;
             var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.CAMERA)+ idx;
+
             try
             {
-                return await App.ConnectionService.Client.GetStreamAsync(url);
+                using (var httpResponse = await App.ConnectionService.Client.GetAsync(url))
+                {
+                    if (httpResponse.StatusCode == HttpStatusCode.OK)
+                    {
+                        var data = await httpResponse.Content.ReadAsByteArrayAsync();
+                        Stream stream = new MemoryStream(data);
+                        return stream;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                App.AddLog(ex.Message);
+                return null;
             }
-            return null;
         }
+
 
         /// <summary>
         /// Domoticz get all devices

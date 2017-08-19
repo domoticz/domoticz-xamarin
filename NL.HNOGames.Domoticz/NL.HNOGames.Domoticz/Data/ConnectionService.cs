@@ -3,6 +3,8 @@ using NL.HNOGames.Domoticz.Models;
 using Plugin.Connectivity;
 using System;
 using System.Globalization;
+using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,12 +19,14 @@ namespace NL.HNOGames.Domoticz.Data
     {
         public HttpClient Client;
         private string _latestUsedbaseUrl = string.Empty;
+        private NativeCookieHandler cookieHandler;
 
         /// <summary>
         /// Constructor
         /// </summary>
         public ConnectionService()
         {
+            cookieHandler = new NativeCookieHandler();
             RefreshClient(false);//default 
         }
 
@@ -31,7 +35,7 @@ namespace NL.HNOGames.Domoticz.Data
         /// </summary>
         private void RefreshClient(bool isHttps)
         {
-            if (isHttps)
+            /*if (isHttps)
             {
                 Client = new HttpClient(new HttpClientHandler())
                 {
@@ -40,13 +44,13 @@ namespace NL.HNOGames.Domoticz.Data
                 };
             }
             else
-            {
-                Client = new HttpClient(new NativeMessageHandler())
+            {*/
+                Client = new HttpClient(new NativeMessageHandler(false, false, cookieHandler))
                 {
-                    MaxResponseContentBufferSize = 25600000,
+                    MaxResponseContentBufferSize = 256000000000,
                     Timeout = TimeSpan.FromMilliseconds(30000)
                 };
-            }
+            //}
         }
 
         /// <summary>

@@ -151,7 +151,7 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz camera image stream
         /// </summary>
-        public async Task<Stream> GetCameraStream(string idx)
+        public async Task<byte[]> GetCameraStream(string idx)
         {
             if (Server == null || string.IsNullOrEmpty(idx))
                 return null;
@@ -164,8 +164,7 @@ namespace NL.HNOGames.Domoticz.Data
                     if (httpResponse.StatusCode == HttpStatusCode.OK)
                     {
                         var data = await httpResponse.Content.ReadAsByteArrayAsync();
-                        Stream stream = new MemoryStream(data);
-                        return stream;
+                        return data;
                     }
                     else
                     {

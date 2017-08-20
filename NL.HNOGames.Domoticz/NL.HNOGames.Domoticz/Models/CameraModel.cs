@@ -16,7 +16,7 @@ namespace NL.HNOGames.Domoticz.Models
 
     public class Camera
     {
-        public Stream ImageStream { get; set; }
+        public byte[] ImageBytes { get; set; }
         public string Address { get; set; }
         public string Enabled { get; set; }
         public string ImageURL { get; set; }

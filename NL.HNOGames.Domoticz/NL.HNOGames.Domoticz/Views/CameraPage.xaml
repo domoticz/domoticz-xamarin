@@ -1,11 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:conv="clr-namespace:NL.HNOGames.Domoticz.Convertors;assembly=NL.HNOGames.Domoticz"
              xmlns:controls="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
              x:Class="NL.HNOGames.Domoticz.Views.CameraPage"
              Title="{Binding Title}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <conv:ByteArrayToImageSourceConverter x:Key="bic" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="20">
             <controls:FlowListView x:Name="listView" 
                                    FlowColumnCount="2" 
                                    SeparatorVisibility="None" 
@@ -15,20 +22,10 @@
                                    FlowItemsSource="{Binding Cameras}">
                 <controls:FlowListView.FlowColumnTemplate>
                     <DataTemplate>
-                        <Grid Padding="3">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Image BackgroundColor="Green" WidthRequest="200" HeightRequest="150">
-                                <Image.Source>
-                                    <StreamImageSource Stream="{Binding ImageStream}" />
-                                </Image.Source>
-                            </Image>
-                            <Label HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="End" Text="{Binding Name}" Style="{StaticResource DetailType}"/>
-                        </Grid>
+                            <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                                <Image Source="{Binding ImageBytes, Converter={StaticResource bic}}" MinimumHeightRequest="300" />
+                                <Label HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="End" Text="{Binding Name}" Style="{StaticResource DetailType}"/>
+                            </StackLayout>
                     </DataTemplate>
                 </controls:FlowListView.FlowColumnTemplate>
             </controls:FlowListView>

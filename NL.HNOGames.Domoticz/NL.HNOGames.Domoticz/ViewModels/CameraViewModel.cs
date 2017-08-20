@@ -32,7 +32,7 @@ namespace NL.HNOGames.Domoticz.ViewModels
                 if (items?.result != null && items.result.Length > 0)
                 {
                     foreach (var item in items.result)
-                        item.ImageStream = await App.ApiService.GetCameraStream(item.idx);
+                        item.ImageBytes = await App.ApiService.GetCameraStream(item.idx);
 
                     if(Cameras == null) Cameras = new ObservableRangeCollection<Camera>();
                     Cameras.ReplaceRange(items.result);

@@ -45,6 +45,7 @@
     <Compile Include="Controls\ExtendedSlider.cs" />
     <Compile Include="Controls\MultiLineLabel.cs" />
     <Compile Include="Controls\TintedCachedImage.cs" />
+    <Compile Include="Convertors\ByteArrayToImageSourceConverter.cs" />
     <Compile Include="Data\ConnectionService.cs" />
     <Compile Include="Data\DataService.cs" />
     <Compile Include="Data\ConstantValues.cs" />

@@ -23,7 +23,10 @@ namespace NL.HNOGames.Domoticz.Helpers
                 var purchases = await CrossInAppBilling.Current.GetPurchasesAsync(ItemType.InAppPurchase);
                 var inAppBillingPurchases = purchases as InAppBillingPurchase[] ?? purchases.ToArray();
                 if (inAppBillingPurchases.Any())
+                {
+                    App.AppSettings.PremiumBought = inAppBillingPurchases.Any();
                     return true;
+                }
             }
             catch (InAppBillingPurchaseException purchaseEx)
             {

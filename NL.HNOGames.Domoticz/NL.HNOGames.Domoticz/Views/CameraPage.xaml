@@ -18,6 +18,7 @@
             <controls:FlowListView x:Name="listView"
                                    SeparatorVisibility="None"
                                    HasUnevenRows="true"
+                                   RowHeight="200"
                                    FlowItemTapped="ListView_OnFlowItemTapped"
                                    FlowItemsSource="{Binding Cameras}">
                 <controls:FlowListView.FlowColumnTemplate>

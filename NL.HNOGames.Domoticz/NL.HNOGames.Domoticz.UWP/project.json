@@ -8,6 +8,7 @@
     "Newtonsoft.Json": "10.0.3",
     "PCLStorage": "1.0.2",
     "Plugin.InAppBilling": "1.2.2",
+    "Plugin.Permissions": "2.0.1",
     "Plugin.Share": "7.0.1",
     "Rg.Plugins.Popup": "1.0.4",
     "SlideOverKit": "2.1.4",
@@ -15,6 +16,7 @@
     "System.Threading.Timer": "4.3.0",
     "Xam.Plugin.Connectivity": "3.0.2",
     "Xam.Plugin.PushNotification": "1.2.5-beta",
+    "Xam.Plugins.Forms.DeviceOrientation": "1.0.1",
     "Xam.Plugins.Notifier": "2.1.0",
     "Xam.Plugins.Settings": "3.0.1",
     "Xam.Plugins.TextToSpeech": "3.0.1",
@@ -25,7 +27,7 @@
     "ZXing.Net.Mobile.Forms": "2.2.9"
   },
   "frameworks": {
-    "uap10.0": {}
+    "uap10.0.10586": {}
   },
   "runtimes": {
     "win10-arm": {},

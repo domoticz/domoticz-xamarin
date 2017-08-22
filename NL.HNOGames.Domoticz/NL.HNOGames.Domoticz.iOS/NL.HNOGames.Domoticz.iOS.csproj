@@ -115,6 +115,12 @@
     <Reference Include="BTProgressHUD, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\BTProgressHUD.1.2.0.5\lib\Xamarin.iOS10\BTProgressHUD.dll</HintPath>
     </Reference>
+    <Reference Include="DeviceOrientation.Forms.Plugin.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugins.Forms.DeviceOrientation.1.0.1\lib\Xamarin.iOS10\DeviceOrientation.Forms.Plugin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="DeviceOrientation.Forms.Plugin.iOSUnified, Version=1.0.5523.23501, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugins.Forms.DeviceOrientation.1.0.1\lib\Xamarin.iOS10\DeviceOrientation.Forms.Plugin.iOSUnified.dll</HintPath>
+    </Reference>
     <Reference Include="DLToolkit.Forms.Controls.FlowListView, Version=1.0.6434.36285, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\DLToolkit.Forms.Controls.FlowListView.2.0.5\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+netstandard1.0\DLToolkit.Forms.Controls.FlowListView.dll</HintPath>
     </Reference>
@@ -211,6 +217,12 @@
     </Reference>
     <Reference Include="Plugin.LocalNotifications.Abstractions, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugins.Notifier.2.1.0\lib\Xamarin.iOS10\Plugin.LocalNotifications.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.Permissions.2.0.1\lib\Xamarin.iOS10\Plugin.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.Permissions.2.0.1\lib\Xamarin.iOS10\Plugin.Permissions.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.Settings, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugins.Settings.3.0.1\lib\Xamarin.iOS10\Plugin.Settings.dll</HintPath>
@@ -332,6 +344,7 @@
     <Compile Include="Renderer\CustomMultiLineLabelRenderer.cs" />
     <Compile Include="Renderer\CustomSearchBarRenderer .cs" />
     <Compile Include="Renderer\CustomSliderRenderer .cs" />
+    <Compile Include="Renderer\ShareClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\profile_generic.png" />
@@ -846,6 +859,9 @@
     <BundleResource Include="Resources\ic_qrcode.png" />
     <BundleResource Include="Resources\ic_qrcode%402x.png" />
     <BundleResource Include="Resources\ic_qrcode%403x.png" />
+    <BundleResource Include="Resources\ic_share.png" />
+    <BundleResource Include="Resources\ic_share%402x.png" />
+    <BundleResource Include="Resources\ic_share%403x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.5.235-pre2\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.5.235-pre2\build\netstandard1.0\Xamarin.Forms.targets')" />

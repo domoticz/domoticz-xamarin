@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NL.HNOGames.Domoticz.Views.CameraDetailPage"
+             Style="{StaticResource ContentPageType}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Share" Order="Primary" Clicked="MenuItem_OnClicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource"
+                            iOS="ic_share.png"
+                            Android="ic_share.png"
+                            WinPhone="ic_share.png" />
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout Padding="20" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Image x:Name="cameraImage"
+                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                   Aspect="AspectFill" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

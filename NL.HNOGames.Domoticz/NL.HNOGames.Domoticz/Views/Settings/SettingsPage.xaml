@@ -173,7 +173,7 @@
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
                                  Orientation="Horizontal" Padding="0,10,0,0">
                         <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
-                            <Label Text="{resources:Translate title_cameras}" VerticalOptions="CenterAndExpand"
+                            <Label Text="{resources:Translate cameraActivity_name}" VerticalOptions="CenterAndExpand"
                                    HorizontalOptions="Start" LineBreakMode="NoWrap"
                                    Style="{StaticResource SettingsDetailType}" />
                         </StackLayout>

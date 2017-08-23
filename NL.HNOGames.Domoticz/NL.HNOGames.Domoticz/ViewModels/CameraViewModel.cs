@@ -28,6 +28,7 @@ namespace NL.HNOGames.Domoticz.ViewModels
         {
             try
             {
+                App.AddLog("Loading camera list");
                 var items = await App.ApiService.GetCameras();
                 if (items?.result != null && items.result.Length > 0)
                 {

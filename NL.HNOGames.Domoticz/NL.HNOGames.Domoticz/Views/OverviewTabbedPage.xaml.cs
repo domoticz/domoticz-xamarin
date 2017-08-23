@@ -35,7 +35,10 @@ namespace NL.HNOGames.Domoticz.Views
                 BreakingSettingsChanged();
             }
             else
+            {
                 _viewModel.RefreshPlansCommand.Execute(null);
+                _viewModel.LoadVersionCommand.Execute(null);
+            }
 
             if (!App.AppSettings.QRCodeEnabled)
                 ToolbarItems.Remove(tiQRCode);
@@ -89,7 +92,7 @@ namespace NL.HNOGames.Domoticz.Views
             var expectedFormat = ZXing.BarcodeFormat.QR_CODE;
             var opts = new ZXing.Mobile.MobileBarcodeScanningOptions
             {
-                PossibleFormats = new List<ZXing.BarcodeFormat> {expectedFormat}
+                PossibleFormats = new List<ZXing.BarcodeFormat> { expectedFormat }
             };
             System.Diagnostics.Debug.WriteLine("Scanning " + expectedFormat);
 

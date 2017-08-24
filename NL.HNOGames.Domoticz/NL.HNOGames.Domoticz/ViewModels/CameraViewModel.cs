@@ -19,7 +19,7 @@ namespace NL.HNOGames.Domoticz.ViewModels
 
         public CameraViewModel()
         {
-            Title = AppResources.title_cameras;
+            Title = AppResources.cameraActivity_name;
             Cameras = new ObservableRangeCollection<Camera>();
             LoadCamerasCommand = new Command(async () => await ExecuteLoadCamerasCommand());
         }

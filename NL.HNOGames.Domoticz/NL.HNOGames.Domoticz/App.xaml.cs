@@ -10,6 +10,7 @@ using System.Linq;
 using DLToolkit.Forms.Controls;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Threading;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace NL.HNOGames.Domoticz
@@ -21,9 +22,9 @@ namespace NL.HNOGames.Domoticz
 
         public static ConnectionService ConnectionService { get; private set; }
         public static DataService ApiService { get; private set; }
-        public static Settings AppSettings { get; set; }
+        public static Settings AppSettings { get; private set; }
 
-        public static Models.ConfigModel ServerConfig { get; set; }
+        private static Models.ConfigModel ServerConfig { get; set; }
         private static IProgressDialog _loadingDialog;
 
         /// <summary>
@@ -49,11 +50,26 @@ namespace NL.HNOGames.Domoticz
         /// <summary>
         /// Show a loading screen
         /// </summary>
-        public static void ShowLoading()
+        public static void ShowLoading(string text = null, CancellationTokenSource cts = null, string cancelText = "")
         {
-            if (_loadingDialog == null)
-                _loadingDialog = UserDialogs.Instance.Loading("Loading", maskType: MaskType.Gradient);
-            _loadingDialog.Show();
+            if (string.IsNullOrEmpty(text))
+                text = AppResources.text_loading;
+            if (string.IsNullOrEmpty(cancelText))
+                cancelText = AppResources.cancel;
+
+            Action ca = null;
+            if (cts != null)
+                ca = cts.Cancel;
+
+            try
+            {
+                _loadingDialog = UserDialogs.Instance.Loading(text, ca, cancelText, maskType: MaskType.Gradient);
+                _loadingDialog.Show();
+            }
+            catch (Exception ex)
+            {
+                AddLog(ex.Message);
+            }
         }
 
         /// <summary>
@@ -215,5 +231,6 @@ namespace NL.HNOGames.Domoticz
                 AddLog(ex.Message);
             }
         }
+
     }
 }

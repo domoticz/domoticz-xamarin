@@ -4,6 +4,7 @@ using NL.HNOGames.Domoticz.Models;
 using NL.HNOGames.Domoticz.Resources;
 using System;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -77,11 +78,13 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
             App.SetMainPage();
         }
 
+        private CancellationTokenSource cts = new CancellationTokenSource();
         private async void ProcessServerSettings()
         {
-            if (IsBusy)
+            if (IsBusy && !cts.IsCancellationRequested)
                 return;
 
+            cts = new CancellationTokenSource();
             IsBusy = true;
             App.AppSettings.ActiveServerSettings = ServerSettings;
             lblResult.Text = "";
@@ -99,11 +102,9 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
             {
                 lblResult.Text = AppResources.welcome_info_checkingConnection + Environment.NewLine;
 
-                App.ShowLoading();
-                //get Domoticz version to check settings
                 App.ApiService.Server = App.AppSettings.ActiveServerSettings;
-                var result = await App.ApiService.GetVersion();
-
+                App.ShowLoading(null, cts);
+                var result = await App.ApiService.GetVersion(cts);
                 if (result != null)
                 {
                     lblResult.Text = AppResources.welcome_msg_serverVersion + ": " + result.version;

@@ -183,5 +183,19 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
             lblSSLWarning.IsVisible = string.Compare(txtRemoteProtocol.Items[txtRemoteProtocol.SelectedIndex], "https",
                                           StringComparison.OrdinalIgnoreCase) == 0;
         }
+
+        /// <summary>
+        /// show demo account
+        /// </summary>
+        private void BtnDemo_OnClicked(object sender, EventArgs e)
+        {
+            CurrentPage = Children[2];
+            swEnableLocalSettings.IsToggled = false;
+            txtRemoteProtocol.SelectedIndex = 1;
+            txtRemotePort.Text = "24443";
+            txtRemoteServerAddress.Text = "gandalf.domoticz.com";
+            txtRemoteUsername.Text = "admin";
+            txtRemotePassword.Text = "D@m@t1czCl0ud";
+        }
     }
 }

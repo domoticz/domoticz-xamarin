@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Linq;
 using System.Net;
+using System.Threading;
 
 namespace NL.HNOGames.Domoticz.Data
 {
@@ -27,14 +28,17 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz version
         /// </summary>
-        public async Task<VersionModel> GetVersion()
+        public async Task<VersionModel> GetVersion(CancellationTokenSource cts = null)
         {
             if (Server == null)
                 return null;
             var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.VERSION);
             try
             {
-                Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
+                if (cts != null)
+                    Response = await App.ConnectionService.Client.GetAsync(new Uri(url), cts.Token);
+                else
+                    Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
                 if (Response.IsSuccessStatusCode)
                 {
                     var content = await Response.Content.ReadAsStringAsync();
@@ -147,7 +151,6 @@ namespace NL.HNOGames.Domoticz.Data
             return null;
         }
 
-
         /// <summary>
         /// Domoticz camera image stream
         /// </summary>
@@ -155,7 +158,7 @@ namespace NL.HNOGames.Domoticz.Data
         {
             if (Server == null || string.IsNullOrEmpty(idx))
                 return null;
-            var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.CAMERA)+ idx;
+            var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.CAMERA) + idx;
 
             try
             {
@@ -174,10 +177,10 @@ namespace NL.HNOGames.Domoticz.Data
             }
             catch (Exception e)
             {
+                App.AddLog(e.Message);
                 return null;
             }
         }
-
 
         /// <summary>
         /// Domoticz get all devices

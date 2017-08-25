@@ -14,27 +14,27 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <StackLayout Padding="20">
+        <StackLayout>
             <controls:FlowListView x:Name="listView"
                                    SeparatorVisibility="None"
                                    HasUnevenRows="true"
-                                   RowHeight="200"
+                                   RowHeight="150"
                                    FlowItemTapped="ListView_OnFlowItemTapped"
                                    FlowItemsSource="{Binding Cameras}">
                 <controls:FlowListView.FlowColumnTemplate>
                     <DataTemplate>
-                        <Grid Style="{StaticResource DashboardDeviceCardType}">
+                        <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <StackLayout Grid.Column="0" Orientation="Vertical" HorizontalOptions="CenterAndExpand"
-                                         VerticalOptions="StartAndExpand">
+                                         VerticalOptions="StartAndExpand" Style="{StaticResource LayoutDeviceCardType}">
                                 <Label HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"
                                        VerticalOptions="Start"
                                        Text="{Binding Name}" Style="{StaticResource HeaderType}"/>
                                 <Image Source="{Binding ImageBytes, Converter={StaticResource bic}}"
                                        VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand"
-                                       Aspect="Fill" />
+                                       Aspect="AspectFill" />
                             </StackLayout>
                         </Grid>
                     </DataTemplate>

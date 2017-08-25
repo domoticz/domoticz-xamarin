@@ -9,6 +9,10 @@ namespace NL.HNOGames.Domoticz.ViewModels
 {
     public class OverviewViewModel : BaseViewModel
     {
+        public delegate void PlansLoaded();
+
+        public PlansLoaded PlansLoadedMethod { get; set; }
+
         public ObservableRangeCollection<Models.Plan> Plans { get; set; }
         public Command LoadPlansCommand { get; set; }
         public Command RefreshPlansCommand { get; set; }
@@ -18,6 +22,7 @@ namespace NL.HNOGames.Domoticz.ViewModels
         {
             Title = "Domoticz";
             Plans = new ObservableRangeCollection<Models.Plan>();
+
             LoadPlansCommand = new Command(async () => await ExecuteLoadPlansCommand(false));
             RefreshPlansCommand = new Command(async () => await ExecuteLoadPlansCommand(true));
             LoadVersionCommand = new Command(async () => await ExecuteLoadVersionCommand());
@@ -64,13 +69,13 @@ namespace NL.HNOGames.Domoticz.ViewModels
                 {
                     Plans?.ReplaceRange(items.result);
                 }
+
+                PlansLoadedMethod?.Invoke();
             }
             catch (Exception ex)
             {
                 App.AddLog(ex.Message);
-                UserDialogs.Instance.Alert("Unable to load items.");
             }
-
             IsBusy = false;
         }
     }

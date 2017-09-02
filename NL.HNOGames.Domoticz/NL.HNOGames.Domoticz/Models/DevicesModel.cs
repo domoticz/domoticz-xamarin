@@ -242,7 +242,7 @@ namespace NL.HNOGames.Domoticz.Models
         public int Humidity { get; set; }
         public string HumidityStatus { get; set; }
         public float? Temp { get; set; }
-        public int? Barometer { get; set; }
+        public float? Barometer { get; set; }
         public int? Forecast { get; set; }
         public string ForecastStr { get; set; }
         public string forecast_url { get; set; }

@@ -23,9 +23,9 @@
             <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal"
                          Padding="20">
                 <Button Style="{StaticResource DarkButton}" Text="{resources:Translate welcome_button_previous}"
-                        HorizontalOptions="Start" VerticalOptions="End" Clicked="btnPrevious_Clicked" IsVisible="False" />
+                        HorizontalOptions="Start" VerticalOptions="End" Clicked="btnPrevious_Clicked" IsVisible="False"/>
                 <Button Style="{StaticResource DarkButton}" Text="{resources:Translate welcome_button_next}"
-                        HorizontalOptions="End" VerticalOptions="End" Clicked="btnNext_Clicked" />
+                        HorizontalOptions="End" VerticalOptions="End" Clicked="btnNext_Clicked"/>
             </StackLayout>
         </StackLayout>
     </ContentPage>

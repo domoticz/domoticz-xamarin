@@ -31,6 +31,8 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
         /// INit welcome screens
         /// </summary>
         public WelcomeCarouselPage()
+
+
         {
             ServerSettings = App.AppSettings.ActiveServerSettings ?? new ServerSettings();
             InitializeComponent();
@@ -122,12 +124,18 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
                         lblResult.Text = App.ApiService.Response != null
                             ? App.ApiService.Response.ReasonPhrase
                             : AppResources.failed_to_get_switches;
+                        if (App.ApiService.Response.ReasonPhrase == "OK")
+                            lblResult.Text = AppResources.failed_to_get_switches;
                     }
                 }
                 else
+                {
                     lblResult.Text = App.ApiService.Response != null
-                        ? App.ApiService.Response.ReasonPhrase
-                        : AppResources.error_timeout;
+                            ? App.ApiService.Response.ReasonPhrase
+                            : AppResources.failed_to_get_switches;
+                    if (App.ApiService.Response.ReasonPhrase == "OK")
+                        lblResult.Text = AppResources.failed_to_get_switches;
+                }
 
                 App.HideLoading();
             }
@@ -141,7 +149,7 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
         {
             ProcessServerSettings();
         }
-        
+
         /// <summary>
         /// show next page
         /// </summary>

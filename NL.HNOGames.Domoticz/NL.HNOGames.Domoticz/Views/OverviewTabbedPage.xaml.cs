@@ -19,7 +19,13 @@ namespace NL.HNOGames.Domoticz.Views
         public OverviewTabbedPage()
         {
             InitializeComponent();
+
             BindingContext = _viewModel = new OverviewViewModel();
+            _viewModel.PlansLoadedMethod += () =>
+            {
+                if (_viewModel.Plans == null || _viewModel.Plans.Count <= 0)
+                    ToolbarItems.Remove(tiPlans);
+            };
         }
 
         /// <summary>
@@ -35,12 +41,25 @@ namespace NL.HNOGames.Domoticz.Views
                 BreakingSettingsChanged();
             }
             else
+            {
                 _viewModel.RefreshPlansCommand.Execute(null);
+                //_viewModel.LoadVersionCommand.Execute(null);
+            }
 
             if (!App.AppSettings.QRCodeEnabled)
                 ToolbarItems.Remove(tiQRCode);
             else if (!ToolbarItems.Contains(tiQRCode))
                 ToolbarItems.Insert(1, tiQRCode);
+        }
+
+        /// <summary>
+        /// Disappearing
+        /// </summary>
+        protected override void OnDisappearing()
+        {
+            if (App.ConnectionService != null)
+                App.ConnectionService.CleanClient();
+            base.OnDisappearing();
         }
 
         /// <summary>
@@ -89,7 +108,7 @@ namespace NL.HNOGames.Domoticz.Views
             var expectedFormat = ZXing.BarcodeFormat.QR_CODE;
             var opts = new ZXing.Mobile.MobileBarcodeScanningOptions
             {
-                PossibleFormats = new List<ZXing.BarcodeFormat> {expectedFormat}
+                PossibleFormats = new List<ZXing.BarcodeFormat> { expectedFormat }
             };
             System.Diagnostics.Debug.WriteLine("Scanning " + expectedFormat);
 

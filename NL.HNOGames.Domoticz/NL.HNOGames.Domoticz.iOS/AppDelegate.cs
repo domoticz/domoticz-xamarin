@@ -9,10 +9,7 @@ using PushNotification.Plugin;
 using NL.HNOGames.Domoticz.Helpers;
 using UserNotifications;
 using Firebase.CloudMessaging;
-using System.Diagnostics;
-using Firebase.InstanceID;
 using System.Net;
-using Plugin.LocalNotifications;
 
 namespace NL.HNOGames.Domoticz.iOS
 {
@@ -21,7 +18,15 @@ namespace NL.HNOGames.Domoticz.iOS
     {
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            global::Xamarin.Forms.Forms.Init();
+            ServicePointManager.ServerCertificateValidationCallback +=
+                (sender, cert, chain, sslPolicyErrors) =>
+                {
+                    System.Diagnostics.Debug.WriteLine(cert.GetSerialNumberString());
+                    System.Diagnostics.Debug.WriteLine(cert.Issuer);
+                    System.Diagnostics.Debug.WriteLine(cert.Subject);
+                    return true;
+                };
+
             UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, false);
             UIApplication.SharedApplication.SetStatusBarHidden(false, false);
 
@@ -31,10 +36,11 @@ namespace NL.HNOGames.Domoticz.iOS
                 TextColor = UIColor.White
             });
 
+            global::Xamarin.Forms.Forms.Init();
+
             iRate.SharedInstance.DaysUntilPrompt = 10;
             iRate.SharedInstance.UsesUntilPrompt = 20;
             ZXing.Net.Mobile.Forms.iOS.Platform.Init();
-            System.Net.ServicePointManager.ServerCertificateValidationCallback += (o, certificate, chain, errors) => true;
 
             CachedImageRenderer.Init();
             SlideOverKit.iOS.SlideOverKit.Init();

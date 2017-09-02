@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace NL.HNOGames.Domoticz.Models
 {
-
     public class VersionModel
     {
         public string DomoticzUpdateURL { get; set; }

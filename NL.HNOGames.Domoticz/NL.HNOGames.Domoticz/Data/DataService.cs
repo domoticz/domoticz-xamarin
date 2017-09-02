@@ -1,17 +1,13 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
-using NL.HNOGames.Domoticz.Helpers;
 using NL.HNOGames.Domoticz.Models;
 using Plugin.DeviceInfo;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+using System.IO;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
-
+using System.Net;
+using System.Threading;
 
 namespace NL.HNOGames.Domoticz.Data
 {
@@ -20,42 +16,32 @@ namespace NL.HNOGames.Domoticz.Data
     /// </summary>
     public class DataService
     {
-        public HttpResponseMessage response = null;
-        public ServerSettings server;
-
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        public DataService()
-        {
-        }
-
-        private readonly JsonSerializerSettings microsoftDateFormatSettings = new JsonSerializerSettings
-        {
-            DateFormatHandling = DateFormatHandling.MicrosoftDateFormat,
-        };
+        public HttpResponseMessage Response;
 
         /// <summary>
         /// Get server App.AppSettings
         /// </summary>
-        public ServerSettings Server { get => server; set => server = value; }
+        public ServerSettings Server { get; set; }
 
         #region Data
 
         /// <summary>
         /// Domoticz version
         /// </summary>
-        public async Task<VersionModel> GetVersion()
+        public async Task<VersionModel> GetVersion(CancellationTokenSource cts = null)
         {
             if (Server == null)
                 return null;
-            String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.VERSION);
+            var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.VERSION);
             try
             {
-                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
-                if (response.IsSuccessStatusCode)
+                if (cts != null)
+                    Response = await App.ConnectionService.Client.GetAsync(new Uri(url), cts.Token);
+                else
+                    Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
+                if (Response.IsSuccessStatusCode)
                 {
-                    var content = await response.Content.ReadAsStringAsync();
+                    var content = await Response.Content.ReadAsStringAsync();
                     if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<VersionModel>(content);
                 }
@@ -80,13 +66,13 @@ namespace NL.HNOGames.Domoticz.Data
                 if (Server == null)
                     return;
 
-                String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.System.CONFIG);
+                var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.System.CONFIG);
                 try
                 {
-                    response = await App.ConnectionService.Client.GetAsync(new Uri(url));
-                    if (response.IsSuccessStatusCode)
+                    Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
+                    if (Response.IsSuccessStatusCode)
                     {
-                        var content = await response.Content.ReadAsStringAsync();
+                        var content = await Response.Content.ReadAsStringAsync();
                         if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                         App.AppSettings.ServerConfig = JsonConvert.DeserializeObject<ConfigModel>(content);
                         App.AppSettings.ServerConfigDateTime = DateTime.Now;
@@ -106,14 +92,14 @@ namespace NL.HNOGames.Domoticz.Data
         {
             if (Server == null)
                 return null;
-            String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.PLANS);
+            var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.PLANS);
 
             try
             {
-                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
-                if (response.IsSuccessStatusCode)
+                Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
+                if (Response.IsSuccessStatusCode)
                 {
-                    var content = await response.Content.ReadAsStringAsync();
+                    var content = await Response.Content.ReadAsStringAsync();
                     if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<PlansModel>(content);
                 }
@@ -128,7 +114,7 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz get a specific device object
         /// </summary>
-        public async Task<Models.Device> GetDevice(String idx, bool isSceneOrGroup)
+        public async Task<Device> GetDevice(string idx, bool isSceneOrGroup)
         {
             if (Server == null)
                 return null;
@@ -137,18 +123,73 @@ namespace NL.HNOGames.Domoticz.Data
             if (devices == null || devices.result == null)
                 return null;
             else
-                return devices.result.Where(o => String.Compare(o.idx, idx, StringComparison.OrdinalIgnoreCase) == 0 && o.IsScene == isSceneOrGroup).FirstOrDefault();
+                return devices.result.FirstOrDefault(o => string.Compare(o.idx, idx, StringComparison.OrdinalIgnoreCase) == 0 && o.IsScene == isSceneOrGroup);
         }
 
+        /// <summary>
+        /// Domoticz get all cameras
+        /// </summary>
+        public async Task<CameraModel> GetCameras()
+        {
+            if (Server == null)
+                return null;
+            var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.CAMERAS);
+            try
+            {
+                Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
+                if (Response.IsSuccessStatusCode)
+                {
+                    var content = await Response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
+                    return JsonConvert.DeserializeObject<CameraModel>(content);
+                }
+            }
+            catch (Exception ex)
+            {
+                App.AddLog(ex.Message);
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Domoticz camera image stream
+        /// </summary>
+        public async Task<byte[]> GetCameraStream(string idx)
+        {
+            if (Server == null || string.IsNullOrEmpty(idx))
+                return null;
+            var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.CAMERA) + idx;
+
+            try
+            {
+                using (var httpResponse = await App.ConnectionService.Client.GetAsync(url))
+                {
+                    if (httpResponse.StatusCode == HttpStatusCode.OK)
+                    {
+                        var data = await httpResponse.Content.ReadAsByteArrayAsync();
+                        return data;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                App.AddLog(e.Message);
+                return null;
+            }
+        }
 
         /// <summary>
         /// Domoticz get all devices
         /// </summary>
-        public async Task<DevicesModel> GetDevices(int plan = 0, String filter = null)
+        public async Task<DevicesModel> GetDevices(int plan = 0, string filter = null)
         {
             if (Server == null)
                 return null;
-            String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.DEVICES);
+            var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.DEVICES);
             if (!string.IsNullOrEmpty(filter))
                 url = url.Replace("filter=all", "filter=" + filter);
             if (plan > 0)
@@ -156,10 +197,10 @@ namespace NL.HNOGames.Domoticz.Data
 
             try
             {
-                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
-                if (response.IsSuccessStatusCode)
+                Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
+                if (Response.IsSuccessStatusCode)
                 {
-                    var content = await response.Content.ReadAsStringAsync();
+                    var content = await Response.Content.ReadAsStringAsync();
                     if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<DevicesModel>(content);
                 }
@@ -174,18 +215,18 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz get notifications for a device
         /// </summary>
-        public async Task<NotificationModel> GetNotifications(Models.Device device)
+        public async Task<NotificationModel> GetNotifications(Device device)
         {
             if (Server == null)
                 return null;
-            String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Notification.NOTIFICATION) + device.idx;
+            var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Notification.NOTIFICATION) + device.idx;
 
             try
             {
-                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
-                if (response.IsSuccessStatusCode)
+                Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
+                if (Response.IsSuccessStatusCode)
                 {
-                    var content = await response.Content.ReadAsStringAsync();
+                    var content = await Response.Content.ReadAsStringAsync();
                     if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<NotificationModel>(content);
                 }
@@ -200,18 +241,18 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz get timers for a device
         /// </summary>
-        public async Task<TimerModel> GetTimers(String idx)
+        public async Task<TimerModel> GetTimers(string idx)
         {
             if (Server == null)
                 return null;
-            String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.SWITCHTIMER) + idx;
+            var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.SWITCHTIMER) + idx;
 
             try
             {
-                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
-                if (response.IsSuccessStatusCode)
+                Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
+                if (Response.IsSuccessStatusCode)
                 {
-                    var content = await response.Content.ReadAsStringAsync();
+                    var content = await Response.Content.ReadAsStringAsync();
                     if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<TimerModel>(content);
                 }
@@ -230,14 +271,14 @@ namespace NL.HNOGames.Domoticz.Data
         {
             if (Server == null)
                 return null;
-            String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Log.GET_LOG);
+            var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Log.GET_LOG);
 
             try
             {
-                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
-                if (response.IsSuccessStatusCode)
+                Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
+                if (Response.IsSuccessStatusCode)
                 {
-                    var content = await response.Content.ReadAsStringAsync();
+                    var content = await Response.Content.ReadAsStringAsync();
                     if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<ServerLogsModel>(content);
                 }
@@ -258,14 +299,14 @@ namespace NL.HNOGames.Domoticz.Data
         {
             if (Server == null)
                 return null;
-            String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.System.USERVARIABLES);
+            var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.System.USERVARIABLES);
 
             try
             {
-                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
-                if (response.IsSuccessStatusCode)
+                Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
+                if (Response.IsSuccessStatusCode)
                 {
-                    var content = await response.Content.ReadAsStringAsync();
+                    var content = await Response.Content.ReadAsStringAsync();
                     if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<UserVariableModel>(content);
                 }
@@ -285,14 +326,14 @@ namespace NL.HNOGames.Domoticz.Data
         {
             if (Server == null)
                 return null;
-            String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.System.EVENTS);
+            var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.System.EVENTS);
 
             try
             {
-                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
-                if (response.IsSuccessStatusCode)
+                Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
+                if (Response.IsSuccessStatusCode)
                 {
-                    var content = await response.Content.ReadAsStringAsync();
+                    var content = await Response.Content.ReadAsStringAsync();
                     if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<EventModel>(content);
                 }
@@ -308,22 +349,22 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz get logs for a device
         /// </summary>
-        public async Task<LogModel> GetLogs(string deviceIDX, bool isScene = false, bool textLog = false)
+        public async Task<LogModel> GetLogs(string deviceIdx, bool isScene = false, bool textLog = false)
         {
             if (Server == null)
                 return null;
-            String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.SWITCHLOG) + deviceIDX;
+            var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.SWITCHLOG) + deviceIdx;
             if (isScene)
-                url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.SCENELOG) + deviceIDX;
+                url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.SCENELOG) + deviceIdx;
             else if (textLog)
-                url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.TEXTLOG) + deviceIDX;
+                url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.TEXTLOG) + deviceIdx;
 
             try
             {
-                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
-                if (response.IsSuccessStatusCode)
+                Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
+                if (Response.IsSuccessStatusCode)
                 {
-                    var content = await response.Content.ReadAsStringAsync();
+                    var content = await Response.Content.ReadAsStringAsync();
                     if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<LogModel>(content);
                 }
@@ -340,20 +381,20 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz get all scene and groups
         /// </summary>
-        public async Task<SceneModel> GetScenes(String filter)
+        public async Task<SceneModel> GetScenes(string filter)
         {
             if (Server == null)
                 return null;
-            String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.SCENES);
+            var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.SCENES);
             if (!string.IsNullOrEmpty(filter))
                 url = url.Replace("filter=all", "filter=" + filter);
 
             try
             {
-                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
-                if (response.IsSuccessStatusCode)
+                Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
+                if (Response.IsSuccessStatusCode)
                 {
-                    var content = await response.Content.ReadAsStringAsync();
+                    var content = await Response.Content.ReadAsStringAsync();
                     if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<SceneModel>(content);
                 }
@@ -368,20 +409,20 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz get all temperature devices
         /// </summary>
-        public async Task<DevicesModel> GetTemperature(String filter)
+        public async Task<DevicesModel> GetTemperature(string filter)
         {
             if (Server == null)
                 return null;
-            String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.TEMPERATURE);
+            var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.TEMPERATURE);
             if (!string.IsNullOrEmpty(filter))
                 url = url.Replace("filter=all", "filter=" + filter);
 
             try
             {
-                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
-                if (response.IsSuccessStatusCode)
+                Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
+                if (Response.IsSuccessStatusCode)
                 {
-                    var content = await response.Content.ReadAsStringAsync();
+                    var content = await Response.Content.ReadAsStringAsync();
                     if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<DevicesModel>(content);
                 }
@@ -396,20 +437,20 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz get all weather devices
         /// </summary>
-        public async Task<DevicesModel> GetWeather(String filter)
+        public async Task<DevicesModel> GetWeather(string filter)
         {
             if (Server == null)
                 return null;
-            String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.WEATHER);
+            var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.WEATHER);
             if (!string.IsNullOrEmpty(filter))
                 url = url.Replace("filter=all", "filter=" + filter);
 
             try
             {
-                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
-                if (response.IsSuccessStatusCode)
+                Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
+                if (Response.IsSuccessStatusCode)
                 {
-                    var content = await response.Content.ReadAsStringAsync();
+                    var content = await Response.Content.ReadAsStringAsync();
                     if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<DevicesModel>(content);
                 }
@@ -424,20 +465,20 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz get all utilities devices
         /// </summary>
-        public async Task<DevicesModel> getUtilities(String filter)
+        public async Task<DevicesModel> GetUtilities(string filter)
         {
             if (Server == null)
                 return null;
-            String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.UTILITIES);
+            var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.UTILITIES);
             if (!string.IsNullOrEmpty(filter))
                 url = url.Replace("filter=all", "filter=" + filter);
 
             try
             {
-                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
-                if (response.IsSuccessStatusCode)
+                Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
+                if (Response.IsSuccessStatusCode)
                 {
-                    var content = await response.Content.ReadAsStringAsync();
+                    var content = await Response.Content.ReadAsStringAsync();
                     if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<DevicesModel>(content);
                 }
@@ -452,20 +493,20 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz get favorite devices
         /// </summary>
-        public async Task<DevicesModel> GetFavorites(String filter)
+        public async Task<DevicesModel> GetFavorites(string filter)
         {
             if (Server == null)
                 return null;
-            String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.FAVORITES);
+            var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.FAVORITES);
             if (!string.IsNullOrEmpty(filter))
                 url = url.Replace("filter=all", "filter=" + filter);
 
             try
             {
-                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
-                if (response.IsSuccessStatusCode)
+                Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
+                if (Response.IsSuccessStatusCode)
                 {
-                    var content = await response.Content.ReadAsStringAsync();
+                    var content = await Response.Content.ReadAsStringAsync();
                     if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<DevicesModel>(content);
                 }
@@ -481,20 +522,20 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz get Graph data
         /// </summary>
-        public async Task<GraphModel> GetGraphData(String idx, String type, ConstantValues.GraphRange range = ConstantValues.GraphRange.Day)
+        public async Task<GraphModel> GetGraphData(string idx, string type, ConstantValues.GraphRange range = ConstantValues.GraphRange.Day)
         {
             if (Server == null)
                 return null;
-            String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Log.GRAPH) + idx;
+            var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Log.GRAPH) + idx;
             url += ConstantValues.Url.Log.GRAPH_RANGE + range.ToString().ToLower();
             url += ConstantValues.Url.Log.GRAPH_TYPE + type;
 
             try
             {
-                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
-                if (response.IsSuccessStatusCode)
+                Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
+                if (Response.IsSuccessStatusCode)
                 {
-                    var content = await response.Content.ReadAsStringAsync();
+                    var content = await Response.Content.ReadAsStringAsync();
                     if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<GraphModel>(content);
                 }
@@ -514,20 +555,20 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz set action
         /// </summary>
-        public async Task<ActionModel> SetAction(String idx, int jsonUrl, int jsonAction, double value, String password)
+        public async Task<ActionModel> SetAction(string idx, int jsonUrl, int jsonAction, double value, string password)
         {
             if (Server == null)
                 return null;
 
-            String url = await App.ConnectionService.ConstructSetUrlAsync(Server, jsonUrl, idx, jsonAction, value);
+            var url = await App.ConnectionService.ConstructSetUrlAsync(Server, jsonUrl, idx, jsonAction, value);
             url += !string.IsNullOrEmpty(password) ? "&passcode=" + password : "&passcode=";
 
             try
             {
-                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
-                if (response.IsSuccessStatusCode)
+                Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
+                if (Response.IsSuccessStatusCode)
                 {
-                    var content = await response.Content.ReadAsStringAsync();
+                    var content = await Response.Content.ReadAsStringAsync();
                     if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return JsonConvert.DeserializeObject<ActionModel>(content);
                 }
@@ -542,7 +583,7 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz get favorite devices
         /// </summary>
-        public async Task<bool> SetFavorite(String idx, bool isScene, bool favorite)
+        public async Task<bool> SetFavorite(string idx, bool isScene, bool favorite)
         {
             if (Server == null)
                 return false;
@@ -554,7 +595,7 @@ namespace NL.HNOGames.Domoticz.Data
                 0, null);
 
                 if (result != null &&
-                    String.Compare(result.status, "ok", StringComparison.OrdinalIgnoreCase) == 0)
+                    string.Compare(result.status, "ok", StringComparison.OrdinalIgnoreCase) == 0)
                     return true;
             }
             catch (Exception ex)
@@ -568,7 +609,7 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz set dimmer value level
         /// </summary>
-        public async Task<bool> SetDimmer(String idx, float value, String password = null)
+        public async Task<bool> SetDimmer(string idx, float value, string password = null)
         {
             if (Server == null)
                 return false;
@@ -579,7 +620,7 @@ namespace NL.HNOGames.Domoticz.Data
                 ConstantValues.Device.Dimmer.Action.DIM_LEVEL,
                 value, password);
                 if (result != null &&
-                    String.Compare(result.status, "ok", StringComparison.OrdinalIgnoreCase) == 0)
+                    string.Compare(result.status, "ok", StringComparison.OrdinalIgnoreCase) == 0)
                     return true;
             }
             catch (Exception ex)
@@ -593,7 +634,7 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz set switch on off value
         /// </summary>
-        public async Task<bool> SetSwitch(String idx, bool value, bool isScene, String password = null)
+        public async Task<bool> SetSwitch(string idx, bool value, bool isScene, string password = null)
         {
             if (Server == null)
                 return false;
@@ -606,7 +647,7 @@ namespace NL.HNOGames.Domoticz.Data
                     value ? ConstantValues.Device.Switch.Action.ON : ConstantValues.Device.Switch.Action.OFF,
                     0, password);
                     if (result != null &&
-                        String.Compare(result.status, "ok", StringComparison.OrdinalIgnoreCase) == 0)
+                        string.Compare(result.status, "ok", StringComparison.OrdinalIgnoreCase) == 0)
                         return true;
                 }
                 else
@@ -615,7 +656,7 @@ namespace NL.HNOGames.Domoticz.Data
                    value ? ConstantValues.Device.Scene.Action.ON : ConstantValues.Device.Scene.Action.OFF,
                    0, password);
                     if (result != null &&
-                        String.Compare(result.status, "ok", StringComparison.OrdinalIgnoreCase) == 0)
+                        string.Compare(result.status, "ok", StringComparison.OrdinalIgnoreCase) == 0)
                         return true;
                 }
             }
@@ -630,7 +671,7 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz set point to new float value
         /// </summary>
-        public async Task<bool> SetPoint(String idx, double value, double oldvalue, String password = null)
+        public async Task<bool> SetPoint(string idx, double value, double oldvalue, string password = null)
         {
             if (Server == null)
                 return false;
@@ -641,7 +682,7 @@ namespace NL.HNOGames.Domoticz.Data
                 value, password);
 
                 if (result != null &&
-                    String.Compare(result.status, "ok", StringComparison.OrdinalIgnoreCase) == 0)
+                    string.Compare(result.status, "ok", StringComparison.OrdinalIgnoreCase) == 0)
                     return true;
             }
             catch (Exception ex)
@@ -655,7 +696,7 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz set switch on off value
         /// </summary>
-        public async Task<bool> SetBlind(String idx, int value = ConstantValues.Device.Switch.Action.OFF, String password = null)
+        public async Task<bool> SetBlind(string idx, int value = ConstantValues.Device.Switch.Action.OFF, string password = null)
         {
             if (Server == null)
                 return false;
@@ -666,7 +707,7 @@ namespace NL.HNOGames.Domoticz.Data
                 value,
                 0, password);
                 if (result != null &&
-                    String.Compare(result.status, "ok", StringComparison.OrdinalIgnoreCase) == 0)
+                    string.Compare(result.status, "ok", StringComparison.OrdinalIgnoreCase) == 0)
                     return true;
             }
             catch (Exception ex)
@@ -681,25 +722,25 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz set state of security panel
         /// </summary>
-        public async Task<bool> SetSecurityPanel(int secStatus, String secMD5code)
+        public async Task<bool> SetSecurityPanel(int secStatus, string secMd5Code)
         {
             if (Server == null)
                 return false;
 
-            String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.System.SETSECURITY);
+            var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.System.SETSECURITY);
             url += "&secstatus=" + secStatus;
-            url += "&seccode=" + secMD5code;
+            url += "&seccode=" + secMd5Code;
 
             try
             {
-                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
-                if (response.IsSuccessStatusCode)
+                Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
+                if (Response.IsSuccessStatusCode)
                 {
-                    var content = await response.Content.ReadAsStringAsync();
+                    var content = await Response.Content.ReadAsStringAsync();
                     if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     var result = JsonConvert.DeserializeObject<ActionModel>(content);
                     if (result != null &&
-                    String.Compare(result.status, "ok", StringComparison.OrdinalIgnoreCase) == 0)
+                    string.Compare(result.status, "ok", StringComparison.OrdinalIgnoreCase) == 0)
                         return true;
                 }
             }
@@ -714,19 +755,19 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz clean device id
         /// </summary>
-        public async Task<bool> CleanRegisteredDevice(String DeviceID)
+        public async Task<bool> CleanRegisteredDevice(string deviceId)
         {
-            if (Server == null || string.IsNullOrEmpty(DeviceID))
+            if (Server == null || string.IsNullOrEmpty(deviceId))
                 return false;
 
-            String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.System.CLEAN_MOBILE_DEVICE);
-            url += "&uuid=" + DeviceID;
+            var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.System.CLEAN_MOBILE_DEVICE);
+            url += "&uuid=" + deviceId;
             try
             {
-                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
-                if (response.IsSuccessStatusCode)
+                Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
+                if (Response.IsSuccessStatusCode)
                 {
-                    var content = await response.Content.ReadAsStringAsync();
+                    var content = await Response.Content.ReadAsStringAsync();
                     if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return true;
                 }
@@ -742,14 +783,14 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz register device for GCM
         /// </summary>
-        public async Task<bool> RegisterDevice(String DeviceID, String SenderId)
+        public async Task<bool> RegisterDevice(string deviceId, string senderId)
         {
-            if (Server == null || string.IsNullOrEmpty(DeviceID) || string.IsNullOrEmpty(SenderId))
+            if (Server == null || string.IsNullOrEmpty(deviceId) || string.IsNullOrEmpty(senderId))
                 return false;
 
-            String url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.System.ADD_MOBILE_DEVICE);
-            url += "&uuid=" + DeviceID;
-            url += "&senderid=" + SenderId;
+            var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.System.ADD_MOBILE_DEVICE);
+            url += "&uuid=" + deviceId;
+            url += "&senderid=" + senderId;
             url += "&name=" + CrossDeviceInfo.Current.Model.Replace(" ", "");
             url += "&devicetype=" + (CrossDeviceInfo.Current.Platform.ToString() + CrossDeviceInfo.Current.Version).Replace(" ", "");
             url += "&active=" + (App.AppSettings.EnableNotifications ? "1" : "0");
@@ -757,10 +798,10 @@ namespace NL.HNOGames.Domoticz.Data
 
             try
             {
-                response = await App.ConnectionService.Client.GetAsync(new Uri(url));
-                if (response.IsSuccessStatusCode)
+                Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
+                if (Response.IsSuccessStatusCode)
                 {
-                    var content = await response.Content.ReadAsStringAsync();
+                    var content = await Response.Content.ReadAsStringAsync();
                     if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
                     return true;
                 }
@@ -776,7 +817,7 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Handle a toggle of a switch from a service like qrcode/speech/geo
         /// </summary>
-        public async Task<bool> HandleSwitch(string idx, String password, int inputJSONAction, String value, bool isSceneOrGroup = false)
+        public async Task<bool> HandleSwitch(string idx, string password, int inputJsonAction, string value, bool isSceneOrGroup = false)
         {
             if (string.IsNullOrEmpty(idx))
                 return false;
@@ -786,12 +827,12 @@ namespace NL.HNOGames.Domoticz.Data
                 return false;
 
             int jsonAction;
-            int jsonUrl = ConstantValues.Json.Url.Set.SWITCHES;
-            int jsonValue = 0;
+            var jsonUrl = ConstantValues.Json.Url.Set.SWITCHES;
+            var jsonValue = 0;
 
             if (!isSceneOrGroup)
             {
-                if (inputJSONAction < 0)
+                if (inputJsonAction < 0)
                 {
                     if (mDevicesInfo.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDS ||
                             mDevicesInfo.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDPERCENTAGE)
@@ -828,7 +869,7 @@ namespace NL.HNOGames.Domoticz.Data
                     if (mDevicesInfo.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDS ||
                             mDevicesInfo.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDPERCENTAGE)
                     {
-                        if (inputJSONAction == 1)
+                        if (inputJsonAction == 1)
                             jsonAction = ConstantValues.Device.Switch.Action.OFF;
                         else
                         {
@@ -842,7 +883,7 @@ namespace NL.HNOGames.Domoticz.Data
                     }
                     else
                     {
-                        if (inputJSONAction == 1)
+                        if (inputJsonAction == 1)
                         {
                             jsonAction = ConstantValues.Device.Switch.Action.ON;
                             if (!string.IsNullOrEmpty(value))
@@ -869,7 +910,7 @@ namespace NL.HNOGames.Domoticz.Data
             else
             {
                 jsonUrl = ConstantValues.Json.Url.Set.SCENES;
-                if (inputJSONAction < 0)
+                if (inputJsonAction < 0)
                 {
                     if (!mDevicesInfo.StatusBoolean)
                     {
@@ -880,7 +921,7 @@ namespace NL.HNOGames.Domoticz.Data
                 }
                 else
                 {
-                    if (inputJSONAction == 1)
+                    if (inputJsonAction == 1)
                     {
                         jsonAction = ConstantValues.Device.Scene.Action.ON;
                     }
@@ -888,13 +929,13 @@ namespace NL.HNOGames.Domoticz.Data
                         jsonAction = ConstantValues.Device.Scene.Action.OFF;
                 }
 
-                if (String.Compare(mDevicesInfo.Type, ConstantValues.Device.Scene.Type.SCENE, StringComparison.OrdinalIgnoreCase) == 0)
+                if (string.Compare(mDevicesInfo.Type, ConstantValues.Device.Scene.Type.SCENE, StringComparison.OrdinalIgnoreCase) == 0)
                     jsonAction = ConstantValues.Device.Scene.Action.ON;
             }
 
-            var result = await this.SetAction(idx, jsonUrl, jsonAction, jsonValue, password);
+            var result = await SetAction(idx, jsonUrl, jsonAction, jsonValue, password);
             if (result != null &&
-                String.Compare(result.status, "ok", StringComparison.OrdinalIgnoreCase) == 0)
+                string.Compare(result.status, "ok", StringComparison.OrdinalIgnoreCase) == 0)
                 return true;
 
             return false;

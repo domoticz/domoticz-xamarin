@@ -17,6 +17,13 @@ namespace NL.HNOGames.Domoticz.ViewModels
         public Command RefreshActionCommand { get; set; }
         public bool OldData;
 
+
+        public delegate void SetListViewVisibility(bool visible);
+
+        public SetListViewVisibility SetListViewVisibilityMethod { get; set; }
+        public bool SomethingFound = true;
+
+
         public SceneViewModel()
         {
             Title = AppResources.title_scenes;
@@ -45,6 +52,7 @@ namespace NL.HNOGames.Domoticz.ViewModels
                 var items = await App.ApiService.GetScenes(null);
                 if (items.result != null && items.result.Length > 0)
                 {
+                    SomethingFound = true;
                     if (Devices != null)
                     {
                         Devices.ReplaceRange(items.result);
@@ -52,6 +60,13 @@ namespace NL.HNOGames.Domoticz.ViewModels
                     }
                     OldData = false;
                 }
+                else
+                {
+                    SomethingFound = false;
+                    Devices = new ObservableRangeCollection<Models.Scene>();
+                    Cache.SetCache(GetType().Name, Devices);
+                }
+                SetListViewVisibilityMethod?.Invoke(SomethingFound);
             }
             catch (Exception ex)
             {

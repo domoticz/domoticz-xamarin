@@ -7,7 +7,7 @@
             Title="Domoticz">
     <TabbedPage.ToolbarItems>
 
-        <ToolbarItem Text="{resources:Translate title_plans}" Order="Primary" Clicked="OnShowPlansClick">
+        <ToolbarItem x:Name="tiPlans" Text="{resources:Translate title_plans}" Order="Primary" Clicked="OnShowPlansClick">
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource"
                             iOS="ic_home.png"

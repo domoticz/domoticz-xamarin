@@ -40,19 +40,19 @@ namespace NL.HNOGames.Domoticz.Helpers
         private const string ExtraDataSettingsKey = "extradata_settings_key";
 
         private const string EnableScreenItemsSettingsKey = "enablescreens_settings_key";
-        private const string EnableTalkBackSettingsKey = "enable_talkback_settings_key";
+        private const string EnableTalkBackSettingsKey = "enable_talkback_settings_key2";
 
-        private const string EnableQRCodeSettingsKey = "enable_qrcode_settings_key";
-        private const string QRCodesSettingsKey = "qrcode_settings_key";
+        private const string EnableQRCodeSettingsKey = "enable_qrcode_settings_key2";
+        private const string QRCodesSettingsKey = "qrcode_settings_key2";
 
-        private const string EnableSpeechSettingsKey = "enable_speech_settings_key";
-        private const string SpeechSettingsKey = "speech_settings_key";
+        private const string EnableSpeechSettingsKey = "enable_speech_settings_key2";
+        private const string SpeechSettingsKey = "speech_settings_key2";
 
         private const string EnableDebugInfoSettingsKey = "Enable_DebugInfo_settings_key";
         private const string EnableJSONDebugInfoSettingsKey = "Enable_JSON_DebugInfo_settings_key";
         private const string DebugInfoSettingsKey = "DebugInfo_settings_key";
 
-        private const string PremiumSettingsKey = "premium_settings_key";
+        private const string PremiumSettingsKey = "premium_settings_key2";
 
         #endregion
 

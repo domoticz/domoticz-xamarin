@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:conv="clr-namespace:NL.HNOGames.Domoticz.Convertors;assembly=NL.HNOGames.Domoticz"
+             xmlns:controls="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             x:Class="NL.HNOGames.Domoticz.Views.CameraPage"
+             Style="{StaticResource ContentPageType}"
+             Title="{Binding Title}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <conv:ByteArrayToImageSourceConverter x:Key="bic" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <controls:FlowListView x:Name="listView"
+                                   SeparatorVisibility="None"
+                                   HasUnevenRows="true"
+                                   RowHeight="150"
+                                   FlowItemTapped="ListView_OnFlowItemTapped"
+                                   FlowItemsSource="{Binding Cameras}">
+                <controls:FlowListView.FlowColumnTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0" Orientation="Vertical" HorizontalOptions="CenterAndExpand"
+                                         VerticalOptions="StartAndExpand" Style="{StaticResource LayoutDeviceCardType}">
+                                <Label HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"
+                                       VerticalOptions="Start"
+                                       Text="{Binding Name}" Style="{StaticResource HeaderType}"/>
+                                <Image Source="{Binding ImageBytes, Converter={StaticResource bic}}"
+                                       VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand"
+                                       Aspect="AspectFill" />
+                            </StackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </controls:FlowListView.FlowColumnTemplate>
+            </controls:FlowListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

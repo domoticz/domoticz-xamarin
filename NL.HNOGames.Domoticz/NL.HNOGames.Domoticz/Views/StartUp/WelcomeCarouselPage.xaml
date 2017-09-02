@@ -16,16 +16,20 @@
                    Text="{resources:Translate welcome_info_domoticz}" Margin="0,10,0,0" />
             <Label TextColor="White" HorizontalOptions="End" Text="{resources:Translate welcome_info_swipe}"
                    Margin="0,30,0,0" />
+
+            <Button x:Name="btnDemo" Style="{StaticResource DarkButton}" Text="Use our Demo setup"
+                    HorizontalOptions="End" VerticalOptions="End" Clicked="BtnDemo_OnClicked" />
+            
             <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal"
                          Padding="20">
                 <Button Style="{StaticResource DarkButton}" Text="{resources:Translate welcome_button_previous}"
-                        HorizontalOptions="Start" VerticalOptions="End" Clicked="btnPrevious_Clicked" IsVisible="False" />
+                        HorizontalOptions="Start" VerticalOptions="End" Clicked="btnPrevious_Clicked" IsVisible="False"/>
                 <Button Style="{StaticResource DarkButton}" Text="{resources:Translate welcome_button_next}"
-                        HorizontalOptions="End" VerticalOptions="End" Clicked="btnNext_Clicked" />
+                        HorizontalOptions="End" VerticalOptions="End" Clicked="btnNext_Clicked"/>
             </StackLayout>
         </StackLayout>
     </ContentPage>
-    <ContentPage Appearing="ContentPage_Appearing" Style="{StaticResource ContentPageType}">
+    <ContentPage Style="{StaticResource ContentPageType}">
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
             <Label Style="{StaticResource HeaderType}" HorizontalOptions="CenterAndExpand" FontSize="Large"
                    Text="{resources:Translate title_activity_server_settings}" Margin="0,20,0,0" />
@@ -33,8 +37,6 @@
                    Text="{resources:Translate welcome_info_settings1}" Margin="0,10,0,0" LineBreakMode="WordWrap" />
             <Label Style="{StaticResource DetailType}" HorizontalOptions="StartAndExpand"
                    Text="{resources:Translate welcome_info_settings2}" Margin="0,10,0,0" LineBreakMode="WordWrap" />
-            <Button x:Name="btnImportSettings" Text="{resources:Translate import_settings}"
-                    Clicked="btnImportSettings_Clicked" IsVisible="False" />
 
             <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal"
                          Padding="20">
@@ -70,7 +72,8 @@
                             <Label Style="{StaticResource DetailType}"
                                    Text="{resources:Translate welcome_remote_server_protocol}" />
                             <Picker Style="{StaticResource PickerType}" x:Name="txtRemoteProtocol"
-                                    HorizontalOptions="FillAndExpand" SelectedIndex="{Binding REMOTE_SERVER_PROTOCOL}">
+                                    HorizontalOptions="FillAndExpand" SelectedIndex="{Binding REMOTE_SERVER_PROTOCOL}"
+                                    SelectedIndexChanged="TxtRemoteProtocol_OnSelectedIndexChanged">
                                 <Picker.Items>
                                     <x:String>HTTP</x:String>
                                     <x:String>HTTPS</x:String>
@@ -87,8 +90,13 @@
                         </StackLayout>
                     </Grid>
                 </StackLayout>
+                
+                <Label x:Name="lblSSLWarning" Style="{StaticResource DetailType}"
+                       Text="Note: self signed certificates are not supported, please use properly signed sertificates!"
+                       IsVisible="False" LineBreakMode="WordWrap" TextColor="Red"/>
 
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Vertical">
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Vertical"
+                             Padding="0,10,0,0">
                     <Label Style="{StaticResource DetailType}"
                            Text="{resources:Translate welcome_remote_server_directory}" />
                     <Entry Style="{StaticResource EntryType}" x:Name="txtRemoteDirectory"

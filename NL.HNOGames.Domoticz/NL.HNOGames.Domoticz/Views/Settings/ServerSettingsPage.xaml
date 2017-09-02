@@ -32,7 +32,8 @@
                             <Label Style="{StaticResource DetailType}"
                                    Text="{resources:Translate welcome_remote_server_protocol}" />
                             <Picker Style="{StaticResource PickerType}" x:Name="txtRemoteProtocol"
-                                    HorizontalOptions="FillAndExpand" SelectedIndex="{Binding REMOTE_SERVER_PROTOCOL}">
+                                    HorizontalOptions="FillAndExpand" SelectedIndex="{Binding REMOTE_SERVER_PROTOCOL}"
+                                    SelectedIndexChanged="TxtRemoteProtocol_OnSelectedIndexChanged">
                                 <Picker.Items>
                                     <x:String>HTTP</x:String>
                                     <x:String>HTTPS</x:String>
@@ -50,7 +51,12 @@
                     </Grid>
                 </StackLayout>
 
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Vertical">
+                <Label x:Name="lblSSLWarning" Style="{StaticResource DetailType}"
+                       Text="Note: self signed certificates are not supported, please use properly signed sertificates!"
+                       IsVisible="False" LineBreakMode="WordWrap" TextColor="Red" />
+
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Vertical"
+                             Padding="0,10,0,0">
                     <Label Style="{StaticResource DetailType}"
                            Text="{resources:Translate welcome_remote_server_directory}" />
                     <Entry Style="{StaticResource EntryType}" x:Name="txtRemoteDirectory"

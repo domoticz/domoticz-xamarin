@@ -2,9 +2,9 @@
 using Newtonsoft.Json;
 using NL.HNOGames.Domoticz.Models;
 using NL.HNOGames.Domoticz.Resources;
-using PCLStorage;
 using System;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -31,23 +31,16 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
         /// INit welcome screens
         /// </summary>
         public WelcomeCarouselPage()
+
+
         {
             ServerSettings = App.AppSettings.ActiveServerSettings ?? new ServerSettings();
             InitializeComponent();
             BindingContext = ServerSettings;
             btnCheck.IsVisible = true;
-        }
 
-        /// <summary>
-        /// Read File Content
-        /// </summary>
-        public async Task<string> ReadFileContent(string fileName, IFolder rootFolder)
-        {
-            var exist = await rootFolder.CheckExistsAsync(fileName);
-            if (exist != ExistenceCheckResult.FileExists) return null;
-            var file = await rootFolder.GetFileAsync(fileName);
-            var text = await file.ReadAllTextAsync();
-            return text;
+            lblSSLWarning.IsVisible = string.Compare(txtRemoteProtocol.Items[txtRemoteProtocol.SelectedIndex], "https",
+                                          StringComparison.OrdinalIgnoreCase) == 0;
         }
 
         /// <summary>
@@ -65,12 +58,8 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
         {
             if (string.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_URL))
                 return false;
-            //if (string.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_PORT))
-            //    return false;
             if (!ServerSettings.IS_LOCAL_SERVER_ADDRESS_DIFFERENT) return true;
             return !string.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_URL);
-            //if (string.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_PORT))
-            //    return false;
         }
 
         /// <summary>
@@ -91,14 +80,14 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
             App.SetMainPage();
         }
 
+        private CancellationTokenSource cts = new CancellationTokenSource();
         private async void ProcessServerSettings()
         {
-            if (IsBusy)
+            if (IsBusy && !cts.IsCancellationRequested)
                 return;
 
+            cts = new CancellationTokenSource();
             IsBusy = true;
-
-            //save latest version
             App.AppSettings.ActiveServerSettings = ServerSettings;
             lblResult.Text = "";
             btnFinish.IsVisible = false;
@@ -115,11 +104,9 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
             {
                 lblResult.Text = AppResources.welcome_info_checkingConnection + Environment.NewLine;
 
-                App.ShowLoading();
-                //get Domoticz version to check settings
                 App.ApiService.Server = App.AppSettings.ActiveServerSettings;
-                var result = await App.ApiService.GetVersion();
-
+                App.ShowLoading(null, cts);
+                var result = await App.ApiService.GetVersion(cts);
                 if (result != null)
                 {
                     lblResult.Text = AppResources.welcome_msg_serverVersion + ": " + result.version;
@@ -134,15 +121,21 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
                     }
                     else
                     {
-                        lblResult.Text = App.ApiService.response != null
-                            ? App.ApiService.response.ReasonPhrase
+                        lblResult.Text = App.ApiService.Response != null
+                            ? App.ApiService.Response.ReasonPhrase
                             : AppResources.failed_to_get_switches;
+                        if (App.ApiService.Response.ReasonPhrase == "OK")
+                            lblResult.Text = AppResources.failed_to_get_switches;
                     }
                 }
                 else
-                    lblResult.Text = App.ApiService.response != null
-                        ? App.ApiService.response.ReasonPhrase
-                        : AppResources.error_timeout;
+                {
+                    lblResult.Text = App.ApiService.Response != null
+                            ? App.ApiService.Response.ReasonPhrase
+                            : AppResources.failed_to_get_switches;
+                    if (App.ApiService.Response.ReasonPhrase == "OK")
+                        lblResult.Text = AppResources.failed_to_get_switches;
+                }
 
                 App.HideLoading();
             }
@@ -155,42 +148,6 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
         private void btnCheck_Clicked(object sender, EventArgs e)
         {
             ProcessServerSettings();
-        }
-
-        /// <summary>
-        /// IMport settings
-        /// </summary>
-        private async void btnImportSettings_Clicked(object sender, EventArgs e)
-        {
-            try
-            {
-                var rootFolder = SpecialFolder.Current.Pictures;
-                var folder = await rootFolder.CreateFolderAsync("Domoticz",
-                    CreationCollisionOption.OpenIfExists);
-                var fileContent = await ReadFileContent("domoticz_settings.txt", folder);
-                var settingsObject = JsonConvert.DeserializeObject<Helpers.Settings>(fileContent);
-                App.AppSettings = settingsObject;
-
-                App.ShowToast(AppResources.settings_imported);
-                ServerSettings = App.AppSettings.ActiveServerSettings;
-            }
-            catch (Exception ex)
-            {
-                App.AddLog(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// check if we have a settings file that can be imported
-        /// </summary>
-        private async void ContentPage_Appearing(object sender, EventArgs e)
-        {
-            var rootFolder = SpecialFolder.Current.Pictures;
-            var folder = await rootFolder.CreateFolderAsync("Domoticz",
-                CreationCollisionOption.OpenIfExists);
-
-            var exist = await folder.CheckExistsAsync("domoticz_settings.txt");
-            btnImportSettings.IsVisible = exist == ExistenceCheckResult.FileExists;
         }
 
         /// <summary>
@@ -224,6 +181,29 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
             if (index <= 0)
                 index = 0;
             CurrentPage = Children[index];
+        }
+
+        /// <summary>
+        /// Check if HTTPS is selected
+        /// </summary>
+        private void TxtRemoteProtocol_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblSSLWarning.IsVisible = string.Compare(txtRemoteProtocol.Items[txtRemoteProtocol.SelectedIndex], "https",
+                                          StringComparison.OrdinalIgnoreCase) == 0;
+        }
+
+        /// <summary>
+        /// show demo account
+        /// </summary>
+        private void BtnDemo_OnClicked(object sender, EventArgs e)
+        {
+            CurrentPage = Children[2];
+            swEnableLocalSettings.IsToggled = false;
+            txtRemoteProtocol.SelectedIndex = 1;
+            txtRemotePort.Text = "24443";
+            txtRemoteServerAddress.Text = "gandalf.domoticz.com";
+            txtRemoteUsername.Text = "admin";
+            txtRemotePassword.Text = "D@m@t1czCl0ud";
         }
     }
 }

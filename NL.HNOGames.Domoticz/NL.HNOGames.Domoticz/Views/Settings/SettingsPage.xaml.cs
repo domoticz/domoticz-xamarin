@@ -4,6 +4,7 @@ using NL.HNOGames.Domoticz.Resources;
 using NL.HNOGames.Domoticz.Views.Dialog;
 using System;
 using System.Collections.Generic;
+using NL.HNOGames.Domoticz.Helpers;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,9 +16,22 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         private SelectMultipleBasePage<ScreenModel> _oEnableScreenPage;
         private readonly Command _goToMainScreen;
 
+        public SettingsPage()
+        {
+            Init();
+        }
+
         public SettingsPage(Command mainScreen)
         {
             _goToMainScreen = mainScreen;
+            Init();
+        }
+
+        /// <summary>
+        /// Init settings screen
+        /// </summary>
+        private void Init()
+        {
             InitializeComponent();
             Title = AppResources.action_settings;
 
@@ -218,13 +232,28 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                 OkText = "Buy",
                 CancelText = "Cancel"
             });
-            if (result)
+            if (!result) return;
+            new Helpers.InAppPurchaseHelper();
+            if (await InAppPurchaseHelper.PurchaseItem())
+                App.ShowToast("Thanks for buying premium!!");
+            PremiumScreenSetup();
+        }
+
+        private async void BtnRestore_OnClicked(object sender, EventArgs e)
+        {
+            var oPurchaser = new Helpers.InAppPurchaseHelper();
+            if (await oPurchaser.PremiumAccountPurchased())
             {
-                Helpers.InAppPurchaseHelper oPurchaser = new Helpers.InAppPurchaseHelper();
-                if (await oPurchaser.PurchaseItem())
-                    App.ShowToast("Thanks for buying premium!!");
+                App.ShowToast("Thanks for buying premium!!");
                 PremiumScreenSetup();
             }
+            else
+                App.ShowToast("Could not restore your premium account.");
+        }
+
+        private async void BtnCameras_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CameraPage());
         }
     }
 }

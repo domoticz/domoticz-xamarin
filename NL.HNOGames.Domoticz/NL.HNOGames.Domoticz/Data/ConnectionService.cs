@@ -1,4 +1,5 @@
-﻿using NL.HNOGames.Domoticz.Models;
+﻿using ModernHttpClient;
+using NL.HNOGames.Domoticz.Models;
 using Plugin.Connectivity;
 using System;
 using System.Globalization;
@@ -14,20 +15,50 @@ namespace NL.HNOGames.Domoticz.Data
     public class ConnectionService
     {
         public HttpClient Client;
+        private string _latestUsedbaseUrl = string.Empty;
+        private readonly NativeCookieHandler _cookieHandler;
 
         /// <summary>
         /// Constructor
         /// </summary>
         public ConnectionService()
-        { RefreshClient(); }
+        {
+            _cookieHandler = new NativeCookieHandler();
+            RefreshClient(); //default 
+        }
 
+        /// <summary>
+        /// Clean client object
+        /// </summary>
+        public void CleanClient()
+        {
+            Client?.Dispose();
+        }
+
+        /// <summary>
+        /// Refresh client object
+        /// </summary>
         private void RefreshClient()
         {
-            Client = new HttpClient
+            /*if (isHttps)
             {
-                MaxResponseContentBufferSize = 256000,
-                Timeout = TimeSpan.FromMilliseconds(15000)
+                Client = new HttpClient(new HttpClientHandler())
+                {
+                    MaxResponseContentBufferSize = 25600000,
+                    Timeout = TimeSpan.FromMilliseconds(10000)
+                };
+            }
+            else
+            {*/
+
+            CleanClient();
+            Client = new HttpClient(new NativeMessageHandler(false, false, _cookieHandler))
+            {
+                MaxResponseContentBufferSize = 25600000,
+                Timeout = TimeSpan.FromMilliseconds(10000)
             };
+
+            //}
         }
 
         /// <summary>
@@ -40,7 +71,9 @@ namespace NL.HNOGames.Domoticz.Data
             string protocol, url, port, directory;
             if (await IsUserOnLocalWifiAsync(server))
             {
-                protocol = server.LOCAL_SERVER_PROTOCOL == 0 ? ConstantValues.Url.Protocol.HTTP : ConstantValues.Url.Protocol.HTTPS;
+                protocol = server.LOCAL_SERVER_PROTOCOL == 0
+                    ? ConstantValues.Url.Protocol.HTTP
+                    : ConstantValues.Url.Protocol.HTTPS;
                 url = server.LOCAL_SERVER_URL;
                 port = server.LOCAL_SERVER_PORT;
                 directory = server.LOCAL_SERVER_DIRECTORY;
@@ -52,7 +85,9 @@ namespace NL.HNOGames.Domoticz.Data
                         server.LOCAL_SERVER_USERNAME +
                         ":" +
                         server.LOCAL_SERVER_PASSWORD);
-                    Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+                    Client.DefaultRequestHeaders.Authorization =
+                        new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",
+                            Convert.ToBase64String(byteArray));
                 }
                 else
                 {
@@ -63,13 +98,17 @@ namespace NL.HNOGames.Domoticz.Data
                             server.REMOTE_SERVER_USERNAME +
                             ":" +
                             server.REMOTE_SERVER_PASSWORD);
-                        Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+                        Client.DefaultRequestHeaders.Authorization =
+                            new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",
+                                Convert.ToBase64String(byteArray));
                     }
                 }
             }
             else
             {
-                protocol = server.REMOTE_SERVER_PROTOCOL == 0 ? ConstantValues.Url.Protocol.HTTP : ConstantValues.Url.Protocol.HTTPS;
+                protocol = server.REMOTE_SERVER_PROTOCOL == 0
+                    ? ConstantValues.Url.Protocol.HTTP
+                    : ConstantValues.Url.Protocol.HTTPS;
                 url = server.REMOTE_SERVER_URL;
                 port = server.REMOTE_SERVER_PORT;
                 directory = server.REMOTE_SERVER_DIRECTORY;
@@ -77,28 +116,34 @@ namespace NL.HNOGames.Domoticz.Data
                 if (!string.IsNullOrEmpty(server.REMOTE_SERVER_USERNAME))
                 {
                     RefreshClient();
-                    var byteArray = Encoding.UTF8.GetBytes(server.REMOTE_SERVER_USERNAME + ":" + server.REMOTE_SERVER_PASSWORD);
-                    Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+                    var byteArray =
+                        Encoding.UTF8.GetBytes(server.REMOTE_SERVER_USERNAME + ":" + server.REMOTE_SERVER_PASSWORD);
+                    Client.DefaultRequestHeaders.Authorization =
+                        new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",
+                            Convert.ToBase64String(byteArray));
                 }
             }
 
-            var fullString = $"{protocol}{url}:{port}{(string.IsNullOrEmpty(directory) ? "" : "/" + directory)}{jsonUrl}";
+            _latestUsedbaseUrl = $"{protocol}{url}:{port}{(string.IsNullOrEmpty(directory) ? "" : "/" + directory)}";
+            var fullString = $"{_latestUsedbaseUrl}{jsonUrl}";
             App.AddLog("JSON Call: " + fullString);
             return fullString;
         }
 
-
         /// <summary>
         /// Create the Url for settings (Post) values
         /// </summary>
-        public async Task<string> ConstructSetUrlAsync(ServerSettings server, int jsonSetUrl, string idx, int action, double value)
+        public async Task<string> ConstructSetUrlAsync(ServerSettings server, int jsonSetUrl, string idx, int action,
+            double value)
         {
             if (server == null)
                 return null;
             string protocol, baseUrl, port, directory, jsonUrl = null, actionUrl;
             if (await IsUserOnLocalWifiAsync(server))
             {
-                protocol = server.LOCAL_SERVER_PROTOCOL == 0 ? ConstantValues.Url.Protocol.HTTP : ConstantValues.Url.Protocol.HTTPS;
+                protocol = server.LOCAL_SERVER_PROTOCOL == 0
+                    ? ConstantValues.Url.Protocol.HTTP
+                    : ConstantValues.Url.Protocol.HTTPS;
                 baseUrl = server.LOCAL_SERVER_URL;
                 port = server.LOCAL_SERVER_PORT;
                 directory = server.LOCAL_SERVER_DIRECTORY;
@@ -110,7 +155,9 @@ namespace NL.HNOGames.Domoticz.Data
                         server.LOCAL_SERVER_USERNAME +
                         ":" +
                         server.LOCAL_SERVER_PASSWORD);
-                    Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+                    Client.DefaultRequestHeaders.Authorization =
+                        new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",
+                            Convert.ToBase64String(byteArray));
                 }
                 else
                 {
@@ -121,13 +168,17 @@ namespace NL.HNOGames.Domoticz.Data
                             server.REMOTE_SERVER_USERNAME +
                             ":" +
                             server.REMOTE_SERVER_PASSWORD);
-                        Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+                        Client.DefaultRequestHeaders.Authorization =
+                            new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",
+                                Convert.ToBase64String(byteArray));
                     }
                 }
             }
             else
             {
-                protocol = server.REMOTE_SERVER_PROTOCOL == 0 ? ConstantValues.Url.Protocol.HTTP : ConstantValues.Url.Protocol.HTTPS;
+                protocol = server.REMOTE_SERVER_PROTOCOL == 0
+                    ? ConstantValues.Url.Protocol.HTTP
+                    : ConstantValues.Url.Protocol.HTTPS;
                 baseUrl = server.REMOTE_SERVER_URL;
                 port = server.REMOTE_SERVER_PORT;
                 directory = server.REMOTE_SERVER_DIRECTORY;
@@ -135,8 +186,11 @@ namespace NL.HNOGames.Domoticz.Data
                 if (!string.IsNullOrEmpty(server.REMOTE_SERVER_USERNAME))
                 {
                     RefreshClient();
-                    var byteArray = Encoding.UTF8.GetBytes(server.REMOTE_SERVER_USERNAME + ":" + server.REMOTE_SERVER_PASSWORD);
-                    Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+                    var byteArray =
+                        Encoding.UTF8.GetBytes(server.REMOTE_SERVER_USERNAME + ":" + server.REMOTE_SERVER_PASSWORD);
+                    Client.DefaultRequestHeaders.Authorization =
+                        new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",
+                            Convert.ToBase64String(byteArray));
                 }
             }
 
@@ -236,7 +290,7 @@ namespace NL.HNOGames.Domoticz.Data
 
                 default:
                     throw new Exception(
-                            "Action not found in method Domoticz.ConstructSetUrl");
+                        "Action not found in method Domoticz.ConstructSetUrl");
             }
 
             string url;
@@ -245,62 +299,62 @@ namespace NL.HNOGames.Domoticz.Data
                 case ConstantValues.Json.Url.Set.SCENES:
                     url = ConstantValues.Url.Scene.GET;
                     jsonUrl = url
-                            + idx
-                            + ConstantValues.Url.Switch.CMD + actionUrl;
+                              + idx
+                              + ConstantValues.Url.Switch.CMD + actionUrl;
                     break;
 
                 case ConstantValues.Json.Url.Set.SWITCHES:
                     url = ConstantValues.Url.Switch.GET;
                     jsonUrl = url
-                            + idx
-                            + ConstantValues.Url.Switch.CMD + actionUrl;
+                              + idx
+                              + ConstantValues.Url.Switch.CMD + actionUrl;
                     break;
 
                 case ConstantValues.Json.Url.Set.MODAL_SWITCHES:
                     url = ConstantValues.Url.ModalSwitch.GET;
                     jsonUrl = url
-                            + idx
-                            + ConstantValues.Url.ModalSwitch.STATUS + actionUrl;
+                              + idx
+                              + ConstantValues.Url.ModalSwitch.STATUS + actionUrl;
                     break;
                 case ConstantValues.Json.Url.Set.TEMP:
                     url = ConstantValues.Url.Temp.GET;
                     jsonUrl = url
-                            + idx
-                            + ConstantValues.Url.Temp.VALUE + actionUrl;
+                              + idx
+                              + ConstantValues.Url.Temp.VALUE + actionUrl;
                     break;
 
                 case ConstantValues.Json.Url.Set.SCENEFAVORITE:
                     url = ConstantValues.Url.Favorite.SCENE;
                     jsonUrl = url
-                            + idx
-                            + ConstantValues.Url.Favorite.VALUE + actionUrl;
+                              + idx
+                              + ConstantValues.Url.Favorite.VALUE + actionUrl;
                     break;
 
                 case ConstantValues.Json.Url.Set.FAVORITE:
                     url = ConstantValues.Url.Favorite.GET;
                     jsonUrl = url
-                            + idx
-                            + ConstantValues.Url.Favorite.VALUE + actionUrl;
+                              + idx
+                              + ConstantValues.Url.Favorite.VALUE + actionUrl;
                     break;
 
                 case ConstantValues.Json.Url.Set.RGBCOLOR:
                     url = ConstantValues.Url.System.RGBCOLOR;
                     jsonUrl = url
-                            + idx
-                            + actionUrl;
+                              + idx
+                              + actionUrl;
                     break;
 
                 case ConstantValues.Json.Url.Set.EVENTS_UPDATE_STATUS:
                     url = ConstantValues.Url.System.EVENTS_UPDATE_STATUS;
                     jsonUrl = url
-                            + idx
-                            + actionUrl;
+                              + idx
+                              + actionUrl;
                     break;
             }
 
-            var fullString =
-                $"{protocol}{baseUrl}:{port}{(string.IsNullOrEmpty(directory) ? "" : "/" + directory)}{jsonUrl}";
-            App.AddLog("JSON Action Call: " + fullString);
+            _latestUsedbaseUrl =
+                $"{protocol}{baseUrl}:{port}{(string.IsNullOrEmpty(directory) ? "" : "/" + directory)}";
+            var fullString = $"{_latestUsedbaseUrl}{jsonUrl}";
             return fullString;
         }
 
@@ -309,7 +363,7 @@ namespace NL.HNOGames.Domoticz.Data
         /// </summary>
         private static async Task<bool> IsUserOnLocalWifiAsync(ServerSettings server)
         {
-            if (!string.IsNullOrEmpty(server?.LOCAL_SERVER_URL))
+            if (server != null && server.IS_LOCAL_SERVER_ADDRESS_DIFFERENT && !string.IsNullOrEmpty(server.LOCAL_SERVER_URL))
                 return await CrossConnectivity.Current.IsReachable(server.LOCAL_SERVER_URL, 1000);
             return false;
         }

@@ -9,11 +9,9 @@
 	<key>CFBundleIdentifier</key>
 	<string>nl.hnogames.domoticz</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.0.22</string>
+	<string>0.0.32</string>
 	<key>MinimumOSVersion</key>
 	<string>8.0</string>
-	<key>CFBundleVersion</key>
-	<string>22</string>
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
@@ -48,5 +46,14 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Can we use your camera</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Can we use your calendar</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>CFBundleVersion</key>
+	<string>32</string>
 </dict>
 </plist>

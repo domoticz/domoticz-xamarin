@@ -42,6 +42,13 @@
         <Setter Property="HorizontalOptions" Value="FillAndExpand" />
         <Setter Property="VerticalOptions" Value="FillAndExpand" />
     </Style>
+    <Style x:Key="LayoutDeviceCardType" TargetType="StackLayout">
+        <Setter Property="BackgroundColor" Value="{DynamicResource CardBackgroundColor}" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="Padding" Value="10" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+    </Style>
     <Style TargetType="NavigationPage">
         <Setter Property="BarBackgroundColor" Value="{DynamicResource Primary}" />
         <Setter Property="BarTextColor" Value="White" />

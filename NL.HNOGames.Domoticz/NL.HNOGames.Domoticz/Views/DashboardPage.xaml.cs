@@ -101,6 +101,7 @@ namespace NL.HNOGames.Domoticz.Views
                             .Replace("Gas", "counter")
                             .Replace("Energy", "counter")
                             .Replace("Voltcraft", "counter")
+                            .Replace("Voltage", "counter")
                             .Replace("Lux", "counter")
                             .Replace("SetPoint", "temp")
                             .Replace("YouLess counter", "counter");

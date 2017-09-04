@@ -4,79 +4,79 @@
       "scale": "2x",
       "size": "29x29",
       "idiom": "iphone",
-      "filename": "iphone-spotlight-settings-29pt@2x.png"
+      "filename": "58x58.png"
     },
     {
       "scale": "3x",
       "size": "29x29",
       "idiom": "iphone",
-      "filename": "iphone-spotlight-settings-29pt@3x.png"
+      "filename": "87x87.png"
     },
     {
       "scale": "2x",
       "size": "40x40",
       "idiom": "iphone",
-      "filename": "iphone-spotlight-40pt@2x.png"
+      "filename": "80x80.png"
     },
     {
       "scale": "3x",
       "size": "40x40",
       "idiom": "iphone",
-      "filename": "iphone-spotlight-40pt@3x.png"
+      "filename": "120x120.png"
     },
     {
       "scale": "2x",
       "size": "60x60",
       "idiom": "iphone",
-      "filename": "iphone-app-60pt@2x.png"
+      "filename": "120x120.png"
     },
     {
       "scale": "3x",
       "size": "60x60",
       "idiom": "iphone",
-      "filename": "iphone-app-60pt@3x.png"
+      "filename": "180x180.png"
     },
     {
       "scale": "1x",
       "size": "29x29",
       "idiom": "ipad",
-      "filename": "ipad-settings-29pt@1x.png"
+      "filename": "29x29.png"
     },
     {
       "scale": "2x",
       "size": "29x29",
       "idiom": "ipad",
-      "filename": "ipad-settings-29pt@2x.png"
+      "filename": "58x58.png"
     },
     {
       "scale": "1x",
       "size": "40x40",
       "idiom": "ipad",
-      "filename": "ipad-spotlight-40pt@1x.png"
+      "filename": "40x40.png"
     },
     {
       "scale": "2x",
       "size": "40x40",
       "idiom": "ipad",
-      "filename": "ipad-spotlight-40pt@2x.png"
+      "filename": "80x80.png"
     },
     {
       "scale": "1x",
       "size": "76x76",
       "idiom": "ipad",
-      "filename": "ipad-app-76pt@1x.png"
+      "filename": "76x76.png"
     },
     {
       "scale": "2x",
       "size": "76x76",
       "idiom": "ipad",
-      "filename": "ipad-app-76pt@2x.png"
+      "filename": "152x152.png"
     },
     {
       "scale": "2x",
       "size": "83.5x83.5",
       "idiom": "ipad",
-      "filename": "ipad-pro-app-83.5pt@2x.png"
+      "filename": "167x167.png"
     },
     {
       "scale": "1x",

@@ -228,8 +228,6 @@ namespace NL.HNOGames.Domoticz.Models
             return result;
         }
 
-
-
         public double? getLux()
         {
             if (!double.TryParse(lux, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out double result))

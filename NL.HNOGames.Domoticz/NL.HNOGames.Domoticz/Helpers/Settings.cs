@@ -314,7 +314,7 @@ namespace NL.HNOGames.Domoticz.Helpers
         {
             get
             {
-                return AppSettings.GetValueOrDefault(EnableNotificationsSettingsKey, true);
+                return AppSettings.GetValueOrDefault(EnableNotificationsSettingsKey, false);
             }
             set
             {

@@ -40,9 +40,11 @@
 	<string>YES</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>UIStatusBarHidden</key>
-	<true/>
-	<key>NSCameraUsageDescription</key>
+  <key>UIStatusBarHidden</key>
+  <true/>
+  <key>FIREBASE_ANALYTICS_COLLECTION_ENABLED</key>
+  <false/>
+  <key>NSCameraUsageDescription</key>
 	<string>Can we use your camera</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Can we use your calendar</string>

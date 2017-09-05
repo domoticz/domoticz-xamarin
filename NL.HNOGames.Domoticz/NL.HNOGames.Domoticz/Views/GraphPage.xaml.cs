@@ -32,6 +32,14 @@ namespace NL.HNOGames.Domoticz.Views
             _selectedDevice = device;
             _type = sensor;
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// On Appearing of the screen
+        /// </summary>
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
             InitGraphData();
         }
 

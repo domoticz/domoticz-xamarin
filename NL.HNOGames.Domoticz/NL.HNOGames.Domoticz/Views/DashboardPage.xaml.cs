@@ -25,6 +25,7 @@ namespace NL.HNOGames.Domoticz.Views
             BindingContext = _viewModel = new DashboardViewModel(screentype, plan);
             _viewModel.SetListViewVisibilityMethod += DelegateListViewMethod;
             App.AddLog("Loading screen: " + screentype);
+
             adView.IsVisible = !App.AppSettings.PremiumBought;
         }
 
@@ -34,6 +35,7 @@ namespace NL.HNOGames.Domoticz.Views
             BindingContext = _viewModel = new DashboardViewModel(DashboardViewModel.ScreenTypeEnum.Dashboard, null);
             _viewModel.SetListViewVisibilityMethod += DelegateListViewMethod;
             App.AddLog("Loading screen: Dashboard");
+
             adView.IsVisible = !App.AppSettings.PremiumBought;
         }
 
@@ -45,7 +47,6 @@ namespace NL.HNOGames.Domoticz.Views
         {
             listView.IsVisible = isvisible;
         }
-
 
         /// <summary>
         /// Show a actionsheet on item selected

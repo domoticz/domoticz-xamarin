@@ -23,17 +23,15 @@ namespace NL.HNOGames.Domoticz.Droid.Renderer
         {
             base.OnElementChanged(e);
 
-            if (Control == null)
+            if (Control != null) return;
+            var ad = new Android.Gms.Ads.AdView(Forms.Context)
             {
-                var ad = new Android.Gms.Ads.AdView(Forms.Context);
-                ad.AdSize = Android.Gms.Ads.AdSize.Banner;
-                ad.AdUnitId = "ca-app-pub-2210179934394995/1566859863";
-
-                var requestbuilder = new Android.Gms.Ads.AdRequest.Builder();
-                ad.LoadAd(requestbuilder.Build());
-
-                SetNativeControl(ad);
-            }
+                AdSize = Android.Gms.Ads.AdSize.Banner,
+                AdUnitId = "ca-app-pub-2210179934394995/1566859863"
+            };
+            var requestbuilder = new Android.Gms.Ads.AdRequest.Builder();
+            ad.LoadAd(requestbuilder.Build());
+            SetNativeControl(ad);
         }
     }
 }

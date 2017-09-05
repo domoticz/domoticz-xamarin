@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 using Google.MobileAds;
 using UIKit;
@@ -13,43 +10,50 @@ namespace NL.HNOGames.Domoticz.iOS.Renderer
 {
     public class AdMobRenderer : ViewRenderer
     {
-        const string AdmobID = "ca-app-pub-2210179934394995/1566859863";
+        private const string AdmobIdLight = "ca-app-pub-2210179934394995/7328793248";
+        private const string AdmobIdDark = "ca-app-pub-2210179934394995/2623261472";
 
-        BannerView adView;
-        bool viewOnScreen;
- 
-        protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.View> e)
+        private BannerView _adView;
+        private bool _viewOnScreen;
+
+        protected override void OnElementChanged(ElementChangedEventArgs<View> e)
         {
             base.OnElementChanged(e);
             if (e.NewElement == null)
                 return;
- 
-            if (e.OldElement == null)
+
+            if (e.OldElement != null) return;
+            UIViewController viewCtrl = null;
+            foreach (var v in UIApplication.SharedApplication.Windows)
             {
-                UIViewController viewCtrl = null;
-                foreach (UIWindow v in UIApplication.SharedApplication.Windows)
+                if (v.RootViewController != null)
                 {
-                    if (v.RootViewController != null)
-                    {
-                        viewCtrl = v.RootViewController;
-                    }
+                    viewCtrl = v.RootViewController;
                 }
-
-                adView = new BannerView()
-                {
-                    AdUnitID = AdmobID,
-                    RootViewController = viewCtrl
-                };
- 
-                adView.AdReceived += (sender, args) =>
-                {
-                    if (!viewOnScreen) this.AddSubview(adView);
-                    viewOnScreen = true;
-                };
-
-                adView.LoadRequest(Request.GetDefaultRequest());
-                base.SetNativeControl(adView);
             }
+            _adView = new BannerView(AdSizeCons.Banner)
+            {
+                AdUnitID = App.AppSettings.DarkTheme ? AdmobIdLight : AdmobIdDark,
+                RootViewController = viewCtrl
+            };
+            _adView.AdReceived += (sender, args) =>
+            {
+                App.AddLog("********** BANNER AD RECEIVED");
+                if (!_viewOnScreen) AddSubview(_adView);
+                _viewOnScreen = true;
+            };
+            _adView.ReceiveAdFailed += (sender, args) =>
+            {
+                App.AddLog("********** BANNER AD FAILED");
+            };
+
+            var request = Request.GetDefaultRequest();
+#if DEBUG
+            request.TestDevices = new string[] { Request.SimulatorId };
+#endif
+            _adView.LoadRequest(request);
+
+            SetNativeControl(_adView);
         }
     }
 }

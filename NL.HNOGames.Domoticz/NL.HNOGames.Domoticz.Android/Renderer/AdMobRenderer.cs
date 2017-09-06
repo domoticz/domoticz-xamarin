@@ -30,6 +30,9 @@ namespace NL.HNOGames.Domoticz.Droid.Renderer
                 AdUnitId = "ca-app-pub-2210179934394995/1566859863"
             };
             var requestbuilder = new Android.Gms.Ads.AdRequest.Builder();
+#if DEBUG
+            requestbuilder.AddTestDevice("83DBECBB403C3E924CAA8B529F7E848E");
+#endif
             ad.LoadAd(requestbuilder.Build());
             SetNativeControl(ad);
         }

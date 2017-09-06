@@ -123,12 +123,18 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                         lblResult.Text = App.ApiService.Response != null
                             ? App.ApiService.Response.ReasonPhrase
                             : AppResources.failed_to_get_switches;
+                        if (App.ApiService.Response != null && App.ApiService.Response.ReasonPhrase == "OK")
+                            lblResult.Text = AppResources.failed_to_get_switches;
                     }
                 }
                 else
+                {
                     lblResult.Text = App.ApiService.Response != null
-                        ? App.ApiService.Response.ReasonPhrase
-                        : AppResources.error_timeout;
+                             ? App.ApiService.Response.ReasonPhrase
+                             : AppResources.error_notConnected;
+                    if (App.ApiService.Response != null && App.ApiService.Response.ReasonPhrase == "OK")
+                        lblResult.Text = AppResources.error_notConnected;
+                }
 
                 App.HideLoading();
             }

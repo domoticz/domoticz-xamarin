@@ -133,8 +133,6 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
                     lblResult.Text = App.ApiService.Response != null
                              ? App.ApiService.Response.ReasonPhrase
                              : AppResources.error_notConnected;
-                    if (App.ApiService.Response != null && App.ApiService.Response.ReasonPhrase == "OK")
-                        lblResult.Text = AppResources.error_notConnected;
                 }
 
                 App.HideLoading();

@@ -57,18 +57,32 @@ namespace NL.HNOGames.Domoticz
             if (string.IsNullOrEmpty(cancelText))
                 cancelText = AppResources.cancel;
 
-            Action ca = null;
-            if (cts != null)
-                ca = cts.Cancel;
-
             try
             {
-                _loadingDialog = UserDialogs.Instance.Loading(text, ca, cancelText, maskType: MaskType.Gradient);
-                _loadingDialog.Show();
-            }
-            catch (Exception ex)
+                Action ca = null;
+                if (cts != null)
+                    ca = cts.Cancel;
+
+                try
+                {
+                    _loadingDialog = UserDialogs.Instance.Loading(text, ca, cancelText, maskType: MaskType.Gradient);
+                    _loadingDialog.Show();
+                }
+                catch (Exception ex)
+                {
+                    AddLog(ex.Message);
+                }
+            }catch(Exception)
             {
-                AddLog(ex.Message);
+                try
+                {
+                    _loadingDialog = UserDialogs.Instance.Loading(text, maskType: MaskType.Gradient);
+                    _loadingDialog.Show();
+                }
+                catch (Exception ex)
+                {
+                    AddLog(ex.Message);
+                }
             }
         }
 

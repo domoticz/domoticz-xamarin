@@ -80,13 +80,11 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
             App.SetMainPage();
         }
 
-        private CancellationTokenSource cts = new CancellationTokenSource();
         private async void ProcessServerSettings()
         {
             if (IsBusy && !cts.IsCancellationRequested)
                 return;
 
-            cts = new CancellationTokenSource();
             IsBusy = true;
             App.AppSettings.ActiveServerSettings = ServerSettings;
             lblResult.Text = "";
@@ -105,8 +103,8 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
                 lblResult.Text = AppResources.welcome_info_checkingConnection + Environment.NewLine;
 
                 App.ApiService.Server = App.AppSettings.ActiveServerSettings;
-                App.ShowLoading(null, cts);
-                var result = await App.ApiService.GetVersion(cts);
+                App.ShowLoading();
+                var result = await App.ApiService.GetVersion();
                 if (result != null)
                 {
                     lblResult.Text = AppResources.welcome_msg_serverVersion + ": " + result.version;

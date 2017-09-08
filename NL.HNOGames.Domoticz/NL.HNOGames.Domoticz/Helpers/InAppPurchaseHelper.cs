@@ -18,12 +18,16 @@ namespace NL.HNOGames.Domoticz.Helpers
             {
                 var connected = await CrossInAppBilling.Current.ConnectAsync();
                 if (!connected)
+                {
+                    App.AddLog("Currently we can't connect to the app store. Try again later.");
                     return false;
+                }
 
                 var purchases = await CrossInAppBilling.Current.GetPurchasesAsync(ItemType.InAppPurchase);
                 var inAppBillingPurchases = purchases as InAppBillingPurchase[] ?? purchases.ToArray();
                 if (inAppBillingPurchases.Any())
                 {
+                    App.AddLog("Premium restored.");
                     App.AppSettings.PremiumBought = inAppBillingPurchases.Any();
                     return true;
                 }
@@ -51,10 +55,11 @@ namespace NL.HNOGames.Domoticz.Helpers
             }
             catch (Exception ex)
             {
-                App.AddLog(ex.Message);
+                App.AddLog("Exception occured: " + ex.Message);
             }
             finally
             {
+                App.AddLog("Disconnecting Apple store");
                 await CrossInAppBilling.Current.DisconnectAsync();
             }
             return false;
@@ -82,10 +87,21 @@ namespace NL.HNOGames.Domoticz.Helpers
             {
                 var connected = await billing.ConnectAsync();
                 if (!connected)
+                {
+                    App.AddLog("Currently we can't connect to the app store. Try again later.");
                     return false;
+                }
 
                 var purchase = await billing.PurchaseAsync(productId, ItemType.InAppPurchase, payload);
-                App.AppSettings.PremiumBought = purchase != null;
+                if (purchase != null)
+                {
+                    App.AppSettings.PremiumBought = true;
+                    return true;
+                }
+                else
+                {
+                    App.AppSettings.PremiumBought = false;
+                }
             }
             catch (InAppBillingPurchaseException purchaseEx)
             {
@@ -119,10 +135,11 @@ namespace NL.HNOGames.Domoticz.Helpers
             }
             finally
             {
+                App.AddLog("Disconnecting Apple store");
                 await billing.DisconnectAsync();
                 CrossInAppBilling.Dispose();
             }
-            return true;
+            return false;
         }
 
     }

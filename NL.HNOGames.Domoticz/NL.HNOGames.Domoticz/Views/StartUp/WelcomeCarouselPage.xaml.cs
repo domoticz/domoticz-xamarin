@@ -82,7 +82,7 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
 
         private async void ProcessServerSettings()
         {
-            if (IsBusy && !cts.IsCancellationRequested)
+            if (IsBusy)
                 return;
 
             IsBusy = true;

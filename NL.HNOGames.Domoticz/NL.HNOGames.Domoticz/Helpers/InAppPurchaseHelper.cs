@@ -8,11 +8,10 @@ namespace NL.HNOGames.Domoticz.Helpers
 {
     public class InAppPurchaseHelper
     {
-
         /// <summary>
         /// Is Premium Account already bought??"
         /// </summary>
-        public async Task<bool> PremiumAccountPurchased(string productId = "134845")
+        public static async Task<bool> PremiumAccountPurchased(string productId = "134845")
         {
             try
             {
@@ -24,12 +23,19 @@ namespace NL.HNOGames.Domoticz.Helpers
                 }
 
                 var purchases = await CrossInAppBilling.Current.GetPurchasesAsync(ItemType.InAppPurchase);
-                var inAppBillingPurchases = purchases as InAppBillingPurchase[] ?? purchases.ToArray();
-                if (inAppBillingPurchases.Any())
+                //check for null just incase
+                if (purchases?.Any(p => p.ProductId == productId) ?? false)
                 {
+                    //Purchase restored
                     App.AddLog("Premium restored.");
-                    App.AppSettings.PremiumBought = inAppBillingPurchases.Any();
+                    App.AppSettings.PremiumBought = true;
                     return true;
+                }
+                else
+                {
+                    //no purchases found
+                    App.AddLog("No purchases foundd.");
+                    return false;
                 }
             }
             catch (InAppBillingPurchaseException purchaseEx)
@@ -76,11 +82,9 @@ namespace NL.HNOGames.Domoticz.Helpers
                 return false;
             }
 
-#if DEBUG
-            CrossInAppBilling.Current.InTestingMode = true;
-#else
-            CrossInAppBilling.Current.InTestingMode = false;
-#endif
+            //check if it's already bought
+            if (await InAppPurchaseHelper.PremiumAccountPurchased())
+                return true;
 
             var billing = CrossInAppBilling.Current;
             try
@@ -141,6 +145,5 @@ namespace NL.HNOGames.Domoticz.Helpers
             }
             return false;
         }
-
     }
 }

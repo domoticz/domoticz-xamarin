@@ -232,23 +232,26 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                 OkText = "Buy",
                 CancelText = "Cancel"
             });
-            if (!result) return;
-            new Helpers.InAppPurchaseHelper();
+
+            if (!result)
+                return;
+
             if (await InAppPurchaseHelper.PurchaseItem())
                 App.ShowToast("Thanks for buying premium!!");
+
             PremiumScreenSetup();
         }
 
         private async void BtnRestore_OnClicked(object sender, EventArgs e)
         {
-            var oPurchaser = new Helpers.InAppPurchaseHelper();
-            if (await oPurchaser.PremiumAccountPurchased())
+            if (await InAppPurchaseHelper.PremiumAccountPurchased())
             {
                 App.ShowToast("Thanks for buying premium!!");
                 PremiumScreenSetup();
             }
-            else
+            else { 
                 App.ShowToast("Could not restore your premium account.");
+            }
         }
 
         private async void BtnCameras_OnClicked(object sender, EventArgs e)

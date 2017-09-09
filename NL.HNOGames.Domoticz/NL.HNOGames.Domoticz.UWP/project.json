@@ -20,9 +20,9 @@
     "Xam.Plugins.Notifier": "2.1.0",
     "Xam.Plugins.Settings": "3.0.1",
     "Xam.Plugins.TextToSpeech": "3.0.1",
-    "Xamarin.FFImageLoading.Forms": "2.2.10",
-    "Xamarin.FFImageLoading.Transformations": "2.2.10",
-    "Xamarin.Forms": "2.3.5.235-pre2",
+    "Xamarin.FFImageLoading.Forms": "2.2.11",
+    "Xamarin.FFImageLoading.Transformations": "2.2.11",
+    "Xamarin.Forms": "2.4.0.269-pre2",
     "Xamarin.Forms.RangeSlider": "0.6.18",
     "ZXing.Net.Mobile.Forms": "2.2.9"
   },

@@ -179,17 +179,17 @@
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="OxyPlot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=638079a8f0bd61e9, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\OxyPlot.Core.1.0.0\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1+Xamarin.iOS10\OxyPlot.dll</HintPath>
+    <Reference Include="OxyPlot, Version=2015.1.708.0, Culture=neutral, PublicKeyToken=638079a8f0bd61e9, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\OxyPlot.Core.2015.1.708-alpha\lib\portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1+Xamarin.iOS10\OxyPlot.dll</HintPath>
     </Reference>
-    <Reference Include="OxyPlot.Xamarin.Forms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\OxyPlot.Xamarin.Forms.1.0.0\lib\Xamarin.iOS10\OxyPlot.Xamarin.Forms.dll</HintPath>
+    <Reference Include="OxyPlot.Xamarin.Forms, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\OxyPlot.Xamarin.Forms.1.1.0-unstable0011\lib\Xamarin.iOS10\OxyPlot.Xamarin.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="OxyPlot.Xamarin.Forms.Platform.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\OxyPlot.Xamarin.Forms.1.0.0\lib\Xamarin.iOS10\OxyPlot.Xamarin.Forms.Platform.iOS.dll</HintPath>
+    <Reference Include="OxyPlot.Xamarin.Forms.Platform.iOS, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\OxyPlot.Xamarin.Forms.1.1.0-unstable0011\lib\Xamarin.iOS10\OxyPlot.Xamarin.Forms.Platform.iOS.dll</HintPath>
     </Reference>
-    <Reference Include="OxyPlot.Xamarin.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\OxyPlot.Xamarin.iOS.1.0.0\lib\Xamarin.iOS10\OxyPlot.Xamarin.iOS.dll</HintPath>
+    <Reference Include="OxyPlot.Xamarin.iOS, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\OxyPlot.Xamarin.iOS.1.1.0-unstable0011\lib\Xamarin.iOS10\OxyPlot.Xamarin.iOS.dll</HintPath>
     </Reference>
     <Reference Include="PCLStorage, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\PCLStorage.1.0.2\lib\portable-Xamarin.iOS+Xamarin.Mac\PCLStorage.dll</HintPath>
@@ -208,6 +208,12 @@
     </Reference>
     <Reference Include="Plugin.DeviceInfo.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugin.DeviceInfo.3.0.1\lib\Xamarin.iOS10\Plugin.DeviceInfo.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.DeviceOrientation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.DeviceOrientation.1.0.4\lib\Xamarin.iOS10\Plugin.DeviceOrientation.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.DeviceOrientation.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.DeviceOrientation.1.0.4\lib\Xamarin.iOS10\Plugin.DeviceOrientation.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.InAppBilling, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Plugin.InAppBilling.1.2.2\lib\Xamarin.iOS10\Plugin.InAppBilling.dll</HintPath>

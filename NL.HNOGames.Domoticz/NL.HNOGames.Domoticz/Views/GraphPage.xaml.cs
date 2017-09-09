@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using NL.HNOGames.Domoticz.Data;
 using NL.HNOGames.Domoticz.Models;
 using Xamarin.Forms.Xaml;
+using Plugin.DeviceOrientation;
 
 namespace NL.HNOGames.Domoticz.Views
 {
@@ -23,6 +24,12 @@ namespace NL.HNOGames.Domoticz.Views
         private readonly Random _random = new Random();
         private List<Series> _originalSeries;
 
+        private void OrientationChanged(object sender, Plugin.DeviceOrientation.Abstractions.OrientationChangedEventArgs e)
+        {
+            //refresh graph
+            InitGraphData();
+        }
+
         public GraphPage(Device device,
             string sensor = "temp",
             ConstantValues.GraphRange showRange = ConstantValues.GraphRange.Day)
@@ -32,6 +39,7 @@ namespace NL.HNOGames.Domoticz.Views
             _selectedDevice = device;
             _type = sensor;
             InitializeComponent();
+            CrossDeviceOrientation.Current.OrientationChanged += OrientationChanged;
         }
 
         /// <summary>

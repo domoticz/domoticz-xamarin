@@ -66,7 +66,7 @@ namespace NL.HNOGames.Domoticz.Helpers
             finally
             {
                 App.AddLog("Disconnecting Apple store");
-                await CrossInAppBilling.Current.DisconnectAsync();
+                //await CrossInAppBilling.Current.DisconnectAsync();
             }
             return false;
         }
@@ -141,7 +141,7 @@ namespace NL.HNOGames.Domoticz.Helpers
             {
                 App.AddLog("Disconnecting Apple store");
                 await billing.DisconnectAsync();
-                CrossInAppBilling.Dispose();
+                //CrossInAppBilling.Dispose();
             }
             return false;
         }

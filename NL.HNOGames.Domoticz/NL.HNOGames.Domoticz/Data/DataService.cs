@@ -28,17 +28,14 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz version
         /// </summary>
-        public async Task<VersionModel> GetVersion(CancellationTokenSource cts = null)
+        public async Task<VersionModel> GetVersion()
         {
             if (Server == null)
                 return null;
             var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.VERSION);
             try
             {
-                if (cts != null)
-                    Response = await App.ConnectionService.Client.GetAsync(new Uri(url), cts.Token);
-                else
-                    Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
+                Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
                 if (Response.IsSuccessStatusCode)
                 {
                     var content = await Response.Content.ReadAsStringAsync();

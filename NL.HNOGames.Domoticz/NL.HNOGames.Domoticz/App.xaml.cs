@@ -50,22 +50,16 @@ namespace NL.HNOGames.Domoticz
         /// <summary>
         /// Show a loading screen
         /// </summary>
-        public static void ShowLoading(string text = null, CancellationTokenSource cts = null, string cancelText = "")
+        public static void ShowLoading(string text = null)
         {
             if (string.IsNullOrEmpty(text))
                 text = AppResources.text_loading;
-            if (string.IsNullOrEmpty(cancelText))
-                cancelText = AppResources.cancel;
 
             try
             {
-                Action ca = null;
-                if (cts != null)
-                    ca = cts.Cancel;
-
                 try
                 {
-                    _loadingDialog = UserDialogs.Instance.Loading(text, ca, cancelText, maskType: MaskType.Gradient);
+                    _loadingDialog = UserDialogs.Instance.Loading(text, maskType: MaskType.Gradient);
                     _loadingDialog.Show();
                 }
                 catch (Exception ex)

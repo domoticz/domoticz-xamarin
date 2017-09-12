@@ -8,24 +8,34 @@ namespace NL.HNOGames.Domoticz.Helpers
 {
     public class InAppPurchaseHelper
     {
-
         /// <summary>
         /// Is Premium Account already bought??"
         /// </summary>
-        public async Task<bool> PremiumAccountPurchased(string productId = "134845")
+        public static async Task<bool> PremiumAccountPurchased(string productId = "134845")
         {
             try
             {
                 var connected = await CrossInAppBilling.Current.ConnectAsync();
                 if (!connected)
+                {
+                    App.AddLog("Currently we can't connect to the app store. Try again later.");
                     return false;
+                }
 
                 var purchases = await CrossInAppBilling.Current.GetPurchasesAsync(ItemType.InAppPurchase);
-                var inAppBillingPurchases = purchases as InAppBillingPurchase[] ?? purchases.ToArray();
-                if (inAppBillingPurchases.Any())
+                //check for null just incase
+                if (purchases?.Any(p => p.ProductId == productId) ?? false)
                 {
-                    App.AppSettings.PremiumBought = inAppBillingPurchases.Any();
+                    //Purchase restored
+                    App.AddLog("Premium restored.");
+                    App.AppSettings.PremiumBought = true;
                     return true;
+                }
+                else
+                {
+                    //no purchases found
+                    App.AddLog("No purchases foundd.");
+                    return false;
                 }
             }
             catch (InAppBillingPurchaseException purchaseEx)
@@ -51,10 +61,11 @@ namespace NL.HNOGames.Domoticz.Helpers
             }
             catch (Exception ex)
             {
-                App.AddLog(ex.Message);
+                App.AddLog("Exception occured: " + ex.Message);
             }
             finally
             {
+                App.AddLog("Disconnecting Apple store");
                 await CrossInAppBilling.Current.DisconnectAsync();
             }
             return false;
@@ -71,21 +82,30 @@ namespace NL.HNOGames.Domoticz.Helpers
                 return false;
             }
 
-#if DEBUG
-            CrossInAppBilling.Current.InTestingMode = true;
-#else
-            CrossInAppBilling.Current.InTestingMode = false;
-#endif
+            //check if it's already bought
+            if (await InAppPurchaseHelper.PremiumAccountPurchased())
+                return true;
 
             var billing = CrossInAppBilling.Current;
             try
             {
                 var connected = await billing.ConnectAsync();
                 if (!connected)
+                {
+                    App.AddLog("Currently we can't connect to the app store. Try again later.");
                     return false;
+                }
 
                 var purchase = await billing.PurchaseAsync(productId, ItemType.InAppPurchase, payload);
-                App.AppSettings.PremiumBought = purchase != null;
+                if (purchase != null)
+                {
+                    App.AppSettings.PremiumBought = true;
+                    return true;
+                }
+                else
+                {
+                    App.AppSettings.PremiumBought = false;
+                }
             }
             catch (InAppBillingPurchaseException purchaseEx)
             {
@@ -119,11 +139,11 @@ namespace NL.HNOGames.Domoticz.Helpers
             }
             finally
             {
+                App.AddLog("Disconnecting Apple store");
                 await billing.DisconnectAsync();
                 CrossInAppBilling.Dispose();
             }
-            return true;
+            return false;
         }
-
     }
 }

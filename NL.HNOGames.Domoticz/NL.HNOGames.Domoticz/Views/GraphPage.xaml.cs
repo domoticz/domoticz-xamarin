@@ -24,6 +24,8 @@ namespace NL.HNOGames.Domoticz.Views
         private readonly Random _random = new Random();
         private List<Series> _originalSeries;
 
+        private String activeFilter = AppResources.filterOn_all;
+
         private void OrientationChanged(object sender, Plugin.DeviceOrientation.Abstractions.OrientationChangedEventArgs e)
         {
             //refresh graph
@@ -39,16 +41,10 @@ namespace NL.HNOGames.Domoticz.Views
             _selectedDevice = device;
             _type = sensor;
             InitializeComponent();
-            CrossDeviceOrientation.Current.OrientationChanged += OrientationChanged;
-        }
-
-        /// <summary>
-        /// On Appearing of the screen
-        /// </summary>
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
             InitGraphData();
+
+            if (Xamarin.Forms.Device.RuntimePlatform == Xamarin.Forms.Device.iOS)
+                CrossDeviceOrientation.Current.OrientationChanged += OrientationChanged;
         }
 
         /// <summary>
@@ -66,6 +62,7 @@ namespace NL.HNOGames.Domoticz.Views
                 InitModel();
                 InitLegende();
                 ProcessData(graphData);
+                FilterGraphResult();
                 oGraphView.Model = _model;
             }
             catch (Exception ex)
@@ -337,8 +334,8 @@ namespace NL.HNOGames.Domoticz.Views
 
             _model.TextColor = OxyColor.Parse("#757575");
             _model.Axes.Add(
-                new DateTimeAxis {Title = "DateTime", Position = AxisPosition.Bottom, StringFormat = format});
-            _model.Axes.Add(new LinearAxis {Title = "Value", Position = AxisPosition.Left});
+                new DateTimeAxis { Title = "DateTime", Position = AxisPosition.Bottom, StringFormat = format });
+            _model.Axes.Add(new LinearAxis { Title = "Value", Position = AxisPosition.Left });
             _model.Annotations.Add(new LineAnnotation()
             {
                 Type = LineAnnotationType.Vertical,
@@ -367,27 +364,33 @@ namespace NL.HNOGames.Domoticz.Views
         public async Task FilterAsync()
         {
             RevertOriginalSource();
-
             var actions = CreateFilterMenu();
             if (actions.Count > 0)
             {
-                var result = await DisplayActionSheet(AppResources.filter, AppResources.cancel, null,
+                activeFilter = await DisplayActionSheet(AppResources.filter, AppResources.cancel, null,
                     actions.ToArray());
-                if (string.Compare(AppResources.filterOn_all, result, StringComparison.OrdinalIgnoreCase) == 0)
-                    RevertOriginalSource();
-                else if (string.Compare(AppResources.cancel, result, StringComparison.OrdinalIgnoreCase) != 0)
-                {
-                    BackupSource();
-                    _model.Series.Clear(); //remove list
-                    foreach (var serie in _originalSeries)
-                    {
-                        if (string.Compare(serie.Title, result, StringComparison.OrdinalIgnoreCase) == 0)
-                            _model.Series.Add(serie);
-                    }
-                }
-
+                FilterGraphResult();
                 oGraphView.Model = _model;
                 oGraphView.Model.InvalidatePlot(true);
+            }
+        }
+
+        /// <summary>
+        /// Filter the graph result
+        /// </summary>
+        private void FilterGraphResult()
+        {
+            if (string.Compare(AppResources.filterOn_all, activeFilter, StringComparison.OrdinalIgnoreCase) == 0)
+                RevertOriginalSource();
+            else if (string.Compare(AppResources.cancel, activeFilter, StringComparison.OrdinalIgnoreCase) != 0)
+            {
+                BackupSource();
+                _model.Series.Clear(); //remove list
+                foreach (var serie in _originalSeries)
+                {
+                    if (string.Compare(serie.Title, activeFilter, StringComparison.OrdinalIgnoreCase) == 0)
+                        _model.Series.Add(serie);
+                }
             }
         }
 

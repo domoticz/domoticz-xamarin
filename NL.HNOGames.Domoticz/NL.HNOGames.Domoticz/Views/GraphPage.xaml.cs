@@ -297,7 +297,7 @@ namespace NL.HNOGames.Domoticz.Views
             var lineColor = $"#{_random.Next(0x1000000):X6}";
             return new LineSeries
             {
-                StrokeThickness = 1,
+                StrokeThickness = 2,
                 MarkerSize = 2,
                 MarkerStroke = OxyColor.Parse(lineColor),
                 MarkerType = MarkerType.Circle,

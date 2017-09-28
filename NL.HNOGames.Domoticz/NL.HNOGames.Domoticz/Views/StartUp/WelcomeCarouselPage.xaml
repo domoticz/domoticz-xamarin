@@ -8,44 +8,48 @@
               Title="Welcome!"
               x:Name="carouselPage">
     <ContentPage BackgroundColor="Black">
-        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20,20,20,20">
-            <custcontrol:TintedCachedImage WidthRequest="75" HeightRequest="75" Source="ic_launcher.png" />
-            <Label TextColor="White" HorizontalOptions="CenterAndExpand" Style="Bold" FontSize="Large" Text="Domoticz"
+        <ScrollView>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20,20,20,20">
+                <custcontrol:TintedCachedImage WidthRequest="75" HeightRequest="75" Source="ic_launcher.png" />
+                <Label TextColor="White" HorizontalOptions="CenterAndExpand" Style="Bold" FontSize="Large" Text="Domoticz"
                    Margin="0,20,0,0" />
-            <Label TextColor="White" HorizontalOptions="CenterAndExpand"
+                <Label TextColor="White" HorizontalOptions="CenterAndExpand"
                    Text="{resources:Translate welcome_info_domoticz}" Margin="0,10,0,0" />
-            <Label TextColor="White" HorizontalOptions="End" Text="{resources:Translate welcome_info_swipe}"
+                <Label TextColor="White" HorizontalOptions="End" Text="{resources:Translate welcome_info_swipe}"
                    Margin="0,30,0,0" />
 
-            <Button x:Name="btnDemo" Style="{StaticResource DarkButton}" Text="Use our Demo setup"
-                    HorizontalOptions="End" VerticalOptions="End" Clicked="BtnDemo_OnClicked" />
-            
-            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal"
+                <Button x:Name="btnDemo" Style="{StaticResource DarkButton}" Text="Use our Demo setup"
+                    HorizontalOptions="End" VerticalOptions="End" WidthRequest="300" Clicked="BtnDemo_OnClicked" />
+
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal"
                          Padding="20">
-                <Button Style="{StaticResource DarkButton}" Text="{resources:Translate welcome_button_previous}"
-                        HorizontalOptions="Start" VerticalOptions="End" Clicked="btnPrevious_Clicked" IsVisible="False"/>
-                <Button Style="{StaticResource DarkButton}" Text="{resources:Translate welcome_button_next}"
-                        HorizontalOptions="End" VerticalOptions="End" Clicked="btnNext_Clicked"/>
+                    <Button Style="{StaticResource DarkButton}" Text="{resources:Translate welcome_button_previous}"
+                        HorizontalOptions="Start" VerticalOptions="End" Clicked="btnPrevious_Clicked" IsVisible="False" WidthRequest="50"/>
+                    <Button Style="{StaticResource DarkButton}" Text="{resources:Translate welcome_button_next}"
+                        HorizontalOptions="End" VerticalOptions="End" Clicked="btnNext_Clicked" WidthRequest="50"/>
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
+        </ScrollView>
     </ContentPage>
     <ContentPage Style="{StaticResource ContentPageType}">
-        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
-            <Label Style="{StaticResource HeaderType}" HorizontalOptions="CenterAndExpand" FontSize="Large"
+        <ScrollView>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
+                <Label Style="{StaticResource HeaderType}" HorizontalOptions="CenterAndExpand" FontSize="Large"
                    Text="{resources:Translate title_activity_server_settings}" Margin="0,20,0,0" />
-            <Label Style="{StaticResource DetailType}" HorizontalOptions="StartAndExpand"
+                <Label Style="{StaticResource DetailType}" HorizontalOptions="StartAndExpand"
                    Text="{resources:Translate welcome_info_settings1}" Margin="0,10,0,0" LineBreakMode="WordWrap" />
-            <Label Style="{StaticResource DetailType}" HorizontalOptions="StartAndExpand"
+                <Label Style="{StaticResource DetailType}" HorizontalOptions="StartAndExpand"
                    Text="{resources:Translate welcome_info_settings2}" Margin="0,10,0,0" LineBreakMode="WordWrap" />
 
-            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal"
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal"
                          Padding="20">
-                <Button Text="{resources:Translate welcome_button_previous}" HorizontalOptions="Start"
-                        VerticalOptions="End" Clicked="btnPrevious_Clicked" />
-                <Button Text="{resources:Translate welcome_button_next}" HorizontalOptions="End" VerticalOptions="End"
-                        Clicked="btnNext_Clicked" />
+                    <Button Text="{resources:Translate welcome_button_previous}" HorizontalOptions="Start"
+                        VerticalOptions="End" Clicked="btnPrevious_Clicked" WidthRequest="50" />
+                    <Button Text="{resources:Translate welcome_button_next}" HorizontalOptions="End" VerticalOptions="End"
+                        Clicked="btnNext_Clicked"  WidthRequest="50"/>
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
+        </ScrollView>
     </ContentPage>
     <ContentPage Style="{StaticResource ContentPageType}">
         <ScrollView>
@@ -90,7 +94,7 @@
                         </StackLayout>
                     </Grid>
                 </StackLayout>
-                
+
                 <Label x:Name="lblSSLWarning" Style="{StaticResource DetailType}"
                        Text="Note: self signed certificates are not supported, please use properly signed sertificates!"
                        IsVisible="False" LineBreakMode="WordWrap" TextColor="Red"/>
@@ -223,9 +227,9 @@
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal"
                              Padding="20">
                     <Button Text="{resources:Translate welcome_button_previous}" HorizontalOptions="Start"
-                            VerticalOptions="End" Clicked="btnPrevious_Clicked" />
+                            VerticalOptions="End" Clicked="btnPrevious_Clicked"  WidthRequest="50"/>
                     <Button Text="{resources:Translate welcome_button_next}" HorizontalOptions="End"
-                            VerticalOptions="End" Clicked="btnNext_Clicked" />
+                            VerticalOptions="End" Clicked="btnNext_Clicked"  WidthRequest="50"/>
                 </StackLayout>
             </StackLayout>
 
@@ -247,9 +251,9 @@
             <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal"
                          Padding="20">
                 <Button Text="{resources:Translate welcome_button_previous}" HorizontalOptions="Start"
-                        VerticalOptions="End" Clicked="btnPrevious_Clicked" />
+                        VerticalOptions="End" Clicked="btnPrevious_Clicked"  WidthRequest="50"/>
                 <Button Text="{resources:Translate welcome_button_next}" HorizontalOptions="End" VerticalOptions="End"
-                        Clicked="btnNext_Clicked" IsVisible="False" />
+                        Clicked="btnNext_Clicked" IsVisible="False"  WidthRequest="50"/>
             </StackLayout>
         </StackLayout>
     </ContentPage>

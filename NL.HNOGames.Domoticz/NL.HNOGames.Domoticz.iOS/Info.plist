@@ -53,11 +53,11 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>CFBundleVersion</key>
-	<string>37</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.0.37</string>
+	<string>0.0.40</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>CFBundleVersion</key>
+	<string>40</string>
 </dict>
 </plist>

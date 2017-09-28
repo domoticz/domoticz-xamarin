@@ -66,10 +66,12 @@
     <Style TargetType="Entry">
         <Setter Property="TextColor" Value="{DynamicResource WhiteTextColor}" />
         <Setter Property="BackgroundColor" Value="{DynamicResource CardBackgroundColor}" />
+        <Setter Property="HeightRequest" Value="35" />
     </Style>
     <Style TargetType="Picker">
         <Setter Property="TextColor" Value="{DynamicResource WhiteTextColor}" />
         <Setter Property="BackgroundColor" Value="{DynamicResource CardBackgroundColor}" />
+        <Setter Property="HeightRequest" Value="35" />
     </Style>
     <Style x:Key="HeaderType" TargetType="Label">
         <Setter Property="TextColor" Value="{DynamicResource HeaderTextColor}" />

@@ -1,7 +1,7 @@
 ﻿{
   "dependencies": {
     "Acr.UserDialogs": "6.5.1",
-    "DLToolkit.Forms.Controls.FlowListView": "2.0.6",
+    "DLToolkit.Forms.Controls.FlowListView": "2.0.7",
     "Humanizer": "2.2.0",
     "Microsoft.NETCore.Platforms": "2.0.0",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.4.0",
@@ -24,10 +24,10 @@
     "Xam.Plugins.Notifier": "2.1.0",
     "Xam.Plugins.Settings": "3.0.1",
     "Xam.Plugins.TextToSpeech": "3.0.1",
-    "Xamarin.FFImageLoading.Forms": "2.2.17",
-    "Xamarin.FFImageLoading.Transformations": "2.2.17",
-    "Xamarin.Forms": "2.4.0.280",
-    "Xamarin.Forms.RangeSlider": "0.7.4",
+    "Xamarin.FFImageLoading.Forms": "2.2.20",
+    "Xamarin.FFImageLoading.Transformations": "2.2.20",
+    "Xamarin.Forms": "2.4.0.282",
+    "Xamarin.Forms.RangeSlider": "0.7.11",
     "ZXing.Net.Mobile.Forms": "2.2.9"
   },
   "frameworks": {

@@ -34,6 +34,7 @@ namespace NL.HNOGames.Domoticz.Helpers
 
         private const string StartUpScreenSettingsKey = "startup_settings_key";
         private const string NoSortSettingsKey = "nosort_settings_key";
+        private const string MultiServerSettingsKey = "multiserver_settings_key";
         private const string DarkThemeSettingsKey = "darktheme_settings_key";
         private const string EnableNotificationsSettingsKey = "gcmnotifications_settings_key";
         private const string ShowSwitchesSettingsKey = "showswitches_settings_key";
@@ -155,7 +156,6 @@ namespace NL.HNOGames.Domoticz.Helpers
             }
         }
 
-
         /// <summary>
         /// Need to sort on alpha
         /// </summary>
@@ -171,6 +171,20 @@ namespace NL.HNOGames.Domoticz.Helpers
             }
         }
 
+        /// <summary>
+        /// enable/disable multi server support
+        /// </summary>
+        public bool MultiServer
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(MultiServerSettingsKey, false);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(MultiServerSettingsKey, value);
+            }
+        }
 
         /// <summary>
         /// Is the talk back feature enabled?

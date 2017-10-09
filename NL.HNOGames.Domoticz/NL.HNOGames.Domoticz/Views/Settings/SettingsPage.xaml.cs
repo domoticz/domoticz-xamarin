@@ -70,6 +70,13 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                     ? AppResources.sort_dashboardLikeServer_on
                     : AppResources.sort_dashboardLikeServer_off;
             };
+            
+            //Multi Server Settings
+            swEnableMultiServer.IsToggled = App.AppSettings.MultiServer;
+            swEnableMultiServer.Toggled += (sender, args) =>
+            {
+                App.AppSettings.MultiServer = swEnableMultiServer.IsToggled;
+            };
 
             //Talk Back
             swEnableTalkBack.IsToggled = App.AppSettings.TalkBackEnabled;

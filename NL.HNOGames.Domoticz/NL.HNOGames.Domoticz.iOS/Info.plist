@@ -54,10 +54,10 @@
 		<true/>
 	</dict>
 	<key>CFBundleShortVersionString</key>
-	<string>0.0.41</string>
+	<string>0.0.42</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>CFBundleVersion</key>
-	<string>41</string>
+	<string>42</string>
 </dict>
 </plist>

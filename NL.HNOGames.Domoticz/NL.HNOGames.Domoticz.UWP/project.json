@@ -22,11 +22,11 @@
     "Xam.Plugin.PushNotification": "1.2.5-beta",
     "Xam.Plugins.Forms.DeviceOrientation": "1.0.1",
     "Xam.Plugins.Notifier": "2.1.0",
-    "Xam.Plugins.Settings": "3.0.1",
+    "Xam.Plugins.Settings": "3.1.1",
     "Xam.Plugins.TextToSpeech": "3.0.1",
     "Xamarin.FFImageLoading.Forms": "2.2.20",
     "Xamarin.FFImageLoading.Transformations": "2.2.20",
-    "Xamarin.Forms": "2.4.0.282",
+    "Xamarin.Forms": "2.4.0.18342",
     "Xamarin.Forms.RangeSlider": "0.7.11",
     "ZXing.Net.Mobile.Forms": "2.2.9"
   },

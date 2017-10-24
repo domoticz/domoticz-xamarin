@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
 <CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
               x:Class="NL.HNOGames.Domoticz.Views.StartUp.WelcomeCarouselPage"
@@ -18,15 +17,15 @@
                 <Label TextColor="White" HorizontalOptions="End" Text="{resources:Translate welcome_info_swipe}"
                    Margin="0,30,0,0" />
 
-                <Button x:Name="btnDemo" Style="{StaticResource DarkButton}" Text="Use our Demo setup"
+                <custcontrol:ExtendedButton Padding="20,0,20,0" x:Name="btnDemo" Style="{StaticResource DarkButton}" Text="Use our Demo setup"
                     HorizontalOptions="End" VerticalOptions="End" WidthRequest="300" Clicked="BtnDemo_OnClicked" />
 
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal"
                          Padding="20">
-                    <Button Style="{StaticResource DarkButton}" Text="{resources:Translate welcome_button_previous}"
-                        HorizontalOptions="Start" VerticalOptions="End" Clicked="btnPrevious_Clicked" IsVisible="False" WidthRequest="50"/>
-                    <Button Style="{StaticResource DarkButton}" Text="{resources:Translate welcome_button_next}"
-                        HorizontalOptions="End" VerticalOptions="End" Clicked="btnNext_Clicked" WidthRequest="50"/>
+                    <custcontrol:ExtendedButton  Style="{StaticResource DarkButton}" Text="{resources:Translate welcome_button_previous}"
+                        HorizontalOptions="Start" VerticalOptions="End" Clicked="btnPrevious_Clicked" Padding="20,0,20,0" IsVisible="False"/>
+                    <custcontrol:ExtendedButton  Style="{StaticResource DarkButton}" Text="{resources:Translate welcome_button_next}"
+                        HorizontalOptions="End" VerticalOptions="End" Clicked="btnNext_Clicked" Padding="20,0,20,0" />
                 </StackLayout>
             </StackLayout>
         </ScrollView>
@@ -43,10 +42,10 @@
 
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal"
                          Padding="20">
-                    <Button Text="{resources:Translate welcome_button_previous}" HorizontalOptions="Start"
-                        VerticalOptions="End" Clicked="btnPrevious_Clicked" WidthRequest="50" />
-                    <Button Text="{resources:Translate welcome_button_next}" HorizontalOptions="End" VerticalOptions="End"
-                        Clicked="btnNext_Clicked"  WidthRequest="50"/>
+                    <custcontrol:ExtendedButton Text="{resources:Translate welcome_button_previous}"
+                        HorizontalOptions="Start" VerticalOptions="End" Clicked="btnPrevious_Clicked" Padding="20,0,20,0"/>
+                    <custcontrol:ExtendedButton Text="{resources:Translate welcome_button_next}"
+                        HorizontalOptions="End" VerticalOptions="End" Clicked="btnNext_Clicked" Padding="20,0,20,0" />
                 </StackLayout>
             </StackLayout>
         </ScrollView>
@@ -225,11 +224,11 @@
                 </StackLayout>
 
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal"
-                             Padding="20">
-                    <Button Text="{resources:Translate welcome_button_previous}" HorizontalOptions="Start"
-                            VerticalOptions="End" Clicked="btnPrevious_Clicked"  WidthRequest="50"/>
-                    <Button Text="{resources:Translate welcome_button_next}" HorizontalOptions="End"
-                            VerticalOptions="End" Clicked="btnNext_Clicked"  WidthRequest="50"/>
+                         Padding="20">
+                    <custcontrol:ExtendedButton Text="{resources:Translate welcome_button_previous}"
+                        HorizontalOptions="Start" VerticalOptions="End" Clicked="btnPrevious_Clicked" Padding="20,0,20,0"/>
+                    <custcontrol:ExtendedButton Text="{resources:Translate welcome_button_next}"
+                        HorizontalOptions="End" VerticalOptions="End" Clicked="btnNext_Clicked" Padding="20,0,20,0" />
                 </StackLayout>
             </StackLayout>
 
@@ -239,21 +238,21 @@
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
             <Label Style="{StaticResource HeaderType}" HorizontalOptions="CenterAndExpand"
                    Text="{resources:Translate title_activity_server_settings}" Margin="0,20,0,0" />
-            <Button x:Name="btnCheck" Text="{resources:Translate welcome_info_checkingConnection}"
+            <custcontrol:ExtendedButton Padding="20,0,20,0" x:Name="btnCheck" Text="{resources:Translate welcome_info_checkingConnection}"
                     HorizontalOptions="FillAndExpand" IsVisible="True" Margin="0,20,0,0" Clicked="btnCheck_Clicked" />
 
             <custcontrol:TintedCachedImage x:Name="imFinish" IsVisible="False" WidthRequest="60" HeightRequest="60"
                                            Source="ic_validate_settings.png" HorizontalOptions="CenterAndExpand"
                                            Margin="0,40,0,0" />
             <Label Style="{StaticResource DetailType}" x:Name="lblResult" HorizontalOptions="CenterAndExpand" />
-            <Button x:Name="btnFinish" Text="{resources:Translate welcome_button_finish}"
+            <custcontrol:ExtendedButton Padding="20,0,20,0" x:Name="btnFinish" Text="{resources:Translate welcome_button_finish}"
                     HorizontalOptions="FillAndExpand" IsVisible="False" Margin="0,20,0,0" Clicked="btnFinish_Clicked" />
             <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal"
                          Padding="20">
-                <Button Text="{resources:Translate welcome_button_previous}" HorizontalOptions="Start"
-                        VerticalOptions="End" Clicked="btnPrevious_Clicked"  WidthRequest="50"/>
-                <Button Text="{resources:Translate welcome_button_next}" HorizontalOptions="End" VerticalOptions="End"
-                        Clicked="btnNext_Clicked" IsVisible="False"  WidthRequest="50"/>
+                <custcontrol:ExtendedButton Text="{resources:Translate welcome_button_previous}"
+                        HorizontalOptions="Start" VerticalOptions="End" Clicked="btnPrevious_Clicked" Padding="20,0,20,0"/>
+                <custcontrol:ExtendedButton Text="{resources:Translate welcome_button_next}"
+                        HorizontalOptions="End" VerticalOptions="End" Clicked="btnNext_Clicked" Padding="20,0,20,0" IsVisible="False" />
             </StackLayout>
         </StackLayout>
     </ContentPage>

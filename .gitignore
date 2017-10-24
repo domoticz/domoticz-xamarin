@@ -189,4 +189,4 @@ UpgradeLog*.htm
 # Microsoft Fakes
 FakesAssemblies/
 
-*.ide
+.vs/NL.HNOGames.Domoticz/v15/**

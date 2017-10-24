@@ -351,6 +351,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="RangeSliderInitialization.cs" />
+    <Compile Include="Renderer\ExtendedButtonRenderer.cs" />
     <Compile Include="Renderer\AdMobRenderer.cs" />
     <Compile Include="Renderer\CustomMultiLineLabelRenderer.cs" />
     <Compile Include="Renderer\CustomSearchBarRenderer .cs" />

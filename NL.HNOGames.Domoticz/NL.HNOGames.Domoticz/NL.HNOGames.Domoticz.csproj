@@ -44,6 +44,7 @@
     <Compile Include="Controls\CustomViewCell.cs" />
     <Compile Include="Controls\ExtendedSlider.cs" />
     <Compile Include="Controls\IShare.cs" />
+    <Compile Include="Controls\ExtendedButton.cs" />
     <Compile Include="Controls\MultiLineLabel.cs" />
     <Compile Include="Controls\TintedCachedImage.cs" />
     <Compile Include="Convertors\ByteArrayToImageSourceConverter.cs" />

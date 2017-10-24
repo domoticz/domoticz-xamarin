@@ -359,6 +359,7 @@
     <Compile Include="RangeSliderInitialization.cs" />
     <Compile Include="Renderer\AdMobRenderer.cs" />
     <Compile Include="Renderer\CustomMultiLineLabelRenderer.cs" />
+    <Compile Include="Renderer\ExtendedButtonRenderer.cs" />
     <Compile Include="Renderer\ExtendedSliderRenderer.cs" />
     <Compile Include="Renderer\ShareClass.cs" />
     <Compile Include="Resources\Resource.designer.cs" />

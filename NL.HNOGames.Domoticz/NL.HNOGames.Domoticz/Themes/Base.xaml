@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NL.HNOGames.Domoticz.Themes.Base">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+                    x:Class="NL.HNOGames.Domoticz.Themes.Base" 
+                    xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz">
     <Color x:Key="Primary">#263238</Color>
     <Color x:Key="PrimaryDark">#22272B</Color>
     <Color x:Key="Accent">#22272B</Color>
@@ -16,6 +18,7 @@
     <Color x:Key="HeaderDarkTextColor">#000000</Color>
     <Color x:Key="DarkButtonColor">#1A2C35</Color>
     <Color x:Key="ButtonOutlineColor">#B0BEC5</Color>
+
     <Style x:Key="DarkButton" TargetType="Button">
         <Setter Property="BackgroundColor" Value="{DynamicResource DarkButtonColor}" />
         <Setter Property="TextColor" Value="{DynamicResource WhiteTextColor}" />
@@ -61,13 +64,21 @@
         <Setter Property="BorderWidth" Value="1" />
         <Setter Property="MinimumWidthRequest" Value="50" />
     </Style>
+    <Style TargetType="custcontrol:ExtendedButton">
+        <Setter Property="BackgroundColor" Value="{DynamicResource CardBackgroundColor}" />
+        <Setter Property="TextColor" Value="{DynamicResource GreyTextColor}" />
+        <Setter Property="BorderRadius" Value="15" />
+        <Setter Property="BorderColor" Value="{DynamicResource ButtonOutlineColor}" />
+        <Setter Property="BorderWidth" Value="1" />
+        <Setter Property="MinimumWidthRequest" Value="50" />
+    </Style>
     <Style TargetType="Entry">
         <Setter Property="TextColor" Value="{DynamicResource GreyTextColor}" />
-        <Setter Property="HeightRequest" Value="35" />
+        <Setter Property="HeightRequest" Value="50" />
     </Style>
     <Style TargetType="Picker">
         <Setter Property="TextColor" Value="{DynamicResource GreyTextColor}" />
-        <Setter Property="HeightRequest" Value="35" />
+        <Setter Property="HeightRequest" Value="50" />
     </Style>
     <Style x:Key="HeaderType" TargetType="Label">
         <Setter Property="TextColor" Value="{DynamicResource HeaderTextColor}" />

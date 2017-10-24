@@ -324,17 +324,17 @@
     <Reference Include="Xamarin.GooglePlayServices.Tasks, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.GooglePlayServices.Tasks.42.1021.1\lib\MonoAndroid70\Xamarin.GooglePlayServices.Tasks.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.RangeSlider.Common, Version=0.7.11.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.RangeSlider.0.7.11\lib\MonoAndroid10\Xamarin.RangeSlider.Common.dll</HintPath>
+    <Reference Include="Xamarin.RangeSlider.Common, Version=0.7.13.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.RangeSlider.0.7.13\lib\MonoAndroid10\Xamarin.RangeSlider.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.RangeSlider.Droid, Version=0.7.11.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.RangeSlider.0.7.11\lib\MonoAndroid10\Xamarin.RangeSlider.Droid.dll</HintPath>
+    <Reference Include="Xamarin.RangeSlider.Droid, Version=0.7.13.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.RangeSlider.0.7.13\lib\MonoAndroid10\Xamarin.RangeSlider.Droid.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.RangeSlider.Forms, Version=0.7.11.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.RangeSlider.0.7.11\lib\MonoAndroid10\Xamarin.RangeSlider.Forms.dll</HintPath>
+    <Reference Include="Xamarin.RangeSlider.Forms, Version=0.7.13.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.RangeSlider.0.7.13\lib\MonoAndroid10\Xamarin.RangeSlider.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.RangeSlider.Forms.Droid, Version=0.7.11.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.RangeSlider.0.7.11\lib\MonoAndroid10\Xamarin.RangeSlider.Forms.Droid.dll</HintPath>
+    <Reference Include="Xamarin.RangeSlider.Forms.Droid, Version=0.7.13.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.RangeSlider.0.7.13\lib\MonoAndroid10\Xamarin.RangeSlider.Forms.Droid.dll</HintPath>
     </Reference>
     <Reference Include="ZXing.Net.Mobile.Core, Version=2.2.9.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\ZXing.Net.Mobile.2.2.9\lib\MonoAndroid403\ZXing.Net.Mobile.Core.dll</HintPath>
@@ -356,7 +356,6 @@
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MainApplication.cs" />
-    <Compile Include="RangeSliderInitialization.cs" />
     <Compile Include="Renderer\AdMobRenderer.cs" />
     <Compile Include="Renderer\CustomMultiLineLabelRenderer.cs" />
     <Compile Include="Renderer\ExtendedButtonRenderer.cs" />

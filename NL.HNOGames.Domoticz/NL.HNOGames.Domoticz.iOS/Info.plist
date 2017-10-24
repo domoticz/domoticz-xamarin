@@ -59,5 +59,9 @@
 	<false/>
 	<key>CFBundleVersion</key>
 	<string>42</string>
+  <key>NSSpeechRecognitionUsageDescription</key>
+  <string>Enable speech recognition in the app</string>
+  <key>NSMicrophoneUsageDescription</key>
+  <string>We need the microphone for speech recognition</string>
 </dict>
 </plist>

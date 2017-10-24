@@ -1,10 +1,13 @@
 ﻿using System;
 using Xamarin.Forms;
+using System.Linq;
+using System.Reactive.Linq;
 using System.Collections.Generic;
 using NL.HNOGames.Domoticz.Resources;
 using NL.HNOGames.Domoticz.Models;
 using Rg.Plugins.Popup.Services;
 using NL.HNOGames.Domoticz.Views.Dialog;
+using Plugin.SpeechRecognition;
 
 namespace NL.HNOGames.Domoticz.Views.Settings
 {
@@ -12,19 +15,43 @@ namespace NL.HNOGames.Domoticz.Views.Settings
     {
         private readonly List<SpeechModel> _oListSource;
         private SpeechModel _oSelectedSpeechCommand;
+        readonly ISpeechRecognizer speech = CrossSpeechRecognition.Current;
 
         /// <summary>
         /// Constructor of QRCode page
         /// </summary>
         public SpeechSettingsPage()
         {
+
             _oSelectedSpeechCommand = null;
             InitializeComponent();
 
             App.ShowToast(AppResources.Speech_register);
             swEnableSpeech.IsToggled = App.AppSettings.SpeechEnabled;
-            swEnableSpeech.Toggled += (sender, args) => { App.AppSettings.SpeechEnabled = swEnableSpeech.IsToggled; };
+            swEnableSpeech.Toggled += async (sender, args) =>
+            {
 
+                App.AppSettings.SpeechEnabled = swEnableSpeech.IsToggled;
+
+                if (swEnableSpeech.IsToggled)
+                {
+                    if (!this.speech.IsSupported)
+                    {
+                        App.ShowToast("SPEECH RECOGNITION NOT SUPPORTED FOR THIS DEVICE");
+                        swEnableSpeech.IsToggled = false;
+                    }
+                    else
+                    {
+                        var status = await speech.RequestPermission();
+                        if (status != SpeechRecognizerStatus.Available)
+                        {
+                            App.AddLog("Permission denied for speech recognition");
+                            App.ShowToast("Don't have the permission for the mic");
+                            swEnableSpeech.IsToggled = false;
+                        }
+                    }
+                }
+            };
             _oListSource = App.AppSettings.SpeechCommands;
             if (_oListSource != null)
                 listView.ItemsSource = _oListSource;
@@ -33,8 +60,17 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// <summary>
         /// Add new Speech Command to system
         /// </summary>
-        private void ToolbarItem_Activated(object sender, EventArgs e)
+        private async void ToolbarItem_Activated(object sender, EventArgs e)
         {
+            //var granted = await speech.RequestPermission();
+            //if (granted == SpeechRecognizerStatus.Available)
+            //{
+            App.ShowToast("Waiting for input");
+            CrossSpeechRecognition
+                .Current
+                .ListenUntilPause()
+                .Subscribe(phrase => { App.ShowToast(phrase); });
+            //};
         }
 
         /// <summary>
@@ -42,7 +78,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// </summary>
         private void btnDeleteButton_Clicked(object sender, EventArgs e)
         {
-            var oSpeechCommand = (SpeechModel) ((Button) sender).BindingContext;
+            var oSpeechCommand = (SpeechModel)((Button)sender).BindingContext;
             App.ShowToast(AppResources.something_deleted.Replace("%1$s", oSpeechCommand.Name));
             _oListSource.Remove(oSpeechCommand);
             SaveAndRefresh();
@@ -63,7 +99,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// </summary>
         private async void btnConnect_Clicked(object sender, EventArgs e)
         {
-            _oSelectedSpeechCommand = (SpeechModel) ((Button) sender).BindingContext;
+            _oSelectedSpeechCommand = (SpeechModel)((Button)sender).BindingContext;
             var oSwitchPopup = new SwitchPopup();
             oSwitchPopup.DeviceSelectedMethod += DelegateMethod;
             await PopupNavigation.PushAsync(oSwitchPopup);

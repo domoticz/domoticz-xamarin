@@ -7,35 +7,35 @@
                  xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
                  x:Class="NL.HNOGames.Domoticz.Views.Dialog.TimersPopup">
 
-    <StackLayout VerticalOptions="Center"
-                 HorizontalOptions="FillAndExpand"
-                 BackgroundColor="{StaticResource LightBackgroundColor}"
-                 Orientation="Vertical"
-                 Padding="20, 10, 20, 20"
-                 Margin="20, 10, 20, 20"
-                 Opacity="1">
+  <StackLayout VerticalOptions="Center"
+               HorizontalOptions="FillAndExpand"
+               BackgroundColor="{StaticResource LightBackgroundColor}"
+               Orientation="Vertical"
+               Padding="20, 10, 20, 20"
+               Margin="20, 10, 20, 20"
+               Opacity="1">
 
-        <Label x:Name="lvlTitle" Text="{resources:Translate timers}" Style="{StaticResource HeaderType}"
-               Margin="0,20,0,10" />
+    <Label x:Name="lvlTitle" Text="{resources:Translate timers}" Style="{StaticResource HeaderType}"
+           Margin="0,20,0,10" />
 
-        <ListView x:Name="listView" BackgroundColor="{DynamicResource LightBackgroundColor}"
-                  VerticalOptions="FillAndExpand"
-                  ItemSelected="OnItemSelected" HasUnevenRows="true">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <custcontrol:CustomViewCell>
-                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
-                                     VerticalOptions="CenterAndExpand" Padding="10">
-                            <Label Text="{Binding Description}" Style="{StaticResource HeaderDarkType}" />
-                            <Label Text="{Binding CommandDescription}" Style="{StaticResource DetailType}" />
-                            <Label Text="{Binding TypeDescription}" Style="{StaticResource DetailType}" />
-                        </StackLayout>
-                    </custcontrol:CustomViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+    <ListView x:Name="listView" BackgroundColor="{DynamicResource LightBackgroundColor}"
+              VerticalOptions="FillAndExpand"
+              ItemSelected="OnItemSelected" HasUnevenRows="true">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <custcontrol:CustomViewCell>
+            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                         VerticalOptions="CenterAndExpand" Padding="10">
+              <Label Text="{Binding Description}" Style="{StaticResource HeaderDarkType}" />
+              <Label Text="{Binding CommandDescription}" Style="{StaticResource DetailType}" />
+              <Label Text="{Binding TypeDescription}" Style="{StaticResource DetailType}" />
+            </StackLayout>
+          </custcontrol:CustomViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
 
-        <Button x:Name="btnOK" Text="{resources:Translate ok}" HorizontalOptions="Fill" IsEnabled="True"
-                Clicked="btnOK_Clicked" />
-    </StackLayout>
+    <custcontrol:ExtendedButton Padding="20,0,20,0" x:Name="btnOK" Text="{resources:Translate ok}" HorizontalOptions="Fill" IsEnabled="True"
+              Clicked="btnOK_Clicked" />
+  </StackLayout>
 </pages:PopupPage>

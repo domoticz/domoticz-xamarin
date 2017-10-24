@@ -4,6 +4,7 @@ using System.Linq;
 using Xamarin.Forms;
 using System.Reflection;
 using NL.HNOGames.Domoticz.Resources;
+using NL.HNOGames.Domoticz.Controls;
 
 namespace NL.HNOGames.Domoticz.Views.Dialog
 {
@@ -115,12 +116,13 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
                 ((ListView) sender).SelectedItem = null; //de-select
             };
 
-            var oSave = new Button
+            var oSave = new ExtendedButton
             {
                 Text = AppResources.ok,
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
                 Margin = new Thickness(10)
             };
+            oSave.Padding = new Thickness(20, 0, 20, 0);
             oSave.Clicked += (o, e) =>
             {
                 cmFinish?.Execute(null);

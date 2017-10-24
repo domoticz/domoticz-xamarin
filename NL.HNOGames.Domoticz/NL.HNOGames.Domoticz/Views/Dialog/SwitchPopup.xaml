@@ -48,7 +48,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <Button x:Name="btnCancel" Text="{resources:Translate cancel}" HorizontalOptions="Fill" IsEnabled="True"
+      <custcontrol:ExtendedButton Padding="20,0,20,0" x:Name="btnCancel" Text="{resources:Translate cancel}" HorizontalOptions="Fill" IsEnabled="True"
                 Clicked="btnCancel_Clicked" />
     </StackLayout>
 </pages:PopupPage>

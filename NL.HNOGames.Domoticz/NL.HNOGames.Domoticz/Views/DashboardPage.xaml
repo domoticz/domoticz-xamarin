@@ -109,18 +109,9 @@
                                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                              VerticalOptions="CenterAndExpand" Margin="0,-5,5,0">
                                     <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
-                                        <Button x:Name="btnOnButton" Text="{resources:Translate button_state_on}"
+                                        <custcontrol:ExtendedButton x:Name="btnOnButton" Text="{resources:Translate button_state_on}"
                                                 HorizontalOptions="End" VerticalOptions="End"
-                                                Clicked="btnOnButton_Clicked">
-                                            <Button.WidthRequest>
-                                                <OnPlatform x:TypeArguments="x:Double" iOS="50" Android="60"
-                                                            WinPhone="60" />
-                                            </Button.WidthRequest>
-                                            <Button.HeightRequest>
-                                                <OnPlatform x:TypeArguments="x:Double" iOS="35" Android="50"
-                                                            WinPhone="50" />
-                                            </Button.HeightRequest>
-                                        </Button>
+                                                Clicked="btnOnButton_Clicked" />
                                     </StackLayout>
                                 </StackLayout>
                             </StackLayout>
@@ -158,32 +149,14 @@
                                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                              VerticalOptions="CenterAndExpand" Margin="0,-5,5,0">
                                     <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
-                                        <Button x:Name="btnMinTemp" Text="-" HorizontalOptions="End"
-                                                VerticalOptions="End" Clicked="btnMinTemp_Clicked">
-                                            <Button.WidthRequest>
-                                                <OnPlatform x:TypeArguments="x:Double" iOS="30" Android="30"
-                                                            WinPhone="30" />
-                                            </Button.WidthRequest>
-                                            <Button.HeightRequest>
-                                                <OnPlatform x:TypeArguments="x:Double" iOS="35" Android="50"
-                                                            WinPhone="50" />
-                                            </Button.HeightRequest>
-                                        </Button>
+                                        <custcontrol:ExtendedButton x:Name="btnMinTemp" Text="-" HorizontalOptions="End"
+                                                VerticalOptions="End" Clicked="btnMinTemp_Clicked"/>
                                         <Entry Style="{StaticResource EntryType}" x:Name="txtSetValue"
                                                Keyboard="Numeric" VerticalOptions="Center"
                                                HorizontalOptions="FillAndExpand" WidthRequest="70"
                                                Text="{Binding SetPoint}" Completed="txtSetValue_Completed" />
-                                        <Button x:Name="btnPlusTemp" Text="+" HorizontalOptions="End"
-                                                VerticalOptions="End" Clicked="btnPlusTemp_Clicked">
-                                            <Button.WidthRequest>
-                                                <OnPlatform x:TypeArguments="x:Double" iOS="30" Android="30"
-                                                            WinPhone="30" />
-                                            </Button.WidthRequest>
-                                            <Button.HeightRequest>
-                                                <OnPlatform x:TypeArguments="x:Double" iOS="35" Android="50"
-                                                            WinPhone="50" />
-                                            </Button.HeightRequest>
-                                        </Button>
+                                        <custcontrol:ExtendedButton x:Name="btnPlusTemp" Text="+" HorizontalOptions="End"
+                                                VerticalOptions="End" Clicked="btnPlusTemp_Clicked" />
                                     </StackLayout>
                                 </StackLayout>
                             </StackLayout>
@@ -221,18 +194,9 @@
                                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                              VerticalOptions="CenterAndExpand" Margin="0,-5,5,0">
                                     <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
-                                        <Button x:Name="btnOffButton" Text="{resources:Translate button_state_off}"
+                                        <custcontrol:ExtendedButton x:Name="btnOffButton" Text="{resources:Translate button_state_off}"
                                                 HorizontalOptions="End" VerticalOptions="End"
-                                                Clicked="btnOffButton_Clicked">
-                                            <Button.WidthRequest>
-                                                <OnPlatform x:TypeArguments="x:Double" iOS="50" Android="60"
-                                                            WinPhone="60" />
-                                            </Button.WidthRequest>
-                                            <Button.HeightRequest>
-                                                <OnPlatform x:TypeArguments="x:Double" iOS="35" Android="50"
-                                                            WinPhone="50" />
-                                            </Button.HeightRequest>
-                                        </Button>
+                                                Clicked="btnOffButton_Clicked"/>
                                     </StackLayout>
                                 </StackLayout>
                             </StackLayout>
@@ -270,30 +234,12 @@
                                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                              VerticalOptions="CenterAndExpand" Margin="0,-5,5,0">
                                     <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
-                                        <Button x:Name="btnOnButton" Text="{resources:Translate button_state_on}"
+                                        <custcontrol:ExtendedButton x:Name="btnOnButton" Text="{resources:Translate button_state_on}"
                                                 HorizontalOptions="End" VerticalOptions="End"
-                                                Clicked="btnOnButton_Clicked">
-                                            <Button.WidthRequest>
-                                                <OnPlatform x:TypeArguments="x:Double" iOS="50" Android="60"
-                                                            WinPhone="60" />
-                                            </Button.WidthRequest>
-                                            <Button.HeightRequest>
-                                                <OnPlatform x:TypeArguments="x:Double" iOS="35" Android="50"
-                                                            WinPhone="50" />
-                                            </Button.HeightRequest>
-                                        </Button>
-                                        <Button x:Name="btnOffButton" Text="{resources:Translate button_state_off}"
+                                                Clicked="btnOnButton_Clicked"/>
+                                        <custcontrol:ExtendedButton x:Name="btnOffButton" Text="{resources:Translate button_state_off}"
                                                 HorizontalOptions="End" VerticalOptions="End"
-                                                Clicked="btnOffButton_Clicked">
-                                            <Button.WidthRequest>
-                                                <OnPlatform x:TypeArguments="x:Double" iOS="50" Android="60"
-                                                            WinPhone="60" />
-                                            </Button.WidthRequest>
-                                            <Button.HeightRequest>
-                                                <OnPlatform x:TypeArguments="x:Double" iOS="35" Android="50"
-                                                            WinPhone="50" />
-                                            </Button.HeightRequest>
-                                        </Button>
+                                                Clicked="btnOffButton_Clicked"/>
                                     </StackLayout>
                                 </StackLayout>
                             </StackLayout>
@@ -370,41 +316,14 @@
                                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                              VerticalOptions="CenterAndExpand" Margin="0,-5,5,0">
                                     <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
-                                        <Button x:Name="btnOnButton" Text="{resources:Translate button_state_on}"
+                                        <custcontrol:ExtendedButton x:Name="btnOnButton" Text="{resources:Translate button_state_on}"
                                                 HorizontalOptions="End" VerticalOptions="End"
-                                                Clicked="btnBlindOnButton_Clicked">
-                                            <Button.WidthRequest>
-                                                <OnPlatform x:TypeArguments="x:Double" iOS="50" Android="60"
-                                                            WinPhone="60" />
-                                            </Button.WidthRequest>
-                                            <Button.HeightRequest>
-                                                <OnPlatform x:TypeArguments="x:Double" iOS="35" Android="50"
-                                                            WinPhone="50" />
-                                            </Button.HeightRequest>
-                                        </Button>
-                                        <Button x:Name="btnStopButton" Text="Stop" HorizontalOptions="End"
-                                                VerticalOptions="End" Clicked="btnBlindStopButton_Clicked">
-                                            <Button.WidthRequest>
-                                                <OnPlatform x:TypeArguments="x:Double" iOS="50" Android="70"
-                                                            WinPhone="70" />
-                                            </Button.WidthRequest>
-                                            <Button.HeightRequest>
-                                                <OnPlatform x:TypeArguments="x:Double" iOS="35" Android="50"
-                                                            WinPhone="50" />
-                                            </Button.HeightRequest>
-                                        </Button>
-                                        <Button x:Name="btnOffButton" Text="{resources:Translate button_state_off}"
+                                                Clicked="btnBlindOnButton_Clicked" />
+                                        <custcontrol:ExtendedButton x:Name="btnStopButton" Text="Stop" HorizontalOptions="End"
+                                                VerticalOptions="End" Clicked="btnBlindStopButton_Clicked" />
+                                        <custcontrol:ExtendedButton x:Name="btnOffButton" Text="{resources:Translate button_state_off}"
                                                 HorizontalOptions="End" VerticalOptions="End"
-                                                Clicked="btnBlindOffButton_Clicked">
-                                            <Button.WidthRequest>
-                                                <OnPlatform x:TypeArguments="x:Double" iOS="50" Android="60"
-                                                            WinPhone="60" />
-                                            </Button.WidthRequest>
-                                            <Button.HeightRequest>
-                                                <OnPlatform x:TypeArguments="x:Double" iOS="35" Android="50"
-                                                            WinPhone="50" />
-                                            </Button.HeightRequest>
-                                        </Button>
+                                                Clicked="btnBlindOffButton_Clicked"/>
                                     </StackLayout>
                                 </StackLayout>
                             </StackLayout>
@@ -442,42 +361,16 @@
                                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                              VerticalOptions="CenterAndExpand" Margin="0,-5,5,0">
                                     <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
-                                        <Button x:Name="btnOnButton" Text="{resources:Translate button_state_on}"
+                                        <custcontrol:ExtendedButton x:Name="btnOnButton" Text="{resources:Translate button_state_on}"
                                                 HorizontalOptions="End" VerticalOptions="End"
-                                                Clicked="btnOnButton_Clicked">
-                                            <Button.WidthRequest>
-                                                <OnPlatform x:TypeArguments="x:Double" iOS="50" Android="60"
-                                                            WinPhone="60" />
-                                            </Button.WidthRequest>
-                                            <Button.HeightRequest>
-                                                <OnPlatform x:TypeArguments="x:Double" iOS="35" Android="50"
-                                                            WinPhone="50" />
-                                            </Button.HeightRequest>
-                                        </Button>
-                                        <Button x:Name="btnOffButton" Text="{resources:Translate button_state_off}"
+                                                Clicked="btnOnButton_Clicked" />
+                                        <custcontrol:ExtendedButton x:Name="btnOffButton" Text="{resources:Translate button_state_off}"
                                                 HorizontalOptions="End" VerticalOptions="End"
-                                                Clicked="btnOffButton_Clicked">
-                                            <Button.WidthRequest>
-                                                <OnPlatform x:TypeArguments="x:Double" iOS="50" Android="60"
-                                                            WinPhone="60" />
-                                            </Button.WidthRequest>
-                                            <Button.HeightRequest>
-                                                <OnPlatform x:TypeArguments="x:Double" iOS="35" Android="50"
-                                                            WinPhone="50" />
-                                            </Button.HeightRequest>
-                                        </Button>
+                                                Clicked="btnOffButton_Clicked" />
                                     </StackLayout>
 
-                                    <Button x:Name="btnLevelButton" Text="{Binding Level}" HorizontalOptions="End"
-                                            VerticalOptions="End" Margin="0,5,0,0" Clicked="btnLevelButton_Clicked">
-                                        <Button.WidthRequest>
-                                            <OnPlatform x:TypeArguments="x:Double" iOS="105" Android="125"
-                                                        WinPhone="125" />
-                                        </Button.WidthRequest>
-                                        <Button.HeightRequest>
-                                            <OnPlatform x:TypeArguments="x:Double" iOS="35" Android="50" WinPhone="50" />
-                                        </Button.HeightRequest>
-                                    </Button>
+                                    <custcontrol:ExtendedButton x:Name="btnLevelButton" Text="{Binding Level}" HorizontalOptions="End"
+                                            VerticalOptions="End" Margin="0,5,0,0" Clicked="btnLevelButton_Clicked" />
                                 </StackLayout>
                             </StackLayout>
                         </StackLayout>
@@ -519,15 +412,8 @@
                                                 IsToggled="{Binding StatusBoolean}" Toggled="btnSwitch_Toggled" />
                                     </StackLayout>
 
-                                    <Button x:Name="btnLevelButton" Text="{Binding Level}" HorizontalOptions="End"
-                                            VerticalOptions="End" Clicked="btnLevelButton_Clicked">
-                                        <Button.WidthRequest>
-                                            <OnPlatform x:TypeArguments="x:Double" iOS="50" Android="60" WinPhone="60" />
-                                        </Button.WidthRequest>
-                                        <Button.HeightRequest>
-                                            <OnPlatform x:TypeArguments="x:Double" iOS="35" Android="50" WinPhone="50" />
-                                        </Button.HeightRequest>
-                                    </Button>
+                                    <custcontrol:ExtendedButton x:Name="btnLevelButton" Text="{Binding Level}" HorizontalOptions="End"
+                                            VerticalOptions="End" Clicked="btnLevelButton_Clicked" />
                                 </StackLayout>
                             </StackLayout>
                         </StackLayout>

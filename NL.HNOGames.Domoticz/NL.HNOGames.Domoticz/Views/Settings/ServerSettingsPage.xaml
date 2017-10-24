@@ -181,7 +181,7 @@
                 </StackLayout>
 
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="20">
-                    <Button x:Name="btnCheck" Text="{resources:Translate welcome_info_checkingConnection}"
+                    <custcontrol:ExtendedButton x:Name="btnCheck" Text="{resources:Translate welcome_info_checkingConnection}"
                             HorizontalOptions="FillAndExpand" IsVisible="True" Margin="0,20,0,0"
                             Clicked="btnCheck_Clicked" />
 
@@ -189,7 +189,7 @@
                                                    HeightRequest="60" Source="ic_validate_settings.png"
                                                    HorizontalOptions="CenterAndExpand" Margin="0,40,0,0" />
                     <Label TextColor="Gray" x:Name="lblResult" HorizontalOptions="CenterAndExpand" />
-                    <Button x:Name="btnFinish" Text="{resources:Translate welcome_button_finish}"
+                    <custcontrol:ExtendedButton x:Name="btnFinish" Text="{resources:Translate welcome_button_finish}"
                             HorizontalOptions="FillAndExpand" IsVisible="False" Margin="0,20,0,0"
                             Clicked="btnFinish_Clicked" />
                 </StackLayout>

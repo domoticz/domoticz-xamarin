@@ -57,26 +57,35 @@ namespace NL.HNOGames.Domoticz
 
             try
             {
-                try
-                {
-                    _loadingDialog = UserDialogs.Instance.Loading(text, maskType: MaskType.Gradient);
-                    _loadingDialog.Show();
-                }
-                catch (Exception ex)
-                {
-                    AddLog(ex.Message);
-                }
-            }catch(Exception)
+                _loadingDialog = UserDialogs.Instance.Loading(text, maskType: MaskType.Gradient);
+                _loadingDialog.Show();
+            }
+            catch (Exception ex)
             {
-                try
-                {
-                    _loadingDialog = UserDialogs.Instance.Loading(text, maskType: MaskType.Gradient);
-                    _loadingDialog.Show();
-                }
-                catch (Exception ex)
-                {
-                    AddLog(ex.Message);
-                }
+                AddLog(ex.Message);
+            }
+        }
+
+        /// <summary>
+        ///     Show a loading screen with cancel button
+        /// </summary>
+        public static void ShowLoading(string text, string cancelText, CancellationTokenSource cts)
+        {
+            if (string.IsNullOrEmpty(text))
+                text = AppResources.text_loading;
+
+            Action ca = null;
+            if (cts != null)
+                ca = () => cts.Cancel();
+
+            try
+            {
+                _loadingDialog = UserDialogs.Instance.Loading(text, ca, cancelText, maskType: MaskType.Gradient);
+                _loadingDialog.Show();
+            }
+            catch (Exception)
+            {
+                // ignored
             }
         }
 

@@ -63,7 +63,7 @@
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <PlatformTarget>x86</PlatformTarget>
     <BuildIpa>true</BuildIpa>
-    <CodesignProvision>Domoticz - AppStore - HNO Games</CodesignProvision>
+    <CodesignProvision>Domoticz App Store 2</CodesignProvision>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">

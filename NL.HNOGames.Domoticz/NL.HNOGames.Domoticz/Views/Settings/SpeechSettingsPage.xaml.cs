@@ -8,6 +8,8 @@ using NL.HNOGames.Domoticz.Models;
 using Rg.Plugins.Popup.Services;
 using NL.HNOGames.Domoticz.Views.Dialog;
 using Plugin.SpeechRecognition;
+using Acr.UserDialogs;
+using System.Threading.Tasks;
 
 namespace NL.HNOGames.Domoticz.Views.Settings
 {
@@ -17,12 +19,13 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         private SpeechModel _oSelectedSpeechCommand;
         readonly ISpeechRecognizer speech = CrossSpeechRecognition.Current;
 
+        public static IDisposable listener = null;
+
         /// <summary>
-        /// Constructor of QRCode page
+        /// Constructor of Speech page
         /// </summary>
         public SpeechSettingsPage()
         {
-
             _oSelectedSpeechCommand = null;
             InitializeComponent();
 
@@ -35,26 +38,39 @@ namespace NL.HNOGames.Domoticz.Views.Settings
 
                 if (swEnableSpeech.IsToggled)
                 {
-                    if (!this.speech.IsSupported)
-                    {
-                        App.ShowToast("SPEECH RECOGNITION NOT SUPPORTED FOR THIS DEVICE");
+                    if (!await ValidateSpeechRecognition())
                         swEnableSpeech.IsToggled = false;
-                    }
-                    else
-                    {
-                        var status = await speech.RequestPermission();
-                        if (status != SpeechRecognizerStatus.Available)
-                        {
-                            App.AddLog("Permission denied for speech recognition");
-                            App.ShowToast("Don't have the permission for the mic");
-                            swEnableSpeech.IsToggled = false;
-                        }
-                    }
                 }
             };
+
             _oListSource = App.AppSettings.SpeechCommands;
             if (_oListSource != null)
                 listView.ItemsSource = _oListSource;
+        }
+
+        /// <summary>
+        /// Check if this feature is supported for your device
+        /// </summary>
+        /// <returns></returns>
+        private async System.Threading.Tasks.Task<bool> ValidateSpeechRecognition()
+        {
+            if (!this.speech.IsSupported)
+            {
+                App.ShowToast("Speech recognition is not supported for this device at this moment..");
+                return false;
+            }
+            else
+            {
+                var status = await speech.RequestPermission();
+                if (status != SpeechRecognizerStatus.Available)
+                {
+                    App.AddLog("Permission denied for speech recognition");
+                    App.ShowToast("Don't have the permission for the mic");
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         /// <summary>
@@ -62,15 +78,62 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// </summary>
         private async void ToolbarItem_Activated(object sender, EventArgs e)
         {
-            //var granted = await speech.RequestPermission();
-            //if (granted == SpeechRecognizerStatus.Available)
-            //{
-            App.ShowToast("Waiting for input");
-            CrossSpeechRecognition
-                .Current
-                .ListenUntilPause()
-                .Subscribe(phrase => { App.ShowToast(phrase); });
-            //};
+            if (!await ValidateSpeechRecognition())
+            {
+                swEnableSpeech.IsToggled = false;
+                return;
+            }
+
+            try
+            {
+                App.ShowLoading("Waiting for input");
+                listener = CrossSpeechRecognition
+                    .Current
+                    .ListenUntilPause()
+                    .Subscribe(phrase =>
+                    {
+                        App.HideLoading();
+                        App.ShowToast(phrase);
+                        if (SpeechSettingsPage.listener != null)
+                            SpeechSettingsPage.listener.Dispose();
+
+                        try
+                        {
+                            var textId = phrase.GetHashCode() + "";
+                            if (_oListSource.Any(o => string.Compare(o.Id, textId, StringComparison.OrdinalIgnoreCase) == 0))
+                                App.ShowToast(AppResources.Speech_exists);
+                            else
+                                AddNewRecord(textId, phrase);
+                        }
+                        catch (Exception ex)
+                        {
+                            App.AddLog(ex.Message);
+                        }
+                    });
+            }
+            catch (Exception ex)
+            {
+                App.AddLog(ex.Message);
+                App.ShowToast(ex.Message);
+                if (listener != null)
+                    listener.Dispose();
+            }
+        }
+
+        /// <summary>
+        /// Create new Speech object
+        /// </summary>
+        private void AddNewRecord(string speechID, string speechText)
+        {
+            App.ShowToast(AppResources.Speech_saved + " " + speechText);
+            var speechObject = new SpeechModel()
+            {
+                Id = speechID,
+                Name = speechText,
+                Enabled = true,
+            };
+            _oListSource.Add(speechObject);
+            SaveAndRefresh();
         }
 
         /// <summary>

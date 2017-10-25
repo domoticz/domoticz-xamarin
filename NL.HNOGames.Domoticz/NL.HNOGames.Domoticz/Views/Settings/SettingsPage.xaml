@@ -93,7 +93,7 @@
                     </StackLayout>
                     <Switch x:Name="swEnableMultiServer" VerticalOptions="Center" HorizontalOptions="End" />
                 </StackLayout>
-                
+
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
                              Orientation="Horizontal" Padding="0,10,0,10">
                     <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
@@ -168,22 +168,19 @@
                             Clicked="BtnCameras_OnClicked">
                     </custcontrol:ExtendedButton>
                 </StackLayout>
-                
-                <StackLayout x:Name="lyWorkInProgress" HorizontalOptions="FillAndExpand"
-                             VerticalOptions="StartAndExpand" Orientation="Vertical">
-                    <Label Text="{resources:Translate category_Speech}" LineBreakMode="NoWrap"
+
+                <Label Text="{resources:Translate category_Speech}" LineBreakMode="NoWrap"
                            Style="{StaticResource HeaderType}" Margin="0,10,0,0" />
-                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
                                  Orientation="Horizontal" Padding="0,10,0,0" IsVisible="True">
-                        <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
-                            <Label Text="{resources:Translate category_Speech}" VerticalOptions="CenterAndExpand"
+                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
+                        <Label Text="{resources:Translate category_Speech}" VerticalOptions="CenterAndExpand"
                                    HorizontalOptions="Start" LineBreakMode="NoWrap"
                                    Style="{StaticResource SettingsDetailType}" />
-                        </StackLayout>
-                        <custcontrol:ExtendedButton Padding="10,0,10,0" x:Name="btnSpeechSettings" Text="Ok" HorizontalOptions="End" VerticalOptions="Center"
-                                Clicked="btnSpeechSettings_Clicked">
-                        </custcontrol:ExtendedButton>
                     </StackLayout>
+                    <custcontrol:ExtendedButton Padding="10,0,10,0" x:Name="btnSpeechSettings" Text="Ok" HorizontalOptions="End" VerticalOptions="Center"
+                                Clicked="btnSpeechSettings_Clicked">
+                    </custcontrol:ExtendedButton>
                 </StackLayout>
 
                 <Label Text="{resources:Translate category_QRCode}" LineBreakMode="NoWrap"

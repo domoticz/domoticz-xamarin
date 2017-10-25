@@ -26,6 +26,16 @@
             </ToolbarItem.Icon>
         </ToolbarItem>
 
+        <ToolbarItem x:Name="tiSpeechCode" Text="{resources:Translate action_speech}" Order="Primary"
+                     Clicked="tiSpeechCode_Activated">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource"
+                            iOS="ic_keyboard_voice.png"
+                            Android="ic_keyboard_voice.png"
+                            WinPhone="ic_keyboard_voice.png" />
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+
         <ToolbarItem Text="{resources:Translate action_settings}" Order="Primary" Clicked="OnSettingsClick">
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource"

@@ -858,6 +858,9 @@
     <BundleResource Include="Resources\slider-default-handle-highlighted.png" />
     <BundleResource Include="Resources\slider-default-handle-disabled%402x.png" />
     <BundleResource Include="Resources\slider-default-handle-disabled.png" />
+    <BundleResource Include="Resources\ic_keyboard_voice.png" />
+    <BundleResource Include="Resources\ic_keyboard_voice%402x.png" />
+    <BundleResource Include="Resources\ic_keyboard_voice%403x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

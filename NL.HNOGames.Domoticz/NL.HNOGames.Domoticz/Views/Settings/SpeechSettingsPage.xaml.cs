@@ -86,7 +86,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
 
             try
             {
-                App.ShowLoading("Waiting for input");
+                App.ShowLoading(AppResources.Speech_register);
                 listener = CrossSpeechRecognition
                     .Current
                     .ListenUntilPause()
@@ -134,6 +134,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             };
             _oListSource.Add(speechObject);
             SaveAndRefresh();
+            App.ShowToast(AppResources.noSwitchSelected_explanation_Speech);
         }
 
         /// <summary>

@@ -1,5 +1,6 @@
 ﻿using NL.HNOGames.Domoticz.Resources;
 using NL.HNOGames.Domoticz.ViewModels;
+using Plugin.SpeechRecognition;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace NL.HNOGames.Domoticz.Views
     {
         private readonly OverviewViewModel _viewModel;
         public static bool EmptyDialogShown = false;
+        public static IDisposable listener = null;
 
         public OverviewTabbedPage()
         {
@@ -43,13 +45,17 @@ namespace NL.HNOGames.Domoticz.Views
             else
             {
                 _viewModel.RefreshPlansCommand.Execute(null);
-                //_viewModel.LoadVersionCommand.Execute(null);
             }
 
             if (!App.AppSettings.QRCodeEnabled)
                 ToolbarItems.Remove(tiQRCode);
             else if (!ToolbarItems.Contains(tiQRCode))
                 ToolbarItems.Insert(1, tiQRCode);
+
+            if (!App.AppSettings.SpeechEnabled)
+                ToolbarItems.Remove(tiSpeechCode);
+            else if (!ToolbarItems.Contains(tiSpeechCode))
+                ToolbarItems.Insert(1, tiSpeechCode);
         }
 
         /// <summary>
@@ -79,6 +85,7 @@ namespace NL.HNOGames.Domoticz.Views
 
         private bool _settingsOpened;
 
+
         /// <summary>
         /// Show all settings
         /// </summary>
@@ -95,6 +102,59 @@ namespace NL.HNOGames.Domoticz.Views
         {
             App.SetMainPage();
             App.RestartFirebase();
+        }
+
+
+        /// <summary>
+        /// Speech Recognition
+        /// </summary>
+        private void tiSpeechCode_Activated(object sender, EventArgs e)
+        {
+            try
+            {
+                App.ShowLoading(AppResources.Speech);
+                listener = CrossSpeechRecognition
+                    .Current
+                    .ListenUntilPause()
+                    .Subscribe(async phrase =>
+                    {
+                        App.HideLoading();
+                        App.ShowToast(phrase);
+                        if (OverviewTabbedPage.listener != null)
+                            OverviewTabbedPage.listener.Dispose();
+
+                        try
+                        {
+                            var speechID =phrase.GetHashCode() + "";
+                            var speechCommand = App.AppSettings.SpeechCommands.FirstOrDefault(o => o.Id == speechID);
+                            if (speechCommand != null && speechCommand.Enabled)
+                            {
+                                App.AddLog("Speech Command Found: " + speechCommand);
+                                App.ShowToast(AppResources.Speech + " " + speechCommand.Name + ": " + AppResources.switch_toggled + " " + speechCommand.SwitchName);
+                                await App.ApiService.HandleSwitch(speechCommand.SwitchIDX, speechCommand.SwitchPassword, -1, speechCommand.Value,
+                                    speechCommand.IsScene);
+                                App.SetMainPage();
+                            }
+                            else
+                            {
+                                App.AddLog("Speech Command not registered: " + speechID);
+                                App.ShowToast(
+                                    speechCommand == null ? AppResources.Speech_found : AppResources.Speech_disabled);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            App.AddLog(ex.Message);
+                        }
+                    });
+            }
+            catch (Exception ex)
+            {
+                App.AddLog(ex.Message);
+                App.ShowToast(ex.Message);
+                if (listener != null)
+                    listener.Dispose();
+            }
         }
 
         /// <summary>

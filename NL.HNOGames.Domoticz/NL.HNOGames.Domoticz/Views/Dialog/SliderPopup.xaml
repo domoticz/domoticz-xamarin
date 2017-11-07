@@ -18,6 +18,7 @@
                  Opacity="0.9">
 
         <Label x:Name="lvlTitle" Text="Select Level" Style="{StaticResource HeaderType}" Margin="0,20,0,10" />
+      
         <range:RangeSlider x:Name="sDimmer"
                            MinimumValue="1"
                            MaximumValue="100"

@@ -34,6 +34,7 @@
     "Xamarin.FFImageLoading.Transformations": "2.2.20",
     "Xamarin.Forms": "2.4.0.18342",
     "Xamarin.Forms.RangeSlider": "0.7.13",
+    "Xamarin.RangeSlider": "0.7.13",
     "ZXing.Net.Mobile.Forms": "2.2.9"
   },
   "frameworks": {

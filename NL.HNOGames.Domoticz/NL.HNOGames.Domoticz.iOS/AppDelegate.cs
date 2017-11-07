@@ -12,6 +12,12 @@ using Firebase.CloudMessaging;
 using Firebase.Core;
 using System.Net;
 
+#if NETFX_CORE
+[assembly: Xamarin.Forms.Platform.WinRT.ExportRenderer(typeof(Xamarin.RangeSlider.Forms.RangeSlider), typeof(Xamarin.RangeSlider.Forms.RangeSliderRenderer))]
+#else
+[assembly: Xamarin.Forms.ExportRenderer(typeof(Xamarin.RangeSlider.Forms.RangeSlider), typeof(Xamarin.RangeSlider.Forms.RangeSliderRenderer))]
+#endif
+
 namespace NL.HNOGames.Domoticz.iOS
 {
     [Register("AppDelegate")]
@@ -42,6 +48,7 @@ namespace NL.HNOGames.Domoticz.iOS
             iRate.SharedInstance.DaysUntilPrompt = 10;
             iRate.SharedInstance.UsesUntilPrompt = 20;
             ZXing.Net.Mobile.Forms.iOS.Platform.Init();
+
 
             CachedImageRenderer.Init();
             SlideOverKit.iOS.SlideOverKit.Init();

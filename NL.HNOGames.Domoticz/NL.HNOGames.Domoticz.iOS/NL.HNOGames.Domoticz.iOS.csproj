@@ -677,16 +677,7 @@
     <BundleResource Include="Resources\ic_view_carousel_white%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\100x100.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\114x114.png">
-      <InProject>false</InProject>
-    </ImageAsset>
     <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\120x120.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\144x144.png">
       <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\152x152.png">
@@ -704,16 +695,7 @@
     <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\40x40.png">
       <InProject>false</InProject>
     </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\50x50.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\57x57x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
     <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\58x58.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\72x72.png">
       <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\76x76.png">
@@ -726,6 +708,9 @@
       <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\market.png">
       <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Media.xcassets\LaunchImages.launchimage\Contents.json">

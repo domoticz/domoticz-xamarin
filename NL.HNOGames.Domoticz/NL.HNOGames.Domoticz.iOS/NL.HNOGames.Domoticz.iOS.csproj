@@ -145,16 +145,16 @@
       <HintPath>..\..\packages\Xamarin.FFImageLoading.Transformations.2.2.20\lib\Xamarin.iOS10\FFImageLoading.Transformations.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.Analytics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Firebase.iOS.Analytics.4.0.2\lib\Xamarin.iOS10\Firebase.Analytics.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Firebase.iOS.Analytics.4.0.4\lib\Xamarin.iOS10\Firebase.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.CloudMessaging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Firebase.iOS.CloudMessaging.2.0.0\lib\Xamarin.iOS10\Firebase.CloudMessaging.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Firebase.iOS.CloudMessaging.2.0.4\lib\Xamarin.iOS10\Firebase.CloudMessaging.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Firebase.iOS.Core.4.0.3\lib\Xamarin.iOS10\Firebase.Core.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Firebase.iOS.Core.4.0.8\lib\Xamarin.iOS10\Firebase.Core.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.InstanceID, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Firebase.iOS.InstanceID.2.0.0\lib\Xamarin.iOS10\Firebase.InstanceID.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Firebase.iOS.InstanceID.2.0.4\lib\Xamarin.iOS10\Firebase.InstanceID.dll</HintPath>
     </Reference>
     <Reference Include="FrazzApps.Xamarin.AppRater, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\FrazzApps.Xamarin.Forms.AppRater.1.2.0\lib\Xamarin.iOS\FrazzApps.Xamarin.AppRater.dll</HintPath>
@@ -163,10 +163,10 @@
       <HintPath>..\..\packages\FrazzApps.Xamarin.Forms.AppRater.1.2.0\lib\Xamarin.iOS\FrazzApps.Xamarin.AppRater.iOSUnified.dll</HintPath>
     </Reference>
     <Reference Include="Google.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Google.iOS.Core.3.0.3.7\lib\Xamarin.iOS10\Google.Core.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Google.iOS.Core.3.1.0\lib\Xamarin.iOS10\Google.Core.dll</HintPath>
     </Reference>
     <Reference Include="Google.MobileAds, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Google.iOS.MobileAds.7.21.0\lib\Xamarin.iOS10\Google.MobileAds.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Google.iOS.MobileAds.7.24.1\lib\Xamarin.iOS10\Google.MobileAds.dll</HintPath>
     </Reference>
     <Reference Include="Humanizer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Humanizer.Core.2.2.0\lib\netstandard1.0\Humanizer.dll</HintPath>
@@ -859,29 +859,29 @@
     <Error Condition="!Exists('..\..\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.targets'))" />
     <Error Condition="!Exists('..\..\packages\Xamarin.Forms.2.4.0.269-pre2\build\netstandard1.0\Xamarin.Forms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.2.4.0.269-pre2\build\netstandard1.0\Xamarin.Forms.props'))" />
     <Error Condition="!Exists('..\..\packages\Xamarin.Forms.2.4.0.269-pre2\build\netstandard1.0\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.2.4.0.269-pre2\build\netstandard1.0\Xamarin.Forms.targets'))" />
-    <Error Condition="!Exists('..\..\packages\Xamarin.Firebase.iOS.Analytics.4.0.2\build\Xamarin.Firebase.iOS.Analytics.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Firebase.iOS.Analytics.4.0.2\build\Xamarin.Firebase.iOS.Analytics.targets'))" />
-    <Error Condition="!Exists('..\..\packages\Xamarin.Firebase.iOS.CloudMessaging.2.0.0\build\Xamarin.Firebase.iOS.CloudMessaging.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Firebase.iOS.CloudMessaging.2.0.0\build\Xamarin.Firebase.iOS.CloudMessaging.targets'))" />
-    <Error Condition="!Exists('..\..\packages\Xamarin.Firebase.iOS.Core.4.0.3\build\Xamarin.Firebase.iOS.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Firebase.iOS.Core.4.0.3\build\Xamarin.Firebase.iOS.Core.targets'))" />
-    <Error Condition="!Exists('..\..\packages\Xamarin.Firebase.iOS.InstanceID.2.0.0\build\Xamarin.Firebase.iOS.InstanceID.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Firebase.iOS.InstanceID.2.0.0\build\Xamarin.Firebase.iOS.InstanceID.targets'))" />
-    <Error Condition="!Exists('..\..\packages\Xamarin.Google.iOS.Core.3.0.3.7\build\Xamarin.Google.iOS.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Google.iOS.Core.3.0.3.7\build\Xamarin.Google.iOS.Core.targets'))" />
-    <Error Condition="!Exists('..\..\packages\Xamarin.Google.iOS.MobileAds.7.21.0\build\Xamarin.Google.iOS.MobileAds.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Google.iOS.MobileAds.7.21.0\build\Xamarin.Google.iOS.MobileAds.targets'))" />
     <Error Condition="!Exists('..\..\packages\Xamarin.Forms.2.4.0.282\build\netstandard1.0\Xamarin.Forms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.2.4.0.282\build\netstandard1.0\Xamarin.Forms.props'))" />
     <Error Condition="!Exists('..\..\packages\Xamarin.Forms.2.4.0.282\build\netstandard1.0\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.2.4.0.282\build\netstandard1.0\Xamarin.Forms.targets'))" />
     <Error Condition="!Exists('..\..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets'))" />
     <Error Condition="!Exists('..\..\packages\Xamarin.Forms.2.4.0.18342\build\netstandard1.0\Xamarin.Forms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.2.4.0.18342\build\netstandard1.0\Xamarin.Forms.props'))" />
     <Error Condition="!Exists('..\..\packages\Xamarin.Forms.2.4.0.18342\build\netstandard1.0\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.2.4.0.18342\build\netstandard1.0\Xamarin.Forms.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Firebase.iOS.Analytics.4.0.4\build\Xamarin.Firebase.iOS.Analytics.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Firebase.iOS.Analytics.4.0.4\build\Xamarin.Firebase.iOS.Analytics.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Firebase.iOS.CloudMessaging.2.0.4\build\Xamarin.Firebase.iOS.CloudMessaging.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Firebase.iOS.CloudMessaging.2.0.4\build\Xamarin.Firebase.iOS.CloudMessaging.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Firebase.iOS.Core.4.0.8\build\Xamarin.Firebase.iOS.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Firebase.iOS.Core.4.0.8\build\Xamarin.Firebase.iOS.Core.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Firebase.iOS.InstanceID.2.0.4\build\Xamarin.Firebase.iOS.InstanceID.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Firebase.iOS.InstanceID.2.0.4\build\Xamarin.Firebase.iOS.InstanceID.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Google.iOS.Core.3.1.0\build\Xamarin.Google.iOS.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Google.iOS.Core.3.1.0\build\Xamarin.Google.iOS.Core.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Google.iOS.MobileAds.7.24.1\build\Xamarin.Google.iOS.MobileAds.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Google.iOS.MobileAds.7.24.1\build\Xamarin.Google.iOS.MobileAds.targets'))" />
   </Target>
   <Import Project="..\..\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.targets" Condition="Exists('..\..\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.targets')" />
   <Import Project="..\..\packages\NETStandard.Library.2.0.0\build\NETStandard.Library.targets" Condition="Exists('..\..\packages\NETStandard.Library.2.0.0\build\NETStandard.Library.targets')" />
   <Import Project="..\..\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.targets" Condition="Exists('..\..\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.targets')" />
   <Import Project="..\..\packages\Xamarin.Forms.2.4.0.269-pre2\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.4.0.269-pre2\build\netstandard1.0\Xamarin.Forms.targets')" />
-  <Import Project="..\..\packages\Xamarin.Firebase.iOS.Analytics.4.0.2\build\Xamarin.Firebase.iOS.Analytics.targets" Condition="Exists('..\..\packages\Xamarin.Firebase.iOS.Analytics.4.0.2\build\Xamarin.Firebase.iOS.Analytics.targets')" />
-  <Import Project="..\..\packages\Xamarin.Firebase.iOS.CloudMessaging.2.0.0\build\Xamarin.Firebase.iOS.CloudMessaging.targets" Condition="Exists('..\..\packages\Xamarin.Firebase.iOS.CloudMessaging.2.0.0\build\Xamarin.Firebase.iOS.CloudMessaging.targets')" />
-  <Import Project="..\..\packages\Xamarin.Firebase.iOS.Core.4.0.3\build\Xamarin.Firebase.iOS.Core.targets" Condition="Exists('..\..\packages\Xamarin.Firebase.iOS.Core.4.0.3\build\Xamarin.Firebase.iOS.Core.targets')" />
-  <Import Project="..\..\packages\Xamarin.Firebase.iOS.InstanceID.2.0.0\build\Xamarin.Firebase.iOS.InstanceID.targets" Condition="Exists('..\..\packages\Xamarin.Firebase.iOS.InstanceID.2.0.0\build\Xamarin.Firebase.iOS.InstanceID.targets')" />
-  <Import Project="..\..\packages\Xamarin.Google.iOS.Core.3.0.3.7\build\Xamarin.Google.iOS.Core.targets" Condition="Exists('..\..\packages\Xamarin.Google.iOS.Core.3.0.3.7\build\Xamarin.Google.iOS.Core.targets')" />
-  <Import Project="..\..\packages\Xamarin.Google.iOS.MobileAds.7.21.0\build\Xamarin.Google.iOS.MobileAds.targets" Condition="Exists('..\..\packages\Xamarin.Google.iOS.MobileAds.7.21.0\build\Xamarin.Google.iOS.MobileAds.targets')" />
   <Import Project="..\..\packages\Xamarin.Forms.2.4.0.282\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.4.0.282\build\netstandard1.0\Xamarin.Forms.targets')" />
   <Import Project="..\..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />
   <Import Project="..\..\packages\Xamarin.Forms.2.4.0.18342\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.4.0.18342\build\netstandard1.0\Xamarin.Forms.targets')" />
+  <Import Project="..\..\packages\Xamarin.Firebase.iOS.Analytics.4.0.4\build\Xamarin.Firebase.iOS.Analytics.targets" Condition="Exists('..\..\packages\Xamarin.Firebase.iOS.Analytics.4.0.4\build\Xamarin.Firebase.iOS.Analytics.targets')" />
+  <Import Project="..\..\packages\Xamarin.Firebase.iOS.CloudMessaging.2.0.4\build\Xamarin.Firebase.iOS.CloudMessaging.targets" Condition="Exists('..\..\packages\Xamarin.Firebase.iOS.CloudMessaging.2.0.4\build\Xamarin.Firebase.iOS.CloudMessaging.targets')" />
+  <Import Project="..\..\packages\Xamarin.Firebase.iOS.Core.4.0.8\build\Xamarin.Firebase.iOS.Core.targets" Condition="Exists('..\..\packages\Xamarin.Firebase.iOS.Core.4.0.8\build\Xamarin.Firebase.iOS.Core.targets')" />
+  <Import Project="..\..\packages\Xamarin.Firebase.iOS.InstanceID.2.0.4\build\Xamarin.Firebase.iOS.InstanceID.targets" Condition="Exists('..\..\packages\Xamarin.Firebase.iOS.InstanceID.2.0.4\build\Xamarin.Firebase.iOS.InstanceID.targets')" />
+  <Import Project="..\..\packages\Xamarin.Google.iOS.Core.3.1.0\build\Xamarin.Google.iOS.Core.targets" Condition="Exists('..\..\packages\Xamarin.Google.iOS.Core.3.1.0\build\Xamarin.Google.iOS.Core.targets')" />
+  <Import Project="..\..\packages\Xamarin.Google.iOS.MobileAds.7.24.1\build\Xamarin.Google.iOS.MobileAds.targets" Condition="Exists('..\..\packages\Xamarin.Google.iOS.MobileAds.7.24.1\build\Xamarin.Google.iOS.MobileAds.targets')" />
 </Project>

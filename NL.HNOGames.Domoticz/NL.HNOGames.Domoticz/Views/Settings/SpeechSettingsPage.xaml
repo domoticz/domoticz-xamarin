@@ -14,14 +14,14 @@
         <ScrollView>
             <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
-                             Orientation="Horizontal" Margin="20">
+                             Orientation="Horizontal" Margin="20" BackgroundColor="{DynamicResource LightBackgroundColor}">
                     <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
                         <Label Text="{resources:Translate speech_enable_settings}" VerticalOptions="CenterAndExpand"
                                HorizontalOptions="Start" Style="{StaticResource SettingsDetailType}" />
                     </StackLayout>
                     <Switch x:Name="swEnableSpeech" VerticalOptions="Center" HorizontalOptions="End" />
                 </StackLayout>
-                <ListView x:Name="listView" SeparatorVisibility="None" RowHeight="130" HasUnevenRows="True">
+                <ListView x:Name="listView" SeparatorVisibility="None" RowHeight="130" HasUnevenRows="True" BackgroundColor="{DynamicResource LightBackgroundColor}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

@@ -14,12 +14,13 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout BackgroundColor="{DynamicResource LightBackgroundColor}">
             <controls:FlowListView x:Name="listView"
                                    SeparatorVisibility="None"
                                    HasUnevenRows="true"
                                    RowHeight="150"
                                    FlowItemTapped="ListView_OnFlowItemTapped"
+                                    BackgroundColor="{DynamicResource LightBackgroundColor}"
                                    FlowItemsSource="{Binding Cameras}">
                 <controls:FlowListView.FlowColumnTemplate>
                     <DataTemplate>

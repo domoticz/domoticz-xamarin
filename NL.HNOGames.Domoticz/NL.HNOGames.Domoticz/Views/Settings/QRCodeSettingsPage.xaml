@@ -13,7 +13,7 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" BackgroundColor="{DynamicResource LightBackgroundColor}">
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
                              Orientation="Horizontal" Margin="20">
                     <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
@@ -22,7 +22,7 @@
                     </StackLayout>
                     <Switch x:Name="swEnableQRCode" VerticalOptions="Center" HorizontalOptions="End" />
                 </StackLayout>
-                <ListView x:Name="listView" SeparatorVisibility="None" RowHeight="130" HasUnevenRows="True">
+                <ListView x:Name="listView" SeparatorVisibility="None" RowHeight="130" HasUnevenRows="True" BackgroundColor="{DynamicResource LightBackgroundColor}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

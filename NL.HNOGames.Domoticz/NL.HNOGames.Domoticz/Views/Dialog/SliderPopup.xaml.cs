@@ -40,11 +40,12 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
             await PopupNavigation.PopAsync();
         }
 
-        protected override bool OnBackButtonPressed()
+        /// <summary>
+        /// Cancel the new slider value
+        /// </summary>
+        private async void btnCancel_Clicked(object sender, EventArgs e)
         {
-            // Prevent hide popup
-            //return base.OnBackButtonPressed();
-            return true;
+            await PopupNavigation.PopAsync();
         }
     }
 }

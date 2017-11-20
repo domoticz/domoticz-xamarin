@@ -63,7 +63,7 @@
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <PlatformTarget>x86</PlatformTarget>
     <BuildIpa>true</BuildIpa>
-    <CodesignProvision>Domoticz - AppStore - HNO Games</CodesignProvision>
+    <CodesignProvision>Domoticz App Store 2</CodesignProvision>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
@@ -104,7 +104,7 @@
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <PlatformTarget>x86</PlatformTarget>
-    <CodesignProvision>1af40e31-3a47-43e0-a4b2-a7e782f3891b</CodesignProvision>
+    <CodesignProvision>Domoticz Development 2</CodesignProvision>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
   </PropertyGroup>
   <ItemGroup>

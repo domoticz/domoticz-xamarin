@@ -466,8 +466,8 @@
     <Reference Include="Acr.UserDialogs.Interface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Acr.UserDialogs.6.5.1\lib\netstandard1.1\Acr.UserDialogs.Interface.dll</HintPath>
     </Reference>
-    <Reference Include="DLToolkit.Forms.Controls.FlowListView, Version=1.0.6488.36286, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\DLToolkit.Forms.Controls.FlowListView.2.0.7\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+netstandard1.0\DLToolkit.Forms.Controls.FlowListView.dll</HintPath>
+    <Reference Include="DLToolkit.Forms.Controls.FlowListView, Version=1.0.6515.38251, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DLToolkit.Forms.Controls.FlowListView.2.0.9\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+netstandard1.0\DLToolkit.Forms.Controls.FlowListView.dll</HintPath>
     </Reference>
     <Reference Include="FFImageLoading, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.FFImageLoading.2.2.20\lib\portable-net45+win8+wpa81+wp8\FFImageLoading.dll</HintPath>
@@ -527,10 +527,10 @@
       <HintPath>..\..\packages\Xam.Plugin.DeviceInfo.3.0.2\lib\netstandard1.0\Plugin.DeviceInfo.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.DeviceOrientation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Plugin.DeviceOrientation.1.0.4\lib\netstandard1.0\Plugin.DeviceOrientation.dll</HintPath>
+      <HintPath>..\..\packages\Plugin.DeviceOrientation.1.0.5\lib\netstandard1.0\Plugin.DeviceOrientation.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.DeviceOrientation.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Plugin.DeviceOrientation.1.0.4\lib\netstandard1.0\Plugin.DeviceOrientation.Abstractions.dll</HintPath>
+      <HintPath>..\..\packages\Plugin.DeviceOrientation.1.0.5\lib\netstandard1.0\Plugin.DeviceOrientation.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.InAppBilling, Version=1.2.3.107, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Plugin.InAppBilling.1.2.3.107\lib\netstandard1.0\Plugin.InAppBilling.dll</HintPath>
@@ -586,8 +586,8 @@
     <Reference Include="Rg.Plugins.Popup.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Rg.Plugins.Popup.1.0.4\lib\portable-win+net45+wp8+win8+wpa81\Rg.Plugins.Popup.Platform.dll</HintPath>
     </Reference>
-    <Reference Include="SlideOverKit, Version=1.0.6135.18790, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SlideOverKit.2.1.4\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SlideOverKit.dll</HintPath>
+    <Reference Include="SlideOverKit, Version=1.0.6507.24362, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SlideOverKit.2.1.5\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SlideOverKit.dll</HintPath>
     </Reference>
     <Reference Include="Splat, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Splat.2.0.0\lib\netstandard1.1\Splat.dll</HintPath>
@@ -613,26 +613,26 @@
     <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.4.0.18342\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.RangeSlider.Common, Version=0.7.13.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.RangeSlider.0.7.13\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.RangeSlider.Common.dll</HintPath>
+    <Reference Include="Xamarin.RangeSlider.Common, Version=0.7.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.RangeSlider.0.7.14\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.RangeSlider.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.RangeSlider.Forms, Version=0.7.13.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.RangeSlider.0.7.13\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.RangeSlider.Forms.dll</HintPath>
+    <Reference Include="Xamarin.RangeSlider.Forms, Version=0.7.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.RangeSlider.0.7.14\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.RangeSlider.Forms.dll</HintPath>
     </Reference>
     <Reference Include="XLabs.Cryptography, Version=2.0.5782.12232, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\XLabs.Cryptography.2.0.5782\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\XLabs.Cryptography.dll</HintPath>
     </Reference>
-    <Reference Include="ZXing.Net.Mobile.Core, Version=2.2.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\ZXing.Net.Mobile.2.2.9\lib\portable-net45+netcore45+wpa81+wp8\ZXing.Net.Mobile.Core.dll</HintPath>
+    <Reference Include="ZXing.Net.Mobile.Core, Version=2.3.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ZXing.Net.Mobile.2.3.2\lib\portable-net45+netcore45+wpa81+wp8\ZXing.Net.Mobile.Core.dll</HintPath>
     </Reference>
-    <Reference Include="ZXing.Net.Mobile.Forms, Version=2.2.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\ZXing.Net.Mobile.Forms.2.2.9\lib\portable-net45+netcore45+wpa81+wp8\ZXing.Net.Mobile.Forms.dll</HintPath>
+    <Reference Include="ZXing.Net.Mobile.Forms, Version=2.3.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ZXing.Net.Mobile.Forms.2.3.2\lib\portable-net45+netcore45+wpa81+wp8\ZXing.Net.Mobile.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="zxing.portable, Version=2.2.9.0, Culture=neutral, PublicKeyToken=830ae994e36ac27d, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\ZXing.Net.Mobile.2.2.9\lib\portable-net45+netcore45+wpa81+wp8\zxing.portable.dll</HintPath>
+    <Reference Include="zxing.portable, Version=2.3.2.0, Culture=neutral, PublicKeyToken=830ae994e36ac27d, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ZXing.Net.Mobile.2.3.2\lib\portable-net45+netcore45+wpa81+wp8\zxing.portable.dll</HintPath>
     </Reference>
-    <Reference Include="ZXingNetMobile, Version=2.2.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\ZXing.Net.Mobile.2.2.9\lib\portable-net45+netcore45+wpa81+wp8\ZXingNetMobile.dll</HintPath>
+    <Reference Include="ZXingNetMobile, Version=2.3.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ZXing.Net.Mobile.2.3.2\lib\portable-net45+netcore45+wpa81+wp8\ZXingNetMobile.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

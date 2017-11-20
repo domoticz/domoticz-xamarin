@@ -83,8 +83,8 @@
     <Reference Include="DeviceOrientation.Forms.Plugin.Android, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugins.Forms.DeviceOrientation.1.0.1\lib\MonoAndroid10\DeviceOrientation.Forms.Plugin.Android.dll</HintPath>
     </Reference>
-    <Reference Include="DLToolkit.Forms.Controls.FlowListView, Version=1.0.6488.36286, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\DLToolkit.Forms.Controls.FlowListView.2.0.7\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+netstandard1.0\DLToolkit.Forms.Controls.FlowListView.dll</HintPath>
+    <Reference Include="DLToolkit.Forms.Controls.FlowListView, Version=1.0.6515.38251, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DLToolkit.Forms.Controls.FlowListView.2.0.9\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+netstandard1.0\DLToolkit.Forms.Controls.FlowListView.dll</HintPath>
     </Reference>
     <Reference Include="FastAndroidCamera, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\FastAndroidCamera.2.0.0\lib\MonoAndroid403\FastAndroidCamera.dll</HintPath>
@@ -160,10 +160,10 @@
       <HintPath>..\..\packages\Xam.Plugin.DeviceInfo.3.0.2\lib\MonoAndroid10\Plugin.DeviceInfo.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.DeviceOrientation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Plugin.DeviceOrientation.1.0.4\lib\MonoAndroid10\Plugin.DeviceOrientation.dll</HintPath>
+      <HintPath>..\..\packages\Plugin.DeviceOrientation.1.0.5\lib\MonoAndroid10\Plugin.DeviceOrientation.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.DeviceOrientation.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Plugin.DeviceOrientation.1.0.4\lib\MonoAndroid10\Plugin.DeviceOrientation.Abstractions.dll</HintPath>
+      <HintPath>..\..\packages\Plugin.DeviceOrientation.1.0.5\lib\MonoAndroid10\Plugin.DeviceOrientation.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.InAppBilling, Version=1.2.3.107, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Plugin.InAppBilling.1.2.3.107\lib\MonoAndroid10\Plugin.InAppBilling.dll</HintPath>
@@ -225,11 +225,11 @@
     <Reference Include="Rg.Plugins.Popup.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Rg.Plugins.Popup.1.0.4\lib\MonoAndroid\Rg.Plugins.Popup.Platform.dll</HintPath>
     </Reference>
-    <Reference Include="SlideOverKit, Version=1.0.6135.18790, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SlideOverKit.2.1.4\lib\MonoAndroid10\SlideOverKit.dll</HintPath>
+    <Reference Include="SlideOverKit, Version=1.0.6507.24362, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SlideOverKit.2.1.5\lib\MonoAndroid10\SlideOverKit.dll</HintPath>
     </Reference>
     <Reference Include="SlideOverKit.Droid, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SlideOverKit.2.1.4\lib\MonoAndroid10\SlideOverKit.Droid.dll</HintPath>
+      <HintPath>..\..\packages\SlideOverKit.2.1.5\lib\MonoAndroid10\SlideOverKit.Droid.dll</HintPath>
     </Reference>
     <Reference Include="Splat, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Splat.2.0.0\lib\MonoAndroid403\Splat.dll</HintPath>
@@ -339,32 +339,32 @@
     <Reference Include="Xamarin.GooglePlayServices.Tasks, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.GooglePlayServices.Tasks.42.1021.1\lib\MonoAndroid70\Xamarin.GooglePlayServices.Tasks.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.RangeSlider.Common, Version=0.7.13.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.RangeSlider.0.7.13\lib\MonoAndroid10\Xamarin.RangeSlider.Common.dll</HintPath>
+    <Reference Include="Xamarin.RangeSlider.Common, Version=0.7.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.RangeSlider.0.7.14\lib\MonoAndroid10\Xamarin.RangeSlider.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.RangeSlider.Droid, Version=0.7.13.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.RangeSlider.0.7.13\lib\MonoAndroid10\Xamarin.RangeSlider.Droid.dll</HintPath>
+    <Reference Include="Xamarin.RangeSlider.Droid, Version=0.7.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.RangeSlider.0.7.14\lib\MonoAndroid10\Xamarin.RangeSlider.Droid.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.RangeSlider.Forms, Version=0.7.13.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.RangeSlider.0.7.13\lib\MonoAndroid10\Xamarin.RangeSlider.Forms.dll</HintPath>
+    <Reference Include="Xamarin.RangeSlider.Forms, Version=0.7.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.RangeSlider.0.7.14\lib\MonoAndroid10\Xamarin.RangeSlider.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.RangeSlider.Forms.Droid, Version=0.7.13.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.RangeSlider.0.7.13\lib\MonoAndroid10\Xamarin.RangeSlider.Forms.Droid.dll</HintPath>
+    <Reference Include="Xamarin.RangeSlider.Forms.Droid, Version=0.7.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.RangeSlider.0.7.14\lib\MonoAndroid10\Xamarin.RangeSlider.Forms.Droid.dll</HintPath>
     </Reference>
-    <Reference Include="ZXing.Net.Mobile.Core, Version=2.2.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\ZXing.Net.Mobile.2.2.9\lib\MonoAndroid403\ZXing.Net.Mobile.Core.dll</HintPath>
+    <Reference Include="ZXing.Net.Mobile.Core, Version=2.3.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ZXing.Net.Mobile.2.3.2\lib\MonoAndroid403\ZXing.Net.Mobile.Core.dll</HintPath>
     </Reference>
-    <Reference Include="ZXing.Net.Mobile.Forms, Version=2.2.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\ZXing.Net.Mobile.Forms.2.2.9\lib\MonoAndroid403\ZXing.Net.Mobile.Forms.dll</HintPath>
+    <Reference Include="ZXing.Net.Mobile.Forms, Version=2.3.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ZXing.Net.Mobile.Forms.2.3.2\lib\MonoAndroid403\ZXing.Net.Mobile.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="ZXing.Net.Mobile.Forms.Android, Version=2.2.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\ZXing.Net.Mobile.Forms.2.2.9\lib\MonoAndroid403\ZXing.Net.Mobile.Forms.Android.dll</HintPath>
+    <Reference Include="ZXing.Net.Mobile.Forms.Android, Version=2.3.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ZXing.Net.Mobile.Forms.2.3.2\lib\MonoAndroid403\ZXing.Net.Mobile.Forms.Android.dll</HintPath>
     </Reference>
-    <Reference Include="zxing.portable, Version=2.2.9.0, Culture=neutral, PublicKeyToken=830ae994e36ac27d, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\ZXing.Net.Mobile.2.2.9\lib\MonoAndroid403\zxing.portable.dll</HintPath>
+    <Reference Include="zxing.portable, Version=2.3.2.0, Culture=neutral, PublicKeyToken=830ae994e36ac27d, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ZXing.Net.Mobile.2.3.2\lib\MonoAndroid403\zxing.portable.dll</HintPath>
     </Reference>
-    <Reference Include="ZXingNetMobile, Version=2.2.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\ZXing.Net.Mobile.2.2.9\lib\MonoAndroid403\ZXingNetMobile.dll</HintPath>
+    <Reference Include="ZXingNetMobile, Version=2.3.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ZXing.Net.Mobile.2.3.2\lib\MonoAndroid403\ZXingNetMobile.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

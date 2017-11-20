@@ -1,21 +1,21 @@
 ﻿{
   "dependencies": {
     "Acr.UserDialogs": "6.5.1",
-    "DLToolkit.Forms.Controls.FlowListView": "2.0.7",
+    "DLToolkit.Forms.Controls.FlowListView": "2.0.9",
     "Humanizer": "2.2.0",
-    "Microsoft.NETCore.Platforms": "2.0.0",
+    "Microsoft.NETCore.Platforms": "2.0.1",
     "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
     "modernhttpclient": "2.4.2",
     "NETStandard.Library": "2.0.1",
     "Newtonsoft.Json": "10.0.3",
     "PCLStorage": "1.0.2",
-    "Plugin.DeviceOrientation": "1.0.4",
+    "Plugin.DeviceOrientation": "1.0.5",
     "Plugin.InAppBilling": "1.2.3.107",
     "Plugin.Permissions": "2.1.0",
     "Plugin.Share": "7.0.1",
     "Plugin.SpeechRecognition": "1.0.0-beta3",
     "Rg.Plugins.Popup": "1.0.4",
-    "SlideOverKit": "2.1.4",
+    "SlideOverKit": "2.1.5",
     "Splat": "2.0.0",
     "System.Dynamic.Runtime": "4.3.0",
     "System.Net.Http": "4.3.3",
@@ -33,9 +33,9 @@
     "Xamarin.FFImageLoading.Forms": "2.2.20",
     "Xamarin.FFImageLoading.Transformations": "2.2.20",
     "Xamarin.Forms": "2.4.0.18342",
-    "Xamarin.Forms.RangeSlider": "0.7.13",
-    "Xamarin.RangeSlider": "0.7.13",
-    "ZXing.Net.Mobile.Forms": "2.2.9"
+    "Xamarin.Forms.RangeSlider": "0.7.14",
+    "Xamarin.RangeSlider": "0.7.14",
+    "ZXing.Net.Mobile.Forms": "2.3.2"
   },
   "frameworks": {
     "uap10.0.10586": {}

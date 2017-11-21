@@ -32,6 +32,16 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             btnCheck.IsVisible = true;
             lblSSLWarning.IsVisible = string.Compare(txtRemoteProtocol.Items[txtRemoteProtocol.SelectedIndex], "https",
                                           StringComparison.OrdinalIgnoreCase) == 0;
+
+            //set entry flow
+            txtRemoteServerAddress.Completed += (object sender, EventArgs e) => { txtRemotePort.Focus(); };
+            txtRemotePort.Completed += (object sender, EventArgs e) => { txtRemoteDirectory.Focus(); };
+            txtRemoteDirectory.Completed += (object sender, EventArgs e) => { txtRemoteUsername.Focus(); };
+            txtRemoteUsername.Completed += (object sender, EventArgs e) => { txtRemotePassword.Focus(); };
+            txtLocalServerAddress.Completed += (object sender, EventArgs e) => { txtLocalPort.Focus(); };
+            txtLocalPort.Completed += (object sender, EventArgs e) => { txtLocalDirectory.Focus(); };
+            txtLocalDirectory.Completed += (object sender, EventArgs e) => { txtLocalUsername.Focus(); };
+            txtLocalUsername.Completed += (object sender, EventArgs e) => { txtLocalPassword.Focus(); };
         }
 
         /// <summary>

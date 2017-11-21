@@ -8,7 +8,14 @@
               x:Name="carouselPage">
     <ContentPage BackgroundColor="Black">
         <ScrollView>
-            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20,20,20,20">
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout.Padding>
+                    <OnIdiom x:TypeArguments="Thickness">
+                        <OnIdiom.Phone>20,20,20,20</OnIdiom.Phone>
+                        <OnIdiom.Tablet>150,50,150,0</OnIdiom.Tablet>
+                    </OnIdiom>
+                </StackLayout.Padding>
+                
                 <custcontrol:TintedCachedImage WidthRequest="75" HeightRequest="75" Source="ic_launcher.png" />
                 <Label TextColor="White" HorizontalOptions="CenterAndExpand" Style="Bold" FontSize="Large" Text="Domoticz"
                    Margin="0,20,0,0" />
@@ -18,7 +25,7 @@
                    Margin="0,30,0,0" />
 
                 <custcontrol:ExtendedButton Padding="20,0,20,0" x:Name="btnDemo" Style="{StaticResource DarkButton}" Text="Use our Demo setup"
-                    HorizontalOptions="End" VerticalOptions="End" WidthRequest="300" Clicked="BtnDemo_OnClicked" />
+                    HorizontalOptions="End" VerticalOptions="End" WidthRequest="300" Clicked="BtnDemo_OnClicked" Margin="0,20,0,0" />
 
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal"
                          Padding="20">
@@ -32,7 +39,14 @@
     </ContentPage>
     <ContentPage Style="{StaticResource ContentPageType}">
         <ScrollView>
-            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout.Padding>
+                    <OnIdiom x:TypeArguments="Thickness">
+                        <OnIdiom.Phone>20,20,20,20</OnIdiom.Phone>
+                        <OnIdiom.Tablet>150,50,150,0</OnIdiom.Tablet>
+                    </OnIdiom>
+                </StackLayout.Padding>
+                
                 <Label Style="{StaticResource HeaderType}" HorizontalOptions="CenterAndExpand" FontSize="Large"
                    Text="{resources:Translate title_activity_server_settings}" Margin="0,20,0,0" />
                 <Label Style="{StaticResource DetailType}" HorizontalOptions="StartAndExpand"
@@ -52,7 +66,13 @@
     </ContentPage>
     <ContentPage Style="{StaticResource ContentPageType}">
         <ScrollView>
-            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout.Padding>
+                    <OnIdiom x:TypeArguments="Thickness">
+                        <OnIdiom.Phone>20,20,20,20</OnIdiom.Phone>
+                        <OnIdiom.Tablet>150,50,150,0</OnIdiom.Tablet>
+                    </OnIdiom>
+                </StackLayout.Padding>
                 <Label Style="{StaticResource HeaderType}" HorizontalOptions="CenterAndExpand"
                        Text="{resources:Translate title_activity_server_settings}" Margin="0,20,0,0" />
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Vertical"
@@ -229,13 +249,21 @@
                         HorizontalOptions="Start" VerticalOptions="End" Clicked="btnPrevious_Clicked" Padding="20,0,20,0"/>
                     <custcontrol:ExtendedButton Text="{resources:Translate welcome_button_next}"
                         HorizontalOptions="End" VerticalOptions="End" Clicked="btnNext_Clicked" Padding="20,0,20,0" />
+                    <custcontrol:ExtendedButton x:Name="btnReset" Text="{resources:Translate category_Reset}"
+                        HorizontalOptions="End" VerticalOptions="End" Clicked="btnReset_Clicked" Padding="20,0,20,0" />
                 </StackLayout>
             </StackLayout>
 
         </ScrollView>
     </ContentPage>
     <ContentPage x:Name="cpResultPage" Style="{StaticResource ContentPageType}">
-        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout.Padding>
+                <OnIdiom x:TypeArguments="Thickness">
+                    <OnIdiom.Phone>20,20,20,20</OnIdiom.Phone>
+                    <OnIdiom.Tablet>150,50,150,0</OnIdiom.Tablet>
+                </OnIdiom>
+            </StackLayout.Padding>
             <Label Style="{StaticResource HeaderType}" HorizontalOptions="CenterAndExpand"
                    Text="{resources:Translate title_activity_server_settings}" Margin="0,20,0,0" />
             <custcontrol:ExtendedButton Padding="20,0,20,0" x:Name="btnCheck" Text="{resources:Translate welcome_info_checkingConnection}"

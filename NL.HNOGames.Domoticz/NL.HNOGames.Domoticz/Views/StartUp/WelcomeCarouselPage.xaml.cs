@@ -41,6 +41,16 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
 
             lblSSLWarning.IsVisible = string.Compare(txtRemoteProtocol.Items[txtRemoteProtocol.SelectedIndex], "https",
                                           StringComparison.OrdinalIgnoreCase) == 0;
+
+            //set entry flow
+            txtRemoteServerAddress.Completed += (object sender, EventArgs e) => { txtRemotePort.Focus(); };
+            txtRemotePort.Completed += (object sender, EventArgs e) => { txtRemoteDirectory.Focus(); };
+            txtRemoteDirectory.Completed += (object sender, EventArgs e) => { txtRemoteUsername.Focus(); };
+            txtRemoteUsername.Completed += (object sender, EventArgs e) => { txtRemotePassword.Focus(); };
+            txtLocalServerAddress.Completed += (object sender, EventArgs e) => { txtLocalPort.Focus(); };
+            txtLocalPort.Completed += (object sender, EventArgs e) => { txtLocalDirectory.Focus(); };
+            txtLocalDirectory.Completed += (object sender, EventArgs e) => { txtLocalUsername.Focus(); };
+            txtLocalUsername.Completed += (object sender, EventArgs e) => { txtLocalPassword.Focus(); };
         }
 
         /// <summary>
@@ -164,6 +174,27 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
         }
 
         /// <summary>
+        /// reset all values
+        /// </summary>
+        private void btnReset_Clicked(object sender, EventArgs e)
+        {
+            swEnableLocalSettings.IsToggled = false;
+            txtRemoteProtocol.SelectedIndex = 0;
+            txtRemotePort.Text = "";
+            txtRemoteServerAddress.Text = "";
+            txtRemoteUsername.Text = "";
+            txtRemotePassword.Text = "";
+            txtRemoteDirectory.Text = "";
+
+            txtLocalProtocol.SelectedIndex = 0;
+            txtLocalPort.Text = "";
+            txtLocalServerAddress.Text = "";
+            txtLocalUsername.Text = "";
+            txtLocalPassword.Text = "";
+            txtLocalDirectory.Text = "";
+        }
+
+        /// <summary>
         /// show previous page
         /// </summary>
         private void btnPrevious_Clicked(object sender, EventArgs e)
@@ -200,6 +231,14 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
             txtRemoteServerAddress.Text = "gandalf.domoticz.com";
             txtRemoteUsername.Text = "admin";
             txtRemotePassword.Text = "D@m@t1czCl0ud";
+
+            //clear local info
+            txtLocalProtocol.SelectedIndex = 0;
+            txtLocalPort.Text = "";
+            txtLocalServerAddress.Text = "";
+            txtLocalUsername.Text = "";
+            txtLocalPassword.Text = "";
+            txtLocalDirectory.Text = "";
         }
     }
 }

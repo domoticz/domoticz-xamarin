@@ -8,7 +8,15 @@
              Style="{StaticResource ContentPageType}">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout HorizontalOptions="FillAndExpand" Padding="20" Orientation="Vertical">
+            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
+
+                <StackLayout.Padding>
+                    <OnIdiom x:TypeArguments="Thickness">
+                        <OnIdiom.Phone>20,20,20,20</OnIdiom.Phone>
+                        <OnIdiom.Tablet>150,30,150,30</OnIdiom.Tablet>
+                    </OnIdiom>
+                </StackLayout.Padding>
+                
                 <StackLayout x:Name="lyPremium">
                     <Label Text="{resources:Translate premium_category}" LineBreakMode="NoWrap"
                            Style="{StaticResource HeaderType}" Margin="0,10,0,0" />

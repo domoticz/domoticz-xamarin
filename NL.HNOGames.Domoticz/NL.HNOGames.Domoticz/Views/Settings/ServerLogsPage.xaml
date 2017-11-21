@@ -11,6 +11,14 @@
     <ContentPage.Content>
 
         <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+
+            <StackLayout.Padding>
+                <OnIdiom x:TypeArguments="Thickness">
+                    <OnIdiom.Phone>20,20,20,20</OnIdiom.Phone>
+                    <OnIdiom.Tablet>150,30,150,30</OnIdiom.Tablet>
+                </OnIdiom>
+            </StackLayout.Padding>
+            
             <SearchBar Style="{StaticResource SearchBarType}" x:Name="sbSearch"
                        Placeholder="{resources:Translate filter}" CancelButtonColor="Red"
                        TextChanged="sbSearch_TextChanged" />

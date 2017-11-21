@@ -14,6 +14,13 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" BackgroundColor="{DynamicResource LightBackgroundColor}">
+
+                <StackLayout.Padding>
+                    <OnIdiom x:TypeArguments="Thickness">
+                        <OnIdiom.Phone>20,20,20,20</OnIdiom.Phone>
+                        <OnIdiom.Tablet>150,30,150,30</OnIdiom.Tablet>
+                    </OnIdiom>
+                </StackLayout.Padding>
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
                              Orientation="Horizontal" Margin="20">
                     <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">

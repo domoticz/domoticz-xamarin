@@ -15,6 +15,13 @@
 
     <ContentPage.Content>
         <StackLayout BackgroundColor="{DynamicResource LightBackgroundColor}">
+            <StackLayout.Padding>
+                <OnIdiom x:TypeArguments="Thickness">
+                    <OnIdiom.Phone>20,20,20,20</OnIdiom.Phone>
+                    <OnIdiom.Tablet>150,30,150,30</OnIdiom.Tablet>
+                </OnIdiom>
+            </StackLayout.Padding>
+
             <controls:FlowListView x:Name="listView"
                                    SeparatorVisibility="None"
                                    HasUnevenRows="true"

@@ -9,7 +9,14 @@
              Title="{resources:Translate server_settings}">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="20">
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+                <StackLayout.Padding>
+                    <OnIdiom x:TypeArguments="Thickness">
+                        <OnIdiom.Phone>20,20,20,20</OnIdiom.Phone>
+                        <OnIdiom.Tablet>150,30,150,30</OnIdiom.Tablet>
+                    </OnIdiom>
+                </StackLayout.Padding>
+                
                 <Label Style="{StaticResource HeaderType}" HorizontalOptions="CenterAndExpand"
                        Text="{resources:Translate title_activity_server_settings}" Margin="0,20,0,0" />
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Vertical"

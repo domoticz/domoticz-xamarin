@@ -107,6 +107,9 @@
     <CodesignProvision>Domoticz Development 2</CodesignProvision>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <AppExtensionDebugBundleId />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Acr.Support.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Acr.Support.2.1.0\lib\Xamarin.iOS10\Acr.Support.iOS.dll</HintPath>

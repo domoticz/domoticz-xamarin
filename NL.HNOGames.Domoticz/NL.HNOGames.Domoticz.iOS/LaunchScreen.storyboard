@@ -10,8 +10,8 @@
             <objects>
                 <viewController title="Domoticz" wantsFullScreenLayout="YES" id="X5k-f2-b5h" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Y8P-hJ-Z43"/>
-                        <viewControllerLayoutGuide type="bottom" id="9ZL-r4-8FZ"/>
+                        <viewControllerLayoutGuide type="top" id="913"/>
+                        <viewControllerLayoutGuide type="bottom" id="914"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yd7-JS-zBw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>

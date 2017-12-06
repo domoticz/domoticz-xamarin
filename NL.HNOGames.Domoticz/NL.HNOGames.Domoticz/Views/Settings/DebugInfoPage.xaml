@@ -6,6 +6,8 @@
              xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
              xmlns:selector="clr-namespace:NL.HNOGames.Domoticz.ViewSelector;assembly=NL.HNOGames.Domoticz"
              x:Class="NL.HNOGames.Domoticz.Views.Settings.DebugInfoPage"
+            xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+            ios:Page.UseSafeArea="true"
              Style="{StaticResource ContentPageType}"
              Title="{resources:Translate category_debug}">
 

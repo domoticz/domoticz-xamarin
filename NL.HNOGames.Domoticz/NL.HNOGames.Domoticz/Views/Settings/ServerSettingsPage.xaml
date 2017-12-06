@@ -5,6 +5,8 @@
              x:Class="NL.HNOGames.Domoticz.Views.Settings.ServerSettingsPage"
              xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
              xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
+            xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+            ios:Page.UseSafeArea="true"
              Style="{StaticResource ContentPageType}"
              Title="{resources:Translate server_settings}">
     <ContentPage.Content>

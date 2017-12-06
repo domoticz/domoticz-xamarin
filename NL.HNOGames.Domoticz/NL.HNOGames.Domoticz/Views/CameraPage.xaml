@@ -5,6 +5,8 @@
              xmlns:conv="clr-namespace:NL.HNOGames.Domoticz.Convertors;assembly=NL.HNOGames.Domoticz"
              xmlns:controls="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
              x:Class="NL.HNOGames.Domoticz.Views.CameraPage"
+            xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+            ios:Page.UseSafeArea="true"
              Style="{StaticResource ContentPageType}"
              Title="{Binding Title}">
     <ContentPage.Resources>

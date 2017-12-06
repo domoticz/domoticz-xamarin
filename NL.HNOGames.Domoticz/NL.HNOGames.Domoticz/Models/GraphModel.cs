@@ -42,8 +42,9 @@ namespace NL.HNOGames.Domoticz.Models
         public String r2 { get; set; }
         public String eg { get; set; }
         public String eu { get; set; }
-        public String vMin { get; set; }
-        public String vMax { get; set; }
+        public String v_min { get; set; }
+        public String v_max { get; set; }
+        public String v_avg { get; set; }
         public String c { get; set; }
         public String di { get; set; }
         public String gu { get; set; }
@@ -76,6 +77,27 @@ namespace NL.HNOGames.Domoticz.Models
             return result;
         }
 
+        public double? getValueMin()
+        {
+            if (!double.TryParse(v_min, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out double result))
+                return null;
+            return result;
+        }
+
+        public double? getValueMax()
+        {
+            if (!double.TryParse(v_max, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out double result))
+                return null;
+            return result;
+        }
+
+        public double? getValueAvg()
+        {
+            if (!double.TryParse(v_avg, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out double result))
+                return null;
+            return result;
+        }
+
         public double? getPowerReturn()
         {
             if (!double.TryParse(r1, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out double result))
@@ -100,20 +122,6 @@ namespace NL.HNOGames.Domoticz.Models
         public double? getPowerDelivery()
         {
             if (!double.TryParse(eg, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out double result))
-                return null;
-            return result;
-        }
-
-        public double? getValueMin()
-        {
-            if (!double.TryParse(vMin, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out double result))
-                return null;
-            return result;
-        }
-
-        public double? getValueMax()
-        {
-            if (!double.TryParse(vMax, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out double result))
                 return null;
             return result;
         }

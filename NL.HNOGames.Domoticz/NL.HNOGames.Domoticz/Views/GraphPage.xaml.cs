@@ -127,6 +127,27 @@ namespace NL.HNOGames.Domoticz.Views
                 _model.Series.Add(line);
             }
 
+            var PercentageMinList = graphData.result.Select(item => item.getValueMin()).Where(item => item.HasValue).ToList();
+            if (PercentageMinList != null && PercentageMinList.Count > 0)
+            {
+                var line = CreateLine("Min Percentage", PercentageMinList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
+            var PercentageMaxList = graphData.result.Select(item => item.getValueMax()).Where(item => item.HasValue).ToList();
+            if (PercentageMaxList != null && PercentageMaxList.Count > 0)
+            {
+                var line = CreateLine("Max Percentage", PercentageMaxList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
+            var PercentageAvgList = graphData.result.Select(item => item.getValueAvg()).Where(item => item.HasValue).ToList();
+            if (PercentageAvgList != null && PercentageAvgList.Count > 0)
+            {
+                var line = CreateLine("Avg Percentage", PercentageAvgList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
             var powerDeliveryList = graphData.result.Select(item => item.getPowerDelivery())
                 .Where(item => item.HasValue).ToList();
             if (powerDeliveryList != null && powerDeliveryList.Count > 0)

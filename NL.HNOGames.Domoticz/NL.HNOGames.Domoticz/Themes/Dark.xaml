@@ -26,8 +26,8 @@
         <Setter Property="BackgroundColor" Value="{DynamicResource LightBackgroundColor}" />
     </Style>
     <Style x:Key="SearchBarType" TargetType="SearchBar">
-        <Setter Property="TextColor" Value="{DynamicResource HeaderDarkTextColor}" />
-        <Setter Property="PlaceholderColor" Value="{DynamicResource HeaderDarkTextColor}" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="PlaceholderColor" Value="White" />
         <Setter Property="BackgroundColor" Value="{DynamicResource LightBackgroundColor}" />
     </Style>
     <Style x:Key="EntryType" TargetType="Entry">

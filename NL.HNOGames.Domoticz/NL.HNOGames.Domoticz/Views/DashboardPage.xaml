@@ -472,9 +472,11 @@
 
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+            
             <SearchBar Style="{StaticResource SearchBarType}" x:Name="sbSearch"
                        Placeholder="{resources:Translate filter}" CancelButtonColor="Red"
                        TextChanged="sbSearch_TextChanged" />
+            
             <ListView x:Name="listView" ItemsSource="{Binding Devices}"
                       BackgroundColor="{DynamicResource LightBackgroundColor}"
                       VerticalOptions="FillAndExpand" HasUnevenRows="true"

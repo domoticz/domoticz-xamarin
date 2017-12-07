@@ -88,14 +88,12 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             swDarkTheme.Toggled += (sender, args) =>
             {
                 App.AppSettings.DarkTheme = swDarkTheme.IsToggled;
-                Application.Current.Resources.MergedWith = App.AppSettings.DarkTheme
-                    ? (new Themes.Dark()).GetType()
-                    : (new Themes.Base()).GetType();
                 if (swDarkTheme.IsToggled && !App.AppSettings.PremiumBought)
                 {
                     swDarkTheme.IsToggled = false;
                     App.ShowToast(AppResources.category_theme + " " + AppResources.premium_feature);
                 }
+                SetTheme();
             };
 
             //Dashboard show switches
@@ -135,6 +133,24 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                     ? AppResources.show_extra_data_on
                     : AppResources.show_extra_data_off;
             };
+        }
+
+        /// <summary>
+        /// Set the theme of the app (Dark or light)
+        /// </summary>
+        private static void SetTheme()
+        {
+            Type merge;
+            if (App.AppSettings.DarkTheme)
+            {
+                if (Xamarin.Forms.Device.RuntimePlatform == Xamarin.Forms.Device.Android)
+                    merge = (new Themes.DarkAndroid()).GetType();
+                else
+                    merge = (new Themes.DarkiOS()).GetType();
+            }
+            else
+                merge = (new Themes.Base()).GetType();
+            Application.Current.Resources.MergedWith = merge;
         }
 
         private void PremiumScreenSetup()

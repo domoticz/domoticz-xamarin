@@ -124,8 +124,26 @@ namespace NL.HNOGames.Domoticz
             if (Current.Resources == null)
                 Current.Resources = new ResourceDictionary();
 
-            Current.Resources.MergedWith = AppSettings.DarkTheme ? (new Themes.Dark()).GetType() : (new Themes.Base()).GetType();
+            SetTheme();
             SetMainPage();
+        }
+
+        /// <summary>
+        /// Set the theme of the app (Dark or light)
+        /// </summary>
+        private static void SetTheme()
+        {
+            Type merge;
+            if (AppSettings.DarkTheme)
+            {
+                if (Xamarin.Forms.Device.RuntimePlatform == Xamarin.Forms.Device.Android)
+                    merge = (new Themes.DarkAndroid()).GetType();
+                else
+                    merge = (new Themes.DarkiOS()).GetType();
+            }
+            else
+                merge = (new Themes.Base()).GetType();
+            Current.Resources.MergedWith = merge;
         }
 
         /// <summary>

@@ -227,8 +227,11 @@
     </Compile>
     <Compile Include="Resources\TranslateExtension.cs" />
     <Compile Include="Models\ServerSettings.cs" />
-    <Compile Include="Themes\Dark.xaml.cs">
-      <DependentUpon>Dark.xaml</DependentUpon>
+    <Compile Include="Themes\DarkiOS.xaml.cs">
+      <DependentUpon>DarkiOS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Themes\DarkAndroid.xaml.cs">
+      <DependentUpon>DarkAndroid.xaml</DependentUpon>
     </Compile>
     <Compile Include="Themes\Base.xaml.cs">
       <DependentUpon>Base.xaml</DependentUpon>
@@ -736,7 +739,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Themes\Dark.xaml">
+    <EmbeddedResource Include="Themes\DarkAndroid.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -773,6 +776,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\CameraDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Themes\DarkiOS.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

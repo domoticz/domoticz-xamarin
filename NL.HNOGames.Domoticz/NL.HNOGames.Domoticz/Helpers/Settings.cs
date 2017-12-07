@@ -49,6 +49,9 @@ namespace NL.HNOGames.Domoticz.Helpers
         private const string EnableSpeechSettingsKey = "enable_speech_settings_key2";
         private const string SpeechSettingsKey = "speech_settings_key2";
 
+        private const string EnableGeofenceSettingsKey = "enable_geofence_settings_key2";
+        private const string GeofenceSettingsKey = "geofence_settings_key2";
+
         private const string EnableDebugInfoSettingsKey = "Enable_DebugInfo_settings_key";
         private const string EnableJSONDebugInfoSettingsKey = "Enable_JSON_DebugInfo_settings_key";
         private const string DebugInfoSettingsKey = "DebugInfo_settings_key";
@@ -290,6 +293,53 @@ namespace NL.HNOGames.Domoticz.Helpers
                 AppSettings.AddOrUpdateValue(SpeechSettingsKey, JsonConvert.SerializeObject(value));
             }
         }
+
+
+        /// <summary>
+        /// Enable the Geofence feature
+        /// </summary>
+        public bool GeofenceEnabled
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(EnableGeofenceSettingsKey, false);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(EnableGeofenceSettingsKey, value);
+            }
+        }
+
+
+        /// <summary>
+        /// Specify Geofence models
+        /// </summary>
+        public List<GeofenceModel> GeofenceCommands
+        {
+            get
+            {
+                try
+                {
+                    String resultCache = AppSettings.GetValueOrDefault(GeofenceSettingsKey, String.Empty);
+                    if (!string.IsNullOrEmpty(resultCache))
+                    {
+                        var value = JsonConvert.DeserializeObject<List<GeofenceModel>>(resultCache);
+                        return value;
+                    }
+                    else
+                        return new List<GeofenceModel>();
+                }
+                catch (Exception) { }
+                return new List<GeofenceModel>();
+            }
+            set
+            {
+                if (value == null)
+                    return;
+                AppSettings.AddOrUpdateValue(GeofenceSettingsKey, JsonConvert.SerializeObject(value));
+            }
+        }
+
 
         /// <summary>
         /// Dark theme

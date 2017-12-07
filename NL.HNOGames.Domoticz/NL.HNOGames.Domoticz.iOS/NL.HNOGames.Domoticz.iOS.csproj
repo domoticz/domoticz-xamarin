@@ -208,6 +208,14 @@
     <Reference Include="Plugin.Connectivity.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugin.Connectivity.3.0.3\lib\Xamarin.iOS10\Plugin.Connectivity.Abstractions.dll</HintPath>
     </Reference>
+    <Reference Include="Plugin.CrossPlacePicker">
+      <HintPath>..\..\packages\Fantacode.Plugin.CrossPlacePicker.1.0.3\lib\Xamarin.iOS10\Plugin.CrossPlacePicker.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.CrossPlacePicker.Abstractions">
+      <HintPath>..\..\packages\Fantacode.Plugin.CrossPlacePicker.1.0.3\lib\Xamarin.iOS10\Plugin.CrossPlacePicker.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Plugin.DeviceInfo, Version=3.0.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugin.DeviceInfo.3.0.2\lib\Xamarin.iOS10\Plugin.DeviceInfo.dll</HintPath>
     </Reference>

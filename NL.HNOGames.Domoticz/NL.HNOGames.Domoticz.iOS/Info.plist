@@ -63,5 +63,7 @@
 	<string>Enable speech recognition in the app</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>We need the microphone for speech recognition</string>
+  <key>NSLocationWhenInUseUsageDescription</key>
+  <string>Show your location on the map</string>
 </dict>
 </plist>

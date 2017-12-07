@@ -274,5 +274,13 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         {
             await Navigation.PushAsync(new CameraPage());
         }
+
+        private async void btnGeofenceSettings_Clicked(object sender, EventArgs e)
+        {
+            if (App.AppSettings.PremiumBought)
+                await Navigation.PushAsync(new GeofenceSettingsPage());
+            else
+                App.ShowToast(AppResources.Speech + " " + AppResources.premium_feature);
+        }
     }
 }

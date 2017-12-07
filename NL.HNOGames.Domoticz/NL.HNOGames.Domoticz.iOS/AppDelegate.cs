@@ -49,6 +49,9 @@ namespace NL.HNOGames.Domoticz.iOS
             iRate.SharedInstance.UsesUntilPrompt = 20;
             ZXing.Net.Mobile.Forms.iOS.Platform.Init();
 
+            var apikey = "AIzaSyCtQIKtrQ1dSZcH2jElZQCj9aKd5EGromo";
+            PlacesClient.ProvideApiKey(apikey);
+            MapServices.ProvideAPIKey(apikey);
 
             CachedImageRenderer.Init();
             SlideOverKit.iOS.SlideOverKit.Init();

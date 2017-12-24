@@ -193,8 +193,8 @@
                     </custcontrol:ExtendedButton>
                 </StackLayout>
 
-                <Label Text="{resources:Translate title_geofence}" LineBreakMode="NoWrap"
-                           Style="{StaticResource HeaderType}" Margin="0,10,0,0" IsVisible="False"/> <!-- work in progress!!@ -->
+                <!--<Label Text="{resources:Translate title_geofence}" LineBreakMode="NoWrap"
+                           Style="{StaticResource HeaderType}" Margin="0,10,0,0"/> 
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
                                  Orientation="Horizontal" Padding="0,10,0,0" IsVisible="True">
                     <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
@@ -205,7 +205,7 @@
                     <custcontrol:ExtendedButton Padding="10,0,10,0" x:Name="btnGeofenceSettings" Text="Ok" HorizontalOptions="End" VerticalOptions="Center"
                                 Clicked="btnGeofenceSettings_Clicked">
                     </custcontrol:ExtendedButton>
-                </StackLayout>
+                </StackLayout>-->
 
                 <Label Text="{resources:Translate category_QRCode}" LineBreakMode="NoWrap"
                        Style="{StaticResource HeaderType}" Margin="0,10,0,0" />

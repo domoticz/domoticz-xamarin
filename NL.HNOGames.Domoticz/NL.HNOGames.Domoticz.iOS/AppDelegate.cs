@@ -11,6 +11,7 @@ using UserNotifications;
 using Firebase.CloudMessaging;
 using Firebase.Core;
 using System.Net;
+using Google.Maps;
 
 #if NETFX_CORE
 [assembly: Xamarin.Forms.Platform.WinRT.ExportRenderer(typeof(Xamarin.RangeSlider.Forms.RangeSlider), typeof(Xamarin.RangeSlider.Forms.RangeSliderRenderer))]
@@ -48,10 +49,6 @@ namespace NL.HNOGames.Domoticz.iOS
             iRate.SharedInstance.DaysUntilPrompt = 10;
             iRate.SharedInstance.UsesUntilPrompt = 20;
             ZXing.Net.Mobile.Forms.iOS.Platform.Init();
-
-            var apikey = "AIzaSyCtQIKtrQ1dSZcH2jElZQCj9aKd5EGromo";
-            PlacesClient.ProvideApiKey(apikey);
-            MapServices.ProvideAPIKey(apikey);
 
             CachedImageRenderer.Init();
             SlideOverKit.iOS.SlideOverKit.Init();

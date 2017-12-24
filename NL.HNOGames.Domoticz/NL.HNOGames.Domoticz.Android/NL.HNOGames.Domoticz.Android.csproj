@@ -150,12 +150,6 @@
     <Reference Include="Plugin.Connectivity.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugin.Connectivity.3.0.3\lib\MonoAndroid10\Plugin.Connectivity.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="Plugin.CrossPlacePicker, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Fantacode.Plugin.CrossPlacePicker.1.0.3\lib\MonoAndroid10\Plugin.CrossPlacePicker.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.CrossPlacePicker.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Fantacode.Plugin.CrossPlacePicker.1.0.3\lib\MonoAndroid10\Plugin.CrossPlacePicker.Abstractions.dll</HintPath>
-    </Reference>
     <Reference Include="Plugin.CurrentActivity, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Plugin.CurrentActivity.1.0.1\lib\MonoAndroid10\Plugin.CurrentActivity.dll</HintPath>
     </Reference>

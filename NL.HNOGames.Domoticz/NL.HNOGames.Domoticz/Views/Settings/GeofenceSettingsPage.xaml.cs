@@ -8,7 +8,6 @@ using Rg.Plugins.Popup.Services;
 using NL.HNOGames.Domoticz.Views.Dialog;
 using Acr.UserDialogs;
 using System.Threading.Tasks;
-using Plugin.CrossPlacePicker;
 
 namespace NL.HNOGames.Domoticz.Views.Settings
 {
@@ -48,23 +47,6 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// <returns></returns>
         private bool ValidateGeofenceSupported()
         {
-            /*
-            if (!this.Geofence.IsSupported)
-            {
-                App.ShowToast("Geofence recognition is not supported for this device at this moment..");
-                return false;
-            }
-            else
-            {
-                var status = await Geofence.RequestPermission();
-                if (status != GeofenceRecognizerStatus.Available)
-                {
-                    App.AddLog("Permission denied for Geofence recognition");
-                    App.ShowToast("Don't have the permission for the mic");
-                    return false;
-                }
-            }
-            */
             return true;
         }
 
@@ -79,56 +61,56 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                 return;
             }
 
-            try
-            {
-                var result = await CrossPlacePicker.Current.Display();
-                if (result != null)
-                {
-                    await AddNewRecordAsync(result.PlaceId, result);
-                }
-            }
-            catch (Exception ex)
-            {
-                if (ex != null &&
-                    !String.IsNullOrEmpty(ex.Message))
-                {
-                    App.ShowToast(ex.ToString());
-                    App.AddLog(ex.Message);
-                }
-            }
+            //try
+            //{
+            //    var result = await CrossPlacePicker.Current.Display();
+            //    if (result != null)
+            //    {
+            //        await AddNewRecordAsync(result.PlaceId, result);
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    if (ex != null &&
+            //        !String.IsNullOrEmpty(ex.Message))
+            //    {
+            //        App.ShowToast(ex.ToString());
+            //        App.AddLog(ex.Message);
+            //    }
+            //}
         }
 
         /// <summary>
         /// Create new Geofence object
         /// </summary>
-        private async Task AddNewRecordAsync(string GeofenceID, Plugin.CrossPlacePicker.Abstractions.Places location)
+        private async Task AddNewRecordAsync(string GeofenceID)
         {
-            if (location == null)
-                return;
+            //if (location == null)
+            //    return;
 
-            var r = await UserDialogs.Instance.PromptAsync(AppResources.radius,
-                    inputType: InputType.Number);
+            //var r = await UserDialogs.Instance.PromptAsync(AppResources.radius,
+            //        inputType: InputType.Number);
 
-            int radius = 500;
-            await Task.Delay(500);
-            if (r.Ok)
-                radius = Convert.ToInt32(r.Text);
-            else
-                return;
+            //int radius = 500;
+            //await Task.Delay(500);
+            //if (r.Ok)
+            //    radius = Convert.ToInt32(r.Text);
+            //else
+            //    return;
 
-            var GeofenceObject = new Models.GeofenceModel()
-            {
-                Id = GeofenceID,
-                Name = location.Name,
-                Latitude = location.Coordinates.Latitude,
-                Longitude = location.Coordinates.Longitude,
-                Address = location.Address,
-                Radius = radius,
-                Enabled = true,
-            };
+            //var GeofenceObject = new Models.GeofenceModel()
+            //{
+            //    Id = GeofenceID,
+            //    Name = location.Name,
+            //    Latitude = location.Coordinates.Latitude,
+            //    Longitude = location.Coordinates.Longitude,
+            //    Address = location.Address,
+            //    Radius = radius,
+            //    Enabled = true,
+            //};
 
-            _oListSource.Add(GeofenceObject);
-            SaveAndRefresh();
+            //_oListSource.Add(GeofenceObject);
+            //SaveAndRefresh();
         }
 
         /// <summary>

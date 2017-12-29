@@ -33,7 +33,7 @@ namespace NL.HNOGames.Domoticz.Droid
                     return true;
                 };
 
-            CachedImageRenderer.Init();
+            CachedImageRenderer.Init(true);
             UserDialogs.Init(this);
             OxyPlot.Xamarin.Forms.Platform.Android.PlotViewRenderer.Init();
             ZXing.Net.Mobile.Forms.Android.Platform.Init();

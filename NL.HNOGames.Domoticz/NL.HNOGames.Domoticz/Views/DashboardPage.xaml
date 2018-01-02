@@ -13,442 +13,465 @@
         <ResourceDictionary>
             <DataTemplate x:Key="DefaultTemplate">
                 <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-                    <Grid Style="{StaticResource DashboardDeviceCardType}">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-                            <custcontrol:TintedCachedImage WidthRequest="30" HeightRequest="30"
+                    <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
+                        <Grid Style="{StaticResource DashboardDeviceCardType}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                                <custcontrol:TintedCachedImage WidthRequest="30" HeightRequest="30"
                                                            ErrorPlaceholder="ic_launcher.png" Source="{Binding Icon}"
                                                            Opacity="{Binding Opacity}" />
-                        </StackLayout>
-                        <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                      VerticalOptions="CenterAndExpand">
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
                                          VerticalOptions="CenterAndExpand">
-                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                              VerticalOptions="CenterAndExpand" Padding="0,10,0,0">
-                                    <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
+                                        <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
                                            Style="{StaticResource HeaderType}" />
-                                    <custcontrol:MultiLineLabel Text="{Binding DataDescription}" Lines="2"
+                                        <custcontrol:MultiLineLabel Text="{Binding DataDescription}" Lines="2"
                                                                 Style="{StaticResource DetailType}"
                                                                 LineBreakMode="WordWrap" />
-                                    <Label Text="{Binding LastUpdateDescription}" LineBreakMode="TailTruncation"
+                                        <Label Text="{Binding LastUpdateDescription}" LineBreakMode="TailTruncation"
                                            Style="{StaticResource DetailSmallType}" IsVisible="{Binding ShowExtraData}"
                                            HorizontalOptions="Start" VerticalOptions="End" />
+                                    </StackLayout>
                                 </StackLayout>
                             </StackLayout>
-                        </StackLayout>
-                    </Grid>
+                        </Grid>
+                    </custcontrol:MaterialFrame>
                 </custcontrol:CustomViewCell>
             </DataTemplate>
             <DataTemplate x:Key="SelectorTemplate">
                 <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-                    <Grid Style="{StaticResource DashboardDeviceCardType}">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-                            <custcontrol:TintedCachedImage WidthRequest="30" HeightRequest="30"
+                    <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
+                        <Grid Style="{StaticResource DashboardDeviceCardType}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                                <custcontrol:TintedCachedImage WidthRequest="30" HeightRequest="30"
                                                            ErrorPlaceholder="ic_launcher.png" Source="{Binding Icon}"
                                                            Opacity="{Binding Opacity}" />
-                        </StackLayout>
-                        <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                      VerticalOptions="CenterAndExpand">
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
                                          VerticalOptions="CenterAndExpand">
-                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                              VerticalOptions="CenterAndExpand" Padding="0,10,0,0">
-                                    <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
+                                        <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
                                            Style="{StaticResource HeaderType}" />
-                                    <custcontrol:MultiLineLabel Text="{Binding DataDescription}" Lines="2"
+                                        <custcontrol:MultiLineLabel Text="{Binding DataDescription}" Lines="2"
                                                                 Style="{StaticResource DetailType}"
                                                                 LineBreakMode="WordWrap" />
-                                    <Label Text="{Binding LastUpdateDescription}" LineBreakMode="TailTruncation"
+                                        <Label Text="{Binding LastUpdateDescription}" LineBreakMode="TailTruncation"
                                            Style="{StaticResource DetailSmallType}" IsVisible="{Binding ShowExtraData}"
                                            HorizontalOptions="Start" VerticalOptions="End" />
+                                    </StackLayout>
                                 </StackLayout>
-                            </StackLayout>
-                            <Picker Style="{StaticResource PickerType}" x:Name="pSelector"
+                                <Picker Style="{StaticResource PickerType}" x:Name="pSelector"
                                     Unfocused="pSelector_Unfocused" HorizontalOptions="FillAndExpand"
                                     ItemsSource="{Binding LevelNamesArray}" SelectedIndex="{Binding LevelNamesIndex}" />
-                        </StackLayout>
-                    </Grid>
+                            </StackLayout>
+                        </Grid>
+                    </custcontrol:MaterialFrame>
                 </custcontrol:CustomViewCell>
             </DataTemplate>
             <DataTemplate x:Key="OnButtonTemplate">
                 <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-                    <Grid Style="{StaticResource DashboardDeviceCardType}">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-                            <custcontrol:TintedCachedImage WidthRequest="30" HeightRequest="30"
+                    <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
+                        <Grid Style="{StaticResource DashboardDeviceCardType}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                                <custcontrol:TintedCachedImage WidthRequest="30" HeightRequest="30"
                                                            ErrorPlaceholder="ic_launcher.png" Source="{Binding Icon}"
                                                            Opacity="{Binding Opacity}" />
-                        </StackLayout>
-                        <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                      VerticalOptions="CenterAndExpand">
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
                                          VerticalOptions="CenterAndExpand">
-                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                              VerticalOptions="CenterAndExpand" Padding="0,10,0,0">
-                                    <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
+                                        <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
                                            Style="{StaticResource HeaderType}" />
-                                    <custcontrol:MultiLineLabel Text="{Binding DataDescription}" Lines="2"
+                                        <custcontrol:MultiLineLabel Text="{Binding DataDescription}" Lines="2"
                                                                 Style="{StaticResource DetailType}"
                                                                 LineBreakMode="WordWrap" />
-                                    <Label Text="{Binding LastUpdateDescription}" LineBreakMode="TailTruncation"
+                                        <Label Text="{Binding LastUpdateDescription}" LineBreakMode="TailTruncation"
                                            Style="{StaticResource DetailSmallType}" IsVisible="{Binding ShowExtraData}"
                                            HorizontalOptions="Start" VerticalOptions="End" />
-                                </StackLayout>
-                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                              VerticalOptions="CenterAndExpand" Margin="0,-5,5,0">
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
-                                        <custcontrol:ExtendedButton x:Name="btnOnButton" Text="{resources:Translate button_state_on}"
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
+                                            <custcontrol:ExtendedButton x:Name="btnOnButton" Text="{resources:Translate button_state_on}"
                                                 HorizontalOptions="End" VerticalOptions="End"
                                                 Clicked="btnOnButton_Clicked" />
+                                        </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
                             </StackLayout>
-                        </StackLayout>
-                    </Grid>
+                        </Grid>
+                    </custcontrol:MaterialFrame>
                 </custcontrol:CustomViewCell>
             </DataTemplate>
             <DataTemplate x:Key="SetButtonTemplate">
                 <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-                    <Grid Style="{StaticResource DashboardDeviceCardType}">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-                            <custcontrol:TintedCachedImage WidthRequest="30" HeightRequest="30"
+                    <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
+                        <Grid Style="{StaticResource DashboardDeviceCardType}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                                <custcontrol:TintedCachedImage WidthRequest="30" HeightRequest="30"
                                                            ErrorPlaceholder="ic_launcher.png" Source="{Binding Icon}"
                                                            Opacity="{Binding Opacity}" />
-                        </StackLayout>
-                        <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                      VerticalOptions="CenterAndExpand">
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
                                          VerticalOptions="CenterAndExpand">
-                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                              VerticalOptions="CenterAndExpand" Padding="0,10,0,0">
-                                    <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
+                                        <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
                                            Style="{StaticResource HeaderType}" />
-                                    <custcontrol:MultiLineLabel Text="{Binding DataDescription}" Lines="2"
+                                        <custcontrol:MultiLineLabel Text="{Binding DataDescription}" Lines="2"
                                                                 Style="{StaticResource DetailType}"
                                                                 LineBreakMode="WordWrap" IsVisible="False" />
-                                    <Label Text="{Binding LastUpdateDescription}" LineBreakMode="TailTruncation"
+                                        <Label Text="{Binding LastUpdateDescription}" LineBreakMode="TailTruncation"
                                            Style="{StaticResource DetailSmallType}" IsVisible="{Binding ShowExtraData}"
                                            HorizontalOptions="Start" VerticalOptions="End" />
-                                </StackLayout>
-                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                              VerticalOptions="CenterAndExpand" Margin="0,-5,5,0">
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
-                                        <custcontrol:ExtendedButton x:Name="btnMinTemp" Text="-" HorizontalOptions="End"
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
+                                            <custcontrol:ExtendedButton x:Name="btnMinTemp" Text="-" HorizontalOptions="End"
                                                 VerticalOptions="End" Clicked="btnMinTemp_Clicked"/>
-                                        <Entry Style="{StaticResource EntryType}" x:Name="txtSetValue"
+                                            <Entry Style="{StaticResource EntryType}" x:Name="txtSetValue"
                                                Keyboard="Numeric" VerticalOptions="Center"
                                                HorizontalOptions="FillAndExpand" WidthRequest="70"
                                                Text="{Binding SetPoint}" Completed="txtSetValue_Completed" />
-                                        <custcontrol:ExtendedButton x:Name="btnPlusTemp" Text="+" HorizontalOptions="End"
+                                            <custcontrol:ExtendedButton x:Name="btnPlusTemp" Text="+" HorizontalOptions="End"
                                                 VerticalOptions="End" Clicked="btnPlusTemp_Clicked" />
+                                        </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
                             </StackLayout>
-                        </StackLayout>
-                    </Grid>
+                        </Grid>
+                    </custcontrol:MaterialFrame>
                 </custcontrol:CustomViewCell>
             </DataTemplate>
             <DataTemplate x:Key="OffButtonTemplate">
                 <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-                    <Grid Style="{StaticResource DashboardDeviceCardType}">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-                            <custcontrol:TintedCachedImage WidthRequest="30" HeightRequest="30"
+                    <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
+                        <Grid Style="{StaticResource DashboardDeviceCardType}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                                <custcontrol:TintedCachedImage WidthRequest="30" HeightRequest="30"
                                                            ErrorPlaceholder="ic_launcher.png" Source="{Binding Icon}"
                                                            Opacity="{Binding Opacity}" />
-                        </StackLayout>
-                        <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                      VerticalOptions="CenterAndExpand">
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
                                          VerticalOptions="CenterAndExpand">
-                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                              VerticalOptions="CenterAndExpand" Padding="0,10,0,0">
-                                    <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
+                                        <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
                                            Style="{StaticResource HeaderType}" />
-                                    <custcontrol:MultiLineLabel Text="{Binding DataDescription}" Lines="2"
+                                        <custcontrol:MultiLineLabel Text="{Binding DataDescription}" Lines="2"
                                                                 Style="{StaticResource DetailType}"
                                                                 LineBreakMode="WordWrap" />
-                                    <Label Text="{Binding LastUpdateDescription}" LineBreakMode="TailTruncation"
+                                        <Label Text="{Binding LastUpdateDescription}" LineBreakMode="TailTruncation"
                                            Style="{StaticResource DetailSmallType}" IsVisible="{Binding ShowExtraData}"
                                            HorizontalOptions="Start" VerticalOptions="End" />
-                                </StackLayout>
-                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                              VerticalOptions="CenterAndExpand" Margin="0,-5,5,0">
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
-                                        <custcontrol:ExtendedButton x:Name="btnOffButton" Text="{resources:Translate button_state_off}"
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
+                                            <custcontrol:ExtendedButton x:Name="btnOffButton" Text="{resources:Translate button_state_off}"
                                                 HorizontalOptions="End" VerticalOptions="End"
                                                 Clicked="btnOffButton_Clicked"/>
+                                        </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
                             </StackLayout>
-                        </StackLayout>
-                    </Grid>
+                        </Grid>
+                    </custcontrol:MaterialFrame>
                 </custcontrol:CustomViewCell>
             </DataTemplate>
             <DataTemplate x:Key="OnOffButtonTemplate">
                 <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-                    <Grid Style="{StaticResource DashboardDeviceCardType}">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-                            <custcontrol:TintedCachedImage WidthRequest="30" HeightRequest="30"
+                    <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
+                        <Grid Style="{StaticResource DashboardDeviceCardType}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                                <custcontrol:TintedCachedImage WidthRequest="30" HeightRequest="30"
                                                            ErrorPlaceholder="ic_launcher.png" Source="{Binding Icon}"
                                                            Opacity="{Binding Opacity}" />
-                        </StackLayout>
-                        <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                      VerticalOptions="CenterAndExpand">
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
                                          VerticalOptions="CenterAndExpand">
-                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                              VerticalOptions="CenterAndExpand">
-                                    <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
+                                        <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
                                            Style="{StaticResource HeaderType}" />
-                                    <custcontrol:MultiLineLabel Text="{Binding DataDescription}" Lines="2"
+                                        <custcontrol:MultiLineLabel Text="{Binding DataDescription}" Lines="2"
                                                                 Style="{StaticResource DetailType}"
                                                                 LineBreakMode="WordWrap" />
-                                    <Label Text="{Binding LastUpdateDescription}" LineBreakMode="TailTruncation"
+                                        <Label Text="{Binding LastUpdateDescription}" LineBreakMode="TailTruncation"
                                            Style="{StaticResource DetailSmallType}" IsVisible="{Binding ShowExtraData}"
                                            HorizontalOptions="Start" VerticalOptions="End" />
-                                </StackLayout>
-                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                              VerticalOptions="CenterAndExpand" Margin="0,-5,5,0">
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
-                                        <custcontrol:ExtendedButton x:Name="btnOnButton" Text="{resources:Translate button_state_on}"
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
+                                            <custcontrol:ExtendedButton x:Name="btnOnButton" Text="{resources:Translate button_state_on}"
                                                 HorizontalOptions="End" VerticalOptions="End"
                                                 Clicked="btnOnButton_Clicked"/>
-                                        <custcontrol:ExtendedButton x:Name="btnOffButton" Text="{resources:Translate button_state_off}"
+                                            <custcontrol:ExtendedButton x:Name="btnOffButton" Text="{resources:Translate button_state_off}"
                                                 HorizontalOptions="End" VerticalOptions="End"
                                                 Clicked="btnOffButton_Clicked"/>
+                                        </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
                             </StackLayout>
-                        </StackLayout>
-                    </Grid>
+                        </Grid>
+                    </custcontrol:MaterialFrame>
                 </custcontrol:CustomViewCell>
             </DataTemplate>
             <DataTemplate x:Key="OnOffSwitchTemplate">
                 <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-                    <Grid Style="{StaticResource DashboardDeviceCardType}">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-                            <custcontrol:TintedCachedImage WidthRequest="30" HeightRequest="30"
+
+                    <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
+                        <Grid Style="{StaticResource DashboardDeviceCardType}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                                <custcontrol:TintedCachedImage WidthRequest="30" HeightRequest="30"
                                                            ErrorPlaceholder="ic_launcher.png" Source="{Binding Icon}"
                                                            Opacity="{Binding Opacity}" />
-                        </StackLayout>
-                        <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                      VerticalOptions="CenterAndExpand">
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
                                          VerticalOptions="CenterAndExpand">
-                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                              VerticalOptions="CenterAndExpand">
-                                    <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
+                                        <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
                                            Style="{StaticResource HeaderType}" />
-                                    <custcontrol:MultiLineLabel Text="{Binding DataDescription}" Lines="2"
+                                        <custcontrol:MultiLineLabel Text="{Binding DataDescription}" Lines="2"
                                                                 Style="{StaticResource DetailType}"
                                                                 LineBreakMode="WordWrap" />
-                                    <Label Text="{Binding LastUpdateDescription}" LineBreakMode="TailTruncation"
+                                        <Label Text="{Binding LastUpdateDescription}" LineBreakMode="TailTruncation"
                                            Style="{StaticResource DetailSmallType}" IsVisible="{Binding ShowExtraData}"
                                            HorizontalOptions="Start" VerticalOptions="End" />
-                                </StackLayout>
-                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                              VerticalOptions="CenterAndExpand" Margin="0,-5,5,0">
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
-                                        <Switch x:Name="btnSwitch" HorizontalOptions="End" VerticalOptions="End"
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
+                                            <Switch x:Name="btnSwitch" HorizontalOptions="End" VerticalOptions="End"
                                                 IsToggled="{Binding StatusBoolean}" Toggled="btnSwitch_Toggled" />
+                                        </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
                             </StackLayout>
-                        </StackLayout>
-                    </Grid>
+                        </Grid>
+                    </custcontrol:MaterialFrame>
                 </custcontrol:CustomViewCell>
             </DataTemplate>
             <DataTemplate x:Key="BlindTemplate">
                 <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-                    <Grid Style="{StaticResource DashboardDeviceCardType}">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-                            <custcontrol:TintedCachedImage WidthRequest="30" HeightRequest="30"
+                    <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
+                        <Grid Style="{StaticResource DashboardDeviceCardType}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                                <custcontrol:TintedCachedImage WidthRequest="30" HeightRequest="30"
                                                            ErrorPlaceholder="ic_launcher.png" Source="{Binding Icon}"
                                                            Opacity="{Binding Opacity}" />
-                        </StackLayout>
-                        <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                      VerticalOptions="CenterAndExpand">
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
                                          VerticalOptions="CenterAndExpand">
-                                <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand"
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand"
                                              VerticalOptions="CenterAndExpand">
-                                    <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
+                                        <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
                                            Style="{StaticResource HeaderType}" />
-                                    <custcontrol:MultiLineLabel Text="{Binding DataDescription}" Lines="2"
+                                        <custcontrol:MultiLineLabel Text="{Binding DataDescription}" Lines="2"
                                                                 Style="{StaticResource DetailType}"
                                                                 LineBreakMode="WordWrap" />
-                                    <Label Text="{Binding LastUpdateDescription}" LineBreakMode="TailTruncation"
+                                        <Label Text="{Binding LastUpdateDescription}" LineBreakMode="TailTruncation"
                                            Style="{StaticResource DetailSmallType}" IsVisible="{Binding ShowExtraData}"
                                            HorizontalOptions="Start" VerticalOptions="End" />
-                                </StackLayout>
-                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                              VerticalOptions="CenterAndExpand" Margin="0,-5,5,0">
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
-                                        <custcontrol:ExtendedButton x:Name="btnOnButton" Text="{resources:Translate button_state_on}"
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
+                                            <custcontrol:ExtendedButton x:Name="btnOnButton" Text="{resources:Translate button_state_on}"
                                                 HorizontalOptions="End" VerticalOptions="End"
                                                 Clicked="btnBlindOnButton_Clicked" />
-                                        <custcontrol:ExtendedButton x:Name="btnStopButton" Text="Stop" HorizontalOptions="End"
+                                            <custcontrol:ExtendedButton x:Name="btnStopButton" Text="Stop" HorizontalOptions="End"
                                                 VerticalOptions="End" Clicked="btnBlindStopButton_Clicked" />
-                                        <custcontrol:ExtendedButton x:Name="btnOffButton" Text="{resources:Translate button_state_off}"
+                                            <custcontrol:ExtendedButton x:Name="btnOffButton" Text="{resources:Translate button_state_off}"
                                                 HorizontalOptions="End" VerticalOptions="End"
                                                 Clicked="btnBlindOffButton_Clicked"/>
+                                        </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
                             </StackLayout>
-                        </StackLayout>
-                    </Grid>
+                        </Grid>
+                    </custcontrol:MaterialFrame>
                 </custcontrol:CustomViewCell>
             </DataTemplate>
             <DataTemplate x:Key="DimmerTemplate">
                 <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-                    <Grid Style="{StaticResource DashboardDeviceCardType}">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-                            <custcontrol:TintedCachedImage WidthRequest="30" HeightRequest="30"
+                    <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
+                        <Grid Style="{StaticResource DashboardDeviceCardType}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                                <custcontrol:TintedCachedImage WidthRequest="30" HeightRequest="30"
                                                            ErrorPlaceholder="ic_launcher.png" Source="{Binding Icon}"
                                                            Opacity="{Binding Opacity}" />
-                        </StackLayout>
-                        <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                      VerticalOptions="CenterAndExpand">
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
                                          VerticalOptions="CenterAndExpand">
-                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                              VerticalOptions="CenterAndExpand" Padding="0,10,0,0">
-                                    <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
+                                        <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
                                            Style="{StaticResource HeaderType}" />
-                                    <custcontrol:MultiLineLabel Text="{Binding DataDescription}" Lines="2"
+                                        <custcontrol:MultiLineLabel Text="{Binding DataDescription}" Lines="2"
                                                                 Style="{StaticResource DetailType}"
                                                                 LineBreakMode="WordWrap" />
-                                    <Label Text="{Binding LastUpdateDescription}" LineBreakMode="TailTruncation"
+                                        <Label Text="{Binding LastUpdateDescription}" LineBreakMode="TailTruncation"
                                            Style="{StaticResource DetailSmallType}" IsVisible="{Binding ShowExtraData}"
                                            HorizontalOptions="Start" VerticalOptions="End" />
-                                </StackLayout>
-                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                              VerticalOptions="CenterAndExpand" Margin="0,-5,5,0">
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
-                                        <custcontrol:ExtendedButton x:Name="btnOnButton" Text="{resources:Translate button_state_on}"
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
+                                            <custcontrol:ExtendedButton x:Name="btnOnButton" Text="{resources:Translate button_state_on}"
                                                 HorizontalOptions="End" VerticalOptions="End"
                                                 Clicked="btnOnButton_Clicked" />
-                                        <custcontrol:ExtendedButton x:Name="btnOffButton" Text="{resources:Translate button_state_off}"
+                                            <custcontrol:ExtendedButton x:Name="btnOffButton" Text="{resources:Translate button_state_off}"
                                                 HorizontalOptions="End" VerticalOptions="End"
                                                 Clicked="btnOffButton_Clicked" />
-                                    </StackLayout>
+                                        </StackLayout>
 
-                                    <custcontrol:ExtendedButton x:Name="btnLevelButton" Text="{Binding Level}" HorizontalOptions="End"
+                                        <custcontrol:ExtendedButton x:Name="btnLevelButton" Text="{Binding Level}" HorizontalOptions="End"
                                             VerticalOptions="End" Margin="0,5,0,0" Clicked="btnLevelButton_Clicked" />
+                                    </StackLayout>
                                 </StackLayout>
                             </StackLayout>
-                        </StackLayout>
-                    </Grid>
+                        </Grid>
+                    </custcontrol:MaterialFrame>
                 </custcontrol:CustomViewCell>
             </DataTemplate>
             <DataTemplate x:Key="SwitchDimmerTemplate">
                 <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-                    <Grid Style="{StaticResource DashboardDeviceCardType}">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-                            <custcontrol:TintedCachedImage WidthRequest="30" HeightRequest="30"
+                    <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
+                        <Grid Style="{StaticResource DashboardDeviceCardType}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                                <custcontrol:TintedCachedImage WidthRequest="30" HeightRequest="30"
                                                            ErrorPlaceholder="ic_launcher.png" Source="{Binding Icon}"
                                                            Opacity="{Binding Opacity}" />
-                        </StackLayout>
-                        <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                      VerticalOptions="CenterAndExpand">
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
                                          VerticalOptions="CenterAndExpand">
-                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                              VerticalOptions="CenterAndExpand" Padding="0,10,0,0">
-                                    <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
+                                        <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
                                            Style="{StaticResource HeaderType}" />
-                                    <custcontrol:MultiLineLabel Text="{Binding DataDescription}" Lines="2"
+                                        <custcontrol:MultiLineLabel Text="{Binding DataDescription}" Lines="2"
                                                                 Style="{StaticResource DetailType}"
                                                                 LineBreakMode="WordWrap" />
-                                    <Label Text="{Binding LastUpdateDescription}" LineBreakMode="TailTruncation"
+                                        <Label Text="{Binding LastUpdateDescription}" LineBreakMode="TailTruncation"
                                            Style="{StaticResource DetailSmallType}" IsVisible="{Binding ShowExtraData}"
                                            HorizontalOptions="Start" VerticalOptions="End" />
-                                </StackLayout>
-
-                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
-                                             VerticalOptions="CenterAndExpand" Margin="0,-5,5,0">
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
-                                        <Switch x:Name="btnSwitch" HorizontalOptions="End" VerticalOptions="End"
-                                                IsToggled="{Binding StatusBoolean}" Toggled="btnSwitch_Toggled" />
                                     </StackLayout>
 
-                                    <custcontrol:ExtendedButton x:Name="btnLevelButton" Text="{Binding Level}" HorizontalOptions="End"
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                                             VerticalOptions="CenterAndExpand" Margin="0,-5,5,0">
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
+                                            <Switch x:Name="btnSwitch" HorizontalOptions="End" VerticalOptions="End"
+                                                IsToggled="{Binding StatusBoolean}" Toggled="btnSwitch_Toggled" />
+                                        </StackLayout>
+
+                                        <custcontrol:ExtendedButton x:Name="btnLevelButton" Text="{Binding Level}" HorizontalOptions="End"
                                             VerticalOptions="End" Clicked="btnLevelButton_Clicked" />
+                                    </StackLayout>
                                 </StackLayout>
                             </StackLayout>
-                        </StackLayout>
-                    </Grid>
+                        </Grid>
+                    </custcontrol:MaterialFrame>
                 </custcontrol:CustomViewCell>
             </DataTemplate>
             <DataTemplate x:Key="SecurityPanelTemplate">
                 <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-                    <Grid Style="{StaticResource DashboardDeviceCardType}">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-                            <custcontrol:TintedCachedImage WidthRequest="30" HeightRequest="30"
+                    <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
+                        <Grid Style="{StaticResource DashboardDeviceCardType}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                                <custcontrol:TintedCachedImage WidthRequest="30" HeightRequest="30"
                                                            ErrorPlaceholder="ic_launcher.png" Source="{Binding Icon}"
                                                            Opacity="{Binding Opacity}" />
-                        </StackLayout>
-                        <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                      VerticalOptions="CenterAndExpand">
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
                                          VerticalOptions="CenterAndExpand">
-                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                              VerticalOptions="CenterAndExpand" Padding="0,10,0,0">
-                                    <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
+                                        <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
                                            Style="{StaticResource HeaderType}" />
-                                    <custcontrol:MultiLineLabel Text="{Binding DataDescription}" Lines="2"
+                                        <custcontrol:MultiLineLabel Text="{Binding DataDescription}" Lines="2"
                                                                 Style="{StaticResource DetailType}"
                                                                 LineBreakMode="WordWrap" />
-                                    <Label Text="{Binding LastUpdateDescription}" LineBreakMode="TailTruncation"
+                                        <Label Text="{Binding LastUpdateDescription}" LineBreakMode="TailTruncation"
                                            Style="{StaticResource DetailSmallType}" IsVisible="{Binding ShowExtraData}"
                                            HorizontalOptions="Start" VerticalOptions="End" />
+                                    </StackLayout>
                                 </StackLayout>
                             </StackLayout>
-                        </StackLayout>
-                    </Grid>
+                        </Grid>
+                    </custcontrol:MaterialFrame>
                 </custcontrol:CustomViewCell>
             </DataTemplate>
 
@@ -472,11 +495,11 @@
 
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-            
+
             <SearchBar Style="{StaticResource SearchBarType}" x:Name="sbSearch"
                        Placeholder="{resources:Translate filter}" CancelButtonColor="Red"
                        TextChanged="sbSearch_TextChanged" />
-            
+
             <ListView x:Name="listView" ItemsSource="{Binding Devices}"
                       BackgroundColor="{DynamicResource LightBackgroundColor}"
                       VerticalOptions="FillAndExpand" HasUnevenRows="true"

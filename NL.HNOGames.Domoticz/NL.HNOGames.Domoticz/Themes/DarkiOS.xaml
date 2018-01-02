@@ -39,10 +39,17 @@
         <Setter Property="TextColor" Value="{DynamicResource WhiteTextColor}" />
         <Setter Property="BackgroundColor" Value="{DynamicResource LightBackgroundColor}" />
     </Style>
+    <Style x:Key="DashboardDeviceFrameType" TargetType="custcontrol:MaterialFrame">
+        <Setter Property="BackgroundColor" Value="{DynamicResource CardBackgroundColor}" />
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="Padding" Value="10" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+    </Style>
     <Style x:Key="DashboardDeviceCardType" TargetType="Grid">
         <Setter Property="BackgroundColor" Value="{DynamicResource CardBackgroundColor}" />
-        <Setter Property="Margin" Value="5" />
-        <Setter Property="Padding" Value="10" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Padding" Value="0" />
         <Setter Property="HorizontalOptions" Value="FillAndExpand" />
         <Setter Property="VerticalOptions" Value="FillAndExpand" />
     </Style>

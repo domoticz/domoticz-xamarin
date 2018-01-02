@@ -225,7 +225,6 @@ namespace NL.HNOGames.Domoticz.Views
                 return;
             listView.ScrollTo(ScrollItem, ScrollToPosition.Center, true);
             ScrollItem = null;
-            
         }
 
         /// <summary>

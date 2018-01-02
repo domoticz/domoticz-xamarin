@@ -21,14 +21,20 @@ namespace NL.HNOGames.Domoticz.Models
         {
             get
             {
-                if (eventstatus == "1")
-                    return AppResources.button_state_on;
-                else
-                    return AppResources.button_state_off;
+                return eventstatus == "1" ? AppResources.button_state_on : AppResources.button_state_off;
             }
         }
 
         public string eventstatus { get; set; }
+
+        public bool Enabled
+        {
+            get
+            {
+                return eventstatus == "1" ? true : false;
+            }
+        }
+
         public string id { get; set; }
         public string Name { get; set; }
     }

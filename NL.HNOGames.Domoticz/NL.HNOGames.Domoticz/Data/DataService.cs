@@ -629,6 +629,31 @@ namespace NL.HNOGames.Domoticz.Data
         }
 
         /// <summary>
+        /// Domoticz set events on off value
+        /// </summary>
+        public async Task<bool> SetEvent(string idx, bool value)
+        {
+            if (Server == null)
+                return false;
+            try
+            {
+                var result = await SetAction(idx, ConstantValues.Json.Url.Set.EVENTS_UPDATE_STATUS,
+                value ? ConstantValues.Event.Action.ON : ConstantValues.Event.Action.OFF,
+                0, null);
+                if (result != null &&
+                    string.Compare(result.status, "ok", StringComparison.OrdinalIgnoreCase) == 0)
+                    return true;
+
+            }
+            catch (Exception ex)
+            {
+                App.AddLog(ex.Message);
+            }
+
+            return false;
+        }
+
+        /// <summary>
         /// Domoticz set switch on off value
         /// </summary>
         public async Task<bool> SetSwitch(string idx, bool value, bool isScene, string password = null)

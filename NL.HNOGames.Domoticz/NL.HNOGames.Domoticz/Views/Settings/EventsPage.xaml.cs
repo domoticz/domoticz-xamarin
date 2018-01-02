@@ -94,8 +94,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                     var result = await App.ApiService.SetEvent(oDevice.id, oSwitch.IsToggled);
                     new Command(async () => await ExecuteLoadLogsCommand()).Execute(null);
                 }
-            }
-            catch (Exception ex) { }
+            }catch(Exception ex){
         }
     }
 }

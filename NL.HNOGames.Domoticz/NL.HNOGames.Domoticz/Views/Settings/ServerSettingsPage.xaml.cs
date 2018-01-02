@@ -45,6 +45,46 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         }
 
         /// <summary>
+        /// reset all values
+        /// </summary>
+        private void btnReset_Clicked(object sender, EventArgs e)
+        {
+            swEnableLocalSettings.IsToggled = false;
+            txtRemoteProtocol.SelectedIndex = 0;
+            txtRemotePort.Text = "";
+            txtRemoteServerAddress.Text = "";
+            txtRemoteUsername.Text = "";
+            txtRemotePassword.Text = "";
+            txtRemoteDirectory.Text = "";
+
+            txtLocalProtocol.SelectedIndex = 0;
+            txtLocalPort.Text = "";
+            txtLocalServerAddress.Text = "";
+            txtLocalUsername.Text = "";
+            txtLocalPassword.Text = "";
+            txtLocalDirectory.Text = "";
+        }
+
+        /// <summary>
+        /// show demo account
+        /// </summary>
+        private void BtnDemo_OnClicked(object sender, EventArgs e)
+        {
+            swEnableLocalSettings.IsToggled = false;
+            txtRemoteProtocol.SelectedIndex = 1;
+            txtRemotePort.Text = "24443";
+            txtRemoteServerAddress.Text = "gandalf.domoticz.com";
+            txtRemoteUsername.Text = "admin";
+            txtRemotePassword.Text = "D@m@t1czCl0ud";
+            txtLocalProtocol.SelectedIndex = 0;
+            txtLocalPort.Text = "";
+            txtLocalServerAddress.Text = "";
+            txtLocalUsername.Text = "";
+            txtLocalPassword.Text = "";
+            txtLocalDirectory.Text = "";
+        }
+
+        /// <summary>
         /// Enable local settings
         /// </summary>
         private void swEnableLocalSettings_Toggled(object sender, ToggledEventArgs e)

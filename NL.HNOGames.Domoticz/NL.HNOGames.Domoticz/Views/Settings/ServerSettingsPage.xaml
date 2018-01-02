@@ -190,10 +190,16 @@
                 </StackLayout>
 
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="20">
-                    <custcontrol:ExtendedButton x:Name="btnCheck" Text="{resources:Translate welcome_info_checkingConnection}"
+                    <custcontrol:ExtendedButton Padding="20,0,20,0" x:Name="btnDemo" Style="{StaticResource DarkButton}" Text="Use our Demo setup"
+                    HorizontalOptions="End" VerticalOptions="End" WidthRequest="300" Clicked="BtnDemo_OnClicked" Margin="0,20,0,0" />
+                    
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal">
+                        <custcontrol:ExtendedButton x:Name="btnCheck" Text="{resources:Translate welcome_info_checkingConnection}"
                             HorizontalOptions="FillAndExpand" IsVisible="True" Margin="0,20,0,0"
                             Clicked="btnCheck_Clicked" />
-
+                        <custcontrol:ExtendedButton x:Name="btnReset" Text="{resources:Translate category_Reset}"
+                        HorizontalOptions="End" VerticalOptions="End" Clicked="btnReset_Clicked" Padding="20,0,20,0" />
+                    </StackLayout>
                     <custcontrol:TintedCachedImage x:Name="imFinish" IsVisible="False" WidthRequest="60"
                                                    HeightRequest="60" Source="ic_validate_settings.png"
                                                    HorizontalOptions="CenterAndExpand" Margin="0,40,0,0" />

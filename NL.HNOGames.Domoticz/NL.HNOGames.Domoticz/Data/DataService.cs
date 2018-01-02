@@ -643,13 +643,47 @@ namespace NL.HNOGames.Domoticz.Data
                 if (result != null &&
                     string.Compare(result.status, "ok", StringComparison.OrdinalIgnoreCase) == 0)
                     return true;
-
             }
             catch (Exception ex)
             {
                 App.AddLog(ex.Message);
             }
 
+            return false;
+        }
+
+
+        /// <summary>
+        /// Domoticz get all temperature devices
+        /// </summary>
+        public async Task<bool> SetUserVariable(string idx, string name, string type, string newValue)
+        {
+            if (Server == null || String.IsNullOrEmpty(idx) || String.IsNullOrEmpty(name) || String.IsNullOrEmpty(type))
+                return false;
+
+            var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.UserVariable.UPDATE);
+            url += "&idx=" + idx;
+            url += "&vname=" + name;
+            url += "&vtype=" + type;
+            url += "&vvalue=" + newValue;
+
+            try
+            {
+                Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
+                if (Response.IsSuccessStatusCode)
+                {
+                    var content = await Response.Content.ReadAsStringAsync();
+                    if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
+                    var resultContent = JsonConvert.DeserializeObject<ActionModel>(content);
+                    if (resultContent != null &&
+                        string.Compare(resultContent.status, "ok", StringComparison.OrdinalIgnoreCase) == 0)
+                        return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                App.AddLog(ex.Message);
+            }
             return false;
         }
 

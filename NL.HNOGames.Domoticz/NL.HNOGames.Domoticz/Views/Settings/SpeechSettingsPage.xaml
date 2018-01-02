@@ -35,38 +35,40 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Grid Style="{StaticResource DashboardDeviceCardType}">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    <StackLayout Grid.Column="0" Orientation="Vertical"
+                                <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
+                                    <Grid Style="{StaticResource DashboardDeviceCardType}">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <StackLayout Grid.Column="0" Orientation="Vertical"
                                                  HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
                                                      VerticalOptions="CenterAndExpand">
-                                            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                                          VerticalOptions="CenterAndExpand" Padding="20,10,0,0">
-                                                <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
+                                                    <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
                                                        Style="{StaticResource HeaderType}" />
-                                                <custcontrol:MultiLineLabel Text="{Binding SwitchDescription}"
+                                                    <custcontrol:MultiLineLabel Text="{Binding SwitchDescription}"
                                                                             Lines="2"
                                                                             Style="{StaticResource DetailType}"
                                                                             LineBreakMode="WordWrap" />
-                                            </StackLayout>
-                                            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                                                </StackLayout>
+                                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
                                                          VerticalOptions="CenterAndExpand" Margin="0,-5,5,0">
-                                                <StackLayout Orientation="Vertical" HorizontalOptions="End"
+                                                    <StackLayout Orientation="Vertical" HorizontalOptions="End"
                                                              VerticalOptions="End">
-                                                    <custcontrol:ExtendedButton Padding="10,0,10,0" x:Name="btnDeleteButton"
+                                                        <custcontrol:ExtendedButton Padding="10,0,10,0" x:Name="btnDeleteButton"
                                                             Text="{resources:Translate delete}" HorizontalOptions="End"
                                                             VerticalOptions="End" Clicked="btnDeleteButton_Clicked"/>
-                                                    <custcontrol:ExtendedButton Padding="10,0,10,0" x:Name="btnConnect" Text="Connect" HorizontalOptions="End"
+                                                        <custcontrol:ExtendedButton Padding="10,0,10,0" x:Name="btnConnect" Text="Connect" HorizontalOptions="End"
                                                             VerticalOptions="End" Clicked="btnConnect_Clicked"
                                                             Margin="0,-5,0,0"/>
+                                                    </StackLayout>
                                                 </StackLayout>
                                             </StackLayout>
                                         </StackLayout>
-                                    </StackLayout>
-                                </Grid>
+                                    </Grid>
+                                </custcontrol:MaterialFrame>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>

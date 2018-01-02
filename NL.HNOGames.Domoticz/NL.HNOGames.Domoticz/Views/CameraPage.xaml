@@ -4,9 +4,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:conv="clr-namespace:NL.HNOGames.Domoticz.Convertors;assembly=NL.HNOGames.Domoticz"
              xmlns:controls="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
              x:Class="NL.HNOGames.Domoticz.Views.CameraPage"
-            xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
-            ios:Page.UseSafeArea="true"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
              Style="{StaticResource ContentPageType}"
              Title="{Binding Title}">
     <ContentPage.Resources>
@@ -27,26 +28,28 @@
             <controls:FlowListView x:Name="listView"
                                    SeparatorVisibility="None"
                                    HasUnevenRows="true"
-                                   RowHeight="150"
+                                   RowHeight="80"
                                    FlowItemTapped="ListView_OnFlowItemTapped"
                                     BackgroundColor="{DynamicResource LightBackgroundColor}"
                                    FlowItemsSource="{Binding Cameras}">
                 <controls:FlowListView.FlowColumnTemplate>
                     <DataTemplate>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <StackLayout Grid.Column="0" Orientation="Vertical" HorizontalOptions="CenterAndExpand"
+                        <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}" VerticalOptions="StartAndExpand">
+                            <Grid Padding="0" Margin="0" VerticalOptions="StartAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Grid.Column="0" Orientation="Vertical" HorizontalOptions="CenterAndExpand"
                                          VerticalOptions="StartAndExpand" Style="{StaticResource LayoutDeviceCardType}">
-                                <Label HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"
+                                    <Label HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"
                                        VerticalOptions="Start"
                                        Text="{Binding Name}" Style="{StaticResource HeaderType}"/>
-                                <Image Source="{Binding ImageBytes, Converter={StaticResource bic}}"
+                                    <Image Source="{Binding ImageBytes, Converter={StaticResource bic}}"
                                        VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand"
                                        Aspect="AspectFill" />
-                            </StackLayout>
-                        </Grid>
+                                </StackLayout>
+                            </Grid>
+                        </custcontrol:MaterialFrame>
                     </DataTemplate>
                 </controls:FlowListView.FlowColumnTemplate>
             </controls:FlowListView>

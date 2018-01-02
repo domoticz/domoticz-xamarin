@@ -20,7 +20,7 @@
                     <OnIdiom.Tablet>150,30,150,30</OnIdiom.Tablet>
                 </OnIdiom>
             </StackLayout.Padding>
-            
+
             <SearchBar Style="{StaticResource SearchBarType}" x:Name="sbSearch"
                        Placeholder="{resources:Translate filter}" CancelButtonColor="Red"
                        TextChanged="sbSearch_TextChanged" />
@@ -30,14 +30,11 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <custcontrol:CustomViewCell>
-                            <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
-                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
-                                         VerticalOptions="CenterAndExpand" Margin="0" Padding="0"
-                                         BackgroundColor="{StaticResource CardBackgroundColor}">
-                                    <Label Text="{Binding Data}" Style="{StaticResource HeaderDarkType}" />
-                                    <Label Text="{Binding Date}" Style="{StaticResource DetailType}" />
-                                </StackLayout>
-                            </custcontrol:MaterialFrame>
+                            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                                         VerticalOptions="StartAndExpand" Margin="0" Padding="0">
+                                <Label Text="{Binding Data}" Style="{StaticResource HeaderDarkType}" />
+                                <Label Text="{Binding Date}" Style="{StaticResource DetailType}" />
+                            </StackLayout>
                         </custcontrol:CustomViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

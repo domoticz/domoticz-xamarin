@@ -28,14 +28,14 @@
             <controls:FlowListView x:Name="listView"
                                    SeparatorVisibility="None"
                                    HasUnevenRows="true"
-                                   RowHeight="80"
+                                   RowHeight="200"
                                    FlowItemTapped="ListView_OnFlowItemTapped"
                                     BackgroundColor="{DynamicResource LightBackgroundColor}"
                                    FlowItemsSource="{Binding Cameras}">
                 <controls:FlowListView.FlowColumnTemplate>
                     <DataTemplate>
-                        <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}" VerticalOptions="StartAndExpand">
-                            <Grid Padding="0" Margin="0" VerticalOptions="StartAndExpand">
+                        <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}" VerticalOptions="FillAndExpand">
+                            <Grid Padding="0" Margin="0" VerticalOptions="FillAndExpand">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>

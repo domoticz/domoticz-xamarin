@@ -190,7 +190,7 @@
                 </StackLayout>
 
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="20">
-                    <custcontrol:ExtendedButton Padding="20,0,20,0" x:Name="btnDemo" Style="{StaticResource DarkButton}" Text="Use our Demo setup"
+                    <custcontrol:ExtendedButton Padding="20,0,20,0" x:Name="btnDemo" Text="Use our Demo setup"
                     HorizontalOptions="End" VerticalOptions="End" WidthRequest="300" Clicked="BtnDemo_OnClicked" Margin="0,20,0,0" />
                     
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal">

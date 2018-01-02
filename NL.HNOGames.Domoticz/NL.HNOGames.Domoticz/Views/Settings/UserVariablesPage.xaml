@@ -26,14 +26,14 @@
                        TextChanged="sbSearch_TextChanged" />
             <ListView x:Name="listView" BackgroundColor="{DynamicResource LightBackgroundColor}"
                       VerticalOptions="FillAndExpand" HasUnevenRows="true" SeparatorVisibility="None"
+                      RowHeight="80"
                       ItemSelected="OnItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <custcontrol:CustomViewCell>
-                            <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
+                            <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}" VerticalOptions="StartAndExpand">
                                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
-                                         VerticalOptions="CenterAndExpand" Margin="0" Padding="0"
-                                         BackgroundColor="{StaticResource CardBackgroundColor}">
+                                         VerticalOptions="StartAndExpand" Margin="0" Padding="0">
                                     <Label Text="{Binding Name}" Style="{StaticResource HeaderDarkType}" />
                                     <Label Text="{Binding Data}" Style="{StaticResource DetailType}" />
                                 </StackLayout>

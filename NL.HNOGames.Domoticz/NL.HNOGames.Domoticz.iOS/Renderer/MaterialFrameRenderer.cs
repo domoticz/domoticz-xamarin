@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Foundation;
-using UIKit;
-using BlendPOC.Controls;
-using BlendPOC.iOS.Renderer;
+﻿using UIKit;
+using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 using CoreGraphics;
 using Xamarin.Forms;
+using NL.HNOGames.Domoticz.Controls;
+using NL.HNOGames.Domoticz.iOS.Renderer;
+using System.ComponentModel;
 
 [assembly: ExportRenderer(typeof(MaterialFrame), typeof(MaterialFrameRenderer))]
 namespace NL.HNOGames.Domoticz.iOS.Renderer
@@ -20,17 +16,29 @@ namespace NL.HNOGames.Domoticz.iOS.Renderer
 
     public class MaterialFrameRenderer : FrameRenderer
     {
-        public override void Draw(CGRect rect)
+        protected override void OnElementChanged(ElementChangedEventArgs<Frame> e)
         {
-            base.Draw(rect);
+            base.OnElementChanged(e);
+            MaterialFrame frame = (MaterialFrame)Element;
 
-            // Update shadow to match better material design standards of elevation
-            Layer.ShadowRadius = 2.0f;
-            Layer.ShadowColor = UIColor.Gray.CGColor;
-            Layer.ShadowOffset = new CGSize(2, 2);
-            Layer.ShadowOpacity = 0.80f;
-            Layer.ShadowPath = UIBezierPath.FromRect(Layer.Bounds).CGPath;
-            Layer.MasksToBounds = false;
+            if (frame != null)
+            {
+                // Update shadow to match better material design standards of elevation
+                Layer.ShadowRadius = 2.0f;
+                Layer.ShadowColor = UIColor.Gray.CGColor;
+                Layer.ShadowOffset = new CGSize(2, 2);
+                Layer.ShadowOpacity = 0.80f;
+
+                if(!App.AppSettings.DarkTheme)
+                    Layer.ShadowColor = UIColor.Gray.CGColor;
+                else
+                {
+                    Layer.ShadowColor = UIColor.Gray.CGColor;
+                    Layer.ShadowPath = UIBezierPath.FromRect(Layer.Bounds).CGPath;
+                }
+
+                Layer.MasksToBounds = false;
+            }
         }
     }
 }

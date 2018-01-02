@@ -31,7 +31,7 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
                 set
                 {
                     _item = value;
-                    _isSelected = (bool) _item.GetType().GetRuntimeProperty("IsSelected").GetValue(_item);
+                    _isSelected = (bool)_item.GetType().GetRuntimeProperty("IsSelected").GetValue(_item);
                 }
             }
 
@@ -59,7 +59,7 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
                 name.FontSize = 16;
                 name.Margin = new Thickness(10);
                 name.VerticalOptions = LayoutOptions.Center;
-                name.Style = (Style) Application.Current.Resources["DetailType"];
+                name.Style = (Style)Application.Current.Resources["DetailType"];
 
                 var mainSwitch = new Switch();
                 mainSwitch.SetBinding(Switch.IsToggledProperty, new Binding("IsSelected"));
@@ -86,9 +86,9 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
         public SelectMultipleBasePage(IEnumerable<T> items, Command finish = null)
         {
             var cmFinish = finish;
-            _wrappedItems = items.Select(item => new WrappedSelection<T>() {Item = item}).ToList();
+            _wrappedItems = items.Select(item => new WrappedSelection<T>() { Item = item }).ToList();
 
-            Style = (Style) Application.Current.Resources["ContentPageType"];
+            Style = (Style)Application.Current.Resources["ContentPageType"];
             if (App.AppSettings.DarkTheme)
                 BackgroundColor = Color.FromHex("#263238");
 
@@ -97,6 +97,20 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
                 Orientation = StackOrientation.Vertical,
                 Padding = new Thickness(10)
             };
+
+            switch (Device.Idiom)
+            {
+                case TargetIdiom.Tablet:
+                    ly.Padding = new Thickness(150, 30, 150, 30);
+                    break;
+                case TargetIdiom.Desktop:
+                    ly.Padding = new Thickness(150, 30, 150, 30);
+                    break;
+                default:
+                    ly.Padding = new Thickness(20, 20, 20, 20);
+                    break;
+            }
+
             if (App.AppSettings.DarkTheme)
                 ly.BackgroundColor = Color.FromHex("#263238");
 
@@ -111,9 +125,9 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
             mainList.ItemSelected += (sender, e) =>
             {
                 if (e.SelectedItem == null) return;
-                var o = (WrappedSelection<T>) e.SelectedItem;
+                var o = (WrappedSelection<T>)e.SelectedItem;
                 o.IsSelected = !o.IsSelected;
-                ((ListView) sender).SelectedItem = null; //de-select
+                ((ListView)sender).SelectedItem = null; //de-select
             };
 
             var oSave = new ExtendedButton

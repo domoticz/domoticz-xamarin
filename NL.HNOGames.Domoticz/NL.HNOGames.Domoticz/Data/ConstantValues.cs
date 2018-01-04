@@ -335,6 +335,7 @@ namespace NL.HNOGames.Domoticz.Data
                 public static class SubType
                 {
                     public const string TEXT = "Text";
+                    public const string ALERT = "Alert";
                     public const string PERCENTAGE = "Percentage";
                     public const string ENERGY = "Energy";
                     public const string KWH = "kWh";

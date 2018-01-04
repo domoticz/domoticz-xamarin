@@ -86,33 +86,33 @@ namespace NL.HNOGames.Domoticz.Views
                         await Navigation.PushAsync(new GraphTabbedPage(item));
                         break;
                     case DashboardViewModel.ScreenTypeEnum.Weather:
-                    {
-                        var graphType = item.TypeImg
-                            .ToLower()
-                            .Replace("temperature", "temp")
-                            .Replace("visibility", "counter");
-                        await Navigation.PushAsync(new GraphTabbedPage(item, graphType));
-                    }
+                        {
+                            var graphType = item.TypeImg
+                                .ToLower()
+                                .Replace("temperature", "temp")
+                                .Replace("visibility", "counter");
+                            await Navigation.PushAsync(new GraphTabbedPage(item, graphType));
+                        }
                         break;
                     case DashboardViewModel.ScreenTypeEnum.Utilities:
-                    {
-                        var graphType = item.SubType
-                            .Replace("Electric", "counter")
-                            .Replace("kWh", "counter")
-                            .Replace("Gas", "counter")
-                            .Replace("Energy", "counter")
-                            .Replace("BWR102", "counter")
-                            .Replace("Sound Level", "counter")
-                            .Replace("Voltcraft", "counter")
-                            .Replace("Voltage", "counter")
-                            .Replace("Lux", "counter")
-                            .Replace("SetPoint", "temp")
-                            .Replace("YouLess counter", "counter")
-                            .Replace("Pressure", "counter");
-                        if (graphType.Contains("counter"))
-                            graphType = "counter";
-                        await Navigation.PushAsync(new GraphTabbedPage(item, graphType));
-                    }
+                        {
+                            var graphType = item.SubType
+                                .Replace("Electric", "counter")
+                                .Replace("kWh", "counter")
+                                .Replace("Gas", "counter")
+                                .Replace("Energy", "counter")
+                                .Replace("BWR102", "counter")
+                                .Replace("Sound Level", "counter")
+                                .Replace("Voltcraft", "counter")
+                                .Replace("Voltage", "counter")
+                                .Replace("Lux", "counter")
+                                .Replace("SetPoint", "temp")
+                                .Replace("YouLess counter", "counter")
+                                .Replace("Pressure", "counter");
+                            if (graphType.Contains("counter"))
+                                graphType = "counter";
+                            await Navigation.PushAsync(new GraphTabbedPage(item, graphType));
+                        }
                         break;
                     case DashboardViewModel.ScreenTypeEnum.Dashboard:
                         break;
@@ -157,7 +157,6 @@ namespace NL.HNOGames.Domoticz.Views
                 actions.Add(AppResources.security_arm_home);
                 actions.Add(AppResources.security_disarm);
             }
-
             actions.Add(AppResources.favorite);
             if (!string.IsNullOrEmpty(item.Notifications) &&
                 string.Compare(item.Notifications, "true", StringComparison.OrdinalIgnoreCase) == 0)
@@ -173,7 +172,13 @@ namespace NL.HNOGames.Domoticz.Views
             if (_viewModel.ScreenType == DashboardViewModel.ScreenTypeEnum.Temperature ||
                 _viewModel.ScreenType == DashboardViewModel.ScreenTypeEnum.Weather ||
                 _viewModel.ScreenType == DashboardViewModel.ScreenTypeEnum.Utilities)
-                actions.Add(AppResources.wizard_graph);
+            {
+                if (_viewModel.ScreenType == DashboardViewModel.ScreenTypeEnum.Utilities &&
+                    (string.Compare(item.SubType, ConstantValues.Device.Utility.SubType.TEXT, StringComparison.OrdinalIgnoreCase) == 0 || string.Compare(item.SubType, ConstantValues.Device.Utility.SubType.ALERT, StringComparison.OrdinalIgnoreCase) == 0))
+                    actions.Add(AppResources.button_status_log);
+                else
+                    actions.Add(AppResources.wizard_graph);
+            }
 
             return actions;
         }
@@ -265,8 +270,8 @@ namespace NL.HNOGames.Domoticz.Views
         {
             if (_viewModel.OldData)
                 return;
-            var oPicker = (Picker) sender;
-            await NewSelectorValueAsync((Models.Device) oPicker.BindingContext, oPicker);
+            var oPicker = (Picker)sender;
+            await NewSelectorValueAsync((Models.Device)oPicker.BindingContext, oPicker);
         }
 
         /// <summary>
@@ -313,8 +318,8 @@ namespace NL.HNOGames.Domoticz.Views
         {
             if (_viewModel.OldData)
                 return;
-            var oButton = (Button) sender;
-            var oDevice = (Models.Device) oButton.BindingContext;
+            var oButton = (Button)sender;
+            var oDevice = (Models.Device)oButton.BindingContext;
             if (oDevice.Protected)
             {
                 var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password,
@@ -347,8 +352,8 @@ namespace NL.HNOGames.Domoticz.Views
         /// </summary>
         private async void btnOffButton_Clicked(object sender, EventArgs e)
         {
-            var oButton = (Button) sender;
-            var oDevice = (Models.Device) oButton.BindingContext;
+            var oButton = (Button)sender;
+            var oDevice = (Models.Device)oButton.BindingContext;
             if (oDevice.Protected)
             {
                 var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password,
@@ -380,8 +385,8 @@ namespace NL.HNOGames.Domoticz.Views
         /// </summary>
         private async void btnSwitch_Toggled(object sender, ToggledEventArgs e)
         {
-            var oSwitch = (Switch) sender;
-            var oDevice = (Models.Device) oSwitch.BindingContext;
+            var oSwitch = (Switch)sender;
+            var oDevice = (Models.Device)oSwitch.BindingContext;
             if (oSwitch.IsToggled != oDevice.StatusBoolean)
             {
                 if (oDevice.Protected)
@@ -431,8 +436,8 @@ namespace NL.HNOGames.Domoticz.Views
         {
             if (_viewModel.OldData)
                 return;
-            var oEntry = (Entry) sender;
-            var oDevice = (Models.Device) oEntry.BindingContext;
+            var oEntry = (Entry)sender;
+            var oDevice = (Models.Device)oEntry.BindingContext;
             if (Helpers.UsefulBits.IsNumeric(oEntry.Text))
                 await SetPointValue(oEntry, oDevice);
         }
@@ -473,13 +478,13 @@ namespace NL.HNOGames.Domoticz.Views
         {
             if (_viewModel.OldData)
                 return;
-            var btnMinTemp = (Button) sender;
+            var btnMinTemp = (Button)sender;
             var entry =
-                ((Entry) ((StackLayout) btnMinTemp.Parent).Children.FirstOrDefault(o => o.GetType() == typeof(Entry)));
+                ((Entry)((StackLayout)btnMinTemp.Parent).Children.FirstOrDefault(o => o.GetType() == typeof(Entry)));
             var currentValue = double.Parse(entry.Text, CultureInfo.InvariantCulture);
             var changedValue = currentValue - 0.5;
             entry.Text = changedValue.ToString(CultureInfo.InvariantCulture);
-            await SetPointValue(entry, (Models.Device) btnMinTemp.BindingContext, false);
+            await SetPointValue(entry, (Models.Device)btnMinTemp.BindingContext, false);
         }
 
         /// <summary>
@@ -489,13 +494,13 @@ namespace NL.HNOGames.Domoticz.Views
         {
             if (_viewModel.OldData)
                 return;
-            var btnPlusTemp = (Button) sender;
+            var btnPlusTemp = (Button)sender;
             var entry =
-                ((Entry) ((StackLayout) btnPlusTemp.Parent).Children.FirstOrDefault(o => o.GetType() == typeof(Entry)));
+                ((Entry)((StackLayout)btnPlusTemp.Parent).Children.FirstOrDefault(o => o.GetType() == typeof(Entry)));
             var currentValue = double.Parse(entry.Text, CultureInfo.InvariantCulture);
             var changedValue = currentValue + 0.5;
             entry.Text = changedValue.ToString(CultureInfo.InvariantCulture);
-            await SetPointValue(entry, (Models.Device) btnPlusTemp.BindingContext, false);
+            await SetPointValue(entry, (Models.Device)btnPlusTemp.BindingContext, false);
         }
 
         #endregion Set (Temperature)
@@ -510,8 +515,8 @@ namespace NL.HNOGames.Domoticz.Views
         {
             if (_viewModel.OldData)
                 return;
-            var oButton = (Button) sender;
-            var oDevice = (Models.Device) oButton.BindingContext;
+            var oButton = (Button)sender;
+            var oDevice = (Models.Device)oButton.BindingContext;
             var action = ConstantValues.Device.Switch.Action.ON;
             if (oDevice.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDINVERTED)
             {
@@ -548,8 +553,8 @@ namespace NL.HNOGames.Domoticz.Views
         {
             if (_viewModel.OldData)
                 return;
-            var oButton = (Button) sender;
-            var oDevice = (Models.Device) oButton.BindingContext;
+            var oButton = (Button)sender;
+            var oDevice = (Models.Device)oButton.BindingContext;
             var action = ConstantValues.Device.Switch.Action.OFF;
             if (oDevice.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDINVERTED)
             {
@@ -587,8 +592,8 @@ namespace NL.HNOGames.Domoticz.Views
             if (_viewModel.OldData)
                 return;
 
-            var oButton = (Button) sender;
-            var oDevice = (Models.Device) oButton.BindingContext;
+            var oButton = (Button)sender;
+            var oDevice = (Models.Device)oButton.BindingContext;
             App.ShowToast(AppResources.blind_stop + ": " + oDevice.Name);
             if (oDevice.Protected)
             {
@@ -621,8 +626,8 @@ namespace NL.HNOGames.Domoticz.Views
         /// </summary>
         private async void btnLevelButton_Clicked(object sender, EventArgs e)
         {
-            var oButton = (Button) sender;
-            var oDevice = (Models.Device) oButton.BindingContext;
+            var oButton = (Button)sender;
+            var oDevice = (Models.Device)oButton.BindingContext;
             var oSlider = new SliderPopup(oDevice, _viewModel.RefreshFavoriteCommand);
             await PopupNavigation.PushAsync(oSlider);
             RefreshListView(true);

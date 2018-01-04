@@ -101,6 +101,8 @@ namespace NL.HNOGames.Domoticz.Views
                             .Replace("kWh", "counter")
                             .Replace("Gas", "counter")
                             .Replace("Energy", "counter")
+                            .Replace("BWR102", "counter")
+                            .Replace("Sound Level", "counter")
                             .Replace("Voltcraft", "counter")
                             .Replace("Voltage", "counter")
                             .Replace("Lux", "counter")

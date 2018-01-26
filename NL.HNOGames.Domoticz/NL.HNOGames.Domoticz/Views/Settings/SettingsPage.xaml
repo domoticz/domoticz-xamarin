@@ -1,200 +1,425 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="NL.HNOGames.Domoticz.Views.Settings.SettingsPage"
-             xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
-             xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
-            xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
-            ios:Page.UseSafeArea="true"
-             Style="{StaticResource ContentPageType}">
-    <ContentPage.Content>
-        <ScrollView>
-            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
+<ContentPage
+   x:Class="NL.HNOGames.Domoticz.Views.Settings.SettingsPage"
+   xmlns="http://xamarin.com/schemas/2014/forms"
+   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+   xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
+   xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+   xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
+   ios:Page.UseSafeArea="true"
+   Style="{StaticResource ContentPageType}">
+   <ContentPage.Content>
+      <ScrollView>
+         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
 
-                <StackLayout.Padding>
-                    <OnIdiom x:TypeArguments="Thickness">
-                        <OnIdiom.Phone>20,20,20,20</OnIdiom.Phone>
-                        <OnIdiom.Tablet>150,30,150,30</OnIdiom.Tablet>
-                    </OnIdiom>
-                </StackLayout.Padding>
-                
-                <StackLayout x:Name="lyPremium">
-                    <Label Text="{resources:Translate premium_category}" LineBreakMode="NoWrap"
-                           Style="{StaticResource HeaderType}" Margin="0,10,0,0" />
-                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
-                                 Orientation="Horizontal" Padding="0,10,0,0">
-                        <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
-                            <Label Text="{resources:Translate premium_title}" VerticalOptions="CenterAndExpand"
-                                   HorizontalOptions="Start" LineBreakMode="NoWrap"
-                                   Style="{StaticResource SettingsDetailType}" />
-                        </StackLayout>
-                        <custcontrol:ExtendedButton Padding="10,0,10,0" Text="Buy" HorizontalOptions="End" VerticalOptions="Center"
-                                Clicked="btnBuyPremium_Clicked">
-                        </custcontrol:ExtendedButton>
-                        <custcontrol:ExtendedButton Padding="10,0,10,0" x:Name="btnRestore" Text="Restore" HorizontalOptions="End" VerticalOptions="Center"
-                                Clicked="BtnRestore_OnClicked">
-                        </custcontrol:ExtendedButton>
-                    </StackLayout>
-                </StackLayout>
+            <StackLayout.Padding>
+               <OnIdiom x:TypeArguments="Thickness">
+                  <OnIdiom.Phone>20,20,20,20</OnIdiom.Phone>
+                  <OnIdiom.Tablet>150,30,150,30</OnIdiom.Tablet>
+               </OnIdiom>
+            </StackLayout.Padding>
 
-                <Label Text="{resources:Translate title_dashboard}" LineBreakMode="NoWrap"
-                       Style="{StaticResource HeaderType}" Margin="0,10,0,0" />
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
-                             Orientation="Horizontal" Padding="0,10,0,0">
-                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
-                        <Label Text="{resources:Translate enable_items}" VerticalOptions="CenterAndExpand"
-                               HorizontalOptions="Start" LineBreakMode="NoWrap"
-                               Style="{StaticResource SettingsDetailType}" />
-                    </StackLayout>
-                    <custcontrol:ExtendedButton Padding="10,0,10,0" Text="Ok" HorizontalOptions="End" VerticalOptions="Center"
-                            Clicked="btnEnableScreens_Clicked">
-                    </custcontrol:ExtendedButton>
-                </StackLayout>
+            <StackLayout x:Name="lyPremium">
+               <Label
+                  Margin="0,10,0,0"
+                  LineBreakMode="NoWrap"
+                  Style="{StaticResource HeaderType}"
+                  Text="{resources:Translate premium_category}" />
+               <StackLayout
+                  Padding="0,10,0,0"
+                  HorizontalOptions="FillAndExpand"
+                  Orientation="Horizontal"
+                  VerticalOptions="StartAndExpand">
+                  <StackLayout
+                     HorizontalOptions="StartAndExpand"
+                     Orientation="Vertical"
+                     VerticalOptions="Center">
+                     <Label
+                        HorizontalOptions="Start"
+                        LineBreakMode="NoWrap"
+                        Style="{StaticResource SettingsDetailType}"
+                        Text="{resources:Translate premium_title}"
+                        VerticalOptions="CenterAndExpand" />
+                  </StackLayout>
+                  <custcontrol:ExtendedButton
+                     Padding="10,0,10,0"
+                     Clicked="btnBuyPremium_Clicked"
+                     HorizontalOptions="End"
+                     Text="Buy"
+                     VerticalOptions="Center" />
+                  <custcontrol:ExtendedButton
+                     x:Name="btnRestore"
+                     Padding="10,0,10,0"
+                     Clicked="BtnRestore_OnClicked"
+                     HorizontalOptions="End"
+                     Text="Restore"
+                     VerticalOptions="Center" />
+               </StackLayout>
+            </StackLayout>
 
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
-                             Orientation="Horizontal" Padding="0,10,0,0">
-                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
-                        <Label Text="{resources:Translate sort_dashboardLikeServer_title}"
-                               VerticalOptions="CenterAndExpand" HorizontalOptions="Start"
-                               Style="{StaticResource SettingsDetailType}" />
-                        <Label x:Name="lblSort" Text="{resources:Translate sort_dashboardLikeServer_on}"
-                               VerticalOptions="CenterAndExpand" HorizontalOptions="Start"
-                               Style="{StaticResource DetailSmallType}" />
-                    </StackLayout>
-                    <Switch x:Name="swNoSort" VerticalOptions="Center" HorizontalOptions="End" />
-                </StackLayout>
+            <Label
+               Margin="0,10,0,0"
+               LineBreakMode="NoWrap"
+               Style="{StaticResource HeaderType}"
+               Text="{resources:Translate title_dashboard}" />
+            <StackLayout
+               Padding="0,10,0,0"
+               HorizontalOptions="FillAndExpand"
+               Orientation="Horizontal"
+               VerticalOptions="StartAndExpand">
+               <StackLayout
+                  HorizontalOptions="StartAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="Center">
+                  <Label
+                     HorizontalOptions="Start"
+                     LineBreakMode="NoWrap"
+                     Style="{StaticResource SettingsDetailType}"
+                     Text="{resources:Translate enable_items}"
+                     VerticalOptions="CenterAndExpand" />
+               </StackLayout>
+               <custcontrol:ExtendedButton
+                  Padding="10,0,10,0"
+                  Clicked="btnEnableScreens_Clicked"
+                  HorizontalOptions="End"
+                  Text="Ok"
+                  VerticalOptions="Center" />
+            </StackLayout>
 
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
-                             Orientation="Horizontal" Padding="0,10,0,0">
-                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
-                        <Label Text="{resources:Translate switch_buttons_title}" VerticalOptions="CenterAndExpand"
-                               HorizontalOptions="Start" Style="{StaticResource SettingsDetailType}" />
-                        <Label x:Name="lblShowSwitch" Text="{resources:Translate switch_buttons_on}"
-                               VerticalOptions="CenterAndExpand" HorizontalOptions="Start"
-                               Style="{StaticResource DetailSmallType}" />
-                    </StackLayout>
-                    <Switch x:Name="swShowSwitch" VerticalOptions="Center" HorizontalOptions="End" />
-                </StackLayout>
+            <StackLayout
+               Padding="0,10,0,0"
+               HorizontalOptions="FillAndExpand"
+               Orientation="Horizontal"
+               VerticalOptions="StartAndExpand">
+               <StackLayout
+                  HorizontalOptions="StartAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="Center">
+                  <Label
+                     HorizontalOptions="Start"
+                     Style="{StaticResource SettingsDetailType}"
+                     Text="{resources:Translate sort_dashboardLikeServer_title}"
+                     VerticalOptions="CenterAndExpand" />
+                  <Label
+                     x:Name="lblSort"
+                     HorizontalOptions="Start"
+                     Style="{StaticResource DetailSmallType}"
+                     Text="{resources:Translate sort_dashboardLikeServer_on}"
+                     VerticalOptions="CenterAndExpand" />
+               </StackLayout>
+               <Switch
+                  x:Name="swNoSort"
+                  HorizontalOptions="End"
+                  VerticalOptions="Center" />
+            </StackLayout>
 
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
-                             Orientation="Horizontal" Padding="0,10,0,10">
-                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
-                        <Label Text="{resources:Translate extra_data_title}" VerticalOptions="CenterAndExpand"
-                               HorizontalOptions="Start" Style="{StaticResource SettingsDetailType}" />
-                        <Label x:Name="lblExtraData" Text="{resources:Translate show_extra_data_on}"
-                               VerticalOptions="CenterAndExpand" HorizontalOptions="Start"
-                               Style="{StaticResource DetailSmallType}" />
-                    </StackLayout>
-                    <Switch x:Name="swExtraData" VerticalOptions="Center" HorizontalOptions="End" />
-                </StackLayout>
+            <StackLayout
+               Padding="0,10,0,0"
+               HorizontalOptions="FillAndExpand"
+               Orientation="Horizontal"
+               VerticalOptions="StartAndExpand">
+               <StackLayout
+                  HorizontalOptions="StartAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="Center">
+                  <Label
+                     HorizontalOptions="Start"
+                     Style="{StaticResource SettingsDetailType}"
+                     Text="{resources:Translate switch_buttons_title}"
+                     VerticalOptions="CenterAndExpand" />
+                  <Label
+                     x:Name="lblShowSwitch"
+                     HorizontalOptions="Start"
+                     Style="{StaticResource DetailSmallType}"
+                     Text="{resources:Translate switch_buttons_on}"
+                     VerticalOptions="CenterAndExpand" />
+               </StackLayout>
+               <Switch
+                  x:Name="swShowSwitch"
+                  HorizontalOptions="End"
+                  VerticalOptions="Center" />
+            </StackLayout>
 
-                <Label Text="{resources:Translate category_server}" LineBreakMode="NoWrap"
-                       Style="{StaticResource HeaderType}" Margin="0,10,0,0" />
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
-                             Orientation="Horizontal" Padding="0,10,0,0" IsVisible="False">
-                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
-                        <Label Text="{resources:Translate multi_server}"
-                               VerticalOptions="CenterAndExpand" HorizontalOptions="Start"
-                               Style="{StaticResource SettingsDetailType}" />
-                        <Label Text="{resources:Translate multi_server_settings}"
-                               VerticalOptions="CenterAndExpand" HorizontalOptions="Start"
-                               Style="{StaticResource DetailSmallType}" />
-                    </StackLayout>
-                    <Switch x:Name="swEnableMultiServer" VerticalOptions="Center" HorizontalOptions="End" />
-                </StackLayout>
+            <StackLayout
+               Padding="0,10,0,10"
+               HorizontalOptions="FillAndExpand"
+               Orientation="Horizontal"
+               VerticalOptions="StartAndExpand">
+               <StackLayout
+                  HorizontalOptions="StartAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="Center">
+                  <Label
+                     HorizontalOptions="Start"
+                     Style="{StaticResource SettingsDetailType}"
+                     Text="{resources:Translate extra_data_title}"
+                     VerticalOptions="CenterAndExpand" />
+                  <Label
+                     x:Name="lblExtraData"
+                     HorizontalOptions="Start"
+                     Style="{StaticResource DetailSmallType}"
+                     Text="{resources:Translate show_extra_data_on}"
+                     VerticalOptions="CenterAndExpand" />
+               </StackLayout>
+               <Switch
+                  x:Name="swExtraData"
+                  HorizontalOptions="End"
+                  VerticalOptions="Center" />
+            </StackLayout>
 
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
-                             Orientation="Horizontal" Padding="0,10,0,10">
-                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
-                        <Label Text="{resources:Translate server_settings}" VerticalOptions="CenterAndExpand"
-                               HorizontalOptions="Start" LineBreakMode="NoWrap"
-                               Style="{StaticResource SettingsDetailType}" />
-                    </StackLayout>
-                    <custcontrol:ExtendedButton Padding="10,0,10,0" Text="Ok" HorizontalOptions="End" VerticalOptions="Center"
-                            Clicked="btnServerSetup_Clicked">
-                    </custcontrol:ExtendedButton>
-                </StackLayout>
+            <Label
+               Margin="0,10,0,0"
+               LineBreakMode="NoWrap"
+               Style="{StaticResource HeaderType}"
+               Text="{resources:Translate category_server}" />
+            <StackLayout
+               Padding="0,10,0,0"
+               HorizontalOptions="FillAndExpand"
+               IsVisible="False"
+               Orientation="Horizontal"
+               VerticalOptions="StartAndExpand">
+               <StackLayout
+                  HorizontalOptions="StartAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="Center">
+                  <Label
+                     HorizontalOptions="Start"
+                     Style="{StaticResource SettingsDetailType}"
+                     Text="{resources:Translate multi_server}"
+                     VerticalOptions="CenterAndExpand" />
+                  <Label
+                     HorizontalOptions="Start"
+                     Style="{StaticResource DetailSmallType}"
+                     Text="{resources:Translate multi_server_settings}"
+                     VerticalOptions="CenterAndExpand" />
+               </StackLayout>
+               <Switch
+                  x:Name="swEnableMultiServer"
+                  HorizontalOptions="End"
+                  VerticalOptions="Center" />
+            </StackLayout>
 
-                <Label Text="{resources:Translate category_generic}" LineBreakMode="NoWrap"
-                       Style="{StaticResource HeaderType}" />
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
-                             Orientation="Horizontal" Padding="0,10,0,10">
-                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
-                        <Label Text="{resources:Translate startup_screen}" VerticalOptions="CenterAndExpand"
-                               HorizontalOptions="Start" LineBreakMode="NoWrap"
-                               Style="{StaticResource SettingsDetailType}" />
-                    </StackLayout>
-                    <Picker Style="{StaticResource PickerType}" x:Name="txtStartScherm" HorizontalOptions="End"
-                            MinimumWidthRequest="100" />
-                </StackLayout>
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
-                             Orientation="Horizontal" Padding="0,10,0,10">
-                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
-                        <Label Text="{resources:Translate category_talk_back}" VerticalOptions="CenterAndExpand"
-                               HorizontalOptions="Start" Style="{StaticResource SettingsDetailType}" />
-                        <Label Text="{resources:Translate set_talk_back_on}" VerticalOptions="CenterAndExpand"
-                               HorizontalOptions="Start" Style="{StaticResource DetailSmallType}" />
-                    </StackLayout>
-                    <Switch x:Name="swEnableTalkBack" VerticalOptions="Center" HorizontalOptions="End" />
-                </StackLayout>
+            <StackLayout
+               Padding="0,10,0,10"
+               HorizontalOptions="FillAndExpand"
+               Orientation="Horizontal"
+               VerticalOptions="StartAndExpand">
+               <StackLayout
+                  HorizontalOptions="StartAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="Center">
+                  <Label
+                     HorizontalOptions="Start"
+                     LineBreakMode="NoWrap"
+                     Style="{StaticResource SettingsDetailType}"
+                     Text="{resources:Translate server_settings}"
+                     VerticalOptions="CenterAndExpand" />
+               </StackLayout>
+               <custcontrol:ExtendedButton
+                  Padding="10,0,10,0"
+                  Clicked="btnServerSetup_Clicked"
+                  HorizontalOptions="End"
+                  Text="Ok"
+                  VerticalOptions="Center" />
+            </StackLayout>
 
-                <Label Text="{resources:Translate notification_screen_title}" LineBreakMode="NoWrap"
-                       Style="{StaticResource HeaderType}" Margin="0,10,0,0" />
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
-                             Orientation="Horizontal" Padding="0,10,0,10">
-                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
-                        <Label Text="{resources:Translate enable_notifications_title}"
-                               VerticalOptions="CenterAndExpand" HorizontalOptions="Start"
-                               Style="{StaticResource SettingsDetailType}" />
-                        <Label Text="{resources:Translate enable_notifications}" VerticalOptions="CenterAndExpand"
-                               HorizontalOptions="Start" Style="{StaticResource DetailSmallType}" />
-                    </StackLayout>
-                    <Switch x:Name="swEnableNotifications" VerticalOptions="Center" HorizontalOptions="End" />
-                </StackLayout>
+            <Label
+               LineBreakMode="NoWrap"
+               Style="{StaticResource HeaderType}"
+               Text="{resources:Translate category_generic}" />
+            <StackLayout
+               Padding="0,10,0,10"
+               HorizontalOptions="FillAndExpand"
+               Orientation="Horizontal"
+               VerticalOptions="StartAndExpand">
+               <StackLayout
+                  HorizontalOptions="StartAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="Center">
+                  <Label
+                     HorizontalOptions="Start"
+                     LineBreakMode="NoWrap"
+                     Style="{StaticResource SettingsDetailType}"
+                     Text="{resources:Translate startup_screen}"
+                     VerticalOptions="CenterAndExpand" />
+               </StackLayout>
+               <Picker
+                  x:Name="txtStartScherm"
+                  HorizontalOptions="End"
+                  MinimumWidthRequest="100"
+                  Style="{StaticResource PickerType}" />
+            </StackLayout>
+            <StackLayout
+               Padding="0,10,0,10"
+               HorizontalOptions="FillAndExpand"
+               Orientation="Horizontal"
+               VerticalOptions="StartAndExpand">
+               <StackLayout
+                  HorizontalOptions="StartAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="Center">
+                  <Label
+                     HorizontalOptions="Start"
+                     Style="{StaticResource SettingsDetailType}"
+                     Text="{resources:Translate category_talk_back}"
+                     VerticalOptions="CenterAndExpand" />
+                  <Label
+                     HorizontalOptions="Start"
+                     Style="{StaticResource DetailSmallType}"
+                     Text="{resources:Translate set_talk_back_on}"
+                     VerticalOptions="CenterAndExpand" />
+               </StackLayout>
+               <Switch
+                  x:Name="swEnableTalkBack"
+                  HorizontalOptions="End"
+                  VerticalOptions="Center" />
+            </StackLayout>
 
-                <Label Text="{resources:Translate category_theme}" LineBreakMode="NoWrap"
-                       Style="{StaticResource HeaderType}" Margin="0,10,0,0" />
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
-                             Orientation="Horizontal" Padding="0,10,0,0">
-                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
-                        <Label Text="{resources:Translate set_dark_theme}" VerticalOptions="CenterAndExpand"
-                               HorizontalOptions="Start" LineBreakMode="NoWrap"
-                               Style="{StaticResource SettingsDetailType}" />
-                    </StackLayout>
-                    <Switch x:Name="swDarkTheme" VerticalOptions="Center" HorizontalOptions="End" />
-                </StackLayout>
+            <StackLayout
+               Padding="0,10,0,10"
+               HorizontalOptions="FillAndExpand"
+               Orientation="Horizontal"
+               VerticalOptions="StartAndExpand">
+               <StackLayout
+                  HorizontalOptions="StartAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="Center">
+                  <Label
+                     HorizontalOptions="Start"
+                     Style="{StaticResource SettingsDetailType}"
+                     Text="{resources:Translate category_language}"
+                     VerticalOptions="CenterAndExpand" />
+               </StackLayout>
+               <Picker
+                  x:Name="pckrLanguages"
+                  HorizontalOptions="End"
+                  MinimumWidthRequest="100"
+                  SelectedIndexChanged="pckrLanguages_SelectedIndexChanged"
+                  Style="{StaticResource PickerType}" />
+            </StackLayout>
 
-                <Label Text="{resources:Translate cameraActivity_name}" LineBreakMode="NoWrap"
-                       Style="{StaticResource HeaderType}" Margin="0,10,0,0" />
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
-                             Orientation="Horizontal" Padding="0,10,0,0">
-                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
-                        <Label Text="{resources:Translate cameraActivity_name}" VerticalOptions="CenterAndExpand"
-                               HorizontalOptions="Start" LineBreakMode="NoWrap"
-                               Style="{StaticResource SettingsDetailType}" />
-                    </StackLayout>
-                    <custcontrol:ExtendedButton Padding="10,0,10,0" x:Name="btnCameras" Text="Ok" HorizontalOptions="End" VerticalOptions="Center"
-                            Clicked="BtnCameras_OnClicked">
-                    </custcontrol:ExtendedButton>
-                </StackLayout>
+            <Label
+               Margin="0,10,0,0"
+               LineBreakMode="NoWrap"
+               Style="{StaticResource HeaderType}"
+               Text="{resources:Translate notification_screen_title}" />
+            <StackLayout
+               Padding="0,10,0,10"
+               HorizontalOptions="FillAndExpand"
+               Orientation="Horizontal"
+               VerticalOptions="StartAndExpand">
+               <StackLayout
+                  HorizontalOptions="StartAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="Center">
+                  <Label
+                     HorizontalOptions="Start"
+                     Style="{StaticResource SettingsDetailType}"
+                     Text="{resources:Translate enable_notifications_title}"
+                     VerticalOptions="CenterAndExpand" />
+                  <Label
+                     HorizontalOptions="Start"
+                     Style="{StaticResource DetailSmallType}"
+                     Text="{resources:Translate enable_notifications}"
+                     VerticalOptions="CenterAndExpand" />
+               </StackLayout>
+               <Switch
+                  x:Name="swEnableNotifications"
+                  HorizontalOptions="End"
+                  VerticalOptions="Center" />
+            </StackLayout>
 
-                <Label Text="{resources:Translate category_Speech}" LineBreakMode="NoWrap"
-                           Style="{StaticResource HeaderType}" Margin="0,10,0,0" />
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
-                                 Orientation="Horizontal" Padding="0,10,0,0" IsVisible="True">
-                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
-                        <Label Text="{resources:Translate category_Speech}" VerticalOptions="CenterAndExpand"
-                                   HorizontalOptions="Start" LineBreakMode="NoWrap"
-                                   Style="{StaticResource SettingsDetailType}" />
-                    </StackLayout>
-                    <custcontrol:ExtendedButton Padding="10,0,10,0" x:Name="btnSpeechSettings" Text="Ok" HorizontalOptions="End" VerticalOptions="Center"
-                                Clicked="btnSpeechSettings_Clicked">
-                    </custcontrol:ExtendedButton>
-                </StackLayout>
+            <Label
+               Margin="0,10,0,0"
+               LineBreakMode="NoWrap"
+               Style="{StaticResource HeaderType}"
+               Text="{resources:Translate category_theme}" />
+            <StackLayout
+               Padding="0,10,0,0"
+               HorizontalOptions="FillAndExpand"
+               Orientation="Horizontal"
+               VerticalOptions="StartAndExpand">
+               <StackLayout
+                  HorizontalOptions="StartAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="Center">
+                  <Label
+                     HorizontalOptions="Start"
+                     LineBreakMode="NoWrap"
+                     Style="{StaticResource SettingsDetailType}"
+                     Text="{resources:Translate set_dark_theme}"
+                     VerticalOptions="CenterAndExpand" />
+               </StackLayout>
+               <Switch
+                  x:Name="swDarkTheme"
+                  HorizontalOptions="End"
+                  VerticalOptions="Center" />
+            </StackLayout>
 
-                <!--<Label Text="{resources:Translate title_geofence}" LineBreakMode="NoWrap"
-                           Style="{StaticResource HeaderType}" Margin="0,10,0,0"/> 
+            <Label
+               Margin="0,10,0,0"
+               LineBreakMode="NoWrap"
+               Style="{StaticResource HeaderType}"
+               Text="{resources:Translate cameraActivity_name}" />
+            <StackLayout
+               Padding="0,10,0,0"
+               HorizontalOptions="FillAndExpand"
+               Orientation="Horizontal"
+               VerticalOptions="StartAndExpand">
+               <StackLayout
+                  HorizontalOptions="StartAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="Center">
+                  <Label
+                     HorizontalOptions="Start"
+                     LineBreakMode="NoWrap"
+                     Style="{StaticResource SettingsDetailType}"
+                     Text="{resources:Translate cameraActivity_name}"
+                     VerticalOptions="CenterAndExpand" />
+               </StackLayout>
+               <custcontrol:ExtendedButton
+                  x:Name="btnCameras"
+                  Padding="10,0,10,0"
+                  Clicked="BtnCameras_OnClicked"
+                  HorizontalOptions="End"
+                  Text="Ok"
+                  VerticalOptions="Center" />
+            </StackLayout>
+
+            <Label
+               Margin="0,10,0,0"
+               LineBreakMode="NoWrap"
+               Style="{StaticResource HeaderType}"
+               Text="{resources:Translate category_Speech}" />
+            <StackLayout
+               Padding="0,10,0,0"
+               HorizontalOptions="FillAndExpand"
+               IsVisible="True"
+               Orientation="Horizontal"
+               VerticalOptions="StartAndExpand">
+               <StackLayout
+                  HorizontalOptions="StartAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="Center">
+                  <Label
+                     HorizontalOptions="Start"
+                     LineBreakMode="NoWrap"
+                     Style="{StaticResource SettingsDetailType}"
+                     Text="{resources:Translate category_Speech}"
+                     VerticalOptions="CenterAndExpand" />
+               </StackLayout>
+               <custcontrol:ExtendedButton
+                  x:Name="btnSpeechSettings"
+                  Padding="10,0,10,0"
+                  Clicked="btnSpeechSettings_Clicked"
+                  HorizontalOptions="End"
+                  Text="Ok"
+                  VerticalOptions="Center" />
+            </StackLayout>
+
+            <!--<Label Text="{resources:Translate title_geofence}" LineBreakMode="NoWrap"
+                           Style="{StaticResource HeaderType}" Margin="0,10,0,0"/>
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
                                  Orientation="Horizontal" Padding="0,10,0,0" IsVisible="True">
                     <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
@@ -207,68 +432,140 @@
                     </custcontrol:ExtendedButton>
                 </StackLayout>-->
 
-                <Label Text="{resources:Translate category_QRCode}" LineBreakMode="NoWrap"
-                       Style="{StaticResource HeaderType}" Margin="0,10,0,0" />
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
-                             Orientation="Horizontal" Padding="0,10,0,0" IsVisible="True">
-                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
-                        <Label Text="{resources:Translate category_QRCode}" VerticalOptions="CenterAndExpand"
-                               HorizontalOptions="Start" LineBreakMode="NoWrap"
-                               Style="{StaticResource SettingsDetailType}" />
-                    </StackLayout>
-                    <custcontrol:ExtendedButton Padding="10,0,10,0" x:Name="btnQRCode" Text="Ok" HorizontalOptions="End" VerticalOptions="Center"
-                            Clicked="btnQRCode_Clicked">
-                    </custcontrol:ExtendedButton>
-                </StackLayout>
-
-                <Label Text="{resources:Translate category_advanced}" LineBreakMode="NoWrap"
-                       Style="{StaticResource HeaderType}" Margin="0,10,0,0" />
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
-                             Orientation="Horizontal" Padding="0,10,0,0">
-                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
-                        <Label Text="{resources:Translate button_status_log}" VerticalOptions="CenterAndExpand"
-                               HorizontalOptions="Start" LineBreakMode="NoWrap"
-                               Style="{StaticResource SettingsDetailType}" />
-                    </StackLayout>
-                    <custcontrol:ExtendedButton Padding="10,0,10,0" x:Name="btnShowLog" Text="Ok" HorizontalOptions="End" VerticalOptions="Center"
-                            Clicked="btnShowLog_Clicked">
-                    </custcontrol:ExtendedButton>
-                </StackLayout>
-
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
-                             Orientation="Horizontal" Padding="0,10,0,0">
-                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
-                        <Label Text="{resources:Translate title_vars}" VerticalOptions="CenterAndExpand"
-                               HorizontalOptions="Start" LineBreakMode="NoWrap"
-                               Style="{StaticResource SettingsDetailType}" />
-                    </StackLayout>
-                    <custcontrol:ExtendedButton Padding="10,0,10,0" x:Name="btnUserVars" Text="Ok" HorizontalOptions="End" VerticalOptions="Center"
-                            Clicked="btnUserVars_Clicked">
-                    </custcontrol:ExtendedButton>
-                </StackLayout>
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
-                             Orientation="Horizontal" Padding="0,10,0,0">
-                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
-                        <Label Text="{resources:Translate title_events}" VerticalOptions="CenterAndExpand"
-                               HorizontalOptions="Start" LineBreakMode="NoWrap"
-                               Style="{StaticResource SettingsDetailType}" />
-                    </StackLayout>
-                    <custcontrol:ExtendedButton Padding="10,0,10,0" x:Name="btnEvents" Text="Ok" HorizontalOptions="End" VerticalOptions="Center"
-                            Clicked="btnEvents_Clicked">
-                    </custcontrol:ExtendedButton>
-                </StackLayout>
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
-                             Orientation="Horizontal" Padding="0,10,0,0" IsVisible="True">
-                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
-                        <Label Text="{resources:Translate category_debug}" VerticalOptions="CenterAndExpand"
-                               HorizontalOptions="Start" LineBreakMode="NoWrap"
-                               Style="{StaticResource SettingsDetailType}" />
-                    </StackLayout>
-                    <custcontrol:ExtendedButton Padding="10,0,10,0" Text="Ok" HorizontalOptions="End" VerticalOptions="Center"
-                            Clicked="btnDebugInfo_Clicked">
-                    </custcontrol:ExtendedButton>
-                </StackLayout>
+            <Label
+               Margin="0,10,0,0"
+               LineBreakMode="NoWrap"
+               Style="{StaticResource HeaderType}"
+               Text="{resources:Translate category_QRCode}" />
+            <StackLayout
+               Padding="0,10,0,0"
+               HorizontalOptions="FillAndExpand"
+               IsVisible="True"
+               Orientation="Horizontal"
+               VerticalOptions="StartAndExpand">
+               <StackLayout
+                  HorizontalOptions="StartAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="Center">
+                  <Label
+                     HorizontalOptions="Start"
+                     LineBreakMode="NoWrap"
+                     Style="{StaticResource SettingsDetailType}"
+                     Text="{resources:Translate category_QRCode}"
+                     VerticalOptions="CenterAndExpand" />
+               </StackLayout>
+               <custcontrol:ExtendedButton
+                  x:Name="btnQRCode"
+                  Padding="10,0,10,0"
+                  Clicked="btnQRCode_Clicked"
+                  HorizontalOptions="End"
+                  Text="Ok"
+                  VerticalOptions="Center" />
             </StackLayout>
-        </ScrollView>
-    </ContentPage.Content>
+
+            <Label
+               Margin="0,10,0,0"
+               LineBreakMode="NoWrap"
+               Style="{StaticResource HeaderType}"
+               Text="{resources:Translate category_advanced}" />
+            <StackLayout
+               Padding="0,10,0,0"
+               HorizontalOptions="FillAndExpand"
+               Orientation="Horizontal"
+               VerticalOptions="StartAndExpand">
+               <StackLayout
+                  HorizontalOptions="StartAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="Center">
+                  <Label
+                     HorizontalOptions="Start"
+                     LineBreakMode="NoWrap"
+                     Style="{StaticResource SettingsDetailType}"
+                     Text="{resources:Translate button_status_log}"
+                     VerticalOptions="CenterAndExpand" />
+               </StackLayout>
+               <custcontrol:ExtendedButton
+                  x:Name="btnShowLog"
+                  Padding="10,0,10,0"
+                  Clicked="btnShowLog_Clicked"
+                  HorizontalOptions="End"
+                  Text="Ok"
+                  VerticalOptions="Center" />
+            </StackLayout>
+
+            <StackLayout
+               Padding="0,10,0,0"
+               HorizontalOptions="FillAndExpand"
+               Orientation="Horizontal"
+               VerticalOptions="StartAndExpand">
+               <StackLayout
+                  HorizontalOptions="StartAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="Center">
+                  <Label
+                     HorizontalOptions="Start"
+                     LineBreakMode="NoWrap"
+                     Style="{StaticResource SettingsDetailType}"
+                     Text="{resources:Translate title_vars}"
+                     VerticalOptions="CenterAndExpand" />
+               </StackLayout>
+               <custcontrol:ExtendedButton
+                  x:Name="btnUserVars"
+                  Padding="10,0,10,0"
+                  Clicked="btnUserVars_Clicked"
+                  HorizontalOptions="End"
+                  Text="Ok"
+                  VerticalOptions="Center" />
+            </StackLayout>
+            <StackLayout
+               Padding="0,10,0,0"
+               HorizontalOptions="FillAndExpand"
+               Orientation="Horizontal"
+               VerticalOptions="StartAndExpand">
+               <StackLayout
+                  HorizontalOptions="StartAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="Center">
+                  <Label
+                     HorizontalOptions="Start"
+                     LineBreakMode="NoWrap"
+                     Style="{StaticResource SettingsDetailType}"
+                     Text="{resources:Translate title_events}"
+                     VerticalOptions="CenterAndExpand" />
+               </StackLayout>
+               <custcontrol:ExtendedButton
+                  x:Name="btnEvents"
+                  Padding="10,0,10,0"
+                  Clicked="btnEvents_Clicked"
+                  HorizontalOptions="End"
+                  Text="Ok"
+                  VerticalOptions="Center" />
+            </StackLayout>
+            <StackLayout
+               Padding="0,10,0,0"
+               HorizontalOptions="FillAndExpand"
+               IsVisible="True"
+               Orientation="Horizontal"
+               VerticalOptions="StartAndExpand">
+               <StackLayout
+                  HorizontalOptions="StartAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="Center">
+                  <Label
+                     HorizontalOptions="Start"
+                     LineBreakMode="NoWrap"
+                     Style="{StaticResource SettingsDetailType}"
+                     Text="{resources:Translate category_debug}"
+                     VerticalOptions="CenterAndExpand" />
+               </StackLayout>
+               <custcontrol:ExtendedButton
+                  Padding="10,0,10,0"
+                  Clicked="btnDebugInfo_Clicked"
+                  HorizontalOptions="End"
+                  Text="Ok"
+                  VerticalOptions="Center" />
+            </StackLayout>
+         </StackLayout>
+      </ScrollView>
+   </ContentPage.Content>
 </ContentPage>

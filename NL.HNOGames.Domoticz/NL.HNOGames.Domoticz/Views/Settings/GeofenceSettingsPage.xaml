@@ -1,76 +1,126 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
-             xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
-             x:Class="NL.HNOGames.Domoticz.Views.Settings.GeofenceSettingsPage"
-             Style="{StaticResource ContentPageType}"
-             Title="{resources:Translate category_geofencing}">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="{resources:Translate add}" Order="Primary" Clicked="ToolbarItem_Activated" />
-    </ContentPage.ToolbarItems>
-    <ContentPage.Content>
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+   x:Class="NL.HNOGames.Domoticz.Views.Settings.GeofenceSettingsPage"
+   xmlns="http://xamarin.com/schemas/2014/forms"
+   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+   xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
+   xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
+   Title="{resources:Translate category_geofencing}"
+   Style="{StaticResource ContentPageType}">
+   <ContentPage.ToolbarItems>
+      <ToolbarItem
+         Clicked="ToolbarItem_Activated"
+         Order="Primary"
+         Text="{resources:Translate add}" />
+   </ContentPage.ToolbarItems>
+   <ContentPage.Content>
 
-        <ScrollView>
-            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
-                <StackLayout.Padding>
-                    <OnIdiom x:TypeArguments="Thickness">
-                        <OnIdiom.Phone>20,20,20,20</OnIdiom.Phone>
-                        <OnIdiom.Tablet>150,30,150,30</OnIdiom.Tablet>
-                    </OnIdiom>
-                </StackLayout.Padding>
+      <ScrollView>
+         <StackLayout
+            HorizontalOptions="FillAndExpand"
+            Orientation="Vertical"
+            VerticalOptions="StartAndExpand">
+            <StackLayout.Padding>
+               <OnIdiom x:TypeArguments="Thickness">
+                  <OnIdiom.Phone>20,20,20,20</OnIdiom.Phone>
+                  <OnIdiom.Tablet>150,30,150,30</OnIdiom.Tablet>
+               </OnIdiom>
+            </StackLayout.Padding>
 
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
-                             Orientation="Horizontal" Margin="20" BackgroundColor="{DynamicResource LightBackgroundColor}">
-                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" Orientation="Vertical">
-                        <Label Text="{resources:Translate description_geofence}" VerticalOptions="CenterAndExpand"
-                               HorizontalOptions="Start" Style="{StaticResource SettingsDetailType}" />
-                    </StackLayout>
-                    <Switch x:Name="swEnableGeofence" VerticalOptions="Center" HorizontalOptions="End" />
-                </StackLayout>
-                <ListView x:Name="listView" SeparatorVisibility="None" RowHeight="130" HasUnevenRows="True" BackgroundColor="{DynamicResource LightBackgroundColor}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
-                                    <Grid Style="{StaticResource DashboardDeviceCardType}">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*" />
-                                        </Grid.ColumnDefinitions>
-                                        <StackLayout Grid.Column="0" Orientation="Vertical"
-                                                 HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
-                                                     VerticalOptions="CenterAndExpand">
-                                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
-                                                         VerticalOptions="CenterAndExpand" Padding="20,10,0,0">
-                                                    <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
-                                                       Style="{StaticResource HeaderType}" />
-                                                    <custcontrol:MultiLineLabel Text="{Binding SwitchDescription}"
-                                                                            Lines="2"
-                                                                            Style="{StaticResource DetailType}"
-                                                                            LineBreakMode="WordWrap" />
-                                                </StackLayout>
-                                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
-                                                         VerticalOptions="CenterAndExpand" Margin="0,-5,5,0">
-                                                    <StackLayout Orientation="Vertical" HorizontalOptions="End"
-                                                             VerticalOptions="End">
-                                                        <custcontrol:ExtendedButton Padding="10,0,10,0" x:Name="btnDeleteButton"
-                                                            Text="{resources:Translate delete}" HorizontalOptions="End"
-                                                            VerticalOptions="End" Clicked="btnDeleteButton_Clicked"/>
-                                                        <custcontrol:ExtendedButton Padding="10,0,10,0" x:Name="btnConnect" Text="Connect" HorizontalOptions="End"
-                                                            VerticalOptions="End" Clicked="btnConnect_Clicked"
-                                                            Margin="0,-5,0,0"/>
-                                                    </StackLayout>
-                                                </StackLayout>
-                                            </StackLayout>
-                                        </StackLayout>
-                                    </Grid>
-                                </custcontrol:MaterialFrame>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+            <StackLayout
+               Margin="20"
+               BackgroundColor="{DynamicResource LightBackgroundColor}"
+               HorizontalOptions="FillAndExpand"
+               Orientation="Horizontal"
+               VerticalOptions="StartAndExpand">
+               <StackLayout
+                  HorizontalOptions="StartAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="Center">
+                  <Label
+                     HorizontalOptions="Start"
+                     Style="{StaticResource SettingsDetailType}"
+                     Text="{resources:Translate description_geofence}"
+                     VerticalOptions="CenterAndExpand" />
+               </StackLayout>
+               <Switch
+                  x:Name="swEnableGeofence"
+                  HorizontalOptions="End"
+                  VerticalOptions="Center" />
             </StackLayout>
-        </ScrollView>
-    </ContentPage.Content>
+            <ListView
+               x:Name="listView"
+               BackgroundColor="{DynamicResource LightBackgroundColor}"
+               HasUnevenRows="True"
+               RowHeight="130"
+               SeparatorVisibility="None">
+               <ListView.ItemTemplate>
+                  <DataTemplate>
+                     <ViewCell>
+                        <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
+                           <Grid Style="{StaticResource DashboardDeviceCardType}">
+                              <Grid.ColumnDefinitions>
+                                 <ColumnDefinition Width="*" />
+                              </Grid.ColumnDefinitions>
+                              <StackLayout
+                                 Grid.Column="0"
+                                 HorizontalOptions="FillAndExpand"
+                                 Orientation="Vertical"
+                                 VerticalOptions="CenterAndExpand">
+                                 <StackLayout
+                                    HorizontalOptions="FillAndExpand"
+                                    Orientation="Horizontal"
+                                    VerticalOptions="CenterAndExpand">
+                                    <StackLayout
+                                       Padding="20,10,0,0"
+                                       HorizontalOptions="FillAndExpand"
+                                       Orientation="Vertical"
+                                       VerticalOptions="CenterAndExpand">
+                                       <Label
+                                          LineBreakMode="TailTruncation"
+                                          Style="{StaticResource HeaderType}"
+                                          Text="{Binding Name}" />
+                                       <custcontrol:MultiLineLabel
+                                          LineBreakMode="WordWrap"
+                                          Lines="2"
+                                          Style="{StaticResource DetailType}"
+                                          Text="{Binding SwitchDescription}" />
+                                    </StackLayout>
+                                    <StackLayout
+                                       Margin="0,-5,5,0"
+                                       HorizontalOptions="FillAndExpand"
+                                       Orientation="Vertical"
+                                       VerticalOptions="CenterAndExpand">
+                                       <StackLayout
+                                          HorizontalOptions="End"
+                                          Orientation="Vertical"
+                                          VerticalOptions="End">
+                                          <custcontrol:ExtendedButton
+                                             x:Name="btnDeleteButton"
+                                             Padding="10,0,10,0"
+                                             Clicked="btnDeleteButton_Clicked"
+                                             HorizontalOptions="End"
+                                             Text="{resources:Translate delete}"
+                                             VerticalOptions="End" />
+                                          <custcontrol:ExtendedButton
+                                             x:Name="btnConnect"
+                                             Margin="0,-5,0,0"
+                                             Padding="10,0,10,0"
+                                             Clicked="btnConnect_Clicked"
+                                             HorizontalOptions="End"
+                                             Text="Connect"
+                                             VerticalOptions="End" />
+                                       </StackLayout>
+                                    </StackLayout>
+                                 </StackLayout>
+                              </StackLayout>
+                           </Grid>
+                        </custcontrol:MaterialFrame>
+                     </ViewCell>
+                  </DataTemplate>
+               </ListView.ItemTemplate>
+            </ListView>
+         </StackLayout>
+      </ScrollView>
+   </ContentPage.Content>
 </ContentPage>

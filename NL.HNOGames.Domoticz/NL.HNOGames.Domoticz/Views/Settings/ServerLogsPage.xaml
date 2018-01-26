@@ -1,45 +1,57 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
-             xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
-             x:Class="NL.HNOGames.Domoticz.Views.Settings.ServerLogsPage"
-            xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
-            ios:Page.UseSafeArea="true"
-             Style="{StaticResource ContentPageType}"
-             Title="{resources:Translate title_logs}">
+<ContentPage
+   x:Class="NL.HNOGames.Domoticz.Views.Settings.ServerLogsPage"
+   xmlns="http://xamarin.com/schemas/2014/forms"
+   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+   xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
+   xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+   xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
+   Title="{resources:Translate title_logs}"
+   ios:Page.UseSafeArea="true"
+   Style="{StaticResource ContentPageType}">
 
-    <ContentPage.Content>
+   <ContentPage.Content>
 
-        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+      <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
 
-            <StackLayout.Padding>
-                <OnIdiom x:TypeArguments="Thickness">
-                    <OnIdiom.Phone>20,20,20,20</OnIdiom.Phone>
-                    <OnIdiom.Tablet>150,30,150,30</OnIdiom.Tablet>
-                </OnIdiom>
-            </StackLayout.Padding>
+         <StackLayout.Padding>
+            <OnIdiom x:TypeArguments="Thickness">
+               <OnIdiom.Phone>20,20,20,20</OnIdiom.Phone>
+               <OnIdiom.Tablet>150,30,150,30</OnIdiom.Tablet>
+            </OnIdiom>
+         </StackLayout.Padding>
 
-            <SearchBar Style="{StaticResource SearchBarType}" x:Name="sbSearch"
-                       Placeholder="{resources:Translate filter}" CancelButtonColor="Red"
-                       TextChanged="sbSearch_TextChanged" />
-            <ListView x:Name="listView" BackgroundColor="{DynamicResource LightBackgroundColor}"
-                      VerticalOptions="FillAndExpand" HasUnevenRows="true" SeparatorVisibility="None"
-                      ItemSelected="OnItemSelected">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <custcontrol:CustomViewCell>
-                            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
-                                         VerticalOptions="StartAndExpand" Margin="0" Padding="0">
-                                <Label Text="{Binding Data}" Style="{StaticResource HeaderDarkType}" />
-                                <Label Text="{Binding Date}" Style="{StaticResource DetailType}" />
-                            </StackLayout>
-                        </custcontrol:CustomViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+         <SearchBar
+            x:Name="sbSearch"
+            CancelButtonColor="Red"
+            Placeholder="{resources:Translate filter}"
+            Style="{StaticResource SearchBarType}"
+            TextChanged="sbSearch_TextChanged" />
+         <ListView
+            x:Name="listView"
+            BackgroundColor="{DynamicResource LightBackgroundColor}"
+            HasUnevenRows="true"
+            ItemSelected="OnItemSelected"
+            SeparatorVisibility="None"
+            VerticalOptions="FillAndExpand">
+            <ListView.ItemTemplate>
+               <DataTemplate>
+                  <custcontrol:CustomViewCell>
+                     <StackLayout
+                        Margin="0"
+                        Padding="0"
+                        HorizontalOptions="FillAndExpand"
+                        Orientation="Vertical"
+                        VerticalOptions="StartAndExpand">
+                        <Label Style="{StaticResource HeaderDarkType}" Text="{Binding Data}" />
+                        <Label Style="{StaticResource DetailType}" Text="{Binding Date}" />
+                     </StackLayout>
+                  </custcontrol:CustomViewCell>
+               </DataTemplate>
+            </ListView.ItemTemplate>
+         </ListView>
+      </StackLayout>
 
-    </ContentPage.Content>
+   </ContentPage.Content>
 </ContentPage>

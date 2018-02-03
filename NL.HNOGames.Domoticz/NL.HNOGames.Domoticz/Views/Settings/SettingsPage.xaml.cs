@@ -163,6 +163,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
          //Set current language
          pckrLanguages.ItemsSource = Languages;
          pckrLanguages.SelectedItem = CrossMultilingual.Current.CurrentCultureInfo.EnglishName;
+         pckrLanguages.SelectedIndexChanged += pckrLanguages_SelectedIndexChanged;
       }
 
       /// <summary>

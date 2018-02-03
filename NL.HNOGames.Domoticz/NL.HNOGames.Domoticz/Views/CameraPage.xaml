@@ -1,58 +1,72 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:conv="clr-namespace:NL.HNOGames.Domoticz.Convertors;assembly=NL.HNOGames.Domoticz"
-             xmlns:controls="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
-             xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
-             x:Class="NL.HNOGames.Domoticz.Views.CameraPage"
-             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
-             ios:Page.UseSafeArea="true"
-             Style="{StaticResource ContentPageType}"
-             Title="{Binding Title}">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <conv:ByteArrayToImageSourceConverter x:Key="bic" />
-        </ResourceDictionary>
-    </ContentPage.Resources>
+<ContentPage
+   x:Class="NL.HNOGames.Domoticz.Views.CameraPage"
+   xmlns="http://xamarin.com/schemas/2014/forms"
+   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+   xmlns:controls="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+   xmlns:conv="clr-namespace:NL.HNOGames.Domoticz.Convertors;assembly=NL.HNOGames.Domoticz"
+   xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
+   xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+   Title="{Binding Title}"
+   ios:Page.UseSafeArea="true"
+   Style="{StaticResource ContentPageType}">
+   <ContentPage.Resources>
+      <ResourceDictionary>
+         <conv:ByteArrayToImageSourceConverter x:Key="bic" />
+      </ResourceDictionary>
+   </ContentPage.Resources>
 
-    <ContentPage.Content>
-        <StackLayout BackgroundColor="{DynamicResource LightBackgroundColor}">
-            <StackLayout.Padding>
-                <OnIdiom x:TypeArguments="Thickness">
-                    <OnIdiom.Phone>20,20,20,20</OnIdiom.Phone>
-                    <OnIdiom.Tablet>150,30,150,30</OnIdiom.Tablet>
-                </OnIdiom>
-            </StackLayout.Padding>
+   <ContentPage.Content>
+      <StackLayout BackgroundColor="{DynamicResource LightBackgroundColor}">
+         <StackLayout.Padding>
+            <OnIdiom x:TypeArguments="Thickness">
+               <OnIdiom.Phone>20,20,20,20</OnIdiom.Phone>
+               <OnIdiom.Tablet>150,30,150,30</OnIdiom.Tablet>
+            </OnIdiom>
+         </StackLayout.Padding>
 
-            <controls:FlowListView x:Name="listView"
-                                   SeparatorVisibility="None"
-                                   HasUnevenRows="true"
-                                   RowHeight="200"
-                                   FlowItemTapped="ListView_OnFlowItemTapped"
-                                    BackgroundColor="{DynamicResource LightBackgroundColor}"
-                                   FlowItemsSource="{Binding Cameras}">
-                <controls:FlowListView.FlowColumnTemplate>
-                    <DataTemplate>
-                        <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}" VerticalOptions="FillAndExpand">
-                            <Grid Padding="0" Margin="0" VerticalOptions="FillAndExpand">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-                                <StackLayout Grid.Column="0" Orientation="Vertical" HorizontalOptions="CenterAndExpand"
-                                         VerticalOptions="StartAndExpand" Style="{StaticResource LayoutDeviceCardType}">
-                                    <Label HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"
-                                       VerticalOptions="Start"
-                                       Text="{Binding Name}" Style="{StaticResource HeaderType}"/>
-                                    <Image Source="{Binding ImageBytes, Converter={StaticResource bic}}"
-                                       VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand"
-                                       Aspect="AspectFill" />
-                                </StackLayout>
-                            </Grid>
-                        </custcontrol:MaterialFrame>
-                    </DataTemplate>
-                </controls:FlowListView.FlowColumnTemplate>
-            </controls:FlowListView>
-        </StackLayout>
-    </ContentPage.Content>
+         <controls:FlowListView
+            x:Name="listView"
+            BackgroundColor="{DynamicResource LightBackgroundColor}"
+            FlowItemTapped="ListView_OnFlowItemTapped"
+            FlowItemsSource="{Binding Cameras}"
+            HasUnevenRows="true"
+            RowHeight="200"
+            SeparatorVisibility="None">
+            <controls:FlowListView.FlowColumnTemplate>
+               <DataTemplate>
+                  <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}" VerticalOptions="FillAndExpand">
+                     <Grid
+                        Margin="0"
+                        Padding="0"
+                        VerticalOptions="FillAndExpand">
+                        <Grid.ColumnDefinitions>
+                           <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout
+                           Grid.Column="0"
+                           HorizontalOptions="CenterAndExpand"
+                           Orientation="Vertical"
+                           Style="{StaticResource LayoutDeviceCardType}"
+                           VerticalOptions="StartAndExpand">
+                           <Label
+                              HorizontalOptions="CenterAndExpand"
+                              HorizontalTextAlignment="Center"
+                              Style="{StaticResource HeaderType}"
+                              Text="{Binding Name}"
+                              VerticalOptions="Start" />
+                           <Image
+                              Aspect="AspectFill"
+                              HorizontalOptions="CenterAndExpand"
+                              Source="{Binding ImageBytes, Converter={StaticResource bic}}"
+                              VerticalOptions="FillAndExpand" />
+                        </StackLayout>
+                     </Grid>
+                  </custcontrol:MaterialFrame>
+               </DataTemplate>
+            </controls:FlowListView.FlowColumnTemplate>
+         </controls:FlowListView>
+      </StackLayout>
+   </ContentPage.Content>
 </ContentPage>

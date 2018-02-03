@@ -1,51 +1,69 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
-            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            x:Class="NL.HNOGames.Domoticz.Views.OverviewTabbedPage"
-            xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"    
-            xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
-            ios:Page.UseSafeArea="true"
-            Title="Domoticz">
-    <TabbedPage.ToolbarItems>
+<TabbedPage
+   x:Class="NL.HNOGames.Domoticz.Views.OverviewTabbedPage"
+   xmlns="http://xamarin.com/schemas/2014/forms"
+   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+   xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+   xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
+   Title="Domoticz"
+   ios:Page.UseSafeArea="true">
+   <TabbedPage.ToolbarItems>
 
-        <ToolbarItem x:Name="tiPlans" Text="{resources:Translate title_plans}" Order="Primary" Clicked="OnShowPlansClick">
-            <ToolbarItem.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource"
-                            iOS="ic_home.png"
-                            Android="ic_home.png"
-                            WinPhone="ic_home.png" />
-            </ToolbarItem.Icon>
-        </ToolbarItem>
+      <ToolbarItem
+         x:Name="tiPlans"
+         Clicked="OnShowPlansClick"
+         Order="Primary"
+         Text="{resources:Translate title_plans}">
+         <ToolbarItem.Icon>
+            <OnPlatform
+               x:TypeArguments="FileImageSource"
+               Android="ic_home.png"
+               WinPhone="ic_home.png"
+               iOS="ic_home.png" />
+         </ToolbarItem.Icon>
+      </ToolbarItem>
 
-        <ToolbarItem x:Name="tiQRCode" Text="{resources:Translate action_qrcode_scan}" Order="Primary"
-                     Clicked="tiQRCode_Activated">
-            <ToolbarItem.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource"
-                            iOS="ic_qrcode.png"
-                            Android="ic_qrcode.png"
-                            WinPhone="ic_qrcode.png" />
-            </ToolbarItem.Icon>
-        </ToolbarItem>
+      <ToolbarItem
+         x:Name="tiQRCode"
+         Clicked="tiQRCode_Activated"
+         Order="Primary"
+         Text="{resources:Translate action_qrcode_scan}">
+         <ToolbarItem.Icon>
+            <OnPlatform
+               x:TypeArguments="FileImageSource"
+               Android="ic_qrcode.png"
+               WinPhone="ic_qrcode.png"
+               iOS="ic_qrcode.png" />
+         </ToolbarItem.Icon>
+      </ToolbarItem>
 
-        <ToolbarItem x:Name="tiSpeechCode" Text="{resources:Translate action_speech}" Order="Primary"
-                     Clicked="tiSpeechCode_Activated">
-            <ToolbarItem.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource"
-                            iOS="ic_keyboard_voice.png"
-                            Android="ic_keyboard_voice.png"
-                            WinPhone="ic_keyboard_voice.png" />
-            </ToolbarItem.Icon>
-        </ToolbarItem>
+      <ToolbarItem
+         x:Name="tiSpeechCode"
+         Clicked="tiSpeechCode_Activated"
+         Order="Primary"
+         Text="{resources:Translate action_speech}">
+         <ToolbarItem.Icon>
+            <OnPlatform
+               x:TypeArguments="FileImageSource"
+               Android="ic_keyboard_voice.png"
+               WinPhone="ic_keyboard_voice.png"
+               iOS="ic_keyboard_voice.png" />
+         </ToolbarItem.Icon>
+      </ToolbarItem>
 
-        <ToolbarItem Text="{resources:Translate action_settings}" Order="Primary" Clicked="OnSettingsClick">
-            <ToolbarItem.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource"
-                            iOS="ic_settings.png"
-                            Android="ic_settings.png"
-                            WinPhone="ic_settings.png" />
-            </ToolbarItem.Icon>
-        </ToolbarItem>
+      <ToolbarItem
+         Clicked="OnSettingsClick"
+         Order="Primary"
+         Text="{resources:Translate action_settings}">
+         <ToolbarItem.Icon>
+            <OnPlatform
+               x:TypeArguments="FileImageSource"
+               Android="ic_settings.png"
+               WinPhone="ic_settings.png"
+               iOS="ic_settings.png" />
+         </ToolbarItem.Icon>
+      </ToolbarItem>
 
-    </TabbedPage.ToolbarItems>
+   </TabbedPage.ToolbarItems>
 </TabbedPage>

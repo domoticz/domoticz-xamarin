@@ -1,42 +1,58 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 
-<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
-                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                 xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
-                 xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
-                 xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
-                 xmlns:selector="clr-namespace:NL.HNOGames.Domoticz.ViewSelector;assembly=NL.HNOGames.Domoticz"
-                 x:Class="NL.HNOGames.Domoticz.Views.Dialog.NotificationsPopup">
+<pages:PopupPage
+   x:Class="NL.HNOGames.Domoticz.Views.Dialog.NotificationsPopup"
+   xmlns="http://xamarin.com/schemas/2014/forms"
+   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+   xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
+   xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+   xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
+   xmlns:selector="clr-namespace:NL.HNOGames.Domoticz.ViewSelector;assembly=NL.HNOGames.Domoticz">
 
-    <StackLayout VerticalOptions="Center"
-                 HorizontalOptions="FillAndExpand"
-                 Orientation="Vertical"
-                 Padding="20, 10, 20, 20"
-                 BackgroundColor="{StaticResource LightBackgroundColor}"
-                 Margin="20, 10, 20, 20"
-                 Opacity="1">
+   <StackLayout
+      Margin="20,10,20,20"
+      Padding="20,10,20,20"
+      BackgroundColor="{StaticResource LightBackgroundColor}"
+      HorizontalOptions="FillAndExpand"
+      Opacity="1"
+      Orientation="Vertical"
+      VerticalOptions="Center">
 
-        <Label x:Name="lvlTitle" Text="{resources:Translate button_status_notifications}"
-               Style="{StaticResource HeaderType}" Margin="0,20,0,10" />
+      <Label
+         x:Name="lvlTitle"
+         Margin="0,20,0,10"
+         Style="{StaticResource HeaderType}"
+         Text="{resources:Translate button_status_notifications}" />
 
-        <ListView x:Name="listView" BackgroundColor="{DynamicResource LightBackgroundColor}"
-                  VerticalOptions="FillAndExpand"
-                  ItemSelected="OnItemSelected" HasUnevenRows="true">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <custcontrol:CustomViewCell>
-                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
-                                     VerticalOptions="CenterAndExpand" Padding="10">
-                            <Label Text="{Binding CustomMessage}" Style="{StaticResource HeaderDarkType}" />
-                            <Label Text="{Binding PriorityDescription}" Style="{StaticResource DetailType}" />
-                            <Label Text="{Binding SystemsDescription}" Style="{StaticResource DetailType}" />
-                        </StackLayout>
-                    </custcontrol:CustomViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+      <ListView
+         x:Name="listView"
+         BackgroundColor="{DynamicResource LightBackgroundColor}"
+         HasUnevenRows="true"
+         ItemSelected="OnItemSelected"
+         VerticalOptions="FillAndExpand">
+         <ListView.ItemTemplate>
+            <DataTemplate>
+               <custcontrol:CustomViewCell>
+                  <StackLayout
+                     Padding="10"
+                     HorizontalOptions="FillAndExpand"
+                     Orientation="Vertical"
+                     VerticalOptions="CenterAndExpand">
+                     <Label Style="{StaticResource HeaderDarkType}" Text="{Binding CustomMessage}" />
+                     <Label Style="{StaticResource DetailType}" Text="{Binding PriorityDescription}" />
+                     <Label Style="{StaticResource DetailType}" Text="{Binding SystemsDescription}" />
+                  </StackLayout>
+               </custcontrol:CustomViewCell>
+            </DataTemplate>
+         </ListView.ItemTemplate>
+      </ListView>
 
-      <custcontrol:ExtendedButton Padding="20,0,20,0" x:Name="btnOK" Text="{resources:Translate ok}" HorizontalOptions="Fill" IsEnabled="True"
-                Clicked="btnOK_Clicked" />
-    </StackLayout>
+      <custcontrol:ExtendedButton
+         x:Name="btnOK"
+         Padding="20,0,20,0"
+         Clicked="btnOK_Clicked"
+         HorizontalOptions="Fill"
+         IsEnabled="True"
+         Text="{resources:Translate ok}" />
+   </StackLayout>
 </pages:PopupPage>

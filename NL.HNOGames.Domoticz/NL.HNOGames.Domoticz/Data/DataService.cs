@@ -550,6 +550,7 @@ namespace NL.HNOGames.Domoticz.Data
          var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Log.GRAPH) + idx;
          url += ConstantValues.Url.Log.GRAPH_RANGE + range.ToString().ToLower();
          url += ConstantValues.Url.Log.GRAPH_TYPE + type;
+         App.AddLog("JSON Call: " + url);
 
          try
          {
@@ -583,6 +584,7 @@ namespace NL.HNOGames.Domoticz.Data
 
          var url = await App.ConnectionService.ConstructSetUrlAsync(Server, jsonUrl, idx, jsonAction, value);
          url += !string.IsNullOrEmpty(password) ? "&passcode=" + password : "&passcode=";
+         App.AddLog("Action Call: " + url);
 
          try
          {

@@ -135,17 +135,21 @@ namespace NL.HNOGames.Domoticz
       /// </summary>
       private static void SetLanguage()
       {
-         //set language
-         if (!String.IsNullOrEmpty(App.AppSettings.SpecifiedLanguage))
+         try
          {
-            CrossMultilingual.Current.CurrentCultureInfo = CrossMultilingual.Current.NeutralCultureInfoList.ToList().First(element => element.EnglishName.Contains(App.AppSettings.SpecifiedLanguage));
-            AppResources.Culture = CrossMultilingual.Current.CurrentCultureInfo;
-         }
-         else
-         {
-            AppResources.Culture = CrossMultilingual.Current.DeviceCultureInfo;
-            App.AppSettings.SpecifiedLanguage = CrossMultilingual.Current.DeviceCultureInfo.EnglishName;
-         }
+            //set language
+            if (!String.IsNullOrEmpty(App.AppSettings.SpecifiedLanguage))
+            {
+               CrossMultilingual.Current.CurrentCultureInfo = CrossMultilingual.Current.NeutralCultureInfoList.ToList().First(element => element.EnglishName.Contains(App.AppSettings.SpecifiedLanguage));
+               AppResources.Culture = CrossMultilingual.Current.CurrentCultureInfo;
+            }
+            else
+            {
+               AppResources.Culture = CrossMultilingual.Current.DeviceCultureInfo;
+               App.AppSettings.SpecifiedLanguage = CrossMultilingual.Current.DeviceCultureInfo.EnglishName;
+            }
+         }catch(Exception )
+         { }
       }
 
       /// <summary>

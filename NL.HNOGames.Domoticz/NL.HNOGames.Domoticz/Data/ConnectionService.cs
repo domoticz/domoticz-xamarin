@@ -1,8 +1,8 @@
-﻿using NL.HNOGames.Domoticz.Models;
+﻿using ModernHttpClient;
+using NL.HNOGames.Domoticz.Models;
 using Plugin.Connectivity;
 using System;
 using System.Globalization;
-using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,14 +16,14 @@ namespace NL.HNOGames.Domoticz.Data
    {
       public HttpClient Client;
       private string _latestUsedbaseUrl = string.Empty;
-      private HttpClientHandler _cookieHandler;
+      private readonly NativeCookieHandler _cookieHandler;
 
       /// <summary>
       /// Constructor
       /// </summary>
       public ConnectionService()
       {
-         
+         _cookieHandler = new NativeCookieHandler();
          RefreshClient(); //default 
       }
 
@@ -52,16 +52,12 @@ namespace NL.HNOGames.Domoticz.Data
          {*/
 
          CleanClient();
-
-         _cookieHandler = new HttpClientHandler()
-         {
-            CookieContainer = new CookieContainer()
-         };
-         Client = new HttpClient(_cookieHandler)
+         Client = new HttpClient(new NativeMessageHandler(false, false, _cookieHandler))
          {
             MaxResponseContentBufferSize = 25600000,
             Timeout = TimeSpan.FromMilliseconds(10000)
          };
+
          //}
       }
 

@@ -9,7 +9,7 @@
     "NETStandard.Library": "2.0.1",
     "Newtonsoft.Json": "10.0.3",
     "PCLStorage": "1.0.2",
-    "Plugin.DeviceOrientation": "1.0.6",
+    "Plugin.DeviceOrientation": "1.0.7",
     "Plugin.InAppBilling": "1.2.4",
     "Plugin.Multilingual": "1.0.2",
     "Plugin.Permissions": "2.2.1",

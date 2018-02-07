@@ -226,10 +226,10 @@
       <HintPath>..\..\packages\Xam.Plugin.DeviceInfo.3.1.0\lib\Xamarin.iOS10\Plugin.DeviceInfo.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.DeviceOrientation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Plugin.DeviceOrientation.1.0.6\lib\Xamarin.iOS10\Plugin.DeviceOrientation.dll</HintPath>
+      <HintPath>..\..\packages\Plugin.DeviceOrientation.1.0.7\lib\Xamarin.iOS10\Plugin.DeviceOrientation.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.DeviceOrientation.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Plugin.DeviceOrientation.1.0.6\lib\Xamarin.iOS10\Plugin.DeviceOrientation.Abstractions.dll</HintPath>
+      <HintPath>..\..\packages\Plugin.DeviceOrientation.1.0.7\lib\Xamarin.iOS10\Plugin.DeviceOrientation.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.InAppBilling, Version=1.2.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Plugin.InAppBilling.1.2.4\lib\Xamarin.iOS10\Plugin.InAppBilling.dll</HintPath>

@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace NL.HNOGames.Domoticz.Themes
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Dark : ResourceDictionary
+	public partial class Base : ResourceDictionary
     {
-		public Dark ()
+		public Base()
 		{
 			InitializeComponent ();
 		}

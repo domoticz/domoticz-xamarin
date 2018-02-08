@@ -32,6 +32,56 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             btnCheck.IsVisible = true;
             lblSSLWarning.IsVisible = string.Compare(txtRemoteProtocol.Items[txtRemoteProtocol.SelectedIndex], "https",
                                           StringComparison.OrdinalIgnoreCase) == 0;
+
+            //set entry flow
+            txtRemoteServerAddress.Completed += (object sender, EventArgs e) => { txtRemotePort.Focus(); };
+            txtRemotePort.Completed += (object sender, EventArgs e) => { txtRemoteDirectory.Focus(); };
+            txtRemoteDirectory.Completed += (object sender, EventArgs e) => { txtRemoteUsername.Focus(); };
+            txtRemoteUsername.Completed += (object sender, EventArgs e) => { txtRemotePassword.Focus(); };
+            txtLocalServerAddress.Completed += (object sender, EventArgs e) => { txtLocalPort.Focus(); };
+            txtLocalPort.Completed += (object sender, EventArgs e) => { txtLocalDirectory.Focus(); };
+            txtLocalDirectory.Completed += (object sender, EventArgs e) => { txtLocalUsername.Focus(); };
+            txtLocalUsername.Completed += (object sender, EventArgs e) => { txtLocalPassword.Focus(); };
+        }
+
+        /// <summary>
+        /// reset all values
+        /// </summary>
+        private void btnReset_Clicked(object sender, EventArgs e)
+        {
+            swEnableLocalSettings.IsToggled = false;
+            txtRemoteProtocol.SelectedIndex = 0;
+            txtRemotePort.Text = "";
+            txtRemoteServerAddress.Text = "";
+            txtRemoteUsername.Text = "";
+            txtRemotePassword.Text = "";
+            txtRemoteDirectory.Text = "";
+
+            txtLocalProtocol.SelectedIndex = 0;
+            txtLocalPort.Text = "";
+            txtLocalServerAddress.Text = "";
+            txtLocalUsername.Text = "";
+            txtLocalPassword.Text = "";
+            txtLocalDirectory.Text = "";
+        }
+
+        /// <summary>
+        /// show demo account
+        /// </summary>
+        private void BtnDemo_OnClicked(object sender, EventArgs e)
+        {
+            swEnableLocalSettings.IsToggled = false;
+            txtRemoteProtocol.SelectedIndex = 1;
+            txtRemotePort.Text = "24443";
+            txtRemoteServerAddress.Text = "gandalf.domoticz.com";
+            txtRemoteUsername.Text = "admin";
+            txtRemotePassword.Text = "D@m@t1czCl0ud";
+            txtLocalProtocol.SelectedIndex = 0;
+            txtLocalPort.Text = "";
+            txtLocalServerAddress.Text = "";
+            txtLocalUsername.Text = "";
+            txtLocalPassword.Text = "";
+            txtLocalDirectory.Text = "";
         }
 
         /// <summary>
@@ -123,12 +173,16 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                         lblResult.Text = App.ApiService.Response != null
                             ? App.ApiService.Response.ReasonPhrase
                             : AppResources.failed_to_get_switches;
+                        if (App.ApiService.Response != null && App.ApiService.Response.ReasonPhrase == "OK")
+                            lblResult.Text = AppResources.failed_to_get_switches;
                     }
                 }
                 else
+                {
                     lblResult.Text = App.ApiService.Response != null
-                        ? App.ApiService.Response.ReasonPhrase
-                        : AppResources.error_timeout;
+                             ? App.ApiService.Response.ReasonPhrase
+                             : AppResources.error_notConnected;
+                }
 
                 App.HideLoading();
             }

@@ -1,17 +1,24 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
-            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            x:Class="NL.HNOGames.Domoticz.Views.GraphTabbedPage"
-            xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz">
-    <TabbedPage.ToolbarItems>
-        <ToolbarItem Text="{resources:Translate filter}" Order="Primary" Activated="ToolbarItem_Activated">
-            <ToolbarItem.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource"
-                            iOS="ic_filter_list.png"
-                            Android="ic_filter_list.png"
-                            WinPhone="ic_filter_list.png" />
-            </ToolbarItem.Icon>
-        </ToolbarItem>
-    </TabbedPage.ToolbarItems>
+<TabbedPage
+   x:Class="NL.HNOGames.Domoticz.Views.GraphTabbedPage"
+   xmlns="http://xamarin.com/schemas/2014/forms"
+   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+   xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+   xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
+   ios:Page.UseSafeArea="true">
+   <TabbedPage.ToolbarItems>
+      <ToolbarItem
+         Activated="ToolbarItem_Activated"
+         Order="Primary"
+         Text="{resources:Translate filter}">
+         <ToolbarItem.Icon>
+            <OnPlatform
+               x:TypeArguments="FileImageSource"
+               Android="ic_filter_list.png"
+               WinPhone="ic_filter_list.png"
+               iOS="ic_filter_list.png" />
+         </ToolbarItem.Icon>
+      </ToolbarItem>
+   </TabbedPage.ToolbarItems>
 </TabbedPage>

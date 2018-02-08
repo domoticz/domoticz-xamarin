@@ -1,12 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:theme="clr-namespace:NL.HNOGames.Domoticz.Themes;assembly=NL.HNOGames.Domoticz"
-             x:Class="NL.HNOGames.Domoticz.App">
-
-    <Application.Resources>
-        <ResourceDictionary MergedWith="theme:Base" />
-    </Application.Resources>
-
+<?xml version="1.0" encoding="utf-8" ?>
+<Application
+   x:Class="NL.HNOGames.Domoticz.App"
+   xmlns="http://xamarin.com/schemas/2014/forms"
+   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+   xmlns:theme="clr-namespace:NL.HNOGames.Domoticz.Themes;assembly=NL.HNOGames.Domoticz">
+   <Application.Resources>
+      <ResourceDictionary MergedWith="theme:Base" />
+   </Application.Resources>
 </Application>

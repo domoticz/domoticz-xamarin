@@ -1,26 +1,38 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="NL.HNOGames.Domoticz.Views.CameraDetailPage"
-             Style="{StaticResource ContentPageType}">
+<ContentPage
+   x:Class="NL.HNOGames.Domoticz.Views.CameraDetailPage"
+   xmlns="http://xamarin.com/schemas/2014/forms"
+   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+   xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+   ios:Page.UseSafeArea="true"
+   Style="{StaticResource ContentPageType}">
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Share" Order="Primary" Clicked="MenuItem_OnClicked">
-            <ToolbarItem.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource"
-                            iOS="ic_share.png"
-                            Android="ic_share.png"
-                            WinPhone="ic_share.png" />
-            </ToolbarItem.Icon>
-        </ToolbarItem>
-    </ContentPage.ToolbarItems>
-    
-    <ContentPage.Content>
-        <StackLayout Padding="20" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Image x:Name="cameraImage"
-                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
-                   Aspect="AspectFill" />
-        </StackLayout>
-    </ContentPage.Content>
+   <ContentPage.ToolbarItems>
+      <ToolbarItem
+         Clicked="MenuItem_OnClicked"
+         Order="Primary"
+         Text="Share">
+         <ToolbarItem.Icon>
+            <OnPlatform
+               x:TypeArguments="FileImageSource"
+               Android="ic_share.png"
+               WinPhone="ic_share.png"
+               iOS="ic_share.png" />
+         </ToolbarItem.Icon>
+      </ToolbarItem>
+   </ContentPage.ToolbarItems>
+
+   <ContentPage.Content>
+      <StackLayout
+         Padding="20"
+         HorizontalOptions="FillAndExpand"
+         VerticalOptions="FillAndExpand">
+         <Image
+            x:Name="cameraImage"
+            Aspect="AspectFill"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand" />
+      </StackLayout>
+   </ContentPage.Content>
 </ContentPage>

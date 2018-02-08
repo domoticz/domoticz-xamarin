@@ -43,10 +43,17 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
             var logs = await App.ApiService.GetLogs(idx, _selectedDevice is Scene);
             if (logs?.result == null)
                 logs = await App.ApiService.GetLogs(idx, false, true);
+
+            int counterMaxLogs = 0;
             if (logs?.result != null)
             {
                 foreach (var n in logs.result)
+                {
+                    if (counterMaxLogs > 250)
+                        break;
                     _logList.Add(n);
+                    counterMaxLogs++;
+                }
                 listView.ItemsSource = _logList;
             }
             else

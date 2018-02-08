@@ -9,7 +9,15 @@ using PushNotification.Plugin;
 using NL.HNOGames.Domoticz.Helpers;
 using UserNotifications;
 using Firebase.CloudMessaging;
+using Firebase.Core;
 using System.Net;
+using Google.Maps;
+
+#if NETFX_CORE
+[assembly: Xamarin.Forms.Platform.WinRT.ExportRenderer(typeof(Xamarin.RangeSlider.Forms.RangeSlider), typeof(Xamarin.RangeSlider.Forms.RangeSliderRenderer))]
+#else
+[assembly: Xamarin.Forms.ExportRenderer(typeof(Xamarin.RangeSlider.Forms.RangeSlider), typeof(Xamarin.RangeSlider.Forms.RangeSliderRenderer))]
+#endif
 
 namespace NL.HNOGames.Domoticz.iOS
 {
@@ -58,20 +66,25 @@ namespace NL.HNOGames.Domoticz.iOS
                     App.AddLog("GC Authorization granted");
                 });
 
+                // For iOS 10 display notification (sent via APNS)
                 UNUserNotificationCenter.Current.Delegate = this;
+
+                // For iOS 10 data message (sent via FCM)
                 Messaging.SharedInstance.RemoteMessageDelegate = this;
             }
             else
             {
+                // iOS 9 or before
                 var allNotificationTypes = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound;
                 var settings = UIUserNotificationSettings.GetSettingsForTypes(allNotificationTypes, null);
                 UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
             }
 
             UIApplication.SharedApplication.RegisterForRemoteNotifications();
+
+
             App.AddLog("GCM: Setup Firebase");
-            // Firebase component initialize
-            Firebase.Analytics.App.Configure();
+            Firebase.Core.App.Configure();
             Firebase.InstanceID.InstanceId.Notifications.ObserveTokenRefresh((sender, e) =>
             {
                 var refreshedToken = Firebase.InstanceID.InstanceId.SharedInstance.Token;
@@ -81,7 +94,7 @@ namespace NL.HNOGames.Domoticz.iOS
 
             return base.FinishedLaunching(app, options);
         }
-        
+
         public override void DidEnterBackground(UIApplication application)
         {
             Messaging.SharedInstance.Disconnect();
@@ -106,11 +119,15 @@ namespace NL.HNOGames.Domoticz.iOS
             Messaging.SharedInstance.Connect((error) =>
             {
                 if (error == null)
+                {
                     Messaging.SharedInstance.Subscribe("/topics/all");
+                }
 
                 App.AddLog(error != null ? "GCM: error occured: " + error.Description : "GCM: connect success");
                 if (error != null && !tokenUploaded)
+                {
                     SaveToken();
+                }
             });
         }
 
@@ -124,6 +141,7 @@ namespace NL.HNOGames.Domoticz.iOS
                 registerAsync(token);
             else
                 App.AddLog("GCM: No token available");
+
             tokenUploaded = true;
         }
 
@@ -148,7 +166,7 @@ namespace NL.HNOGames.Domoticz.iOS
                     title = "Domoticz";
                 if (application.ApplicationState == UIApplicationState.Active)
                     debugAlert(title, body);
-                
+
                 //else if (App.AppSettings.EnableNotifications)
                 //    CrossLocalNotifications.Current.Show(title, body);
             }
@@ -178,6 +196,16 @@ namespace NL.HNOGames.Domoticz.iOS
         {
             App.AddLog("GCM: Notification received");
             App.AddLog(remoteMessage.AppData.ToString());
+        }
+
+        public void DidRefreshRegistrationToken(Messaging messaging, string fcmToken)
+        {
+            var token = String.IsNullOrEmpty(fcmToken) ? Firebase.InstanceID.InstanceId.SharedInstance.Token : fcmToken;
+            if (token != null)
+                registerAsync(token);
+            else
+                App.AddLog("GCM: No token available");
+            tokenUploaded = true;
         }
     }
 }

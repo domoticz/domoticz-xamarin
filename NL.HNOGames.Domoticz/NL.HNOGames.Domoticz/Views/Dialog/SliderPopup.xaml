@@ -1,34 +1,56 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
-                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                 xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
-                 xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
-                 xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
-                 xmlns:selector="clr-namespace:NL.HNOGames.Domoticz.ViewSelector;assembly=NL.HNOGames.Domoticz"
-                 xmlns:range="clr-namespace:Xamarin.RangeSlider.Forms;assembly=Xamarin.RangeSlider.Forms"
-                 x:Class="NL.HNOGames.Domoticz.Views.Dialog.SliderPopup">
+<pages:PopupPage
+   x:Class="NL.HNOGames.Domoticz.Views.Dialog.SliderPopup"
+   xmlns="http://xamarin.com/schemas/2014/forms"
+   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+   xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
+   xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+   xmlns:range="clr-namespace:Xamarin.RangeSlider.Forms;assembly=Xamarin.RangeSlider.Forms"
+   xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
+   xmlns:selector="clr-namespace:NL.HNOGames.Domoticz.ViewSelector;assembly=NL.HNOGames.Domoticz">
 
-    <StackLayout VerticalOptions="Center"
-                 HorizontalOptions="FillAndExpand"
-                 BackgroundColor="{StaticResource LightBackgroundColor}"
-                 Orientation="Vertical"
-                 Padding="20, 10, 20, 20"
-                 Margin="20, 10, 20, 20"
-                 Opacity="0.9">
+   <StackLayout
+      Margin="20,10,20,20"
+      Padding="20,10,20,20"
+      BackgroundColor="{StaticResource LightBackgroundColor}"
+      HorizontalOptions="FillAndExpand"
+      Opacity="0.9"
+      Orientation="Vertical"
+      VerticalOptions="Center">
 
-        <Label x:Name="lvlTitle" Text="Select Level" Style="{StaticResource HeaderType}" Margin="0,20,0,10" />
-        <range:RangeSlider x:Name="sDimmer"
-                           MinimumValue="1"
-                           MaximumValue="100"
-                           LowerValue="1"
-                           UpperValue="100"
-                           StepValue="0"
-                           StepValueContinuously="False"
-                           VerticalOptions="Center"
-                           TextSize="15" />
+      <Label
+         x:Name="lvlTitle"
+         Margin="0,20,0,10"
+         Style="{StaticResource HeaderType}"
+         Text="Select Level" />
 
-        <Button x:Name="btnOnButton" Text="{resources:Translate ok}" HorizontalOptions="CenterAndExpand"
-                Margin="0,10,0,10" Clicked="btnSave_Clicked" />
-    </StackLayout>
+      <range:RangeSlider
+         x:Name="sDimmer"
+         LowerValue="1"
+         MaximumValue="100"
+         MinimumValue="1"
+         StepValue="0"
+         StepValueContinuously="False"
+         TextSize="15"
+         UpperValue="100"
+         VerticalOptions="Center" />
+
+      <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+         <custcontrol:ExtendedButton
+            x:Name="btnOnButton"
+            Margin="0,10,0,10"
+            Padding="20,0,20,0"
+            Clicked="btnSave_Clicked"
+            HorizontalOptions="CenterAndExpand"
+            Text="{resources:Translate ok}" />
+         <custcontrol:ExtendedButton
+            x:Name="btnCancelButton"
+            Margin="20,10,0,10"
+            Padding="20,0,20,0"
+            Clicked="btnCancel_Clicked"
+            HorizontalOptions="CenterAndExpand"
+            Text="{resources:Translate cancel}" />
+      </StackLayout>
+   </StackLayout>
 </pages:PopupPage>

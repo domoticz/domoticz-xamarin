@@ -1,22 +1,22 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="X5k-f2-b5h" launchScreen="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="X5k-f2-b5h">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Domoticz-->
         <scene sceneID="gAE-YM-kbH">
             <objects>
-                <viewController id="X5k-f2-b5h" sceneMemberID="viewController" title="Domoticz" wantsFullScreenLayout="YES">
+                <viewController title="Domoticz" wantsFullScreenLayout="YES" id="X5k-f2-b5h" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Y8P-hJ-Z43"/>
-                        <viewControllerLayoutGuide type="bottom" id="9ZL-r4-8FZ"/>
+                        <viewControllerLayoutGuide type="top" id="913"/>
+                        <viewControllerLayoutGuide type="bottom" id="914"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yd7-JS-zBw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews/>
-                        <color key="backgroundColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XAI-xm-WK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -47,8 +47,11 @@
         <image name="harddisk.png" width="128" height="128"/>
         <image name="heating.png" width="128" height="128"/>
         <image name="ic_arrow_down.png" width="96" height="96"/>
+        <image name="ic_arrow_drop_down.png" width="24" height="24"/>
+        <image name="ic_arrow_drop_up.png" width="24" height="24"/>
         <image name="ic_arrow_up.png" width="96" height="96"/>
         <image name="ic_cameras.png" width="92" height="92"/>
+        <image name="ic_content_copy.png" width="24" height="24"/>
         <image name="ic_dashboard.png" width="92" height="92"/>
         <image name="ic_dashboard_white.png" width="24" height="24"/>
         <image name="ic_domoticz_logo.png" width="859" height="263"/>
@@ -57,6 +60,7 @@
         <image name="ic_filter_list.png" width="24" height="24"/>
         <image name="ic_highlight_white.png" width="24" height="24"/>
         <image name="ic_home.png" width="24" height="24"/>
+        <image name="ic_keyboard_voice.png" width="24" height="24"/>
         <image name="ic_launcher.png" width="192" height="192"/>
         <image name="ic_lightbulb_outline.png" width="24" height="24"/>
         <image name="ic_logs.png" width="92" height="92"/>
@@ -66,10 +70,12 @@
         <image name="ic_plan.png" width="92" height="92"/>
         <image name="ic_play.png" width="45" height="45"/>
         <image name="ic_plus.png" width="96" height="96"/>
+        <image name="ic_qrcode.png" width="24" height="24"/>
         <image name="ic_repeat_black_18dp.png" width="54" height="54"/>
         <image name="ic_scenes.png" width="92" height="92"/>
         <image name="ic_schedule_black_18dp.png" width="54" height="54"/>
         <image name="ic_settings.png" width="24" height="24"/>
+        <image name="ic_share.png" width="24" height="24"/>
         <image name="ic_show_chart.png" width="24" height="24"/>
         <image name="ic_sort.png" width="144" height="144"/>
         <image name="ic_star.png" width="24" height="24"/>

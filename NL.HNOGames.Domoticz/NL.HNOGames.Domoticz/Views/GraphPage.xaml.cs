@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using NL.HNOGames.Domoticz.Data;
 using NL.HNOGames.Domoticz.Models;
 using Xamarin.Forms.Xaml;
+using Plugin.DeviceOrientation;
 
 namespace NL.HNOGames.Domoticz.Views
 {
@@ -23,6 +24,14 @@ namespace NL.HNOGames.Domoticz.Views
         private readonly Random _random = new Random();
         private List<Series> _originalSeries;
 
+        private String activeFilter = AppResources.filterOn_all;
+
+        private void OrientationChanged(object sender, Plugin.DeviceOrientation.Abstractions.OrientationChangedEventArgs e)
+        {
+            //refresh graph
+            InitGraphData();
+        }
+
         public GraphPage(Device device,
             string sensor = "temp",
             ConstantValues.GraphRange showRange = ConstantValues.GraphRange.Day)
@@ -33,6 +42,9 @@ namespace NL.HNOGames.Domoticz.Views
             _type = sensor;
             InitializeComponent();
             InitGraphData();
+
+            if (Xamarin.Forms.Device.RuntimePlatform == Xamarin.Forms.Device.iOS)
+                CrossDeviceOrientation.Current.OrientationChanged += OrientationChanged;
         }
 
         /// <summary>
@@ -50,6 +62,7 @@ namespace NL.HNOGames.Domoticz.Views
                 InitModel();
                 InitLegende();
                 ProcessData(graphData);
+                FilterGraphResult();
                 oGraphView.Model = _model;
             }
             catch (Exception ex)
@@ -111,6 +124,27 @@ namespace NL.HNOGames.Domoticz.Views
             if (secondValueList != null && secondValueList.Count > 0)
             {
                 var line = CreateLine("Second Percentage", secondValueList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
+            var PercentageMinList = graphData.result.Select(item => item.getValueMin()).Where(item => item.HasValue).ToList();
+            if (PercentageMinList != null && PercentageMinList.Count > 0)
+            {
+                var line = CreateLine("Min Percentage", PercentageMinList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
+            var PercentageMaxList = graphData.result.Select(item => item.getValueMax()).Where(item => item.HasValue).ToList();
+            if (PercentageMaxList != null && PercentageMaxList.Count > 0)
+            {
+                var line = CreateLine("Max Percentage", PercentageMaxList, dateTimeList);
+                _model.Series.Add(line);
+            }
+
+            var PercentageAvgList = graphData.result.Select(item => item.getValueAvg()).Where(item => item.HasValue).ToList();
+            if (PercentageAvgList != null && PercentageAvgList.Count > 0)
+            {
+                var line = CreateLine("Avg Percentage", PercentageAvgList, dateTimeList);
                 _model.Series.Add(line);
             }
 
@@ -284,7 +318,7 @@ namespace NL.HNOGames.Domoticz.Views
             var lineColor = $"#{_random.Next(0x1000000):X6}";
             return new LineSeries
             {
-                StrokeThickness = 1,
+                StrokeThickness = 2,
                 MarkerSize = 2,
                 MarkerStroke = OxyColor.Parse(lineColor),
                 MarkerType = MarkerType.Circle,
@@ -321,8 +355,8 @@ namespace NL.HNOGames.Domoticz.Views
 
             _model.TextColor = OxyColor.Parse("#757575");
             _model.Axes.Add(
-                new DateTimeAxis {Title = "DateTime", Position = AxisPosition.Bottom, StringFormat = format});
-            _model.Axes.Add(new LinearAxis {Title = "Value", Position = AxisPosition.Left});
+                new DateTimeAxis { Title = "DateTime", Position = AxisPosition.Bottom, StringFormat = format });
+            _model.Axes.Add(new LinearAxis { Title = "Value", Position = AxisPosition.Left });
             _model.Annotations.Add(new LineAnnotation()
             {
                 Type = LineAnnotationType.Vertical,
@@ -351,27 +385,33 @@ namespace NL.HNOGames.Domoticz.Views
         public async Task FilterAsync()
         {
             RevertOriginalSource();
-
             var actions = CreateFilterMenu();
             if (actions.Count > 0)
             {
-                var result = await DisplayActionSheet(AppResources.filter, AppResources.cancel, null,
+                activeFilter = await DisplayActionSheet(AppResources.filter, AppResources.cancel, null,
                     actions.ToArray());
-                if (string.Compare(AppResources.filterOn_all, result, StringComparison.OrdinalIgnoreCase) == 0)
-                    RevertOriginalSource();
-                else if (string.Compare(AppResources.cancel, result, StringComparison.OrdinalIgnoreCase) != 0)
-                {
-                    BackupSource();
-                    _model.Series.Clear(); //remove list
-                    foreach (var serie in _originalSeries)
-                    {
-                        if (string.Compare(serie.Title, result, StringComparison.OrdinalIgnoreCase) == 0)
-                            _model.Series.Add(serie);
-                    }
-                }
-
+                FilterGraphResult();
                 oGraphView.Model = _model;
                 oGraphView.Model.InvalidatePlot(true);
+            }
+        }
+
+        /// <summary>
+        /// Filter the graph result
+        /// </summary>
+        private void FilterGraphResult()
+        {
+            if (string.Compare(AppResources.filterOn_all, activeFilter, StringComparison.OrdinalIgnoreCase) == 0)
+                RevertOriginalSource();
+            else if (string.Compare(AppResources.cancel, activeFilter, StringComparison.OrdinalIgnoreCase) != 0)
+            {
+                BackupSource();
+                _model.Series.Clear(); //remove list
+                foreach (var serie in _originalSeries)
+                {
+                    if (string.Compare(serie.Title, activeFilter, StringComparison.OrdinalIgnoreCase) == 0)
+                        _model.Series.Add(serie);
+                }
             }
         }
 

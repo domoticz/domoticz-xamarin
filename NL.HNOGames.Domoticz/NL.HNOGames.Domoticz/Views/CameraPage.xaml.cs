@@ -35,9 +35,6 @@ namespace NL.HNOGames.Domoticz.Views
                 case TargetIdiom.Unsupported:
                     listView.FlowColumnCount = 3;
                     break;
-                case TargetIdiom.TV:
-                    listView.FlowColumnCount = 3;
-                    break;
                 default:
                     listView.FlowColumnCount = 2;
                     break;

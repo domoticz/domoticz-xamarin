@@ -11,6 +11,12 @@ using Plugin.InAppBilling;
 using Android.Content;
 using System.Net;
 
+#if NETFX_CORE
+[assembly: Xamarin.Forms.Platform.WinRT.ExportRenderer(typeof(Xamarin.RangeSlider.Forms.RangeSlider), typeof(Xamarin.RangeSlider.Forms.RangeSliderRenderer))]
+#else
+[assembly: Xamarin.Forms.ExportRenderer(typeof(Xamarin.RangeSlider.Forms.RangeSlider), typeof(Xamarin.RangeSlider.Forms.RangeSliderRenderer))]
+#endif
+
 namespace NL.HNOGames.Domoticz.Droid
 {
     [Activity(Label = "@string/app_name", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -27,7 +33,7 @@ namespace NL.HNOGames.Domoticz.Droid
                     return true;
                 };
 
-            CachedImageRenderer.Init();
+            CachedImageRenderer.Init(true);
             UserDialogs.Init(this);
             OxyPlot.Xamarin.Forms.Platform.Android.PlotViewRenderer.Init();
             ZXing.Net.Mobile.Forms.Android.Platform.Init();

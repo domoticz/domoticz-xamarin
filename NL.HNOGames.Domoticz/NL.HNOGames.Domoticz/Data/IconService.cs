@@ -248,6 +248,12 @@ namespace NL.HNOGames.Domoticz.Data
                 case "utility":
                     iconDrawable = "scale";
                     break;
+                case "scale":
+                    iconDrawable = "scale";
+                    break;
+                case "lux":
+                    iconDrawable = "uvsunny";
+                    break;
             }
 
             if (!string.IsNullOrEmpty(iconDrawable) && !string.IsNullOrEmpty(devType))

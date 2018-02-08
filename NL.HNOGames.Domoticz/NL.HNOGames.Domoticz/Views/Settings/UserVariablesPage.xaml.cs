@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using NL.HNOGames.Domoticz.Models;
 using NL.HNOGames.Domoticz.Resources;
 using System.Linq;
+using Acr.UserDialogs;
+using System.Globalization;
 
 namespace NL.HNOGames.Domoticz.Views.Settings
 {
@@ -17,9 +19,62 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             InitializeComponent();
         }
 
-        private void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        private async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
-            listView.SelectedItem = null;
+            try
+            {
+                var selectedVar = args.SelectedItem as Models.UserVariable;
+                if (selectedVar == null) return;
+
+                var r = await UserDialogs.Instance.PromptAsync(selectedVar.Name + " -> " + selectedVar.TypeValue, AppResources.title_vars,
+                    inputType: selectedVar.Type == "0" || selectedVar.Type == "1" ? InputType.Number : InputType.Default);
+                await Task.Delay(500);
+                if (r.Ok)
+                {
+                    App.ShowLoading();
+                    if (ValidateInput(r.Text, selectedVar.Type))
+                    {
+                        var result = await App.ApiService.SetUserVariable(selectedVar.idx, selectedVar.Name, selectedVar.Type, r.Text);
+                        if (!result)
+                            App.ShowToast(AppResources.var_input_error);
+                    }
+                    else
+                        App.ShowToast(AppResources.var_input);
+                    new Command(async () => await ExecuteLoadLogsCommand()).Execute(null);
+                }
+                listView.SelectedItem = null;
+            }
+            catch (Exception) {
+                App.ShowToast(AppResources.var_input_error);
+                new Command(async () => await ExecuteLoadLogsCommand()).Execute(null);
+            }
+        }
+
+        private bool ValidateInput(String input, String type)
+        {
+            try
+            {
+                switch (type)
+                {
+                    case "0":
+                        Convert.ToInt32(input);
+                        break;
+                    case "1":
+                        float.Parse(input);
+                        break;
+                    case "3":
+                        DateTime.ParseExact(input, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                        break;
+                    case "4":
+                        DateTime.ParseExact(input, "HH:mm", CultureInfo.InvariantCulture);
+                        break;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
         }
 
         protected override void OnAppearing()

@@ -35,20 +35,24 @@ namespace NL.HNOGames.Domoticz.Helpers
 
         public async void OnRegistered(string token, DeviceType deviceType)
         {
-            if (deviceType == DeviceType.Android)
+            try
             {
-                App.AddLog(string.Format("Push Notification - Device Registered - Token : {0}", token));
-                String Id = Helpers.UsefulBits.GetDeviceID();
-                //bool bSuccess = await App.ApiService.CleanRegisteredDevice(Id);
-                //if (bSuccess)
-                //{
-                    bool bSuccess = await App.ApiService.RegisterDevice(Id, token);
-                    if (bSuccess)
-                        App.AddLog("Device registered on Domoticz");
-                    else
-                        App.AddLog("Device not registered on Domoticz");
-                //}
+               if (deviceType == DeviceType.Android)
+               {
+                  App.AddLog(string.Format("Push Notification - Device Registered - Token : {0}", token));
+                  String Id = Helpers.UsefulBits.GetDeviceID();
+                  //bool bSuccess = await App.ApiService.CleanRegisteredDevice(Id);
+                  //if (bSuccess)
+                  //{
+                  bool bSuccess = await App.ApiService.RegisterDevice(Id, token);
+                  if (bSuccess)
+                     App.AddLog("Device registered on Domoticz");
+                  else
+                     App.AddLog("Device not registered on Domoticz");
+                  //}
+               }
             }
+            catch (Exception ex) { }
         }
 
         public void OnUnregistered(DeviceType deviceType)

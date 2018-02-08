@@ -1,200 +1,347 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="NL.HNOGames.Domoticz.Views.Settings.ServerSettingsPage"
-             xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
-             xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
-             Style="{StaticResource ContentPageType}"
-             Title="{resources:Translate server_settings}">
-    <ContentPage.Content>
-        <ScrollView>
-            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="20">
-                <Label Style="{StaticResource HeaderType}" HorizontalOptions="CenterAndExpand"
-                       Text="{resources:Translate title_activity_server_settings}" Margin="0,20,0,0" />
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Vertical"
-                             Padding="0,20,0,0">
-                    <Label Style="{StaticResource DetailType}"
-                           Text="{resources:Translate welcome_remote_server_address}" />
-                    <Entry Style="{StaticResource EntryType}" x:Name="txtRemoteServerAddress"
-                           Text="{Binding REMOTE_SERVER_URL}" AutomationId="txtRemoteServerAddress" WidthRequest="150"
-                           VerticalOptions="StartAndExpand" />
-                </StackLayout>
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
-                             Orientation="Horizontal" Padding="0,10,0,0">
-                    <Grid HorizontalOptions="FillAndExpand">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="3*" />
-                            <ColumnDefinition Width="7*" />
-                        </Grid.ColumnDefinitions>
-                        <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
-                                     Orientation="Vertical">
-                            <Label Style="{StaticResource DetailType}"
-                                   Text="{resources:Translate welcome_remote_server_protocol}" />
-                            <Picker Style="{StaticResource PickerType}" x:Name="txtRemoteProtocol"
-                                    HorizontalOptions="FillAndExpand" SelectedIndex="{Binding REMOTE_SERVER_PROTOCOL}"
-                                    SelectedIndexChanged="TxtRemoteProtocol_OnSelectedIndexChanged">
-                                <Picker.Items>
-                                    <x:String>HTTP</x:String>
-                                    <x:String>HTTPS</x:String>
-                                </Picker.Items>
-                            </Picker>
-                        </StackLayout>
-                        <StackLayout Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
-                                     Orientation="Vertical">
-                            <Label Style="{StaticResource DetailType}"
-                                   Text="{resources:Translate welcome_remote_server_port}" />
-                            <Entry Style="{StaticResource EntryType}" x:Name="txtRemotePort"
-                                   AutomationId="txtRemotePort" Keyboard="Numeric" HorizontalOptions="FillAndExpand"
-                                   VerticalOptions="StartAndExpand" Text="{Binding REMOTE_SERVER_PORT}" />
-                        </StackLayout>
-                    </Grid>
-                </StackLayout>
+<ContentPage
+   x:Class="NL.HNOGames.Domoticz.Views.Settings.ServerSettingsPage"
+   xmlns="http://xamarin.com/schemas/2014/forms"
+   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+   xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
+   xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+   xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
+   Title="{resources:Translate server_settings}"
+   ios:Page.UseSafeArea="true"
+   Style="{StaticResource ContentPageType}">
+   <ContentPage.Content>
+      <ScrollView>
+         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+            <StackLayout.Padding>
+               <OnIdiom x:TypeArguments="Thickness">
+                  <OnIdiom.Phone>20,20,20,20</OnIdiom.Phone>
+                  <OnIdiom.Tablet>150,30,150,30</OnIdiom.Tablet>
+               </OnIdiom>
+            </StackLayout.Padding>
 
-                <Label x:Name="lblSSLWarning" Style="{StaticResource DetailType}"
-                       Text="Note: self signed certificates are not supported, please use properly signed sertificates!"
-                       IsVisible="False" LineBreakMode="WordWrap" TextColor="Red" />
-
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Vertical"
-                             Padding="0,10,0,0">
-                    <Label Style="{StaticResource DetailType}"
-                           Text="{resources:Translate welcome_remote_server_directory}" />
-                    <Entry Style="{StaticResource EntryType}" x:Name="txtRemoteDirectory"
-                           AutomationId="txtRemoteDirectory" HorizontalOptions="FillAndExpand"
-                           VerticalOptions="StartAndExpand" Text="{Binding REMOTE_SERVER_DIRECTORY}" />
-                </StackLayout>
-
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
-                             Orientation="Horizontal" Padding="0,10,0,0">
-                    <Grid HorizontalOptions="FillAndExpand">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="5*" />
-                            <ColumnDefinition Width="5*" />
-                        </Grid.ColumnDefinitions>
-                        <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
-                                     Orientation="Vertical">
-                            <Label Style="{StaticResource DetailType}"
-                                   Text="{resources:Translate welcome_remote_server_username}" />
-                            <Entry Style="{StaticResource EntryType}" x:Name="txtRemoteUsername"
-                                   AutomationId="txtRemoteUsername" HorizontalOptions="FillAndExpand"
-                                   VerticalOptions="StartAndExpand" Text="{Binding REMOTE_SERVER_USERNAME}" />
-                        </StackLayout>
-                        <StackLayout Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
-                                     Orientation="Vertical">
-                            <Label Style="{StaticResource DetailType}"
-                                   Text="{resources:Translate welcome_remote_server_password}" />
-                            <Entry Style="{StaticResource EntryType}" x:Name="txtRemotePassword"
-                                   AutomationId="txtRemotePassword" HorizontalOptions="FillAndExpand"
-                                   VerticalOptions="StartAndExpand" IsPassword="true"
-                                   Text="{Binding REMOTE_SERVER_PASSWORD}" />
-                        </StackLayout>
-                    </Grid>
-                </StackLayout>
-
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Vertical">
-                    <Label Style="{StaticResource DetailType}"
-                           Text="{resources:Translate welcome_local_server_used_switch_summary}" />
-                    <Switch x:Name="swEnableLocalSettings" AutomationId="swEnableLocalSettings"
-                            HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
-                            Toggled="swEnableLocalSettings_Toggled"
-                            IsToggled="{Binding IS_LOCAL_SERVER_ADDRESS_DIFFERENT}" />
-                </StackLayout>
-
-                <StackLayout x:Name="lyLocalSettings" HorizontalOptions="FillAndExpand"
-                             VerticalOptions="StartAndExpand" Orientation="Vertical" Padding="0,10,0,0"
-                             IsVisible="False">
-                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
-                                 Orientation="Vertical" Padding="0,20,0,0">
-                        <Label Style="{StaticResource DetailType}"
-                               Text="{resources:Translate welcome_local_server_address}" />
-                        <Entry Style="{StaticResource EntryType}" x:Name="txtLocalServerAddress"
-                               Text="{Binding LOCAL_SERVER_URL}" AutomationId="txtLocalServerAddress"
-                               WidthRequest="150" VerticalOptions="StartAndExpand" />
-                    </StackLayout>
-
-                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
-                                 Orientation="Horizontal">
-                        <Grid HorizontalOptions="FillAndExpand">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="3*" />
-                                <ColumnDefinition Width="7*" />
-                            </Grid.ColumnDefinitions>
-                            <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand"
-                                         VerticalOptions="FillAndExpand" Orientation="Vertical">
-                                <Label Style="{StaticResource DetailType}"
-                                       Text="{resources:Translate welcome_local_server_protocol}" />
-                                <Picker Style="{StaticResource PickerType}" x:Name="txtLocalProtocol"
-                                        HorizontalOptions="FillAndExpand"
-                                        SelectedIndex="{Binding LOCAL_SERVER_PROTOCOL}">
-                                    <Picker.Items>
-                                        <x:String>HTTP</x:String>
-                                        <x:String>HTTPS</x:String>
-                                    </Picker.Items>
-                                </Picker>
-                            </StackLayout>
-                            <StackLayout Grid.Column="1" HorizontalOptions="FillAndExpand"
-                                         VerticalOptions="FillAndExpand" Orientation="Vertical">
-                                <Label Style="{StaticResource DetailType}"
-                                       Text="{resources:Translate welcome_local_server_port}" />
-                                <Entry Style="{StaticResource EntryType}" x:Name="txtLocalPort"
-                                       AutomationId="txtLocalPort" Keyboard="Numeric" HorizontalOptions="FillAndExpand"
-                                       VerticalOptions="StartAndExpand" Text="{Binding LOCAL_SERVER_PORT}" />
-                            </StackLayout>
-                        </Grid>
-                    </StackLayout>
-
-                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
-                                 Orientation="Horizontal" Padding="0,10,0,0">
-                        <Grid HorizontalOptions="FillAndExpand">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="5*" />
-                                <ColumnDefinition Width="5*" />
-                            </Grid.ColumnDefinitions>
-                            <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand"
-                                         VerticalOptions="FillAndExpand" Orientation="Vertical">
-                                <Label Style="{StaticResource DetailType}"
-                                       Text="{resources:Translate welcome_local_server_username}" />
-                                <Entry Style="{StaticResource EntryType}" x:Name="txtLocalUsername"
-                                       AutomationId="txtLocalUsername" HorizontalOptions="FillAndExpand"
-                                       VerticalOptions="StartAndExpand" Text="{Binding LOCAL_SERVER_USERNAME}" />
-                            </StackLayout>
-                            <StackLayout Grid.Column="1" HorizontalOptions="FillAndExpand"
-                                         VerticalOptions="FillAndExpand" Orientation="Vertical">
-                                <Label Style="{StaticResource DetailType}"
-                                       Text="{resources:Translate welcome_local_server_password}" />
-                                <Entry Style="{StaticResource EntryType}" x:Name="txtLocalPassword"
-                                       AutomationId="txtLocalPassword" HorizontalOptions="FillAndExpand"
-                                       VerticalOptions="StartAndExpand" IsPassword="true"
-                                       Text="{Binding LOCAL_SERVER_PASSWORD}" />
-                            </StackLayout>
-                        </Grid>
-                    </StackLayout>
-
-                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
-                                 Orientation="Vertical">
-                        <Label Style="{StaticResource DetailType}"
-                               Text="{resources:Translate welcome_local_server_directory}" />
-                        <Entry Style="{StaticResource EntryType}" x:Name="txtLocalDirectory"
-                               AutomationId="txtLocalPort" HorizontalOptions="FillAndExpand"
-                               VerticalOptions="StartAndExpand" Text="{Binding LOCAL_SERVER_DIRECTORY}" />
-                    </StackLayout>
-                </StackLayout>
-
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="20">
-                    <Button x:Name="btnCheck" Text="{resources:Translate welcome_info_checkingConnection}"
-                            HorizontalOptions="FillAndExpand" IsVisible="True" Margin="0,20,0,0"
-                            Clicked="btnCheck_Clicked" />
-
-                    <custcontrol:TintedCachedImage x:Name="imFinish" IsVisible="False" WidthRequest="60"
-                                                   HeightRequest="60" Source="ic_validate_settings.png"
-                                                   HorizontalOptions="CenterAndExpand" Margin="0,40,0,0" />
-                    <Label TextColor="Gray" x:Name="lblResult" HorizontalOptions="CenterAndExpand" />
-                    <Button x:Name="btnFinish" Text="{resources:Translate welcome_button_finish}"
-                            HorizontalOptions="FillAndExpand" IsVisible="False" Margin="0,20,0,0"
-                            Clicked="btnFinish_Clicked" />
-                </StackLayout>
+            <Label
+               Margin="0,20,0,0"
+               HorizontalOptions="CenterAndExpand"
+               Style="{StaticResource HeaderType}"
+               Text="{resources:Translate title_activity_server_settings}" />
+            <StackLayout
+               Padding="0,20,0,0"
+               HorizontalOptions="FillAndExpand"
+               Orientation="Vertical"
+               VerticalOptions="StartAndExpand">
+               <Label Style="{StaticResource DetailType}" Text="{resources:Translate welcome_remote_server_address}" />
+               <Entry
+                  x:Name="txtRemoteServerAddress"
+                  AutomationId="txtRemoteServerAddress"
+                  Style="{StaticResource EntryType}"
+                  Text="{Binding REMOTE_SERVER_URL}"
+                  VerticalOptions="StartAndExpand"
+                  WidthRequest="150" />
+            </StackLayout>
+            <StackLayout
+               Padding="0,10,0,0"
+               HorizontalOptions="FillAndExpand"
+               Orientation="Horizontal"
+               VerticalOptions="StartAndExpand">
+               <Grid HorizontalOptions="FillAndExpand">
+                  <Grid.ColumnDefinitions>
+                     <ColumnDefinition Width="3*" />
+                     <ColumnDefinition Width="7*" />
+                  </Grid.ColumnDefinitions>
+                  <StackLayout
+                     Grid.Column="0"
+                     HorizontalOptions="FillAndExpand"
+                     Orientation="Vertical"
+                     VerticalOptions="FillAndExpand">
+                     <Label Style="{StaticResource DetailType}" Text="{resources:Translate welcome_remote_server_protocol}" />
+                     <Picker
+                        x:Name="txtRemoteProtocol"
+                        HorizontalOptions="FillAndExpand"
+                        SelectedIndex="{Binding REMOTE_SERVER_PROTOCOL}"
+                        SelectedIndexChanged="TxtRemoteProtocol_OnSelectedIndexChanged"
+                        Style="{StaticResource PickerType}">
+                        <Picker.Items>
+                           <x:String>HTTP</x:String>
+                           <x:String>HTTPS</x:String>
+                        </Picker.Items>
+                     </Picker>
+                  </StackLayout>
+                  <StackLayout
+                     Grid.Column="1"
+                     HorizontalOptions="FillAndExpand"
+                     Orientation="Vertical"
+                     VerticalOptions="FillAndExpand">
+                     <Label Style="{StaticResource DetailType}" Text="{resources:Translate welcome_remote_server_port}" />
+                     <Entry
+                        x:Name="txtRemotePort"
+                        AutomationId="txtRemotePort"
+                        HorizontalOptions="FillAndExpand"
+                        Keyboard="Numeric"
+                        Style="{StaticResource EntryType}"
+                        Text="{Binding REMOTE_SERVER_PORT}"
+                        VerticalOptions="StartAndExpand" />
+                  </StackLayout>
+               </Grid>
             </StackLayout>
 
-        </ScrollView>
-    </ContentPage.Content>
+            <Label
+               x:Name="lblSSLWarning"
+               IsVisible="False"
+               LineBreakMode="WordWrap"
+               Style="{StaticResource DetailType}"
+               Text="Note: self signed certificates are not supported, please use properly signed sertificates!"
+               TextColor="Red" />
+
+            <StackLayout
+               Padding="0,10,0,0"
+               HorizontalOptions="FillAndExpand"
+               Orientation="Vertical"
+               VerticalOptions="FillAndExpand">
+               <Label Style="{StaticResource DetailType}" Text="{resources:Translate welcome_remote_server_directory}" />
+               <Entry
+                  x:Name="txtRemoteDirectory"
+                  AutomationId="txtRemoteDirectory"
+                  HorizontalOptions="FillAndExpand"
+                  Style="{StaticResource EntryType}"
+                  Text="{Binding REMOTE_SERVER_DIRECTORY}"
+                  VerticalOptions="StartAndExpand" />
+            </StackLayout>
+
+            <StackLayout
+               Padding="0,10,0,0"
+               HorizontalOptions="FillAndExpand"
+               Orientation="Horizontal"
+               VerticalOptions="StartAndExpand">
+               <Grid HorizontalOptions="FillAndExpand">
+                  <Grid.ColumnDefinitions>
+                     <ColumnDefinition Width="5*" />
+                     <ColumnDefinition Width="5*" />
+                  </Grid.ColumnDefinitions>
+                  <StackLayout
+                     Grid.Column="0"
+                     HorizontalOptions="FillAndExpand"
+                     Orientation="Vertical"
+                     VerticalOptions="FillAndExpand">
+                     <Label Style="{StaticResource DetailType}" Text="{resources:Translate welcome_remote_server_username}" />
+                     <Entry
+                        x:Name="txtRemoteUsername"
+                        AutomationId="txtRemoteUsername"
+                        HorizontalOptions="FillAndExpand"
+                        Style="{StaticResource EntryType}"
+                        Text="{Binding REMOTE_SERVER_USERNAME}"
+                        VerticalOptions="StartAndExpand" />
+                  </StackLayout>
+                  <StackLayout
+                     Grid.Column="1"
+                     HorizontalOptions="FillAndExpand"
+                     Orientation="Vertical"
+                     VerticalOptions="FillAndExpand">
+                     <Label Style="{StaticResource DetailType}" Text="{resources:Translate welcome_remote_server_password}" />
+                     <Entry
+                        x:Name="txtRemotePassword"
+                        AutomationId="txtRemotePassword"
+                        HorizontalOptions="FillAndExpand"
+                        IsPassword="true"
+                        Style="{StaticResource EntryType}"
+                        Text="{Binding REMOTE_SERVER_PASSWORD}"
+                        VerticalOptions="StartAndExpand" />
+                  </StackLayout>
+               </Grid>
+            </StackLayout>
+
+            <StackLayout
+               HorizontalOptions="FillAndExpand"
+               Orientation="Vertical"
+               VerticalOptions="FillAndExpand">
+               <Label Style="{StaticResource DetailType}" Text="{resources:Translate welcome_local_server_used_switch_summary}" />
+               <Switch
+                  x:Name="swEnableLocalSettings"
+                  AutomationId="swEnableLocalSettings"
+                  HorizontalOptions="FillAndExpand"
+                  IsToggled="{Binding IS_LOCAL_SERVER_ADDRESS_DIFFERENT}"
+                  Toggled="swEnableLocalSettings_Toggled"
+                  VerticalOptions="StartAndExpand" />
+            </StackLayout>
+
+            <StackLayout
+               x:Name="lyLocalSettings"
+               Padding="0,10,0,0"
+               HorizontalOptions="FillAndExpand"
+               IsVisible="False"
+               Orientation="Vertical"
+               VerticalOptions="StartAndExpand">
+               <StackLayout
+                  Padding="0,20,0,0"
+                  HorizontalOptions="FillAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="StartAndExpand">
+                  <Label Style="{StaticResource DetailType}" Text="{resources:Translate welcome_local_server_address}" />
+                  <Entry
+                     x:Name="txtLocalServerAddress"
+                     AutomationId="txtLocalServerAddress"
+                     Style="{StaticResource EntryType}"
+                     Text="{Binding LOCAL_SERVER_URL}"
+                     VerticalOptions="StartAndExpand"
+                     WidthRequest="150" />
+               </StackLayout>
+
+               <StackLayout
+                  HorizontalOptions="FillAndExpand"
+                  Orientation="Horizontal"
+                  VerticalOptions="StartAndExpand">
+                  <Grid HorizontalOptions="FillAndExpand">
+                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="7*" />
+                     </Grid.ColumnDefinitions>
+                     <StackLayout
+                        Grid.Column="0"
+                        HorizontalOptions="FillAndExpand"
+                        Orientation="Vertical"
+                        VerticalOptions="FillAndExpand">
+                        <Label Style="{StaticResource DetailType}" Text="{resources:Translate welcome_local_server_protocol}" />
+                        <Picker
+                           x:Name="txtLocalProtocol"
+                           HorizontalOptions="FillAndExpand"
+                           SelectedIndex="{Binding LOCAL_SERVER_PROTOCOL}"
+                           Style="{StaticResource PickerType}">
+                           <Picker.Items>
+                              <x:String>HTTP</x:String>
+                              <x:String>HTTPS</x:String>
+                           </Picker.Items>
+                        </Picker>
+                     </StackLayout>
+                     <StackLayout
+                        Grid.Column="1"
+                        HorizontalOptions="FillAndExpand"
+                        Orientation="Vertical"
+                        VerticalOptions="FillAndExpand">
+                        <Label Style="{StaticResource DetailType}" Text="{resources:Translate welcome_local_server_port}" />
+                        <Entry
+                           x:Name="txtLocalPort"
+                           AutomationId="txtLocalPort"
+                           HorizontalOptions="FillAndExpand"
+                           Keyboard="Numeric"
+                           Style="{StaticResource EntryType}"
+                           Text="{Binding LOCAL_SERVER_PORT}"
+                           VerticalOptions="StartAndExpand" />
+                     </StackLayout>
+                  </Grid>
+               </StackLayout>
+
+               <StackLayout
+                  Padding="0,10,0,0"
+                  HorizontalOptions="FillAndExpand"
+                  Orientation="Horizontal"
+                  VerticalOptions="StartAndExpand">
+                  <Grid HorizontalOptions="FillAndExpand">
+                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*" />
+                        <ColumnDefinition Width="5*" />
+                     </Grid.ColumnDefinitions>
+                     <StackLayout
+                        Grid.Column="0"
+                        HorizontalOptions="FillAndExpand"
+                        Orientation="Vertical"
+                        VerticalOptions="FillAndExpand">
+                        <Label Style="{StaticResource DetailType}" Text="{resources:Translate welcome_local_server_username}" />
+                        <Entry
+                           x:Name="txtLocalUsername"
+                           AutomationId="txtLocalUsername"
+                           HorizontalOptions="FillAndExpand"
+                           Style="{StaticResource EntryType}"
+                           Text="{Binding LOCAL_SERVER_USERNAME}"
+                           VerticalOptions="StartAndExpand" />
+                     </StackLayout>
+                     <StackLayout
+                        Grid.Column="1"
+                        HorizontalOptions="FillAndExpand"
+                        Orientation="Vertical"
+                        VerticalOptions="FillAndExpand">
+                        <Label Style="{StaticResource DetailType}" Text="{resources:Translate welcome_local_server_password}" />
+                        <Entry
+                           x:Name="txtLocalPassword"
+                           AutomationId="txtLocalPassword"
+                           HorizontalOptions="FillAndExpand"
+                           IsPassword="true"
+                           Style="{StaticResource EntryType}"
+                           Text="{Binding LOCAL_SERVER_PASSWORD}"
+                           VerticalOptions="StartAndExpand" />
+                     </StackLayout>
+                  </Grid>
+               </StackLayout>
+
+               <StackLayout
+                  HorizontalOptions="FillAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="FillAndExpand">
+                  <Label Style="{StaticResource DetailType}" Text="{resources:Translate welcome_local_server_directory}" />
+                  <Entry
+                     x:Name="txtLocalDirectory"
+                     AutomationId="txtLocalPort"
+                     HorizontalOptions="FillAndExpand"
+                     Style="{StaticResource EntryType}"
+                     Text="{Binding LOCAL_SERVER_DIRECTORY}"
+                     VerticalOptions="StartAndExpand" />
+               </StackLayout>
+            </StackLayout>
+
+            <StackLayout
+               Padding="20"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="StartAndExpand">
+               <custcontrol:ExtendedButton
+                  x:Name="btnDemo"
+                  Margin="0,20,0,0"
+                  Padding="20,0,20,0"
+                  Clicked="BtnDemo_OnClicked"
+                  HorizontalOptions="End"
+                  Text="Use our Demo setup"
+                  VerticalOptions="End"
+                  WidthRequest="300" />
+
+               <StackLayout
+                  HorizontalOptions="FillAndExpand"
+                  Orientation="Horizontal"
+                  VerticalOptions="FillAndExpand">
+                  <custcontrol:ExtendedButton
+                     x:Name="btnCheck"
+                     Margin="0,20,0,0"
+                     Clicked="btnCheck_Clicked"
+                     HorizontalOptions="FillAndExpand"
+                     IsVisible="True"
+                     Text="{resources:Translate welcome_info_checkingConnection}" />
+                  <custcontrol:ExtendedButton
+                     x:Name="btnReset"
+                     Padding="20,0,20,0"
+                     Clicked="btnReset_Clicked"
+                     HorizontalOptions="End"
+                     Text="{resources:Translate category_Reset}"
+                     VerticalOptions="End" />
+               </StackLayout>
+               <custcontrol:TintedCachedImage
+                  x:Name="imFinish"
+                  Margin="0,40,0,0"
+                  HeightRequest="60"
+                  HorizontalOptions="CenterAndExpand"
+                  IsVisible="False"
+                  Source="ic_validate_settings.png"
+                  WidthRequest="60" />
+               <Label
+                  x:Name="lblResult"
+                  HorizontalOptions="CenterAndExpand"
+                  TextColor="Gray" />
+               <custcontrol:ExtendedButton
+                  x:Name="btnFinish"
+                  Margin="0,20,0,0"
+                  Clicked="btnFinish_Clicked"
+                  HorizontalOptions="FillAndExpand"
+                  IsVisible="False"
+                  Text="{resources:Translate welcome_button_finish}" />
+            </StackLayout>
+         </StackLayout>
+
+      </ScrollView>
+   </ContentPage.Content>
 </ContentPage>

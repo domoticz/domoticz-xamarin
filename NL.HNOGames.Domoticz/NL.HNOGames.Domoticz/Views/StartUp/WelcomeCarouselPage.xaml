@@ -1,55 +1,80 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
 <CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
               x:Class="NL.HNOGames.Domoticz.Views.StartUp.WelcomeCarouselPage"
               xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
               xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
+            xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+            ios:Page.UseSafeArea="true"
               Title="Welcome!"
               x:Name="carouselPage">
     <ContentPage BackgroundColor="Black">
-        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20,20,20,20">
-            <custcontrol:TintedCachedImage WidthRequest="75" HeightRequest="75" Source="ic_launcher.png" />
-            <Label TextColor="White" HorizontalOptions="CenterAndExpand" Style="Bold" FontSize="Large" Text="Domoticz"
+        <ScrollView>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout.Padding>
+                    <OnIdiom x:TypeArguments="Thickness">
+                        <OnIdiom.Phone>20,20,20,20</OnIdiom.Phone>
+                        <OnIdiom.Tablet>150,50,150,0</OnIdiom.Tablet>
+                    </OnIdiom>
+                </StackLayout.Padding>
+                
+                <custcontrol:TintedCachedImage WidthRequest="75" HeightRequest="75" Source="ic_launcher.png" />
+                <Label TextColor="White" HorizontalOptions="CenterAndExpand" Style="Bold" FontSize="Large" Text="Domoticz"
                    Margin="0,20,0,0" />
-            <Label TextColor="White" HorizontalOptions="CenterAndExpand"
+                <Label TextColor="White" HorizontalOptions="CenterAndExpand"
                    Text="{resources:Translate welcome_info_domoticz}" Margin="0,10,0,0" />
-            <Label TextColor="White" HorizontalOptions="End" Text="{resources:Translate welcome_info_swipe}"
+                <Label TextColor="White" HorizontalOptions="End" Text="{resources:Translate welcome_info_swipe}"
                    Margin="0,30,0,0" />
 
-            <Button x:Name="btnDemo" Style="{StaticResource DarkButton}" Text="Use our Demo setup"
-                    HorizontalOptions="End" VerticalOptions="End" Clicked="BtnDemo_OnClicked" />
-            
-            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal"
-                         Padding="20">
-                <Button Style="{StaticResource DarkButton}" Text="{resources:Translate welcome_button_previous}"
-                        HorizontalOptions="Start" VerticalOptions="End" Clicked="btnPrevious_Clicked" IsVisible="False"/>
-                <Button Style="{StaticResource DarkButton}" Text="{resources:Translate welcome_button_next}"
-                        HorizontalOptions="End" VerticalOptions="End" Clicked="btnNext_Clicked"/>
-            </StackLayout>
-        </StackLayout>
-    </ContentPage>
-    <ContentPage Style="{StaticResource ContentPageType}">
-        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
-            <Label Style="{StaticResource HeaderType}" HorizontalOptions="CenterAndExpand" FontSize="Large"
-                   Text="{resources:Translate title_activity_server_settings}" Margin="0,20,0,0" />
-            <Label Style="{StaticResource DetailType}" HorizontalOptions="StartAndExpand"
-                   Text="{resources:Translate welcome_info_settings1}" Margin="0,10,0,0" LineBreakMode="WordWrap" />
-            <Label Style="{StaticResource DetailType}" HorizontalOptions="StartAndExpand"
-                   Text="{resources:Translate welcome_info_settings2}" Margin="0,10,0,0" LineBreakMode="WordWrap" />
+                <custcontrol:ExtendedButton Padding="20,0,20,0" x:Name="btnDemo" Style="{StaticResource DarkButton}" Text="Use our Demo setup"
+                    HorizontalOptions="End" VerticalOptions="End" WidthRequest="300" Clicked="BtnDemo_OnClicked" Margin="0,20,0,0" />
 
-            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal"
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal"
                          Padding="20">
-                <Button Text="{resources:Translate welcome_button_previous}" HorizontalOptions="Start"
-                        VerticalOptions="End" Clicked="btnPrevious_Clicked" />
-                <Button Text="{resources:Translate welcome_button_next}" HorizontalOptions="End" VerticalOptions="End"
-                        Clicked="btnNext_Clicked" />
+                    <custcontrol:ExtendedButton  Style="{StaticResource DarkButton}" Text="{resources:Translate welcome_button_previous}"
+                        HorizontalOptions="Start" VerticalOptions="End" Clicked="btnPrevious_Clicked" Padding="20,0,20,0" IsVisible="False"/>
+                    <custcontrol:ExtendedButton  Style="{StaticResource DarkButton}" Text="{resources:Translate welcome_button_next}"
+                        HorizontalOptions="End" VerticalOptions="End" Clicked="btnNext_Clicked" Padding="20,0,20,0" />
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
+        </ScrollView>
     </ContentPage>
     <ContentPage Style="{StaticResource ContentPageType}">
         <ScrollView>
-            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout.Padding>
+                    <OnIdiom x:TypeArguments="Thickness">
+                        <OnIdiom.Phone>20,20,20,20</OnIdiom.Phone>
+                        <OnIdiom.Tablet>150,50,150,0</OnIdiom.Tablet>
+                    </OnIdiom>
+                </StackLayout.Padding>
+                
+                <Label Style="{StaticResource HeaderType}" HorizontalOptions="CenterAndExpand" FontSize="Large"
+                   Text="{resources:Translate title_activity_server_settings}" Margin="0,20,0,0" />
+                <Label Style="{StaticResource DetailType}" HorizontalOptions="StartAndExpand"
+                   Text="{resources:Translate welcome_info_settings1}" Margin="0,10,0,0" LineBreakMode="WordWrap" />
+                <Label Style="{StaticResource DetailType}" HorizontalOptions="StartAndExpand"
+                   Text="{resources:Translate welcome_info_settings2}" Margin="0,10,0,0" LineBreakMode="WordWrap" />
+
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal"
+                         Padding="20">
+                    <custcontrol:ExtendedButton Text="{resources:Translate welcome_button_previous}"
+                        HorizontalOptions="Start" VerticalOptions="End" Clicked="btnPrevious_Clicked" Padding="20,0,20,0"/>
+                    <custcontrol:ExtendedButton Text="{resources:Translate welcome_button_next}"
+                        HorizontalOptions="End" VerticalOptions="End" Clicked="btnNext_Clicked" Padding="20,0,20,0" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage>
+    <ContentPage Style="{StaticResource ContentPageType}">
+        <ScrollView>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout.Padding>
+                    <OnIdiom x:TypeArguments="Thickness">
+                        <OnIdiom.Phone>20,20,20,20</OnIdiom.Phone>
+                        <OnIdiom.Tablet>150,50,150,0</OnIdiom.Tablet>
+                    </OnIdiom>
+                </StackLayout.Padding>
                 <Label Style="{StaticResource HeaderType}" HorizontalOptions="CenterAndExpand"
                        Text="{resources:Translate title_activity_server_settings}" Margin="0,20,0,0" />
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Orientation="Vertical"
@@ -90,7 +115,7 @@
                         </StackLayout>
                     </Grid>
                 </StackLayout>
-                
+
                 <Label x:Name="lblSSLWarning" Style="{StaticResource DetailType}"
                        Text="Note: self signed certificates are not supported, please use properly signed sertificates!"
                        IsVisible="False" LineBreakMode="WordWrap" TextColor="Red"/>
@@ -221,35 +246,43 @@
                 </StackLayout>
 
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal"
-                             Padding="20">
-                    <Button Text="{resources:Translate welcome_button_previous}" HorizontalOptions="Start"
-                            VerticalOptions="End" Clicked="btnPrevious_Clicked" />
-                    <Button Text="{resources:Translate welcome_button_next}" HorizontalOptions="End"
-                            VerticalOptions="End" Clicked="btnNext_Clicked" />
+                         Padding="20">
+                    <custcontrol:ExtendedButton Text="{resources:Translate welcome_button_previous}"
+                        HorizontalOptions="Start" VerticalOptions="End" Clicked="btnPrevious_Clicked" Padding="20,0,20,0"/>
+                    <custcontrol:ExtendedButton Text="{resources:Translate welcome_button_next}"
+                        HorizontalOptions="End" VerticalOptions="End" Clicked="btnNext_Clicked" Padding="20,0,20,0" />
+                    <custcontrol:ExtendedButton x:Name="btnReset" Text="{resources:Translate category_Reset}"
+                        HorizontalOptions="End" VerticalOptions="End" Clicked="btnReset_Clicked" Padding="20,0,20,0" />
                 </StackLayout>
             </StackLayout>
 
         </ScrollView>
     </ContentPage>
     <ContentPage x:Name="cpResultPage" Style="{StaticResource ContentPageType}">
-        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout.Padding>
+                <OnIdiom x:TypeArguments="Thickness">
+                    <OnIdiom.Phone>20,20,20,20</OnIdiom.Phone>
+                    <OnIdiom.Tablet>150,50,150,0</OnIdiom.Tablet>
+                </OnIdiom>
+            </StackLayout.Padding>
             <Label Style="{StaticResource HeaderType}" HorizontalOptions="CenterAndExpand"
                    Text="{resources:Translate title_activity_server_settings}" Margin="0,20,0,0" />
-            <Button x:Name="btnCheck" Text="{resources:Translate welcome_info_checkingConnection}"
+            <custcontrol:ExtendedButton Padding="20,0,20,0" x:Name="btnCheck" Text="{resources:Translate welcome_info_checkingConnection}"
                     HorizontalOptions="FillAndExpand" IsVisible="True" Margin="0,20,0,0" Clicked="btnCheck_Clicked" />
 
             <custcontrol:TintedCachedImage x:Name="imFinish" IsVisible="False" WidthRequest="60" HeightRequest="60"
                                            Source="ic_validate_settings.png" HorizontalOptions="CenterAndExpand"
                                            Margin="0,40,0,0" />
             <Label Style="{StaticResource DetailType}" x:Name="lblResult" HorizontalOptions="CenterAndExpand" />
-            <Button x:Name="btnFinish" Text="{resources:Translate welcome_button_finish}"
+            <custcontrol:ExtendedButton Padding="20,0,20,0" x:Name="btnFinish" Text="{resources:Translate welcome_button_finish}"
                     HorizontalOptions="FillAndExpand" IsVisible="False" Margin="0,20,0,0" Clicked="btnFinish_Clicked" />
             <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal"
                          Padding="20">
-                <Button Text="{resources:Translate welcome_button_previous}" HorizontalOptions="Start"
-                        VerticalOptions="End" Clicked="btnPrevious_Clicked" />
-                <Button Text="{resources:Translate welcome_button_next}" HorizontalOptions="End" VerticalOptions="End"
-                        Clicked="btnNext_Clicked" IsVisible="False" />
+                <custcontrol:ExtendedButton Text="{resources:Translate welcome_button_previous}"
+                        HorizontalOptions="Start" VerticalOptions="End" Clicked="btnPrevious_Clicked" Padding="20,0,20,0"/>
+                <custcontrol:ExtendedButton Text="{resources:Translate welcome_button_next}"
+                        HorizontalOptions="End" VerticalOptions="End" Clicked="btnNext_Clicked" Padding="20,0,20,0" IsVisible="False" />
             </StackLayout>
         </StackLayout>
     </ContentPage>

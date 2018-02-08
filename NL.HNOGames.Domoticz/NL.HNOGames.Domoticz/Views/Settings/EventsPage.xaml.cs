@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using NL.HNOGames.Domoticz.Models;
 using NL.HNOGames.Domoticz.Resources;
 using System.Linq;
+using NL.HNOGames.Domoticz.Data;
 
 namespace NL.HNOGames.Domoticz.Views.Settings
 {
@@ -74,6 +75,29 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             {
                 listView.ItemsSource = null;
                 listView.ItemsSource = _eventList;
+            }
+        }
+
+        private async void btnSwitch_Toggled(object sender, ToggledEventArgs e)
+        {
+            try
+            {
+                var oSwitch = (Switch)sender;
+                var oDevice = (Models.Event)oSwitch.BindingContext;
+                if (oSwitch.IsToggled != oDevice.Enabled)
+                {
+                    if (oDevice.Enabled)
+                        App.ShowToast(AppResources.switch_off + ": " + oDevice.Name);
+                    else
+                        App.ShowToast(AppResources.switch_on + ": " + oDevice.Name);
+
+                    var result = await App.ApiService.SetEvent(oDevice.id, oSwitch.IsToggled);
+                    new Command(async () => await ExecuteLoadLogsCommand()).Execute(null);
+                }
+            }
+            catch (Exception ex)
+            {
+                App.ShowToast(AppResources.var_input_error);
             }
         }
     }

@@ -190,3 +190,4 @@ UpgradeLog*.htm
 FakesAssemblies/
 
 .vs/NL.HNOGames.Domoticz/v15/**
+*.ide

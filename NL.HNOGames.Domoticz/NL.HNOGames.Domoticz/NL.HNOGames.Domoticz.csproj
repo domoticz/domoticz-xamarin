@@ -627,11 +627,11 @@
     <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.5.0.122203\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.RangeSlider.Common, Version=0.7.26.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.RangeSlider.0.7.26\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.RangeSlider.Common.dll</HintPath>
+    <Reference Include="Xamarin.RangeSlider.Common, Version=0.7.30.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.RangeSlider.0.7.30\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.RangeSlider.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.RangeSlider.Forms, Version=0.7.26.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.RangeSlider.0.7.26\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.RangeSlider.Forms.dll</HintPath>
+    <Reference Include="Xamarin.RangeSlider.Forms, Version=0.7.30.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.RangeSlider.0.7.30\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.RangeSlider.Forms.dll</HintPath>
     </Reference>
     <Reference Include="XLabs.Cryptography, Version=2.0.5782.12232, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\XLabs.Cryptography.2.0.5782\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\XLabs.Cryptography.dll</HintPath>

@@ -13,7 +13,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>NL.HNOGames.Domoticz.Droid</RootNamespace>
     <AssemblyName>NL.HNOGames.Domoticz.Android</AssemblyName>
-    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>

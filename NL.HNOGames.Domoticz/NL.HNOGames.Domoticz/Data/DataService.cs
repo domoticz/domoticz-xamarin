@@ -55,6 +55,8 @@ namespace NL.HNOGames.Domoticz.Data
       /// </summary>
       public async Task<VersionModel> GetVersion()
       {
+
+
          if (Server == null)
             return null;
          var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.VERSION);

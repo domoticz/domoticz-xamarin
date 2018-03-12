@@ -78,9 +78,7 @@ namespace NL.HNOGames.Domoticz.Views
                 _viewModel.Plans.Select(p => p.Name).ToArray());
             var selectedPlan = _viewModel.Plans.FirstOrDefault(q => q.Name == selectedPlanName);
             if (selectedPlan != null)
-            {
                 await Navigation.PushAsync(new DashboardPage(DashboardViewModel.ScreenTypeEnum.Switches, selectedPlan));
-            }
         }
 
         private bool _settingsOpened;

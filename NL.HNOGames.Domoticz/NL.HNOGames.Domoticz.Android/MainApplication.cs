@@ -9,7 +9,6 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using AuditApp.Android;
 using PushNotification.Plugin;
 using NL.HNOGames.Domoticz.Helpers;
 
@@ -32,10 +31,6 @@ namespace NL.HNOGames.Domoticz.Droid
             AppContext = this.ApplicationContext;
 
             //RegisterActivityLifecycleCallbacks(this);
-
-            AndroidPlaystoreAudit.Instance.UsesUntilPrompt = 20;
-            AndroidPlaystoreAudit.Instance.TimeUntilPrompt = new TimeSpan(0, 10, 0);
-
             CrossPushNotification.Initialize<CrossPushNotificationListener>("705545900899");
             CrossPushNotification.Current.Register();
 

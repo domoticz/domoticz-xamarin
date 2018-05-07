@@ -19,7 +19,15 @@ namespace NL.HNOGames.Domoticz.Droid.Renderer
 {
     public class ExtendedSliderRenderer : SliderRenderer
     {
-        protected override void OnElementChanged(ElementChangedEventArgs<Slider> e)
+      /// <summary>
+      /// Constructor
+      /// </summary>
+      /// <param name="context"></param>
+      public ExtendedSliderRenderer(Context context)
+        : base(context)
+      { }
+
+      protected override void OnElementChanged(ElementChangedEventArgs<Slider> e)
         {
             base.OnElementChanged(e);
 

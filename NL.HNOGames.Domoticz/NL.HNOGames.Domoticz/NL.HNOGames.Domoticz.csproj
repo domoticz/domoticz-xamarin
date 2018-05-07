@@ -10,41 +10,47 @@
     <PackageReference Include="DLToolkit.Forms.Controls.FlowListView" Version="2.0.10" />
     <PackageReference Include="FolderPath" Version="1.1.1" />
     <PackageReference Include="Humanizer" Version="2.2.0" />
-    <PackageReference Include="Microsoft.NETCore.Platforms" Version="2.0.1" />
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="2.0.2" />
     <PackageReference Include="Microsoft.NETCore.Targets" Version="2.0.0" />
     <PackageReference Include="modernhttpclient" Version="2.4.2" />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="OxyPlot.Core" Version="2015.1.708-alpha" />
     <PackageReference Include="OxyPlot.Xamarin.Forms" Version="1.1.0-unstable0011" />
     <PackageReference Include="PCLStorage" Version="1.0.2" />
     <PackageReference Include="Plugin.DeviceOrientation" Version="1.0.7" />
-    <PackageReference Include="Plugin.InAppBilling" Version="1.2.4" />
+    <PackageReference Include="Plugin.InAppBilling" Version="1.2.5" />
     <PackageReference Include="Plugin.Multilingual" Version="1.0.2" />
     <PackageReference Include="Plugin.Permissions" Version="2.2.1" />
     <PackageReference Include="Plugin.Share" Version="7.1.1" />
     <PackageReference Include="Plugin.SpeechRecognition" Version="1.0.0-beta3" />
     <PackageReference Include="Rg.Plugins.Popup" Version="1.1.1.57" />
     <PackageReference Include="runtime.native.System" Version="4.3.0" />
-    <PackageReference Include="SlideOverKit" Version="2.1.5" />
+    <PackageReference Include="SlideOverKit" Version="2.1.6.1" />
     <PackageReference Include="Splat" Version="2.0.0" />
+    <PackageReference Include="System.Console" Version="4.3.1" />
+    <PackageReference Include="System.Linq" Version="4.3.0" />
+    <PackageReference Include="System.Linq.Expressions" Version="4.3.0" />
     <PackageReference Include="Xam.Plugin.Connectivity" Version="3.1.1" />
     <PackageReference Include="Xam.Plugin.DeviceInfo" Version="3.1.0" />
     <PackageReference Include="Xam.Plugin.PushNotification" Version="1.2.5-beta" />
     <PackageReference Include="Xam.Plugins.Notifier" Version="2.1.0" />
     <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
     <PackageReference Include="Xam.Plugins.TextToSpeech" Version="3.3.2" />
-    <PackageReference Include="Xamarin.Build.Download" Version="0.4.7" />
-    <PackageReference Include="Xamarin.FFImageLoading" Version="2.3.4" />
-    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.3.4" />
-    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.3.4" />
-    <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
-    <PackageReference Include="Xamarin.Forms.RangeSlider" Version="0.7.30" />
-    <PackageReference Include="Xamarin.RangeSlider" Version="0.7.30" />
+    <PackageReference Include="Xamarin.Build.Download" Version="0.4.11" />
+    <PackageReference Include="Xamarin.FFImageLoading" Version="2.3.6" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.3.6" />
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.3.6" />
+    <PackageReference Include="Xamarin.Forms" Version="2.5.1.527436" />
+    <PackageReference Include="Xamarin.Forms.RangeSlider" Version="0.7.33" />
+    <PackageReference Include="Xamarin.RangeSlider" Version="0.7.33" />
     <PackageReference Include="XLabs.Cryptography" Version="2.0.5782" />
-    <PackageReference Include="ZXing.Net.Mobile" Version="2.3.2" />
-    <PackageReference Include="ZXing.Net.Mobile.Forms" Version="2.3.2" />
+    <PackageReference Include="ZXing.Net.Mobile" Version="2.4.1" />
+    <PackageReference Include="ZXing.Net.Mobile.Forms" Version="2.4.1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Update="NETStandard.Library" Version="2.0.2" />
   </ItemGroup>
 </Project>

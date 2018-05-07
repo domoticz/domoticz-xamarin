@@ -18,35 +18,43 @@ using System.ComponentModel;
 [assembly: ExportRenderer(typeof(ExtendedButton), typeof(EnhancedButtonRenderer))]
 namespace NL.HNOGames.Domoticz.Droid.Renderer
 {
-    public class EnhancedButtonRenderer : ButtonRenderer
-    {
-        protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.Button> e)
-        {
-            base.OnElementChanged(e);
+   public class EnhancedButtonRenderer : ButtonRenderer
+   {
+      /// <summary>
+      /// Constructor
+      /// </summary>
+      /// <param name="context"></param>
+      public EnhancedButtonRenderer(Context context)
+        : base(context)
+      {}
+
+      protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.Button> e)
+      {
+         base.OnElementChanged(e);
+         UpdatePadding();
+      }
+
+      private void UpdatePadding()
+      {
+         var element = this.Element as ExtendedButton;
+         if (element != null)
+         {
+            this.Control.SetPadding(
+                (int)element.Padding.Left,
+                (int)element.Padding.Top,
+                (int)element.Padding.Right,
+                (int)element.Padding.Bottom
+            );
+         }
+      }
+
+      protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
+      {
+         base.OnElementPropertyChanged(sender, e);
+         if (e.PropertyName == nameof(ExtendedButton.Padding))
+         {
             UpdatePadding();
-        }
-
-        private void UpdatePadding()
-        {
-            var element = this.Element as ExtendedButton;
-            if (element != null)
-            {
-                this.Control.SetPadding(
-                    (int)element.Padding.Left,
-                    (int)element.Padding.Top,
-                    (int)element.Padding.Right,
-                    (int)element.Padding.Bottom
-                );
-            }
-        }
-
-        protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
-        {
-            base.OnElementPropertyChanged(sender, e);
-            if (e.PropertyName == nameof(ExtendedButton.Padding))
-            {
-                UpdatePadding();
-            }
-        }
-    }
+         }
+      }
+   }
 }

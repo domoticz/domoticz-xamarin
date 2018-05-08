@@ -18,18 +18,15 @@
     <PackageReference Include="OxyPlot.Xamarin.Forms" Version="1.1.0-unstable0011" />
     <PackageReference Include="PCLStorage" Version="1.0.2" />
     <PackageReference Include="Plugin.DeviceOrientation" Version="1.0.7" />
-    <PackageReference Include="Plugin.InAppBilling" Version="1.2.5" />
+    <PackageReference Include="Plugin.InAppBilling" Version="1.2.4" />
     <PackageReference Include="Plugin.Multilingual" Version="1.0.2" />
     <PackageReference Include="Plugin.Permissions" Version="2.2.1" />
     <PackageReference Include="Plugin.Share" Version="7.1.1" />
     <PackageReference Include="Plugin.SpeechRecognition" Version="1.0.0-beta3" />
     <PackageReference Include="Rg.Plugins.Popup" Version="1.1.1.57" />
     <PackageReference Include="runtime.native.System" Version="4.3.0" />
-    <PackageReference Include="SlideOverKit" Version="2.1.6.1" />
+    <PackageReference Include="SlideOverKit" Version="2.1.5" />
     <PackageReference Include="Splat" Version="2.0.0" />
-    <PackageReference Include="System.Console" Version="4.3.1" />
-    <PackageReference Include="System.Linq" Version="4.3.0" />
-    <PackageReference Include="System.Linq.Expressions" Version="4.3.0" />
     <PackageReference Include="Xam.Plugin.Connectivity" Version="3.1.1" />
     <PackageReference Include="Xam.Plugin.DeviceInfo" Version="3.1.0" />
     <PackageReference Include="Xam.Plugin.PushNotification" Version="1.2.5-beta" />
@@ -49,8 +46,5 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Update="NETStandard.Library" Version="2.0.2" />
   </ItemGroup>
 </Project>

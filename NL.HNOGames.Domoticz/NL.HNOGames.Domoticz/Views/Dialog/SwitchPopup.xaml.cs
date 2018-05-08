@@ -52,7 +52,7 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
             }
 
             DeviceSelectedMethod?.Invoke(item, password, value);
-            await PopupNavigation.PopAsync();
+            await PopupNavigation.Instance.PopAsync();
         }
 
         protected override void OnAppearing()
@@ -75,7 +75,7 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
 
         private void btnCancel_Clicked(object sender, EventArgs e)
         {
-            PopupNavigation.PopAsync();
+            PopupNavigation.Instance.PopAsync();
         }
     }
 }

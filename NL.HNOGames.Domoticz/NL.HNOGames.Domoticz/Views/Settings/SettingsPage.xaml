@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-
 <ContentPage
    x:Class="NL.HNOGames.Domoticz.Views.Settings.SettingsPage"
    xmlns="http://xamarin.com/schemas/2014/forms"
@@ -57,6 +56,14 @@
                      VerticalOptions="Center" />
                </StackLayout>
             </StackLayout>
+
+            <BoxView   
+               x:Name="sepPremium"
+                 VerticalOptions="Center"
+                 HorizontalOptions="Center"
+                 HeightRequest="1"
+                 WidthRequest="50"  
+                 Color="#5b5d68" />
 
             <Label
                Margin="0,10,0,0"

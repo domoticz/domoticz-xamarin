@@ -153,7 +153,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             _oSelectedQrCode = (QRCodeModel) ((Button) sender).BindingContext;
             var oSwitchPopup = new SwitchPopup();
             oSwitchPopup.DeviceSelectedMethod += DelegateMethod;
-            await PopupNavigation.PushAsync(oSwitchPopup);
+            await PopupNavigation.Instance.PushAsync(oSwitchPopup);
         }
 
         /// <summary>

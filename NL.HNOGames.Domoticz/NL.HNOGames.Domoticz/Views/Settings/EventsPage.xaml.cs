@@ -95,7 +95,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                     new Command(async () => await ExecuteLoadLogsCommand()).Execute(null);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 App.ShowToast(AppResources.var_input_error);
             }

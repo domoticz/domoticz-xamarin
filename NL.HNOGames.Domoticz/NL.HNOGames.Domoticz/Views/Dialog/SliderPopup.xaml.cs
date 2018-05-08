@@ -37,7 +37,7 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
         {
             await App.ApiService.SetDimmer(_oDevice.idx, sDimmer.UpperValue + 1);
             _cmFinish?.Execute(null);
-            await PopupNavigation.PopAsync();
+            await PopupNavigation.Instance.PopAsync();
         }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
         /// </summary>
         private async void btnCancel_Clicked(object sender, EventArgs e)
         {
-            await PopupNavigation.PopAsync();
+            await PopupNavigation.Instance.PopAsync();
         }
     }
 }

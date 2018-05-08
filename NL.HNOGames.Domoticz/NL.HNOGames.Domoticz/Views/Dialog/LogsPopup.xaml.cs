@@ -65,7 +65,7 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
 
         private void btnOK_Clicked(object sender, EventArgs e)
         {
-            PopupNavigation.PopAsync();
+            PopupNavigation.Instance.PopAsync();
         }
     }
 }

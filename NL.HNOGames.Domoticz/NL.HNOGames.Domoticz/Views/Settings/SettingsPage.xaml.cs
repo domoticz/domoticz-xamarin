@@ -189,10 +189,12 @@ namespace NL.HNOGames.Domoticz.Views.Settings
          if (App.AppSettings.PremiumBought)
          {
             lyPremium.IsVisible = false;
+            sepPremium.IsVisible = false;
          }
          else
          {
             lyPremium.IsVisible = true;
+            sepPremium.IsVisible = true;
          }
       }
 

@@ -6,6 +6,8 @@ using FFImageLoading.Forms.Droid;
 using System;
 using ZXing.Mobile;
 using Plugin.InAppBilling;
+using Plugin.Fingerprint;
+using Plugin.CurrentActivity;
 using Android.Content;
 using System.Net;
 
@@ -34,6 +36,9 @@ namespace NL.HNOGames.Domoticz.Droid
          CachedImageRenderer.Init(true);
          UserDialogs.Init(this);
          Rg.Plugins.Popup.Popup.Init(this, bundle);
+
+         CrossCurrentActivity.Current.Init(this, bundle);
+         CrossFingerprint.SetCurrentActivityResolver(() => CrossCurrentActivity.Current.Activity);
 
          OxyPlot.Xamarin.Forms.Platform.Android.PlotViewRenderer.Init();
          ZXing.Net.Mobile.Forms.Android.Platform.Init();

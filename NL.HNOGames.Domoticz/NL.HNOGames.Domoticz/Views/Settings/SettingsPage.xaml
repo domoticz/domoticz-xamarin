@@ -282,6 +282,7 @@
                   HorizontalOptions="End"
                   VerticalOptions="Center" />
             </StackLayout>
+            
             <StackLayout
                Padding="0,10,0,10"
                HorizontalOptions="FillAndExpand"
@@ -331,6 +332,37 @@
                </StackLayout>
                <Switch
                   x:Name="swEnableNotifications"
+                  HorizontalOptions="End"
+                  VerticalOptions="Center" />
+            </StackLayout>
+
+            <Label
+               Margin="0,10,0,0"
+               LineBreakMode="NoWrap"
+               Style="{StaticResource HeaderType}"
+               Text="{resources:Translate category_startup_security}" />
+            <StackLayout
+               Padding="0,10,0,10"
+               HorizontalOptions="FillAndExpand"
+               Orientation="Horizontal"
+               VerticalOptions="StartAndExpand">
+               <StackLayout
+                  HorizontalOptions="StartAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="Center">
+                  <Label
+                     HorizontalOptions="Start"
+                     Style="{StaticResource SettingsDetailType}"
+                     Text="{resources:Translate security_settings}"
+                     VerticalOptions="CenterAndExpand" />
+                  <Label
+                     HorizontalOptions="Start"
+                     Style="{StaticResource DetailSmallType}"
+                     Text="{resources:Translate enable_security}"
+                     VerticalOptions="CenterAndExpand" />
+               </StackLayout>
+               <Switch
+                  x:Name="swEnableFingerprintSecurity"
                   HorizontalOptions="End"
                   VerticalOptions="Center" />
             </StackLayout>

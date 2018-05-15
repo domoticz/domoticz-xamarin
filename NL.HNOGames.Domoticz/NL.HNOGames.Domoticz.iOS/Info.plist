@@ -63,5 +63,7 @@
 	<string>Enable speech recognition in the app</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>We need the microphone for speech recognition</string>
+  <key>NSFaceIDUsageDescription</key>
+  <string>Need your face to unlock Domoticz.</string>
 </dict>
 </plist>

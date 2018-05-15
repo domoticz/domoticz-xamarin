@@ -147,6 +147,18 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             }
          };
 
+         //Enable fingerprint security
+         swEnableFingerprintSecurity.IsToggled = App.AppSettings.EnableFingerprintSecurity;
+         swEnableFingerprintSecurity.Toggled += (sender, args) =>
+         {
+            App.AppSettings.EnableFingerprintSecurity = swEnableFingerprintSecurity.IsToggled;
+            if (swEnableFingerprintSecurity.IsToggled && !App.AppSettings.PremiumBought)
+            {
+               swEnableFingerprintSecurity.IsToggled = false;
+               App.ShowToast(AppResources.security_settings + " " + AppResources.premium_feature);
+            }
+         };
+
          //Dashboard extra data
          swExtraData.IsToggled = App.AppSettings.ShowExtraData;
          lblExtraData.Text = App.AppSettings.ShowExtraData

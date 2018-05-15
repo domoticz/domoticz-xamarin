@@ -37,6 +37,7 @@ namespace NL.HNOGames.Domoticz.Helpers
       private const string MultiServerSettingsKey = "multiserver_settings_key";
       private const string DarkThemeSettingsKey = "darktheme_settings_key";
       private const string EnableNotificationsSettingsKey = "gcmnotifications_settings_key";
+      private const string EnableFingerprintSecuritySettingsKey = "fingerprint_settings_key";
       private const string ShowSwitchesSettingsKey = "showswitches_settings_key";
       private const string ExtraDataSettingsKey = "extradata_settings_key";
 
@@ -399,6 +400,21 @@ namespace NL.HNOGames.Domoticz.Helpers
          set
          {
             AppSettings.AddOrUpdateValue(EnableNotificationsSettingsKey, value);
+         }
+      }
+
+      /// <summary>
+      /// Enable FingerprintSecurity
+      /// </summary>
+      public bool EnableFingerprintSecurity
+      {
+         get
+         {
+            return AppSettings.GetValueOrDefault(EnableFingerprintSecuritySettingsKey, false);
+         }
+         set
+         {
+            AppSettings.AddOrUpdateValue(EnableFingerprintSecuritySettingsKey, value);
          }
       }
 

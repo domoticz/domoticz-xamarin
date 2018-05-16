@@ -7,8 +7,11 @@ using System.Collections.Generic;
 using NL.HNOGames.Domoticz.Helpers;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Plugin.Fingerprint;
 using Plugin.Multilingual;
 using System.Linq;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
 
 namespace NL.HNOGames.Domoticz.Views.Settings
 {
@@ -149,14 +152,34 @@ namespace NL.HNOGames.Domoticz.Views.Settings
 
          //Enable fingerprint security
          swEnableFingerprintSecurity.IsToggled = App.AppSettings.EnableFingerprintSecurity;
-         swEnableFingerprintSecurity.Toggled += (sender, args) =>
+         swEnableFingerprintSecurity.Toggled += async (sender, args) =>
          {
             App.AppSettings.EnableFingerprintSecurity = swEnableFingerprintSecurity.IsToggled;
-            if (swEnableFingerprintSecurity.IsToggled && !App.AppSettings.PremiumBought)
+
+            //if (swEnableFingerprintSecurity.IsToggled && !App.AppSettings.PremiumBought)
+            //{
+            //   swEnableFingerprintSecurity.IsToggled = false;
+            //   App.ShowToast(AppResources.security_settings + " " + AppResources.premium_feature);
+            //}
+            //else
+            //{
+            if(await CrossFingerprint.Current.IsAvailableAsync(true))
+            {
+               if (!await UserDialogs.Instance.ConfirmAsync(new ConfirmConfig
+               {
+                  Title = AppResources.category_startup_security,
+                  Message = AppResources.fingerprint_sure,
+                  OkText = AppResources.ok,
+                  CancelText = AppResources.cancel
+               }))
+                  swEnableFingerprintSecurity.IsToggled = false;
+            }
+            else
             {
                swEnableFingerprintSecurity.IsToggled = false;
-               App.ShowToast(AppResources.security_settings + " " + AppResources.premium_feature);
+               App.ShowToast(AppResources.fingerprint_not_supported);
             }
+            //}
          };
 
          //Dashboard extra data

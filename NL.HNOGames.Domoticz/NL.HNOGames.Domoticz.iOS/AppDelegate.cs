@@ -122,12 +122,9 @@ namespace NL.HNOGames.Domoticz.iOS
          Messaging.SharedInstance.Connect((error) =>
          {
             if (error == null)
-            {
                Messaging.SharedInstance.Subscribe("/topics/all");
-            }
-
             App.AddLog(error != null ? "GCM: error occured: " + error.Description : "GCM: connect success");
-            if (error != null && !tokenUploaded)
+            if (!tokenUploaded)
             {
                SaveToken();
             }

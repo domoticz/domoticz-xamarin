@@ -156,30 +156,30 @@ namespace NL.HNOGames.Domoticz.Views.Settings
          {
             App.AppSettings.EnableFingerprintSecurity = swEnableFingerprintSecurity.IsToggled;
 
-            //if (swEnableFingerprintSecurity.IsToggled && !App.AppSettings.PremiumBought)
-            //{
-            //   swEnableFingerprintSecurity.IsToggled = false;
-            //   App.ShowToast(AppResources.security_settings + " " + AppResources.premium_feature);
-            //}
-            //else
-            //{
-            if(await CrossFingerprint.Current.IsAvailableAsync(true))
-            {
-               if (!await UserDialogs.Instance.ConfirmAsync(new ConfirmConfig
-               {
-                  Title = AppResources.category_startup_security,
-                  Message = AppResources.fingerprint_sure,
-                  OkText = AppResources.ok,
-                  CancelText = AppResources.cancel
-               }))
-                  swEnableFingerprintSecurity.IsToggled = false;
-            }
-            else
+            if (swEnableFingerprintSecurity.IsToggled && !App.AppSettings.PremiumBought)
             {
                swEnableFingerprintSecurity.IsToggled = false;
-               App.ShowToast(AppResources.fingerprint_not_supported);
+               App.ShowToast(AppResources.security_settings + " " + AppResources.premium_feature);
             }
-            //}
+            else if(swEnableFingerprintSecurity.IsToggled)
+            {
+               if (await CrossFingerprint.Current.IsAvailableAsync())
+               {
+                  if (!await UserDialogs.Instance.ConfirmAsync(new ConfirmConfig
+                  {
+                     Title = AppResources.category_startup_security,
+                     Message = AppResources.fingerprint_sure,
+                     OkText = AppResources.ok,
+                     CancelText = AppResources.cancel
+                  }))
+                     swEnableFingerprintSecurity.IsToggled = false;
+               }
+               else
+               {
+                  swEnableFingerprintSecurity.IsToggled = false;
+                  App.ShowToast(AppResources.fingerprint_not_supported);
+               }
+            }
          };
 
          //Dashboard extra data

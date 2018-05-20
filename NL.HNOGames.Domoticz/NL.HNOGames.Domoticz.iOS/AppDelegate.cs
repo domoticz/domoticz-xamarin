@@ -108,7 +108,7 @@ namespace NL.HNOGames.Domoticz.iOS
       {
          tokenUploaded = true;
          App.AddLog(string.Format("GCM: Push Notification - Device Registered - Token : {0}", token));
-         String Id = Helpers.UsefulBits.GetDeviceID();
+         String Id = UsefulBits.GetDeviceID();
          bool bSuccess = await App.ApiService.RegisterDevice(Id, token);
          if (bSuccess)
             App.AddLog("GCM: Device registered on Domoticz");

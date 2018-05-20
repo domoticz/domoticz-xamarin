@@ -342,6 +342,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\CloseApplication.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MainApplication.cs" />
     <Compile Include="Renderer\AdMobRenderer.cs" />
@@ -2016,12 +2017,6 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_highlight_white.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NL.HNOGames.Domoticz\NL.HNOGames.Domoticz.csproj">
-      <Project>{c13c8119-a8a5-4dc5-a7dd-a0c9733bdceb}</Project>
-      <Name>NL.HNOGames.Domoticz</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\ic_settings.png" />
   </ItemGroup>
   <ItemGroup>
@@ -2335,6 +2330,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NL.HNOGames.Domoticz\NL.HNOGames.Domoticz.csproj">
+      <Project>{c13c8119-a8a5-4dc5-a7dd-a0c9733bdceb}</Project>
+      <Name>NL.HNOGames.Domoticz</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />

@@ -11,20 +11,19 @@
    <ContentPage.Content>
       <ScrollView>
          <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
-
             <StackLayout.Padding>
                <OnIdiom x:TypeArguments="Thickness">
                   <OnIdiom.Phone>20,20,20,20</OnIdiom.Phone>
                   <OnIdiom.Tablet>150,30,150,30</OnIdiom.Tablet>
                </OnIdiom>
             </StackLayout.Padding>
-
             <StackLayout x:Name="lyPremium">
                <Label
                   Margin="0,10,0,0"
                   LineBreakMode="NoWrap"
                   Style="{StaticResource HeaderType}"
                   Text="{resources:Translate premium_category}" />
+               <BoxView Style="{StaticResource HeaderSeperator}" />
                <StackLayout
                   Padding="0,10,0,0"
                   HorizontalOptions="FillAndExpand"
@@ -56,20 +55,13 @@
                      VerticalOptions="Center" />
                </StackLayout>
             </StackLayout>
-
-            <BoxView   
-               x:Name="sepPremium"
-                 VerticalOptions="Center"
-                 HorizontalOptions="Center"
-                 HeightRequest="1"
-                 WidthRequest="50"  
-                 Color="#5b5d68" />
-
+            <BoxView x:Name="sepPremium" Style="{StaticResource DetailSeperator}" />
             <Label
                Margin="0,10,0,0"
                LineBreakMode="NoWrap"
                Style="{StaticResource HeaderType}"
                Text="{resources:Translate title_dashboard}" />
+            <BoxView Style="{StaticResource HeaderSeperator}" />
             <StackLayout
                Padding="0,10,0,0"
                HorizontalOptions="FillAndExpand"
@@ -86,14 +78,16 @@
                      Text="{resources:Translate enable_items}"
                      VerticalOptions="CenterAndExpand" />
                </StackLayout>
-               <custcontrol:ExtendedButton
-                  Padding="10,0,10,0"
-                  Clicked="btnEnableScreens_Clicked"
-                  HorizontalOptions="End"
-                  Text="Ok"
-                  VerticalOptions="Center" />
+               <custcontrol:TintedCachedImage
+                  HorizontalOptions="EndAndExpand"
+                  Source="baseline_arrow_right_black_24.png"
+                  Style="{DynamicResource expendIcon}"
+                  VerticalOptions="CenterAndExpand" />
+               <StackLayout.GestureRecognizers>
+                  <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="btnEnableScreens_Clicked" />
+               </StackLayout.GestureRecognizers>
             </StackLayout>
-
+            <BoxView Style="{StaticResource DetailSeperator}" />
             <StackLayout
                Padding="0,10,0,0"
                HorizontalOptions="FillAndExpand"
@@ -120,7 +114,7 @@
                   HorizontalOptions="End"
                   VerticalOptions="Center" />
             </StackLayout>
-
+            <BoxView Style="{StaticResource DetailSeperator}" />
             <StackLayout
                Padding="0,10,0,0"
                HorizontalOptions="FillAndExpand"
@@ -147,7 +141,7 @@
                   HorizontalOptions="End"
                   VerticalOptions="Center" />
             </StackLayout>
-
+            <BoxView Style="{StaticResource DetailSeperator}" />
             <StackLayout
                Padding="0,10,0,10"
                HorizontalOptions="FillAndExpand"
@@ -174,12 +168,13 @@
                   HorizontalOptions="End"
                   VerticalOptions="Center" />
             </StackLayout>
-
+            <BoxView Style="{StaticResource DetailSeperator}" />
             <Label
                Margin="0,10,0,0"
                LineBreakMode="NoWrap"
                Style="{StaticResource HeaderType}"
                Text="{resources:Translate category_server}" />
+            <BoxView Style="{StaticResource HeaderSeperator}" />
             <StackLayout
                Padding="0,10,0,0"
                HorizontalOptions="FillAndExpand"
@@ -206,7 +201,7 @@
                   HorizontalOptions="End"
                   VerticalOptions="Center" />
             </StackLayout>
-
+            <BoxView Style="{StaticResource DetailSeperator}" />
             <StackLayout
                Padding="0,10,0,10"
                HorizontalOptions="FillAndExpand"
@@ -223,18 +218,21 @@
                      Text="{resources:Translate server_settings}"
                      VerticalOptions="CenterAndExpand" />
                </StackLayout>
-               <custcontrol:ExtendedButton
-                  Padding="10,0,10,0"
-                  Clicked="btnServerSetup_Clicked"
-                  HorizontalOptions="End"
-                  Text="Ok"
-                  VerticalOptions="Center" />
+               <custcontrol:TintedCachedImage
+                  HorizontalOptions="EndAndExpand"
+                  Source="baseline_arrow_right_black_24.png"
+                  Style="{DynamicResource expendIcon}"
+                  VerticalOptions="CenterAndExpand" />
+               <StackLayout.GestureRecognizers>
+                  <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="btnServerSetup_Clicked" />
+               </StackLayout.GestureRecognizers>
             </StackLayout>
-
+            <BoxView Style="{StaticResource DetailSeperator}" />
             <Label
                LineBreakMode="NoWrap"
                Style="{StaticResource HeaderType}"
                Text="{resources:Translate category_generic}" />
+            <BoxView Style="{StaticResource HeaderSeperator}" />
             <StackLayout
                Padding="0,10,0,10"
                HorizontalOptions="FillAndExpand"
@@ -257,6 +255,7 @@
                   MinimumWidthRequest="100"
                   Style="{StaticResource PickerType}" />
             </StackLayout>
+            <BoxView Style="{StaticResource DetailSeperator}" />
             <StackLayout
                Padding="0,10,0,10"
                HorizontalOptions="FillAndExpand"
@@ -282,7 +281,7 @@
                   HorizontalOptions="End"
                   VerticalOptions="Center" />
             </StackLayout>
-            
+            <BoxView Style="{StaticResource DetailSeperator}" />
             <StackLayout
                Padding="0,10,0,10"
                HorizontalOptions="FillAndExpand"
@@ -304,12 +303,13 @@
                   MinimumWidthRequest="100"
                   Style="{StaticResource PickerType}" />
             </StackLayout>
-
+            <BoxView Style="{StaticResource DetailSeperator}" />
             <Label
                Margin="0,10,0,0"
                LineBreakMode="NoWrap"
                Style="{StaticResource HeaderType}"
                Text="{resources:Translate notification_screen_title}" />
+            <BoxView Style="{StaticResource HeaderSeperator}" />
             <StackLayout
                Padding="0,10,0,10"
                HorizontalOptions="FillAndExpand"
@@ -335,12 +335,13 @@
                   HorizontalOptions="End"
                   VerticalOptions="Center" />
             </StackLayout>
-
+            <BoxView Style="{StaticResource DetailSeperator}" />
             <Label
                Margin="0,10,0,0"
                LineBreakMode="NoWrap"
                Style="{StaticResource HeaderType}"
                Text="{resources:Translate category_startup_security}" />
+            <BoxView Style="{StaticResource HeaderSeperator}" />
             <StackLayout
                Padding="0,10,0,10"
                HorizontalOptions="FillAndExpand"
@@ -366,12 +367,13 @@
                   HorizontalOptions="End"
                   VerticalOptions="Center" />
             </StackLayout>
-
+            <BoxView Style="{StaticResource DetailSeperator}" />
             <Label
                Margin="0,10,0,0"
                LineBreakMode="NoWrap"
                Style="{StaticResource HeaderType}"
                Text="{resources:Translate category_theme}" />
+            <BoxView Style="{StaticResource HeaderSeperator}" />
             <StackLayout
                Padding="0,10,0,0"
                HorizontalOptions="FillAndExpand"
@@ -393,12 +395,13 @@
                   HorizontalOptions="End"
                   VerticalOptions="Center" />
             </StackLayout>
-
+            <BoxView Style="{StaticResource DetailSeperator}" />
             <Label
                Margin="0,10,0,0"
                LineBreakMode="NoWrap"
                Style="{StaticResource HeaderType}"
                Text="{resources:Translate cameraActivity_name}" />
+            <BoxView Style="{StaticResource HeaderSeperator}" />
             <StackLayout
                Padding="0,10,0,0"
                HorizontalOptions="FillAndExpand"
@@ -415,20 +418,22 @@
                      Text="{resources:Translate cameraActivity_name}"
                      VerticalOptions="CenterAndExpand" />
                </StackLayout>
-               <custcontrol:ExtendedButton
-                  x:Name="btnCameras"
-                  Padding="10,0,10,0"
-                  Clicked="BtnCameras_OnClicked"
-                  HorizontalOptions="End"
-                  Text="Ok"
-                  VerticalOptions="Center" />
+               <custcontrol:TintedCachedImage
+                  HorizontalOptions="EndAndExpand"
+                  Source="baseline_arrow_right_black_24.png"
+                  Style="{DynamicResource expendIcon}"
+                  VerticalOptions="CenterAndExpand" />
+               <StackLayout.GestureRecognizers>
+                  <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="BtnCameras_OnClicked" />
+               </StackLayout.GestureRecognizers>
             </StackLayout>
-
+            <BoxView Style="{StaticResource DetailSeperator}" />
             <Label
                Margin="0,10,0,0"
                LineBreakMode="NoWrap"
                Style="{StaticResource HeaderType}"
                Text="{resources:Translate category_Speech}" />
+            <BoxView Style="{StaticResource HeaderSeperator}" />
             <StackLayout
                Padding="0,10,0,0"
                HorizontalOptions="FillAndExpand"
@@ -446,14 +451,16 @@
                      Text="{resources:Translate category_Speech}"
                      VerticalOptions="CenterAndExpand" />
                </StackLayout>
-               <custcontrol:ExtendedButton
-                  x:Name="btnSpeechSettings"
-                  Padding="10,0,10,0"
-                  Clicked="btnSpeechSettings_Clicked"
-                  HorizontalOptions="End"
-                  Text="Ok"
-                  VerticalOptions="Center" />
+               <custcontrol:TintedCachedImage
+                  HorizontalOptions="EndAndExpand"
+                  Source="baseline_arrow_right_black_24.png"
+                  Style="{DynamicResource expendIcon}"
+                  VerticalOptions="CenterAndExpand" />
+               <StackLayout.GestureRecognizers>
+                  <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="btnSpeechSettings_Clicked" />
+               </StackLayout.GestureRecognizers>
             </StackLayout>
+            <BoxView Style="{StaticResource DetailSeperator}" />
 
             <!--<Label Text="{resources:Translate title_geofence}" LineBreakMode="NoWrap"
                            Style="{StaticResource HeaderType}" Margin="0,10,0,0"/>
@@ -464,9 +471,16 @@
                                    HorizontalOptions="Start" LineBreakMode="NoWrap"
                                    Style="{StaticResource SettingsDetailType}" />
                     </StackLayout>
-                    <custcontrol:ExtendedButton Padding="10,0,10,0" x:Name="btnGeofenceSettings" Text="Ok" HorizontalOptions="End" VerticalOptions="Center"
-                                Clicked="btnGeofenceSettings_Clicked">
-                    </custcontrol:ExtendedButton>
+               <custcontrol:TintedCachedImage
+                  HorizontalOptions="EndAndExpand"
+                  Source="baseline_arrow_right_black_24.png"
+                  Style="{DynamicResource expendIcon}"
+                  VerticalOptions="CenterAndExpand" />
+             <StackLayout.GestureRecognizers>
+                  <TapGestureRecognizer
+                   Tapped="btnGeofenceSettings_Clicked"
+                   NumberOfTapsRequired="1" />
+               </StackLayout.GestureRecognizers>
                 </StackLayout>-->
 
             <Label
@@ -474,6 +488,7 @@
                LineBreakMode="NoWrap"
                Style="{StaticResource HeaderType}"
                Text="{resources:Translate category_QRCode}" />
+            <BoxView Style="{StaticResource HeaderSeperator}" />
             <StackLayout
                Padding="0,10,0,0"
                HorizontalOptions="FillAndExpand"
@@ -491,20 +506,22 @@
                      Text="{resources:Translate category_QRCode}"
                      VerticalOptions="CenterAndExpand" />
                </StackLayout>
-               <custcontrol:ExtendedButton
-                  x:Name="btnQRCode"
-                  Padding="10,0,10,0"
-                  Clicked="btnQRCode_Clicked"
-                  HorizontalOptions="End"
-                  Text="Ok"
-                  VerticalOptions="Center" />
+               <custcontrol:TintedCachedImage
+                  HorizontalOptions="EndAndExpand"
+                  Source="baseline_arrow_right_black_24.png"
+                  Style="{DynamicResource expendIcon}"
+                  VerticalOptions="CenterAndExpand" />
+               <StackLayout.GestureRecognizers>
+                  <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="btnQRCode_Clicked" />
+               </StackLayout.GestureRecognizers>
             </StackLayout>
-
+            <BoxView Style="{StaticResource DetailSeperator}" />
             <Label
                Margin="0,10,0,0"
                LineBreakMode="NoWrap"
                Style="{StaticResource HeaderType}"
                Text="{resources:Translate category_advanced}" />
+            <BoxView Style="{StaticResource HeaderSeperator}" />
             <StackLayout
                Padding="0,10,0,0"
                HorizontalOptions="FillAndExpand"
@@ -521,15 +538,16 @@
                      Text="{resources:Translate button_status_log}"
                      VerticalOptions="CenterAndExpand" />
                </StackLayout>
-               <custcontrol:ExtendedButton
-                  x:Name="btnShowLog"
-                  Padding="10,0,10,0"
-                  Clicked="btnShowLog_Clicked"
-                  HorizontalOptions="End"
-                  Text="Ok"
-                  VerticalOptions="Center" />
+               <custcontrol:TintedCachedImage
+                  HorizontalOptions="EndAndExpand"
+                  Source="baseline_arrow_right_black_24.png"
+                  Style="{DynamicResource expendIcon}"
+                  VerticalOptions="CenterAndExpand" />
+               <StackLayout.GestureRecognizers>
+                  <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="btnShowLog_Clicked" />
+               </StackLayout.GestureRecognizers>
             </StackLayout>
-
+            <BoxView Style="{StaticResource DetailSeperator}" />
             <StackLayout
                Padding="0,10,0,0"
                HorizontalOptions="FillAndExpand"
@@ -546,14 +564,16 @@
                      Text="{resources:Translate title_vars}"
                      VerticalOptions="CenterAndExpand" />
                </StackLayout>
-               <custcontrol:ExtendedButton
-                  x:Name="btnUserVars"
-                  Padding="10,0,10,0"
-                  Clicked="btnUserVars_Clicked"
-                  HorizontalOptions="End"
-                  Text="Ok"
-                  VerticalOptions="Center" />
+               <custcontrol:TintedCachedImage
+                  HorizontalOptions="EndAndExpand"
+                  Source="baseline_arrow_right_black_24.png"
+                  Style="{DynamicResource expendIcon}"
+                  VerticalOptions="CenterAndExpand" />
+               <StackLayout.GestureRecognizers>
+                  <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="btnUserVars_Clicked" />
+               </StackLayout.GestureRecognizers>
             </StackLayout>
+            <BoxView Style="{StaticResource DetailSeperator}" />
             <StackLayout
                Padding="0,10,0,0"
                HorizontalOptions="FillAndExpand"
@@ -570,14 +590,16 @@
                      Text="{resources:Translate title_events}"
                      VerticalOptions="CenterAndExpand" />
                </StackLayout>
-               <custcontrol:ExtendedButton
-                  x:Name="btnEvents"
-                  Padding="10,0,10,0"
-                  Clicked="btnEvents_Clicked"
-                  HorizontalOptions="End"
-                  Text="Ok"
-                  VerticalOptions="Center" />
+               <custcontrol:TintedCachedImage
+                  HorizontalOptions="EndAndExpand"
+                  Source="baseline_arrow_right_black_24.png"
+                  Style="{DynamicResource expendIcon}"
+                  VerticalOptions="CenterAndExpand" />
+               <StackLayout.GestureRecognizers>
+                  <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="btnEvents_Clicked" />
+               </StackLayout.GestureRecognizers>
             </StackLayout>
+            <BoxView Style="{StaticResource DetailSeperator}" />
             <StackLayout
                Padding="0,10,0,0"
                HorizontalOptions="FillAndExpand"
@@ -595,12 +617,14 @@
                      Text="{resources:Translate category_debug}"
                      VerticalOptions="CenterAndExpand" />
                </StackLayout>
-               <custcontrol:ExtendedButton
-                  Padding="10,0,10,0"
-                  Clicked="btnDebugInfo_Clicked"
-                  HorizontalOptions="End"
-                  Text="Ok"
-                  VerticalOptions="Center" />
+               <custcontrol:TintedCachedImage
+                  HorizontalOptions="EndAndExpand"
+                  Source="baseline_arrow_right_black_24.png"
+                  Style="{DynamicResource expendIcon}"
+                  VerticalOptions="CenterAndExpand" />
+               <StackLayout.GestureRecognizers>
+                  <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="btnDebugInfo_Clicked" />
+               </StackLayout.GestureRecognizers>
             </StackLayout>
          </StackLayout>
       </ScrollView>

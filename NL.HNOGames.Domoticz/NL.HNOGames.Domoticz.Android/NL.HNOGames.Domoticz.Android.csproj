@@ -2397,6 +2397,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="readme.txt" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_arrow_right_black_24.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\baseline_arrow_right_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_arrow_right_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_arrow_right_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_arrow_right_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_launcher_foreground.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_launcher_round.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NL.HNOGames.Domoticz\NL.HNOGames.Domoticz.csproj">

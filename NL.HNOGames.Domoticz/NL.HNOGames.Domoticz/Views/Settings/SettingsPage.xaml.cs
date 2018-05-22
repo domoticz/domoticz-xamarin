@@ -161,7 +161,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                swEnableFingerprintSecurity.IsToggled = false;
                App.ShowToast(AppResources.security_settings + " " + AppResources.premium_feature);
             }
-            else if(swEnableFingerprintSecurity.IsToggled)
+            else if (swEnableFingerprintSecurity.IsToggled)
             {
                if (await CrossFingerprint.Current.IsAvailableAsync())
                {

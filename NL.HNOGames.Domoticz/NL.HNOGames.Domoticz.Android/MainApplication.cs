@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using PushNotification.Plugin;
 using NL.HNOGames.Domoticz.Helpers;
+using Plugin.CurrentActivity;
 
 namespace NL.HNOGames.Domoticz.Droid
 {
@@ -20,7 +21,6 @@ namespace NL.HNOGames.Domoticz.Droid
 #else
    [Application(Debuggable = false)]
 #endif
-   [Application]
    public class MainApplication : Application
    {
       public static Context AppContext;

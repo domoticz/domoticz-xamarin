@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\..\packages\Xamarin.Forms.3.0.0.446417\build\netstandard2.0\Xamarin.Forms.props" Condition="Exists('..\..\packages\Xamarin.Forms.3.0.0.446417\build\netstandard2.0\Xamarin.Forms.props')" />
+  <Import Project="..\..\packages\Xamarin.Forms.3.0.0.482510\build\netstandard2.0\Xamarin.Forms.props" Condition="Exists('..\..\packages\Xamarin.Forms.3.0.0.482510\build\netstandard2.0\Xamarin.Forms.props')" />
   <Import Project="..\..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props" Condition="Exists('..\..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -242,11 +242,11 @@
     <Reference Include="Plugin.Fingerprint.Abstractions, Version=1.4.7.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Plugin.Fingerprint.1.4.7\lib\Xamarin.iOS10\Plugin.Fingerprint.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="Plugin.InAppBilling, Version=1.2.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Plugin.InAppBilling.1.2.4\lib\Xamarin.iOS10\Plugin.InAppBilling.dll</HintPath>
+    <Reference Include="Plugin.InAppBilling, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.InAppBilling.1.4.1\lib\Xamarin.iOS10\Plugin.InAppBilling.dll</HintPath>
     </Reference>
-    <Reference Include="Plugin.InAppBilling.Abstractions, Version=1.2.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Plugin.InAppBilling.1.2.4\lib\Xamarin.iOS10\Plugin.InAppBilling.Abstractions.dll</HintPath>
+    <Reference Include="Plugin.InAppBilling.Abstractions, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.InAppBilling.1.4.1\lib\Xamarin.iOS10\Plugin.InAppBilling.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.LocalNotifications, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugins.Notifier.2.1.0\lib\Xamarin.iOS10\Plugin.LocalNotifications.dll</HintPath>
@@ -341,34 +341,30 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.3.0.0.446417\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Forms.3.0.0.482510\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.3.0.0.446417\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Forms.3.0.0.482510\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform.iOS, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.3.0.0.446417\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Forms.3.0.0.482510\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.3.0.0.446417\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Forms.3.0.0.482510\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.iOS" />
     <Reference Include="System.Net.Http" />
     <Reference Include="Xamarin.RangeSlider.Common, Version=0.7.33.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.RangeSlider.0.7.33\lib\Xamarin.iOS10\Xamarin.RangeSlider.Common.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.RangeSlider.Forms, Version=0.7.33.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.RangeSlider.0.7.33\lib\Xamarin.iOS10\Xamarin.RangeSlider.Forms.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.RangeSlider.Forms.iOS, Version=0.7.33.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.RangeSlider.0.7.33\lib\Xamarin.iOS10\Xamarin.RangeSlider.Forms.iOS.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.RangeSlider.iOS, Version=0.7.33.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.RangeSlider.0.7.33\lib\Xamarin.iOS10\Xamarin.RangeSlider.iOS.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="XLabs.Cryptography, Version=2.0.5782.12232, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\XLabs.Cryptography.2.0.5782\lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1\XLabs.Cryptography.dll</HintPath>
@@ -871,20 +867,71 @@
     <BundleResource Include="Resources\ic_keyboard_voice.png" />
     <BundleResource Include="Resources\ic_keyboard_voice%402x.png" />
     <BundleResource Include="Resources\ic_keyboard_voice%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\slider-default_trackBackground%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\slider-default7-trackCrossedOver%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\slider-default7-trackCrossedOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\slider-default7-trackBackground%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\slider-default7-trackBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\slider-default7-track%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\slider-default7-track.png" />
+  </ItemGroup>
+  <ItemGroup>
     <BundleResource Include="Resources\slider-default7-handle%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
     <BundleResource Include="Resources\slider-default7-handle.png" />
+  </ItemGroup>
+  <ItemGroup>
     <BundleResource Include="Resources\slider-default7-handle-disabled%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
     <BundleResource Include="Resources\slider-default7-handle-disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
     <BundleResource Include="Resources\slider-default-trackCrossedOver%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
     <BundleResource Include="Resources\slider-default-trackCrossedOver.png" />
+  </ItemGroup>
+  <ItemGroup>
     <BundleResource Include="Resources\slider-default-trackBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
     <BundleResource Include="Resources\slider-default-track%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
     <BundleResource Include="Resources\slider-default-track.png" />
+  </ItemGroup>
+  <ItemGroup>
     <BundleResource Include="Resources\slider-default-handle%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
     <BundleResource Include="Resources\slider-default-handle.png" />
+  </ItemGroup>
+  <ItemGroup>
     <BundleResource Include="Resources\slider-default-handle-highlighted%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
     <BundleResource Include="Resources\slider-default-handle-highlighted.png" />
+  </ItemGroup>
+  <ItemGroup>
     <BundleResource Include="Resources\slider-default-handle-disabled%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
     <BundleResource Include="Resources\slider-default-handle-disabled.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
@@ -901,9 +948,9 @@
     <Error Condition="!Exists('..\..\packages\Xamarin.Firebase.iOS.Core.4.0.13.1\build\Xamarin.Firebase.iOS.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Firebase.iOS.Core.4.0.13.1\build\Xamarin.Firebase.iOS.Core.targets'))" />
     <Error Condition="!Exists('..\..\packages\Xamarin.Firebase.iOS.Analytics.4.0.5.1\build\Xamarin.Firebase.iOS.Analytics.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Firebase.iOS.Analytics.4.0.5.1\build\Xamarin.Firebase.iOS.Analytics.targets'))" />
     <Error Condition="!Exists('..\..\packages\Xamarin.Firebase.iOS.CloudMessaging.2.0.8.1\build\Xamarin.Firebase.iOS.CloudMessaging.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Firebase.iOS.CloudMessaging.2.0.8.1\build\Xamarin.Firebase.iOS.CloudMessaging.targets'))" />
-    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.3.0.0.446417\build\netstandard2.0\Xamarin.Forms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.3.0.0.446417\build\netstandard2.0\Xamarin.Forms.props'))" />
-    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.3.0.0.446417\build\netstandard2.0\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.3.0.0.446417\build\netstandard2.0\Xamarin.Forms.targets'))" />
     <Error Condition="!Exists('..\..\packages\Xamarin.Google.iOS.MobileAds.7.27.0.3\build\Xamarin.Google.iOS.MobileAds.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Google.iOS.MobileAds.7.27.0.3\build\Xamarin.Google.iOS.MobileAds.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.3.0.0.482510\build\netstandard2.0\Xamarin.Forms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.3.0.0.482510\build\netstandard2.0\Xamarin.Forms.props'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.3.0.0.482510\build\netstandard2.0\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.3.0.0.482510\build\netstandard2.0\Xamarin.Forms.targets'))" />
   </Target>
   <Import Project="..\..\packages\Xamarin.Firebase.iOS.InstanceID.2.0.8\build\Xamarin.Firebase.iOS.InstanceID.targets" Condition="Exists('..\..\packages\Xamarin.Firebase.iOS.InstanceID.2.0.8\build\Xamarin.Firebase.iOS.InstanceID.targets')" />
   <Import Project="..\..\packages\Xamarin.Google.iOS.Core.3.1.0.1\build\Xamarin.Google.iOS.Core.targets" Condition="Exists('..\..\packages\Xamarin.Google.iOS.Core.3.1.0.1\build\Xamarin.Google.iOS.Core.targets')" />
@@ -913,6 +960,6 @@
   <Import Project="..\..\packages\Xamarin.Firebase.iOS.Core.4.0.13.1\build\Xamarin.Firebase.iOS.Core.targets" Condition="Exists('..\..\packages\Xamarin.Firebase.iOS.Core.4.0.13.1\build\Xamarin.Firebase.iOS.Core.targets')" />
   <Import Project="..\..\packages\Xamarin.Firebase.iOS.Analytics.4.0.5.1\build\Xamarin.Firebase.iOS.Analytics.targets" Condition="Exists('..\..\packages\Xamarin.Firebase.iOS.Analytics.4.0.5.1\build\Xamarin.Firebase.iOS.Analytics.targets')" />
   <Import Project="..\..\packages\Xamarin.Firebase.iOS.CloudMessaging.2.0.8.1\build\Xamarin.Firebase.iOS.CloudMessaging.targets" Condition="Exists('..\..\packages\Xamarin.Firebase.iOS.CloudMessaging.2.0.8.1\build\Xamarin.Firebase.iOS.CloudMessaging.targets')" />
-  <Import Project="..\..\packages\Xamarin.Forms.3.0.0.446417\build\netstandard2.0\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.3.0.0.446417\build\netstandard2.0\Xamarin.Forms.targets')" />
   <Import Project="..\..\packages\Xamarin.Google.iOS.MobileAds.7.27.0.3\build\Xamarin.Google.iOS.MobileAds.targets" Condition="Exists('..\..\packages\Xamarin.Google.iOS.MobileAds.7.27.0.3\build\Xamarin.Google.iOS.MobileAds.targets')" />
+  <Import Project="..\..\packages\Xamarin.Forms.3.0.0.482510\build\netstandard2.0\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.3.0.0.482510\build\netstandard2.0\Xamarin.Forms.targets')" />
 </Project>

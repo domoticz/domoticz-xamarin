@@ -47,15 +47,7 @@ namespace NL.HNOGames.Domoticz.Views
          else
          {
             _viewModel.RefreshPlansCommand.Execute(null);
-
-            if (App.AppSettings.EnableFingerprintSecurity)
-            {
-               var result = await CrossFingerprint.Current.AuthenticateAsync(AppResources.category_startup_security);
-               if (!result.Authenticated)
-               {
-                  App.ShowToast("NOT AÛTHORIZED");
-               }
-            }
+           
          }
          if (!App.AppSettings.QRCodeEnabled)
             ToolbarItems.Remove(tiQRCode);

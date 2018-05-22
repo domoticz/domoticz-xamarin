@@ -5,8 +5,8 @@ using Android.OS;
 using FFImageLoading.Forms.Droid;
 using System;
 using ZXing.Mobile;
-using Plugin.InAppBilling;
 using Plugin.Fingerprint;
+using Plugin.InAppBilling;
 using Plugin.CurrentActivity;
 using Android.Content;
 using System.Net;
@@ -19,7 +19,7 @@ using System.Net;
 
 namespace NL.HNOGames.Domoticz.Droid
 {
-   [Activity(Label = "@string/app_name", Icon = "@mipmap/ic_launcher", RoundIcon = "@mipmap/ic_launcher_round", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+   [Activity(Label = "@string/app_name", Icon = "@mipmap/ic_launcher", RoundIcon = "@mipmap/ic_launcher_round", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
    {
       protected override void OnCreate(Bundle bundle)

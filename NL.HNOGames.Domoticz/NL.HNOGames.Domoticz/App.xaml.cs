@@ -12,6 +12,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Threading;
 using Plugin.Multilingual;
+using Plugin.Fingerprint;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace NL.HNOGames.Domoticz
@@ -115,7 +116,7 @@ namespace NL.HNOGames.Domoticz
       private void Init()
       {
          InitializeComponent();
-         
+
          FlowListView.Init();
          AppSettings = new Settings { DebugInfo = string.Empty };
 
@@ -128,6 +129,28 @@ namespace NL.HNOGames.Domoticz
 
          SetTheme();
          SetMainPage();
+         CheckFingerprint();
+      }
+
+      private static async void CheckFingerprint()
+      {
+         if (App.AppSettings.EnableFingerprintSecurity)
+         {
+            var result = await CrossFingerprint.Current.AuthenticateAsync(AppResources.category_startup_security);
+            if (!result.Authenticated)
+            {
+               App.AddLog("Not authorized for login");
+               DependencyService.Get<Helpers.ICloseApplication>().Close();
+            }
+            //TODO
+            //else
+            //{
+            //   if( result.Status == Plugin.Fingerprint.Abstractions.FingerprintAuthenticationResultStatus.FallbackRequested)
+            //   {
+
+            //   }
+            //}
+         }
       }
 
       /// <summary>

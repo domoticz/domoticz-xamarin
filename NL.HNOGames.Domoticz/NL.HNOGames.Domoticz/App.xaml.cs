@@ -13,6 +13,8 @@ using Xamarin.Forms.Xaml;
 using System.Threading;
 using Plugin.Multilingual;
 using Plugin.Fingerprint;
+using Plugin.Fingerprint.Abstractions;
+using System.Threading.Tasks;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace NL.HNOGames.Domoticz
@@ -132,24 +134,39 @@ namespace NL.HNOGames.Domoticz
          CheckFingerprint();
       }
 
+      /// <summary>
+      /// Check fingerprint security
+      /// </summary>
       private static async void CheckFingerprint()
       {
          if (App.AppSettings.EnableFingerprintSecurity)
          {
-            var result = await CrossFingerprint.Current.AuthenticateAsync(AppResources.category_startup_security);
-            if (!result.Authenticated)
+            var result = await CrossFingerprint.Current.AuthenticateAsync(new AuthenticationRequestConfiguration(AppResources.category_startup_security)
             {
-               App.AddLog("Not authorized for login");
-               DependencyService.Get<Helpers.ICloseApplication>().Close();
+               AllowAlternativeAuthentication = true,
+               CancelTitle = AppResources.cancel,
+               UseDialog = true,
+               FallbackTitle = (Device.RuntimePlatform != Device.Android) ? AppResources.welcome_local_server_password : string.Empty,
+            });
+            switch (result.Status)
+            {
+               case FingerprintAuthenticationResultStatus.Succeeded:
+                  break;
+               case FingerprintAuthenticationResultStatus.FallbackRequested:
+                  var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password, inputType: InputType.Password);
+                  await Task.Delay(500);
+                  if (!r.Ok || string.IsNullOrEmpty(r.Text) ||
+                     (r.Text != AppSettings.ActiveServerSettings.LOCAL_SERVER_PASSWORD && r.Text != AppSettings.ActiveServerSettings.REMOTE_SERVER_PASSWORD))
+                  {
+                     App.AddLog("Not authorized for login");
+                     DependencyService.Get<ICloseApplication>().Close();//close the application
+                  }
+                  break;
+               default:// All other options
+                  App.AddLog("Not authorized for login");
+                  DependencyService.Get<ICloseApplication>().Close();//close the application
+                  break;
             }
-            //TODO
-            //else
-            //{
-            //   if( result.Status == Plugin.Fingerprint.Abstractions.FingerprintAuthenticationResultStatus.FallbackRequested)
-            //   {
-
-            //   }
-            //}
          }
       }
 

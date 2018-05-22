@@ -10,6 +10,7 @@ using Plugin.InAppBilling;
 using Plugin.CurrentActivity;
 using Android.Content;
 using System.Net;
+using NL.HNOGames.Domoticz.Droid.Helpers;
 
 #if NETFX_CORE
 [assembly: Xamarin.Forms.Platform.WinRT.ExportRenderer(typeof(Xamarin.RangeSlider.Forms.RangeSlider), typeof(Xamarin.RangeSlider.Forms.RangeSliderRenderer))]
@@ -39,6 +40,7 @@ namespace NL.HNOGames.Domoticz.Droid
 
          CrossCurrentActivity.Current.Init(this, bundle);
          CrossFingerprint.SetCurrentActivityResolver(() => CrossCurrentActivity.Current.Activity);
+         CrossFingerprint.SetDialogFragmentType<CustomFingerprintDialogFragment>();
 
          OxyPlot.Xamarin.Forms.Platform.Android.PlotViewRenderer.Init();
          ZXing.Net.Mobile.Forms.Android.Platform.Init();

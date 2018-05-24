@@ -48,6 +48,8 @@
                   HorizontalOptions="End"
                   VerticalOptions="Center" />
             </StackLayout>
+            <BoxView Style="{StaticResource HeaderSeperator}" />
+
             <ListView
                x:Name="listView"
                BackgroundColor="{DynamicResource LightBackgroundColor}"
@@ -56,9 +58,20 @@
                SeparatorVisibility="None">
                <ListView.ItemTemplate>
                   <DataTemplate>
-                     <ViewCell>
-                        <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
-                           <Grid Style="{StaticResource DashboardDeviceCardType}">
+                     <custcontrol:CustomViewCell>
+                        <StackLayout
+                           Margin="0"
+                           Padding="0"
+                           HorizontalOptions="FillAndExpand"
+                           Orientation="Vertical"
+                           VerticalOptions="StartAndExpand">
+                           <StackLayout.Padding>
+                              <OnIdiom x:TypeArguments="Thickness">
+                                 <OnIdiom.Phone>20,10,20,10</OnIdiom.Phone>
+                                 <OnIdiom.Tablet>150,10,150,10</OnIdiom.Tablet>
+                              </OnIdiom>
+                           </StackLayout.Padding>
+                           <Grid>
                               <Grid.ColumnDefinitions>
                                  <ColumnDefinition Width="*" />
                               </Grid.ColumnDefinitions>
@@ -115,8 +128,9 @@
                                  </StackLayout>
                               </StackLayout>
                            </Grid>
-                        </custcontrol:MaterialFrame>
-                     </ViewCell>
+                           <BoxView Style="{StaticResource DetailSeperator}" />
+                        </StackLayout>
+                     </custcontrol:CustomViewCell>
                   </DataTemplate>
                </ListView.ItemTemplate>
             </ListView>

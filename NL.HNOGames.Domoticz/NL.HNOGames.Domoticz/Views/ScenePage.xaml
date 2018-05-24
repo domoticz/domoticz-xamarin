@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <ContentPage
    x:Class="NL.HNOGames.Domoticz.Views.ScenePage"
    xmlns="http://xamarin.com/schemas/2014/forms"
@@ -9,13 +8,17 @@
    xmlns:selector="clr-namespace:NL.HNOGames.Domoticz.ViewSelector;assembly=NL.HNOGames.Domoticz"
    Title="{Binding Title}"
    Style="{StaticResource ContentPageType}">
-
    <ContentPage.Resources>
       <ResourceDictionary>
          <DataTemplate x:Key="DefaultTemplate">
-            <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-               <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
-                  <Grid Style="{StaticResource DashboardDeviceCardType}">
+            <custcontrol:CustomViewCell>
+               <StackLayout
+                  Margin="20,0,20,0"
+                  Padding="0"
+                  HorizontalOptions="FillAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="StartAndExpand">
+                  <Grid>
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50" />
                         <ColumnDefinition Width="*" />
@@ -65,13 +68,19 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-               </custcontrol:MaterialFrame>
+                  <BoxView Style="{StaticResource DetailSeperator}" />
+               </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
          <DataTemplate x:Key="SelectorTemplate">
-            <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-               <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
-                  <Grid Style="{StaticResource DashboardDeviceCardType}">
+            <custcontrol:CustomViewCell>
+               <StackLayout
+                  Margin="20,5,20,5"
+                  Padding="0"
+                  HorizontalOptions="FillAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="StartAndExpand">
+                  <Grid>
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50" />
                         <ColumnDefinition Width="*" />
@@ -128,13 +137,19 @@
                            Unfocused="pSelector_Unfocused" />
                      </StackLayout>
                   </Grid>
-               </custcontrol:MaterialFrame>
+                  <BoxView Style="{StaticResource DetailSeperator}" />
+               </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
          <DataTemplate x:Key="OnButtonTemplate">
-            <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-               <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
-                  <Grid Style="{StaticResource DashboardDeviceCardType}">
+            <custcontrol:CustomViewCell>
+               <StackLayout
+                  Margin="20,0,20,0"
+                  Padding="0"
+                  HorizontalOptions="FillAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="StartAndExpand">
+                  <Grid>
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50" />
                         <ColumnDefinition Width="*" />
@@ -201,14 +216,19 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-               </custcontrol:MaterialFrame>
+                  <BoxView Style="{StaticResource DetailSeperator}" />
+               </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
-
          <DataTemplate x:Key="OffButtonTemplate">
-            <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-               <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
-                  <Grid Style="{StaticResource DashboardDeviceCardType}">
+            <custcontrol:CustomViewCell>
+               <StackLayout
+                  Margin="20,0,20,0"
+                  Padding="0"
+                  HorizontalOptions="FillAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="StartAndExpand">
+                  <Grid>
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50" />
                         <ColumnDefinition Width="*" />
@@ -275,13 +295,19 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-               </custcontrol:MaterialFrame>
+                  <BoxView Style="{StaticResource DetailSeperator}" />
+               </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
          <DataTemplate x:Key="OnOffButtonTemplate">
-            <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-               <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
-                  <Grid Style="{StaticResource DashboardDeviceCardType}">
+            <custcontrol:CustomViewCell>
+               <StackLayout
+                  Margin="20,5,20,0"
+                  Padding="0"
+                  HorizontalOptions="FillAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="StartAndExpand">
+                  <Grid>
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50" />
                         <ColumnDefinition Width="*" />
@@ -353,14 +379,19 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-               </custcontrol:MaterialFrame>
+                  <BoxView Style="{StaticResource DetailSeperator}" />
+               </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
          <DataTemplate x:Key="OnOffSwitchTemplate">
-            <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-
-               <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
-                  <Grid Style="{StaticResource DashboardDeviceCardType}">
+            <custcontrol:CustomViewCell>
+               <StackLayout
+                  Margin="20,5,20,0"
+                  Padding="0"
+                  HorizontalOptions="FillAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="StartAndExpand">
+                  <Grid>
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50" />
                         <ColumnDefinition Width="*" />
@@ -426,13 +457,19 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-               </custcontrol:MaterialFrame>
+                  <BoxView Style="{StaticResource DetailSeperator}" />
+               </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
          <DataTemplate x:Key="BlindTemplate">
-            <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-               <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
-                  <Grid Style="{StaticResource DashboardDeviceCardType}">
+            <custcontrol:CustomViewCell>
+               <StackLayout
+                  Margin="20,5,20,5"
+                  Padding="0"
+                  HorizontalOptions="FillAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="StartAndExpand">
+                  <Grid>
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50" />
                         <ColumnDefinition Width="*" />
@@ -510,13 +547,19 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-               </custcontrol:MaterialFrame>
+                  <BoxView Style="{StaticResource DetailSeperator}" />
+               </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
          <DataTemplate x:Key="DimmerTemplate">
-            <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-               <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
-                  <Grid Style="{StaticResource DashboardDeviceCardType}">
+            <custcontrol:CustomViewCell>
+               <StackLayout
+                  Margin="20,5,20,5"
+                  Padding="0"
+                  HorizontalOptions="FillAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="StartAndExpand">
+                  <Grid>
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50" />
                         <ColumnDefinition Width="*" />
@@ -597,13 +640,19 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-               </custcontrol:MaterialFrame>
+                  <BoxView Style="{StaticResource DetailSeperator}" />
+               </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
          <DataTemplate x:Key="SwitchDimmerTemplate">
-            <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-               <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
-                  <Grid Style="{StaticResource DashboardDeviceCardType}">
+            <custcontrol:CustomViewCell>
+               <StackLayout
+                  Margin="20,5,20,5"
+                  Padding="0"
+                  HorizontalOptions="FillAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="StartAndExpand">
+                  <Grid>
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50" />
                         <ColumnDefinition Width="*" />
@@ -678,13 +727,19 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-               </custcontrol:MaterialFrame>
+                  <BoxView Style="{StaticResource DetailSeperator}" />
+               </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
          <DataTemplate x:Key="SecurityPanelTemplate">
-            <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-               <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
-                  <Grid Style="{StaticResource DashboardDeviceCardType}">
+            <custcontrol:CustomViewCell>
+               <StackLayout
+                  Margin="20,0,20,0"
+                  Padding="0"
+                  HorizontalOptions="FillAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="StartAndExpand">
+                  <Grid>
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50" />
                         <ColumnDefinition Width="*" />
@@ -734,38 +789,32 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-               </custcontrol:MaterialFrame>
+                  <BoxView Style="{StaticResource DetailSeperator}" />
+               </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
 
          <selector:DeviceDataTemplateSelector
             x:Key="deviceDataTemplateSelector"
-            BlindsButtonTemplate="{StaticResource DefaultTemplate}"
+            BlindsButtonTemplate="{StaticResource BlindTemplate}"
             DefaultTemplate="{StaticResource DefaultTemplate}"
-            DimmerButtonTemplate="{StaticResource DefaultTemplate}"
-            DimmerRgbButtonTemplate="{StaticResource DefaultTemplate}"
+            DimmerButtonTemplate="{StaticResource DimmerTemplate}"
+            DimmerRgbButtonTemplate="{StaticResource DimmerTemplate}"
             ModalButtonTemplate="{StaticResource DefaultTemplate}"
             OffButtonTemplate="{StaticResource OffButtonTemplate}"
             OnButtonTemplate="{StaticResource OnButtonTemplate}"
             OnOffButtonTemplate="{StaticResource OnOffButtonTemplate}"
             OnOffSwitchTemplate="{StaticResource OnOffSwitchTemplate}"
-            SecurityPanelTemplate="{StaticResource DefaultTemplate}"
-            SelectorTemplate="{StaticResource DefaultTemplate}"
+            SecurityPanelTemplate="{StaticResource SecurityPanelTemplate}"
+            SelectorTemplate="{StaticResource SelectorTemplate}"
             SetButtonTemplate="{StaticResource DefaultTemplate}"
-            SwitchDimmerRgbButtonTemplate="{StaticResource DefaultTemplate}"
-            SwitchDimmerTemplate="{StaticResource DefaultTemplate}" />
+            SwitchDimmerRgbButtonTemplate="{StaticResource SwitchDimmerTemplate}"
+            SwitchDimmerTemplate="{StaticResource SwitchDimmerTemplate}" />
       </ResourceDictionary>
    </ContentPage.Resources>
 
    <ContentPage.Content>
       <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
-
-         <SearchBar
-            x:Name="sbSearch"
-            CancelButtonColor="Red"
-            Placeholder="{resources:Translate filter}"
-            Style="{StaticResource SearchBarType}"
-            TextChanged="sbSearch_TextChanged" />
 
          <ListView
             x:Name="listView"
@@ -780,7 +829,17 @@
             ItemsSource="{Binding Devices}"
             RefreshCommand="{Binding RefreshFavoriteCommand}"
             SeparatorVisibility="None"
-            VerticalOptions="FillAndExpand" />
+            VerticalOptions="FillAndExpand">
+            <ListView.Header>
+               <SearchBar
+                  x:Name="sbSearch"
+                  Margin="0,0,0,10"
+                  CancelButtonColor="Red"
+                  Placeholder="{resources:Translate filter}"
+                  Style="{StaticResource SearchBarType}"
+                  TextChanged="sbSearch_TextChanged" />
+            </ListView.Header>
+         </ListView>
 
          <custcontrol:AdMobView
             x:Name="adView"

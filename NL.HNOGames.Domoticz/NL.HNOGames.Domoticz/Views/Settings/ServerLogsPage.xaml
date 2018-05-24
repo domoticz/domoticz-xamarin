@@ -10,17 +10,8 @@
    Title="{resources:Translate title_logs}"
    ios:Page.UseSafeArea="true"
    Style="{StaticResource ContentPageType}">
-
    <ContentPage.Content>
-
       <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
-
-         <StackLayout.Padding>
-            <OnIdiom x:TypeArguments="Thickness">
-               <OnIdiom.Phone>20,20,20,20</OnIdiom.Phone>
-               <OnIdiom.Tablet>150,30,150,30</OnIdiom.Tablet>
-            </OnIdiom>
-         </StackLayout.Padding>
 
          <SearchBar
             x:Name="sbSearch"
@@ -35,6 +26,7 @@
             ItemSelected="OnItemSelected"
             SeparatorVisibility="None"
             VerticalOptions="FillAndExpand">
+
             <ListView.ItemTemplate>
                <DataTemplate>
                   <custcontrol:CustomViewCell>
@@ -44,6 +36,13 @@
                         HorizontalOptions="FillAndExpand"
                         Orientation="Vertical"
                         VerticalOptions="StartAndExpand">
+                        <StackLayout.Padding>
+                           <OnIdiom x:TypeArguments="Thickness">
+                              <OnIdiom.Phone>20,10,20,10</OnIdiom.Phone>
+                              <OnIdiom.Tablet>150,10,150,10</OnIdiom.Tablet>
+                           </OnIdiom>
+                        </StackLayout.Padding>
+
                         <Label Style="{StaticResource HeaderDarkType}" Text="{Binding Data}" />
                         <Label Style="{StaticResource DetailType}" Text="{Binding Date}" />
                      </StackLayout>

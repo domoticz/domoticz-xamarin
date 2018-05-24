@@ -12,7 +12,6 @@
    Style="{StaticResource ContentPageType}">
    <ContentPage.Content>
       <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
-
          <SearchBar
             x:Name="sbSearch"
             CancelButtonColor="Red"
@@ -26,7 +25,6 @@
             ItemSelected="OnItemSelected"
             SeparatorVisibility="None"
             VerticalOptions="FillAndExpand">
-
             <ListView.ItemTemplate>
                <DataTemplate>
                   <custcontrol:CustomViewCell>
@@ -42,9 +40,12 @@
                               <OnIdiom.Tablet>150,10,150,10</OnIdiom.Tablet>
                            </OnIdiom>
                         </StackLayout.Padding>
-
-                        <Label Style="{StaticResource HeaderDarkType}" Text="{Binding Data}" />
+                        <Label
+                           LineBreakMode="WordWrap"
+                           Style="{StaticResource HeaderDarkType}"
+                           Text="{Binding Data}" />
                         <Label Style="{StaticResource DetailType}" Text="{Binding Date}" />
+                        <BoxView Style="{StaticResource DetailSeperator}" />
                      </StackLayout>
                   </custcontrol:CustomViewCell>
                </DataTemplate>

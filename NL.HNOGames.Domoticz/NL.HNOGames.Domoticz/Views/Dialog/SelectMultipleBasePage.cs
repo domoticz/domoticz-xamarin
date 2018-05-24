@@ -64,6 +64,10 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
             var mainSwitch = new Switch();
             mainSwitch.SetBinding(Switch.IsToggledProperty, new Binding("IsSelected"));
 
+            var wrapperLayout = new StackLayout()
+            {
+               Orientation = StackOrientation.Vertical,
+            };
             var layout = new RelativeLayout();
             layout.Children.Add(name,
                 Constraint.Constant(5),
@@ -77,7 +81,13 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
                 Constraint.Constant(50),
                 Constraint.RelativeToParent(p => p.Height - 10)
             );
-            View = layout;
+            wrapperLayout.Children.Add(layout);
+            var seperator = new BoxView()
+            {
+               Style = (Style)Application.Current.Resources["DetailSeperator"],
+            };
+            wrapperLayout.Children.Add(seperator);
+            View = wrapperLayout;
          }
       }
 
@@ -118,6 +128,7 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
          {
             ItemsSource = _wrappedItems,
             ItemTemplate = new DataTemplate(typeof(WrappedItemSelectionTemplate)),
+            SeparatorVisibility = SeparatorVisibility.None
          };
 
          if (App.AppSettings.DarkTheme)
@@ -128,7 +139,7 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
             var o = (WrappedSelection<T>)e.SelectedItem;
             o.IsSelected = !o.IsSelected;
             ((ListView)sender).SelectedItem = null; //de-select
-            };
+         };
 
          var oSave = new ExtendedButton
          {

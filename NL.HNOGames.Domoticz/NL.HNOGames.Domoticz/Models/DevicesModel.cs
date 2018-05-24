@@ -52,7 +52,7 @@ namespace NL.HNOGames.Domoticz.Models
       {
          get
          {
-            return Helpers.ViewHelper.GetTemplateHeight(this, dashboard);
+            return ViewHelper.GetTemplateHeight(this, dashboard);
          }
       }
 

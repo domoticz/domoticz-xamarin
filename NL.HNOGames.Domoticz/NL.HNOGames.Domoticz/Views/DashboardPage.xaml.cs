@@ -193,10 +193,10 @@ namespace NL.HNOGames.Domoticz.Views
          if (_viewModel.Devices == null || _viewModel.OldData)
             _viewModel.RefreshFavoriteCommand.Execute(null);
 
-         if (_viewModel.ScreenType != DashboardViewModel.ScreenTypeEnum.Dashboard || App.AppSettings.ShowExtraData)
-            listView.RowHeight = 130;
-         else
-            listView.RowHeight = 80;
+         //if (_viewModel.ScreenType != DashboardViewModel.ScreenTypeEnum.Dashboard || App.AppSettings.ShowExtraData)
+         //   listView.RowHeight = 130;
+         //else
+         //   listView.RowHeight = 80;
       }
 
 

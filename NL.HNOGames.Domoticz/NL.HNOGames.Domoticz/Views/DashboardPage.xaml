@@ -13,11 +13,10 @@
          <DataTemplate x:Key="DefaultTemplate">
             <custcontrol:CustomViewCell>
                <StackLayout
-                  Margin="20,0,20,0"
-                  Padding="0"
+                  Padding="20,5,20,0"
                   HorizontalOptions="FillAndExpand"
                   Orientation="Vertical"
-                  VerticalOptions="StartAndExpand">
+                  VerticalOptions="CenterAndExpand">
                   <Grid>
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50" />
@@ -26,7 +25,7 @@
                      <StackLayout
                         Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
+                        VerticalOptions="CenterAndExpand">
                         <custcontrol:TintedCachedImage
                            ErrorPlaceholder="ic_launcher.png"
                            HeightRequest="30"
@@ -68,15 +67,14 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-                  <BoxView Style="{StaticResource DetailSeperator}" />
+                  <BoxView Margin="-20,5,-20,5" Style="{StaticResource DetailSeperator}" />
                </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
          <DataTemplate x:Key="SelectorTemplate">
             <custcontrol:CustomViewCell>
                <StackLayout
-                  Margin="20,5,20,5"
-                  Padding="0"
+                  Padding="20,5,20,0"
                   HorizontalOptions="FillAndExpand"
                   Orientation="Vertical"
                   VerticalOptions="StartAndExpand">
@@ -88,7 +86,7 @@
                      <StackLayout
                         Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
+                        VerticalOptions="CenterAndExpand">
                         <custcontrol:TintedCachedImage
                            ErrorPlaceholder="ic_launcher.png"
                            HeightRequest="30"
@@ -137,15 +135,14 @@
                            Unfocused="pSelector_Unfocused" />
                      </StackLayout>
                   </Grid>
-                  <BoxView Style="{StaticResource DetailSeperator}" />
+                  <BoxView Margin="-20,5,-20,5" Style="{StaticResource DetailSeperator}" />
                </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
          <DataTemplate x:Key="OnButtonTemplate">
             <custcontrol:CustomViewCell>
                <StackLayout
-                  Margin="20,0,20,0"
-                  Padding="0"
+                  Padding="20,5,20,0"
                   HorizontalOptions="FillAndExpand"
                   Orientation="Vertical"
                   VerticalOptions="StartAndExpand">
@@ -157,7 +154,7 @@
                      <StackLayout
                         Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
+                        VerticalOptions="CenterAndExpand">
                         <custcontrol:TintedCachedImage
                            ErrorPlaceholder="ic_launcher.png"
                            HeightRequest="30"
@@ -216,15 +213,14 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-                  <BoxView Style="{StaticResource DetailSeperator}" />
+                  <BoxView Margin="-20,5,-20,5" Style="{StaticResource DetailSeperator}" />
                </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
          <DataTemplate x:Key="SetButtonTemplate">
             <custcontrol:CustomViewCell>
                <StackLayout
-                  Margin="20,0,20,0"
-                  Padding="0"
+                  Padding="20,5,20,0"
                   HorizontalOptions="FillAndExpand"
                   Orientation="Vertical"
                   VerticalOptions="StartAndExpand">
@@ -236,7 +232,7 @@
                      <StackLayout
                         Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
+                        VerticalOptions="CenterAndExpand">
                         <custcontrol:TintedCachedImage
                            ErrorPlaceholder="ic_launcher.png"
                            HeightRequest="30"
@@ -298,7 +294,7 @@
                                     Keyboard="Numeric"
                                     Style="{StaticResource EntryType}"
                                     Text="{Binding SetPoint}"
-                                    VerticalOptions="Center"
+                                    VerticalOptions="CenterAndExpand"
                                     WidthRequest="70" />
                                  <custcontrol:ExtendedButton
                                     x:Name="btnPlusTemp"
@@ -311,15 +307,14 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-                  <BoxView Style="{StaticResource DetailSeperator}" />
+                  <BoxView Margin="-20,5,-20,5" Style="{StaticResource DetailSeperator}" />
                </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
          <DataTemplate x:Key="OffButtonTemplate">
             <custcontrol:CustomViewCell>
                <StackLayout
-                  Margin="20,0,20,0"
-                  Padding="0"
+                  Padding="20,5,20,0"
                   HorizontalOptions="FillAndExpand"
                   Orientation="Vertical"
                   VerticalOptions="StartAndExpand">
@@ -331,7 +326,7 @@
                      <StackLayout
                         Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
+                        VerticalOptions="CenterAndExpand">
                         <custcontrol:TintedCachedImage
                            ErrorPlaceholder="ic_launcher.png"
                            HeightRequest="30"
@@ -390,15 +385,14 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-                  <BoxView Style="{StaticResource DetailSeperator}" />
+                  <BoxView Margin="-20,5,-20,5" Style="{StaticResource DetailSeperator}" />
                </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
          <DataTemplate x:Key="OnOffButtonTemplate">
             <custcontrol:CustomViewCell>
                <StackLayout
-                  Margin="20,5,20,0"
-                  Padding="0"
+                  Padding="20,5,20,0"
                   HorizontalOptions="FillAndExpand"
                   Orientation="Vertical"
                   VerticalOptions="StartAndExpand">
@@ -410,7 +404,7 @@
                      <StackLayout
                         Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
+                        VerticalOptions="CenterAndExpand">
                         <custcontrol:TintedCachedImage
                            ErrorPlaceholder="ic_launcher.png"
                            HeightRequest="30"
@@ -474,15 +468,14 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-                  <BoxView Style="{StaticResource DetailSeperator}" />
+                  <BoxView Margin="-20,5,-20,5" Style="{StaticResource DetailSeperator}" />
                </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
          <DataTemplate x:Key="OnOffSwitchTemplate">
             <custcontrol:CustomViewCell>
                <StackLayout
-                  Margin="20,5,20,0"
-                  Padding="0"
+                  Padding="20,8,20,0"
                   HorizontalOptions="FillAndExpand"
                   Orientation="Vertical"
                   VerticalOptions="StartAndExpand">
@@ -494,7 +487,7 @@
                      <StackLayout
                         Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
+                        VerticalOptions="CenterAndExpand">
                         <custcontrol:TintedCachedImage
                            ErrorPlaceholder="ic_launcher.png"
                            HeightRequest="30"
@@ -552,15 +545,14 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-                  <BoxView Style="{StaticResource DetailSeperator}" />
+                  <BoxView Margin="-20,8,-20,8" Style="{StaticResource DetailSeperator}" />
                </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
          <DataTemplate x:Key="BlindTemplate">
             <custcontrol:CustomViewCell>
                <StackLayout
-                  Margin="20,5,20,5"
-                  Padding="0"
+                  Padding="20,5,20,0"
                   HorizontalOptions="FillAndExpand"
                   Orientation="Vertical"
                   VerticalOptions="StartAndExpand">
@@ -572,7 +564,7 @@
                      <StackLayout
                         Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
+                        VerticalOptions="CenterAndExpand">
                         <custcontrol:TintedCachedImage
                            ErrorPlaceholder="ic_launcher.png"
                            HeightRequest="30"
@@ -642,15 +634,14 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-                  <BoxView Style="{StaticResource DetailSeperator}" />
+                  <BoxView Margin="-20,5,-20,5" Style="{StaticResource DetailSeperator}" />
                </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
          <DataTemplate x:Key="DimmerTemplate">
             <custcontrol:CustomViewCell>
                <StackLayout
-                  Margin="20,5,20,5"
-                  Padding="0"
+                  Padding="20,5,20,0"
                   HorizontalOptions="FillAndExpand"
                   Orientation="Vertical"
                   VerticalOptions="StartAndExpand">
@@ -662,7 +653,7 @@
                      <StackLayout
                         Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
+                        VerticalOptions="CenterAndExpand">
                         <custcontrol:TintedCachedImage
                            ErrorPlaceholder="ic_launcher.png"
                            HeightRequest="30"
@@ -735,15 +726,14 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-                  <BoxView Style="{StaticResource DetailSeperator}" />
+                  <BoxView Margin="-20,5,-20,5" Style="{StaticResource DetailSeperator}" />
                </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
          <DataTemplate x:Key="SwitchDimmerTemplate">
             <custcontrol:CustomViewCell>
                <StackLayout
-                  Margin="20,5,20,5"
-                  Padding="0"
+                  Padding="20,5,20,0"
                   HorizontalOptions="FillAndExpand"
                   Orientation="Vertical"
                   VerticalOptions="StartAndExpand">
@@ -755,7 +745,7 @@
                      <StackLayout
                         Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
+                        VerticalOptions="CenterAndExpand">
                         <custcontrol:TintedCachedImage
                            ErrorPlaceholder="ic_launcher.png"
                            HeightRequest="30"
@@ -822,15 +812,14 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-                  <BoxView Style="{StaticResource DetailSeperator}" />
+                  <BoxView Margin="-20,5,-20,5" Style="{StaticResource DetailSeperator}" />
                </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
          <DataTemplate x:Key="SecurityPanelTemplate">
             <custcontrol:CustomViewCell>
                <StackLayout
-                  Margin="20,0,20,0"
-                  Padding="0"
+                  Padding="20,5,20,0"
                   HorizontalOptions="FillAndExpand"
                   Orientation="Vertical"
                   VerticalOptions="StartAndExpand">
@@ -842,7 +831,7 @@
                      <StackLayout
                         Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
+                        VerticalOptions="CenterAndExpand">
                         <custcontrol:TintedCachedImage
                            ErrorPlaceholder="ic_launcher.png"
                            HeightRequest="30"
@@ -884,7 +873,7 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-                  <BoxView Style="{StaticResource DetailSeperator}" />
+                  <BoxView Margin="-20,5,-20,5" Style="{StaticResource DetailSeperator}" />
                </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
@@ -910,7 +899,6 @@
 
    <ContentPage.Content>
       <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
-
          <ListView
             x:Name="listView"
             BackgroundColor="{DynamicResource LightBackgroundColor}"
@@ -923,6 +911,7 @@
             ItemTemplate="{StaticResource deviceDataTemplateSelector}"
             ItemsSource="{Binding Devices}"
             RefreshCommand="{Binding RefreshFavoriteCommand}"
+            RowHeight="-1"
             SeparatorVisibility="None"
             VerticalOptions="FillAndExpand">
             <ListView.Header>

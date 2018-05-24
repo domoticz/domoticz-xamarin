@@ -284,11 +284,8 @@
     <Reference Include="Plugin.SpeechRecognition.Abstractions, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Plugin.SpeechRecognition.1.0.0-beta3\lib\Xamarin.iOS10\Plugin.SpeechRecognition.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="Plugin.TextToSpeech, Version=3.3.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xam.Plugins.TextToSpeech.3.3.2\lib\Xamarin.iOS10\Plugin.TextToSpeech.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.TextToSpeech.Abstractions, Version=3.3.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xam.Plugins.TextToSpeech.3.3.2\lib\Xamarin.iOS10\Plugin.TextToSpeech.Abstractions.dll</HintPath>
+    <Reference Include="Plugin.TextToSpeech, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugins.TextToSpeech.4.0.0.7\lib\xamarinios10\Plugin.TextToSpeech.dll</HintPath>
     </Reference>
     <Reference Include="PushNotification.Plugin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugin.PushNotification.1.2.5-beta\lib\Xamarin.iOS10\PushNotification.Plugin.dll</HintPath>
@@ -336,6 +333,7 @@
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebP.Touch, Version=1.0.6628.22311, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\WebP.Touch.1.0.8\lib\Xamarin.iOS10\WebP.Touch.dll</HintPath>
       <Private>True</Private>
@@ -406,6 +404,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\CloseApplication.cs" />
+    <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Renderer\AdMobRenderer.cs" />

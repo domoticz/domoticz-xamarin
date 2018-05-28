@@ -58,6 +58,7 @@ namespace NL.HNOGames.Domoticz.Droid
 
       public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
       {
+         base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
          global::ZXing.Net.Mobile.Forms.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
          Plugin.Permissions.PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
       }

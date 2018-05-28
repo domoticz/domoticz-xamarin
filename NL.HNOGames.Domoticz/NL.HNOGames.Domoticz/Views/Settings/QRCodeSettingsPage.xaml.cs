@@ -11,6 +11,7 @@ using NL.HNOGames.Domoticz.Views.Dialog;
 using ZXing;
 using ZXing.Net.Mobile.Forms;
 using Device = Xamarin.Forms.Device;
+using NL.HNOGames.Domoticz.Controls;
 
 namespace NL.HNOGames.Domoticz.Views.Settings
 {
@@ -129,7 +130,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// </summary>
         private void btnDeleteButton_Clicked(object sender, EventArgs e)
         {
-            var oQrCode = (QRCodeModel) ((Button) sender).BindingContext;
+            var oQrCode = (QRCodeModel) ((TintedCachedImage) sender).BindingContext;
             App.ShowToast(AppResources.something_deleted.Replace("%1$s", oQrCode.Name));
             _oListSource.Remove(oQrCode);
             SaveAndRefresh();
@@ -150,7 +151,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// </summary>
         private async void btnConnect_Clicked(object sender, EventArgs e)
         {
-            _oSelectedQrCode = (QRCodeModel) ((Button) sender).BindingContext;
+            _oSelectedQrCode = (QRCodeModel) ((TintedCachedImage) sender).BindingContext;
             var oSwitchPopup = new SwitchPopup();
             oSwitchPopup.DeviceSelectedMethod += DelegateMethod;
             await PopupNavigation.Instance.PushAsync(oSwitchPopup);

@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\..\packages\Xamarin.Forms.3.0.0.446417\build\netstandard2.0\Xamarin.Forms.props" Condition="Exists('..\..\packages\Xamarin.Forms.3.0.0.446417\build\netstandard2.0\Xamarin.Forms.props')" />
   <Import Project="..\..\packages\Xamarin.Forms.3.0.0.482510\build\netstandard2.0\Xamarin.Forms.props" Condition="Exists('..\..\packages\Xamarin.Forms.3.0.0.482510\build\netstandard2.0\Xamarin.Forms.props')" />
   <Import Project="..\..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props" Condition="Exists('..\..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props')" />
   <PropertyGroup>
@@ -420,7 +419,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml">
       <SubType>Designer</SubType>
@@ -2402,6 +2403,18 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_arrow_right_black_24.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_launcher_foreground.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_launcher_round.png" />
+    <AndroidResource Include="Resources\drawable\baseline_delete_24.xml" />
+    <AndroidResource Include="Resources\drawable\baseline_link_24.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_delete_black_24.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_link_black_24.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\baseline_delete_black_24.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\baseline_link_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_delete_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_link_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_delete_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_link_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_delete_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_link_black_24.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NL.HNOGames.Domoticz\NL.HNOGames.Domoticz.csproj">
@@ -2434,7 +2447,6 @@
     <Error Condition="!Exists('..\..\packages\Xamarin.GooglePlayServices.Places.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Places.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.GooglePlayServices.Places.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Places.targets'))" />
     <Error Condition="!Exists('..\..\packages\Xamarin.Forms.3.0.0.482510\build\netstandard2.0\Xamarin.Forms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.3.0.0.482510\build\netstandard2.0\Xamarin.Forms.props'))" />
     <Error Condition="!Exists('..\..\packages\Xamarin.Forms.3.0.0.482510\build\netstandard2.0\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.3.0.0.482510\build\netstandard2.0\Xamarin.Forms.targets'))" />
-    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.3.0.0.446417\build\netstandard2.0\Xamarin.Forms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.3.0.0.446417\build\netstandard2.0\Xamarin.Forms.props'))" />
     <Error Condition="!Exists('..\..\packages\Xamarin.Android.Support.Annotations.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Android.Support.Annotations.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets'))" />
     <Error Condition="!Exists('..\..\packages\Xamarin.Android.Support.Compat.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Compat.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Android.Support.Compat.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Compat.targets'))" />
     <Error Condition="!Exists('..\..\packages\Xamarin.Android.Support.Core.UI.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Core.UI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Android.Support.Core.UI.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Core.UI.targets'))" />

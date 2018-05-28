@@ -75,16 +75,16 @@
                                  Grid.Column="0"
                                  HorizontalOptions="FillAndExpand"
                                  Orientation="Vertical"
-                                 VerticalOptions="CenterAndExpand">
+                                 VerticalOptions="StartAndExpand">
                                  <StackLayout
                                     HorizontalOptions="FillAndExpand"
                                     Orientation="Horizontal"
-                                    VerticalOptions="CenterAndExpand">
+                                    VerticalOptions="StartAndExpand">
                                     <StackLayout
-                                       Padding="20,10,0,0"
+                                       Padding="10,0,0,0"
                                        HorizontalOptions="FillAndExpand"
                                        Orientation="Vertical"
-                                       VerticalOptions="CenterAndExpand">
+                                       VerticalOptions="Center">
                                        <Label
                                           LineBreakMode="TailTruncation"
                                           Style="{StaticResource HeaderType}"
@@ -104,21 +104,31 @@
                                           HorizontalOptions="End"
                                           Orientation="Vertical"
                                           VerticalOptions="CenterAndExpand">
-                                          <custcontrol:ExtendedButton
+                                          <custcontrol:TintedCachedImage
                                              x:Name="btnDeleteButton"
-                                             Padding="10,0,10,0"
-                                             Clicked="btnDeleteButton_Clicked"
+                                             HeightRequest="25"
                                              HorizontalOptions="End"
-                                             Text="{resources:Translate delete}"
-                                             VerticalOptions="End" />
-                                          <custcontrol:ExtendedButton
+                                             Source="baseline_delete_black_24.png"
+                                             TintColor="#EF5350"
+                                             VerticalOptions="End"
+                                             WidthRequest="25">
+                                             <custcontrol:TintedCachedImage.GestureRecognizers>
+                                                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="btnDeleteButton_Clicked" />
+                                             </custcontrol:TintedCachedImage.GestureRecognizers>
+                                          </custcontrol:TintedCachedImage>
+                                          <custcontrol:TintedCachedImage
                                              x:Name="btnConnect"
-                                             Margin="0,-5,0,0"
-                                             Padding="10,0,10,0"
-                                             Clicked="btnConnect_Clicked"
+                                             Margin="0,5,0,0"
+                                             HeightRequest="25"
                                              HorizontalOptions="End"
-                                             Text="Connect"
-                                             VerticalOptions="End" />
+                                             Source="baseline_link_black_24.png"
+                                             TintColor="#66BB6A"
+                                             VerticalOptions="End"
+                                             WidthRequest="25">
+                                             <custcontrol:TintedCachedImage.GestureRecognizers>
+                                                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="btnConnect_Clicked" />
+                                             </custcontrol:TintedCachedImage.GestureRecognizers>
+                                          </custcontrol:TintedCachedImage>
                                        </StackLayout>
                                     </StackLayout>
                                  </StackLayout>

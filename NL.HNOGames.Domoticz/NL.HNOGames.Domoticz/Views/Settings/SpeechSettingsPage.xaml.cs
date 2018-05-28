@@ -10,6 +10,7 @@ using NL.HNOGames.Domoticz.Views.Dialog;
 using Plugin.SpeechRecognition;
 using Acr.UserDialogs;
 using System.Threading.Tasks;
+using NL.HNOGames.Domoticz.Controls;
 
 namespace NL.HNOGames.Domoticz.Views.Settings
 {
@@ -139,7 +140,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
       /// </summary>
       private void btnDeleteButton_Clicked(object sender, EventArgs e)
       {
-         var oSpeechCommand = (SpeechModel)((Button)sender).BindingContext;
+         var oSpeechCommand = (SpeechModel)((TintedCachedImage)sender).BindingContext;
          App.ShowToast(AppResources.something_deleted.Replace("%1$s", oSpeechCommand.Name));
          _oListSource.Remove(oSpeechCommand);
          SaveAndRefresh();
@@ -160,7 +161,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
       /// </summary>
       private async void btnConnect_Clicked(object sender, EventArgs e)
       {
-         _oSelectedSpeechCommand = (SpeechModel)((Button)sender).BindingContext;
+         _oSelectedSpeechCommand = (SpeechModel)((TintedCachedImage)sender).BindingContext;
          var oSwitchPopup = new SwitchPopup();
          oSwitchPopup.DeviceSelectedMethod += DelegateMethod;
          await PopupNavigation.Instance.PushAsync(oSwitchPopup);

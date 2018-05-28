@@ -21,7 +21,7 @@
     <PackageReference Include="Plugin.Fingerprint" Version="1.4.7" />
     <PackageReference Include="Plugin.InAppBilling" Version="1.4.1" />
     <PackageReference Include="Plugin.Multilingual" Version="1.0.2" />
-    <PackageReference Include="Plugin.Permissions" Version="2.2.1" />
+    <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
     <PackageReference Include="Plugin.Share" Version="7.1.1" />
     <PackageReference Include="Plugin.SpeechRecognition" Version="1.0.0-beta3" />
     <PackageReference Include="Rg.Plugins.Popup" Version="1.1.1.57" />

@@ -11,6 +11,8 @@ using Plugin.CurrentActivity;
 using Android.Content;
 using System.Net;
 using NL.HNOGames.Domoticz.Droid.Helpers;
+using Plugin.Permissions;
+using Android.Runtime;
 
 #if NETFX_CORE
 [assembly: Xamarin.Forms.Platform.WinRT.ExportRenderer(typeof(Xamarin.RangeSlider.Forms.RangeSlider), typeof(Xamarin.RangeSlider.Forms.RangeSliderRenderer))]
@@ -56,12 +58,15 @@ namespace NL.HNOGames.Domoticz.Droid
          LoadApplication(new App(null));
       }
 
-      public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+
+      public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
       {
-         base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+         PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
          global::ZXing.Net.Mobile.Forms.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-         Plugin.Permissions.PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+         base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
       }
+
 
       protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
       {

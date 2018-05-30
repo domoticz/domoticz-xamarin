@@ -73,11 +73,11 @@ namespace NL.HNOGames.Domoticz.Views
          if (result == AppResources.favorite)
             await SetFavorite(item);
          else if (result == AppResources.button_status_notifications)
-            await PopupNavigation.PushAsync(new NotificationsPopup(item));
+            await PopupNavigation.Instance.PushAsync(new NotificationsPopup(item));
          else if (result == AppResources.button_status_timer)
-            await PopupNavigation.PushAsync(new TimersPopup(item));
+            await PopupNavigation.Instance.PushAsync(new TimersPopup(item));
          else if (result == AppResources.button_status_log)
-            await PopupNavigation.PushAsync(new LogsPopup(item));
+            await PopupNavigation.Instance.PushAsync(new LogsPopup(item));
          else if (result == AppResources.wizard_graph)
          {
             switch (_viewModel.ScreenType)
@@ -193,10 +193,10 @@ namespace NL.HNOGames.Domoticz.Views
          if (_viewModel.Devices == null || _viewModel.OldData)
             _viewModel.RefreshFavoriteCommand.Execute(null);
 
-         if (_viewModel.ScreenType != DashboardViewModel.ScreenTypeEnum.Dashboard || App.AppSettings.ShowExtraData)
-            listView.RowHeight = 130;
-         else
-            listView.RowHeight = 80;
+         //if (_viewModel.ScreenType != DashboardViewModel.ScreenTypeEnum.Dashboard || App.AppSettings.ShowExtraData)
+         //   listView.RowHeight = 130;
+         //else
+         //   listView.RowHeight = 80;
       }
 
 
@@ -634,7 +634,7 @@ namespace NL.HNOGames.Domoticz.Views
          var oButton = (Button)sender;
          var oDevice = (Models.Device)oButton.BindingContext;
          var oSlider = new SliderPopup(oDevice, _viewModel.RefreshFavoriteCommand);
-         await PopupNavigation.PushAsync(oSlider);
+         await PopupNavigation.Instance.PushAsync(oSlider);
          RefreshListView(true);
       }
 

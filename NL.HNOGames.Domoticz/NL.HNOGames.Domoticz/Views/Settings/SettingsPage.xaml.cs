@@ -7,8 +7,11 @@ using System.Collections.Generic;
 using NL.HNOGames.Domoticz.Helpers;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Plugin.Fingerprint;
 using Plugin.Multilingual;
 using System.Linq;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
 
 namespace NL.HNOGames.Domoticz.Views.Settings
 {
@@ -147,6 +150,38 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             }
          };
 
+         //Enable fingerprint security
+         swEnableFingerprintSecurity.IsToggled = App.AppSettings.EnableFingerprintSecurity;
+         swEnableFingerprintSecurity.Toggled += async (sender, args) =>
+         {
+            App.AppSettings.EnableFingerprintSecurity = swEnableFingerprintSecurity.IsToggled;
+
+            if (swEnableFingerprintSecurity.IsToggled && !App.AppSettings.PremiumBought)
+            {
+               swEnableFingerprintSecurity.IsToggled = false;
+               App.ShowToast(AppResources.security_settings + " " + AppResources.premium_feature);
+            }
+            else if (swEnableFingerprintSecurity.IsToggled)
+            {
+               if (await CrossFingerprint.Current.IsAvailableAsync())
+               {
+                  if (!await UserDialogs.Instance.ConfirmAsync(new ConfirmConfig
+                  {
+                     Title = AppResources.category_startup_security,
+                     Message = AppResources.fingerprint_sure,
+                     OkText = AppResources.ok,
+                     CancelText = AppResources.cancel
+                  }))
+                     swEnableFingerprintSecurity.IsToggled = false;
+               }
+               else
+               {
+                  swEnableFingerprintSecurity.IsToggled = false;
+                  App.ShowToast(AppResources.fingerprint_not_supported);
+               }
+            }
+         };
+
          //Dashboard extra data
          swExtraData.IsToggled = App.AppSettings.ShowExtraData;
          lblExtraData.Text = App.AppSettings.ShowExtraData
@@ -189,10 +224,12 @@ namespace NL.HNOGames.Domoticz.Views.Settings
          if (App.AppSettings.PremiumBought)
          {
             lyPremium.IsVisible = false;
+            sepPremium.IsVisible = false;
          }
          else
          {
             lyPremium.IsVisible = true;
+            sepPremium.IsVisible = true;
          }
       }
 

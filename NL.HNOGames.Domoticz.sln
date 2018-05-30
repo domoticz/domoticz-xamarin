@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NL.HNOGames.Domoticz.Androi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NL.HNOGames.Domoticz.iOS", "NL.HNOGames.Domoticz\NL.HNOGames.Domoticz.iOS\NL.HNOGames.Domoticz.iOS.csproj", "{1406A3F3-481E-45B3-AA2B-70F664F145F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NL.HNOGames.Domoticz.UWP", "NL.HNOGames.Domoticz\NL.HNOGames.Domoticz.UWP\NL.HNOGames.Domoticz.UWP.csproj", "{E05EB9C2-EAFC-4D5B-BD8D-BF5DE65E9379}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,32 +101,11 @@ Global
 		{1406A3F3-481E-45B3-AA2B-70F664F145F8}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{1406A3F3-481E-45B3-AA2B-70F664F145F8}.Release|x64.ActiveCfg = Release|iPhone
 		{1406A3F3-481E-45B3-AA2B-70F664F145F8}.Release|x86.ActiveCfg = Release|iPhone
-		{E05EB9C2-EAFC-4D5B-BD8D-BF5DE65E9379}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{E05EB9C2-EAFC-4D5B-BD8D-BF5DE65E9379}.Debug|ARM.ActiveCfg = Debug|ARM
-		{E05EB9C2-EAFC-4D5B-BD8D-BF5DE65E9379}.Debug|ARM.Build.0 = Debug|ARM
-		{E05EB9C2-EAFC-4D5B-BD8D-BF5DE65E9379}.Debug|ARM.Deploy.0 = Debug|ARM
-		{E05EB9C2-EAFC-4D5B-BD8D-BF5DE65E9379}.Debug|iPhone.ActiveCfg = Debug|x86
-		{E05EB9C2-EAFC-4D5B-BD8D-BF5DE65E9379}.Debug|iPhoneSimulator.ActiveCfg = Debug|x86
-		{E05EB9C2-EAFC-4D5B-BD8D-BF5DE65E9379}.Debug|x64.ActiveCfg = Debug|x64
-		{E05EB9C2-EAFC-4D5B-BD8D-BF5DE65E9379}.Debug|x64.Build.0 = Debug|x64
-		{E05EB9C2-EAFC-4D5B-BD8D-BF5DE65E9379}.Debug|x64.Deploy.0 = Debug|x64
-		{E05EB9C2-EAFC-4D5B-BD8D-BF5DE65E9379}.Debug|x86.ActiveCfg = Debug|x86
-		{E05EB9C2-EAFC-4D5B-BD8D-BF5DE65E9379}.Debug|x86.Build.0 = Debug|x86
-		{E05EB9C2-EAFC-4D5B-BD8D-BF5DE65E9379}.Debug|x86.Deploy.0 = Debug|x86
-		{E05EB9C2-EAFC-4D5B-BD8D-BF5DE65E9379}.Release|Any CPU.ActiveCfg = Release|x86
-		{E05EB9C2-EAFC-4D5B-BD8D-BF5DE65E9379}.Release|ARM.ActiveCfg = Release|ARM
-		{E05EB9C2-EAFC-4D5B-BD8D-BF5DE65E9379}.Release|ARM.Build.0 = Release|ARM
-		{E05EB9C2-EAFC-4D5B-BD8D-BF5DE65E9379}.Release|ARM.Deploy.0 = Release|ARM
-		{E05EB9C2-EAFC-4D5B-BD8D-BF5DE65E9379}.Release|iPhone.ActiveCfg = Release|x86
-		{E05EB9C2-EAFC-4D5B-BD8D-BF5DE65E9379}.Release|iPhoneSimulator.ActiveCfg = Release|x86
-		{E05EB9C2-EAFC-4D5B-BD8D-BF5DE65E9379}.Release|x64.ActiveCfg = Release|x64
-		{E05EB9C2-EAFC-4D5B-BD8D-BF5DE65E9379}.Release|x64.Build.0 = Release|x64
-		{E05EB9C2-EAFC-4D5B-BD8D-BF5DE65E9379}.Release|x64.Deploy.0 = Release|x64
-		{E05EB9C2-EAFC-4D5B-BD8D-BF5DE65E9379}.Release|x86.ActiveCfg = Release|x86
-		{E05EB9C2-EAFC-4D5B-BD8D-BF5DE65E9379}.Release|x86.Build.0 = Release|x86
-		{E05EB9C2-EAFC-4D5B-BD8D-BF5DE65E9379}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E62BCF99-C8BD-459A-BCD7-8BCF164F07C9}
 	EndGlobalSection
 EndGlobal

@@ -1,5 +1,6 @@
 ﻿using Humanizer;
 using NL.HNOGames.Domoticz.Data;
+using NL.HNOGames.Domoticz.Helpers;
 using NL.HNOGames.Domoticz.Resources;
 using System;
 using System.Globalization;
@@ -21,6 +22,7 @@ namespace NL.HNOGames.Domoticz.Models
    {
       bool extradata = true;
       bool dashboard = false;
+      private string _levelNames;
 
       public bool ShowExtraData
       {
@@ -50,7 +52,7 @@ namespace NL.HNOGames.Domoticz.Models
       {
          get
          {
-            return Helpers.ViewHelper.GetTemplateHeight(this, dashboard);
+            return ViewHelper.GetTemplateHeight(this, dashboard);
          }
       }
 
@@ -272,7 +274,16 @@ namespace NL.HNOGames.Domoticz.Models
       public int SwitchTypeVal { get; set; }
       public bool UsedByCamera { get; set; }
       public string LevelActions { get; set; }
-      public string LevelNames { get; set; }
+      public string LevelNames
+      {
+         get => _levelNames;
+         set
+         {
+            _levelNames = value;
+            if (UsefulBits.IsBase64Encoded(_levelNames))
+               _levelNames = UsefulBits.DecodeBase64String(_levelNames);
+         }
+      }
       public bool LevelOffHidden { get; set; }
       public int SelectorStyle { get; set; }
       public string UVI { get; set; }

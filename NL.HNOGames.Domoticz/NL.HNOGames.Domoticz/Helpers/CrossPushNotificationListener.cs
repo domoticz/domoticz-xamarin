@@ -52,7 +52,7 @@ namespace NL.HNOGames.Domoticz.Helpers
                   //}
                }
             }
-            catch (Exception ex) { }
+            catch (Exception) { }
         }
 
         public void OnUnregistered(DeviceType deviceType)

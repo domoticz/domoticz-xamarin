@@ -33,7 +33,6 @@
             HorizontalOptions="FillAndExpand"
             Orientation="Vertical"
             VerticalOptions="StartAndExpand">
-
             <StackLayout.Padding>
                <OnIdiom x:TypeArguments="Thickness">
                   <OnIdiom.Phone>20,20,20,20</OnIdiom.Phone>
@@ -41,7 +40,6 @@
                </OnIdiom>
             </StackLayout.Padding>
             <StackLayout
-               Margin="20"
                HorizontalOptions="FillAndExpand"
                Orientation="Horizontal"
                VerticalOptions="StartAndExpand">
@@ -60,9 +58,7 @@
                   HorizontalOptions="End"
                   VerticalOptions="Center" />
             </StackLayout>
-
             <StackLayout
-               Margin="20,0,20,0"
                HorizontalOptions="FillAndExpand"
                Orientation="Horizontal"
                VerticalOptions="StartAndExpand">
@@ -84,11 +80,17 @@
 
             <Editor
                x:Name="txtInfo"
-               Margin="20,20,20,0"
                BackgroundColor="{StaticResource CardBackgroundColor}"
                HorizontalOptions="FillAndExpand"
                Style="{StaticResource EditorType}"
-               VerticalOptions="FillAndExpand" />
+               VerticalOptions="FillAndExpand">
+               <Editor.Margin>
+                  <OnIdiom x:TypeArguments="Thickness">
+                     <OnIdiom.Phone>-20,20,-20,20</OnIdiom.Phone>
+                     <OnIdiom.Tablet>-150,30,-150,30</OnIdiom.Tablet>
+                  </OnIdiom>
+               </Editor.Margin>
+            </Editor>
          </StackLayout>
       </ScrollView>
    </ContentPage.Content>

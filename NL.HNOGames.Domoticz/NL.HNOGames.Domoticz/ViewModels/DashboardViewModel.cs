@@ -12,122 +12,123 @@ using Device = NL.HNOGames.Domoticz.Models.Device;
 
 namespace NL.HNOGames.Domoticz.ViewModels
 {
-    public class DashboardViewModel : BaseViewModel
-    {
-        public enum ScreenTypeEnum
-        {
-            Dashboard,
-            Switches,
-            Temperature, 
-            Utilities,
-            Weather,
-        };
+   public class DashboardViewModel : BaseViewModel
+   {
+      public enum ScreenTypeEnum
+      {
+         Dashboard,
+         Switches,
+         Temperature,
+         Utilities,
+         Weather,
+         Plan,
+      };
 
-        public delegate void SetListViewVisibility(bool visible);
+      public delegate void SetListViewVisibility(bool visible);
 
-        public SetListViewVisibility SetListViewVisibilityMethod { get; set; }
+      public SetListViewVisibility SetListViewVisibilityMethod { get; set; }
 
-        public ScreenTypeEnum ScreenType;
+      public ScreenTypeEnum ScreenType;
 
-        public ObservableRangeCollection<Models.Device> Devices { get; set; }
+      public ObservableRangeCollection<Models.Device> Devices { get; set; }
 
-        public Command LoadFavoriteCommand { get; set; }
-        public Command RefreshFavoriteCommand { get; set; }
-        public Command RefreshActionCommand { get; set; }
+      public Command LoadFavoriteCommand { get; set; }
+      public Command RefreshFavoriteCommand { get; set; }
+      public Command RefreshActionCommand { get; set; }
 
-        public bool SomethingFound = true;
-        public bool OldData;
-        public Plan ScreenPlan;
+      public bool SomethingFound = true;
+      public bool OldData;
+      public Plan ScreenPlan;
 
-        public DashboardViewModel(ScreenTypeEnum type, Plan plan)
-        {
-            ScreenPlan = plan;
-            ScreenType = type;
-            Title = plan != null ? plan.Name: AppResources.title_dashboard;
-            Devices = new ObservableRangeCollection<Models.Device>();
+      public DashboardViewModel(ScreenTypeEnum type, Plan plan)
+      {
+         ScreenPlan = plan;
+         ScreenType = type;
+         Title = plan != null ? plan.Name : AppResources.title_dashboard;
+         Devices = new ObservableRangeCollection<Models.Device>();
 
-            LoadFavoriteCommand = new Command(async () => await ExecuteLoadFavoritesCommand(false));
-            RefreshFavoriteCommand = new Command(async () => await ExecuteLoadFavoritesCommand(true));
-            RefreshActionCommand = new Command(async () => await ExecuteLoadFavoritesCommand(false));
+         LoadFavoriteCommand = new Command(async () => await ExecuteLoadFavoritesCommand(false));
+         RefreshFavoriteCommand = new Command(async () => await ExecuteLoadFavoritesCommand(true));
+         RefreshActionCommand = new Command(async () => await ExecuteLoadFavoritesCommand(false));
 
-            if (!LoadCache) return;
-            OldData = true;
-            Devices = Cache.GetCache<ObservableRangeCollection<Models.Device>>(ScreenPlan != null ? ScreenPlan.idx + ScreenType : ScreenType.ToString()) ??
-                      new ObservableRangeCollection<Models.Device>();
-            LoadCache = false;
-        }
+         if (!LoadCache) return;
+         OldData = true;
+         Devices = Cache.GetCache<ObservableRangeCollection<Models.Device>>(ScreenPlan != null ? ScreenPlan.idx + ScreenType : ScreenType.ToString()) ??
+                   new ObservableRangeCollection<Models.Device>();
+         LoadCache = false;
+      }
 
-        private async Task ExecuteLoadFavoritesCommand(bool refresh)
-        {
-            if (Devices == null || refresh)
+      private async Task ExecuteLoadFavoritesCommand(bool refresh)
+      {
+         if (Devices == null || refresh)
+         {
+            if (IsBusy)
+               return;
+            IsBusy = true;
+         }
+
+         try
+         {
+            DevicesModel items;
+            switch (ScreenType)
             {
-                if (IsBusy)
-                    return;
-                IsBusy = true;
+               case ScreenTypeEnum.Dashboard:
+                  items = await App.ApiService.GetFavorites(null);
+                  break;
+               case ScreenTypeEnum.Switches:
+                  items = await App.ApiService.GetDevices(ScreenPlan == null ? 0 : int.Parse(ScreenPlan.idx), ScreenPlan == null ? "light" : null);
+                  break;
+               case ScreenTypeEnum.Weather:
+                  items = await App.ApiService.GetWeather(null);
+                  break;
+               case ScreenTypeEnum.Temperature:
+                  items = await App.ApiService.GetTemperature(null);
+                  break;
+               case ScreenTypeEnum.Utilities:
+                  items = await App.ApiService.GetUtilities(null);
+                  break;
+               default:
+                  throw new ArgumentOutOfRangeException();
             }
 
-            try
+            if (items.result != null && items.result.Length > 0)
             {
-                DevicesModel items;
-                switch(ScreenType)
-                {
-                    case ScreenTypeEnum.Dashboard:
-                        items = await App.ApiService.GetFavorites(null);
-                        break;
-                    case ScreenTypeEnum.Switches:
-                        items = await App.ApiService.GetDevices(ScreenPlan == null ? 0 : int.Parse(ScreenPlan.idx), ScreenPlan == null ? "light" : null);
-                        break;
-                    case ScreenTypeEnum.Weather:
-                        items = await App.ApiService.GetWeather(null);
-                        break;
-                    case ScreenTypeEnum.Temperature:
-                        items = await App.ApiService.GetTemperature(null);
-                        break;
-                    case ScreenTypeEnum.Utilities:
-                        items = await App.ApiService.GetUtilities(null);
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException();
-                }
+               SomethingFound = true;
+               if (!App.AppSettings.NoSort)
+                  items.result = items.result.OrderBy(o => o.Name).ToArray();
 
-                if (items.result != null && items.result.Length > 0)
-                {
-                    SomethingFound = true;
-                    if (!App.AppSettings.NoSort)
-                        items.result = items.result.OrderBy(o => o.Name).ToArray();
+               foreach (var d in items.result)
+               {
+                  d.ShowExtraData = ScreenType != ScreenTypeEnum.Dashboard || App.AppSettings.ShowExtraData;
+                  d.IsDashboard = ScreenType == ScreenTypeEnum.Dashboard;
+               }
 
-                    foreach (var d in items.result)
-                    {
-                        d.ShowExtraData = ScreenType != ScreenTypeEnum.Dashboard || App.AppSettings.ShowExtraData;
-                        d.IsDashboard = ScreenType == ScreenTypeEnum.Dashboard;
-                    }
-
-                    if (Devices != null)
-                    {
-                        Devices.ReplaceRange(items.result);
-                        Cache.SetCache(ScreenPlan != null ? ScreenPlan.idx + ScreenType : ScreenType.ToString(), Devices);
-                    }
-                    OldData = false;
-                }
-                else
-                {
-                    SomethingFound = false;
-                    Devices = new ObservableRangeCollection<Device>();
-                    Cache.SetCache(ScreenPlan != null ? ScreenPlan.idx + ScreenType : ScreenType.ToString(), Devices);
-                }
-                SetListViewVisibilityMethod?.Invoke(SomethingFound);
+               if (Devices != null)
+               {
+                  Devices.ReplaceRange(items.result);
+                  Cache.SetCache(ScreenPlan != null ? ScreenPlan.idx + ScreenType : ScreenType.ToString(), Devices);
+               }
+               OldData = false;
             }
-            catch (Exception ex)
+            else
             {
-                App.AddLog(ex.Message);
-                if (!OverviewTabbedPage.EmptyDialogShown)
-                {
-                    OverviewTabbedPage.EmptyDialogShown = true;
-                    App.ShowToast(AppResources.error_notConnected);
-                }
+               SomethingFound = false;
+               Devices = new ObservableRangeCollection<Device>();
+               Cache.SetCache(ScreenPlan != null ? ScreenPlan.idx + ScreenType : ScreenType.ToString(), Devices);
             }
+            SetListViewVisibilityMethod?.Invoke(SomethingFound);
+         }
+         catch (Exception ex)
+         {
+            App.AddLog(ex.Message);
+            if (!OverviewTabbedPage.EmptyDialogShown)
+            {
+               OverviewTabbedPage.EmptyDialogShown = true;
+               App.ShowToast(AppResources.error_notConnected);
+            }
+         }
 
-            IsBusy = false;
-        }
-    }
+         IsBusy = false;
+      }
+   }
 }

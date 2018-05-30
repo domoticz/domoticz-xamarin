@@ -1,6 +1,5 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
-using Google.MobileAds;
 using UIKit;
 using NL.HNOGames.Domoticz.Controls;
 using NL.HNOGames.Domoticz.iOS.Renderer;

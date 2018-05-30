@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-
 <ContentPage
    x:Class="NL.HNOGames.Domoticz.Views.CameraPage"
    xmlns="http://xamarin.com/schemas/2014/forms"
@@ -16,7 +15,6 @@
          <conv:ByteArrayToImageSourceConverter x:Key="bic" />
       </ResourceDictionary>
    </ContentPage.Resources>
-
    <ContentPage.Content>
       <StackLayout BackgroundColor="{DynamicResource LightBackgroundColor}">
          <StackLayout.Padding>
@@ -25,7 +23,6 @@
                <OnIdiom.Tablet>150,30,150,30</OnIdiom.Tablet>
             </OnIdiom>
          </StackLayout.Padding>
-
          <controls:FlowListView
             x:Name="listView"
             BackgroundColor="{DynamicResource LightBackgroundColor}"
@@ -36,7 +33,7 @@
             SeparatorVisibility="None">
             <controls:FlowListView.FlowColumnTemplate>
                <DataTemplate>
-                  <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}" VerticalOptions="FillAndExpand">
+                  <StackLayout VerticalOptions="FillAndExpand">
                      <Grid
                         Margin="0"
                         Padding="0"
@@ -63,7 +60,7 @@
                               VerticalOptions="FillAndExpand" />
                         </StackLayout>
                      </Grid>
-                  </custcontrol:MaterialFrame>
+                  </StackLayout>
                </DataTemplate>
             </controls:FlowListView.FlowColumnTemplate>
          </controls:FlowListView>

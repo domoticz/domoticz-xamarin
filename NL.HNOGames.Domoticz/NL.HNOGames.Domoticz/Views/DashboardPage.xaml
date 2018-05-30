@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <ContentPage
    x:Class="NL.HNOGames.Domoticz.Views.DashboardPage"
    xmlns="http://xamarin.com/schemas/2014/forms"
@@ -9,13 +8,16 @@
    xmlns:selector="clr-namespace:NL.HNOGames.Domoticz.ViewSelector;assembly=NL.HNOGames.Domoticz"
    Title="{Binding Title}"
    Style="{StaticResource ContentPageType}">
-
    <ContentPage.Resources>
       <ResourceDictionary>
          <DataTemplate x:Key="DefaultTemplate">
-            <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-               <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
-                  <Grid Style="{StaticResource DashboardDeviceCardType}">
+            <custcontrol:CustomViewCell>
+               <StackLayout
+                  Padding="20,5,20,0"
+                  HorizontalOptions="FillAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="CenterAndExpand">
+                  <Grid>
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50" />
                         <ColumnDefinition Width="*" />
@@ -23,7 +25,7 @@
                      <StackLayout
                         Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
+                        VerticalOptions="CenterAndExpand">
                         <custcontrol:TintedCachedImage
                            ErrorPlaceholder="ic_launcher.png"
                            HeightRequest="30"
@@ -65,13 +67,18 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-               </custcontrol:MaterialFrame>
+                  <BoxView Margin="-20,5,-20,5" Style="{StaticResource DetailSeperator}" />
+               </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
          <DataTemplate x:Key="SelectorTemplate">
-            <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-               <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
-                  <Grid Style="{StaticResource DashboardDeviceCardType}">
+            <custcontrol:CustomViewCell>
+               <StackLayout
+                  Padding="20,5,20,0"
+                  HorizontalOptions="FillAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="StartAndExpand">
+                  <Grid>
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50" />
                         <ColumnDefinition Width="*" />
@@ -79,7 +86,7 @@
                      <StackLayout
                         Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
+                        VerticalOptions="CenterAndExpand">
                         <custcontrol:TintedCachedImage
                            ErrorPlaceholder="ic_launcher.png"
                            HeightRequest="30"
@@ -128,13 +135,18 @@
                            Unfocused="pSelector_Unfocused" />
                      </StackLayout>
                   </Grid>
-               </custcontrol:MaterialFrame>
+                  <BoxView Margin="-20,5,-20,5" Style="{StaticResource DetailSeperator}" />
+               </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
          <DataTemplate x:Key="OnButtonTemplate">
-            <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-               <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
-                  <Grid Style="{StaticResource DashboardDeviceCardType}">
+            <custcontrol:CustomViewCell>
+               <StackLayout
+                  Padding="20,5,20,0"
+                  HorizontalOptions="FillAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="StartAndExpand">
+                  <Grid>
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50" />
                         <ColumnDefinition Width="*" />
@@ -142,7 +154,7 @@
                      <StackLayout
                         Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
+                        VerticalOptions="CenterAndExpand">
                         <custcontrol:TintedCachedImage
                            ErrorPlaceholder="ic_launcher.png"
                            HeightRequest="30"
@@ -201,13 +213,18 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-               </custcontrol:MaterialFrame>
+                  <BoxView Margin="-20,5,-20,5" Style="{StaticResource DetailSeperator}" />
+               </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
          <DataTemplate x:Key="SetButtonTemplate">
-            <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-               <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
-                  <Grid Style="{StaticResource DashboardDeviceCardType}">
+            <custcontrol:CustomViewCell>
+               <StackLayout
+                  Padding="20,5,20,0"
+                  HorizontalOptions="FillAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="StartAndExpand">
+                  <Grid>
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50" />
                         <ColumnDefinition Width="*" />
@@ -215,7 +232,7 @@
                      <StackLayout
                         Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
+                        VerticalOptions="CenterAndExpand">
                         <custcontrol:TintedCachedImage
                            ErrorPlaceholder="ic_launcher.png"
                            HeightRequest="30"
@@ -277,7 +294,7 @@
                                     Keyboard="Numeric"
                                     Style="{StaticResource EntryType}"
                                     Text="{Binding SetPoint}"
-                                    VerticalOptions="Center"
+                                    VerticalOptions="CenterAndExpand"
                                     WidthRequest="70" />
                                  <custcontrol:ExtendedButton
                                     x:Name="btnPlusTemp"
@@ -290,13 +307,18 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-               </custcontrol:MaterialFrame>
+                  <BoxView Margin="-20,5,-20,5" Style="{StaticResource DetailSeperator}" />
+               </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
          <DataTemplate x:Key="OffButtonTemplate">
-            <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-               <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
-                  <Grid Style="{StaticResource DashboardDeviceCardType}">
+            <custcontrol:CustomViewCell>
+               <StackLayout
+                  Padding="20,5,20,0"
+                  HorizontalOptions="FillAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="StartAndExpand">
+                  <Grid>
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50" />
                         <ColumnDefinition Width="*" />
@@ -304,7 +326,7 @@
                      <StackLayout
                         Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
+                        VerticalOptions="CenterAndExpand">
                         <custcontrol:TintedCachedImage
                            ErrorPlaceholder="ic_launcher.png"
                            HeightRequest="30"
@@ -363,13 +385,18 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-               </custcontrol:MaterialFrame>
+                  <BoxView Margin="-20,5,-20,5" Style="{StaticResource DetailSeperator}" />
+               </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
          <DataTemplate x:Key="OnOffButtonTemplate">
-            <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-               <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
-                  <Grid Style="{StaticResource DashboardDeviceCardType}">
+            <custcontrol:CustomViewCell>
+               <StackLayout
+                  Padding="20,5,20,0"
+                  HorizontalOptions="FillAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="StartAndExpand">
+                  <Grid>
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50" />
                         <ColumnDefinition Width="*" />
@@ -377,7 +404,7 @@
                      <StackLayout
                         Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
+                        VerticalOptions="CenterAndExpand">
                         <custcontrol:TintedCachedImage
                            ErrorPlaceholder="ic_launcher.png"
                            HeightRequest="30"
@@ -441,14 +468,18 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-               </custcontrol:MaterialFrame>
+                  <BoxView Margin="-20,5,-20,5" Style="{StaticResource DetailSeperator}" />
+               </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
          <DataTemplate x:Key="OnOffSwitchTemplate">
-            <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-
-               <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
-                  <Grid Style="{StaticResource DashboardDeviceCardType}">
+            <custcontrol:CustomViewCell>
+               <StackLayout
+                  Padding="20,8,20,0"
+                  HorizontalOptions="FillAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="StartAndExpand">
+                  <Grid>
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50" />
                         <ColumnDefinition Width="*" />
@@ -456,7 +487,7 @@
                      <StackLayout
                         Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
+                        VerticalOptions="CenterAndExpand">
                         <custcontrol:TintedCachedImage
                            ErrorPlaceholder="ic_launcher.png"
                            HeightRequest="30"
@@ -514,13 +545,18 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-               </custcontrol:MaterialFrame>
+                  <BoxView Margin="-20,8,-20,8" Style="{StaticResource DetailSeperator}" />
+               </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
          <DataTemplate x:Key="BlindTemplate">
-            <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-               <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
-                  <Grid Style="{StaticResource DashboardDeviceCardType}">
+            <custcontrol:CustomViewCell>
+               <StackLayout
+                  Padding="20,5,20,0"
+                  HorizontalOptions="FillAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="StartAndExpand">
+                  <Grid>
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50" />
                         <ColumnDefinition Width="*" />
@@ -528,7 +564,7 @@
                      <StackLayout
                         Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
+                        VerticalOptions="CenterAndExpand">
                         <custcontrol:TintedCachedImage
                            ErrorPlaceholder="ic_launcher.png"
                            HeightRequest="30"
@@ -598,13 +634,18 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-               </custcontrol:MaterialFrame>
+                  <BoxView Margin="-20,5,-20,5" Style="{StaticResource DetailSeperator}" />
+               </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
          <DataTemplate x:Key="DimmerTemplate">
-            <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-               <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
-                  <Grid Style="{StaticResource DashboardDeviceCardType}">
+            <custcontrol:CustomViewCell>
+               <StackLayout
+                  Padding="20,5,20,0"
+                  HorizontalOptions="FillAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="StartAndExpand">
+                  <Grid>
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50" />
                         <ColumnDefinition Width="*" />
@@ -612,7 +653,7 @@
                      <StackLayout
                         Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
+                        VerticalOptions="CenterAndExpand">
                         <custcontrol:TintedCachedImage
                            ErrorPlaceholder="ic_launcher.png"
                            HeightRequest="30"
@@ -685,13 +726,18 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-               </custcontrol:MaterialFrame>
+                  <BoxView Margin="-20,5,-20,5" Style="{StaticResource DetailSeperator}" />
+               </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
          <DataTemplate x:Key="SwitchDimmerTemplate">
-            <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-               <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
-                  <Grid Style="{StaticResource DashboardDeviceCardType}">
+            <custcontrol:CustomViewCell>
+               <StackLayout
+                  Padding="20,5,20,0"
+                  HorizontalOptions="FillAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="StartAndExpand">
+                  <Grid>
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50" />
                         <ColumnDefinition Width="*" />
@@ -699,7 +745,7 @@
                      <StackLayout
                         Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
+                        VerticalOptions="CenterAndExpand">
                         <custcontrol:TintedCachedImage
                            ErrorPlaceholder="ic_launcher.png"
                            HeightRequest="30"
@@ -766,13 +812,18 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-               </custcontrol:MaterialFrame>
+                  <BoxView Margin="-20,5,-20,5" Style="{StaticResource DetailSeperator}" />
+               </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
          <DataTemplate x:Key="SecurityPanelTemplate">
-            <custcontrol:CustomViewCell RowHeight="{Binding RowHeight}">
-               <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}">
-                  <Grid Style="{StaticResource DashboardDeviceCardType}">
+            <custcontrol:CustomViewCell>
+               <StackLayout
+                  Padding="20,5,20,0"
+                  HorizontalOptions="FillAndExpand"
+                  Orientation="Vertical"
+                  VerticalOptions="StartAndExpand">
+                  <Grid>
                      <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50" />
                         <ColumnDefinition Width="*" />
@@ -780,7 +831,7 @@
                      <StackLayout
                         Grid.Column="0"
                         HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
+                        VerticalOptions="CenterAndExpand">
                         <custcontrol:TintedCachedImage
                            ErrorPlaceholder="ic_launcher.png"
                            HeightRequest="30"
@@ -822,7 +873,8 @@
                         </StackLayout>
                      </StackLayout>
                   </Grid>
-               </custcontrol:MaterialFrame>
+                  <BoxView Margin="-20,5,-20,5" Style="{StaticResource DetailSeperator}" />
+               </StackLayout>
             </custcontrol:CustomViewCell>
          </DataTemplate>
 
@@ -847,14 +899,6 @@
 
    <ContentPage.Content>
       <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
-
-         <SearchBar
-            x:Name="sbSearch"
-            CancelButtonColor="Red"
-            Placeholder="{resources:Translate filter}"
-            Style="{StaticResource SearchBarType}"
-            TextChanged="sbSearch_TextChanged" />
-
          <ListView
             x:Name="listView"
             BackgroundColor="{DynamicResource LightBackgroundColor}"
@@ -867,8 +911,19 @@
             ItemTemplate="{StaticResource deviceDataTemplateSelector}"
             ItemsSource="{Binding Devices}"
             RefreshCommand="{Binding RefreshFavoriteCommand}"
+            RowHeight="-1"
             SeparatorVisibility="None"
-            VerticalOptions="FillAndExpand" />
+            VerticalOptions="FillAndExpand">
+            <ListView.Header>
+               <SearchBar
+                  x:Name="sbSearch"
+                  Margin="0,0,0,10"
+                  CancelButtonColor="Red"
+                  Placeholder="{resources:Translate filter}"
+                  Style="{StaticResource SearchBarType}"
+                  TextChanged="sbSearch_TextChanged" />
+            </ListView.Header>
+         </ListView>
 
          <custcontrol:AdMobView
             x:Name="adView"

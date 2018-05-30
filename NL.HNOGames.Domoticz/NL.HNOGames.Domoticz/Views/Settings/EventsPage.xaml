@@ -11,17 +11,8 @@
    Title="{resources:Translate title_events}"
    ios:Page.UseSafeArea="true"
    Style="{StaticResource ContentPageType}">
-
    <ContentPage.Content>
-
       <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
-
-         <StackLayout.Padding>
-            <OnIdiom x:TypeArguments="Thickness">
-               <OnIdiom.Phone>20,20,20,20</OnIdiom.Phone>
-               <OnIdiom.Tablet>150,30,150,30</OnIdiom.Tablet>
-            </OnIdiom>
-         </StackLayout.Padding>
          <SearchBar
             x:Name="sbSearch"
             CancelButtonColor="Red"
@@ -39,7 +30,18 @@
             <ListView.ItemTemplate>
                <DataTemplate>
                   <custcontrol:CustomViewCell>
-                     <custcontrol:MaterialFrame Style="{StaticResource DashboardDeviceFrameType}" VerticalOptions="StartAndExpand">
+                     <StackLayout
+                        Margin="0"
+                        Padding="0"
+                        HorizontalOptions="FillAndExpand"
+                        Orientation="Vertical"
+                        VerticalOptions="StartAndExpand">
+                        <StackLayout.Padding>
+                           <OnIdiom x:TypeArguments="Thickness">
+                              <OnIdiom.Phone>20,10,20,10</OnIdiom.Phone>
+                              <OnIdiom.Tablet>150,10,150,10</OnIdiom.Tablet>
+                           </OnIdiom>
+                        </StackLayout.Padding>
                         <StackLayout
                            Margin="0"
                            Padding="0"
@@ -62,7 +64,8 @@
                               Toggled="btnSwitch_Toggled"
                               VerticalOptions="CenterAndExpand" />
                         </StackLayout>
-                     </custcontrol:MaterialFrame>
+                        <BoxView Style="{StaticResource DetailSeperator}" />
+                     </StackLayout>
                   </custcontrol:CustomViewCell>
                </DataTemplate>
             </ListView.ItemTemplate>

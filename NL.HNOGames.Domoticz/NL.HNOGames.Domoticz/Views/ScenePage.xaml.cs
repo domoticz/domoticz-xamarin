@@ -58,9 +58,9 @@ namespace NL.HNOGames.Domoticz.Views
             if (result == AppResources.favorite)
                 await SetFavorite(item);
             else if (result == AppResources.button_status_log)
-                await PopupNavigation.PushAsync(new LogsPopup(tempDevice));
+                await PopupNavigation.Instance.PushAsync(new LogsPopup(tempDevice));
             else if (result == AppResources.button_status_timer)
-                await PopupNavigation.PushAsync(new TimersPopup(tempDevice));
+                await PopupNavigation.Instance.PushAsync(new TimersPopup(tempDevice));
             listView.SelectedItem = null;
         }
 
@@ -88,7 +88,7 @@ namespace NL.HNOGames.Domoticz.Views
             base.OnAppearing();
             if (_viewModel.Devices == null || _viewModel.OldData)
                 _viewModel.RefreshFavoriteCommand.Execute(null);
-            listView.RowHeight = 130;
+            //listView.RowHeight = 130;
         }
 
         /// <summary>

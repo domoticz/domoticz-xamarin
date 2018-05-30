@@ -8,6 +8,7 @@ using Rg.Plugins.Popup.Services;
 using NL.HNOGames.Domoticz.Views.Dialog;
 using Acr.UserDialogs;
 using System.Threading.Tasks;
+using NL.HNOGames.Domoticz.Controls;
 
 namespace NL.HNOGames.Domoticz.Views.Settings
 {
@@ -50,75 +51,75 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             return true;
         }
 
-        /// <summary>
-        /// Add new Geofence Command to system
-        /// </summary>
-        private async void ToolbarItem_Activated(object sender, EventArgs e)
+      /// <summary>
+      /// Add new Geofence Command to system
+      /// </summary>
+      private void ToolbarItem_Activated(object sender, EventArgs e)
+      {
+         if (!ValidateGeofenceSupported())
+         {
+            swEnableGeofence.IsToggled = false;
+            return;
+         }
+
+         //try
+         //{
+         //    var result = await CrossPlacePicker.Current.Display();
+         //    if (result != null)
+         //    {
+         //        await AddNewRecordAsync(result.PlaceId, result);
+         //    }
+         //}
+         //catch (Exception ex)
+         //{
+         //    if (ex != null &&
+         //        !String.IsNullOrEmpty(ex.Message))
+         //    {
+         //        App.ShowToast(ex.ToString());
+         //        App.AddLog(ex.Message);
+         //    }
+         //}
+      }
+
+      /// <summary>
+      /// Create new Geofence object
+      /// </summary>
+      private void AddNewRecord(string GeofenceID)
+      {
+         //if (location == null)
+         //    return;
+
+         //var r = await UserDialogs.Instance.PromptAsync(AppResources.radius,
+         //        inputType: InputType.Number);
+
+         //int radius = 500;
+         //await Task.Delay(500);
+         //if (r.Ok)
+         //    radius = Convert.ToInt32(r.Text);
+         //else
+         //    return;
+
+         //var GeofenceObject = new Models.GeofenceModel()
+         //{
+         //    Id = GeofenceID,
+         //    Name = location.Name,
+         //    Latitude = location.Coordinates.Latitude,
+         //    Longitude = location.Coordinates.Longitude,
+         //    Address = location.Address,
+         //    Radius = radius,
+         //    Enabled = true,
+         //};
+
+         //_oListSource.Add(GeofenceObject);
+         //SaveAndRefresh();
+      }
+
+      /// <summary>
+      /// Delete a Geofence Command from the list
+      /// </summary>
+      private void btnDeleteButton_Clicked(object sender, EventArgs e)
         {
-            if (!ValidateGeofenceSupported())
-            {
-                swEnableGeofence.IsToggled = false;
-                return;
-            }
-
-            //try
-            //{
-            //    var result = await CrossPlacePicker.Current.Display();
-            //    if (result != null)
-            //    {
-            //        await AddNewRecordAsync(result.PlaceId, result);
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    if (ex != null &&
-            //        !String.IsNullOrEmpty(ex.Message))
-            //    {
-            //        App.ShowToast(ex.ToString());
-            //        App.AddLog(ex.Message);
-            //    }
-            //}
-        }
-
-        /// <summary>
-        /// Create new Geofence object
-        /// </summary>
-        private async Task AddNewRecordAsync(string GeofenceID)
-        {
-            //if (location == null)
-            //    return;
-
-            //var r = await UserDialogs.Instance.PromptAsync(AppResources.radius,
-            //        inputType: InputType.Number);
-
-            //int radius = 500;
-            //await Task.Delay(500);
-            //if (r.Ok)
-            //    radius = Convert.ToInt32(r.Text);
-            //else
-            //    return;
-
-            //var GeofenceObject = new Models.GeofenceModel()
-            //{
-            //    Id = GeofenceID,
-            //    Name = location.Name,
-            //    Latitude = location.Coordinates.Latitude,
-            //    Longitude = location.Coordinates.Longitude,
-            //    Address = location.Address,
-            //    Radius = radius,
-            //    Enabled = true,
-            //};
-
-            //_oListSource.Add(GeofenceObject);
-            //SaveAndRefresh();
-        }
-
-        /// <summary>
-        /// Delete a Geofence Command from the list
-        /// </summary>
-        private void btnDeleteButton_Clicked(object sender, EventArgs e)
-        {
-            var oGeofenceCommand = (Models.GeofenceModel)((Button)sender).BindingContext;
+            var oGeofenceCommand = (Models.GeofenceModel)((TintedCachedImage)sender).BindingContext;
             App.ShowToast(AppResources.something_deleted.Replace("%1$s", oGeofenceCommand.Name));
             _oListSource.Remove(oGeofenceCommand);
             SaveAndRefresh();
@@ -139,10 +140,10 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// </summary>
         private async void btnConnect_Clicked(object sender, EventArgs e)
         {
-            _oSelectedGeofenceCommand = (Models.GeofenceModel)((Button)sender).BindingContext;
+            _oSelectedGeofenceCommand = (Models.GeofenceModel)((TintedCachedImage)sender).BindingContext;
             var oSwitchPopup = new SwitchPopup();
             oSwitchPopup.DeviceSelectedMethod += DelegateMethod;
-            await PopupNavigation.PushAsync(oSwitchPopup);
+            await PopupNavigation.Instance.PushAsync(oSwitchPopup);
         }
 
         /// <summary>

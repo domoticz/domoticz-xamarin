@@ -54,14 +54,16 @@
 		<true/>
 	</dict>
 	<key>CFBundleShortVersionString</key>
-	<string>0.0.56</string>
+	<string>0.0.66</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>CFBundleVersion</key>
-	<string>56</string>
+	<string>66</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>Enable speech recognition in the app</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>We need the microphone for speech recognition</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Need your face to unlock Domoticz.</string>
 </dict>
 </plist>

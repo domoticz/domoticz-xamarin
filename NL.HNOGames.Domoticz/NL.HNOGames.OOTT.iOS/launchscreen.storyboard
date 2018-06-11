@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="X5k-f2-b5h">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--OOTT-->
+        <scene sceneID="gAE-YM-kbH">
+            <objects>
+                <viewController title="OOTT" wantsFullScreenLayout="YES" id="X5k-f2-b5h" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="913"/>
+                        <viewControllerLayoutGuide type="bottom" id="914"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yd7-JS-zBw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XAI-xm-WK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="349" y="339"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="alarm.png" width="128" height="128"/>
+        <image name="christmastree.png" width="128" height="128"/>
+        <image name="clock48.png" width="128" height="128"/>
+        <image name="computer.png" width="128" height="128"/>
+        <image name="cone.png" width="128" height="128"/>
+        <image name="contact.png" width="128" height="128"/>
+        <image name="cooling.png" width="128" height="128"/>
+        <image name="darkheader.png" width="800" height="480"/>
+        <image name="defaultimage.png" width="128" height="128"/>
+        <image name="demand.png" width="128" height="128"/>
+        <image name="dimmer.png" width="128" height="128"/>
+        <image name="OOTT_white.png" width="75" height="75"/>
+        <image name="door.png" width="128" height="128"/>
+        <image name="down.png" width="128" height="128"/>
+        <image name="empty.png" width="217" height="218"/>
+        <image name="fan.png" width="128" height="128"/>
+        <image name="flame.png" width="128" height="128"/>
+        <image name="gauge.png" width="128" height="128"/>
+        <image name="generic.png" width="128" height="128"/>
+        <image name="harddisk.png" width="128" height="128"/>
+        <image name="heating.png" width="128" height="128"/>
+        <image name="ic_arrow_down.png" width="96" height="96"/>
+        <image name="ic_arrow_drop_down.png" width="24" height="24"/>
+        <image name="ic_arrow_drop_up.png" width="24" height="24"/>
+        <image name="ic_arrow_up.png" width="96" height="96"/>
+        <image name="ic_cameras.png" width="92" height="92"/>
+        <image name="ic_content_copy.png" width="24" height="24"/>
+        <image name="ic_dashboard.png" width="92" height="92"/>
+        <image name="ic_dashboard_white.png" width="24" height="24"/>
+        <image name="ic_OOTT_logo.png" width="859" height="263"/>
+        <image name="ic_OOTT_logo_white.png" width="859" height="263"/>
+        <image name="ic_event.png" width="92" height="92"/>
+        <image name="ic_filter_list.png" width="24" height="24"/>
+        <image name="ic_highlight_white.png" width="24" height="24"/>
+        <image name="ic_home.png" width="24" height="24"/>
+        <image name="ic_keyboard_voice.png" width="24" height="24"/>
+        <image name="ic_launcher.png" width="192" height="192"/>
+        <image name="ic_lightbulb_outline.png" width="24" height="24"/>
+        <image name="ic_logs.png" width="92" height="92"/>
+        <image name="ic_microphone.png" width="92" height="92"/>
+        <image name="ic_minus.png" width="96" height="96"/>
+        <image name="ic_pause.png" width="45" height="45"/>
+        <image name="ic_plan.png" width="92" height="92"/>
+        <image name="ic_play.png" width="45" height="45"/>
+        <image name="ic_plus.png" width="96" height="96"/>
+        <image name="ic_qrcode.png" width="24" height="24"/>
+        <image name="ic_repeat_black_18dp.png" width="54" height="54"/>
+        <image name="ic_scenes.png" width="92" height="92"/>
+        <image name="ic_schedule_black_18dp.png" width="54" height="54"/>
+        <image name="ic_settings.png" width="24" height="24"/>
+        <image name="ic_share.png" width="24" height="24"/>
+        <image name="ic_show_chart.png" width="24" height="24"/>
+        <image name="ic_sort.png" width="144" height="144"/>
+        <image name="ic_star.png" width="24" height="24"/>
+        <image name="ic_star_border.png" width="24" height="24"/>
+        <image name="ic_stop.png" width="96" height="96"/>
+        <image name="ic_switch.png" width="92" height="92"/>
+        <image name="ic_temperature.png" width="92" height="92"/>
+        <image name="ic_utilities.png" width="92" height="92"/>
+        <image name="ic_validate_settings.png" width="171" height="168"/>
+        <image name="ic_vars.png" width="92" height="92"/>
+        <image name="ic_view_carousel_white.png" width="24" height="24"/>
+        <image name="ic_wb_cloudy_white.png" width="24" height="24"/>
+        <image name="ic_wb_sunny_white.png" width="24" height="24"/>
+        <image name="ic_weather.png" width="92" height="92"/>
+        <image name="ic_wizard.png" width="92" height="92"/>
+        <image name="leaf.png" width="128" height="128"/>
+        <image name="lights.png" width="128" height="128"/>
+        <image name="lock.png" width="128" height="128"/>
+        <image name="media.png" width="128" height="128"/>
+        <image name="mic.png" width="128" height="128"/>
+        <image name="motion.png" width="128" height="128"/>
+        <image name="percentage.png" width="128" height="128"/>
+        <image name="phone.png" width="128" height="128"/>
+        <image name="placeholder.jpg" width="655" height="462"/>
+        <image name="printer.png" width="128" height="128"/>
+        <image name="profile_generic.png" width="95" height="95"/>
+        <image name="program.png" width="128" height="128"/>
+        <image name="pushoff.png" width="128" height="128"/>
+        <image name="qrcode.png" width="128" height="128"/>
+        <image name="radiation.png" width="128" height="128"/>
+        <image name="rain.png" width="128" height="128"/>
+        <image name="refresh.png" width="128" height="128"/>
+        <image name="remote.png" width="128" height="128"/>
+        <image name="rgb.png" width="128" height="128"/>
+        <image name="sad_smiley_dark.png" width="420" height="300"/>
+        <image name="scale.png" width="128" height="128"/>
+        <image name="security.png" width="128" height="128"/>
+        <image name="security_widget_preview.png" width="1003" height="425"/>
+        <image name="siren.png" width="128" height="128"/>
+        <image name="slideout.png" width="14" height="15"/>
+        <image name="slider-default-handle-disabled.png" width="23" height="23"/>
+        <image name="slider-default-handle-highlighted.png" width="23" height="23"/>
+        <image name="slider-default-handle.png" width="23" height="23"/>
+        <image name="slider-default-track.png" width="11" height="9"/>
+        <image name="slider-default-trackBackground.png" width="11" height="9"/>
+        <image name="slider-default-trackCrossedOver.png" width="11" height="9"/>
+        <image name="slider-default_trackBackground.png" width="11" height="9"/>
+        <image name="slider-default7-handle-disabled.png" width="43" height="43"/>
+        <image name="slider-default7-handle.png" width="43" height="43"/>
+        <image name="slider-default7-track.png" width="6" height="4"/>
+        <image name="slider-default7-trackBackground.png" width="6" height="4"/>
+        <image name="slider-default7-trackCrossedOver.png" width="6" height="4"/>
+        <image name="smoke.png" width="128" height="128"/>
+        <image name="speaker.png" width="128" height="128"/>
+        <image name="stop.png" width="128" height="128"/>
+        <image name="sub.png" width="128" height="128"/>
+        <image name="tab_about.png" width="32" height="30"/>
+        <image name="tab_feed.png" width="32" height="30"/>
+        <image name="temp48.png" width="128" height="128"/>
+        <image name="temperature.png" width="128" height="128"/>
+        <image name="text.png" width="128" height="128"/>
+        <image name="tv.png" width="128" height="128"/>
+        <image name="up.png" width="128" height="128"/>
+        <image name="users.png" width="128" height="128"/>
+        <image name="uv.png" width="128" height="128"/>
+        <image name="uvdark.png" width="128" height="128"/>
+        <image name="uvsunny.png" width="128" height="128"/>
+        <image name="video.png" width="128" height="128"/>
+        <image name="visibility.png" width="128" height="128"/>
+        <image name="volume.png" width="128" height="128"/>
+        <image name="wall.png" width="128" height="128"/>
+        <image name="water.png" width="128" height="128"/>
+        <image name="widget_preview_dark.png" width="576" height="136"/>
+        <image name="widget_preview_light.png" width="576" height="136"/>
+        <image name="wind.png" width="128" height="128"/>
+    </resources>
+</document>

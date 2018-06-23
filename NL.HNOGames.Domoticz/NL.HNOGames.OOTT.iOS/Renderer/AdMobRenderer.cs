@@ -4,6 +4,7 @@ using Google.MobileAds;
 using UIKit;
 using NL.HNOGames.Domoticz.Controls;
 using NL.HNOGames.OOTT.iOS.Renderer;
+using NL.HNOGames.Domoticz;
 
 [assembly: ExportRenderer(typeof(AdMobView), typeof(AdMobRenderer))]
 namespace NL.HNOGames.OOTT.iOS.Renderer

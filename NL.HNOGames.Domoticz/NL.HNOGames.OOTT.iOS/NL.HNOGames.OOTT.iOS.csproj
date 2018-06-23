@@ -22,12 +22,12 @@
     <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer: Mark Heinis (GY4WQNBRFK)</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>True</MtouchDebug>
     <MtouchFastDev>True</MtouchFastDev>
     <MtouchUseSGen>True</MtouchUseSGen>
     <MtouchUseRefCounting>True</MtouchUseRefCounting>
-    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchLink>None</MtouchLink>
     <MtouchArch>i386, x86_64</MtouchArch>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
@@ -40,8 +40,12 @@
     <MtouchEnableBitcode>False</MtouchEnableBitcode>
     <OptimizePNGs>True</OptimizePNGs>
     <MtouchFloat32>False</MtouchFloat32>
-    <CodesignProvision>OOTT-ios-development</CodesignProvision>
+    <CodesignProvision>
+    </CodesignProvision>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <CodesignExtraArgs />
+    <CodesignResourceRules />
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>pdbonly</DebugType>
@@ -70,16 +74,20 @@
     <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Distribution: Mark Heinis (S644AUC27Z)</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchUseSGen>true</MtouchUseSGen>
     <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchLink>None</MtouchLink>
     <MtouchArch>i386, x86_64</MtouchArch>
-    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <PlatformTarget>x86</PlatformTarget>
-    <CodesignProvision>1ac65bcc-0448-4c7a-b438-79817f89f428</CodesignProvision>
+    <CodesignProvision>
+    </CodesignProvision>
     <OptimizePNGs>true</OptimizePNGs>
+    <CodesignExtraArgs />
+    <CodesignResourceRules />
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -586,9 +594,6 @@
     <BundleResource Include="Resources\dimmer.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\OOTT_white.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\door.png" />
   </ItemGroup>
   <ItemGroup>
@@ -626,12 +631,6 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\ic_dashboard.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\ic_OOTT_logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\ic_OOTT_logo_white.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\ic_event.png" />
@@ -960,6 +959,15 @@
       <Project>{c13c8119-a8a5-4dc5-a7dd-a0c9733bdceb}</Project>
       <Name>NL.HNOGames.Domoticz</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\domoticz_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_domoticz_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_domoticz_logo_white.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

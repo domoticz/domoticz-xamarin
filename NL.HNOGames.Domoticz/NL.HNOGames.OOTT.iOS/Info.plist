@@ -7,7 +7,7 @@
 	<key>CFBundleName</key>
 	<string>NL.HNOGames.OOTT.iOS</string>
 	<key>CFBundleIdentifier</key>
-	<string>nl.hnogames.OOTT</string>
+	<string>nl.hnogames.oott</string>
 	<key>MinimumOSVersion</key>
 	<string>8.0</string>
 	<key>UIDeviceFamily</key>

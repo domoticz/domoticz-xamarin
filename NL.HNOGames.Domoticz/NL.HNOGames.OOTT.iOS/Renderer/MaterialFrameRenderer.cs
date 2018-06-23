@@ -2,10 +2,9 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 using CoreGraphics;
-using Xamarin.Forms;
 using NL.HNOGames.Domoticz.Controls;
 using NL.HNOGames.OOTT.iOS.Renderer;
-using System.ComponentModel;
+using NL.HNOGames.Domoticz;
 
 [assembly: ExportRenderer(typeof(MaterialFrame), typeof(MaterialFrameRenderer))]
 namespace NL.HNOGames.OOTT.iOS.Renderer

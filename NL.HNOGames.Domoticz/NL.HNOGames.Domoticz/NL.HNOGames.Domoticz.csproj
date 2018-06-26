@@ -2,17 +2,150 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageTargetFallback>$(PackageTargetFallback);portable-win+net45+wp8+win81+wpa8</PackageTargetFallback>
-    <Company>Copyright © Mark Heinis  2014</Company>
+    <Company>Copyright © Mark Heinis 2014</Company>
     <NeutralLanguage>en</NeutralLanguage>
-    <Configurations>Debug;Release;ReleaseOOTT</Configurations>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug;Release;OOTT;</Configuration>
+    <AssemblyName>NL.HNOGames.Domoticz</AssemblyName>
+    <Configurations>Debug;Release;OOTT</Configurations>
   </PropertyGroup>
+
+  <ItemGroup Condition=" '$(Configuration)'=='OOTT' ">
+    <Compile Remove="Resources\AppResources.bg.Designer.cs" />
+    <Compile Remove="Resources\AppResources.ca.Designer.cs" />
+    <Compile Remove="Resources\AppResources.cs.Designer.cs" />
+    <Compile Remove="Resources\AppResources.da.Designer.cs" />
+    <Compile Remove="Resources\AppResources.de.Designer.cs" />
+    <Compile Remove="Resources\AppResources.el.Designer.cs" />
+    <Compile Remove="Resources\AppResources.es.Designer.cs" />
+    <Compile Remove="Resources\AppResources.fa.Designer.cs" />
+    <Compile Remove="Resources\AppResources.fi.Designer.cs" />
+    <Compile Remove="Resources\AppResources.fr.Designer.cs" />
+    <Compile Remove="Resources\AppResources.he.Designer.cs" />
+    <Compile Remove="Resources\AppResources.hr.Designer.cs" />
+    <Compile Remove="Resources\AppResources.hu.Designer.cs" />
+    <Compile Remove="Resources\AppResources.it.Designer.cs" />
+    <Compile Remove="Resources\AppResources.kab.Designer.cs" />
+    <Compile Remove="Resources\AppResources.nl.Designer.cs" />
+    <Compile Remove="Resources\AppResources.no.Designer.cs" />
+    <Compile Remove="Resources\AppResources.pl.Designer.cs" />
+    <Compile Remove="Resources\AppResources.pt.Designer.cs" />
+    <Compile Remove="Resources\AppResources.ro.Designer.cs" />
+    <Compile Remove="Resources\AppResources.ru.Designer.cs" />
+    <Compile Remove="Resources\AppResources.sk.Designer.cs" />
+    <Compile Remove="Resources\AppResources.sl.Designer.cs" />
+    <Compile Remove="Resources\AppResources.sr.Designer.cs" />
+    <Compile Remove="Resources\AppResources.sv.Designer.cs" />
+    <Compile Remove="Resources\AppResources.tr.Designer.cs" />
+    <Compile Remove="Resources\AppResources.uk.Designer.cs" />
+    <Compile Remove="Resources\AppResources.zh.Designer.cs" />
+    <Compile Remove="Resources\TranslateExtension.cs" />
+    <Compile Remove="Resources\AppResources.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Configuration)'=='OOTT' ">
+    <EmbeddedResource Remove="Resources\AppResources.bg.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.ca.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.cs.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.da.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.de.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.el.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.es.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.fa.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.fi.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.fr.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.he.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.hr.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.hu.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.it.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.kab.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.nl.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.no.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.pl.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.pt.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.ro.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.ru.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.sk.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.sl.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.sr.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.sv.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.tr.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.uk.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.zh.resx" />
+    <EmbeddedResource Remove="Resources\AppResources.zhrCN.resx" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(Configuration)'!='OOTT' ">
+    <Compile Remove="ResourcesOOTT\AppResources.bg.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.ca.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.cs.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.da.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.de.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.el.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.es.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.fa.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.fi.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.fr.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.he.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.hr.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.hu.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.it.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.kab.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.nl.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.no.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.pl.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.pt.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.ro.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.ru.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.sk.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.sl.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.sr.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.sv.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.tr.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.uk.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.zh.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\TranslateExtension.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Configuration)'!='OOTT' ">
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.bg.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.ca.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.cs.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.da.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.de.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.el.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.es.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.fa.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.fi.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.fr.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.he.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.hr.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.hu.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.it.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.kab.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.nl.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.no.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.pl.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.pt.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.ro.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.ru.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.sk.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.sl.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.sr.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.sv.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.tr.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.uk.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.zh.resx" />
+    <EmbeddedResource Remove="ResourcesOOTT\AppResources.zhrCN.resx" />
+  </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="Acr.UserDialogs" Version="6.5.1" />
-    <PackageReference Include="DLToolkit.Forms.Controls.FlowListView" Version="2.0.10" />
+    <PackageReference Include="DLToolkit.Forms.Controls.FlowListView" Version="2.0.11" />
     <PackageReference Include="FolderPath" Version="1.1.1" />
-    <PackageReference Include="Humanizer" Version="2.2.0" />
-    <PackageReference Include="Microsoft.NETCore.Platforms" Version="2.0.2" />
-    <PackageReference Include="Microsoft.NETCore.Targets" Version="2.0.0" />
+    <PackageReference Include="Humanizer" Version="2.3.3" />
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="2.1.0" />
+    <PackageReference Include="Microsoft.NETCore.Targets" Version="2.1.0" />
     <PackageReference Include="modernhttpclient" Version="2.4.2" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="OxyPlot.Core" Version="2015.1.708-alpha" />
@@ -20,28 +153,28 @@
     <PackageReference Include="PCLStorage" Version="1.0.2" />
     <PackageReference Include="Plugin.DeviceOrientation" Version="1.0.7" />
     <PackageReference Include="Plugin.Fingerprint" Version="1.4.7" />
-    <PackageReference Include="Plugin.InAppBilling" Version="1.4.1" />
+    <PackageReference Include="Plugin.InAppBilling" Version="2.0.0" />
     <PackageReference Include="Plugin.Multilingual" Version="1.0.2" />
     <PackageReference Include="Plugin.Permissions" Version="2.2.1" />
     <PackageReference Include="Plugin.Share" Version="7.1.1" />
     <PackageReference Include="Plugin.SpeechRecognition" Version="1.0.0-beta3" />
     <PackageReference Include="Rg.Plugins.Popup" Version="1.1.1.57" />
     <PackageReference Include="runtime.native.System" Version="4.3.0" />
-    <PackageReference Include="SlideOverKit" Version="2.1.5" />
+    <PackageReference Include="SlideOverKit" Version="2.1.6.1" />
     <PackageReference Include="Splat" Version="2.0.0" />
     <PackageReference Include="Xam.Plugin.Connectivity" Version="3.1.1" />
-    <PackageReference Include="Xam.Plugin.DeviceInfo" Version="3.1.0" />
+    <PackageReference Include="Xam.Plugin.DeviceInfo" Version="4.0.0.13" />
     <PackageReference Include="Xam.Plugin.PushNotification" Version="1.2.5-beta" />
     <PackageReference Include="Xam.Plugins.Notifier" Version="2.1.0" />
     <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
     <PackageReference Include="Xam.Plugins.TextToSpeech" Version="4.0.0.7" />
     <PackageReference Include="Xamarin.Build.Download" Version="0.4.11" />
-    <PackageReference Include="Xamarin.FFImageLoading" Version="2.3.6" />
-    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.3.6" />
-    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.3.6" />
-    <PackageReference Include="Xamarin.Forms" Version="3.0.0.482510" />
-    <PackageReference Include="Xamarin.Forms.RangeSlider" Version="0.7.33" />
-    <PackageReference Include="Xamarin.RangeSlider" Version="0.7.33" />
+    <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.3.840" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.3.840" />
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.3.840" />
+    <PackageReference Include="Xamarin.Forms" Version="3.1.0.583944" />
+    <PackageReference Include="Xamarin.Forms.RangeSlider" Version="0.7.36" />
+    <PackageReference Include="Xamarin.RangeSlider" Version="0.7.36" />
     <PackageReference Include="XLabs.Cryptography" Version="2.0.5782" />
     <PackageReference Include="ZXing.Net.Mobile" Version="2.4.1" />
     <PackageReference Include="ZXing.Net.Mobile.Forms" Version="2.4.1" />

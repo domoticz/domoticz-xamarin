@@ -54,11 +54,11 @@
 		<true/>
 	</dict>
 	<key>CFBundleShortVersionString</key>
-	<string>0.0.66</string>
+	<string>0.0.69</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>CFBundleVersion</key>
-	<string>66</string>
+	<string>69</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>Enable speech recognition in the app</string>
 	<key>NSMicrophoneUsageDescription</key>

@@ -143,7 +143,7 @@
     <PackageReference Include="Acr.UserDialogs" Version="6.5.1" />
     <PackageReference Include="DLToolkit.Forms.Controls.FlowListView" Version="2.0.11" />
     <PackageReference Include="FolderPath" Version="1.1.1" />
-    <PackageReference Include="Humanizer" Version="2.3.3" />
+    <PackageReference Include="Humanizer" Version="2.4.2" />
     <PackageReference Include="Microsoft.NETCore.Platforms" Version="2.1.0" />
     <PackageReference Include="Microsoft.NETCore.Targets" Version="2.1.0" />
     <PackageReference Include="modernhttpclient" Version="2.4.2" />
@@ -159,20 +159,20 @@
     <PackageReference Include="Plugin.Share" Version="7.1.1" />
     <PackageReference Include="Plugin.SpeechRecognition" Version="1.0.0-beta3" />
     <PackageReference Include="Rg.Plugins.Popup" Version="1.1.1.57" />
-    <PackageReference Include="runtime.native.System" Version="4.3.0" />
+    <PackageReference Include="runtime.native.System" Version="4.3.1" />
     <PackageReference Include="SlideOverKit" Version="2.1.6.1" />
     <PackageReference Include="Splat" Version="2.0.0" />
-    <PackageReference Include="Xam.Plugin.Connectivity" Version="3.1.1" />
+    <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
     <PackageReference Include="Xam.Plugin.DeviceInfo" Version="4.0.0.13" />
     <PackageReference Include="Xam.Plugin.PushNotification" Version="1.2.5-beta" />
-    <PackageReference Include="Xam.Plugins.Notifier" Version="2.1.0" />
+    <PackageReference Include="Xam.Plugins.Notifier" Version="3.0.0" />
     <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
     <PackageReference Include="Xam.Plugins.TextToSpeech" Version="4.0.0.7" />
     <PackageReference Include="Xamarin.Build.Download" Version="0.4.11" />
     <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.3.840" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.3.840" />
     <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.3.840" />
-    <PackageReference Include="Xamarin.Forms" Version="3.1.0.583944" />
+    <PackageReference Include="Xamarin.Forms" Version="3.1.0.637273" />
     <PackageReference Include="Xamarin.Forms.RangeSlider" Version="0.7.36" />
     <PackageReference Include="Xamarin.RangeSlider" Version="0.7.36" />
     <PackageReference Include="XLabs.Cryptography" Version="2.0.5782" />

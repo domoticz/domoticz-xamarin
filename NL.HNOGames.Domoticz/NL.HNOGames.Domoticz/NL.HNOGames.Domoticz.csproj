@@ -158,7 +158,7 @@
     <PackageReference Include="Plugin.Permissions" Version="2.2.1" />
     <PackageReference Include="Plugin.Share" Version="7.1.1" />
     <PackageReference Include="Plugin.SpeechRecognition" Version="1.0.0-beta3" />
-    <PackageReference Include="Rg.Plugins.Popup" Version="1.1.1.57" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="1.1.4.168" />
     <PackageReference Include="runtime.native.System" Version="4.3.1" />
     <PackageReference Include="SlideOverKit" Version="2.1.6.1" />
     <PackageReference Include="Splat" Version="2.0.0" />

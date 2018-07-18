@@ -3,22 +3,26 @@
     {
       "scale": "2x",
       "size": "20x20",
-      "idiom": "iphone"
+      "idiom": "iphone",
+      "filename": "Icon-App-40x40@1x.png"
     },
     {
       "scale": "3x",
       "size": "20x20",
-      "idiom": "iphone"
+      "idiom": "iphone",
+      "filename": "Icon-App-60x60@1x.png"
     },
     {
       "scale": "1x",
       "size": "20x20",
-      "idiom": "ipad"
+      "idiom": "ipad",
+      "filename": "Icon-App-20x20@1x.png"
     },
     {
       "scale": "2x",
       "size": "20x20",
-      "idiom": "ipad"
+      "idiom": "ipad",
+      "filename": "Icon-App-40x40@1x.png"
     },
     {
       "scale": "1x",

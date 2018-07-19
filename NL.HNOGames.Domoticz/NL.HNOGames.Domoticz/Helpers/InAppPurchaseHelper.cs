@@ -8,12 +8,20 @@ namespace NL.HNOGames.Domoticz.Helpers
 {
     public class InAppPurchaseHelper
     {
-        /// <summary>
-        /// Is Premium Account already bought??"
-        /// </summary>
+      /// <summary>
+      /// Is Premium Account already bought??"
+      /// </summary>
+#if OOTT
+      public static async Task<bool> PremiumAccountPurchased(string productId = "122842")
+#endif
+#if Release
         public static async Task<bool> PremiumAccountPurchased(string productId = "134845")
-        {
-            try
+#endif
+#if Debug
+        public static async Task<bool> PremiumAccountPurchased(string productId = "134845")
+#endif
+      {
+         try
             {
                 var connected = await CrossInAppBilling.Current.ConnectAsync();
                 if (!connected)
@@ -69,12 +77,20 @@ namespace NL.HNOGames.Domoticz.Helpers
                 //await CrossInAppBilling.Current.DisconnectAsync();
             }
             return false;
-        }
+      }
 
-        /// <summary>
-        /// Purchase item
-        /// </summary>
-        public static async Task<bool> PurchaseItem(string productId = "134845", string payload = "nl.hnogames.domoticz")
+      /// <summary>
+      /// Purchase item
+      /// </summary>
+#if OOTT
+      public static async Task<bool> PurchaseItem(string productId = "122842", string payload = "nl.hnogames.oott")
+#endif
+#if Release
+         public static async Task<bool> PurchaseItem(string productId = "134845", string payload = "nl.hnogames.domoticz")
+#endif
+#if Debug
+         public static async Task<bool> PurchaseItem(string productId = "134845", string payload = "nl.hnogames.domoticz")
+#endif
         {
             if (!CrossInAppBilling.IsSupported)
             {

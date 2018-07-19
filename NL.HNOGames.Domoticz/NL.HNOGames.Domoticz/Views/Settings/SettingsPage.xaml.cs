@@ -309,19 +309,49 @@ namespace NL.HNOGames.Domoticz.Views.Settings
 
       private async void btnBuyPremium_Clicked(object sender, EventArgs e)
       {
+#if OOTT
          var result = await UserDialogs.Instance.ConfirmAsync(new ConfirmConfig
+         {
+            Message =
+                 "There are several features in the OOTT app that are locked until you buy the premium version\r\n- no ads!!\r\n-notification support\r\n- theming\r\n- talkback\r\n- qrcode scanning\r\n\r\n- and more features in the future",
+            OkText = "Buy",
+            CancelText = "Cancel"
+         });
+#endif
+#if Release
+             var result = await UserDialogs.Instance.ConfirmAsync(new ConfirmConfig
          {
             Message =
                  "There are several features in the domoticz app that are locked until you buy the premium version\r\n- no ads!!\r\n-notification support\r\n- theming\r\n- talkback\r\n- qrcode scanning\r\n\r\n- and more features in the future",
             OkText = "Buy",
             CancelText = "Cancel"
          });
+#endif
+#if Debug
+            var result = await UserDialogs.Instance.ConfirmAsync(new ConfirmConfig
+         {
+            Message =
+                 "There are several features in the domoticz app that are locked until you buy the premium version\r\n- no ads!!\r\n-notification support\r\n- theming\r\n- talkback\r\n- qrcode scanning\r\n\r\n- and more features in the future",
+            OkText = "Buy",
+            CancelText = "Cancel"
+         });
+#endif
 
          if (!result)
             return;
 
-         if (await InAppPurchaseHelper.PurchaseItem())
+#if OOTT
+         if (await InAppPurchaseHelper.PurchaseItem("122842", "nl.hnogames.oott"))
             App.ShowToast("Thanks for buying premium!!");
+#endif
+#if Release
+            if (await InAppPurchaseHelper.PurchaseItem()
+            App.ShowToast("Thanks for buying premium!!");
+#endif
+#if Debug
+            if (await InAppPurchaseHelper.PurchaseItem()
+            App.ShowToast("Thanks for buying premium!!");
+#endif
 
          PremiumScreenSetup();
       }

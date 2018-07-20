@@ -406,7 +406,7 @@
 <data name="timer_other" xml:space="preserve"><value>其它</value></data>
 <data name="timers" xml:space="preserve"><value>计时器</value></data>
 <data name="title_utilities" xml:space="preserve"><value>实用程序</value></data>
-<data name="set_temperature" xml:space="preserve"><value>设置</value></data>
+<data name="settemperature" xml:space="preserve"><value>设置</value></data>
 <data name="title_vars" xml:space="preserve"><value>用户变量</value></data>
 <data name="var_input" xml:space="preserve"><value>输入值无效</value></data>
 <data name="var_input_error" xml:space="preserve"><value>更新用户变量失败</value></data>

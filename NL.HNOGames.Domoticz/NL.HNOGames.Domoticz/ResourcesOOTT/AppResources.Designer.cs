@@ -10,7 +10,6 @@
 
 namespace NL.HNOGames.Domoticz.Resources {
     using System;
-    using System.Reflection;
     
     
     /// <summary>
@@ -40,7 +39,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NL.HNOGames.Domoticz.Resources.AppResources", typeof(AppResources).GetTypeInfo().Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NL.HNOGames.Domoticz.ResourcesOOTT.AppResources", typeof(AppResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -256,6 +255,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static string always_on_title {
             get {
                 return ResourceManager.GetString("always_on_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OOTT.
+        /// </summary>
+        public static string app_name {
+            get {
+                return ResourceManager.GetString("app_name", resourceCulture);
             }
         }
         
@@ -692,7 +700,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Would you like us to check for Domoticz system updates?.
+        ///   Looks up a localized string similar to Would you like us to check for OOTT system updates?.
         /// </summary>
         public static string check_for_update {
             get {
@@ -1061,7 +1069,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Domoticz logo.
+        ///   Looks up a localized string similar to OOTT logo.
         /// </summary>
         public static string domoticz_logo {
             get {
@@ -1223,7 +1231,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;Could not get Domoticz server configuration: %1$s&quot;.
+        ///   Looks up a localized string similar to &quot;Could not get OOTT server configuration: %1$s&quot;.
         /// </summary>
         public static string error_couldNotCheckForConfig {
             get {
@@ -1547,7 +1555,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Are you sure? The failover password is the password of your Domoticz account..
+        ///   Looks up a localized string similar to Are you sure? The failover password is the password of your OOTT account..
         /// </summary>
         public static string fingerprint_sure {
             get {
@@ -1763,7 +1771,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About Domoticz.
+        ///   Looks up a localized string similar to About OOTT.
         /// </summary>
         public static string info_about {
             get {
@@ -1781,7 +1789,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Domoticz for Android is made possible with several open source libraries.
+        ///   Looks up a localized string similar to OOTT for Android is made possible with several open source libraries.
         /// </summary>
         public static string info_credits_text {
             get {
@@ -1790,7 +1798,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Domoticz\nhttp://www.domoticz.com\n\nHelloCharts\nhttps://github.com/lecho/hellocharts-android\n\nCircleImageView\nhttps://github.com/hdodenhof/CircleImageView\n\nPicasso\nhttps://github.com/square/picasso\n\nViewPagerIndicator\nhttps://github.com/JakeWharton/ViewPagerIndicator\n\nFloating Label Widgets\nhttps://github.com/marvinlabs/android-floatinglabel-widgets\n\nMaterial Dialogs\nhttps://github.com/afollestad/material-dialogs\n\nLobsterpicker\nhttps://github.com/LarsWerkman/Lobsterpicker\n\nMaterialList [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to OOTT\nhttp://www.OOTT.com\n\nDomoticz\nhttp://www.domoticz.com\n\nHelloCharts\nhttps://github.com/lecho/hellocharts-android\n\nCircleImageView\nhttps://github.com/hdodenhof/CircleImageView\n\nPicasso\nhttps://github.com/square/picasso\n\nViewPagerIndicator\nhttps://github.com/JakeWharton/ViewPagerIndicator\n\nFloating Label Widgets\nhttps://github.com/marvinlabs/android-floatinglabel-widgets\n\nMaterial Dialogs\nhttps://github.com/afollestad/material-dialogs\n\nLobsterpicker\nhttps://github.com/LarsWerkman/ [rest of string was truncated]&quot;;.
         /// </summary>
         public static string info_credits_text_urls {
             get {
@@ -1799,7 +1807,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Domoticz version.
+        ///   Looks up a localized string similar to OOTT version.
         /// </summary>
         public static string info_domoticz_version {
             get {
@@ -2069,7 +2077,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No data on Domoticz server.
+        ///   Looks up a localized string similar to No data on OOTT server.
         /// </summary>
         public static string no_data_on_domoticz {
             get {
@@ -2195,7 +2203,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Push your registration id to Domoticz.
+        ///   Looks up a localized string similar to Push your registration id to OOTT.
         /// </summary>
         public static string notification_settings_push {
             get {
@@ -2204,7 +2212,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Could not save your registration id in Domoticz, please try again later..
+        ///   Looks up a localized string similar to Could not save your registration id in OOTT, please try again later..
         /// </summary>
         public static string notification_settings_push_failed {
             get {
@@ -2213,7 +2221,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your registration id is now saved in Domoticz.
+        ///   Looks up a localized string similar to Your registration id is now saved in OOTT.
         /// </summary>
         public static string notification_settings_pushed {
             get {
@@ -2807,7 +2815,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wrong password entered, your domoticz account password is the failover for your fingerprint...!.
+        ///   Looks up a localized string similar to Wrong password entered, your OOTT account password is the failover for your fingerprint...!.
         /// </summary>
         public static string security_wrong_password_fingerprint {
             get {
@@ -3014,7 +3022,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Let Domoticz talk back to you.
+        ///   Looks up a localized string similar to Let OOTT talk back to you.
         /// </summary>
         public static string set_talk_back_on {
             get {
@@ -3025,9 +3033,9 @@ namespace NL.HNOGames.Domoticz.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Set.
         /// </summary>
-        public static string set_temperature {
+        public static string settemperature {
             get {
-                return ResourceManager.GetString("set_temperature", resourceCulture);
+                return ResourceManager.GetString("settemperature", resourceCulture);
             }
         }
         
@@ -3041,7 +3049,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Settings exported, please restart Domoticz.
+        ///   Looks up a localized string similar to Settings exported, please restart OOTT.
         /// </summary>
         public static string settings_exported {
             get {
@@ -3059,7 +3067,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Settings imported, please restart Domoticz.
+        ///   Looks up a localized string similar to Settings imported, please restart OOTT.
         /// </summary>
         public static string settings_imported {
             get {
@@ -3995,7 +4003,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Only used for non-standard Domoticz servers.
+        ///   Looks up a localized string similar to Only used for non-standard OOTT servers.
         /// </summary>
         public static string welcome_advancedSettings_summary {
             get {
@@ -4040,7 +4048,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Domoticz is a Home Automation System that lets you monitor and configure various devices like: Lights, Switches, various sensors/meters like Temperature, Rain, Wind, UV, Electra, Gas, Water and much more. Notifications/Alerts can be sent to any mobile device..
+        ///   Looks up a localized string similar to OOTT is a Home Automation System that lets you monitor and configure various devices like: Lights, Switches, various sensors/meters like Temperature, Rain, Wind, UV, Electra, Gas, Water and much more. Notifications/Alerts can be sent to any mobile device..
         /// </summary>
         public static string welcome_info_domoticz {
             get {
@@ -4049,7 +4057,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The next page is for your Domoticz settings..
+        ///   Looks up a localized string similar to The next page is for your OOTT settings..
         /// </summary>
         public static string welcome_info_settings1 {
             get {
@@ -4202,7 +4210,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Domoticz version.
+        ///   Looks up a localized string similar to OOTT version.
         /// </summary>
         public static string welcome_msg_serverVersion {
             get {
@@ -4382,7 +4390,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Receive the Domoticz notifications right on your Android Auto device!.
+        ///   Looks up a localized string similar to Receive the OOTT notifications right on your Android Auto device!.
         /// </summary>
         public static string wizard_auto_description {
             get {
@@ -4544,7 +4552,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can configure multiple Domoticz servers in the settings..
+        ///   Looks up a localized string similar to You can configure multiple OOTT servers in the settings..
         /// </summary>
         public static string wizard_multiserver_description {
             get {
@@ -4670,7 +4678,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Domoticz is a very light weight home automation system that lets you monitor and configure various devices..
+        ///   Looks up a localized string similar to OOTT is a very light weight home automation system that lets you monitor and configure various devices..
         /// </summary>
         public static string wizard_welcome_description {
             get {

@@ -1672,4 +1672,7 @@
   <data name="http_certificate" xml:space="preserve">
     <value>Please check if your HTTP certificate is still valid</value>
   </data>
+  <data name="app_name" xml:space="preserve">
+    <value>Domoticz</value>
+  </data>
 </root>

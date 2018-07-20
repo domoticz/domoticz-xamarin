@@ -103,6 +103,7 @@
     <Compile Remove="ResourcesOOTT\AppResources.tr.Designer.cs" />
     <Compile Remove="ResourcesOOTT\AppResources.uk.Designer.cs" />
     <Compile Remove="ResourcesOOTT\AppResources.zh.Designer.cs" />
+    <Compile Remove="ResourcesOOTT\AppResources.zhrCN.Designer.cs" />
     <Compile Remove="ResourcesOOTT\TranslateExtension.cs" />
     <Compile Remove="ResourcesOOTT\AppResources.Designer.cs" />
   </ItemGroup>
@@ -181,5 +182,309 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="ResourcesOOTT\AppResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.nl.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.nl.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.bg.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.bg.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.ca.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.ca.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.cs.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.cs.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.da.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.da.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.de.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.de.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.el.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.el.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.es.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.es.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.fa.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.fa.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.fi.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.fi.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.fr.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.he.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.he.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.hr.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.hr.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.hu.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.hu.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.it.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.it.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.kab.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.kab.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.no.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.no.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.pl.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.pl.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.pt.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.pt.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.ro.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.ro.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.ru.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.sk.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.sk.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.sl.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.sl.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.sr.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.sr.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.sv.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.sv.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.tr.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.tr.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.uk.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.uk.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.zh.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.zh.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ResourcesOOTT\AppResources.zhrCN.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.zhrCN.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.bg.resx">
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.bg.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.ca.resx">
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.ca.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.cs.resx">
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.cs.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.da.resx">
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.da.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.de.resx">
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.de.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.el.resx">
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.el.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.es.resx">
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.fa.resx">
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.fa.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.fi.resx">
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.fi.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.fr.resx">
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.he.resx">
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.he.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.hr.resx">
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.hr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.hu.resx">
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.hu.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.it.resx">
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.it.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.kab.resx">
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.kab.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.nl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <LastGenOutput>AppResources.nl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.no.resx">
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.no.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.pl.resx">
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.pl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.pt.resx">
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.pt.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.ro.resx">
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.ro.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.ru.resx">
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.sk.resx">
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.sk.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.sl.resx">
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.sl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.sr.resx">
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.sr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.sv.resx">
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.sv.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.tr.resx">
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.tr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.uk.resx">
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.uk.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.zh.resx">
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.zh.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResourcesOOTT\AppResources.zhrCN.resx">
+      <CustomToolNamespace>NL.HNOGames.Domoticz.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.zhrCN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

@@ -7,9 +7,12 @@ using System;
 using MTiRate;
 using PushNotification.Plugin;
 using NL.HNOGames.Domoticz.Helpers;
+using NL.HNOGames.Domoticz;
 using UserNotifications;
 using Firebase.CloudMessaging;
+using Firebase.Core;
 using System.Net;
+using Plugin.Fingerprint;
 
 #if NETFX_CORE
 [assembly: Xamarin.Forms.Platform.WinRT.ExportRenderer(typeof(Xamarin.RangeSlider.Forms.RangeSlider), typeof(Xamarin.RangeSlider.Forms.RangeSliderRenderer))]
@@ -54,7 +57,7 @@ namespace NL.HNOGames.OOTT.iOS
          Rg.Plugins.Popup.Popup.Init();
          OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();
 
-         LoadApplication(new NL.HNOGames.Domoticz.App(SaveToken));
+         LoadApplication(new Domoticz.App(SaveToken));
          CrossPushNotification.Initialize<CrossPushNotificationListener>();
 
          // Register your app for remote notifications.
@@ -63,7 +66,7 @@ namespace NL.HNOGames.OOTT.iOS
             var authOptions = UNAuthorizationOptions.Alert | UNAuthorizationOptions.Badge | UNAuthorizationOptions.Sound;
             UNUserNotificationCenter.Current.RequestAuthorization(authOptions, (granted, error) =>
             {
-               NL.HNOGames.Domoticz.App.AddLog("GC Authorization granted");
+               Domoticz.App.AddLog("GC Authorization granted");
             });
 
             // For iOS 10 display notification (sent via APNS)
@@ -83,7 +86,7 @@ namespace NL.HNOGames.OOTT.iOS
          UIApplication.SharedApplication.RegisterForRemoteNotifications();
 
 
-         NL.HNOGames.Domoticz.App.AddLog("GCM: Setup Firebase");
+         Domoticz.App.AddLog("GCM: Setup Firebase");
          Firebase.Core.App.Configure();
          Firebase.InstanceID.InstanceId.Notifications.ObserveTokenRefresh((sender, e) =>
          {
@@ -104,13 +107,13 @@ namespace NL.HNOGames.OOTT.iOS
       private async void registerAsync(String token)
       {
          tokenUploaded = true;
-         NL.HNOGames.Domoticz.App.AddLog(string.Format("GCM: Push Notification - Device Registered - Token : {0}", token));
+         Domoticz.App.AddLog(string.Format("GCM: Push Notification - Device Registered - Token : {0}", token));
          String Id = UsefulBits.GetDeviceID();
-         bool bSuccess = await NL.HNOGames.Domoticz.App.ApiService.RegisterDevice(Id, token);
+         bool bSuccess = await Domoticz.App.ApiService.RegisterDevice(Id, token);
          if (bSuccess)
-            NL.HNOGames.Domoticz.App.AddLog("GCM: Device registered on OOTT");
+            Domoticz.App.AddLog("GCM: Device registered on Domoticz");
          else
-            NL.HNOGames.Domoticz.App.AddLog("GCM: Device not registered on OOTT");
+            Domoticz.App.AddLog("GCM: Device not registered on Domoticz");
       }
 
       private Boolean tokenUploaded = false;
@@ -120,7 +123,7 @@ namespace NL.HNOGames.OOTT.iOS
          {
             if (error == null)
                Messaging.SharedInstance.Subscribe("/topics/all");
-            NL.HNOGames.Domoticz.App.AddLog(error != null ? "GCM: error occured: " + error.Description : "GCM: connect success");
+            Domoticz.App.AddLog(error != null ? "GCM: error occured: " + error.Description : "GCM: connect success");
             if (!tokenUploaded)
             {
                SaveToken();
@@ -129,7 +132,7 @@ namespace NL.HNOGames.OOTT.iOS
       }
 
       /// <summary>
-      /// Save token to OOTT
+      /// Save token to domoticz
       /// </summary>
       private void SaveToken()
       {
@@ -137,7 +140,7 @@ namespace NL.HNOGames.OOTT.iOS
          if (token != null)
             registerAsync(token);
          else
-            NL.HNOGames.Domoticz.App.AddLog("GCM: No token available");
+            Domoticz.App.AddLog("GCM: No token available");
 
          tokenUploaded = true;
       }
@@ -151,16 +154,16 @@ namespace NL.HNOGames.OOTT.iOS
       // iOS 9 <=, fire when recieve notification foreground
       public override void DidReceiveRemoteNotification(UIApplication application, NSDictionary userInfo, Action<UIBackgroundFetchResult> completionHandler)
       {
-         if (NL.HNOGames.Domoticz.App.AppSettings.EnableNotifications)
+         if (Domoticz.App.AppSettings.EnableNotifications)
          {
-            NL.HNOGames.Domoticz.App.AddLog("GCM: Notification received");
-            NL.HNOGames.Domoticz.App.AddLog(userInfo.ToString());
+            Domoticz.App.AddLog("GCM: Notification received");
+            Domoticz.App.AddLog(userInfo.ToString());
             var body = WebUtility.UrlDecode(userInfo["gcm.notification.message"] as NSString);
             var title = WebUtility.UrlDecode(userInfo["gcm.notification.title"] as NSString);
             if (String.IsNullOrEmpty(title))
                title = WebUtility.UrlDecode(userInfo["gcm.notification.subject"] as NSString);
             if (String.Compare(title, body, true) == 0)
-               title = "OOTT";
+               title = "Domoticz";
             if (application.ApplicationState == UIApplicationState.Active)
                debugAlert(title, body);
 
@@ -173,9 +176,9 @@ namespace NL.HNOGames.OOTT.iOS
       [Export("userNotificationCenter:willPresentNotification:withCompletionHandler:")]
       public void WillPresentNotification(UNUserNotificationCenter center, UNNotification notification, Action<UNNotificationPresentationOptions> completionHandler)
       {
-         if (NL.HNOGames.Domoticz.App.AppSettings.EnableNotifications)
+         if (Domoticz.App.AppSettings.EnableNotifications)
          {
-            NL.HNOGames.Domoticz.App.AddLog("GCM: Notification received");
+            Domoticz.App.AddLog("GCM: Notification received");
             var title = WebUtility.UrlDecode(notification.Request.Content.Title);
             var body = WebUtility.UrlDecode(notification.Request.Content.Body);
             debugAlert(title, body);
@@ -191,8 +194,8 @@ namespace NL.HNOGames.OOTT.iOS
       // Receive data message on iOS 10 devices.
       public void ApplicationReceivedRemoteMessage(RemoteMessage remoteMessage)
       {
-         NL.HNOGames.Domoticz.App.AddLog("GCM: Notification received");
-         NL.HNOGames.Domoticz.App.AddLog(remoteMessage.AppData.ToString());
+         Domoticz.App.AddLog("GCM: Notification received");
+         Domoticz.App.AddLog(remoteMessage.AppData.ToString());
       }
 
       public void DidRefreshRegistrationToken(Messaging messaging, string fcmToken)
@@ -201,7 +204,7 @@ namespace NL.HNOGames.OOTT.iOS
          if (token != null)
             registerAsync(token);
          else
-            NL.HNOGames.Domoticz.App.AddLog("GCM: No token available");
+            Domoticz.App.AddLog("GCM: No token available");
          tokenUploaded = true;
       }
    }

@@ -11,7 +11,7 @@ namespace NL.HNOGames.Domoticz.Resources
    [ContentProperty("Text")]
    public class TranslateExtension : IMarkupExtension
    {
-      const string ResourceId = "NL.HNOGames.Domoticz.Resources.AppResources";
+      const string ResourceId = "NL.HNOGames.Domoticz.ResourcesOOTT.AppResources";
       static readonly Lazy<ResourceManager> resmgr = new Lazy<ResourceManager>(() => new ResourceManager(ResourceId, typeof(TranslateExtension).GetTypeInfo().Assembly));
 
       public string Text { get; set; }

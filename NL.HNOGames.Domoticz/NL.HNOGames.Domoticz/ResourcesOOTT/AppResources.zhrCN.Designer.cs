@@ -10,7 +10,6 @@
 
 namespace NL.HNOGames.Domoticz.Resources {
     using System;
-    using System.Reflection;
     
     
     /// <summary>
@@ -23,14 +22,14 @@ namespace NL.HNOGames.Domoticz.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class AppResources {
+    public class AppResources_zhrCN {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal AppResources() {
+        internal AppResources_zhrCN() {
         }
         
         /// <summary>
@@ -40,7 +39,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NL.HNOGames.Domoticz.Resources.AppResources", typeof(AppResources).GetTypeInfo().Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NL.HNOGames.Domoticz.ResourcesOOTT.AppResources.zhrCN", typeof(AppResources_zhrCN).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -62,7 +61,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pause.
+        ///   Looks up a localized string similar to 暂停.
         /// </summary>
         public static string action_camera_pause {
             get {
@@ -71,7 +70,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Play.
+        ///   Looks up a localized string similar to 播放.
         /// </summary>
         public static string action_camera_play {
             get {
@@ -80,7 +79,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Action failed.
+        ///   Looks up a localized string similar to 操作失败.
         /// </summary>
         public static string action_failed {
             get {
@@ -89,7 +88,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Filter.
+        ///   Looks up a localized string similar to 筛选.
         /// </summary>
         public static string action_filter {
             get {
@@ -98,7 +97,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This action is not supported yet!.
+        ///   Looks up a localized string similar to 不支持此操作！.
         /// </summary>
         public static string action_not_supported_yet {
             get {
@@ -107,7 +106,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Scan QR Code.
+        ///   Looks up a localized string similar to 扫描二维码.
         /// </summary>
         public static string action_qrcode_scan {
             get {
@@ -116,7 +115,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Settings.
+        ///   Looks up a localized string similar to 设置.
         /// </summary>
         public static string action_settings {
             get {
@@ -125,7 +124,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Speech Recognition.
+        ///   Looks up a localized string similar to 语音识别.
         /// </summary>
         public static string action_speech {
             get {
@@ -134,7 +133,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Action successful.
+        ///   Looks up a localized string similar to 操作成功.
         /// </summary>
         public static string action_success {
             get {
@@ -143,7 +142,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Switch Server.
+        ///   Looks up a localized string similar to 切换服务器.
         /// </summary>
         public static string action_switch_server {
             get {
@@ -152,7 +151,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Action result unknown.
+        ///   Looks up a localized string similar to 操作结果未知.
         /// </summary>
         public static string action_unknown {
             get {
@@ -161,7 +160,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add.
+        ///   Looks up a localized string similar to 添加.
         /// </summary>
         public static string add {
             get {
@@ -170,7 +169,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm.
+        ///   Looks up a localized string similar to 警报.
         /// </summary>
         public static string alarm {
             get {
@@ -179,7 +178,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sound an Alarm for specific Notifications.
+        ///   Looks up a localized string similar to 为特定通知警报.
         /// </summary>
         public static string alarm_notifications {
             get {
@@ -188,7 +187,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select Notifications to Alarm.
+        ///   Looks up a localized string similar to 选择警报通知.
         /// </summary>
         public static string alarm_notifications_select {
             get {
@@ -197,7 +196,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm Notifications.
+        ///   Looks up a localized string similar to 警报通知.
         /// </summary>
         public static string alarm_notifications_title {
             get {
@@ -206,7 +205,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Number of seconds to time the alarm.
+        ///   Looks up a localized string similar to 警报的时间的秒数.
         /// </summary>
         public static string alarmtimer {
             get {
@@ -215,7 +214,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm Timer.
+        ///   Looks up a localized string similar to 定时警报.
         /// </summary>
         public static string alarmtimer_title {
             get {
@@ -224,7 +223,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to All Systems.
+        ///   Looks up a localized string similar to 所有系统.
         /// </summary>
         public static string allsystems {
             get {
@@ -233,7 +232,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Don\&apos;t lock the screen to always On.
+        ///   Looks up a localized string similar to 不保持屏幕开启.
         /// </summary>
         public static string always_on_off {
             get {
@@ -242,7 +241,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lock the screen always On.
+        ///   Looks up a localized string similar to 保持屏幕开启.
         /// </summary>
         public static string always_on_on {
             get {
@@ -251,7 +250,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wake Lock.
+        ///   Looks up a localized string similar to 屏幕锁定.
         /// </summary>
         public static string always_on_title {
             get {
@@ -260,7 +259,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Are you sure?.
+        ///   Looks up a localized string similar to 你确定吗？.
         /// </summary>
         public static string are_you_sure {
             get {
@@ -269,7 +268,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Are you sure?? This also clears all homescreen widget settings, so you should re-add them afterwards...
+        ///   Looks up a localized string similar to 是否确定？？这还会清除桌面小部件中的设置，因此你可能需要重新添他们.
         /// </summary>
         public static string are_you_sure_clear_settings {
             get {
@@ -278,7 +277,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disable Android Auto Notifications.
+        ///   Looks up a localized string similar to 禁用Android Auto通知.
         /// </summary>
         public static string auto_custom_off {
             get {
@@ -287,7 +286,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable Android Auto Notifications.
+        ///   Looks up a localized string similar to 启用Android Auto通知.
         /// </summary>
         public static string auto_custom_on {
             get {
@@ -296,7 +295,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Away.
+        ///   Looks up a localized string similar to 离开.
         /// </summary>
         public static string away {
             get {
@@ -305,7 +304,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Battery level.
+        ///   Looks up a localized string similar to 电池电量.
         /// </summary>
         public static string battery_level {
             get {
@@ -314,7 +313,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turning blind down.
+        ///   Looks up a localized string similar to 关闭百叶窗.
         /// </summary>
         public static string blind_down {
             get {
@@ -323,7 +322,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Stop blind.
+        ///   Looks up a localized string similar to 停止百叶窗.
         /// </summary>
         public static string blind_stop {
             get {
@@ -332,7 +331,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turning blind up.
+        ///   Looks up a localized string similar to 打开百叶窗.
         /// </summary>
         public static string blind_up {
             get {
@@ -341,7 +340,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Arm.
+        ///   Looks up a localized string similar to 激活.
         /// </summary>
         public static string button_arm {
             get {
@@ -350,7 +349,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Color.
+        ///   Looks up a localized string similar to 颜色.
         /// </summary>
         public static string button_color {
             get {
@@ -359,7 +358,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disarm.
+        ///   Looks up a localized string similar to 解除.
         /// </summary>
         public static string button_disarm {
             get {
@@ -368,7 +367,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Closed.
+        ///   Looks up a localized string similar to 已关闭.
         /// </summary>
         public static string button_state_closed {
             get {
@@ -377,7 +376,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Off.
+        ///   Looks up a localized string similar to 关.
         /// </summary>
         public static string button_state_off {
             get {
@@ -386,7 +385,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to On.
+        ///   Looks up a localized string similar to 开.
         /// </summary>
         public static string button_state_on {
             get {
@@ -395,7 +394,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Open.
+        ///   Looks up a localized string similar to 已开启.
         /// </summary>
         public static string button_state_open {
             get {
@@ -404,7 +403,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Day.
+        ///   Looks up a localized string similar to 日.
         /// </summary>
         public static string button_status_day {
             get {
@@ -413,7 +412,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Log.
+        ///   Looks up a localized string similar to 日志.
         /// </summary>
         public static string button_status_log {
             get {
@@ -422,7 +421,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Month.
+        ///   Looks up a localized string similar to 月.
         /// </summary>
         public static string button_status_month {
             get {
@@ -431,7 +430,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Notifications.
+        ///   Looks up a localized string similar to 通知.
         /// </summary>
         public static string button_status_notifications {
             get {
@@ -440,7 +439,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Timer.
+        ///   Looks up a localized string similar to 计时器.
         /// </summary>
         public static string button_status_timer {
             get {
@@ -449,7 +448,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Week.
+        ///   Looks up a localized string similar to 周.
         /// </summary>
         public static string button_status_week {
             get {
@@ -458,7 +457,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Year.
+        ///   Looks up a localized string similar to 年.
         /// </summary>
         public static string button_status_year {
             get {
@@ -467,7 +466,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Camera.
+        ///   Looks up a localized string similar to 相机.
         /// </summary>
         public static string cameraActivity_name {
             get {
@@ -476,7 +475,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cancel.
+        ///   Looks up a localized string similar to 取消.
         /// </summary>
         public static string cancel {
             get {
@@ -485,7 +484,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cancel override.
+        ///   Looks up a localized string similar to 取消重写.
         /// </summary>
         public static string cancel_override {
             get {
@@ -494,7 +493,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Can\&apos;t disable the default server.
+        ///   Looks up a localized string similar to 不能禁用默认服务器.
         /// </summary>
         public static string cant_disable_default_server {
             get {
@@ -503,7 +502,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Can\&apos;t remove the default server.
+        ///   Looks up a localized string similar to 不能删除默认服务器.
         /// </summary>
         public static string cant_remove_default_server {
             get {
@@ -512,7 +511,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Accounts.
+        ///   Looks up a localized string similar to 账户.
         /// </summary>
         public static string category_account {
             get {
@@ -521,7 +520,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Advanced.
+        ///   Looks up a localized string similar to 高级.
         /// </summary>
         public static string category_advanced {
             get {
@@ -530,7 +529,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Android Auto.
+        ///   Looks up a localized string similar to Android Auto车载互联系统.
         /// </summary>
         public static string category_auto {
             get {
@@ -539,7 +538,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Debugging.
+        ///   Looks up a localized string similar to 调试.
         /// </summary>
         public static string category_debug {
             get {
@@ -548,7 +547,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Export/Import Settings.
+        ///   Looks up a localized string similar to 导入/导出设置.
         /// </summary>
         public static string category_export {
             get {
@@ -557,7 +556,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Generic.
+        ///   Looks up a localized string similar to 通用.
         /// </summary>
         public static string category_generic {
             get {
@@ -566,7 +565,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Geofencing.
+        ///   Looks up a localized string similar to 地理围栏.
         /// </summary>
         public static string category_geofencing {
             get {
@@ -575,7 +574,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Information.
+        ///   Looks up a localized string similar to 信息.
         /// </summary>
         public static string category_info {
             get {
@@ -584,7 +583,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Language.
+        ///   Looks up a localized string similar to 语言.
         /// </summary>
         public static string category_language {
             get {
@@ -593,7 +592,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to NFC Connections.
+        ///   Looks up a localized string similar to NFC连接.
         /// </summary>
         public static string category_nfc {
             get {
@@ -602,7 +601,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Notifications.
+        ///   Looks up a localized string similar to 通知.
         /// </summary>
         public static string category_notification {
             get {
@@ -611,7 +610,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to QR Code.
+        ///   Looks up a localized string similar to 二维码.
         /// </summary>
         public static string category_QRCode {
             get {
@@ -620,7 +619,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Reset.
+        ///   Looks up a localized string similar to 重置.
         /// </summary>
         public static string category_Reset {
             get {
@@ -629,7 +628,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Server.
+        ///   Looks up a localized string similar to 服务器.
         /// </summary>
         public static string category_server {
             get {
@@ -638,7 +637,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Speech.
+        ///   Looks up a localized string similar to 语音.
         /// </summary>
         public static string category_Speech {
             get {
@@ -647,7 +646,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Security.
+        ///   Looks up a localized string similar to 安全.
         /// </summary>
         public static string category_startup_security {
             get {
@@ -656,7 +655,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Talk Back.
+        ///   Looks up a localized string similar to 回应.
         /// </summary>
         public static string category_talk_back {
             get {
@@ -665,7 +664,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Theme.
+        ///   Looks up a localized string similar to 主题.
         /// </summary>
         public static string category_theme {
             get {
@@ -674,7 +673,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Android Wear.
+        ///   Looks up a localized string similar to Android Wear手表.
         /// </summary>
         public static string category_wear {
             get {
@@ -683,7 +682,16 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Changelog.
+        ///   Looks up a localized string similar to 窗口小部件 （测试版）.
+        /// </summary>
+        public static string category_widgets {
+            get {
+                return ResourceManager.GetString("category_widgets", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 更新日志.
         /// </summary>
         public static string changelog {
             get {
@@ -692,7 +700,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Would you like us to check for Domoticz system updates?.
+        ///   Looks up a localized string similar to 需要要检查OOTT系统更新吗？.
         /// </summary>
         public static string check_for_update {
             get {
@@ -701,7 +709,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Check for Updates.
+        ///   Looks up a localized string similar to 检查更新.
         /// </summary>
         public static string check_for_update_title {
             get {
@@ -710,7 +718,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Chill.
+        ///   Looks up a localized string similar to 寒冷.
         /// </summary>
         public static string chill {
             get {
@@ -719,7 +727,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Choose color.
+        ///   Looks up a localized string similar to 选择颜色.
         /// </summary>
         public static string choose_color {
             get {
@@ -728,7 +736,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Choose server.
+        ///   Looks up a localized string similar to 选择服务器.
         /// </summary>
         public static string choose_server {
             get {
@@ -737,7 +745,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Choose state.
+        ///   Looks up a localized string similar to 选择状态.
         /// </summary>
         public static string choose_status {
             get {
@@ -746,7 +754,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Choose device.
+        ///   Looks up a localized string similar to 选择设备.
         /// </summary>
         public static string choose_switch {
             get {
@@ -755,7 +763,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Clean notification logs.
+        ///   Looks up a localized string similar to 清空通知日志.
         /// </summary>
         public static string clear_notifications {
             get {
@@ -764,7 +772,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Click here to update your server.
+        ///   Looks up a localized string similar to 单击此处以更新你的服务器.
         /// </summary>
         public static string click_to_update_server {
             get {
@@ -773,7 +781,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CO2.
+        ///   Looks up a localized string similar to 二氧化碳.
         /// </summary>
         public static string co2 {
             get {
@@ -782,7 +790,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CO2 Max.
+        ///   Looks up a localized string similar to 二氧化碳最高值.
         /// </summary>
         public static string co2max {
             get {
@@ -791,7 +799,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CO2 Min.
+        ///   Looks up a localized string similar to 二氧化碳最低值.
         /// </summary>
         public static string co2min {
             get {
@@ -800,7 +808,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Color set for.
+        ///   Looks up a localized string similar to 颜色设置为.
         /// </summary>
         public static string color_set {
             get {
@@ -809,7 +817,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Command.
+        ///   Looks up a localized string similar to 指令.
         /// </summary>
         public static string command {
             get {
@@ -818,7 +826,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Set Theme.
+        ///   Looks up a localized string similar to 设置主题.
         /// </summary>
         public static string config_theme {
             get {
@@ -827,7 +835,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Connected switch.
+        ///   Looks up a localized string similar to 已连接的开关.
         /// </summary>
         public static string connectedSwitch {
             get {
@@ -836,7 +844,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Continue?.
+        ///   Looks up a localized string similar to 继续？.
         /// </summary>
         public static string continue_question {
             get {
@@ -845,7 +853,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Could not find location, please try again..
+        ///   Looks up a localized string similar to 无法找到位置，请再试一次。.
         /// </summary>
         public static string could_not_find_location {
             get {
@@ -854,7 +862,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Current location.
+        ///   Looks up a localized string similar to 当前位置.
         /// </summary>
         public static string currentLocation {
             get {
@@ -863,7 +871,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Custom.
+        ///   Looks up a localized string similar to 自定义.
         /// </summary>
         public static string custom {
             get {
@@ -872,7 +880,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select Wear switches.
+        ///   Looks up a localized string similar to 选择手表开关.
         /// </summary>
         public static string custom_wear_select {
             get {
@@ -881,7 +889,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select which switches you like to see on your Android Wear device.
+        ///   Looks up a localized string similar to 选择你想在Android Wear设备上看到的开关.
         /// </summary>
         public static string custom_wear_select_desc {
             get {
@@ -890,7 +898,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dashboard Grid.
+        ///   Looks up a localized string similar to 仪表盘网格.
         /// </summary>
         public static string dashboard_list_title {
             get {
@@ -899,7 +907,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Data.
+        ///   Looks up a localized string similar to 数据.
         /// </summary>
         public static string data {
             get {
@@ -908,7 +916,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Day off.
+        ///   Looks up a localized string similar to 休息日.
         /// </summary>
         public static string day_off {
             get {
@@ -917,7 +925,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Debugging disabled.
+        ///   Looks up a localized string similar to 调试已禁用.
         /// </summary>
         public static string debug_switch_summary_off {
             get {
@@ -926,7 +934,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Debugging enabled.
+        ///   Looks up a localized string similar to 调试已开启.
         /// </summary>
         public static string debug_switch_summary_on {
             get {
@@ -935,7 +943,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Debugging.
+        ///   Looks up a localized string similar to 调试.
         /// </summary>
         public static string debug_switch_title {
             get {
@@ -944,7 +952,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Debugging test.
+        ///   Looks up a localized string similar to 调试测试.
         /// </summary>
         public static string debug_test_text {
             get {
@@ -953,7 +961,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Debugging info.
+        ///   Looks up a localized string similar to 调试信息.
         /// </summary>
         public static string debug_textview_title {
             get {
@@ -962,7 +970,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Default values.
+        ///   Looks up a localized string similar to 默认值.
         /// </summary>
         public static string default_values {
             get {
@@ -971,7 +979,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Max value should be higher than Min value.
+        ///   Looks up a localized string similar to 最大值应大于最小值.
         /// </summary>
         public static string default_values_max_error {
             get {
@@ -980,7 +988,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Max value should be higher than Min value.
+        ///   Looks up a localized string similar to 最大值应大于最小值.
         /// </summary>
         public static string default_values_min_error {
             get {
@@ -989,7 +997,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete.
+        ///   Looks up a localized string similar to 删除.
         /// </summary>
         public static string delete {
             get {
@@ -998,7 +1006,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DEL.
+        ///   Looks up a localized string similar to 删除.
         /// </summary>
         public static string delete_short {
             get {
@@ -1007,7 +1015,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable and config geofences.
+        ///   Looks up a localized string similar to 启用并配置地里围栏.
         /// </summary>
         public static string description_geofence {
             get {
@@ -1016,7 +1024,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable notifications for triggering events.
+        ///   Looks up a localized string similar to 为触发事件启用通知.
         /// </summary>
         public static string description_geofence_notifications {
             get {
@@ -1025,7 +1033,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Device image.
+        ///   Looks up a localized string similar to 设备图像.
         /// </summary>
         public static string device_image_description {
             get {
@@ -1034,7 +1042,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dew point.
+        ///   Looks up a localized string similar to 露点.
         /// </summary>
         public static string dewPoint {
             get {
@@ -1043,7 +1051,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Direction.
+        ///   Looks up a localized string similar to 方向.
         /// </summary>
         public static string direction {
             get {
@@ -1052,7 +1060,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disable fingerprint protection on startup.
+        ///   Looks up a localized string similar to 启动时禁用指纹保护.
         /// </summary>
         public static string disable_security {
             get {
@@ -1061,7 +1069,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Domoticz logo.
+        ///   Looks up a localized string similar to OOTT标志.
         /// </summary>
         public static string domoticz_logo {
             get {
@@ -1070,16 +1078,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://www.domoticz.com/.
-        /// </summary>
-        public static string domoticz_url {
-            get {
-                return ResourceManager.GetString("domoticz_url", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Don\&apos;t save new server?.
+        ///   Looks up a localized string similar to 不保存新的服务器？.
         /// </summary>
         public static string dont_save_new_server {
             get {
@@ -1088,7 +1087,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Close navigation drawer.
+        ///   Looks up a localized string similar to 关闭导航栏.
         /// </summary>
         public static string drawer_close {
             get {
@@ -1097,7 +1096,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Open navigation drawer.
+        ///   Looks up a localized string similar to 打开导航栏.
         /// </summary>
         public static string drawer_open {
             get {
@@ -1106,7 +1105,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Economy.
+        ///   Looks up a localized string similar to 经济.
         /// </summary>
         public static string economy {
             get {
@@ -1115,7 +1114,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Emergency.
+        ///   Looks up a localized string similar to 紧急情况.
         /// </summary>
         public static string emergency {
             get {
@@ -1124,7 +1123,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable/Disable Items.
+        ///   Looks up a localized string similar to 启用/禁用项目.
         /// </summary>
         public static string enable_items {
             get {
@@ -1133,7 +1132,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable NFC.
+        ///   Looks up a localized string similar to 启用NFC.
         /// </summary>
         public static string enable_nfc {
             get {
@@ -1142,7 +1141,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable notifications on this device.
+        ///   Looks up a localized string similar to 在此设备上启用通知.
         /// </summary>
         public static string enable_notifications {
             get {
@@ -1151,7 +1150,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable Notifications.
+        ///   Looks up a localized string similar to 启用通知.
         /// </summary>
         public static string enable_notifications_title {
             get {
@@ -1160,7 +1159,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable QR Codes.
+        ///   Looks up a localized string similar to 启用二维码.
         /// </summary>
         public static string enable_qrcode {
             get {
@@ -1169,7 +1168,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable fingerprint protection on startup.
+        ///   Looks up a localized string similar to 启动时启用指纹保护.
         /// </summary>
         public static string enable_security {
             get {
@@ -1178,7 +1177,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable Speech Recognition.
+        ///   Looks up a localized string similar to 启用语音识别.
         /// </summary>
         public static string enable_speech {
             get {
@@ -1187,7 +1186,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Android Wear custom items.
+        ///   Looks up a localized string similar to Android Wear手表自定义项目.
         /// </summary>
         public static string enable_wear_select {
             get {
@@ -1196,7 +1195,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You need at least one item in the drawer.
+        ///   Looks up a localized string similar to 你需要开启至少一个项目.
         /// </summary>
         public static string error_atLeastOneItemInDrawer {
             get {
@@ -1205,7 +1204,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid credentials.
+        ///   Looks up a localized string similar to 凭证无效.
         /// </summary>
         public static string error_authentication {
             get {
@@ -1214,7 +1213,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Could not change the color.
+        ///   Looks up a localized string similar to 无法更改颜色.
         /// </summary>
         public static string error_color {
             get {
@@ -1223,7 +1222,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;Could not get Domoticz server configuration: %1$s&quot;.
+        ///   Looks up a localized string similar to &quot;无法获取OOTT服务器配置︰%1$s&quot;.
         /// </summary>
         public static string error_couldNotCheckForConfig {
             get {
@@ -1232,7 +1231,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;Could not check for updates: %1$s&quot;.
+        ///   Looks up a localized string similar to &quot;无法检查更新︰ %1$s&quot;.
         /// </summary>
         public static string error_couldNotCheckForUpdates {
             get {
@@ -1241,7 +1240,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Could not set favorite.
+        ///   Looks up a localized string similar to 无法收藏.
         /// </summary>
         public static string error_favorite {
             get {
@@ -1250,7 +1249,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error image.
+        ///   Looks up a localized string similar to 错误图像.
         /// </summary>
         public static string error_image_description {
             get {
@@ -1259,7 +1258,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Could not get log data for.
+        ///   Looks up a localized string similar to 无法获取日志数据.
         /// </summary>
         public static string error_log {
             get {
@@ -1268,7 +1267,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Could not find any logs to show.
+        ///   Looks up a localized string similar to 找不到任何日志.
         /// </summary>
         public static string error_logs {
             get {
@@ -1277,7 +1276,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Network error, status code %1$d.
+        ///   Looks up a localized string similar to 网络错误，状态代码 %1$d.
         /// </summary>
         public static string error_network {
             get {
@@ -1286,7 +1285,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error: not connected to any network.
+        ///   Looks up a localized string similar to 错误︰ 未连接到任何网络.
         /// </summary>
         public static string error_notConnected {
             get {
@@ -1295,7 +1294,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Could not show the notifications.
+        ///   Looks up a localized string similar to 无法显示通知.
         /// </summary>
         public static string error_notifications {
             get {
@@ -1304,7 +1303,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Parse error.
+        ///   Looks up a localized string similar to 解析错误.
         /// </summary>
         public static string error_parse {
             get {
@@ -1313,7 +1312,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Server error.
+        ///   Looks up a localized string similar to 服务器错误.
         /// </summary>
         public static string error_server {
             get {
@@ -1322,7 +1321,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Could not change the state.
+        ///   Looks up a localized string similar to 无法更改状态.
         /// </summary>
         public static string error_state {
             get {
@@ -1331,7 +1330,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Timeout or no connection.
+        ///   Looks up a localized string similar to 超时或无连接.
         /// </summary>
         public static string error_timeout {
             get {
@@ -1340,7 +1339,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Could not show the timers.
+        ///   Looks up a localized string similar to 无法显示计时器.
         /// </summary>
         public static string error_timer {
             get {
@@ -1349,7 +1348,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Even Day Numbers.
+        ///   Looks up a localized string similar to 偶数日.
         /// </summary>
         public static string even_day_numbers {
             get {
@@ -1358,7 +1357,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Even Week Numbers.
+        ///   Looks up a localized string similar to 偶数周.
         /// </summary>
         public static string even_week_numbers {
             get {
@@ -1367,7 +1366,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Export settings.
+        ///   Looks up a localized string similar to 导出设置.
         /// </summary>
         public static string export_settings {
             get {
@@ -1376,7 +1375,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Extra data on dashboard.
+        ///   Looks up a localized string similar to 仪表盘上的额外数据.
         /// </summary>
         public static string extra_data_title {
             get {
@@ -1385,7 +1384,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No security panel found under your switches.
+        ///   Looks up a localized string similar to 在你的开关中没有发现安全面板.
         /// </summary>
         public static string failed_to_get_securitypanel {
             get {
@@ -1394,7 +1393,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Failed to get devices.
+        ///   Looks up a localized string similar to 获取设备失败.
         /// </summary>
         public static string failed_to_get_switches {
             get {
@@ -1403,7 +1402,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Failed to toggle device.
+        ///   Looks up a localized string similar to 无法切换设备.
         /// </summary>
         public static string failed_toggle_switch {
             get {
@@ -1412,7 +1411,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Favorite.
+        ///   Looks up a localized string similar to 收藏.
         /// </summary>
         public static string favorite {
             get {
@@ -1421,7 +1420,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to added to dashboard..
+        ///   Looks up a localized string similar to 添加到仪表盘.
         /// </summary>
         public static string favorite_added {
             get {
@@ -1430,7 +1429,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to removed from dashboard..
+        ///   Looks up a localized string similar to 从仪表盘中删除。.
         /// </summary>
         public static string favorite_removed {
             get {
@@ -1439,25 +1438,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Failed to fetched server config.
-        /// </summary>
-        public static string fetched_server_config_failed {
-            get {
-                return ResourceManager.GetString("fetched_server_config_failed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Successfully fetched server config.
-        /// </summary>
-        public static string fetched_server_config_success {
-            get {
-                return ResourceManager.GetString("fetched_server_config_success", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Filter.
+        ///   Looks up a localized string similar to 筛选.
         /// </summary>
         public static string filter {
             get {
@@ -1466,7 +1447,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Filter devices.
+        ///   Looks up a localized string similar to 筛选设备.
         /// </summary>
         public static string filter_devices {
             get {
@@ -1475,7 +1456,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please specify a filter.
+        ///   Looks up a localized string similar to 请指定筛选器.
         /// </summary>
         public static string filter_graph_empty {
             get {
@@ -1484,7 +1465,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Filter on.
+        ///   Looks up a localized string similar to 选择开.
         /// </summary>
         public static string filter_on {
             get {
@@ -1493,7 +1474,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to All devices.
+        ///   Looks up a localized string similar to 所有设备.
         /// </summary>
         public static string filterOn_all {
             get {
@@ -1502,7 +1483,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Status off.
+        ///   Looks up a localized string similar to 关闭状态.
         /// </summary>
         public static string filterOn_off {
             get {
@@ -1511,7 +1492,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Status on.
+        ///   Looks up a localized string similar to 打开状态.
         /// </summary>
         public static string filterOn_on {
             get {
@@ -1520,7 +1501,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Static devices.
+        ///   Looks up a localized string similar to 静态设备.
         /// </summary>
         public static string filterOn_static {
             get {
@@ -1529,7 +1510,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to First configure/connect a Fingerprint to this device.
+        ///   Looks up a localized string similar to 先在设备上设置指纹.
         /// </summary>
         public static string fingerprint_not_setup_in_android {
             get {
@@ -1538,7 +1519,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fingerprint Security is not supported on this device.
+        ///   Looks up a localized string similar to 此设备不支持指纹验证.
         /// </summary>
         public static string fingerprint_not_supported {
             get {
@@ -1547,7 +1528,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Are you sure? The failover password is the password of your Domoticz account..
+        ///   Looks up a localized string similar to 是否确定？备用密码是你的OOTT帐户密码。.
         /// </summary>
         public static string fingerprint_sure {
             get {
@@ -1556,7 +1537,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Follow schedule.
+        ///   Looks up a localized string similar to 按照日程安排.
         /// </summary>
         public static string follow_schedule {
             get {
@@ -1565,7 +1546,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Forecast.
+        ///   Looks up a localized string similar to 预测.
         /// </summary>
         public static string forecast {
             get {
@@ -1574,7 +1555,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Geofencing.
+        ///   Looks up a localized string similar to 地理围栏.
         /// </summary>
         public static string geofence {
             get {
@@ -1583,7 +1564,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Due to changes on Geofencing, please recreate your locations.
+        ///   Looks up a localized string similar to 由于地理围栏上的更改，请重新创建您的位置.
         /// </summary>
         public static string geofence_error_recreateLocations {
             get {
@@ -1592,7 +1573,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;Entering %1$s&quot;.
+        ///   Looks up a localized string similar to &quot;进入 %1$s&quot;.
         /// </summary>
         public static string geofence_location_entering {
             get {
@@ -1601,7 +1582,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Entering one of the locations.
+        ///   Looks up a localized string similar to 进入某一地址.
         /// </summary>
         public static string geofence_location_entering_text {
             get {
@@ -1610,7 +1591,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Leaving  %1$s.
+        ///   Looks up a localized string similar to 离开 %1$s.
         /// </summary>
         public static string geofence_location_leaving {
             get {
@@ -1619,7 +1600,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Leaving one of the locations.
+        ///   Looks up a localized string similar to 离开某一地址.
         /// </summary>
         public static string geofence_location_leaving_text {
             get {
@@ -1628,7 +1609,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Geofence service is not available now.
+        ///   Looks up a localized string similar to 地里围栏服务不可用.
         /// </summary>
         public static string geofence_not_available {
             get {
@@ -1637,7 +1618,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Place: %s.
+        ///   Looks up a localized string similar to 地点︰ %s.
         /// </summary>
         public static string geofence_place {
             get {
@@ -1646,7 +1627,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to App registered too many geofences.
+        ///   Looks up a localized string similar to 程序中注册了太多的地理围栏.
         /// </summary>
         public static string geofence_too_many_geofences {
             get {
@@ -1655,7 +1636,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Too many PendingIntents provided.
+        ///   Looks up a localized string similar to 提供过多待处理请求.
         /// </summary>
         public static string geofence_too_many_pending_intents {
             get {
@@ -1664,7 +1645,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Configure Geofencing.
+        ///   Looks up a localized string similar to 配置地理围栏.
         /// </summary>
         public static string geofencing_configure {
             get {
@@ -1673,7 +1654,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Geofencing disabled since no geofences are enabled.
+        ///   Looks up a localized string similar to 没有启用的地理围栏，地理围栏服务已关闭.
         /// </summary>
         public static string geofencing_disabled_no_enabled_fences {
             get {
@@ -1682,7 +1663,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to GET.
+        ///   Looks up a localized string similar to 获取.
         /// </summary>
         public static string getLocation {
             get {
@@ -1691,7 +1672,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Google Play services unavailable..
+        ///   Looks up a localized string similar to GooglePlay服务不可用.
         /// </summary>
         public static string google_play_services_unavailable {
             get {
@@ -1700,7 +1681,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hardware.
+        ///   Looks up a localized string similar to 硬件.
         /// </summary>
         public static string hardware {
             get {
@@ -1709,7 +1690,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Heating off.
+        ///   Looks up a localized string similar to 关闭加热.
         /// </summary>
         public static string heating_off {
             get {
@@ -1718,7 +1699,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to High.
+        ///   Looks up a localized string similar to 高.
         /// </summary>
         public static string high {
             get {
@@ -1727,16 +1708,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please check if your HTTP certificate is still valid.
-        /// </summary>
-        public static string http_certificate {
-            get {
-                return ResourceManager.GetString("http_certificate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Hum.
+        ///   Looks up a localized string similar to 湿度.
         /// </summary>
         public static string humidity {
             get {
@@ -1754,7 +1726,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Import settings.
+        ///   Looks up a localized string similar to 导入设置.
         /// </summary>
         public static string import_settings {
             get {
@@ -1763,7 +1735,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About Domoticz.
+        ///   Looks up a localized string similar to 关于OOTT.
         /// </summary>
         public static string info_about {
             get {
@@ -1772,7 +1744,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Credits.
+        ///   Looks up a localized string similar to 感谢.
         /// </summary>
         public static string info_credits {
             get {
@@ -1781,7 +1753,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Domoticz for Android is made possible with several open source libraries.
+        ///   Looks up a localized string similar to 靠许多开源库的支持才有了Android版OOTT.
         /// </summary>
         public static string info_credits_text {
             get {
@@ -1790,16 +1762,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Domoticz\nhttp://www.domoticz.com\n\nHelloCharts\nhttps://github.com/lecho/hellocharts-android\n\nCircleImageView\nhttps://github.com/hdodenhof/CircleImageView\n\nPicasso\nhttps://github.com/square/picasso\n\nViewPagerIndicator\nhttps://github.com/JakeWharton/ViewPagerIndicator\n\nFloating Label Widgets\nhttps://github.com/marvinlabs/android-floatinglabel-widgets\n\nMaterial Dialogs\nhttps://github.com/afollestad/material-dialogs\n\nLobsterpicker\nhttps://github.com/LarsWerkman/Lobsterpicker\n\nMaterialList [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string info_credits_text_urls {
-            get {
-                return ResourceManager.GetString("info_credits_text_urls", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Domoticz version.
+        ///   Looks up a localized string similar to OOTT版本.
         /// </summary>
         public static string info_domoticz_version {
             get {
@@ -1808,7 +1771,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Version.
+        ///   Looks up a localized string similar to 版本.
         /// </summary>
         public static string info_version {
             get {
@@ -1817,7 +1780,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Last seen.
+        ///   Looks up a localized string similar to 更新于.
         /// </summary>
         public static string last_update {
             get {
@@ -1826,7 +1789,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Latitude.
+        ///   Looks up a localized string similar to 纬度.
         /// </summary>
         public static string latitude {
             get {
@@ -1835,7 +1798,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Local.
+        ///   Looks up a localized string similar to 本地.
         /// </summary>
         public static string local {
             get {
@@ -1844,7 +1807,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Location name.
+        ///   Looks up a localized string similar to 位置名称.
         /// </summary>
         public static string Location_name {
             get {
@@ -1853,7 +1816,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No location found..
+        ///   Looks up a localized string similar to 没有找到位置。.
         /// </summary>
         public static string location_not_found {
             get {
@@ -1862,7 +1825,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Address.
+        ///   Looks up a localized string similar to 地址.
         /// </summary>
         public static string locationAddress {
             get {
@@ -1871,7 +1834,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Longitude.
+        ///   Looks up a localized string similar to 经度.
         /// </summary>
         public static string longitude {
             get {
@@ -1880,7 +1843,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Low.
+        ///   Looks up a localized string similar to 低.
         /// </summary>
         public static string low {
             get {
@@ -1889,7 +1852,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to QR Code dependencies cannot be downloaded due to low device storage.
+        ///   Looks up a localized string similar to 由于设备存储空间不足，无法下载二维码依赖项.
         /// </summary>
         public static string low_storage_error {
             get {
@@ -1898,7 +1861,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Manual.
+        ///   Looks up a localized string similar to 使用手册.
         /// </summary>
         public static string manual {
             get {
@@ -1907,7 +1870,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Monthly.
+        ///   Looks up a localized string similar to 每月.
         /// </summary>
         public static string monthly {
             get {
@@ -1916,7 +1879,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Monthly (Weekday).
+        ///   Looks up a localized string similar to 每月(工作日).
         /// </summary>
         public static string monthly_weekday {
             get {
@@ -1925,7 +1888,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Text copied to clipboard.
+        ///   Looks up a localized string similar to 文本已复制到剪贴板.
         /// </summary>
         public static string msg_copiedToClipboard {
             get {
@@ -1934,7 +1897,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please wait….
+        ///   Looks up a localized string similar to 请稍等….
         /// </summary>
         public static string msg_please_wait {
             get {
@@ -1943,7 +1906,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Multi Server.
+        ///   Looks up a localized string similar to 多服务器.
         /// </summary>
         public static string multi_server {
             get {
@@ -1952,7 +1915,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable multiple server support.
+        ///   Looks up a localized string similar to 启用多服务器支持.
         /// </summary>
         public static string multi_server_settings {
             get {
@@ -1970,7 +1933,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable NFC Connections.
+        ///   Looks up a localized string similar to 启用NFC连接.
         /// </summary>
         public static string nfc_enable_settings {
             get {
@@ -1979,7 +1942,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to NFC tag already registered. .
+        ///   Looks up a localized string similar to NFC标签已经注册。 .
         /// </summary>
         public static string nfc_exists {
             get {
@@ -1988,7 +1951,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to NFC is not supported on this device.
+        ///   Looks up a localized string similar to 此设备不支持NFC.
         /// </summary>
         public static string nfc_not_supported {
             get {
@@ -1997,7 +1960,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Register a NFC Tag.
+        ///   Looks up a localized string similar to 注册一个NFC标签.
         /// </summary>
         public static string nfc_register {
             get {
@@ -2006,7 +1969,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Saved a New NFC Tag. .
+        ///   Looks up a localized string similar to 新NFC标签已保存。.
         /// </summary>
         public static string nfc_saved {
             get {
@@ -2015,7 +1978,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Setup NFC Connections.
+        ///   Looks up a localized string similar to 设置NFC连接.
         /// </summary>
         public static string nfc_settings {
             get {
@@ -2024,7 +1987,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Edit NFC Tag.
+        ///   Looks up a localized string similar to 编辑NFC标签.
         /// </summary>
         public static string nfc_tag_edit {
             get {
@@ -2033,7 +1996,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New NFC Tag found.
+        ///   Looks up a localized string similar to 找到新的NFC标签.
         /// </summary>
         public static string nfc_tag_found {
             get {
@@ -2042,7 +2005,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Give this NFC a proper name. .
+        ///   Looks up a localized string similar to 给此NFC起一个合适的名字。 .
         /// </summary>
         public static string nfc_tag_name {
             get {
@@ -2051,7 +2014,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No.
+        ///   Looks up a localized string similar to 否.
         /// </summary>
         public static string no {
             get {
@@ -2060,7 +2023,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This application cannot run because it does not have the camera permission.  The application will now exit..
+        ///   Looks up a localized string similar to 没有相机权限此程序将不能运行。 应用程序现在将退出。.
         /// </summary>
         public static string no_camera_permission {
             get {
@@ -2069,7 +2032,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No data on Domoticz server.
+        ///   Looks up a localized string similar to OOTT服务器上没有数据.
         /// </summary>
         public static string no_data_on_domoticz {
             get {
@@ -2078,7 +2041,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error: No network connection available.
+        ///   Looks up a localized string similar to 错误︰ 无网络连接.
         /// </summary>
         public static string no_network_available {
             get {
@@ -2087,7 +2050,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Not a valid latitude or longitude.
+        ///   Looks up a localized string similar to 无效的纬度或经度.
         /// </summary>
         public static string no_valid_latLong {
             get {
@@ -2096,7 +2059,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Normal.
+        ///   Looks up a localized string similar to 正常.
         /// </summary>
         public static string normal {
             get {
@@ -2105,7 +2068,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Connect one now?.
+        ///   Looks up a localized string similar to 现在连接一个吗？.
         /// </summary>
         public static string noSwitchSelected_connectOneNow {
             get {
@@ -2114,7 +2077,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For GeoFencing to have effect, a switch should be connected to an GeoFence.
+        ///   Looks up a localized string similar to 为使地理围栏生效，必须把地理围栏连接到一个开关上.
         /// </summary>
         public static string noSwitchSelected_explanation {
             get {
@@ -2123,7 +2086,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For NFC to have effect, a switch should be linked to an NFC Tag.
+        ///   Looks up a localized string similar to 为使NFC生效，必须把NFC标签连接到一个开关上.
         /// </summary>
         public static string noSwitchSelected_explanation_nfc {
             get {
@@ -2132,7 +2095,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For QR Code Scan to have effect, a switch should be linked to an QR Code.
+        ///   Looks up a localized string similar to 为使二维码扫描生效，必须把二维码连接到一个开关上.
         /// </summary>
         public static string noSwitchSelected_explanation_qrcode {
             get {
@@ -2141,7 +2104,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For Speech Command to have effect, a switch should be linked.
+        ///   Looks up a localized string similar to 为使语音指令生效，必须把语音指令连接到一个开关上.
         /// </summary>
         public static string noSwitchSelected_explanation_Speech {
             get {
@@ -2150,7 +2113,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No switch selected.
+        ///   Looks up a localized string similar to 没有选择开关.
         /// </summary>
         public static string noSwitchSelected_title {
             get {
@@ -2177,7 +2140,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Notification settings.
+        ///   Looks up a localized string similar to 通知设置.
         /// </summary>
         public static string notification_screen_title {
             get {
@@ -2186,7 +2149,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Google Cloud Messaging ID.
+        ///   Looks up a localized string similar to 谷歌云消息ID.
         /// </summary>
         public static string notification_settings_id {
             get {
@@ -2195,7 +2158,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Push your registration id to Domoticz.
+        ///   Looks up a localized string similar to 将注册ID发送到OOTT.
         /// </summary>
         public static string notification_settings_push {
             get {
@@ -2204,7 +2167,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Could not save your registration id in Domoticz, please try again later..
+        ///   Looks up a localized string similar to OOTT无法保存你的注册ID，请稍候重试。.
         /// </summary>
         public static string notification_settings_push_failed {
             get {
@@ -2213,7 +2176,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your registration id is now saved in Domoticz.
+        ///   Looks up a localized string similar to 你的注册ID已保存到OOTT.
         /// </summary>
         public static string notification_settings_pushed {
             get {
@@ -2222,7 +2185,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show last couple of Notifications.
+        ///   Looks up a localized string similar to 显示最新的几条通知.
         /// </summary>
         public static string notification_show {
             get {
@@ -2231,7 +2194,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No notifications found.
+        ///   Looks up a localized string similar to 无通知.
         /// </summary>
         public static string notification_show_nothing {
             get {
@@ -2240,7 +2203,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Last Notifications.
+        ///   Looks up a localized string similar to 最新通知.
         /// </summary>
         public static string notification_show_title {
             get {
@@ -2249,7 +2212,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use notification sound when notification arrives.
+        ///   Looks up a localized string similar to 收到通知时使用通知铃声.
         /// </summary>
         public static string notification_sound_summary {
             get {
@@ -2258,7 +2221,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sound.
+        ///   Looks up a localized string similar to 铃声.
         /// </summary>
         public static string notification_sound_title {
             get {
@@ -2267,7 +2230,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do not vibrate.
+        ///   Looks up a localized string similar to 不振动.
         /// </summary>
         public static string notification_vibrate_off {
             get {
@@ -2276,7 +2239,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vibrate when an notification is received.
+        ///   Looks up a localized string similar to 收到通知时振动.
         /// </summary>
         public static string notification_vibrate_on {
             get {
@@ -2285,7 +2248,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vibrate.
+        ///   Looks up a localized string similar to 振动.
         /// </summary>
         public static string notification_vibrate_title {
             get {
@@ -2294,7 +2257,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Odd Day Numbers.
+        ///   Looks up a localized string similar to 奇数日.
         /// </summary>
         public static string odd_day_numbers {
             get {
@@ -2303,7 +2266,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Odd Week Numbers.
+        ///   Looks up a localized string similar to 奇数周.
         /// </summary>
         public static string odd_week_numbers {
             get {
@@ -2312,7 +2275,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to OK.
+        ///   Looks up a localized string similar to 确定.
         /// </summary>
         public static string ok {
             get {
@@ -2321,7 +2284,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to OOPS!.
+        ///   Looks up a localized string similar to 哎呀 ！.
         /// </summary>
         public static string oops {
             get {
@@ -2330,7 +2293,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Overwrite previous notifications on this device.
+        ///   Looks up a localized string similar to 此设备上覆盖以前的通知.
         /// </summary>
         public static string overwrite_notifications {
             get {
@@ -2339,7 +2302,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Overwrite Notifications.
+        ///   Looks up a localized string similar to 覆盖通知.
         /// </summary>
         public static string overwrite_notifications_title {
             get {
@@ -2348,7 +2311,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Access to the camera is needed for detection.
+        ///   Looks up a localized string similar to 检测需要相机权限.
         /// </summary>
         public static string permission_camera_rationale {
             get {
@@ -2357,7 +2320,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Configure the Permissions for this app.
+        ///   Looks up a localized string similar to 为应用程序设置权限.
         /// </summary>
         public static string permission_config {
             get {
@@ -2366,7 +2329,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to These audio permissions are needed for Voice Recognition!.
+        ///   Looks up a localized string similar to 语音识别需要音频权限 ！.
         /// </summary>
         public static string permission_desc_audio {
             get {
@@ -2375,7 +2338,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to These camera permissions are needed for scanning QR Codes!.
+        ///   Looks up a localized string similar to 需要相机权限以扫描二维码！.
         /// </summary>
         public static string permission_desc_camera {
             get {
@@ -2384,7 +2347,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to These fingerprint permissions are needed for enabling Fingerprint Security!.
+        ///   Looks up a localized string similar to 启用指纹加密需要指纹权限！.
         /// </summary>
         public static string permission_desc_finger {
             get {
@@ -2393,7 +2356,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to These location permissions are needed for Geofencing and to get the Wifi SSID\&apos;s around you!.
+        ///   Looks up a localized string similar to 位置权限用来启用地理围栏，并获取周围的无线网络名称！.
         /// </summary>
         public static string permission_desc_location {
             get {
@@ -2402,7 +2365,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to These phone state permissions are needed for enabling notifications!.
+        ///   Looks up a localized string similar to 需要手机状态权限来启用通知功能！.
         /// </summary>
         public static string permission_desc_phone {
             get {
@@ -2411,7 +2374,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to These storage permissions are needed for saving cache file, settings and save snapshots from the camera..
+        ///   Looks up a localized string similar to 需要存储权限来保存缓存文件、设置以及照相机照片。.
         /// </summary>
         public static string permission_desc_storage {
             get {
@@ -2420,7 +2383,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Permissions.
+        ///   Looks up a localized string similar to 权限.
         /// </summary>
         public static string permission_prefs_title {
             get {
@@ -2429,7 +2392,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Permissions Denied.
+        ///   Looks up a localized string similar to 权限不足.
         /// </summary>
         public static string permission_title {
             get {
@@ -2438,7 +2401,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pick a device.
+        ///   Looks up a localized string similar to 选择设备.
         /// </summary>
         public static string pick_device_title {
             get {
@@ -2456,7 +2419,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please wait while the server is being updated..
+        ///   Looks up a localized string similar to 请稍候，服务器正在更新。.
         /// </summary>
         public static string please_wait_while_server_updated {
             get {
@@ -2465,7 +2428,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please wait while we check if your server is ready to update.
+        ///   Looks up a localized string similar to 请稍候，我们正在检查服务器是否可以进行更新.
         /// </summary>
         public static string please_wait_while_we_check {
             get {
@@ -2474,7 +2437,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Buy premium!.
+        ///   Looks up a localized string similar to 购买高级版！.
         /// </summary>
         public static string premium_category {
             get {
@@ -2483,7 +2446,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to is a premium feature, please buy the paid version to support the developers!.
+        ///   Looks up a localized string similar to 这是一项高级功能，请购买高级版以支持开发者！.
         /// </summary>
         public static string premium_feature {
             get {
@@ -2492,7 +2455,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Get the premium version!.
+        ///   Looks up a localized string similar to 获取高级版本 ！.
         /// </summary>
         public static string premium_title {
             get {
@@ -2501,7 +2464,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pressure.
+        ///   Looks up a localized string similar to 气压.
         /// </summary>
         public static string pressure {
             get {
@@ -2510,7 +2473,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Priority.
+        ///   Looks up a localized string similar to 优先级.
         /// </summary>
         public static string priority {
             get {
@@ -2519,7 +2482,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to QR Code disabled, please setup via settings..
+        ///   Looks up a localized string similar to 二维码已禁用，请通过设置安装。.
         /// </summary>
         public static string qr_code_disabled {
             get {
@@ -2528,7 +2491,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to QR Code.
+        ///   Looks up a localized string similar to 二维码.
         /// </summary>
         public static string qrcode {
             get {
@@ -2537,7 +2500,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Scan a QR Code. .
+        ///   Looks up a localized string similar to 扫描二维码。.
         /// </summary>
         public static string qrcode_desc {
             get {
@@ -2546,7 +2509,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Edit QR Code.
+        ///   Looks up a localized string similar to 编辑二维码.
         /// </summary>
         public static string qrcode_edit {
             get {
@@ -2555,7 +2518,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable QR Codes functionality.
+        ///   Looks up a localized string similar to 启用二维码功能.
         /// </summary>
         public static string qrcode_enable_settings {
             get {
@@ -2564,7 +2527,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to QR Code  already registered. .
+        ///   Looks up a localized string similar to 二维码已经注册。.
         /// </summary>
         public static string qrcode_exists {
             get {
@@ -2573,7 +2536,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New QR Code found.
+        ///   Looks up a localized string similar to 发现新的二维码.
         /// </summary>
         public static string qrcode_found {
             get {
@@ -2582,7 +2545,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Give this QR Code a proper name. .
+        ///   Looks up a localized string similar to 给此二维码起一个合适的名字。 .
         /// </summary>
         public static string qrcode_name {
             get {
@@ -2591,7 +2554,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New QR Code detected, please setup via settings..
+        ///   Looks up a localized string similar to 检测到新的二维码，请通过设置安装。.
         /// </summary>
         public static string qrcode_new_found {
             get {
@@ -2600,7 +2563,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to QR Code is not supported on this device.
+        ///   Looks up a localized string similar to 此设备不支持二维码.
         /// </summary>
         public static string qrcode_not_supported {
             get {
@@ -2609,7 +2572,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Register a QR Code .
+        ///   Looks up a localized string similar to 注册一个二维码.
         /// </summary>
         public static string qrcode_register {
             get {
@@ -2618,7 +2581,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Saved a New QR Code. .
+        ///   Looks up a localized string similar to 保存新的二维码。.
         /// </summary>
         public static string qrcode_saved {
             get {
@@ -2627,7 +2590,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Setup QR Codes.
+        ///   Looks up a localized string similar to 设置二维码.
         /// </summary>
         public static string qrcode_settings {
             get {
@@ -2636,7 +2599,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Radius (meter).
+        ///   Looks up a localized string similar to 半径(米).
         /// </summary>
         public static string radius {
             get {
@@ -2645,7 +2608,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rain.
+        ///   Looks up a localized string similar to 雨.
         /// </summary>
         public static string rain {
             get {
@@ -2654,7 +2617,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rain Rate.
+        ///   Looks up a localized string similar to 雨量.
         /// </summary>
         public static string rainrate {
             get {
@@ -2663,7 +2626,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Refresh.
+        ///   Looks up a localized string similar to 重新载入.
         /// </summary>
         public static string refresh {
             get {
@@ -2672,7 +2635,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remote.
+        ///   Looks up a localized string similar to 远程.
         /// </summary>
         public static string remote {
             get {
@@ -2681,7 +2644,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Request Again.
+        ///   Looks up a localized string similar to 再次请求.
         /// </summary>
         public static string request_again {
             get {
@@ -2690,7 +2653,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Reset all app settings (WARNING!!).
+        ///   Looks up a localized string similar to 重置所有应用程序设置(警告!!).
         /// </summary>
         public static string reset_settings {
             get {
@@ -2699,7 +2662,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Restart now?.
+        ///   Looks up a localized string similar to 现在重新启动吗？.
         /// </summary>
         public static string restart_now {
             get {
@@ -2708,7 +2671,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For the language settings to become to effect an application restart is required.
+        ///   Looks up a localized string similar to 更改语言后需要重新启动程序以生效.
         /// </summary>
         public static string restart_required_msg {
             get {
@@ -2717,7 +2680,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Restart required.
+        ///   Looks up a localized string similar to 需要重启.
         /// </summary>
         public static string restart_required_title {
             get {
@@ -2726,7 +2689,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Retry.
+        ///   Looks up a localized string similar to 重试.
         /// </summary>
         public static string retry {
             get {
@@ -2735,7 +2698,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to row icon.
+        ///   Looks up a localized string similar to 行图标.
         /// </summary>
         public static string row_icon_description {
             get {
@@ -2744,7 +2707,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Arm away.
+        ///   Looks up a localized string similar to 离家.
         /// </summary>
         public static string security_arm_away {
             get {
@@ -2753,7 +2716,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Arm home.
+        ///   Looks up a localized string similar to 到家.
         /// </summary>
         public static string security_arm_home {
             get {
@@ -2762,7 +2725,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disarm.
+        ///   Looks up a localized string similar to 解除.
         /// </summary>
         public static string security_disarm {
             get {
@@ -2771,7 +2734,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Could not change security status.
+        ///   Looks up a localized string similar to 无法更改安全状态.
         /// </summary>
         public static string security_generic_error {
             get {
@@ -2780,7 +2743,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pin code.
+        ///   Looks up a localized string similar to Pin码.
         /// </summary>
         public static string security_pin {
             get {
@@ -2789,7 +2752,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Setup Security.
+        ///   Looks up a localized string similar to 设置安全性.
         /// </summary>
         public static string security_settings {
             get {
@@ -2798,7 +2761,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wrong code entered!.
+        ///   Looks up a localized string similar to 输入错误！.
         /// </summary>
         public static string security_wrong_code {
             get {
@@ -2807,7 +2770,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wrong password entered, your domoticz account password is the failover for your fingerprint...!.
+        ///   Looks up a localized string similar to 密码错误，你的OOTT账户密码是指纹识别失败时的备用验证！.
         /// </summary>
         public static string security_wrong_password_fingerprint {
             get {
@@ -2816,7 +2779,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Selector values.
+        ///   Looks up a localized string similar to 选择器值.
         /// </summary>
         public static string selector_value {
             get {
@@ -2825,7 +2788,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Server.
+        ///   Looks up a localized string similar to 服务器.
         /// </summary>
         public static string server {
             get {
@@ -2834,7 +2797,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fetch server configuration.
+        ///   Looks up a localized string similar to 获取服务器配置.
         /// </summary>
         public static string server_force_fetch_config {
             get {
@@ -2843,7 +2806,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Server name must be unique.
+        ///   Looks up a localized string similar to 服务器名称必须是唯一的.
         /// </summary>
         public static string server_must_be_unique {
             get {
@@ -2852,7 +2815,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Server connection settings.
+        ///   Looks up a localized string similar to 服务器连接设置.
         /// </summary>
         public static string server_settings {
             get {
@@ -2861,7 +2824,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Server update.
+        ///   Looks up a localized string similar to 服务器更新.
         /// </summary>
         public static string server_update {
             get {
@@ -2870,7 +2833,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Server update available.
+        ///   Looks up a localized string similar to 服务器更新可用.
         /// </summary>
         public static string server_update_available {
             get {
@@ -2879,7 +2842,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Server update done.
+        ///   Looks up a localized string similar to 服务器更新完成.
         /// </summary>
         public static string server_update_done {
             get {
@@ -2888,7 +2851,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Server update not available.
+        ///   Looks up a localized string similar to 服务器更新不可用.
         /// </summary>
         public static string server_update_not_available {
             get {
@@ -2897,7 +2860,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Server update not downloaded.
+        ///   Looks up a localized string similar to 服务器更新未下载.
         /// </summary>
         public static string server_update_not_ready {
             get {
@@ -2906,7 +2869,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Server update revision.
+        ///   Looks up a localized string similar to 服务器更新修订.
         /// </summary>
         public static string server_update_revision {
             get {
@@ -2915,7 +2878,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Server version.
+        ///   Looks up a localized string similar to 服务器版本.
         /// </summary>
         public static string server_version {
             get {
@@ -2924,7 +2887,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Server Name.
+        ///   Looks up a localized string similar to 服务器名称.
         /// </summary>
         public static string servername {
             get {
@@ -2933,7 +2896,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Switch app theme to Dark.
+        ///   Looks up a localized string similar to 切换到黑色主题.
         /// </summary>
         public static string set_dark_theme {
             get {
@@ -2942,7 +2905,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;Setting level for switch: %1$s to %2$d&quot;.
+        ///   Looks up a localized string similar to &quot;设置开关级别︰ %1$s 至 %2$d&quot;.
         /// </summary>
         public static string set_level_switch {
             get {
@@ -2951,7 +2914,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Switch app theme to Light.
+        ///   Looks up a localized string similar to 切换到明亮主题.
         /// </summary>
         public static string set_light_theme {
             get {
@@ -2960,7 +2923,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Set point.
+        ///   Looks up a localized string similar to 设置点.
         /// </summary>
         public static string set_point {
             get {
@@ -2969,7 +2932,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Set point max value.
+        ///   Looks up a localized string similar to 设置点的最大值.
         /// </summary>
         public static string set_point_max {
             get {
@@ -2978,7 +2941,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Max temperature that you can set for your thermostat.
+        ///   Looks up a localized string similar to 你可以为你的温控器设置的最大温度.
         /// </summary>
         public static string set_point_max_description {
             get {
@@ -2987,7 +2950,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Set point min value.
+        ///   Looks up a localized string similar to 设置点的最小值.
         /// </summary>
         public static string set_point_min {
             get {
@@ -2996,7 +2959,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Min temperature that you can set for your thermostat.
+        ///   Looks up a localized string similar to 你可以为你的温控器设置的最小温度.
         /// </summary>
         public static string set_point_min_description {
             get {
@@ -3005,7 +2968,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn talk back off.
+        ///   Looks up a localized string similar to 关闭回应.
         /// </summary>
         public static string set_talk_back_off {
             get {
@@ -3014,7 +2977,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Let Domoticz talk back to you.
+        ///   Looks up a localized string similar to 让OOTT回应你.
         /// </summary>
         public static string set_talk_back_on {
             get {
@@ -3023,16 +2986,16 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Set.
+        ///   Looks up a localized string similar to 设置.
         /// </summary>
-        public static string set_temperature {
+        public static string settemperature {
             get {
-                return ResourceManager.GetString("set_temperature", resourceCulture);
+                return ResourceManager.GetString("settemperature", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Failed to export Settings.
+        ///   Looks up a localized string similar to 导出设置失败.
         /// </summary>
         public static string settings_export_failed {
             get {
@@ -3041,7 +3004,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Settings exported, please restart Domoticz.
+        ///   Looks up a localized string similar to 设置已导出，请重新启动OOTT.
         /// </summary>
         public static string settings_exported {
             get {
@@ -3050,7 +3013,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Failed to import Settings.
+        ///   Looks up a localized string similar to 导入设置失败.
         /// </summary>
         public static string settings_import_failed {
             get {
@@ -3059,7 +3022,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Settings imported, please restart Domoticz.
+        ///   Looks up a localized string similar to 设置已导入，请重新启动OOTT.
         /// </summary>
         public static string settings_imported {
             get {
@@ -3068,7 +3031,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Settings.
+        ///   Looks up a localized string similar to 设置.
         /// </summary>
         public static string settingsActivity_name {
             get {
@@ -3077,7 +3040,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Setup fingerprints via Android Settings screens.
+        ///   Looks up a localized string similar to 通过Android设置界面设置指纹.
         /// </summary>
         public static string setup_fingerprints {
             get {
@@ -3086,7 +3049,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show dashboard as grid.
+        ///   Looks up a localized string similar to 仪表盘按网格显示.
         /// </summary>
         public static string show_dashboard_list_off {
             get {
@@ -3095,7 +3058,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show dashboard as list.
+        ///   Looks up a localized string similar to 仪表盘按列表显示.
         /// </summary>
         public static string show_dashboard_list_on {
             get {
@@ -3104,7 +3067,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hide extra data on dashboard.
+        ///   Looks up a localized string similar to 在仪表盘中隐藏额外数据.
         /// </summary>
         public static string show_extra_data_off {
             get {
@@ -3113,7 +3076,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show extra data on dashboard.
+        ///   Looks up a localized string similar to 在仪表盘中显示额外数据.
         /// </summary>
         public static string show_extra_data_on {
             get {
@@ -3122,7 +3085,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show password.
+        ///   Looks up a localized string similar to 显示密码.
         /// </summary>
         public static string show_password {
             get {
@@ -3131,7 +3094,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Signal level.
+        ///   Looks up a localized string similar to 信号程度.
         /// </summary>
         public static string signal_level {
             get {
@@ -3140,7 +3103,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to %1$s deleted.
+        ///   Looks up a localized string similar to %1$s 已刪除.
         /// </summary>
         public static string something_deleted {
             get {
@@ -3149,7 +3112,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Something went wrong.
+        ///   Looks up a localized string similar to 发生了一些错误.
         /// </summary>
         public static string something_went_wrong {
             get {
@@ -3158,7 +3121,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sort dashboard alphabetically.
+        ///   Looks up a localized string similar to 仪表板按字母顺序排序.
         /// </summary>
         public static string sort_dashboardLikeServer_off {
             get {
@@ -3167,7 +3130,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sort dashboard like server.
+        ///   Looks up a localized string similar to 仪表盘按服务器顺序排序.
         /// </summary>
         public static string sort_dashboardLikeServer_on {
             get {
@@ -3176,7 +3139,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dashboard sorting.
+        ///   Looks up a localized string similar to 仪表盘排序.
         /// </summary>
         public static string sort_dashboardLikeServer_title {
             get {
@@ -3185,7 +3148,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Speech.
+        ///   Looks up a localized string similar to 语音.
         /// </summary>
         public static string Speech {
             get {
@@ -3194,7 +3157,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do a new voice command. .
+        ///   Looks up a localized string similar to 做一个新的语音指令。.
         /// </summary>
         public static string Speech_desc {
             get {
@@ -3203,7 +3166,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Speech Command disabled, please setup via settings..
+        ///   Looks up a localized string similar to 语音指令已禁用，请通过设置开启。.
         /// </summary>
         public static string Speech_disabled {
             get {
@@ -3212,7 +3175,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Edit Speech Command.
+        ///   Looks up a localized string similar to 编辑语音指令.
         /// </summary>
         public static string Speech_edit {
             get {
@@ -3221,7 +3184,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable Speech Recognition.
+        ///   Looks up a localized string similar to 启用语音识别.
         /// </summary>
         public static string speech_enable_settings {
             get {
@@ -3230,7 +3193,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Speech Command already registered. .
+        ///   Looks up a localized string similar to 语音指令已经注册。.
         /// </summary>
         public static string Speech_exists {
             get {
@@ -3239,7 +3202,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New Speech Command found.
+        ///   Looks up a localized string similar to 发现新的语音指令.
         /// </summary>
         public static string Speech_found {
             get {
@@ -3248,7 +3211,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Give this Speech Command a proper name. .
+        ///   Looks up a localized string similar to 给此语音指令起一个合适的名字。 .
         /// </summary>
         public static string Speech_name {
             get {
@@ -3257,7 +3220,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Speech is not supported on this device.
+        ///   Looks up a localized string similar to 此设备上不支持语音.
         /// </summary>
         public static string Speech_not_supported {
             get {
@@ -3266,7 +3229,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Register a Speech Command.
+        ///   Looks up a localized string similar to 注册语音指令.
         /// </summary>
         public static string Speech_register {
             get {
@@ -3275,7 +3238,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Saved a New Speech Command. .
+        ///   Looks up a localized string similar to 保存新的语音指令。.
         /// </summary>
         public static string Speech_saved {
             get {
@@ -3284,7 +3247,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Setup Speech Commands.
+        ///   Looks up a localized string similar to 设置语音指令.
         /// </summary>
         public static string speech_settings {
             get {
@@ -3293,7 +3256,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Speed.
+        ///   Looks up a localized string similar to 速度.
         /// </summary>
         public static string speed {
             get {
@@ -3302,7 +3265,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Starting Geofence service.
+        ///   Looks up a localized string similar to 开始地理围栏服务.
         /// </summary>
         public static string starting_geofence_service {
             get {
@@ -3311,7 +3274,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Startup screen.
+        ///   Looks up a localized string similar to 开始界面.
         /// </summary>
         public static string startup_screen {
             get {
@@ -3320,7 +3283,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to State set for.
+        ///   Looks up a localized string similar to 状态设置为.
         /// </summary>
         public static string state_set {
             get {
@@ -3329,7 +3292,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Status.
+        ///   Looks up a localized string similar to 状态.
         /// </summary>
         public static string status {
             get {
@@ -3338,7 +3301,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Suppress specific Notifications on this device.
+        ///   Looks up a localized string similar to 在此设备上禁止特定的通知.
         /// </summary>
         public static string suppress_notifications {
             get {
@@ -3347,7 +3310,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select Notifications to Suppress.
+        ///   Looks up a localized string similar to 选择要禁止的通知.
         /// </summary>
         public static string suppress_notifications_select {
             get {
@@ -3356,7 +3319,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Suppress Notifications.
+        ///   Looks up a localized string similar to 禁止通知.
         /// </summary>
         public static string suppress_notifications_title {
             get {
@@ -3365,7 +3328,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show switches with on/off buttons.
+        ///   Looks up a localized string similar to 在开关上显示开/关按钮.
         /// </summary>
         public static string switch_buttons_off {
             get {
@@ -3374,7 +3337,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show switches with on/off switch.
+        ///   Looks up a localized string similar to 在开关上显示开/关文字.
         /// </summary>
         public static string switch_buttons_on {
             get {
@@ -3383,7 +3346,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Switches.
+        ///   Looks up a localized string similar to 开关.
         /// </summary>
         public static string switch_buttons_title {
             get {
@@ -3392,7 +3355,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turning switch off.
+        ///   Looks up a localized string similar to 关闭开关.
         /// </summary>
         public static string switch_off {
             get {
@@ -3401,7 +3364,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turning switch on.
+        ///   Looks up a localized string similar to 打开开关.
         /// </summary>
         public static string switch_on {
             get {
@@ -3410,7 +3373,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;Switching server to %1$s&quot;.
+        ///   Looks up a localized string similar to &quot;切换到 %1$s 服务器&quot;.
         /// </summary>
         public static string switch_to_server {
             get {
@@ -3419,7 +3382,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;Switch device&quot;.
+        ///   Looks up a localized string similar to &quot;开关设备&quot;.
         /// </summary>
         public static string switch_toggled {
             get {
@@ -3428,7 +3391,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Systems.
+        ///   Looks up a localized string similar to 系统.
         /// </summary>
         public static string systems {
             get {
@@ -3437,7 +3400,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Temp.
+        ///   Looks up a localized string similar to 温度.
         /// </summary>
         public static string temp {
             get {
@@ -3446,7 +3409,16 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to GO.
+        ///   Looks up a localized string similar to 温度.
+        /// </summary>
+        public static string temperature {
+            get {
+                return ResourceManager.GetString("temperature", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 启动.
         /// </summary>
         public static string text_go {
             get {
@@ -3455,7 +3427,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Loading....
+        ///   Looks up a localized string similar to 加载中....
         /// </summary>
         public static string text_loading {
             get {
@@ -3464,7 +3436,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This could take several minutes..
+        ///   Looks up a localized string similar to 这可能需要几分钟。.
         /// </summary>
         public static string this_take_minutes {
             get {
@@ -3473,7 +3445,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to After sunrise.
+        ///   Looks up a localized string similar to 日出后.
         /// </summary>
         public static string timer_after_sunrise {
             get {
@@ -3482,7 +3454,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to After sunset.
+        ///   Looks up a localized string similar to 日落之后.
         /// </summary>
         public static string timer_after_sunset {
             get {
@@ -3491,7 +3463,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Before sunrise.
+        ///   Looks up a localized string similar to 在日出之前.
         /// </summary>
         public static string timer_before_sunrise {
             get {
@@ -3500,7 +3472,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Before sunset.
+        ///   Looks up a localized string similar to 在日落之前.
         /// </summary>
         public static string timer_before_sunset {
             get {
@@ -3509,7 +3481,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Every day.
+        ///   Looks up a localized string similar to 每天.
         /// </summary>
         public static string timer_every_days {
             get {
@@ -3518,7 +3490,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fixed date/time.
+        ///   Looks up a localized string similar to 固定的日期时间.
         /// </summary>
         public static string timer_fixed {
             get {
@@ -3527,7 +3499,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to On time.
+        ///   Looks up a localized string similar to 一次性.
         /// </summary>
         public static string timer_ontime {
             get {
@@ -3536,7 +3508,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Other.
+        ///   Looks up a localized string similar to 其它.
         /// </summary>
         public static string timer_other {
             get {
@@ -3545,7 +3517,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Weekend.
+        ///   Looks up a localized string similar to 周末.
         /// </summary>
         public static string timer_weekend {
             get {
@@ -3554,7 +3526,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Working days.
+        ///   Looks up a localized string similar to 工作天数.
         /// </summary>
         public static string timer_working_days {
             get {
@@ -3563,7 +3535,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Timers.
+        ///   Looks up a localized string similar to 计时器.
         /// </summary>
         public static string timers {
             get {
@@ -3572,7 +3544,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Server settings.
+        ///   Looks up a localized string similar to 服务器设置.
         /// </summary>
         public static string title_activity_server_settings {
             get {
@@ -3581,7 +3553,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Update server.
+        ///   Looks up a localized string similar to 更新服务器.
         /// </summary>
         public static string title_activity_update {
             get {
@@ -3590,7 +3562,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add location.
+        ///   Looks up a localized string similar to 添加位置.
         /// </summary>
         public static string title_add_location {
             get {
@@ -3599,7 +3571,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cameras.
+        ///   Looks up a localized string similar to 相机.
         /// </summary>
         public static string title_cameras {
             get {
@@ -3608,7 +3580,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dashboard.
+        ///   Looks up a localized string similar to 仪表盘.
         /// </summary>
         public static string title_dashboard {
             get {
@@ -3617,7 +3589,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Edit location.
+        ///   Looks up a localized string similar to 编辑位置.
         /// </summary>
         public static string title_edit_location {
             get {
@@ -3626,7 +3598,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Events.
+        ///   Looks up a localized string similar to 事件.
         /// </summary>
         public static string title_events {
             get {
@@ -3635,7 +3607,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable Geofencing.
+        ///   Looks up a localized string similar to 启用地理围栏.
         /// </summary>
         public static string title_geofence {
             get {
@@ -3644,7 +3616,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable notifications.
+        ///   Looks up a localized string similar to 启用通知.
         /// </summary>
         public static string title_geofence_notifications {
             get {
@@ -3653,7 +3625,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Logs.
+        ///   Looks up a localized string similar to 日志.
         /// </summary>
         public static string title_logs {
             get {
@@ -3662,7 +3634,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Plans.
+        ///   Looks up a localized string similar to 计划.
         /// </summary>
         public static string title_plans {
             get {
@@ -3671,7 +3643,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Scenes.
+        ///   Looks up a localized string similar to 场景.
         /// </summary>
         public static string title_scenes {
             get {
@@ -3680,7 +3652,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Security Panel.
+        ///   Looks up a localized string similar to 安全面板.
         /// </summary>
         public static string title_security_panel {
             get {
@@ -3689,7 +3661,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Switches.
+        ///   Looks up a localized string similar to 开关.
         /// </summary>
         public static string title_switches {
             get {
@@ -3698,7 +3670,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Temperature.
+        ///   Looks up a localized string similar to 温度.
         /// </summary>
         public static string title_temperature {
             get {
@@ -3707,7 +3679,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Utilities.
+        ///   Looks up a localized string similar to 实用程序.
         /// </summary>
         public static string title_utilities {
             get {
@@ -3716,7 +3688,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User Variables.
+        ///   Looks up a localized string similar to 用户变量.
         /// </summary>
         public static string title_vars {
             get {
@@ -3725,7 +3697,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Weather.
+        ///   Looks up a localized string similar to 天气.
         /// </summary>
         public static string title_weather {
             get {
@@ -3734,7 +3706,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Welcome Wizard.
+        ///   Looks up a localized string similar to 欢迎向导.
         /// </summary>
         public static string title_wizard {
             get {
@@ -3743,7 +3715,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;to&quot;.
+        ///   Looks up a localized string similar to &quot;到&quot;.
         /// </summary>
         public static string to {
             get {
@@ -3752,7 +3724,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Today.
+        ///   Looks up a localized string similar to 今天.
         /// </summary>
         public static string today {
             get {
@@ -3761,7 +3733,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total.
+        ///   Looks up a localized string similar to 总计.
         /// </summary>
         public static string total {
             get {
@@ -3779,7 +3751,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Type.
+        ///   Looks up a localized string similar to 类型.
         /// </summary>
         public static string type {
             get {
@@ -3788,7 +3760,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unable to get all switches, please try again.
+        ///   Looks up a localized string similar to 无法获得所有开关，请再试一次.
         /// </summary>
         public static string unable_to_get_switches {
             get {
@@ -3797,7 +3769,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Undo.
+        ///   Looks up a localized string similar to 撤消.
         /// </summary>
         public static string undo {
             get {
@@ -3806,7 +3778,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unknown.
+        ///   Looks up a localized string similar to 未知.
         /// </summary>
         public static string unknown {
             get {
@@ -3815,7 +3787,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unknown error.
+        ///   Looks up a localized string similar to 未知错误.
         /// </summary>
         public static string unknown_geofence_error {
             get {
@@ -3824,7 +3796,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Server update available: %1$s to version: %2$s.
+        ///   Looks up a localized string similar to 可用的服务器更新︰ %1$s -&gt; %2$s.
         /// </summary>
         public static string update_available_enhanced {
             get {
@@ -3833,7 +3805,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Update not started.
+        ///   Looks up a localized string similar to 更新未开始.
         /// </summary>
         public static string update_not_started {
             get {
@@ -3842,7 +3814,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Update not started due to an unknown error.
+        ///   Looks up a localized string similar to 由于未知错误更新不能开始.
         /// </summary>
         public static string update_not_started_unknown_error {
             get {
@@ -3851,7 +3823,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Update server.
+        ///   Looks up a localized string similar to 更新服务器.
         /// </summary>
         public static string update_server {
             get {
@@ -3860,7 +3832,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The update isn\&apos;t (completely) downloaded yet..
+        ///   Looks up a localized string similar to 更新尚未下载完成。.
         /// </summary>
         public static string update_server_downloadNotReady1 {
             get {
@@ -3869,7 +3841,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please try again later..
+        ///   Looks up a localized string similar to 请稍后再试。.
         /// </summary>
         public static string update_server_downloadNotReady2 {
             get {
@@ -3878,7 +3850,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to While your server is updating this app will not function properly..
+        ///   Looks up a localized string similar to 服务器更新时此应用将无法正常工作。.
         /// </summary>
         public static string update_server_warning {
             get {
@@ -3887,7 +3859,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to UPGRADE.
+        ///   Looks up a localized string similar to 升级.
         /// </summary>
         public static string upgrade {
             get {
@@ -3896,7 +3868,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Usage.
+        ///   Looks up a localized string similar to 统计.
         /// </summary>
         public static string usage {
             get {
@@ -3905,43 +3877,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Admin.
-        /// </summary>
-        public static string user_admin {
-            get {
-                return ResourceManager.GetString("user_admin", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Switched from User.
-        /// </summary>
-        public static string user_switch {
-            get {
-                return ResourceManager.GetString("user_switch", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to User.
-        /// </summary>
-        public static string user_user {
-            get {
-                return ResourceManager.GetString("user_user", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Viewer.
-        /// </summary>
-        public static string user_viewer {
-            get {
-                return ResourceManager.GetString("user_viewer", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Input value is not valid.
+        ///   Looks up a localized string similar to 输入值无效.
         /// </summary>
         public static string var_input {
             get {
@@ -3950,7 +3886,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Failed to update user variable.
+        ///   Looks up a localized string similar to 更新用户变量失败.
         /// </summary>
         public static string var_input_error {
             get {
@@ -3959,7 +3895,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Very Low.
+        ///   Looks up a localized string similar to 非常低.
         /// </summary>
         public static string verylow {
             get {
@@ -3968,7 +3904,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disable Android Wear custom items.
+        ///   Looks up a localized string similar to 禁用Android Wear自定义项目.
         /// </summary>
         public static string wear_custom_off {
             get {
@@ -3977,7 +3913,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable Android Wear custom items.
+        ///   Looks up a localized string similar to 启用Android Wear自定义项目.
         /// </summary>
         public static string wear_custom_on {
             get {
@@ -3986,7 +3922,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Advanced server settings.
+        ///   Looks up a localized string similar to 高级的服务器设置.
         /// </summary>
         public static string welcome_advancedSettings {
             get {
@@ -3995,7 +3931,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Only used for non-standard Domoticz servers.
+        ///   Looks up a localized string similar to 仅用于非标准 OOTT 服务器.
         /// </summary>
         public static string welcome_advancedSettings_summary {
             get {
@@ -4004,7 +3940,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to finish.
+        ///   Looks up a localized string similar to 完成.
         /// </summary>
         public static string welcome_button_finish {
             get {
@@ -4013,7 +3949,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to next.
+        ///   Looks up a localized string similar to 下一页.
         /// </summary>
         public static string welcome_button_next {
             get {
@@ -4022,7 +3958,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to prev.
+        ///   Looks up a localized string similar to 上一页.
         /// </summary>
         public static string welcome_button_previous {
             get {
@@ -4031,7 +3967,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Verifying your connection settings.
+        ///   Looks up a localized string similar to 验证你的连接设置.
         /// </summary>
         public static string welcome_info_checkingConnection {
             get {
@@ -4040,7 +3976,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Domoticz is a Home Automation System that lets you monitor and configure various devices like: Lights, Switches, various sensors/meters like Temperature, Rain, Wind, UV, Electra, Gas, Water and much more. Notifications/Alerts can be sent to any mobile device..
+        ///   Looks up a localized string similar to OOTT是一个开源的智能家居系统，通过它你可以监测和控制各种设备比如：灯、开关 ，各种传感器、仪表比如：温度、雨、风、紫外线、电、气体、水 等等。 还可以向任一移动设备发送通知或警告。.
         /// </summary>
         public static string welcome_info_domoticz {
             get {
@@ -4049,7 +3985,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The next page is for your Domoticz settings..
+        ///   Looks up a localized string similar to 下一个页面设置你的OOTT。.
         /// </summary>
         public static string welcome_info_settings1 {
             get {
@@ -4058,7 +3994,9 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can specify a local and a remote server setting. The local settings are for when you are connected to your home wifi network.  Remote settings are used when not connected to your home wifi network or when connected to cellular data (2G, 3G, 4G etc)..
+        ///   Looks up a localized string similar to         你可以指定一个本地或远程服务器设置。
+        ///        本地设置用于当你连接到家里的无线网时。
+        ///        远程设置用于当你离开家里使用手机数据网络或其它无线网络时。.
         /// </summary>
         public static string welcome_info_settings2 {
             get {
@@ -4067,7 +4005,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Swipe to the right or use the navigation buttons at the bottom to continue.
+        ///   Looks up a localized string similar to 向右滑动或使用底部的导航按钮来继续.
         /// </summary>
         public static string welcome_info_swipe {
             get {
@@ -4076,7 +4014,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Local server address.
+        ///   Looks up a localized string similar to 本地服务器地址.
         /// </summary>
         public static string welcome_local_server_address {
             get {
@@ -4085,7 +4023,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Local directory (leave empty if not used).
+        ///   Looks up a localized string similar to 本地目录（如果不使用请留空）.
         /// </summary>
         public static string welcome_local_server_directory {
             get {
@@ -4094,7 +4032,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Local password (leave empty if not used).
+        ///   Looks up a localized string similar to 本地密码（如果不使用请留空）.
         /// </summary>
         public static string welcome_local_server_password {
             get {
@@ -4103,7 +4041,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Local port.
+        ///   Looks up a localized string similar to 本地端口.
         /// </summary>
         public static string welcome_local_server_port {
             get {
@@ -4112,7 +4050,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Local protocol.
+        ///   Looks up a localized string similar to 本地协议.
         /// </summary>
         public static string welcome_local_server_protocol {
             get {
@@ -4121,7 +4059,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Local wifi SSID\&apos;s.
+        ///   Looks up a localized string similar to 本地 wifi SSID.
         /// </summary>
         public static string welcome_local_server_ssid {
             get {
@@ -4130,7 +4068,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use different address for local connection.
+        ///   Looks up a localized string similar to 使用不同的地址作为本地连接.
         /// </summary>
         public static string welcome_local_server_used_switch_summary {
             get {
@@ -4139,7 +4077,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Different server address.
+        ///   Looks up a localized string similar to 不同的服务器地址.
         /// </summary>
         public static string welcome_local_server_used_switch_title {
             get {
@@ -4148,7 +4086,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Local username (leave empty if not used).
+        ///   Looks up a localized string similar to 本地用户名（如果不使用请留空）.
         /// </summary>
         public static string welcome_local_server_username {
             get {
@@ -4157,7 +4095,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Connection data incomplete or empty.
+        ///   Looks up a localized string similar to 连接数据不完整或为空.
         /// </summary>
         public static string welcome_msg_connectionDataIncomplete {
             get {
@@ -4166,7 +4104,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to URL should not start with http.
+        ///   Looks up a localized string similar to URL不应以http开头.
         /// </summary>
         public static string welcome_msg_connectionDataInvalid {
             get {
@@ -4175,7 +4113,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please correct the data on the previous page.
+        ///   Looks up a localized string similar to 请更正前一页上的数据.
         /// </summary>
         public static string welcome_msg_correctOnPreviousPage {
             get {
@@ -4184,7 +4122,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No wifi SSID\&apos;s found.
+        ///   Looks up a localized string similar to 没有发现 wifi SSID.
         /// </summary>
         public static string welcome_msg_no_ssid_found {
             get {
@@ -4193,7 +4131,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to %1$d devices found.
+        ///   Looks up a localized string similar to 发现 %1$d  个设备.
         /// </summary>
         public static string welcome_msg_numberOfDevices {
             get {
@@ -4202,7 +4140,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Domoticz version.
+        ///   Looks up a localized string similar to OOTT 版本.
         /// </summary>
         public static string welcome_msg_serverVersion {
             get {
@@ -4211,7 +4149,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Server address.
+        ///   Looks up a localized string similar to 服务器地址.
         /// </summary>
         public static string welcome_remote_server_address {
             get {
@@ -4220,7 +4158,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Directory.
+        ///   Looks up a localized string similar to 目录.
         /// </summary>
         public static string welcome_remote_server_directory {
             get {
@@ -4229,7 +4167,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Password.
+        ///   Looks up a localized string similar to 密码.
         /// </summary>
         public static string welcome_remote_server_password {
             get {
@@ -4238,7 +4176,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Port.
+        ///   Looks up a localized string similar to 端口.
         /// </summary>
         public static string welcome_remote_server_port {
             get {
@@ -4247,7 +4185,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Protocol.
+        ///   Looks up a localized string similar to 协议.
         /// </summary>
         public static string welcome_remote_server_protocol {
             get {
@@ -4256,7 +4194,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Username.
+        ///   Looks up a localized string similar to 用户名.
         /// </summary>
         public static string welcome_remote_server_username {
             get {
@@ -4265,7 +4203,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Server settings.
+        ///   Looks up a localized string similar to 服务器设置.
         /// </summary>
         public static string welcome_server_settings_title {
             get {
@@ -4274,7 +4212,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Start screen.
+        ///   Looks up a localized string similar to 启动屏幕.
         /// </summary>
         public static string welcome_server_startScreen {
             get {
@@ -4283,7 +4221,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add home SSID\&apos;s.
+        ///   Looks up a localized string similar to 添加home SSID.
         /// </summary>
         public static string welcome_ssid_button_prompt {
             get {
@@ -4292,7 +4230,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select home SSID\&apos;s.
+        ///   Looks up a localized string similar to 选择home SSID.
         /// </summary>
         public static string welcome_ssid_spinner_prompt {
             get {
@@ -4301,7 +4239,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Welcome.
+        ///   Looks up a localized string similar to 欢迎.
         /// </summary>
         public static string welcome_title_activity_welcome {
             get {
@@ -4310,7 +4248,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to White.
+        ///   Looks up a localized string similar to 白.
         /// </summary>
         public static string white {
             get {
@@ -4319,7 +4257,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Background.
+        ///   Looks up a localized string similar to 背景.
         /// </summary>
         public static string widget_background {
             get {
@@ -4328,7 +4266,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dark.
+        ///   Looks up a localized string similar to 暗色调.
         /// </summary>
         public static string widget_dark {
             get {
@@ -4337,7 +4275,25 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Light.
+        ///   Looks up a localized string similar to 启用或禁用该设备上的小部件.
+        /// </summary>
+        public static string widget_description {
+            get {
+                return ResourceManager.GetString("widget_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 小部件未在此设备上启用，请检查您的OOTT设置.
+        /// </summary>
+        public static string widget_disabled {
+            get {
+                return ResourceManager.GetString("widget_disabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 亮色调.
         /// </summary>
         public static string widget_light {
             get {
@@ -4346,7 +4302,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dark Transparent.
+        ///   Looks up a localized string similar to 透明暗色调.
         /// </summary>
         public static string widget_transparent_dark {
             get {
@@ -4355,7 +4311,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Light Transparent.
+        ///   Looks up a localized string similar to 透明亮色调.
         /// </summary>
         public static string widget_transparent_light {
             get {
@@ -4364,7 +4320,16 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wind.
+        ///   Looks up a localized string similar to 使用窗口小部件您将自己承担风险！！小部件目前处于 Beta 阶段，并可能包含某些 bug。它可以导致大量的内存和电池的消耗....
+        /// </summary>
+        public static string widget_warning {
+            get {
+                return ResourceManager.GetString("widget_warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 风.
         /// </summary>
         public static string wind {
             get {
@@ -4382,7 +4347,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Receive the Domoticz notifications right on your Android Auto device!.
+        ///   Looks up a localized string similar to 在Android Auto汽车上接收来自OOTT的通知！.
         /// </summary>
         public static string wizard_auto_description {
             get {
@@ -4391,7 +4356,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Done.
+        ///   Looks up a localized string similar to 完成.
         /// </summary>
         public static string wizard_button_done {
             get {
@@ -4400,7 +4365,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nice.
+        ///   Looks up a localized string similar to 好的.
         /// </summary>
         public static string wizard_button_nice {
             get {
@@ -4409,7 +4374,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Settings.
+        ///   Looks up a localized string similar to 设置.
         /// </summary>
         public static string wizard_button_settings {
             get {
@@ -4418,7 +4383,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Switches.
+        ///   Looks up a localized string similar to 开关.
         /// </summary>
         public static string wizard_button_switches {
             get {
@@ -4427,7 +4392,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Utilities.
+        ///   Looks up a localized string similar to 实用工具.
         /// </summary>
         public static string wizard_button_utilities {
             get {
@@ -4436,7 +4401,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remove.
+        ///   Looks up a localized string similar to 移除.
         /// </summary>
         public static string wizard_button_wizard {
             get {
@@ -4445,7 +4410,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Favorites.
+        ///   Looks up a localized string similar to 收藏夹.
         /// </summary>
         public static string wizard_favorites {
             get {
@@ -4454,7 +4419,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can add devices to the Dashboard by saving them as favorites. Long click an item to save them as favorite!.
+        ///   Looks up a localized string similar to 你可以通过收藏来将设备添加到仪表盘。长按项目在弹出界面中开启收藏。.
         /// </summary>
         public static string wizard_favorites_description {
             get {
@@ -4463,7 +4428,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Filters.
+        ///   Looks up a localized string similar to 筛选器.
         /// </summary>
         public static string wizard_filter {
             get {
@@ -4472,7 +4437,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can filter devices per status (on/off). Check the right upper menu icon for filtering!.
+        ///   Looks up a localized string similar to 你可以根据设备状态(开或关)来筛选设备。要筛选请查看右上角的菜单图标！.
         /// </summary>
         public static string wizard_filter_description {
             get {
@@ -4481,7 +4446,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Geofencing.
+        ///   Looks up a localized string similar to 地理围栏.
         /// </summary>
         public static string wizard_geo {
             get {
@@ -4490,7 +4455,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can set your startup screen in the settings!.
+        ///   Looks up a localized string similar to 你可以在设置中设置开始界面 ！.
         /// </summary>
         public static string wizard_geo_description {
             get {
@@ -4499,7 +4464,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Graphs.
+        ///   Looks up a localized string similar to 图表.
         /// </summary>
         public static string wizard_graph {
             get {
@@ -4508,7 +4473,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can see the history graph of an Utility, Weather or Temperature!.
+        ///   Looks up a localized string similar to 你可以看到应用的历史图表，比如天气或温度！.
         /// </summary>
         public static string wizard_graph_description {
             get {
@@ -4517,7 +4482,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disable Wizard.
+        ///   Looks up a localized string similar to 禁用向导.
         /// </summary>
         public static string wizard_menuitem {
             get {
@@ -4526,7 +4491,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can now remove this Wizard from the navigation menu!.
+        ///   Looks up a localized string similar to 你现在可以从导航菜单中删除此向导 ！.
         /// </summary>
         public static string wizard_menuitem_description {
             get {
@@ -4535,7 +4500,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Using Multiple Servers.
+        ///   Looks up a localized string similar to 使用多个服务器.
         /// </summary>
         public static string wizard_multiserver {
             get {
@@ -4544,7 +4509,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can configure multiple Domoticz servers in the settings..
+        ///   Looks up a localized string similar to 你可以在设置中配置多个OOTT服务器。.
         /// </summary>
         public static string wizard_multiserver_description {
             get {
@@ -4562,7 +4527,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You are able to toggle switches via NFC!.
+        ///   Looks up a localized string similar to 你可以通过NFC来切换开关了 ！.
         /// </summary>
         public static string wizard_nfc_description {
             get {
@@ -4571,7 +4536,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Setup Notifications.
+        ///   Looks up a localized string similar to 设置通知.
         /// </summary>
         public static string wizard_notifications {
             get {
@@ -4580,7 +4545,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can now receive Notifications on your Android device! Change the way how notifications behave in the settings.
+        ///   Looks up a localized string similar to 现在你可以在Android手机上收到通知 ！在设置中更改通知方式.
         /// </summary>
         public static string wizard_notifications_description {
             get {
@@ -4589,7 +4554,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to QR Code.
+        ///   Looks up a localized string similar to 二维码.
         /// </summary>
         public static string wizard_qrcode {
             get {
@@ -4598,7 +4563,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Toggle switches by scanning a QR Code (or barcode)!.
+        ///   Looks up a localized string similar to 通过扫描二维码(或条形码)切换开关 ！.
         /// </summary>
         public static string wizard_qrcode_description {
             get {
@@ -4607,7 +4572,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Speech Commands.
+        ///   Looks up a localized string similar to 语音指令.
         /// </summary>
         public static string wizard_speech {
             get {
@@ -4616,7 +4581,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Toggle switches with your voice! Configure speech commands via the settings screens and connect switches..
+        ///   Looks up a localized string similar to 用你的声音切换开关！通过设置界面及连接的开关配置语音指令。.
         /// </summary>
         public static string wizard_speech_description {
             get {
@@ -4625,7 +4590,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Startup screen.
+        ///   Looks up a localized string similar to 开始界面.
         /// </summary>
         public static string wizard_startup {
             get {
@@ -4634,7 +4599,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can set your startup screen in the settings!.
+        ///   Looks up a localized string similar to 你可以在设置中设置开始界面 ！.
         /// </summary>
         public static string wizard_startup_description {
             get {
@@ -4652,7 +4617,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can specify which switches you would like to control from your Android wear device!.
+        ///   Looks up a localized string similar to 你可以指定想要通过AndroidWear手表控制的开关！.
         /// </summary>
         public static string wizard_wear_description {
             get {
@@ -4661,7 +4626,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Welcome.
+        ///   Looks up a localized string similar to 欢迎.
         /// </summary>
         public static string wizard_welcome {
             get {
@@ -4670,7 +4635,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Domoticz is a very light weight home automation system that lets you monitor and configure various devices..
+        ///   Looks up a localized string similar to OOTT是一个轻量级智能家居系统，通过它你可以监测和控制各种设备。.
         /// </summary>
         public static string wizard_welcome_description {
             get {
@@ -4679,7 +4644,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Widgets!!.
+        ///   Looks up a localized string similar to 小部件！！.
         /// </summary>
         public static string wizard_widgets {
             get {
@@ -4688,7 +4653,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can put some widgets on your home screen!.
+        ///   Looks up a localized string similar to 你可以把一些小部件放置到主屏幕 ！.
         /// </summary>
         public static string wizard_widgets_description {
             get {
@@ -4697,7 +4662,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Yearly.
+        ///   Looks up a localized string similar to 每年.
         /// </summary>
         public static string yearly {
             get {
@@ -4706,7 +4671,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Yearly (Weekday).
+        ///   Looks up a localized string similar to 每年(工作日).
         /// </summary>
         public static string yearly_weekday {
             get {
@@ -4715,7 +4680,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Yes.
+        ///   Looks up a localized string similar to 是.
         /// </summary>
         public static string yes {
             get {

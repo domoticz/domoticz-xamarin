@@ -1348,7 +1348,7 @@
   <data name="title_utilities" xml:space="preserve">
     <value>Utilities</value>
   </data>
-  <data name="set_temperature" xml:space="preserve">
+  <data name="settemperature" xml:space="preserve">
     <value>Set</value>
   </data>
   <data name="title_vars" xml:space="preserve">

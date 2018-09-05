@@ -63,17 +63,12 @@ namespace NL.HNOGames.OOTT.iOS
          // Register your app for remote notifications.
          if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
          {
-            var authOptions = UNAuthorizationOptions.Alert | UNAuthorizationOptions.Badge | UNAuthorizationOptions.Sound;
-            UNUserNotificationCenter.Current.RequestAuthorization(authOptions, (granted, error) =>
-            {
-               Domoticz.App.AddLog("GC Authorization granted");
-            });
-
             // For iOS 10 display notification (sent via APNS)
             UNUserNotificationCenter.Current.Delegate = this;
-
-            // For iOS 10 data message (sent via FCM)
-            Messaging.SharedInstance.RemoteMessageDelegate = this;
+            var authOptions = UNAuthorizationOptions.Alert | UNAuthorizationOptions.Badge | UNAuthorizationOptions.Sound;
+            UNUserNotificationCenter.Current.RequestAuthorization(authOptions, (granted, error) => {
+               Console.WriteLine(granted);
+            });
          }
          else
          {

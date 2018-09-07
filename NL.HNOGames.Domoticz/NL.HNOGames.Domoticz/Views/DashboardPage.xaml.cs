@@ -645,20 +645,12 @@ namespace NL.HNOGames.Domoticz.Views
       {
          var oButton = (TintedCachedImage)sender;
          var oDevice = (Models.Device)oButton.BindingContext;
-         var parent = ColorPickerUtils.GetRootParent<Layout<View>>(lyMain);
-         if (parent == null) return;
 
-         Color newColor;
-         if (oDevice.ParsedColor != null)
-            newColor = await ColorPickerDialog.Show(parent, null, 
-               Color.White, new Color(oDevice.ParsedColor.r.Value, oDevice.ParsedColor.g.Value, oDevice.ParsedColor.b.Value), Color.Black, new ColorDialogSettings() { DialogAnimation = false });
-         else
-            newColor = await ColorPickerDialog.Show(parent, null, Color.White, Color.White, Color.Black);
-         App.AddLog("Changed Rgb Color to " + newColor.ToHex());
+         var oColorPicker = new ColorPopup(oDevice, _viewModel.RefreshFavoriteCommand);
+         await PopupNavigation.Instance.PushAsync(oColorPicker);
          RefreshListView(true);
       }
 
       #endregion Dimmer
-
    }
 }

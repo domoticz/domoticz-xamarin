@@ -355,6 +355,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>AppResources.zhrCN.resx</DependentUpon>
     </Compile>
+    <Compile Update="Views\Dialog\ColorPopup.xaml.cs">
+      <DependentUpon>ColorPopup.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="ResourcesOOTT\AppResources.bg.resx">

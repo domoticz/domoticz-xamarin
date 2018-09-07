@@ -814,7 +814,7 @@
                                  VerticalOptions="End">
                                  <custcontrol:TintedCachedImage
                                     x:Name="btnRGBColorPicker"
-                                    Margin="0,20,20,0"
+                                    Margin="0,20,0,0"
                                     HeightRequest="25"
                                     Source="outline_color_lens_white_24.png"
                                     TintColor="{DynamicResource ButtonOutlineColor}"
@@ -1002,7 +1002,7 @@
                                  VerticalOptions="End">
                                  <custcontrol:TintedCachedImage
                                     x:Name="btnRGBColorPicker"
-                                    Margin="0,20,20,0"
+                                    Margin="0,20,0,0"
                                     HeightRequest="25"
                                     Source="outline_color_lens_white_24.png"
                                     TintColor="{DynamicResource ButtonOutlineColor}"

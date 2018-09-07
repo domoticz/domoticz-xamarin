@@ -645,7 +645,6 @@ namespace NL.HNOGames.Domoticz.Views
       {
          var oButton = (TintedCachedImage)sender;
          var oDevice = (Models.Device)oButton.BindingContext;
-
          var oColorPicker = new ColorPopup(oDevice, _viewModel.RefreshFavoriteCommand);
          await PopupNavigation.Instance.PushAsync(oColorPicker);
          RefreshListView(true);

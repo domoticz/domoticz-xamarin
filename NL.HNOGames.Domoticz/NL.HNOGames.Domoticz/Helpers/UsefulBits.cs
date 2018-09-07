@@ -2,6 +2,7 @@
 using System;
 using System.Text;
 using System.Text.RegularExpressions;
+using Xamarin.Forms;
 
 namespace NL.HNOGames.Domoticz.Helpers
 {
@@ -56,6 +57,23 @@ namespace NL.HNOGames.Domoticz.Helpers
             return null;
          byte[] plain = Convert.FromBase64String(input);
          return (Encoding.GetEncoding("UTF-8")).GetString(plain);
+      }
+
+      /// <summary>
+      /// Get hex value of string
+      /// </summary>
+      /// <param name="color"></param>
+      /// <returns></returns>
+      public static string GetHexString(Color color, bool withAlpha = false)
+      {
+         var red = (int)(color.R * 255);
+         var green = (int)(color.G * 255);
+         var blue = (int)(color.B * 255);
+         var alpha = (int)(color.A * 255);
+         if(withAlpha)
+           return $"{alpha:X2}{red:X2}{green:X2}{blue:X2}";
+         else
+            return $"{red:X2}{green:X2}{blue:X2}";
       }
    }
 }

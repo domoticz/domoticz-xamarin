@@ -1,16 +1,18 @@
-﻿using System;
-using System.Threading.Tasks;
-using NL.HNOGames.Domoticz.Models;
-using NL.HNOGames.Domoticz.ViewModels;
-using Xamarin.Forms;
-using Acr.UserDialogs;
-using NL.HNOGames.Domoticz.Resources;
-using System.Linq;
-using System.Collections.Generic;
+﻿using Acr.UserDialogs;
+using NL.HNOGames.Domoticz.Controls;
 using NL.HNOGames.Domoticz.Data;
-using Rg.Plugins.Popup.Services;
+using NL.HNOGames.Domoticz.Models;
+using NL.HNOGames.Domoticz.Resources;
+using NL.HNOGames.Domoticz.ViewModels;
 using NL.HNOGames.Domoticz.Views.Dialog;
+using Rg.Plugins.Popup.Services;
+using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
+using System.Threading.Tasks;
+using Xam.Plugin.SimpleColorPicker;
+using Xamarin.Forms;
 
 namespace NL.HNOGames.Domoticz.Views
 {
@@ -316,8 +318,6 @@ namespace NL.HNOGames.Domoticz.Views
       /// </summary>
       private async void btnOnButton_Clicked(object sender, EventArgs e)
       {
-         if (_viewModel.OldData)
-            return;
          var oButton = (Button)sender;
          var oDevice = (Models.Device)oButton.BindingContext;
          if (oDevice.Protected)
@@ -403,7 +403,7 @@ namespace NL.HNOGames.Domoticz.Views
                      App.ShowToast(AppResources.switch_off + ": " + oDevice.Name);
                   else
                      App.ShowToast(AppResources.switch_on + ": " + oDevice.Name);
-                  
+
                   var result = await App.ApiService.SetSwitch(oDevice.idx,
                     oDevice.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDINVERTED || oDevice.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDS ? !oSwitch.IsToggled : oSwitch.IsToggled,
                       oDevice.Type == ConstantValues.Device.Scene.Type.GROUP ||
@@ -638,6 +638,27 @@ namespace NL.HNOGames.Domoticz.Views
          RefreshListView(true);
       }
 
+      /// <summary>
+      /// RGB button picker
+      /// </summary>
+      private async void btnRGBColorPicker_Tapped(object sender, EventArgs e)
+      {
+         var oButton = (TintedCachedImage)sender;
+         var oDevice = (Models.Device)oButton.BindingContext;
+         var parent = ColorPickerUtils.GetRootParent<Layout<View>>(lyMain);
+         if (parent == null) return;
+
+         Color newColor;
+         if (oDevice.ParsedColor != null)
+            newColor = await ColorPickerDialog.Show(parent, null, 
+               Color.White, new Color(oDevice.ParsedColor.r.Value, oDevice.ParsedColor.g.Value, oDevice.ParsedColor.b.Value), Color.Black, new ColorDialogSettings() { DialogAnimation = false });
+         else
+            newColor = await ColorPickerDialog.Show(parent, null, Color.White, Color.White, Color.Black);
+         App.AddLog("Changed Rgb Color to " + newColor.ToHex());
+         RefreshListView(true);
+      }
+
       #endregion Dimmer
+
    }
 }

@@ -283,6 +283,9 @@
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="Xam.Plugin.SimpleColorPicker, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.SimpleColorPicker.1.0.2\lib\netstandard2.0\Xam.Plugin.SimpleColorPicker.dll</HintPath>
+    </Reference>
     <Reference Include="Xamarin.Android.Arch.Core.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Android.Arch.Core.Common.26.1.0\lib\MonoAndroid80\Xamarin.Android.Arch.Core.Common.dll</HintPath>
     </Reference>
@@ -2437,6 +2440,11 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\baseline_link_black_24.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_delete_black_24.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_link_black_24.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\outline_color_lens_white_24.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\outline_color_lens_white_24.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\outline_color_lens_white_24.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\outline_color_lens_white_24.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\outline_color_lens_white_24.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NL.HNOGames.Domoticz\NL.HNOGames.Domoticz.csproj">

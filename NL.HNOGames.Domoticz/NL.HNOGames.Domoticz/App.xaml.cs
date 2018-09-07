@@ -178,7 +178,7 @@ namespace NL.HNOGames.Domoticz
          try
          {
             //set language
-            if (!String.IsNullOrEmpty(App.AppSettings.SpecifiedLanguage))
+            if (!string.IsNullOrEmpty(App.AppSettings.SpecifiedLanguage))
             {
                CrossMultilingual.Current.CurrentCultureInfo = CrossMultilingual.Current.NeutralCultureInfoList.ToList().First(element => element.EnglishName.Contains(App.AppSettings.SpecifiedLanguage));
                AppResources.Culture = CrossMultilingual.Current.CurrentCultureInfo;

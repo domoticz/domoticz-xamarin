@@ -44,7 +44,7 @@ namespace NL.HNOGames.Domoticz.Data
          }
          catch (Exception ex)
          {
-            if (!String.IsNullOrEmpty(ex.Message) && ex.Message.Contains("CertPathValidatorException"))
+            if (!string.IsNullOrEmpty(ex.Message) && ex.Message.Contains("CertPathValidatorException"))
                return false;
          }
          return true;
@@ -686,7 +686,7 @@ namespace NL.HNOGames.Domoticz.Data
       /// </summary>
       public async Task<bool> SetUserVariable(string idx, string name, string type, string newValue)
       {
-         if (Server == null || String.IsNullOrEmpty(idx) || String.IsNullOrEmpty(name) || String.IsNullOrEmpty(type))
+         if (Server == null || string.IsNullOrEmpty(idx) || string.IsNullOrEmpty(name) || string.IsNullOrEmpty(type))
             return false;
 
          var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.UserVariable.UPDATE);

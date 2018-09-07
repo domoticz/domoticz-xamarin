@@ -30,7 +30,7 @@ namespace NL.HNOGames.Domoticz.Helpers
                 if (string.IsNullOrEmpty(key))
                     return default(T);
 
-                String resultCache = AppCache.GetValueOrDefault(key, String.Empty);
+                String resultCache = AppCache.GetValueOrDefault(key, string.Empty);
                 if (!string.IsNullOrEmpty(resultCache))
                 {
                     var value = JsonConvert.DeserializeObject<T>(resultCache);

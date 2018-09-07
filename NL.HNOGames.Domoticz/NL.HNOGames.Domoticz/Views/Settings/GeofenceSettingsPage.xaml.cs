@@ -73,7 +73,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
          //catch (Exception ex)
          //{
          //    if (ex != null &&
-         //        !String.IsNullOrEmpty(ex.Message))
+         //        !string.IsNullOrEmpty(ex.Message))
          //    {
          //        App.ShowToast(ex.ToString());
          //        App.AddLog(ex.Message);

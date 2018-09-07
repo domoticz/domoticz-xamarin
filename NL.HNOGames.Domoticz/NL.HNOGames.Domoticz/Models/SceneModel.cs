@@ -73,8 +73,8 @@ namespace NL.HNOGames.Domoticz.Models
                 try
                 {
                     bool statusBoolean = true;
-                    if (String.Compare(Status, ConstantValues.Device.Blind.State.OFF, StringComparison.OrdinalIgnoreCase) == 0 ||
-                        String.Compare(Status, ConstantValues.Device.Blind.State.CLOSED, StringComparison.OrdinalIgnoreCase) == 0)
+                    if (string.Compare(Status, ConstantValues.Device.Blind.State.OFF, StringComparison.OrdinalIgnoreCase) == 0 ||
+                        string.Compare(Status, ConstantValues.Device.Blind.State.CLOSED, StringComparison.OrdinalIgnoreCase) == 0)
                         statusBoolean = false;
                     return statusBoolean;
                 }
@@ -98,7 +98,7 @@ namespace NL.HNOGames.Domoticz.Models
             {
                 DateTime d = DateTime.ParseExact(LastUpdate, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
                 //App.AddLog("LastUpdateDescription" + (DateTime.Now - d).Humanize(2) + " | " + d.ToString() + " | " + DateTime.Now.ToString());
-                return String.Format("{0}: {1} ago", AppResources.last_update, (DateTime.Now - d).Humanize(2));
+                return string.Format("{0}: {1} ago", AppResources.last_update, (DateTime.Now - d).Humanize(2));
             }
         }
 
@@ -106,7 +106,7 @@ namespace NL.HNOGames.Domoticz.Models
         {
             get
             {
-                return String.Format("{0}: {1}", AppResources.type, Type);
+                return string.Format("{0}: {1}", AppResources.type, Type);
             }
         }
 

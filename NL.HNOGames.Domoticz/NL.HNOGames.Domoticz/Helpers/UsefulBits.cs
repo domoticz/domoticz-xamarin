@@ -52,7 +52,7 @@ namespace NL.HNOGames.Domoticz.Helpers
       /// </summary>
       public static string DecodeBase64String(string input)
       {
-         if (String.IsNullOrEmpty(input))
+         if (string.IsNullOrEmpty(input))
             return null;
          byte[] plain = Convert.FromBase64String(input);
          return (Encoding.GetEncoding("UTF-8")).GetString(plain);

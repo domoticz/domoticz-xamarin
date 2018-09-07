@@ -1,4 +1,5 @@
 ﻿using Humanizer;
+using Newtonsoft.Json;
 using NL.HNOGames.Domoticz.Data;
 using NL.HNOGames.Domoticz.Helpers;
 using NL.HNOGames.Domoticz.Resources;
@@ -20,53 +21,30 @@ namespace NL.HNOGames.Domoticz.Models
 
    public class Device
    {
-      bool extradata = true;
-      bool dashboard = false;
       private string _levelNames;
 
-      public bool ShowExtraData
-      {
-         get
-         {
-            return extradata;
-         }
-         set
-         {
-            extradata = value;
-         }
-      }
+      public bool ShowExtraData { get; set; } = true;
 
-      public bool IsDashboard
-      {
-         get
-         {
-            return dashboard;
-         }
-         set
-         {
-            dashboard = value;
-         }
-      }
+      public bool IsDashboard { get; set; } = false;
 
       public int RowHeight
       {
          get
          {
-            return ViewHelper.GetTemplateHeight(this, dashboard);
+            return ViewHelper.GetTemplateHeight(this, IsDashboard);
          }
       }
 
-      public String Icon
+      public string Icon
       {
          get
          {
-            String selectedIcon = IconService.getDrawableIcon(this.TypeImg,
-            this.Type,
-            this.SubType,
+            string selectedIcon = IconService.getDrawableIcon(TypeImg,
+            Type,
+            SubType,
             StatusBoolean,
-            CustomImage != null && CustomImage.HasValue ? true : false,
-            this.Image);
-            //App.AddLog(selectedIcon);
+            CustomImage != null && CustomImage.HasValue,
+            Image);
             return selectedIcon;
          }
       }
@@ -87,21 +65,21 @@ namespace NL.HNOGames.Domoticz.Models
          get
          {
             if (!string.IsNullOrEmpty(Type) &&
-                (String.Compare(Type, ConstantValues.Device.Scene.Type.SCENE, StringComparison.OrdinalIgnoreCase) == 0 || String.Compare(Type, ConstantValues.Device.Scene.Type.GROUP, StringComparison.OrdinalIgnoreCase) == 0))
+                (string.Compare(Type, ConstantValues.Device.Scene.Type.SCENE, StringComparison.OrdinalIgnoreCase) == 0 || string.Compare(Type, ConstantValues.Device.Scene.Type.GROUP, StringComparison.OrdinalIgnoreCase) == 0))
                return true;
             else
                return false;
          }
       }
 
-      public String FavoriteIcon
+      public string FavoriteIcon
       {
          get
          {
             return Favorite > 0 ? "ic_star.png" : "ic_star_border.png";
          }
       }
-      public String FavoriteIconTintColor
+      public string FavoriteIconTintColor
       {
          get
          {
@@ -116,8 +94,8 @@ namespace NL.HNOGames.Domoticz.Models
             try
             {
                bool statusBoolean = true;
-               if (String.Compare(Status, ConstantValues.Device.Blind.State.OFF, StringComparison.OrdinalIgnoreCase) == 0 ||
-                   String.Compare(Status, ConstantValues.Device.Blind.State.CLOSED, StringComparison.OrdinalIgnoreCase) == 0)
+               if (string.Compare(Status, ConstantValues.Device.Blind.State.OFF, StringComparison.OrdinalIgnoreCase) == 0 ||
+                   string.Compare(Status, ConstantValues.Device.Blind.State.CLOSED, StringComparison.OrdinalIgnoreCase) == 0)
                   statusBoolean = false;
                return statusBoolean;
             }
@@ -136,12 +114,12 @@ namespace NL.HNOGames.Domoticz.Models
          }
       }
 
-      public String LastUpdateDescription
+      public string LastUpdateDescription
       {
          get
          {
-            DateTime d = DateTime.ParseExact(LastUpdate, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
-            return String.Format("{0}: {1}", AppResources.last_update, (DateTime.Now - d).Humanize(2));
+            var d = DateTime.ParseExact(LastUpdate, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
+            return string.Format("{0}: {1}", AppResources.last_update, (DateTime.Now - d).Humanize(2));
          }
       }
 
@@ -149,7 +127,7 @@ namespace NL.HNOGames.Domoticz.Models
       {
          get
          {
-            if (String.IsNullOrWhiteSpace(LevelNames))
+            if (string.IsNullOrWhiteSpace(LevelNames))
                return null;
             return LevelNames.Split('|');
          }
@@ -165,21 +143,32 @@ namespace NL.HNOGames.Domoticz.Models
          }
       }
 
-      public String DataDescription
+      public ColorModel ParsedColor
+      {
+         get
+         {
+            if (string.IsNullOrEmpty(Color))
+               return null;
+            else
+               return JsonConvert.DeserializeObject<ColorModel>(Color);
+         }
+      }
+
+      public string DataDescription
       {
          get
          {
             try
             {
-               String dataText = String.Empty;
+               var dataText = string.Empty;
                if (!string.IsNullOrEmpty(this.Usage))
                   dataText = AppResources.usage + ": " + this.Usage;
                if (!string.IsNullOrEmpty(this.CounterToday))
                   dataText += " " + AppResources.today + ": " + this.CounterToday;
                if (!string.IsNullOrEmpty(this.Counter) &&
-                   String.Compare(this.Counter, this.Data, StringComparison.OrdinalIgnoreCase) != 0)
+                   string.Compare(this.Counter, this.Data, StringComparison.OrdinalIgnoreCase) != 0)
                   dataText += " " + AppResources.total + ": " + this.Counter;
-               if (!string.IsNullOrEmpty(this.Type) && String.Compare(this.Type, ConstantValues.Device.Type.Name.WIND, StringComparison.OrdinalIgnoreCase) == 0)
+               if (!string.IsNullOrEmpty(this.Type) && string.Compare(this.Type, ConstantValues.Device.Type.Name.WIND, StringComparison.OrdinalIgnoreCase) == 0)
                   dataText = AppResources.direction + ": " + this.Direction + " " + this.DirectionStr;
                if (!string.IsNullOrEmpty(this.ForecastStr))
                   dataText = this.ForecastStr;
@@ -204,8 +193,7 @@ namespace NL.HNOGames.Domoticz.Models
                   dataText += ", " + AppResources.rainrate + ": " + this.RainRate + " mm/h";
                if (string.IsNullOrEmpty(dataText))
                   dataText = Data;
-
-               return String.Format("{0}: {1}", AppResources.status, dataText);
+               return string.Format("{0}: {1}", AppResources.status, dataText);
             }
             catch (Exception ex)
             {
@@ -289,6 +277,7 @@ namespace NL.HNOGames.Domoticz.Models
       public string UVI { get; set; }
       public float Visibility { get; set; }
       public string Counter { get; set; }
+      public string Color { get; set; }
       public string CounterToday { get; set; }
       public string Options { get; set; }
       public string Usage { get; set; }

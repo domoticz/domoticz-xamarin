@@ -58,6 +58,10 @@ namespace NL.HNOGames.Domoticz.Data
             Timeout = TimeSpan.FromMilliseconds(10000)
          };
 
+#if OOTT
+         Client.DefaultRequestHeaders.Add("User-Agent", "mobileOOTTapp ios");
+#endif
+
          //}
       }
 

@@ -46,6 +46,7 @@
     <Compile Remove="Resources\AppResources.sv.Designer.cs" />
     <Compile Remove="Resources\AppResources.tr.Designer.cs" />
     <Compile Remove="Resources\AppResources.uk.Designer.cs" />
+    <Compile Remove="Resources\AppResources.zhrCN.Designer.cs" />
     <Compile Remove="Resources\AppResources.zh.Designer.cs" />
     <Compile Remove="Resources\TranslateExtension.cs" />
     <Compile Remove="Resources\AppResources.Designer.cs" />

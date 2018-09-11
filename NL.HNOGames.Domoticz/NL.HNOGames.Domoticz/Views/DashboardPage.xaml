@@ -815,11 +815,11 @@
                                  <custcontrol:TintedCachedImage
                                     x:Name="btnRGBColorPicker"
                                     Margin="0,20,0,0"
-                                    HeightRequest="25"
+                                    HeightRequest="30"
                                     Source="outline_color_lens_white_24.png"
-                                    TintColor="{DynamicResource ButtonOutlineColor}"
+                                    TintColor="{DynamicResource WhiteTextColor}"
                                     VerticalOptions="Center"
-                                    WidthRequest="25">
+                                    WidthRequest="30">
                                     <custcontrol:TintedCachedImage.GestureRecognizers>
                                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="btnRGBColorPicker_Tapped" />
                                     </custcontrol:TintedCachedImage.GestureRecognizers>
@@ -1003,11 +1003,11 @@
                                  <custcontrol:TintedCachedImage
                                     x:Name="btnRGBColorPicker"
                                     Margin="0,20,0,0"
-                                    HeightRequest="25"
+                                    HeightRequest="30"
                                     Source="outline_color_lens_white_24.png"
-                                    TintColor="{DynamicResource ButtonOutlineColor}"
+                                    TintColor="{DynamicResource WhiteTextColor}"
                                     VerticalOptions="CenterAndExpand"
-                                    WidthRequest="25">
+                                    WidthRequest="30">
                                     <custcontrol:TintedCachedImage.GestureRecognizers>
                                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="btnRGBColorPicker_Tapped" />
                                     </custcontrol:TintedCachedImage.GestureRecognizers>

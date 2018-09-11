@@ -8,31 +8,34 @@
    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
    xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz">
 
-   <StackLayout
+   <ScrollView
       Margin="20,10,20,20"
       Padding="20,10,20,20"
       BackgroundColor="{StaticResource LightBackgroundColor}"
       HorizontalOptions="FillAndExpand"
       Orientation="Vertical"
       VerticalOptions="Center">
-
-      <cp:ColorPickerMixer x:Name="colorMixer" />
-
-      <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
-         <custcontrol:ExtendedButton
-            x:Name="btnOnButton"
-            Margin="0,10,0,10"
-            Padding="20,0,20,0"
-            Clicked="btnSave_Clicked"
-            HorizontalOptions="CenterAndExpand"
-            Text="{resources:Translate ok}" />
-         <custcontrol:ExtendedButton
-            x:Name="btnCancelButton"
-            Margin="20,10,0,10"
-            Padding="20,0,20,0"
-            Clicked="btnCancel_Clicked"
-            HorizontalOptions="CenterAndExpand"
-            Text="{resources:Translate cancel}" />
+      <StackLayout
+         HorizontalOptions="FillAndExpand"
+         Orientation="Vertical"
+         Spacing="0">
+         <cp:ColorPickerMixer x:Name="colorMixer" />
+         <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+            <custcontrol:ExtendedButton
+               x:Name="btnOnButton"
+               Margin="0,10,0,10"
+               Padding="20,0,20,0"
+               Clicked="btnSave_Clicked"
+               HorizontalOptions="CenterAndExpand"
+               Text="{resources:Translate ok}" />
+            <custcontrol:ExtendedButton
+               x:Name="btnCancelButton"
+               Margin="20,10,0,10"
+               Padding="20,0,20,0"
+               Clicked="btnCancel_Clicked"
+               HorizontalOptions="CenterAndExpand"
+               Text="{resources:Translate cancel}" />
+         </StackLayout>
       </StackLayout>
-   </StackLayout>
+   </ScrollView>
 </pages:PopupPage>

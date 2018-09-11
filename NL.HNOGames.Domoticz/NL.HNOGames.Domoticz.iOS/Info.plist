@@ -46,10 +46,10 @@
 	<false/>
 	<key>NSCameraUsageDescription</key>
 	<string>Can we use your camera</string>
-  <key>NSLocationAlwaysUsageDescription</key>
-  <string>Can we use your location for geofences</string>
-  <key>NSLocationWhenInUseUsageDescrtion</key>
-  <string>Can we use your location for geofences</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Can we use your location for geofences</string>
+	<key>NSLocationWhenInUseUsageDescrtion</key>
+	<string>Can we use your location for geofences</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Can we use your calendar</string>
 	<key>NSAppTransportSecurity</key>
@@ -58,7 +58,7 @@
 		<true/>
 	</dict>
 	<key>CFBundleShortVersionString</key>
-	<string>0.0.73</string>
+	<string>0.0.74</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>NSSpeechRecognitionUsageDescription</key>
@@ -68,6 +68,6 @@
 	<key>NSFaceIDUsageDescription</key>
 	<string>Need your face to unlock Domoticz.</string>
 	<key>CFBundleVersion</key>
-	<string>73</string>
+	<string>74</string>
 </dict>
 </plist>

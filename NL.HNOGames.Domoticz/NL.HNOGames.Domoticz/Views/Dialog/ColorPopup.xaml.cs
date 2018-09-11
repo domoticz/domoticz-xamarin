@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using NL.HNOGames.Domoticz.Helpers;
 using NL.HNOGames.Domoticz.Resources;
 using Rg.Plugins.Popup.Services;
 using System;
@@ -23,7 +24,7 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
          _cmFinish = finish;
          InitializeComponent();
          if (device.ParsedColor != null)
-            colorMixer.EditorsColor = new Color(device.ParsedColor.r.Value, device.ParsedColor.g.Value, device.ParsedColor.b.Value);
+            colorMixer.ColorVal.Value = new Color(device.ParsedColor.r.Value, device.ParsedColor.g.Value, device.ParsedColor.b.Value);
          colorMixer.TextColor = btnCancelButton.TextColor;
       }
 
@@ -39,9 +40,9 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
             await Task.Delay(500);
             if (r.Ok)
             {
-                var result = await App.ApiService.SetColor(_oDevice.idx, colorMixer.ColorVal.Value, r.Text);
-                if (!result)
-                   App.ShowToast(AppResources.security_wrong_code);
+               var result = await App.ApiService.SetColor(_oDevice.idx, colorMixer.ColorVal.Value, r.Text);
+               if (!result)
+                  App.ShowToast(AppResources.security_wrong_code);
                _cmFinish?.Execute(null);
                await PopupNavigation.Instance.PopAsync();
             }

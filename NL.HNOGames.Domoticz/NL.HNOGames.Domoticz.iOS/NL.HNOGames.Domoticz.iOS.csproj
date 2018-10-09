@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\..\packages\Xamarin.Forms.3.1.0.697729\build\netstandard2.0\Xamarin.Forms.props" Condition="Exists('..\..\packages\Xamarin.Forms.3.1.0.697729\build\netstandard2.0\Xamarin.Forms.props')" />
+  <Import Project="..\..\packages\Xamarin.Forms.3.2.0.871581\build\netstandard2.0\Xamarin.Forms.props" Condition="Exists('..\..\packages\Xamarin.Forms.3.2.0.871581\build\netstandard2.0\Xamarin.Forms.props')" />
   <Import Project="..\..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props" Condition="Exists('..\..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -220,10 +220,10 @@
       <HintPath>..\..\packages\Xamarin.Google.iOS.Maps.2.5.0.1\lib\Xamarin.iOS10\Google.Maps.dll</HintPath>
     </Reference>
     <Reference Include="Google.MobileAds, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Google.iOS.MobileAds.7.31.0.1\lib\Xamarin.iOS10\Google.MobileAds.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Google.iOS.MobileAds.7.31.0.2\lib\Xamarin.iOS10\Google.MobileAds.dll</HintPath>
     </Reference>
-    <Reference Include="Humanizer, Version=2.4.0.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Humanizer.Core.2.4.2\lib\netstandard2.0\Humanizer.dll</HintPath>
+    <Reference Include="Humanizer, Version=2.5.0.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Humanizer.Core.2.5.1\lib\netstandard2.0\Humanizer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="ModernHttpClient, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
@@ -357,27 +357,19 @@
     <Reference Include="System" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Reactive, Version=4.1.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\System.Reactive.4.1.0\lib\netstandard2.0\System.Reactive.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\packages\System.Reactive.4.1.1\lib\netstandard2.0\System.Reactive.dll</HintPath>
     </Reference>
     <Reference Include="System.Reactive.Core, Version=3.0.6000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\System.Reactive.Core.4.1.0\lib\netstandard2.0\System.Reactive.Core.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\packages\System.Reactive.Core.4.1.1\lib\netstandard2.0\System.Reactive.Core.dll</HintPath>
     </Reference>
     <Reference Include="System.Reactive.Interfaces, Version=3.0.6000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\System.Reactive.Interfaces.4.1.0\lib\netstandard2.0\System.Reactive.Interfaces.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\packages\System.Reactive.Interfaces.4.1.1\lib\netstandard2.0\System.Reactive.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="System.Reactive.Linq, Version=3.0.6000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\System.Reactive.Linq.4.1.0\lib\netstandard2.0\System.Reactive.Linq.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\packages\System.Reactive.Linq.4.1.1\lib\netstandard2.0\System.Reactive.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System.Reactive.PlatformServices, Version=3.0.6000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\System.Reactive.PlatformServices.4.1.0\lib\netstandard2.0\System.Reactive.PlatformServices.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\System.Threading.Tasks.Extensions.4.4.0\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+      <HintPath>..\..\packages\System.Reactive.PlatformServices.4.1.1\lib\netstandard2.0\System.Reactive.PlatformServices.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -387,34 +379,33 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Xam.Plugin.SimpleColorPicker, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xam.Plugin.SimpleColorPicker.1.0.2\lib\netstandard2.0\Xam.Plugin.SimpleColorPicker.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\packages\Xam.Plugin.SimpleColorPicker.1.0.3\lib\netstandard2.0\Xam.Plugin.SimpleColorPicker.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.3.1.0.697729\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Forms.3.2.0.871581\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.3.1.0.697729\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Forms.3.2.0.871581\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform.iOS, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.3.1.0.697729\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Forms.3.2.0.871581\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.3.1.0.697729\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Forms.3.2.0.871581\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.iOS" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="Xamarin.RangeSlider.Common, Version=0.7.36.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.RangeSlider.0.7.36\lib\Xamarin.iOS10\Xamarin.RangeSlider.Common.dll</HintPath>
+    <Reference Include="Xamarin.RangeSlider.Common, Version=0.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.RangeSlider.0.8.0\lib\Xamarin.iOS10\Xamarin.RangeSlider.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.RangeSlider.Forms, Version=0.7.36.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.RangeSlider.0.7.36\lib\Xamarin.iOS10\Xamarin.RangeSlider.Forms.dll</HintPath>
+    <Reference Include="Xamarin.RangeSlider.Forms, Version=0.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.RangeSlider.0.8.0\lib\Xamarin.iOS10\Xamarin.RangeSlider.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.RangeSlider.Forms.iOS, Version=0.7.36.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.RangeSlider.0.7.36\lib\Xamarin.iOS10\Xamarin.RangeSlider.Forms.iOS.dll</HintPath>
+    <Reference Include="Xamarin.RangeSlider.Forms.iOS, Version=0.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.RangeSlider.0.8.0\lib\Xamarin.iOS10\Xamarin.RangeSlider.Forms.iOS.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.RangeSlider.iOS, Version=0.7.36.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.RangeSlider.0.7.36\lib\Xamarin.iOS10\Xamarin.RangeSlider.iOS.dll</HintPath>
+    <Reference Include="Xamarin.RangeSlider.iOS, Version=0.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.RangeSlider.0.8.0\lib\Xamarin.iOS10\Xamarin.RangeSlider.iOS.dll</HintPath>
     </Reference>
     <Reference Include="XLabs.Cryptography, Version=2.0.5782.12232, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\XLabs.Cryptography.2.0.5782\lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1\XLabs.Cryptography.dll</HintPath>
@@ -947,6 +938,15 @@
     <BundleResource Include="Resources\baseline_link_black_24%403x.png" />
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="Resources\outline_color_lens_white_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\outline_color_lens_white_24%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\outline_color_lens_white_24%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
     <BundleResource Include="Resources\slider-default_trackBackground%402x.png" />
   </ItemGroup>
   <ItemGroup>
@@ -1012,15 +1012,6 @@
   <ItemGroup>
     <BundleResource Include="Resources\slider-default-handle-disabled.png" />
   </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\outline_color_lens_white_24.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\outline_color_lens_white_24%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\outline_color_lens_white_24%403x.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
@@ -1031,20 +1022,20 @@
     <Error Condition="!Exists('..\..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props'))" />
     <Error Condition="!Exists('..\..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets'))" />
     <Error Condition="!Exists('..\..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets'))" />
-    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.3.1.0.697729\build\netstandard2.0\Xamarin.Forms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.3.1.0.697729\build\netstandard2.0\Xamarin.Forms.props'))" />
-    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.3.1.0.697729\build\netstandard2.0\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.3.1.0.697729\build\netstandard2.0\Xamarin.Forms.targets'))" />
     <Error Condition="!Exists('..\..\packages\Xamarin.Firebase.iOS.Analytics.5.0.1\build\Xamarin.Firebase.iOS.Analytics.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Firebase.iOS.Analytics.5.0.1\build\Xamarin.Firebase.iOS.Analytics.targets'))" />
     <Error Condition="!Exists('..\..\packages\Xamarin.Firebase.iOS.InstanceID.3.1.1\build\Xamarin.Firebase.iOS.InstanceID.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Firebase.iOS.InstanceID.3.1.1\build\Xamarin.Firebase.iOS.InstanceID.targets'))" />
     <Error Condition="!Exists('..\..\packages\Xamarin.Google.iOS.Maps.2.5.0.1\build\Xamarin.Google.iOS.Maps.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Google.iOS.Maps.2.5.0.1\build\Xamarin.Google.iOS.Maps.targets'))" />
-    <Error Condition="!Exists('..\..\packages\Xamarin.Google.iOS.MobileAds.7.31.0.1\build\Xamarin.Google.iOS.MobileAds.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Google.iOS.MobileAds.7.31.0.1\build\Xamarin.Google.iOS.MobileAds.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.3.2.0.871581\build\netstandard2.0\Xamarin.Forms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.3.2.0.871581\build\netstandard2.0\Xamarin.Forms.props'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.3.2.0.871581\build\netstandard2.0\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.3.2.0.871581\build\netstandard2.0\Xamarin.Forms.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Google.iOS.MobileAds.7.31.0.2\build\Xamarin.Google.iOS.MobileAds.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Google.iOS.MobileAds.7.31.0.2\build\Xamarin.Google.iOS.MobileAds.targets'))" />
   </Target>
   <Import Project="..\..\packages\Xamarin.Google.iOS.Core.3.1.0.1\build\Xamarin.Google.iOS.Core.targets" Condition="Exists('..\..\packages\Xamarin.Google.iOS.Core.3.1.0.1\build\Xamarin.Google.iOS.Core.targets')" />
   <Import Project="..\..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />
   <Import Project="..\..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets" Condition="Exists('..\..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets')" />
   <Import Project="..\..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
-  <Import Project="..\..\packages\Xamarin.Forms.3.1.0.697729\build\netstandard2.0\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.3.1.0.697729\build\netstandard2.0\Xamarin.Forms.targets')" />
   <Import Project="..\..\packages\Xamarin.Firebase.iOS.Analytics.5.0.1\build\Xamarin.Firebase.iOS.Analytics.targets" Condition="Exists('..\..\packages\Xamarin.Firebase.iOS.Analytics.5.0.1\build\Xamarin.Firebase.iOS.Analytics.targets')" />
   <Import Project="..\..\packages\Xamarin.Firebase.iOS.InstanceID.3.1.1\build\Xamarin.Firebase.iOS.InstanceID.targets" Condition="Exists('..\..\packages\Xamarin.Firebase.iOS.InstanceID.3.1.1\build\Xamarin.Firebase.iOS.InstanceID.targets')" />
   <Import Project="..\..\packages\Xamarin.Google.iOS.Maps.2.5.0.1\build\Xamarin.Google.iOS.Maps.targets" Condition="Exists('..\..\packages\Xamarin.Google.iOS.Maps.2.5.0.1\build\Xamarin.Google.iOS.Maps.targets')" />
-  <Import Project="..\..\packages\Xamarin.Google.iOS.MobileAds.7.31.0.1\build\Xamarin.Google.iOS.MobileAds.targets" Condition="Exists('..\..\packages\Xamarin.Google.iOS.MobileAds.7.31.0.1\build\Xamarin.Google.iOS.MobileAds.targets')" />
+  <Import Project="..\..\packages\Xamarin.Forms.3.2.0.871581\build\netstandard2.0\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.3.2.0.871581\build\netstandard2.0\Xamarin.Forms.targets')" />
+  <Import Project="..\..\packages\Xamarin.Google.iOS.MobileAds.7.31.0.2\build\Xamarin.Google.iOS.MobileAds.targets" Condition="Exists('..\..\packages\Xamarin.Google.iOS.MobileAds.7.31.0.2\build\Xamarin.Google.iOS.MobileAds.targets')" />
 </Project>

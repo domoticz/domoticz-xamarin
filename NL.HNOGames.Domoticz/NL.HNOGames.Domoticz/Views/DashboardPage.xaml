@@ -815,11 +815,9 @@
                                  <custcontrol:TintedCachedImage
                                     x:Name="btnRGBColorPicker"
                                     Margin="0,20,0,0"
-                                    HeightRequest="30"
                                     Source="outline_color_lens_white_24.png"
-                                    TintColor="{DynamicResource WhiteTextColor}"
-                                    VerticalOptions="Center"
-                                    WidthRequest="30">
+                                    Style="{StaticResource DefaultIcon}"
+                                    VerticalOptions="Center">
                                     <custcontrol:TintedCachedImage.GestureRecognizers>
                                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="btnRGBColorPicker_Tapped" />
                                     </custcontrol:TintedCachedImage.GestureRecognizers>
@@ -1003,11 +1001,9 @@
                                  <custcontrol:TintedCachedImage
                                     x:Name="btnRGBColorPicker"
                                     Margin="0,20,0,0"
-                                    HeightRequest="30"
                                     Source="outline_color_lens_white_24.png"
-                                    TintColor="{DynamicResource WhiteTextColor}"
-                                    VerticalOptions="CenterAndExpand"
-                                    WidthRequest="30">
+                                    Style="{StaticResource DefaultIcon}"
+                                    VerticalOptions="Center">
                                     <custcontrol:TintedCachedImage.GestureRecognizers>
                                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="btnRGBColorPicker_Tapped" />
                                     </custcontrol:TintedCachedImage.GestureRecognizers>

@@ -125,6 +125,11 @@
       <Setter Property="TintColor" Value="#D3D3D3" />
       <Setter Property="HorizontalOptions" Value="Start" />
    </Style>
+   <Style x:Key="DefaultIcon" TargetType="custcontrol:TintedCachedImage">
+      <Setter Property="WidthRequest" Value="25" />
+      <Setter Property="HeightRequest" Value="25" />
+      <Setter Property="TintColor" Value="{StaticResource GreyTextColor}" />
+   </Style>
    <Style x:Key="HeaderSeperator" TargetType="BoxView">
       <Setter Property="Margin" Value="-20,10,-20,10" />
       <Setter Property="HeightRequest" Value="1" />

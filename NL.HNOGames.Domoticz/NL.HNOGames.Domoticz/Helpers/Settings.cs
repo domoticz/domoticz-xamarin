@@ -245,7 +245,7 @@ namespace NL.HNOGames.Domoticz.Helpers
          {
             try
             {
-               String resultCache = AppSettings.GetValueOrDefault(QRCodesSettingsKey, String.Empty);
+               String resultCache = AppSettings.GetValueOrDefault(QRCodesSettingsKey, string.Empty);
                if (!string.IsNullOrEmpty(resultCache))
                {
                   var value = JsonConvert.DeserializeObject<List<QRCodeModel>>(resultCache);
@@ -291,7 +291,7 @@ namespace NL.HNOGames.Domoticz.Helpers
          {
             try
             {
-               String resultCache = AppSettings.GetValueOrDefault(SpeechSettingsKey, String.Empty);
+               String resultCache = AppSettings.GetValueOrDefault(SpeechSettingsKey, string.Empty);
                if (!string.IsNullOrEmpty(resultCache))
                {
                   var value = JsonConvert.DeserializeObject<List<SpeechModel>>(resultCache);
@@ -337,7 +337,7 @@ namespace NL.HNOGames.Domoticz.Helpers
          {
             try
             {
-               String resultCache = AppSettings.GetValueOrDefault(GeofenceSettingsKey, String.Empty);
+               String resultCache = AppSettings.GetValueOrDefault(GeofenceSettingsKey, string.Empty);
                if (!string.IsNullOrEmpty(resultCache))
                {
                   var value = JsonConvert.DeserializeObject<List<GeofenceModel>>(resultCache);

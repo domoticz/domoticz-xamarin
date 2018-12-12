@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 using System.Linq;
 using System.Net;
 using System.Threading;
+using Xamarin.Forms;
+using Device = NL.HNOGames.Domoticz.Models.Device;
+using NL.HNOGames.Domoticz.Helpers;
 
 namespace NL.HNOGames.Domoticz.Data
 {
@@ -44,7 +47,7 @@ namespace NL.HNOGames.Domoticz.Data
          }
          catch (Exception ex)
          {
-            if (!String.IsNullOrEmpty(ex.Message) && ex.Message.Contains("CertPathValidatorException"))
+            if (!string.IsNullOrEmpty(ex.Message) && ex.Message.Contains("CertPathValidatorException"))
                return false;
          }
          return true;
@@ -606,6 +609,39 @@ namespace NL.HNOGames.Domoticz.Data
       }
 
       /// <summary>
+      /// Domoticz set RGB action
+      /// </summary>
+      public async Task<ActionModel> SetRGBAction(string idx, int jsonUrl, string hex, int brightness, string password)
+      {
+         if (Server == null)
+            return null;
+         bool isWhite = (hex.ToLower() == "ffffff");
+
+         var url = await App.ConnectionService.ConstructSetUrlAsync(Server, jsonUrl, idx, ConstantValues.Device.Dimmer.Action.HEXCOLOR, 0);
+         url = url.Replace("%hex%", hex).Replace("%bright%", brightness.ToString());
+         if (isWhite)
+            url = url.Replace("&iswhite=false", "&iswhite=true");
+         url += !string.IsNullOrEmpty(password) ? "&passcode=" + password : "&passcode=";
+         App.AddLog("Action Call: " + url);
+
+         try
+         {
+            Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
+            if (Response.IsSuccessStatusCode)
+            {
+               var content = await Response.Content.ReadAsStringAsync();
+               if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
+               return JsonConvert.DeserializeObject<ActionModel>(content);
+            }
+         }
+         catch (Exception ex)
+         {
+            App.AddLog(ex.Message);
+         }
+         return null;
+      }
+
+      /// <summary>
       /// Domoticz get favorite devices
       /// </summary>
       public async Task<bool> SetFavorite(string idx, bool isScene, bool favorite)
@@ -657,6 +693,28 @@ namespace NL.HNOGames.Domoticz.Data
       }
 
       /// <summary>
+      /// Domoticz set color
+      /// </summary>
+      public async Task<bool> SetColor(string idx, Color value, string password = null)
+      {
+         if (Server == null)
+            return false;
+         try
+         {
+            var result = await SetRGBAction(idx, ConstantValues.Json.Url.Set.RGBCOLOR, UsefulBits.GetHexString(value), (int)(value.A * 100), password);
+            if (result != null &&
+                string.Compare(result.status, "ok", StringComparison.OrdinalIgnoreCase) == 0)
+               return true;
+         }
+         catch (Exception ex)
+         {
+            App.AddLog(ex.Message);
+         }
+
+         return false;
+      }
+
+      /// <summary>
       /// Domoticz set events on off value
       /// </summary>
       public async Task<bool> SetEvent(string idx, bool value)
@@ -686,7 +744,7 @@ namespace NL.HNOGames.Domoticz.Data
       /// </summary>
       public async Task<bool> SetUserVariable(string idx, string name, string type, string newValue)
       {
-         if (Server == null || String.IsNullOrEmpty(idx) || String.IsNullOrEmpty(name) || String.IsNullOrEmpty(type))
+         if (Server == null || string.IsNullOrEmpty(idx) || string.IsNullOrEmpty(name) || string.IsNullOrEmpty(type))
             return false;
 
          var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.UserVariable.UPDATE);

@@ -229,7 +229,7 @@ namespace NL.HNOGames.Domoticz.Views.StartUp
          CurrentPage = Children[2];
          swEnableLocalSettings.IsToggled = false;
          txtRemoteProtocol.SelectedIndex = 1;
-         txtRemotePort.Text = "24443";
+         txtRemotePort.Text = "1883";
          txtRemoteServerAddress.Text = "gandalf.domoticz.com";
          txtRemoteUsername.Text = "admin";
          txtRemotePassword.Text = "D@m@t1czCl0ud";

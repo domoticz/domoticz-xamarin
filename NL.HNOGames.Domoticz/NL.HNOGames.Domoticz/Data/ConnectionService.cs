@@ -58,6 +58,10 @@ namespace NL.HNOGames.Domoticz.Data
             Timeout = TimeSpan.FromMilliseconds(10000)
          };
 
+#if OOTT
+         Client.DefaultRequestHeaders.Add("User-Agent", "mobileOOTTapp ios");
+#endif
+
          //}
       }
 
@@ -256,6 +260,10 @@ namespace NL.HNOGames.Domoticz.Data
                actionUrl = ConstantValues.Url.Switch.COLOR;
                break;
 
+            case ConstantValues.Device.Dimmer.Action.HEXCOLOR:
+               actionUrl = ConstantValues.Url.Switch.HEXCOLOR;
+               break;
+               
             case ConstantValues.Device.ModalSwitch.Action.AUTO:
                actionUrl = ConstantValues.Url.ModalAction.AUTO;
                break;

@@ -4,9 +4,7 @@ using Plugin.SpeechRecognition;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Xamarin.Forms;
-using Plugin.Fingerprint;
 using Xamarin.Forms.Xaml;
 using ZXing.Net.Mobile.Forms;
 
@@ -16,9 +14,13 @@ namespace NL.HNOGames.Domoticz.Views
    public partial class OverviewTabbedPage
    {
       private readonly OverviewViewModel _viewModel;
+      private static IDisposable listener = null;
       public static bool EmptyDialogShown = false;
-      public static IDisposable listener = null;
+      private bool _settingsOpened;
 
+      /// <summary>
+      /// Constructor
+      /// </summary>
       public OverviewTabbedPage()
       {
          InitializeComponent();
@@ -29,26 +31,21 @@ namespace NL.HNOGames.Domoticz.Views
             if (_viewModel.Plans == null || _viewModel.Plans.Count <= 0)
                ToolbarItems.Remove(tiPlans);
          };
-
       }
 
       /// <summary>
       /// On Appearing of this screen
       /// </summary>
-      protected override async void OnAppearing()
+      protected override void OnAppearing()
       {
          base.OnAppearing();
-
          if (_settingsOpened)
          {
             _settingsOpened = false;
             BreakingSettingsChanged();
          }
          else
-         {
             _viewModel.RefreshPlansCommand.Execute(null);
-           
-         }
          if (!App.AppSettings.QRCodeEnabled)
             ToolbarItems.Remove(tiQRCode);
          else if (!ToolbarItems.Contains(tiQRCode))
@@ -82,9 +79,6 @@ namespace NL.HNOGames.Domoticz.Views
             await Navigation.PushAsync(new DashboardPage(DashboardViewModel.ScreenTypeEnum.Switches, selectedPlan));
       }
 
-      private bool _settingsOpened;
-
-
       /// <summary>
       /// Show all settings
       /// </summary>
@@ -103,7 +97,6 @@ namespace NL.HNOGames.Domoticz.Views
          App.RestartFirebase();
       }
 
-
       /// <summary>
       /// Speech Recognition
       /// </summary>
@@ -119,9 +112,8 @@ namespace NL.HNOGames.Domoticz.Views
                 {
                    App.HideLoading();
                    App.ShowToast(phrase);
-                   if (OverviewTabbedPage.listener != null)
-                      OverviewTabbedPage.listener.Dispose();
-
+                   if (listener != null)
+                      listener.Dispose();
                    try
                    {
                       var speechID = phrase.GetHashCode() + "";

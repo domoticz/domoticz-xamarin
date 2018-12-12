@@ -191,3 +191,4 @@ FakesAssemblies/
 
 .vs/NL.HNOGames.Domoticz/v15/**
 *.ide
+.vs/NL.HNOGames.Domoticz/DesignTimeBuild/.dtbcache

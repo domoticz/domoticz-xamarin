@@ -10,7 +10,6 @@
 
 namespace NL.HNOGames.Domoticz.Resources {
     using System;
-    using System.Reflection;
     
     
     /// <summary>
@@ -40,7 +39,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NL.HNOGames.Domoticz.Resources.AppResources", typeof(AppResources).GetTypeInfo().Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NL.HNOGames.Domoticz.Resources.AppResources", typeof(AppResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -256,6 +255,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static string always_on_title {
             get {
                 return ResourceManager.GetString("always_on_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Domoticz.
+        /// </summary>
+        public static string app_name {
+            get {
+                return ResourceManager.GetString("app_name", resourceCulture);
             }
         }
         
@@ -3025,9 +3033,9 @@ namespace NL.HNOGames.Domoticz.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Set.
         /// </summary>
-        public static string set_temperature {
+        public static string settemperature {
             get {
-                return ResourceManager.GetString("set_temperature", resourceCulture);
+                return ResourceManager.GetString("settemperature", resourceCulture);
             }
         }
         

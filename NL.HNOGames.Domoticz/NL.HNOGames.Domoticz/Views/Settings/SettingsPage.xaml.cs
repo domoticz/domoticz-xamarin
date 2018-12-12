@@ -309,20 +309,24 @@ namespace NL.HNOGames.Domoticz.Views.Settings
 
       private async void btnBuyPremium_Clicked(object sender, EventArgs e)
       {
+         var sMessage =
+                 "There are several features in the domoticz app that are locked until you buy the premium version\r\n- no ads!!\r\n-notification support\r\n- theming\r\n- talkback\r\n- qrcode scanning\r\n\r\n- and more features in the future";
+
+#if OOTT
+         sMessage =
+                 "There are several features in the OOTT app that are locked until you buy the premium version\r\n- no ads!!\r\n-notification support\r\n- theming\r\n- talkback\r\n- qrcode scanning\r\n\r\n- and more features in the future";
+#endif
+
          var result = await UserDialogs.Instance.ConfirmAsync(new ConfirmConfig
          {
-            Message =
-                 "There are several features in the domoticz app that are locked until you buy the premium version\r\n- no ads!!\r\n-notification support\r\n- theming\r\n- talkback\r\n- qrcode scanning\r\n\r\n- and more features in the future",
+            Message = sMessage,
             OkText = "Buy",
             CancelText = "Cancel"
          });
-
          if (!result)
             return;
-
          if (await InAppPurchaseHelper.PurchaseItem())
             App.ShowToast("Thanks for buying premium!!");
-
          PremiumScreenSetup();
       }
 
@@ -334,9 +338,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             PremiumScreenSetup();
          }
          else
-         {
             App.ShowToast("Could not restore your premium account.");
-         }
       }
 
       private async void BtnCameras_OnClicked(object sender, EventArgs e)

@@ -20,7 +20,7 @@ namespace NL.HNOGames.Domoticz.Models
         {
             get
             {
-                return String.Format("{0} ({1})", Value, TypeValue);
+                return string.Format("{0} ({1})", Value, TypeValue);
             }
         }
 

@@ -19,7 +19,7 @@ namespace NL.HNOGames.Domoticz.Helpers
                     (mDeviceInfo.SwitchType == null))
             {
                 if (mDeviceInfo.SubType != null &&
-                    String.Compare(mDeviceInfo.SubType, ConstantValues.Device.Utility.SubType.SMARTWARES, StringComparison.OrdinalIgnoreCase) == 0)
+                    string.Compare(mDeviceInfo.SubType, ConstantValues.Device.Utility.SubType.SMARTWARES, StringComparison.OrdinalIgnoreCase) == 0)
                 {
                     oReturnvalue = 130;
                 }

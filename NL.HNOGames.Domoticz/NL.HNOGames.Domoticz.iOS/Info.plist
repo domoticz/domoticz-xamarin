@@ -58,7 +58,7 @@
 		<true/>
 	</dict>
 	<key>CFBundleShortVersionString</key>
-	<string>0.0.75</string>
+	<string>0.0.78</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>NSSpeechRecognitionUsageDescription</key>
@@ -68,6 +68,6 @@
 	<key>NSFaceIDUsageDescription</key>
 	<string>Need your face to unlock Domoticz.</string>
 	<key>CFBundleVersion</key>
-	<string>75</string>
+	<string>78</string>
 </dict>
 </plist>

@@ -48,7 +48,7 @@
 	<string>Can we use your camera</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Can we use your location for geofences</string>
-	<key>NSLocationWhenInUseUsageDescrtion</key>
+  <key>NSLocationWhenInUseUsageDescription</key>
 	<string>Can we use your location for geofences</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Can we use your calendar</string>

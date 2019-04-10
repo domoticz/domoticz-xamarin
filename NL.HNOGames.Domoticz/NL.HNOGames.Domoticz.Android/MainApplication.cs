@@ -17,7 +17,7 @@ namespace NL.HNOGames.Domoticz.Droid
 {
    //You can specify additional application information in this attribute
 #if DEBUG
-	[Application(Debuggable = true)]
+   [Application(Debuggable = true)]
 #else
    [Application(Debuggable = false)]
 #endif
@@ -51,25 +51,33 @@ namespace NL.HNOGames.Domoticz.Droid
 
       public static void StartPushService()
       {
-         AppContext.StartService(new Intent(AppContext, typeof(PushNotificationService)));
-
-         if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Kitkat)
+         try
          {
-            PendingIntent pintent = PendingIntent.GetService(AppContext, 0, new Intent(AppContext, typeof(PushNotificationService)), 0);
-            AlarmManager alarm = (AlarmManager)AppContext.GetSystemService(Context.AlarmService);
-            alarm.Cancel(pintent);
+            AppContext.StartService(new Intent(AppContext, typeof(PushNotificationService)));
+
+            if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Kitkat)
+            {
+               PendingIntent pintent = PendingIntent.GetService(AppContext, 0, new Intent(AppContext, typeof(PushNotificationService)), 0);
+               AlarmManager alarm = (AlarmManager)AppContext.GetSystemService(Context.AlarmService);
+               alarm.Cancel(pintent);
+            }
          }
+         catch (Exception ex) { }
       }
 
       public static void StopPushService()
       {
-         AppContext.StopService(new Intent(AppContext, typeof(PushNotificationService)));
-         if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Kitkat)
+         try
          {
-            PendingIntent pintent = PendingIntent.GetService(AppContext, 0, new Intent(AppContext, typeof(PushNotificationService)), 0);
-            AlarmManager alarm = (AlarmManager)AppContext.GetSystemService(Context.AlarmService);
-            alarm.Cancel(pintent);
+            AppContext.StopService(new Intent(AppContext, typeof(PushNotificationService)));
+            if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Kitkat)
+            {
+               PendingIntent pintent = PendingIntent.GetService(AppContext, 0, new Intent(AppContext, typeof(PushNotificationService)), 0);
+               AlarmManager alarm = (AlarmManager)AppContext.GetSystemService(Context.AlarmService);
+               alarm.Cancel(pintent);
+            }
          }
+         catch (Exception ex) { }
       }
    }
 }

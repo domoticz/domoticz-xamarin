@@ -133,6 +133,7 @@ namespace NL.HNOGames.Domoticz.Data
             public const string DEVICES = "/json.htm?type=devices&filter=all&used=true";
             public const string FAVORITES = "/json.htm?type=devices&filter=all&used=true&favorite=1";
             public const string VERSION = "/json.htm?type=command&param=getversion";
+            public const string SUNRISE = "/json.htm?type=command&param=getSunRiseSet";
             public const string DASHBOARD = ALLDEVICES + "&filter=all";
             public const string SCENES = "/json.htm?type=scenes";
             public const string SWITCHES = "/json.htm?type=command&param=getlightswitches";

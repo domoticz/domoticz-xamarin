@@ -56,6 +56,31 @@ namespace NL.HNOGames.Domoticz.Data
       /// <summary>
       /// Domoticz version
       /// </summary>
+      public async Task<SunRiseModel> GetSunRise()
+      {
+         if (Server == null)
+            return null;
+         var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.SUNRISE);
+         try
+         {
+            Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
+            if (Response.IsSuccessStatusCode)
+            {
+               var content = await Response.Content.ReadAsStringAsync();
+               if (App.AppSettings.EnableJSONDebugging) App.AddLog("JSON: " + content.Replace(Environment.NewLine, ""));
+               return JsonConvert.DeserializeObject<SunRiseModel>(content);
+            }
+         }
+         catch (Exception ex)
+         {
+            App.AddLog(ex.Message);
+         }
+         return null;
+      }
+
+      /// <summary>
+      /// Domoticz version
+      /// </summary>
       public async Task<VersionModel> GetVersion()
       {
 

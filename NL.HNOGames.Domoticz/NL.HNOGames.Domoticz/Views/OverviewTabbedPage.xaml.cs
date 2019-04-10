@@ -170,31 +170,31 @@ namespace NL.HNOGames.Domoticz.Views
 
             Device.BeginInvokeOnMainThread(async () =>
                {
-                await Navigation.PopAsync();
-                try
-                {
-                   var qrCodeId = result.Text.GetHashCode() + "";
-                   var qrCode = App.AppSettings.QRCodes.FirstOrDefault(o => o.Id == qrCodeId);
-                   if (qrCode != null && qrCode.Enabled)
-                   {
-                      App.AddLog("QR Code ID Found: " + qrCodeId);
-                      App.ShowToast(AppResources.qrcode + " " + qrCode.Name);
-                      await App.ApiService.HandleSwitch(qrCode.SwitchIDX, qrCode.SwitchPassword, -1, qrCode.Value,
-                             qrCode.IsScene);
-                      App.SetMainPage();
-                   }
-                   else
-                   {
-                      App.AddLog("QR Code ID not registered: " + qrCodeId);
-                      App.ShowToast(
-                             qrCode == null ? AppResources.qrcode_new_found : AppResources.qr_code_disabled);
-                   }
-                }
-                catch (Exception ex)
-                {
-                   App.AddLog(ex.Message);
-                }
-             });
+                  await Navigation.PopAsync();
+                  try
+                  {
+                     var qrCodeId = result.Text.GetHashCode() + "";
+                     var qrCode = App.AppSettings.QRCodes.FirstOrDefault(o => o.Id == qrCodeId);
+                     if (qrCode != null && qrCode.Enabled)
+                     {
+                        App.AddLog("QR Code ID Found: " + qrCodeId);
+                        App.ShowToast(AppResources.qrcode + " " + qrCode.Name);
+                        await App.ApiService.HandleSwitch(qrCode.SwitchIDX, qrCode.SwitchPassword, -1, qrCode.Value,
+                               qrCode.IsScene);
+                        App.SetMainPage();
+                     }
+                     else
+                     {
+                        App.AddLog("QR Code ID not registered: " + qrCodeId);
+                        App.ShowToast(
+                               qrCode == null ? AppResources.qrcode_new_found : AppResources.qr_code_disabled);
+                     }
+                  }
+                  catch (Exception ex)
+                  {
+                     App.AddLog(ex.Message);
+                  }
+               });
          };
 
          await Navigation.PushAsync(scanPage);

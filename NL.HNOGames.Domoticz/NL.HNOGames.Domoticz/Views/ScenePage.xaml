@@ -6,8 +6,32 @@
    xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
    xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
    xmlns:selector="clr-namespace:NL.HNOGames.Domoticz.ViewSelector;assembly=NL.HNOGames.Domoticz"
-   Title="{Binding Title}"
    Style="{StaticResource ContentPageType}">
+
+   <NavigationPage.TitleView>
+      <StackLayout
+         x:Name="stackLayout"
+         HorizontalOptions="FillAndExpand"
+         Orientation="Horizontal"
+         Spacing="0"
+         VerticalOptions="Center">
+         <Label
+            x:Name="title"
+            HorizontalTextAlignment="Start"
+            Style="{DynamicResource TitleStyle}"
+            Text="{Binding Title}"
+            VerticalOptions="Center"
+            VerticalTextAlignment="Center" />
+         <Label
+            x:Name="subtitle"
+            Margin="10,4,0,0"
+            HorizontalTextAlignment="Start"
+            Style="{DynamicResource SubtitleStyle}"
+            VerticalOptions="Center"
+            VerticalTextAlignment="Center" />
+      </StackLayout>
+   </NavigationPage.TitleView>
+
    <ContentPage.Resources>
       <ResourceDictionary>
          <DataTemplate x:Key="DefaultTemplate">

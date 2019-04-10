@@ -18,6 +18,19 @@
    <Color x:Key="HeaderDarkTextColor">#000000</Color>
    <Color x:Key="DarkButtonColor">#1A2C35</Color>
    <Color x:Key="ButtonOutlineColor">#303E4D</Color>
+
+   <Style x:Key="TitleStyle" TargetType="Label">
+      <Setter Property="TextColor" Value="White" />
+      <Setter Property="FontSize" Value="18" />
+      <Setter Property="FontAttributes" Value="Bold" />
+   </Style>
+
+   <Style x:Key="SubtitleStyle" TargetType="Label">
+      <Setter Property="TextColor" Value="White" />
+      <Setter Property="FontSize" Value="12" />
+      <Setter Property="FontAttributes" Value="None" />
+   </Style>
+
    <Style x:Key="DarkButton" TargetType="Button">
       <Setter Property="BackgroundColor" Value="{DynamicResource DarkButtonColor}" />
       <Setter Property="TextColor" Value="{DynamicResource WhiteTextColor}" />

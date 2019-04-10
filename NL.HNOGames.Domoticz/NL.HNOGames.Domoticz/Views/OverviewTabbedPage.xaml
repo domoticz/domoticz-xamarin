@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage
+<custcontrol:CustomTabbedPage
    x:Class="NL.HNOGames.Domoticz.Views.OverviewTabbedPage"
    xmlns="http://xamarin.com/schemas/2014/forms"
    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+   xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
    xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
-   Title="{resources:Translate app_name}"
    ios:Page.UseSafeArea="true">
-   <TabbedPage.ToolbarItems>
+
+   <custcontrol:CustomTabbedPage.ToolbarItems>
       <ToolbarItem
          x:Name="tiPlans"
          Clicked="OnShowPlansClick"
@@ -17,7 +18,6 @@
             <OnPlatform
                x:TypeArguments="FileImageSource"
                Android="ic_home.png"
-               WinPhone="ic_home.png"
                iOS="ic_home.png" />
          </ToolbarItem.Icon>
       </ToolbarItem>
@@ -31,7 +31,6 @@
             <OnPlatform
                x:TypeArguments="FileImageSource"
                Android="ic_qrcode.png"
-               WinPhone="ic_qrcode.png"
                iOS="ic_qrcode.png" />
          </ToolbarItem.Icon>
       </ToolbarItem>
@@ -45,7 +44,6 @@
             <OnPlatform
                x:TypeArguments="FileImageSource"
                Android="ic_keyboard_voice.png"
-               WinPhone="ic_keyboard_voice.png"
                iOS="ic_keyboard_voice.png" />
          </ToolbarItem.Icon>
       </ToolbarItem>
@@ -58,10 +56,9 @@
             <OnPlatform
                x:TypeArguments="FileImageSource"
                Android="ic_settings.png"
-               WinPhone="ic_settings.png"
                iOS="ic_settings.png" />
          </ToolbarItem.Icon>
       </ToolbarItem>
 
-   </TabbedPage.ToolbarItems>
-</TabbedPage>
+   </custcontrol:CustomTabbedPage.ToolbarItems>
+</custcontrol:CustomTabbedPage>

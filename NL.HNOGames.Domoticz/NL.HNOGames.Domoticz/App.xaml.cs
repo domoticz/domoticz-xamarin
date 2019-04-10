@@ -15,6 +15,8 @@ using Plugin.Multilingual;
 using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
 using System.Threading.Tasks;
+using NL.HNOGames.Domoticz.Models;
+using Device = Xamarin.Forms.Device;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace NL.HNOGames.Domoticz
@@ -27,6 +29,7 @@ namespace NL.HNOGames.Domoticz
       public static ConnectionService ConnectionService { get; private set; }
       public static DataService ApiService { get; private set; }
       public static Settings AppSettings { get; private set; }
+      public static SunRiseModel SunRiseInfo { get; private set; }
 
       private static Models.ConfigModel ServerConfig { get; set; }
       private static IProgressDialog _loadingDialog;
@@ -43,12 +46,23 @@ namespace NL.HNOGames.Domoticz
       /// Load the server config
       /// </summary>
       /// <returns></returns>
-      public static Models.ConfigModel GetServerConfig()
+      public static ConfigModel GetServerConfig()
       {
          if (ServerConfig != null) return ServerConfig;
          ApiService.RefreshConfig();
          ServerConfig = AppSettings.ServerConfig;
          return ServerConfig;
+      }
+
+      /// <summary>
+      /// Load the server config
+      /// </summary>
+      /// <returns></returns>
+      public static async Task<SunRiseModel> GetSunRiseInfoAsync()
+      {
+         if (SunRiseInfo != null) return SunRiseInfo;
+         SunRiseInfo = await ApiService.GetSunRise();
+         return SunRiseInfo;
       }
 
       /// <summary>

@@ -11,7 +11,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
-using Xam.Plugin.SimpleColorPicker;
 using Xamarin.Forms;
 
 namespace NL.HNOGames.Domoticz.Views
@@ -188,19 +187,17 @@ namespace NL.HNOGames.Domoticz.Views
       /// <summary>
       /// On Appearing of the screen
       /// </summary>
-      protected override void OnAppearing()
+      protected override async void OnAppearing()
       {
          base.OnAppearing();
 
          if (_viewModel.Devices == null || _viewModel.OldData)
             _viewModel.RefreshFavoriteCommand.Execute(null);
 
-         //if (_viewModel.ScreenType != DashboardViewModel.ScreenTypeEnum.Dashboard || App.AppSettings.ShowExtraData)
-         //   listView.RowHeight = 130;
-         //else
-         //   listView.RowHeight = 80;
+         var info = await App.GetSunRiseInfoAsync();
+         if (info != null)
+            subtitle.Text = $"↑{info.Sunrise} ↓{info.Sunset}"; 
       }
-
 
       /// <summary>
       /// Set Favorite

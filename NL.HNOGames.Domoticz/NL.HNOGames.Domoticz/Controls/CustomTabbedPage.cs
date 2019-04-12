@@ -36,14 +36,11 @@ namespace NL.HNOGames.Domoticz.Controls
       {
          if (CurrentPage == null)
             return;
-
-         // Set the title view of the current page to this page
          var titleView = NavigationPage.GetTitleView(CurrentPage);
          if (titleView != null)
             NavigationPage.SetTitleView(this, titleView);
       }
 
       #endregion
-
    }
 }

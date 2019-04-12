@@ -17,7 +17,6 @@
             <OnPlatform
                x:TypeArguments="FileImageSource"
                Android="ic_share.png"
-               WinPhone="ic_share.png"
                iOS="ic_share.png" />
          </ToolbarItem.Icon>
       </ToolbarItem>

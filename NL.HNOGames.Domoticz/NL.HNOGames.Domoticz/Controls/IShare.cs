@@ -1,10 +1,7 @@
-﻿using System;
-using Xamarin.Forms;
-
-namespace NL.HNOGames.Domoticz.Controls
+﻿namespace NL.HNOGames.Domoticz.Controls
 {
-	public interface IShare
-	{
-		void Share(string subject, string message, byte[] image);
-	}
+   public interface IShare
+   {
+      void Share(string subject, string message, byte[] image);
+   }
 }

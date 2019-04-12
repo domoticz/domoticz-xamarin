@@ -102,20 +102,20 @@
     <Reference Include="FastAndroidCamera, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\FastAndroidCamera.2.0.0\lib\MonoAndroid403\FastAndroidCamera.dll</HintPath>
     </Reference>
-    <Reference Include="FFImageLoading, Version=2.4.4.859, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.FFImageLoading.2.4.4.859\lib\MonoAndroid10\FFImageLoading.dll</HintPath>
+    <Reference Include="FFImageLoading, Version=2.4.5.880, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.2.4.5.880-pre\lib\MonoAndroid10\FFImageLoading.dll</HintPath>
     </Reference>
-    <Reference Include="FFImageLoading.Forms, Version=2.4.4.859, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.FFImageLoading.Forms.2.4.4.859\lib\MonoAndroid10\FFImageLoading.Forms.dll</HintPath>
+    <Reference Include="FFImageLoading.Forms, Version=2.4.5.880, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.Forms.2.4.5.880-pre\lib\MonoAndroid10\FFImageLoading.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="FFImageLoading.Forms.Platform, Version=2.4.4.859, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.FFImageLoading.Forms.2.4.4.859\lib\MonoAndroid10\FFImageLoading.Forms.Platform.dll</HintPath>
+    <Reference Include="FFImageLoading.Forms.Platform, Version=2.4.5.880, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.Forms.2.4.5.880-pre\lib\MonoAndroid10\FFImageLoading.Forms.Platform.dll</HintPath>
     </Reference>
-    <Reference Include="FFImageLoading.Platform, Version=2.4.4.859, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.FFImageLoading.2.4.4.859\lib\MonoAndroid10\FFImageLoading.Platform.dll</HintPath>
+    <Reference Include="FFImageLoading.Platform, Version=2.4.5.880, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.2.4.5.880-pre\lib\MonoAndroid10\FFImageLoading.Platform.dll</HintPath>
     </Reference>
     <Reference Include="FFImageLoading.Transformations, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.FFImageLoading.Transformations.2.4.4.859\lib\MonoAndroid10\FFImageLoading.Transformations.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.Transformations.2.4.5.880-pre\lib\MonoAndroid10\FFImageLoading.Transformations.dll</HintPath>
     </Reference>
     <Reference Include="FormsViewGroup, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.3.6.0.293080\lib\monoandroid81\FormsViewGroup.dll</HintPath>

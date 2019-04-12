@@ -2,14 +2,11 @@
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using FFImageLoading.Forms.Droid;
-using System;
 using ZXing.Mobile;
 using Plugin.Fingerprint;
 using Plugin.InAppBilling;
 using Plugin.CurrentActivity;
 using Android.Content;
-using System.Net;
 using NL.HNOGames.Domoticz.Droid.Helpers;
 using Plugin.Permissions;
 using Android.Runtime;
@@ -25,7 +22,7 @@ namespace NL.HNOGames.Domoticz.Droid
    [Activity(Label = "@string/app_name", Icon = "@mipmap/ic_launcher", RoundIcon = "@mipmap/ic_launcher_round", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
    {
-      protected override void OnCreate(Bundle bundle)
+      protected override void OnCreate(Bundle savedInstanceState)
       {
          System.Net.ServicePointManager.ServerCertificateValidationCallback +=
              (sender, cert, chain, sslPolicyErrors) =>
@@ -36,11 +33,11 @@ namespace NL.HNOGames.Domoticz.Droid
                 return true;
              };
 
-         CachedImageRenderer.Init(true);
+         FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
          UserDialogs.Init(this);
-         Rg.Plugins.Popup.Popup.Init(this, bundle);
+         Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
 
-         CrossCurrentActivity.Current.Init(this, bundle);
+         CrossCurrentActivity.Current.Init(this, savedInstanceState);
          CrossFingerprint.SetCurrentActivityResolver(() => CrossCurrentActivity.Current.Activity);
          CrossFingerprint.SetDialogFragmentType<CustomFingerprintDialogFragment>();
 
@@ -51,9 +48,9 @@ namespace NL.HNOGames.Domoticz.Droid
          TabLayoutResource = Resource.Layout.Tabbar;
          ToolbarResource = Resource.Layout.Toolbar;
 
-         base.OnCreate(bundle);
+         base.OnCreate(savedInstanceState);
 
-         global::Xamarin.Forms.Forms.Init(this, bundle);
+         global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
          LoadApplication(new App(null));
       }

@@ -27,6 +27,10 @@ namespace NL.HNOGames.Domoticz.Views
          _viewModel.SetListViewVisibilityMethod += DelegateListViewMethod;
          App.AddLog("Loading screen: " + screentype);
 
+         searchIcon.GestureRecognizers.Add(new TapGestureRecognizer { Command = new Command(OnSearchIconTapped) });
+         searchBar.TextChanged += searchBar_TextChanged;
+         searchBar.Cancelled += (s, e) => OnCancelled();
+
          adView.IsVisible = !App.AppSettings.PremiumBought;
       }
 
@@ -226,7 +230,7 @@ namespace NL.HNOGames.Domoticz.Views
          else
             _viewModel.RefreshActionCommand.Execute(null);
 
-         sbSearch.Text = string.Empty;
+         searchBar.Text = string.Empty;
          if (ScrollItem == null)
             return;
          listView.ScrollTo(ScrollItem, ScrollToPosition.Center, true);
@@ -236,13 +240,13 @@ namespace NL.HNOGames.Domoticz.Views
       /// <summary>
       /// Filter changed
       /// </summary>
-      private void sbSearch_TextChanged(object sender, TextChangedEventArgs e)
+      private void searchBar_TextChanged(object sender, TextChangedEventArgs e)
       {
          if (e.NewTextValue == string.Empty)
          {
             App.AddLog("Cancel Pressed");
             listView.ItemsSource = _viewModel.Devices;
-            sbSearch.Unfocus();
+            searchBar.Unfocus();
          }
          else
          {
@@ -259,6 +263,43 @@ namespace NL.HNOGames.Domoticz.Views
             }
          }
       }
+
+      #region SearchBar
+
+      private void OnSearchIconTapped()
+      {
+         BatchBegin();
+         try
+         {
+            titleLayout.IsVisible = false;
+            searchIcon.IsVisible = false;
+            searchBar.IsVisible = true;
+            searchBar.Focus();
+         }
+         finally
+         {
+            BatchCommit();
+         }
+      }
+
+      private void OnCancelled()
+      {
+         BatchBegin();
+         try
+         {
+            searchBar.IsVisible = false;
+            searchBar.Text = string.Empty;
+            titleLayout.IsVisible = true;
+            searchIcon.IsVisible = true;
+         }
+         finally
+         {
+            BatchCommit();
+         }
+      }
+
+      #endregion
+
 
       #region Selector
 

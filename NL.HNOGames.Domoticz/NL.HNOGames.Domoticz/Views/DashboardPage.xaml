@@ -10,27 +10,48 @@
    Style="{StaticResource ContentPageType}">
 
    <NavigationPage.TitleView>
-      <StackLayout
-         x:Name="stackLayout"
-         HorizontalOptions="FillAndExpand"
-         Orientation="Horizontal"
-         Spacing="0"
-         VerticalOptions="Center">
-         <Label
-            x:Name="title"
-            HorizontalTextAlignment="Start"
-            Style="{DynamicResource TitleStyle}"
-            Text="{Binding Title}"
-            VerticalOptions="Center"
-            VerticalTextAlignment="Center" />
-         <Label
-            x:Name="subtitle"
-            Margin="10,4,0,0"
-            HorizontalTextAlignment="Start"
-            Style="{DynamicResource SubtitleStyle}"
-            VerticalOptions="Center"
-            VerticalTextAlignment="Center" />
-      </StackLayout>
+      <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+         <custcontrol:TitleViewSearchBar
+            x:Name="searchBar"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            CancelButtonColor="White"
+            IsVisible="false"
+            PlaceholderColor="White"
+            TextColor="White" />
+
+         <StackLayout
+            x:Name="titleLayout"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            Orientation="Horizontal"
+            Spacing="0"
+            VerticalOptions="Center">
+            <Label
+               x:Name="title"
+               HorizontalTextAlignment="Start"
+               Style="{DynamicResource TitleStyle}"
+               Text="{Binding Title}"
+               TextColor="White"
+               VerticalOptions="Center"
+               VerticalTextAlignment="Center" />
+            <Label
+               x:Name="subtitle"
+               Margin="10,4,0,0"
+               HorizontalTextAlignment="Start"
+               Style="{DynamicResource SubtitleStyle}"
+               VerticalOptions="Center"
+               VerticalTextAlignment="Center" />
+         </StackLayout>
+
+         <Image
+            x:Name="searchIcon"
+            Margin="0,0,16,0"
+            AbsoluteLayout.LayoutBounds="1,0.5,AutoSize,AutoSize"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Source="baseline_search_white_24.png" />
+      </AbsoluteLayout>
+
    </NavigationPage.TitleView>
 
    <ContentPage.Resources>
@@ -1146,18 +1167,7 @@
             RefreshCommand="{Binding RefreshFavoriteCommand}"
             RowHeight="-1"
             SeparatorVisibility="None"
-            VerticalOptions="FillAndExpand">
-            <ListView.Header>
-               <SearchBar
-                  x:Name="sbSearch"
-                  Margin="0,0,0,10"
-                  CancelButtonColor="Red"
-                  Placeholder="{resources:Translate filter}"
-                  Style="{StaticResource SearchBarType}"
-                  TextChanged="sbSearch_TextChanged" />
-            </ListView.Header>
-         </ListView>
-
+            VerticalOptions="FillAndExpand" />
          <custcontrol:AdMobView
             x:Name="adView"
             HeightRequest="70"

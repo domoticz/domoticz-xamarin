@@ -433,6 +433,7 @@
     <Compile Include="Renderer\ExtendedButtonRenderer.cs" />
     <Compile Include="Renderer\ExtendedSliderRenderer.cs" />
     <Compile Include="Renderer\ShareClass.cs" />
+    <Compile Include="Renderer\TitleViewSearchBarRenderer.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -2439,6 +2440,21 @@
     <AndroidResource Include="Resources\drawable-xhdpi\outline_color_lens_white_24.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\outline_color_lens_white_24.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\outline_color_lens_white_24.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_arrow_back_black_24.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_arrow_back_white_24.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\baseline_arrow_back_white_24.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\baseline_arrow_back_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_arrow_back_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_arrow_back_white_24.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_arrow_back_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_arrow_back_white_24.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_arrow_back_black_24.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_arrow_back_white_24.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\baseline_search_white_24.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\baseline_search_white_24.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_search_white_24.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_search_white_24.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_search_white_24.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NL.HNOGames.Domoticz\NL.HNOGames.Domoticz.csproj">

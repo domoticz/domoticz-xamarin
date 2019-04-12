@@ -22,6 +22,10 @@ namespace NL.HNOGames.Domoticz.Views
          _viewModel.SetListViewVisibilityMethod += DelegateListViewMethod;
          App.AddLog("Loading screen: Scenes");
          adView.IsVisible = !App.AppSettings.PremiumBought;
+
+         searchIcon.GestureRecognizers.Add(new TapGestureRecognizer { Command = new Command(OnSearchIconTapped) });
+         searchBar.TextChanged += searchBar_TextChanged;
+         searchBar.Cancelled += (s, e) => OnCancelled();
       }
 
       /// <summary>
@@ -34,6 +38,42 @@ namespace NL.HNOGames.Domoticz.Views
       }
 
 
+      #region SearchBar
+
+      private void OnSearchIconTapped()
+      {
+         BatchBegin();
+         try
+         {
+            titleLayout.IsVisible = false;
+            searchIcon.IsVisible = false;
+            searchBar.IsVisible = true;
+            searchBar.Focus();
+         }
+         finally
+         {
+            BatchCommit();
+         }
+      }
+
+      private void OnCancelled()
+      {
+         BatchBegin();
+         try
+         {
+            searchBar.IsVisible = false;
+            searchBar.Text = string.Empty;
+            titleLayout.IsVisible = true;
+            searchIcon.IsVisible = true;
+         }
+         finally
+         {
+            BatchCommit();
+         }
+      }
+
+      #endregion
+      
       /// <summary>
       /// Show a actionsheet on item selected
       /// </summary>
@@ -99,7 +139,7 @@ namespace NL.HNOGames.Domoticz.Views
       /// <summary>
       /// Filter changed
       /// </summary>
-      private void sbSearch_TextChanged(object sender, TextChangedEventArgs e)
+      private void searchBar_TextChanged(object sender, TextChangedEventArgs e)
       {
          try
          {

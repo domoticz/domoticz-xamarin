@@ -6,6 +6,7 @@ using NL.HNOGames.Domoticz.Controls;
 using NL.HNOGames.Domoticz.iOS.Renderer;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
+using NL.HNOGames.Domoticz.iOS.Helpers;
 
 [assembly: ExportRenderer(typeof(TitleViewSearchBar), typeof(TitleViewSearchBarRenderer))]
 namespace NL.HNOGames.Domoticz.iOS.Renderer

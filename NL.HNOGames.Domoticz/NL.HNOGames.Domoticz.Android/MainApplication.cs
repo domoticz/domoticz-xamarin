@@ -33,7 +33,7 @@ namespace NL.HNOGames.Domoticz.Droid
       public override void OnCreate()
       {
          base.OnCreate();
-         AppContext = this.ApplicationContext;
+         AppContext = ApplicationContext;
          CrossCurrentActivity.Current.Init(this);
 
          //RegisterActivityLifecycleCallbacks(this);
@@ -62,7 +62,7 @@ namespace NL.HNOGames.Domoticz.Droid
                alarm.Cancel(pintent);
             }
          }
-         catch (Exception ex) { }
+         catch (Exception) { }
       }
 
       public static void StopPushService()
@@ -77,7 +77,7 @@ namespace NL.HNOGames.Domoticz.Droid
                alarm.Cancel(pintent);
             }
          }
-         catch (Exception ex) { }
+         catch (Exception) { }
       }
    }
 }

@@ -111,7 +111,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                new Command(async () => await ExecuteLoadLogsCommand()).Execute(null);
             }
          }
-         catch (Exception ex)
+         catch (Exception)
          { }
       }
    }

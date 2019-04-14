@@ -5,10 +5,10 @@
    xmlns="http://xamarin.com/schemas/2014/forms"
    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
    xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
+   xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
    xmlns:range="clr-namespace:Xamarin.RangeSlider.Forms;assembly=Xamarin.RangeSlider.Forms"
-   xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
-   xmlns:selector="clr-namespace:NL.HNOGames.Domoticz.ViewSelector;assembly=NL.HNOGames.Domoticz">
+   xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz">
 
    <StackLayout
       Margin="20,10,20,20"
@@ -25,16 +25,14 @@
          Style="{StaticResource HeaderType}"
          Text="Select Level" />
 
-      <range:RangeSlider
+      <input:AdvancedSlider
          x:Name="sDimmer"
-         LowerValue="1"
-         MaximumValue="100"
-         MinimumValue="1"
-         StepValue="0"
-         StepValueContinuously="False"
-         TextSize="15"
-         UpperValue="100"
-         VerticalOptions="Center" />
+         DisplayMinMaxValue="False"
+         MaxValue="100"
+         MinValue="1"
+         StepValue="1"
+         ValuePrefix=""
+         ValueSuffix="" />
 
       <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
          <custcontrol:ExtendedButton

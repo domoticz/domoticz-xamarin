@@ -14,12 +14,6 @@ using System.Net;
 using Google.Maps;
 using Plugin.Fingerprint;
 
-#if NETFX_CORE
-[assembly: Xamarin.Forms.Platform.WinRT.ExportRenderer(typeof(Xamarin.RangeSlider.Forms.RangeSlider), typeof(Xamarin.RangeSlider.Forms.RangeSliderRenderer))]
-#else
-[assembly: Xamarin.Forms.ExportRenderer(typeof(Xamarin.RangeSlider.Forms.RangeSlider), typeof(Xamarin.RangeSlider.Forms.RangeSliderRenderer))]
-#endif
-
 namespace NL.HNOGames.Domoticz.iOS
 {
    [Register("AppDelegate")]
@@ -50,7 +44,7 @@ namespace NL.HNOGames.Domoticz.iOS
          iRate.SharedInstance.DaysUntilPrompt = 10;
          iRate.SharedInstance.UsesUntilPrompt = 20;
          ZXing.Net.Mobile.Forms.iOS.Platform.Init();
-
+         Plugin.InputKit.Platforms.iOS.Config.Init();
          CachedImageRenderer.Init();
          SlideOverKit.iOS.SlideOverKit.Init();
 

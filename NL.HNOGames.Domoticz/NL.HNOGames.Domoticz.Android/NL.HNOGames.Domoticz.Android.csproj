@@ -194,6 +194,9 @@
     <Reference Include="Plugin.InAppBilling.VendingLibrary, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Plugin.InAppBilling.2.0.0\lib\MonoAndroid10\Plugin.InAppBilling.VendingLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="Plugin.InputKit, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.InputKit.3.0.7\lib\monoandroid81\Plugin.InputKit.dll</HintPath>
+    </Reference>
     <Reference Include="Plugin.LocalNotifications, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugins.Notifier.3.0.1\lib\MonoAndroid10\Plugin.LocalNotifications.dll</HintPath>
     </Reference>
@@ -385,18 +388,6 @@
     </Reference>
     <Reference Include="Xamarin.GooglePlayServices.Tasks, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.GooglePlayServices.Tasks.60.1142.1\lib\MonoAndroid80\Xamarin.GooglePlayServices.Tasks.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.RangeSlider.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.RangeSlider.1.0.1\lib\MonoAndroid10\Xamarin.RangeSlider.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.RangeSlider.Droid, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.RangeSlider.1.0.1\lib\MonoAndroid10\Xamarin.RangeSlider.Droid.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.RangeSlider.Forms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.RangeSlider.1.0.1\lib\MonoAndroid10\Xamarin.RangeSlider.Forms.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.RangeSlider.Forms.Droid, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.RangeSlider.1.0.1\lib\MonoAndroid10\Xamarin.RangeSlider.Forms.Droid.dll</HintPath>
     </Reference>
     <Reference Include="XLabs.Cryptography, Version=2.0.5782.12232, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\XLabs.Cryptography.2.0.5782\lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1\XLabs.Cryptography.dll</HintPath>

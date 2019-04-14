@@ -276,6 +276,9 @@
     <Reference Include="Plugin.InAppBilling.Abstractions, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Plugin.InAppBilling.2.0.0\lib\Xamarin.iOS10\Plugin.InAppBilling.Abstractions.dll</HintPath>
     </Reference>
+    <Reference Include="Plugin.InputKit, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.InputKit.3.0.7\lib\xamarin.ios10\Plugin.InputKit.dll</HintPath>
+    </Reference>
     <Reference Include="Plugin.LocalNotifications, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugins.Notifier.3.0.1\lib\Xamarin.iOS10\Plugin.LocalNotifications.dll</HintPath>
       <Private>True</Private>
@@ -392,12 +395,6 @@
     </Reference>
     <Reference Include="Xamarin.iOS" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="Xamarin.RangeSlider.Forms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.RangeSlider.1.0.1\lib\Xamarin.iOS10\Xamarin.RangeSlider.Forms.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.RangeSlider.Forms.iOS, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.RangeSlider.1.0.1\lib\Xamarin.iOS10\Xamarin.RangeSlider.Forms.iOS.dll</HintPath>
-    </Reference>
     <Reference Include="XLabs.Cryptography, Version=2.0.5782.12232, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\XLabs.Cryptography.2.0.5782\lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1\XLabs.Cryptography.dll</HintPath>
     </Reference>
@@ -938,36 +935,6 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\outline_color_lens_white_24%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default7-trackCrossedOver%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default7-trackCrossedOver.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default7-trackBackground%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default7-trackBackground.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default7-track%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default7-track.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default7-handle%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default7-handle.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default7-handle-disabled%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\slider-default7-handle-disabled.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\baseline_arrow_back_black_24.png" />

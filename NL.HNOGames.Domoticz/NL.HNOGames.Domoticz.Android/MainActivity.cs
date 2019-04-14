@@ -11,12 +11,6 @@ using NL.HNOGames.Domoticz.Droid.Helpers;
 using Plugin.Permissions;
 using Android.Runtime;
 
-#if NETFX_CORE
-[assembly: Xamarin.Forms.Platform.WinRT.ExportRenderer(typeof(Xamarin.RangeSlider.Forms.RangeSlider), typeof(Xamarin.RangeSlider.Forms.RangeSliderRenderer))]
-#else
-[assembly: Xamarin.Forms.ExportRenderer(typeof(Xamarin.RangeSlider.Forms.RangeSlider), typeof(Xamarin.RangeSlider.Forms.RangeSliderRenderer))]
-#endif
-
 namespace NL.HNOGames.Domoticz.Droid
 {
    [Activity(Label = "@string/app_name", Icon = "@mipmap/ic_launcher", RoundIcon = "@mipmap/ic_launcher_round", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -40,6 +34,7 @@ namespace NL.HNOGames.Domoticz.Droid
          CrossCurrentActivity.Current.Init(this, savedInstanceState);
          CrossFingerprint.SetCurrentActivityResolver(() => CrossCurrentActivity.Current.Activity);
          CrossFingerprint.SetDialogFragmentType<CustomFingerprintDialogFragment>();
+         Plugin.InputKit.Platforms.Droid.Config.Init(this, savedInstanceState);
 
          OxyPlot.Xamarin.Forms.Platform.Android.PlotViewRenderer.Init();
          ZXing.Net.Mobile.Forms.Android.Platform.Init();

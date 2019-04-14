@@ -14,12 +14,6 @@ using Firebase.Core;
 using System.Net;
 using Plugin.Fingerprint;
 
-#if NETFX_CORE
-[assembly: Xamarin.Forms.Platform.WinRT.ExportRenderer(typeof(Xamarin.RangeSlider.Forms.RangeSlider), typeof(Xamarin.RangeSlider.Forms.RangeSliderRenderer))]
-#else
-[assembly: Xamarin.Forms.ExportRenderer(typeof(Xamarin.RangeSlider.Forms.RangeSlider), typeof(Xamarin.RangeSlider.Forms.RangeSliderRenderer))]
-#endif
-
 namespace NL.HNOGames.OOTT.iOS
 {
    [Register("AppDelegate")]
@@ -47,6 +41,7 @@ namespace NL.HNOGames.OOTT.iOS
 
          global::Xamarin.Forms.Forms.Init();
 
+         Plugin.InputKit.Platforms.iOS.Config.Init();
          iRate.SharedInstance.DaysUntilPrompt = 10;
          iRate.SharedInstance.UsesUntilPrompt = 20;
          ZXing.Net.Mobile.Forms.iOS.Platform.Init();

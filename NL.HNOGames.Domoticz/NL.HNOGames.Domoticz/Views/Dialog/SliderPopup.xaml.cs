@@ -23,11 +23,8 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
                     AppResources.set_level_switch.Replace("%1$s", "{0}").Replace("%2$d", "").Replace("\"", ""),
                     _oDevice.Name);
 
-            sDimmer.MaximumValue = device.MaxDimLevel;
-            sDimmer.UpperValue = device.LevelInt;
-            sDimmer.LowerValue = 1;
-            sDimmer.MinThumbHidden = true;
-            sDimmer.ShowTextAboveThumbs = true;
+            sDimmer.MaxValue = device.MaxDimLevel;
+            sDimmer.Value = device.LevelInt;
         }
 
         /// <summary>
@@ -35,7 +32,7 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
         /// </summary>
         private async void btnSave_Clicked(object sender, EventArgs e)
         {
-            await App.ApiService.SetDimmer(_oDevice.idx, sDimmer.UpperValue + 1);
+            await App.ApiService.SetDimmer(_oDevice.idx, float.Parse(sDimmer.Value.ToString()) + 1);
             _cmFinish?.Execute(null);
             await PopupNavigation.Instance.PopAsync();
         }

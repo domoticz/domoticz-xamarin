@@ -113,8 +113,10 @@ namespace NL.HNOGames.Domoticz.Views
                          .Replace("Lux", "counter")
                          .Replace("SetPoint", "temp")
                          .Replace("YouLess counter", "counter")
-                         .Replace("Pressure", "counter");
-                     if (graphType.Contains("counter"))
+                         .Replace("Pressure", "counter")
+                         .Replace("Managed Counter", "counter")
+                         .Replace("Custom Sensor", "counter");
+                     if (graphType.ToLower().Contains("counter"))
                         graphType = "counter";
                      await Navigation.PushAsync(new GraphTabbedPage(item, graphType));
                   }

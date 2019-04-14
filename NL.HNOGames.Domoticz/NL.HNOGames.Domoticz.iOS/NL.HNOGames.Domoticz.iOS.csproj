@@ -42,6 +42,7 @@
     <MtouchFloat32>False</MtouchFloat32>
     <CodesignProvision>Domoticz-ios-development</CodesignProvision>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchExtraArgs>--registrar:static -v -v -v -v</MtouchExtraArgs>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>pdbonly</DebugType>

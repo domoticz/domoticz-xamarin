@@ -9,7 +9,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>nl.hnogames.oott</string>
 	<key>MinimumOSVersion</key>
-	<string>8.0</string>
+	<string>9.0</string>
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
@@ -54,11 +54,11 @@
 		<true/>
 	</dict>
 	<key>CFBundleShortVersionString</key>
-	<string>0.0.78</string>
+	<string>0.0.81</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>CFBundleVersion</key>
-	<string>78</string>
+	<string>81</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>Enable speech recognition in the app</string>
 	<key>NSMicrophoneUsageDescription</key>

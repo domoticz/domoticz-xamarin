@@ -9,7 +9,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>nl.hnogames.domoticz</string>
 	<key>MinimumOSVersion</key>
-	<string>8.0</string>
+	<string>9.0</string>
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
@@ -48,7 +48,7 @@
 	<string>Can we use your camera</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Can we use your location for geofences</string>
-  <key>NSLocationWhenInUseUsageDescription</key>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Can we use your location for geofences</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Can we use your calendar</string>
@@ -58,7 +58,7 @@
 		<true/>
 	</dict>
 	<key>CFBundleShortVersionString</key>
-	<string>0.0.80</string>
+	<string>0.0.81</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>NSSpeechRecognitionUsageDescription</key>
@@ -68,6 +68,6 @@
 	<key>NSFaceIDUsageDescription</key>
 	<string>Need your face to unlock Domoticz.</string>
 	<key>CFBundleVersion</key>
-	<string>80</string>
+	<string>81</string>
 </dict>
 </plist>

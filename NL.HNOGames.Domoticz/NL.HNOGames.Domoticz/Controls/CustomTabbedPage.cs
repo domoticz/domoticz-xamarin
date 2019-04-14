@@ -17,9 +17,9 @@ namespace NL.HNOGames.Domoticz.Controls
       /// </summary>
       public CustomTabbedPage()
       {
-         if (Device.RuntimePlatform == Device.iOS)
-            NavigationPage.SetHasNavigationBar(this, false);
-         else if (Device.RuntimePlatform == Device.Android)
+         //if (Device.RuntimePlatform == Device.iOS)
+         //   NavigationPage.SetHasNavigationBar(this, false);
+         //else if (Device.RuntimePlatform == Device.Android)
             CurrentPageChanged += OnCurrentPageChanged;
       }
 

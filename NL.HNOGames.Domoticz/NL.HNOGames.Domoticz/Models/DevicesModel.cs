@@ -95,7 +95,8 @@ namespace NL.HNOGames.Domoticz.Models
             {
                bool statusBoolean = true;
                if (string.Compare(Status, ConstantValues.Device.Blind.State.OFF, StringComparison.OrdinalIgnoreCase) == 0 ||
-                   string.Compare(Status, ConstantValues.Device.Blind.State.CLOSED, StringComparison.OrdinalIgnoreCase) == 0)
+                   string.Compare(Status, ConstantValues.Device.Blind.State.CLOSED, StringComparison.OrdinalIgnoreCase) == 0 ||
+                   string.Compare(Status, ConstantValues.Device.Door.State.UNLOCKED, StringComparison.OrdinalIgnoreCase) == 0)
                   statusBoolean = false;
                return statusBoolean;
             }

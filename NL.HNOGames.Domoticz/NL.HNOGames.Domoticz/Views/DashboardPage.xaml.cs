@@ -445,12 +445,11 @@ namespace NL.HNOGames.Domoticz.Views
                      App.ShowToast(AppResources.switch_on + ": " + oDevice.Name);
 
                   var result = await App.ApiService.SetSwitch(oDevice.idx,
-                    oDevice.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDINVERTED || oDevice.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDS || oDevice.SwitchTypeVal == ConstantValues.Device.Type.Value.DOORLOCKINVERTED ? !oSwitch.IsToggled : oSwitch.IsToggled,
+                    oDevice.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDS || oDevice.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDPERCENTAGE || oDevice.SwitchTypeVal == ConstantValues.Device.Type.Value.DOORLOCKINVERTED ? !oSwitch.IsToggled : oSwitch.IsToggled,
                       oDevice.Type == ConstantValues.Device.Scene.Type.GROUP ||
                       oDevice.Type == ConstantValues.Device.Scene.Type.SCENE, r.Text);
                   if (!result)
                      App.ShowToast(AppResources.security_wrong_code);
-
                   RefreshListView(true);
                }
             }
@@ -461,7 +460,7 @@ namespace NL.HNOGames.Domoticz.Views
                else
                   App.ShowToast(AppResources.switch_on + ": " + oDevice.Name);
                await App.ApiService.SetSwitch(oDevice.idx,
-                  oDevice.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDINVERTED || oDevice.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDS || oDevice.SwitchTypeVal == ConstantValues.Device.Type.Value.DOORLOCKINVERTED ? !oSwitch.IsToggled : oSwitch.IsToggled,
+                  oDevice.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDS || oDevice.SwitchTypeVal == ConstantValues.Device.Type.Value.BLINDPERCENTAGE || oDevice.SwitchTypeVal == ConstantValues.Device.Type.Value.DOORLOCKINVERTED ? !oSwitch.IsToggled : oSwitch.IsToggled,
                    oDevice.Type == ConstantValues.Device.Scene.Type.GROUP ||
                    oDevice.Type == ConstantValues.Device.Scene.Type.SCENE);
                RefreshListView(true);

@@ -302,6 +302,14 @@ namespace NL.HNOGames.Domoticz.Data
             }
          }
 
+         public static class Door
+         {
+            public static class State
+            {
+               public const string UNLOCKED = "Unlocked";
+               public const string OPEN = "Open";
+            }
+         }
 
          public static class Switch
          {

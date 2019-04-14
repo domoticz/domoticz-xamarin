@@ -419,6 +419,8 @@ namespace NL.HNOGames.Domoticz.Data
                public const int BLINDPERCENTAGEINVERTED = 16;
                public const int SELECTOR = 18;
                public const int DOORLOCK = 19;
+               public const int DOORLOCKINVERTED = 20;
+               public const int TEMP = 21;
             }
 
             public static class Name
@@ -443,6 +445,7 @@ namespace NL.HNOGames.Domoticz.Data
                public const string BLINDVENETIANUS = "Venetian Blinds US";
                public const string BLINDINVERTED = "Blinds Inverted";
                public const string BLINDPERCENTAGEINVERTED = "Blinds Percentage Inverted";
+               public const string DOORLOCKINVERTED = "Door Lock Inverted";
                public const string TEMPHUMIDITYBARO = "Temp + Humidity + Baro";
                public const string WIND = "Wind";
                public const string SELECTOR = "Selector";

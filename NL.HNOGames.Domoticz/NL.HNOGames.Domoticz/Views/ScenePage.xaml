@@ -4,8 +4,10 @@
    xmlns="http://xamarin.com/schemas/2014/forms"
    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
    xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
+   xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
    xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
    xmlns:selector="clr-namespace:NL.HNOGames.Domoticz.ViewSelector;assembly=NL.HNOGames.Domoticz"
+   ios:Page.UseSafeArea="true"
    Style="{StaticResource ContentPageType}">
 
    <NavigationPage.TitleView>
@@ -14,11 +16,17 @@
             x:Name="searchBar"
             AbsoluteLayout.LayoutBounds="0,0,1,1"
             AbsoluteLayout.LayoutFlags="All"
-            CancelButtonColor="White"
-            IsVisible="false"
-            PlaceholderColor="White"
-            TextColor="White" />
-
+            IsVisible="false">
+            <custcontrol:TitleViewSearchBar.TextColor>
+               <OnPlatform x:TypeArguments="Color" Android="White" />
+            </custcontrol:TitleViewSearchBar.TextColor>
+            <custcontrol:TitleViewSearchBar.PlaceholderColor>
+               <OnPlatform x:TypeArguments="Color" Android="White" />
+            </custcontrol:TitleViewSearchBar.PlaceholderColor>
+            <custcontrol:TitleViewSearchBar.CancelButtonColor>
+               <OnPlatform x:TypeArguments="Color" Android="White" />
+            </custcontrol:TitleViewSearchBar.CancelButtonColor>
+         </custcontrol:TitleViewSearchBar>
          <StackLayout
             x:Name="titleLayout"
             AbsoluteLayout.LayoutBounds="0,0,1,1"
@@ -31,7 +39,6 @@
                HorizontalTextAlignment="Start"
                Style="{DynamicResource TitleStyle}"
                Text="{Binding Title}"
-               TextColor="White"
                VerticalOptions="Center"
                VerticalTextAlignment="Center" />
             <Label
@@ -42,7 +49,6 @@
                VerticalOptions="Center"
                VerticalTextAlignment="Center" />
          </StackLayout>
-
          <Image
             x:Name="searchIcon"
             Margin="0,0,16,0"
@@ -50,6 +56,7 @@
             AbsoluteLayout.LayoutFlags="PositionProportional"
             Source="baseline_search_white_24.png" />
       </AbsoluteLayout>
+
    </NavigationPage.TitleView>
 
    <ContentPage.Resources>

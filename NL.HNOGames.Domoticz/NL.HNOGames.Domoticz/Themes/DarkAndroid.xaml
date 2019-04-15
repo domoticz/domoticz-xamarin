@@ -19,6 +19,7 @@
    <Color x:Key="HeaderDarkTextColor">#000000</Color>
    <Color x:Key="DarkButtonColor">#1A2C35</Color>
    <Color x:Key="ButtonOutlineColor">#303E4D</Color>
+   <Color x:Key="ControlHightlightColor">#2196F3</Color>
 
    <Style x:Key="TitleStyle" TargetType="Label">
       <Setter Property="TextColor" Value="White" />

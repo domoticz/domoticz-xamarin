@@ -46,9 +46,10 @@ namespace NL.HNOGames.OOTT.iOS
          iRate.SharedInstance.UsesUntilPrompt = 20;
          ZXing.Net.Mobile.Forms.iOS.Platform.Init();
 
+         XF.Material.iOS.Material.Init();
          CachedImageRenderer.Init();
          SlideOverKit.iOS.SlideOverKit.Init();
-
+         Plugin.InputKit.Platforms.iOS.Config.Init();
          Rg.Plugins.Popup.Popup.Init();
          OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();
 

@@ -30,11 +30,12 @@ namespace NL.HNOGames.Domoticz.Droid
          FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
          UserDialogs.Init(this);
          Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
+         Xamarin.Essentials.Platform.Init(this, savedInstanceState); 
 
          CrossCurrentActivity.Current.Init(this, savedInstanceState);
          CrossFingerprint.SetCurrentActivityResolver(() => CrossCurrentActivity.Current.Activity);
          CrossFingerprint.SetDialogFragmentType<CustomFingerprintDialogFragment>();
-         Plugin.InputKit.Platforms.Droid.Config.Init(this, savedInstanceState);
+         Plugin.InputKit.Platforms.Droid.Config.Init(this, savedInstanceState); 
 
          OxyPlot.Xamarin.Forms.Platform.Android.PlotViewRenderer.Init();
          ZXing.Net.Mobile.Forms.Android.Platform.Init();
@@ -50,15 +51,13 @@ namespace NL.HNOGames.Domoticz.Droid
          LoadApplication(new App(null));
       }
 
-
       public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
       {
          PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+         Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
          global::ZXing.Net.Mobile.Forms.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
          base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
       }
-
 
       protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
       {

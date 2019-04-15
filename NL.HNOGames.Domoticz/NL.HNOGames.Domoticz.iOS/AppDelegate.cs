@@ -47,7 +47,8 @@ namespace NL.HNOGames.Domoticz.iOS
          Plugin.InputKit.Platforms.iOS.Config.Init();
          CachedImageRenderer.Init();
          SlideOverKit.iOS.SlideOverKit.Init();
-
+         Plugin.InputKit.Platforms.iOS.Config.Init();
+         XF.Material.iOS.Material.Init();
          Rg.Plugins.Popup.Popup.Init();
          OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();
 

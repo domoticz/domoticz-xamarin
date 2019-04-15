@@ -134,6 +134,7 @@ namespace NL.HNOGames.Domoticz
          InitializeComponent();
 
          FlowListView.Init();
+         XF.Material.Forms.Material.Init(this);
          AppSettings = new Settings { DebugInfo = string.Empty };
 
          SetLanguage();

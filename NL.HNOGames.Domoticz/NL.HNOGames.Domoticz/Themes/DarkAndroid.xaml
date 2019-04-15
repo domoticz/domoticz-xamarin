@@ -22,7 +22,7 @@
 
    <Style x:Key="TitleStyle" TargetType="Label">
       <Setter Property="TextColor" Value="White" />
-      <Setter Property="FontSize" Value="18" />
+      <Setter Property="FontSize" Value="16" />
       <Setter Property="FontAttributes" Value="Bold" />
    </Style>
 
@@ -88,6 +88,7 @@
       <Setter Property="MinimumWidthRequest" Value="50" />
    </Style>
    <Style TargetType="custcontrol:ExtendedButton">
+      <Setter Property="FontSize" Value="12" />
       <Setter Property="BackgroundColor" Value="{DynamicResource CardBackgroundColor}" />
       <Setter Property="TextColor" Value="{DynamicResource GreyTextColor}" />
       <Setter Property="BorderRadius" Value="15" />
@@ -107,7 +108,7 @@
    </Style>
    <Style x:Key="HeaderType" TargetType="Label">
       <Setter Property="TextColor" Value="{DynamicResource HeaderTextColor}" />
-      <Setter Property="FontSize" Value="18" />
+      <Setter Property="FontSize" Value="16" />
       <Setter Property="FontAttributes" Value="Bold" />
       <Setter Property="LineBreakMode" Value="NoWrap" />
    </Style>
@@ -119,12 +120,12 @@
    </Style>
    <Style x:Key="DetailType" TargetType="Label">
       <Setter Property="TextColor" Value="{DynamicResource GreyTextColor}" />
-      <Setter Property="FontSize" Value="13" />
+      <Setter Property="FontSize" Value="12" />
       <Setter Property="LineBreakMode" Value="NoWrap" />
    </Style>
    <Style x:Key="DetailSmallType" TargetType="Label">
       <Setter Property="TextColor" Value="{DynamicResource GreyTextColor}" />
-      <Setter Property="FontSize" Value="10" />
+      <Setter Property="FontSize" Value="8" />
       <Setter Property="FontAttributes" Value="Italic" />
    </Style>
    <Style x:Key="SettingsDetailType" TargetType="Label">
@@ -160,5 +161,19 @@
       <Setter Property="HorizontalOptions" Value="FillAndExpand" />
       <Setter Property="VerticalOptions" Value="Center" />
       <Setter Property="Color" Value="#5b5d68" />
+   </Style>
+   <Style x:Key="RowStackLayout" TargetType="StackLayout">
+      <Setter Property="Spacing" Value="0" />
+      <Setter Property="Padding" Value="16" />
+      <Setter Property="BackgroundColor" Value="{DynamicResource CardBackgroundColor}" />
+      <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+      <Setter Property="VerticalOptions" Value="StartAndExpand" />
+   </Style>
+   <Style x:Key="SeparatorStackLayout" TargetType="StackLayout">
+      <Setter Property="HeightRequest" Value="8" />
+      <Setter Property="BackgroundColor" Value="{StaticResource LightBackgroundColor}" />
+      <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+      <Setter Property="VerticalOptions" Value="StartAndExpand" />
+      <Setter Property="Orientation" Value="Horizontal" />
    </Style>
 </ResourceDictionary>

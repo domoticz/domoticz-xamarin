@@ -10,6 +10,18 @@
 
    <custcontrol:CustomTabbedPage.ToolbarItems>
       <ToolbarItem
+         x:Name="tiMore"
+         Clicked="TiMore_Clicked"
+         Order="Primary">
+         <ToolbarItem.Icon>
+            <OnPlatform
+               x:TypeArguments="FileImageSource"
+               Android="baseline_more_vert_white_24.png"
+               iOS="baseline_more_vert_white_24.png" />
+         </ToolbarItem.Icon>
+      </ToolbarItem>
+
+      <!--<ToolbarItem
          x:Name="tiPlans"
          Clicked="OnShowPlansClick"
          Order="Primary"
@@ -58,7 +70,7 @@
                Android="ic_settings.png"
                iOS="ic_settings.png" />
          </ToolbarItem.Icon>
-      </ToolbarItem>
+      </ToolbarItem>-->
 
    </custcontrol:CustomTabbedPage.ToolbarItems>
 </custcontrol:CustomTabbedPage>

@@ -2446,6 +2446,10 @@
     <AndroidResource Include="Resources\drawable-xhdpi\baseline_search_white_24.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\baseline_search_white_24.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_search_white_24.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_more_vert_white_24.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\baseline_more_vert_white_24.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\baseline_more_vert_white_24.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\baseline_more_vert_white_24.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NL.HNOGames.Domoticz\NL.HNOGames.Domoticz.csproj">

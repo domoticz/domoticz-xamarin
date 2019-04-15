@@ -18,6 +18,10 @@ namespace NL.HNOGames.Domoticz.Views
       public static bool EmptyDialogShown = false;
       private bool _settingsOpened;
 
+      private bool _showPlans = true;
+      private bool _showQRCode = true;
+      private bool _showSpeech = true;
+
       /// <summary>
       /// Constructor
       /// </summary>
@@ -29,7 +33,7 @@ namespace NL.HNOGames.Domoticz.Views
          _viewModel.PlansLoadedMethod += () =>
          {
             if (_viewModel.Plans == null || _viewModel.Plans.Count <= 0)
-               ToolbarItems.Remove(tiPlans);
+               _showPlans = false;
          };
       }
 
@@ -47,13 +51,9 @@ namespace NL.HNOGames.Domoticz.Views
          else
             _viewModel.RefreshPlansCommand.Execute(null);
          if (!App.AppSettings.QRCodeEnabled)
-            ToolbarItems.Remove(tiQRCode);
-         else if (!ToolbarItems.Contains(tiQRCode))
-            ToolbarItems.Insert(1, tiQRCode);
+            _showQRCode = false;
          if (!App.AppSettings.SpeechEnabled)
-            ToolbarItems.Remove(tiSpeechCode);
-         else if (!ToolbarItems.Contains(tiSpeechCode))
-            ToolbarItems.Insert(1, tiSpeechCode);
+            _showSpeech = false;
       }
 
       /// <summary>
@@ -69,7 +69,7 @@ namespace NL.HNOGames.Domoticz.Views
       /// <summary>
       /// Show action sheet with plans
       /// </summary>
-      private async void OnShowPlansClick(object o, EventArgs e)
+      private async void OnShowPlans()
       {
          if (_viewModel.Plans == null || _viewModel.Plans.Count <= 0) return;
          var selectedPlanName = await DisplayActionSheet(AppResources.title_plans, AppResources.cancel, null,
@@ -82,7 +82,7 @@ namespace NL.HNOGames.Domoticz.Views
       /// <summary>
       /// Show all settings
       /// </summary>
-      private async void OnSettingsClick(object o, EventArgs e)
+      private async void OnSettingsClick()
       {
          _settingsOpened = true;
          await Navigation.PushAsync(new Settings.SettingsPage(new Command(BreakingSettingsChanged)));
@@ -100,7 +100,7 @@ namespace NL.HNOGames.Domoticz.Views
       /// <summary>
       /// Speech Recognition
       /// </summary>
-      private void tiSpeechCode_Activated(object sender, EventArgs e)
+      private void tiSpeechCode_Activated()
       {
          try
          {
@@ -151,7 +151,7 @@ namespace NL.HNOGames.Domoticz.Views
       /// <summary>
       /// Scan QR Code
       /// </summary>
-      private async void tiQRCode_Activated(object sender, EventArgs e)
+      private async void tiQRCode_Activated()
       {
          if (!App.AppSettings.QRCodeEnabled)
             return;
@@ -198,6 +198,30 @@ namespace NL.HNOGames.Domoticz.Views
          };
 
          await Navigation.PushAsync(scanPage);
+      }
+
+      /// <summary>
+      /// Show a dialog with all options
+      /// </summary>
+      private async void TiMore_Clicked(object sender, EventArgs e)
+      {
+         var actions = new List<string>();
+         if(_showPlans)
+            actions.Add(AppResources.title_plans);
+         if (_showQRCode)
+            actions.Add(AppResources.qrcode);
+         if (_showSpeech)
+            actions.Add(AppResources.Speech);
+         actions.Add(AppResources.wizard_button_settings);
+         var result = await DisplayActionSheet("", AppResources.cancel, null, actions.ToArray());
+         if (result == AppResources.title_plans)
+            OnShowPlans();
+         else if (result == AppResources.qrcode)
+            tiQRCode_Activated();
+         else if (result == AppResources.Speech)
+            tiSpeechCode_Activated();
+         else if (result == AppResources.wizard_button_settings)
+            OnSettingsClick();
       }
    }
 }

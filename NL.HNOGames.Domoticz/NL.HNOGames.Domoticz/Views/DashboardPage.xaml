@@ -246,7 +246,7 @@
                         <Grid.ColumnDefinitions>
                            <ColumnDefinition Width="50" />
                            <ColumnDefinition Width="*" />
-                           <ColumnDefinition Width="100" />
+                           <ColumnDefinition Width="150" />
                         </Grid.ColumnDefinitions>
                         <StackLayout
                            Grid.Column="0"

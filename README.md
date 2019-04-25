@@ -1,3 +1,6 @@
+[![Crowdin](https://d322cqt584bo4o.cloudfront.net/domoticz-for-android/localized.svg)](https://crowdin.com/project/domoticz-for-android)
+
+
 # Domoticz Xamarin
 This project is a multiplatform app for Domoticz, implemented for iOS and Android. (Universal Windows is not implemeted yet!!!)
 

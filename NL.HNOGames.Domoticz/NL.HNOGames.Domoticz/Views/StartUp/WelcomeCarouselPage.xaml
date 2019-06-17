@@ -25,9 +25,9 @@
                WidthRequest="75" />
             <Label
                Margin="0,20,0,0"
+               FontFamily="Bold"
                FontSize="Large"
                HorizontalOptions="CenterAndExpand"
-               Style="Bold"
                Text="{resources:Translate app_name}"
                TextColor="White" />
             <Label

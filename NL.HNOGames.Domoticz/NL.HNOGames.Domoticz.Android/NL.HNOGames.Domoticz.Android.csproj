@@ -102,20 +102,20 @@
     <Reference Include="FastAndroidCamera, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\FastAndroidCamera.2.0.0\lib\MonoAndroid403\FastAndroidCamera.dll</HintPath>
     </Reference>
-    <Reference Include="FFImageLoading, Version=2.4.5.880, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.FFImageLoading.2.4.5.880-pre\lib\MonoAndroid10\FFImageLoading.dll</HintPath>
+    <Reference Include="FFImageLoading, Version=2.4.11.982, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.2.4.11.982\lib\MonoAndroid10\FFImageLoading.dll</HintPath>
     </Reference>
-    <Reference Include="FFImageLoading.Forms, Version=2.4.5.880, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.FFImageLoading.Forms.2.4.5.880-pre\lib\MonoAndroid10\FFImageLoading.Forms.dll</HintPath>
+    <Reference Include="FFImageLoading.Forms, Version=2.4.11.982, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.Forms.2.4.11.982\lib\MonoAndroid10\FFImageLoading.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="FFImageLoading.Forms.Platform, Version=2.4.5.880, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.FFImageLoading.Forms.2.4.5.880-pre\lib\MonoAndroid10\FFImageLoading.Forms.Platform.dll</HintPath>
+    <Reference Include="FFImageLoading.Forms.Platform, Version=2.4.11.982, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.Forms.2.4.11.982\lib\MonoAndroid10\FFImageLoading.Forms.Platform.dll</HintPath>
     </Reference>
-    <Reference Include="FFImageLoading.Platform, Version=2.4.5.880, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.FFImageLoading.2.4.5.880-pre\lib\MonoAndroid10\FFImageLoading.Platform.dll</HintPath>
+    <Reference Include="FFImageLoading.Platform, Version=2.4.11.982, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.2.4.11.982\lib\MonoAndroid10\FFImageLoading.Platform.dll</HintPath>
     </Reference>
     <Reference Include="FFImageLoading.Transformations, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.FFImageLoading.Transformations.2.4.5.880-pre\lib\MonoAndroid10\FFImageLoading.Transformations.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.Transformations.2.4.11.982\lib\MonoAndroid10\FFImageLoading.Transformations.dll</HintPath>
     </Reference>
     <Reference Include="FormsViewGroup, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.3.6.0.293080\lib\MonoAndroid81\FormsViewGroup.dll</HintPath>
@@ -138,7 +138,7 @@
       <HintPath>..\..\packages\modernhttpclient.2.4.2\lib\MonoAndroid\ModernHttpClient.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.12.0.1\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="OkHttp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\modernhttpclient.2.4.2\lib\MonoAndroid\OkHttp.dll</HintPath>
@@ -198,7 +198,7 @@
       <HintPath>..\..\packages\Plugin.InAppBilling.2.0.0\lib\MonoAndroid10\Plugin.InAppBilling.VendingLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.InputKit, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.InputKit.3.0.7\lib\monoandroid81\Plugin.InputKit.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Forms.InputKit.3.0.11\lib\monoandroid81\Plugin.InputKit.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.LocalNotifications, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugins.Notifier.3.0.1\lib\MonoAndroid10\Plugin.LocalNotifications.dll</HintPath>

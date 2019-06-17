@@ -1,10 +1,10 @@
-﻿using System;
-using Xamarin.Forms;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using NL.HNOGames.Domoticz.Models;
+﻿using NL.HNOGames.Domoticz.Models;
 using NL.HNOGames.Domoticz.Resources;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace NL.HNOGames.Domoticz.Views.Settings
 {
@@ -24,6 +24,10 @@ namespace NL.HNOGames.Domoticz.Views.Settings
       public EventsPage()
       {
          InitializeComponent();
+
+         searchIcon.GestureRecognizers.Add(new TapGestureRecognizer { Command = new Command(OnSearchIconTapped) });
+         searchBar.TextChanged += searchBar_TextChanged;
+         searchBar.Cancelled += (s, e) => OnCancelled();
       }
 
       /// <summary>
@@ -69,7 +73,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
       /// <summary>
       /// Filter changed
       /// </summary>
-      private void sbSearch_TextChanged(object sender, TextChangedEventArgs e)
+      private void searchBar_TextChanged(object sender, TextChangedEventArgs e)
       {
          try
          {
@@ -107,12 +111,50 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                   App.ShowToast(AppResources.switch_off + ": " + oDevice.Name);
                else
                   App.ShowToast(AppResources.switch_on + ": " + oDevice.Name);
-               var result = await App.ApiService.SetEvent(oDevice.id, oSwitch.IsToggled);
+               await App.ApiService.SetEvent(oDevice.id, oSwitch.IsToggled);
                new Command(async () => await ExecuteLoadLogsCommand()).Execute(null);
             }
          }
-         catch (Exception)
+         catch (Exception) // Just in case
          { }
       }
+
+      #region SearchBar
+
+      private void OnSearchIconTapped()
+      {
+         BatchBegin();
+         try
+         {
+            NavigationPage.SetHasBackButton(this, false);
+            titleLayout.IsVisible = false;
+            searchIcon.IsVisible = false;
+            searchBar.IsVisible = true;
+            searchBar.Focus();
+         }
+         finally
+         {
+            BatchCommit();
+         }
+      }
+
+      private void OnCancelled()
+      {
+         BatchBegin();
+         try
+         {
+            NavigationPage.SetHasBackButton(this, true);
+            searchBar.IsVisible = false;
+            searchBar.Text = string.Empty;
+            titleLayout.IsVisible = true;
+            searchIcon.IsVisible = true;
+         }
+         finally
+         {
+            BatchCommit();
+         }
+      }
+
+      #endregion
    }
 }

@@ -1,18 +1,18 @@
 ﻿
-using FFImageLoading.Forms.Touch;
+using FFImageLoading.Forms;
 using Foundation;
 using UIKit;
-
 using System;
 using MTiRate;
 using PushNotification.Plugin;
 using NL.HNOGames.Domoticz.Helpers;
-using NL.HNOGames.Domoticz;
 using UserNotifications;
 using Firebase.CloudMessaging;
 using Firebase.Core;
 using System.Net;
+using Google.Maps;
 using Plugin.Fingerprint;
+
 
 namespace NL.HNOGames.OOTT.iOS
 {
@@ -45,7 +45,7 @@ namespace NL.HNOGames.OOTT.iOS
          iRate.SharedInstance.DaysUntilPrompt = 10;
          iRate.SharedInstance.UsesUntilPrompt = 20;
          ZXing.Net.Mobile.Forms.iOS.Platform.Init();
-         CachedImageRenderer.Init();
+        // FFImageLoading.Forms.CachedImageRenderer.Init();
          SlideOverKit.iOS.SlideOverKit.Init();
          Plugin.InputKit.Platforms.iOS.Config.Init();
          Rg.Plugins.Popup.Popup.Init();

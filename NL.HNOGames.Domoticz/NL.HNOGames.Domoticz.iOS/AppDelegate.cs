@@ -1,8 +1,7 @@
 ﻿
-using FFImageLoading.Forms.Touch;
+using FFImageLoading.Forms;
 using Foundation;
 using UIKit;
-
 using System;
 using MTiRate;
 using PushNotification.Plugin;
@@ -45,7 +44,8 @@ namespace NL.HNOGames.Domoticz.iOS
          iRate.SharedInstance.UsesUntilPrompt = 20;
          ZXing.Net.Mobile.Forms.iOS.Platform.Init();
          Plugin.InputKit.Platforms.iOS.Config.Init();
-         CachedImageRenderer.Init();
+         //FFImageLoading.Forms.CachedImageRenderer.Init();
+
          SlideOverKit.iOS.SlideOverKit.Init();
          Plugin.InputKit.Platforms.iOS.Config.Init();
          Rg.Plugins.Popup.Popup.Init();

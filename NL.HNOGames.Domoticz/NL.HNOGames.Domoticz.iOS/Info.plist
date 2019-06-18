@@ -67,5 +67,9 @@
 	<string>Need your face to unlock Domoticz.</string>
 	<key>CFBundleVersion</key>
 	<string>90</string>
+	<key>XSAppIconAssets</key>
+	<string>Resources/Media.xcassets/AppIcons.appiconset</string>
+	<key>XSLaunchImageAssets</key>
+	<string>Resources/Media.xcassets/LaunchImages.launchimage</string>
 </dict>
 </plist>

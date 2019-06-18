@@ -45,7 +45,8 @@ namespace NL.HNOGames.OOTT.iOS
          iRate.SharedInstance.DaysUntilPrompt = 10;
          iRate.SharedInstance.UsesUntilPrompt = 20;
          ZXing.Net.Mobile.Forms.iOS.Platform.Init();
-        // FFImageLoading.Forms.CachedImageRenderer.Init();
+         FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
+
          SlideOverKit.iOS.SlideOverKit.Init();
          Plugin.InputKit.Platforms.iOS.Config.Init();
          Rg.Plugins.Popup.Popup.Init();

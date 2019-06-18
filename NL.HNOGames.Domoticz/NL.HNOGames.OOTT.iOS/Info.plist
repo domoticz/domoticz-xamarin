@@ -69,5 +69,7 @@
 	<string>Can we use your location for geofences</string>
 	<key>NSLocationWhenInUseUsageDescrtion</key>
 	<string>Can we use your location for geofences</string>
+	<key>XSLaunchImageAssets</key>
+	<string>Resources/Media.xcassets/LaunchImages.launchimage</string>
 </dict>
 </plist>

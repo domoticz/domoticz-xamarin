@@ -44,7 +44,7 @@ namespace NL.HNOGames.Domoticz.iOS
          iRate.SharedInstance.UsesUntilPrompt = 20;
          ZXing.Net.Mobile.Forms.iOS.Platform.Init();
          Plugin.InputKit.Platforms.iOS.Config.Init();
-         //FFImageLoading.Forms.CachedImageRenderer.Init();
+         FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
 
          SlideOverKit.iOS.SlideOverKit.Init();
          Plugin.InputKit.Platforms.iOS.Config.Init();

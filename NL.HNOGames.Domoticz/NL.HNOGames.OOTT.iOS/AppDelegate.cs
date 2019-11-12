@@ -10,9 +10,7 @@ using UserNotifications;
 using Firebase.CloudMessaging;
 using Firebase.Core;
 using System.Net;
-using Google.Maps;
 using Plugin.Fingerprint;
-
 
 namespace NL.HNOGames.OOTT.iOS
 {

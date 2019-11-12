@@ -22,17 +22,17 @@ namespace NL.HNOGames.Domoticz.Views
             Children.Add(new GraphPage(device, sensor)
             {
                 Title = AppResources.button_status_day,
-                Icon = Device.RuntimePlatform == Device.iOS ? "ic_show_chart.png" : null,
+                IconImageSource = Device.RuntimePlatform == Device.iOS ? "ic_show_chart.png" : null,
             });
             Children.Add(new GraphPage(device, sensor, Data.ConstantValues.GraphRange.Month)
             {
                 Title = AppResources.button_status_month,
-                Icon = Device.RuntimePlatform == Device.iOS ? "ic_show_chart.png" : null,
+                IconImageSource = Device.RuntimePlatform == Device.iOS ? "ic_show_chart.png" : null,
             });
             Children.Add(new GraphPage(device, sensor, Data.ConstantValues.GraphRange.Year)
             {
                 Title = AppResources.button_status_year,
-                Icon = Device.RuntimePlatform == Device.iOS ? "ic_show_chart.png" : null,
+                IconImageSource = Device.RuntimePlatform == Device.iOS ? "ic_show_chart.png" : null,
             });
         }
 

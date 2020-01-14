@@ -9,7 +9,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>nl.hnogames.oott</string>
 	<key>MinimumOSVersion</key>
-	<string>9.0</string>
+	<string>11.0</string>
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
@@ -71,5 +71,7 @@
 	<string>Can we use your location for geofences</string>
 	<key>XSLaunchImageAssets</key>
 	<string>Resources/Media.xcassets/LaunchImages.launchimage</string>
+  <key>UIUserInterfaceStyle</key>
+  <string>Light</string>
 </dict>
 </plist>

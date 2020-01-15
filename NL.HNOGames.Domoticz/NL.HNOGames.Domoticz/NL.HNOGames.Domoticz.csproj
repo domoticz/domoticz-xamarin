@@ -14,7 +14,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>TRACE;DEBUG;NETSTANDARD2_0;DEVELOPMENT</DefineConstants>
     <NoWarn>1701;1702;1705;NU1701</NoWarn>
-    <DocumentationFile>D:\domoticz-xamarin\NL.HNOGames.Domoticz\NL.HNOGames.Domoticz\NL.HNOGames.Domoticz.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='OOTT|AnyCPU'">
     <DefineConstants>TRACE;OOTT</DefineConstants>

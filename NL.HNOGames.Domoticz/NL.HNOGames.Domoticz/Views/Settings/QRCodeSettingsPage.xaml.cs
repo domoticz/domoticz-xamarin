@@ -71,7 +71,6 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                     PossibleFormats = new List<BarcodeFormat> {expectedFormat}
                 };
                 System.Diagnostics.Debug.WriteLine("Scanning " + expectedFormat);
-
                 var scanPage = new ZXingScannerPage(opts);
                 scanPage.OnScanResult += (result) =>
                 {

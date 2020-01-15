@@ -94,7 +94,6 @@ namespace NL.HNOGames.Domoticz.Views
       private static void BreakingSettingsChanged()
       {
          App.SetMainPage();
-         App.RestartFirebase();
       }
 
       /// <summary>

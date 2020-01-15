@@ -17,30 +17,20 @@ using Plugin.Fingerprint.Abstractions;
 using System.Threading.Tasks;
 using NL.HNOGames.Domoticz.Models;
 using Device = Xamarin.Forms.Device;
+using Plugin.FirebasePushNotification;
+using System.Net;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace NL.HNOGames.Domoticz
 {
     public partial class App
     {
-        private static InitFirebase _initFirebase;
-        public delegate void InitFirebase();
-
         public static ConnectionService ConnectionService { get; private set; }
         public static DataService ApiService { get; private set; }
         public static Settings AppSettings { get; private set; }
         public static SunRiseModel SunRiseInfo { get; private set; }
-
         private static Models.ConfigModel ServerConfig { get; set; }
         private static IProgressDialog _loadingDialog;
-
-        /// <summary>
-        /// Restart Firebase
-        /// </summary>
-        public static void RestartFirebase()
-        {
-            _initFirebase?.Invoke();
-        }
 
         /// <summary>
         /// Load the server config
@@ -120,12 +110,6 @@ namespace NL.HNOGames.Domoticz
             Init();
         }
 
-        public App(InitFirebase firebase)
-        {
-            _initFirebase = firebase;
-            Init();
-        }
-
         /// <summary>
         /// Init the page
         /// </summary>
@@ -149,11 +133,62 @@ namespace NL.HNOGames.Domoticz
         }
 
         /// <summary>
+        /// On start, register the notification services
+        /// </summary>
+        protected override void OnStart()
+        {
+            // Handle when your app starts
+            CrossFirebasePushNotification.Current.Subscribe("general");
+            CrossFirebasePushNotification.Current.OnTokenRefresh += (s, p) =>
+            {
+                registerAsync(p.Token);
+                System.Diagnostics.Debug.WriteLine($"TOKEN REC: {p.Token}");
+            };
+            registerAsync(CrossFirebasePushNotification.Current.Token);
+
+            CrossFirebasePushNotification.Current.OnNotificationReceived += (s, p) =>
+            {
+                try
+                {
+                    AddLog("GCM: Notification received");
+                    AddLog(p.Data.ToString());
+
+                    var body = p.Data.ContainsKey("body") ? p.Data["body"].ToString() : null;
+                    var title = p.Data.ContainsKey("title") ? p.Data["title"].ToString() : null;
+                    if (string.IsNullOrEmpty(title))
+                        title = p.Data.ContainsKey("subject") ? p.Data["subject"].ToString() : null;
+                    if (string.Compare(title, body, true) == 0)
+                        title = "Domoticz";
+
+                    // Show dialog
+                    UserDialogs.Instance.Alert(body, title, AppResources.ok);
+                }
+                catch (Exception)
+                { }
+            };
+        }
+
+        /// <summary>
+        /// Store the latest know token
+        /// </summary>
+        /// <param name="token"></param>
+        private async void registerAsync(string token)
+        {
+            AddLog(string.Format("GCM: Push Notification - Device Registered - Token : {0}", token));
+            var Id = UsefulBits.GetDeviceID();
+            bool bSuccess = await ApiService.RegisterDevice(Id, token);
+            if (bSuccess)
+                AddLog("GCM: Device registered on Domoticz");
+            else
+                AddLog("GCM: Device not registered on Domoticz");
+        }
+
+        /// <summary>
         /// Check fingerprint security
         /// </summary>
         private static async void CheckFingerprint()
         {
-            if (App.AppSettings.EnableFingerprintSecurity)
+            if (AppSettings.EnableFingerprintSecurity)
             {
                 var result = await CrossFingerprint.Current.AuthenticateAsync(new AuthenticationRequestConfiguration(AppResources.category_startup_security)
                 {

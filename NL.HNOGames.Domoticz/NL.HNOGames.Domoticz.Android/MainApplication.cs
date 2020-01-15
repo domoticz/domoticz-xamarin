@@ -1,83 +1,93 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+using Firebase;
 using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using PushNotification.Plugin;
-using NL.HNOGames.Domoticz.Helpers;
 using Plugin.CurrentActivity;
+using Plugin.FirebasePushNotification;
 
 namespace NL.HNOGames.Domoticz.Droid
 {
-   //You can specify additional application information in this attribute
+    //You can specify additional application information in this attribute
 #if DEBUG
-   [Application(Debuggable = true)]
+    [Application(Debuggable = true)]
 #else
    [Application(Debuggable = false)]
 #endif
-   public class MainApplication : Application
-   {
-      public static Context AppContext;
+    public class MainApplication : Application, Application.IActivityLifecycleCallbacks
+    {
+        public static Context AppContext;
 
-      public MainApplication(IntPtr handle, JniHandleOwnership transer)
-        : base(handle, transer)
-      {
-      }
+        public MainApplication(IntPtr handle, JniHandleOwnership transer)
+          : base(handle, transer)
+        {}
 
-      public override void OnCreate()
-      {
-         base.OnCreate();
-         AppContext = ApplicationContext;
-         CrossCurrentActivity.Current.Init(this);
+        public override void OnCreate()
+        {
+            base.OnCreate();
+            RegisterActivityLifecycleCallbacks(this);
 
-         //RegisterActivityLifecycleCallbacks(this);
-         CrossPushNotification.Initialize<CrossPushNotificationListener>("705545900899");
-         CrossPushNotification.Current.Register();
+            FirebaseApp.InitializeApp(this);
+            AppContext = ApplicationContext;
+            CrossCurrentActivity.Current.Init(this);
 
-         StartPushService();
-      }
-
-      public override void OnTerminate()
-      {
-         base.OnTerminate();
-         //UnregisterActivityLifecycleCallbacks(this);
-      }
-
-      public static void StartPushService()
-      {
-         try
-         {
-            AppContext.StartService(new Intent(AppContext, typeof(PushNotificationService)));
-
-            if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Kitkat)
+            //Set the default notification channel for your app when running Android Oreo
+            if (Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.O)
             {
-               PendingIntent pintent = PendingIntent.GetService(AppContext, 0, new Intent(AppContext, typeof(PushNotificationService)), 0);
-               AlarmManager alarm = (AlarmManager)AppContext.GetSystemService(Context.AlarmService);
-               alarm.Cancel(pintent);
+                FirebasePushNotificationManager.DefaultNotificationChannelId = "Default";
+                FirebasePushNotificationManager.DefaultNotificationChannelName = "General";
             }
-         }
-         catch (Exception) { }
-      }
 
-      public static void StopPushService()
-      {
-         try
-         {
-            AppContext.StopService(new Intent(AppContext, typeof(PushNotificationService)));
-            if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Kitkat)
-            {
-               PendingIntent pintent = PendingIntent.GetService(AppContext, 0, new Intent(AppContext, typeof(PushNotificationService)), 0);
-               AlarmManager alarm = (AlarmManager)AppContext.GetSystemService(Context.AlarmService);
-               alarm.Cancel(pintent);
-            }
-         }
-         catch (Exception) { }
-      }
-   }
+            //If debug you should reset the token each time.
+#if DEBUG
+            FirebasePushNotificationManager.Initialize(this, true);
+#else
+              FirebasePushNotificationManager.Initialize(this,false);
+#endif
+
+            //CrossFirebasePushNotification.Current.OnNotificationReceived += (s, p) =>
+            //{
+            //    System.Diagnostics.Debug.WriteLine("NOTIFICATION RECEIVED", p.Data);
+            //};
+        }
+
+        public override void OnTerminate()
+        {
+            base.OnTerminate();
+            UnregisterActivityLifecycleCallbacks(this);
+        }
+
+        public void OnActivityCreated(Activity activity, Bundle savedInstanceState)
+        {
+            CrossCurrentActivity.Current.Activity = activity;
+        }
+
+        public void OnActivityDestroyed(Activity activity)
+        {
+        }
+
+        public void OnActivityPaused(Activity activity)
+        {
+        }
+
+        public void OnActivityResumed(Activity activity)
+        {
+            CrossCurrentActivity.Current.Activity = activity;
+        }
+
+        public void OnActivitySaveInstanceState(Activity activity, Bundle outState)
+        {
+        }
+
+        public void OnActivityStarted(Activity activity)
+        {
+            CrossCurrentActivity.Current.Activity = activity;
+        }
+
+        public void OnActivityStopped(Activity activity)
+        {
+        }
+    }
 }

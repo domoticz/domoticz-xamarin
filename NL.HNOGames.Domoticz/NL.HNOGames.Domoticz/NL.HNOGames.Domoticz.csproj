@@ -9,10 +9,12 @@
     <Configurations>Debug;Release;OOTT</Configurations>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>TRACE;RELEASE</DefineConstants>
+    <DefineConstants>TRACE;RELEASE;NETSTANDARD2_0;DEVELOPMENT</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;NETSTANDARD2_0;DEVELOPMENT</DefineConstants>
+    <NoWarn>1701;1702;1705;NU1701</NoWarn>
+    <DocumentationFile>D:\domoticz-xamarin\NL.HNOGames.Domoticz\NL.HNOGames.Domoticz\NL.HNOGames.Domoticz.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='OOTT|AnyCPU'">
     <DefineConstants>TRACE;OOTT</DefineConstants>
@@ -156,7 +158,6 @@
     <PackageReference Include="DLToolkit.Forms.Controls.FlowListView" Version="2.0.11" />
     <PackageReference Include="FolderPath" Version="1.1.1" />
     <PackageReference Include="Humanizer" Version="2.7.9" />
-    <PackageReference Include="Microsoft.Bcl.Build" Version="1.0.21" />
     <PackageReference Include="Microsoft.NETCore.Platforms" Version="3.1.0" />
     <PackageReference Include="Microsoft.NETCore.Targets" Version="3.1.0" />
     <PackageReference Include="modernhttpclient" Version="2.4.2" />
@@ -166,6 +167,7 @@
     <PackageReference Include="PCLStorage" Version="1.0.2" />
     <PackageReference Include="Plugin.DeviceOrientation" Version="1.0.7" />
     <PackageReference Include="Plugin.Fingerprint" Version="1.4.9" />
+    <PackageReference Include="Plugin.FirebasePushNotification" Version="3.0.3" />
     <PackageReference Include="Plugin.InAppBilling" Version="2.0.0" />
     <PackageReference Include="Plugin.Multilingual" Version="1.0.2" />
     <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
@@ -179,7 +181,6 @@
     <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.3" />
     <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
     <PackageReference Include="Xam.Plugin.DeviceInfo" Version="4.1.1" />
-    <PackageReference Include="Xam.Plugin.PushNotification" Version="1.2.5-beta" />
     <PackageReference Include="Xam.Plugin.SimpleColorPicker" Version="1.0.5" />
     <PackageReference Include="Xam.Plugins.Notifier" Version="3.0.1" />
     <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />

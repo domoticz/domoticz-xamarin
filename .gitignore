@@ -287,3 +287,7 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 *.apk
+.vs/NL.HNOGames.Domoticz/DesignTimeBuild/.dtbcache
+*.ide-shm
+*.ide-wal
+.vs/NL.HNOGames.Domoticz/DesignTimeBuild/.dtbcache

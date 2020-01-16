@@ -47,6 +47,7 @@ namespace NL.HNOGames.Domoticz.Data
             if (Server == null)
                 return false;
             var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.VERSION);
+            App.AddLog("JSON Call: " + url);
             try
             {
                 Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
@@ -73,6 +74,7 @@ namespace NL.HNOGames.Domoticz.Data
             if (Server == null)
                 return null;
             var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.SUNRISE);
+            App.AddLog("JSON Call: " + url);
             try
             {
                 Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
@@ -99,6 +101,7 @@ namespace NL.HNOGames.Domoticz.Data
             if (Server == null)
                 return null;
             var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.VERSION);
+            App.AddLog("JSON Call: " + url);
             try
             {
                 Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
@@ -129,6 +132,7 @@ namespace NL.HNOGames.Domoticz.Data
                     return;
 
                 var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.System.CONFIG);
+                App.AddLog("JSON Call: " + url);
                 try
                 {
                     Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
@@ -156,6 +160,7 @@ namespace NL.HNOGames.Domoticz.Data
             if (Server == null)
                 return null;
             var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.PLANS);
+            App.AddLog("JSON Call: " + url);
 
             try
             {
@@ -201,6 +206,7 @@ namespace NL.HNOGames.Domoticz.Data
             if (Server == null)
                 return null;
             var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.CAMERAS);
+            App.AddLog("JSON Call: " + url);
             try
             {
                 Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
@@ -228,6 +234,7 @@ namespace NL.HNOGames.Domoticz.Data
             if (Server == null || string.IsNullOrEmpty(idx))
                 return null;
             var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.CAMERA) + idx;
+            App.AddLog("JSON Call: " + url);
 
             try
             {
@@ -262,6 +269,7 @@ namespace NL.HNOGames.Domoticz.Data
             if (Server == null)
                 return null;
             var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.DEVICES);
+            App.AddLog("JSON Call: " + url);
             if (!string.IsNullOrEmpty(filter))
                 url = url.Replace("filter=all", "filter=" + filter);
             if (plan > 0)
@@ -294,6 +302,7 @@ namespace NL.HNOGames.Domoticz.Data
             if (Server == null)
                 return null;
             var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Notification.NOTIFICATION) + device.idx;
+            App.AddLog("JSON Call: " + url);
 
             try
             {
@@ -322,6 +331,7 @@ namespace NL.HNOGames.Domoticz.Data
             if (Server == null)
                 return null;
             var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.SWITCHTIMER) + idx;
+            App.AddLog("JSON Call: " + url);
 
             try
             {
@@ -349,6 +359,7 @@ namespace NL.HNOGames.Domoticz.Data
             if (Server == null)
                 return null;
             var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Log.GET_LOG);
+            App.AddLog("JSON Call: " + url);
 
             try
             {
@@ -377,6 +388,7 @@ namespace NL.HNOGames.Domoticz.Data
             if (Server == null)
                 return null;
             var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.System.USERVARIABLES);
+            App.AddLog("JSON Call: " + url);
 
             try
             {
@@ -405,6 +417,7 @@ namespace NL.HNOGames.Domoticz.Data
             if (Server == null)
                 return null;
             var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.System.EVENTS);
+            App.AddLog("JSON Call: " + url);
 
             try
             {
@@ -440,6 +453,7 @@ namespace NL.HNOGames.Domoticz.Data
                 url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.SCENELOG) + deviceIdx;
             else if (textLog)
                 url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.TEXTLOG) + deviceIdx;
+            App.AddLog("JSON Call: " + url);
 
             try
             {
@@ -471,6 +485,7 @@ namespace NL.HNOGames.Domoticz.Data
             var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.SCENES);
             if (!string.IsNullOrEmpty(filter))
                 url = url.Replace("filter=all", "filter=" + filter);
+            App.AddLog("JSON Call: " + url);
 
             try
             {
@@ -501,6 +516,7 @@ namespace NL.HNOGames.Domoticz.Data
             var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.TEMPERATURE);
             if (!string.IsNullOrEmpty(filter))
                 url = url.Replace("filter=all", "filter=" + filter);
+            App.AddLog("JSON Call: " + url);
 
             try
             {
@@ -531,6 +547,7 @@ namespace NL.HNOGames.Domoticz.Data
             var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.WEATHER);
             if (!string.IsNullOrEmpty(filter))
                 url = url.Replace("filter=all", "filter=" + filter);
+            App.AddLog("JSON Call: " + url);
 
             try
             {
@@ -561,6 +578,7 @@ namespace NL.HNOGames.Domoticz.Data
             var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.UTILITIES);
             if (!string.IsNullOrEmpty(filter))
                 url = url.Replace("filter=all", "filter=" + filter);
+            App.AddLog("JSON Call: " + url);
 
             try
             {
@@ -591,6 +609,7 @@ namespace NL.HNOGames.Domoticz.Data
             var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.Category.FAVORITES);
             if (!string.IsNullOrEmpty(filter))
                 url = url.Replace("filter=all", "filter=" + filter);
+            App.AddLog("JSON Call: " + url);
 
             try
             {
@@ -846,6 +865,7 @@ namespace NL.HNOGames.Domoticz.Data
             url += "&vname=" + name;
             url += "&vtype=" + type;
             url += "&vvalue=" + newValue;
+            App.AddLog("JSON Call: " + url);
 
             try
             {
@@ -982,6 +1002,7 @@ namespace NL.HNOGames.Domoticz.Data
             var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.System.SETSECURITY);
             url += "&secstatus=" + secStatus;
             url += "&seccode=" + secMd5Code;
+            App.AddLog("JSON Call: " + url);
 
             try
             {
@@ -1016,6 +1037,7 @@ namespace NL.HNOGames.Domoticz.Data
 
             var url = await App.ConnectionService.ConstructGetUrlAsync(Server, ConstantValues.Url.System.CLEAN_MOBILE_DEVICE);
             url += "&uuid=" + deviceId;
+            App.AddLog("JSON Call: " + url);
             try
             {
                 Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
@@ -1053,7 +1075,7 @@ namespace NL.HNOGames.Domoticz.Data
                 url += "&name=" + CrossDeviceInfo.Current.Model.Replace(" ", "");
                 url += "&devicetype=" + (CrossDeviceInfo.Current.Platform.ToString() + CrossDeviceInfo.Current.Version).Replace(" ", "");
                 url += "&active=" + (App.AppSettings.EnableNotifications ? "1" : "0");
-                App.AddLog("Domoticz Full Url: " + url);
+                App.AddLog("JSON Call: " + url);
 
                 Response = await App.ConnectionService.Client.GetAsync(new Uri(url));
                 if (Response.IsSuccessStatusCode)

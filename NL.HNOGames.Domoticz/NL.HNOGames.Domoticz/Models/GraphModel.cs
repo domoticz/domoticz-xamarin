@@ -63,12 +63,12 @@ namespace NL.HNOGames.Domoticz.Models
         /// <summary>
         /// Gets or sets the hu
         /// </summary>
-        public String hu { get; set; }
+        public string hu { get; set; }
 
         /// <summary>
         /// Gets or sets the ba
         /// </summary>
-        public String ba { get; set; }
+        public string ba { get; set; }
 
         /// <summary>
         /// Gets or sets the se
@@ -88,122 +88,122 @@ namespace NL.HNOGames.Domoticz.Models
         /// <summary>
         /// Gets or sets the v
         /// </summary>
-        public String v { get; set; }
+        public string v { get; set; }
 
         /// <summary>
         /// Gets or sets the v2
         /// </summary>
-        public String v2 { get; set; }
+        public string v2 { get; set; }
 
         /// <summary>
         /// Gets or sets the r1
         /// </summary>
-        public String r1 { get; set; }
+        public string r1 { get; set; }
 
         /// <summary>
         /// Gets or sets the r2
         /// </summary>
-        public String r2 { get; set; }
+        public string r2 { get; set; }
 
         /// <summary>
         /// Gets or sets the eg
         /// </summary>
-        public String eg { get; set; }
+        public string eg { get; set; }
 
         /// <summary>
         /// Gets or sets the eu
         /// </summary>
-        public String eu { get; set; }
+        public string eu { get; set; }
 
         /// <summary>
         /// Gets or sets the v_min
         /// </summary>
-        public String v_min { get; set; }
+        public string v_min { get; set; }
 
         /// <summary>
         /// Gets or sets the v_max
         /// </summary>
-        public String v_max { get; set; }
+        public string v_max { get; set; }
 
         /// <summary>
         /// Gets or sets the v_avg
         /// </summary>
-        public String v_avg { get; set; }
+        public string v_avg { get; set; }
 
         /// <summary>
         /// Gets or sets the c
         /// </summary>
-        public String c { get; set; }
+        public string c { get; set; }
 
         /// <summary>
         /// Gets or sets the di
         /// </summary>
-        public String di { get; set; }
+        public string di { get; set; }
 
         /// <summary>
         /// Gets or sets the gu
         /// </summary>
-        public String gu { get; set; }
+        public string gu { get; set; }
 
         /// <summary>
         /// Gets or sets the sp
         /// </summary>
-        public String sp { get; set; }
+        public string sp { get; set; }
 
         /// <summary>
         /// Gets or sets the uvi
         /// </summary>
-        public String uvi { get; set; }
+        public string uvi { get; set; }
 
         /// <summary>
         /// Gets or sets the mm
         /// </summary>
-        public String mm { get; set; }
+        public string mm { get; set; }
 
         /// <summary>
         /// Gets or sets the u
         /// </summary>
-        public String u { get; set; }
+        public string u { get; set; }
 
         /// <summary>
         /// Gets or sets the u_max
         /// </summary>
-        public String u_max { get; set; }
+        public string u_max { get; set; }
 
         /// <summary>
         /// Gets or sets the co2_min
         /// </summary>
-        public String co2_min { get; set; }
+        public string co2_min { get; set; }
 
         /// <summary>
         /// Gets or sets the co2_max
         /// </summary>
-        public String co2_max { get; set; }
+        public string co2_max { get; set; }
 
         /// <summary>
         /// Gets or sets the co2
         /// </summary>
-        public String co2 { get; set; }
+        public string co2 { get; set; }
 
         /// <summary>
         /// Gets or sets the lux
         /// </summary>
-        public String lux { get; set; }
+        public string lux { get; set; }
 
         /// <summary>
         /// Gets or sets the lux_min
         /// </summary>
-        public String lux_min { get; set; }
+        public string lux_min { get; set; }
 
         /// <summary>
         /// Gets or sets the lux_max
         /// </summary>
-        public String lux_max { get; set; }
+        public string lux_max { get; set; }
 
         /// <summary>
         /// Gets or sets the lux_avg
         /// </summary>
-        public String lux_avg { get; set; }
+        public string lux_avg { get; set; }
 
         #endregion
 

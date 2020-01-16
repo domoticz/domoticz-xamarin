@@ -39,7 +39,7 @@ namespace NL.HNOGames.Domoticz.Droid.Helpers
         /// <returns>The <see cref="SSLSocketFactory"/></returns>
         protected override SSLSocketFactory ConfigureCustomSSLSocketFactory(HttpsURLConnection connection)
         {
-            return SSLCertificateSocketFactory.GetInsecure(1000, null);
+            return SSLCertificateSocketFactory.GetInsecure(10000, null);
         }
 
         /// <summary>

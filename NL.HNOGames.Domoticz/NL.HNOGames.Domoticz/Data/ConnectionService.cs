@@ -43,6 +43,7 @@ namespace NL.HNOGames.Domoticz.Data
         public ConnectionService()
         {
             _cookieHandler = new NativeCookieHandler();
+
             RefreshClient(); //default 
         }
 
@@ -126,7 +127,6 @@ namespace NL.HNOGames.Domoticz.Data
 
             _latestUsedbaseUrl = $"{protocol}{url}:{port}{(string.IsNullOrEmpty(directory) ? "" : "/" + directory)}";
             var fullString = $"{_latestUsedbaseUrl}{jsonUrl}";
-            App.AddLog("JSON Call: " + fullString);
             return fullString;
         }
 
@@ -361,7 +361,6 @@ namespace NL.HNOGames.Domoticz.Data
                               + actionUrl;
                     break;
             }
-
             _latestUsedbaseUrl =
                 $"{protocol}{baseUrl}:{port}{(string.IsNullOrEmpty(directory) ? "" : "/" + directory)}";
             var fullString = $"{_latestUsedbaseUrl}{jsonUrl}";
@@ -377,20 +376,25 @@ namespace NL.HNOGames.Domoticz.Data
         /// </summary>
         private void RefreshClient()
         {
+            App.AddLog("Refreshing http client");
             CleanClient();
-
             switch (Xamarin.Forms.Device.RuntimePlatform)
             {
                 case Xamarin.Forms.Device.Android:
-                    Client = new HttpClient(DependencyService.Get<IHTTPClientHandlerCreationService>().GetInsecureHandler());
+                    Client = new HttpClient(DependencyService.Get<IHTTPClientHandlerCreationService>().GetInsecureHandler())
+                    {
+                        MaxResponseContentBufferSize = 25600000,
+                        Timeout = TimeSpan.FromMilliseconds(10000),
+                    };
                     break;
                 default:
-                    Client = new HttpClient(new NativeMessageHandler(false, false, _cookieHandler));
+                    Client = new HttpClient(new NativeMessageHandler(false, false, _cookieHandler))
+                    {
+                        MaxResponseContentBufferSize = 25600000,
+                        Timeout = TimeSpan.FromMilliseconds(10000),
+                    };
                     break;
             }
-
-            Client.MaxResponseContentBufferSize = 25600000;
-            Client.Timeout = TimeSpan.FromMilliseconds(10000);
         }
 
         /// <summary>

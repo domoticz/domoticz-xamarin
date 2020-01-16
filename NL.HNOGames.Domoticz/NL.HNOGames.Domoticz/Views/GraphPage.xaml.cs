@@ -55,7 +55,7 @@ namespace NL.HNOGames.Domoticz.Views
         /// <summary>
         /// Defines the activeFilter
         /// </summary>
-        private String activeFilter = AppResources.filterOn_all;
+        private string activeFilter = AppResources.filterOn_all;
 
         #endregion
 
@@ -91,7 +91,7 @@ namespace NL.HNOGames.Domoticz.Views
         /// </summary>
         public async void InitGraphData()
         {
-            if (_selectedDevice == null)
+            if (_selectedDevice == null || string.IsNullOrEmpty(_selectedDevice.idx))
                 return;
 
             try

@@ -10,11 +10,11 @@ using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
 using Plugin.FirebasePushNotification;
 using Plugin.Multilingual;
-using Plugin.TextToSpeech;
 using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Device = Xamarin.Forms.Device;
@@ -178,7 +178,7 @@ namespace NL.HNOGames.Domoticz
         /// Show toast information
         /// </summary>
         /// <param name="text">The text<see cref="string"/></param>
-        public static void ShowToast(string text)
+        public static async void ShowToast(string text)
         {
             if (string.IsNullOrEmpty(text))
                 return;
@@ -186,8 +186,8 @@ namespace NL.HNOGames.Domoticz
             {
                 AddLog(text);
                 UserDialogs.Instance.Toast(text);
-                if (AppSettings.TalkBackEnabled)
-                    Device.BeginInvokeOnMainThread(async () => { await CrossTextToSpeech.Current.Speak(text); });
+                if (AppSettings.TalkBackEnabled) 
+                    await TextToSpeech.SpeakAsync(text);
             }
             catch (Exception ex)
             {

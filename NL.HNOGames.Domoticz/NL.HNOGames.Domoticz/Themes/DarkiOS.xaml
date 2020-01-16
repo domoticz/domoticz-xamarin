@@ -171,6 +171,12 @@
         <Setter Property="HorizontalOptions" Value="FillAndExpand" />
         <Setter Property="VerticalOptions" Value="StartAndExpand" />
     </Style>
+    <Style x:Key="SettingsRowStackLayout" TargetType="StackLayout">
+        <Setter Property="Spacing" Value="0" />
+        <Setter Property="Padding" Value="16" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="StartAndExpand" />
+    </Style>
     <Style x:Key="SeparatorStackLayout" TargetType="StackLayout">
         <Setter Property="HeightRequest" Value="8" />
         <Setter Property="HorizontalOptions" Value="FillAndExpand" />

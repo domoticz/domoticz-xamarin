@@ -1,27 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <custcontrol:CustomTabbedPage
-   x:Class="NL.HNOGames.Domoticz.Views.OverviewTabbedPage"
-   xmlns="http://xamarin.com/schemas/2014/forms"
-   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-   xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
-   xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-   xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
-   ios:Page.UseSafeArea="true">
+    x:Class="NL.HNOGames.Domoticz.Views.OverviewTabbedPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
+    ios:Page.UseSafeArea="true"
+    Visual="Material">
 
-   <custcontrol:CustomTabbedPage.ToolbarItems>
-      <ToolbarItem
-         x:Name="tiMore"
-         Clicked="TiMore_Clicked"
-         Order="Primary">
-         <ToolbarItem.Icon>
-            <OnPlatform
-               x:TypeArguments="FileImageSource"
-               Android="baseline_more_vert_white_24.png"
-               iOS="baseline_more_vert_white_24.png" />
-         </ToolbarItem.Icon>
-      </ToolbarItem>
+    <custcontrol:CustomTabbedPage.ToolbarItems>
+        <ToolbarItem
+            x:Name="tiMore"
+            Clicked="TiMore_Clicked"
+            Order="Primary">
+            <ToolbarItem.Icon>
+                <OnPlatform
+                    x:TypeArguments="FileImageSource"
+                    Android="baseline_more_vert_white_24.png"
+                    iOS="baseline_more_vert_white_24.png" />
+            </ToolbarItem.Icon>
+        </ToolbarItem>
 
-      <!--<ToolbarItem
+        <!--<ToolbarItem
          x:Name="tiPlans"
          Clicked="OnShowPlansClick"
          Order="Primary"
@@ -72,5 +73,5 @@
          </ToolbarItem.Icon>
       </ToolbarItem>-->
 
-   </custcontrol:CustomTabbedPage.ToolbarItems>
+    </custcontrol:CustomTabbedPage.ToolbarItems>
 </custcontrol:CustomTabbedPage>

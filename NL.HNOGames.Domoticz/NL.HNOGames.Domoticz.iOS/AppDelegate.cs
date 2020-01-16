@@ -34,6 +34,7 @@ namespace NL.HNOGames.Domoticz.iOS
             });
 
             global::Xamarin.Forms.Forms.Init();
+            global::Xamarin.Forms.FormsMaterial.Init();
 
             iRate.SharedInstance.DaysUntilPrompt = 10;
             iRate.SharedInstance.UsesUntilPrompt = 20;
@@ -45,7 +46,7 @@ namespace NL.HNOGames.Domoticz.iOS
             Plugin.InputKit.Platforms.iOS.Config.Init();
             Rg.Plugins.Popup.Popup.Init();
             OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();
-
+            XamEffects.iOS.Effects.Init();
             FirebasePushNotificationManager.Initialize(options, true);
 
             LoadApplication(new App());

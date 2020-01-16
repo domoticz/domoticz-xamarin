@@ -1028,6 +1028,9 @@
     <PackageReference Include="Xamarin.Forms.InputKit">
       <Version>3.0.15</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Forms.Visual.Material">
+      <Version>4.4.0.991477</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Google.iOS.Core">
       <Version>3.1.0.1</Version>
     </PackageReference>
@@ -1036,6 +1039,9 @@
     </PackageReference>
     <PackageReference Include="Xamarin.iRate">
       <Version>1.11.7</Version>
+    </PackageReference>
+    <PackageReference Include="XamEffects">
+      <Version>1.6.3</Version>
     </PackageReference>
     <PackageReference Include="XLabs.Cryptography">
       <Version>2.0.5782</Version>

@@ -1,17 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
 <ContentPage
-   x:Class="NL.HNOGames.Domoticz.Views.GraphPage"
-   xmlns="http://xamarin.com/schemas/2014/forms"
-   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-   xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-   xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms"
-   ios:Page.UseSafeArea="true"
-   Style="{StaticResource ContentPageType}">
-   <ContentPage.Content>
-      <oxy:PlotView
-         x:Name="oGraphView"
-         HorizontalOptions="FillAndExpand"
-         VerticalOptions="FillAndExpand" />
-   </ContentPage.Content>
+    x:Class="NL.HNOGames.Domoticz.Views.GraphPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms"
+    ios:Page.UseSafeArea="true"
+    Style="{StaticResource ContentPageType}"
+    Visual="Material">
+    <ContentPage.Content>
+        <oxy:PlotView
+            x:Name="oGraphView"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand" />
+    </ContentPage.Content>
 </ContentPage>

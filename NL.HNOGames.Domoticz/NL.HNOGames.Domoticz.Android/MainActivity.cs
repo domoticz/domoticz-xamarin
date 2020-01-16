@@ -43,6 +43,7 @@ namespace NL.HNOGames.Domoticz.Droid
             OxyPlot.Xamarin.Forms.Platform.Android.PlotViewRenderer.Init();
             ZXing.Net.Mobile.Forms.Android.Platform.Init();
             MobileBarcodeScanner.Initialize(Application);
+            XamEffects.Droid.Effects.Init();
 
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
@@ -50,6 +51,7 @@ namespace NL.HNOGames.Domoticz.Droid
             base.OnCreate(savedInstanceState);
 
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            global::Xamarin.Forms.FormsMaterial.Init(this, savedInstanceState);
 
             LoadApplication(new App());
             FirebaseApp.InitializeApp(this);

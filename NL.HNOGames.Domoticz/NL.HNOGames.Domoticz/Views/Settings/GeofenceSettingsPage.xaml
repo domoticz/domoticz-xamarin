@@ -141,7 +141,7 @@
                                             </StackLayout>
                                         </StackLayout>
                                     </Grid>
-                                    <BoxView Style="{StaticResource DetailSeperator}" />
+                                    <BoxView Style="{StaticResource ListSeperator}" />
                                 </StackLayout>
                             </custcontrol:CustomViewCell>
                         </DataTemplate>

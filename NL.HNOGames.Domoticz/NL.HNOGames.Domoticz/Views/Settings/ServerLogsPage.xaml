@@ -63,23 +63,24 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <custcontrol:CustomViewCell>
-                            <StackLayout
-                                Margin="0"
-                                HorizontalOptions="FillAndExpand"
-                                Orientation="Vertical"
-                                VerticalOptions="StartAndExpand">
-                                <StackLayout.Padding>
-                                    <OnIdiom x:TypeArguments="Thickness">
-                                        <OnIdiom.Phone>20,10,20,10</OnIdiom.Phone>
-                                        <OnIdiom.Tablet>150,10,150,10</OnIdiom.Tablet>
-                                    </OnIdiom>
-                                </StackLayout.Padding>
-                                <Label
-                                    LineBreakMode="WordWrap"
-                                    Style="{StaticResource HeaderDarkType}"
-                                    Text="{Binding Data}" />
-                                <Label Style="{StaticResource DetailType}" Text="{Binding Date}" />
-                                <BoxView Style="{StaticResource DetailSeperator}" />
+                            <StackLayout Spacing="0">
+                                <StackLayout
+                                    HorizontalOptions="FillAndExpand"
+                                    Orientation="Vertical"
+                                    VerticalOptions="StartAndExpand">
+                                    <StackLayout.Padding>
+                                        <OnIdiom x:TypeArguments="Thickness">
+                                            <OnIdiom.Phone>20,10,20,10</OnIdiom.Phone>
+                                            <OnIdiom.Tablet>150,10,150,10</OnIdiom.Tablet>
+                                        </OnIdiom>
+                                    </StackLayout.Padding>
+                                    <Label
+                                        LineBreakMode="WordWrap"
+                                        Style="{StaticResource HeaderDarkType}"
+                                        Text="{Binding Data}" />
+                                    <Label Style="{StaticResource DetailType}" Text="{Binding Date}" />
+                                </StackLayout>
+                                <BoxView Style="{StaticResource ListSeperator}" />
                             </StackLayout>
                         </custcontrol:CustomViewCell>
                     </DataTemplate>

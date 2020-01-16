@@ -14,7 +14,7 @@ namespace NL.HNOGames.Domoticz.Data
     /// <summary>
     /// Data service class handles all the data calls to Axis
     /// </summary>
-    public class ConnectionService
+    public class ConnectionService : IDisposable
     {
         #region Variables
 
@@ -43,21 +43,28 @@ namespace NL.HNOGames.Domoticz.Data
         public ConnectionService()
         {
             _cookieHandler = new NativeCookieHandler();
-
-            RefreshClient(); //default 
+            switch (Xamarin.Forms.Device.RuntimePlatform)
+            {
+                case Xamarin.Forms.Device.Android:
+                    Client = new HttpClient(DependencyService.Get<IHTTPClientHandlerCreationService>().GetInsecureHandler())
+                    {
+                        MaxResponseContentBufferSize = 25600000,
+                        Timeout = TimeSpan.FromMilliseconds(10000),
+                    };
+                    break;
+                default:
+                    Client = new HttpClient(new NativeMessageHandler(false, false, _cookieHandler))
+                    {
+                        MaxResponseContentBufferSize = 25600000,
+                        Timeout = TimeSpan.FromMilliseconds(10000),
+                    };
+                    break;
+            }
         }
 
         #endregion
 
         #region Public
-
-        /// <summary>
-        /// Clean client object
-        /// </summary>
-        public void CleanClient()
-        {
-            Client?.Dispose();
-        }
 
         /// <summary>
         /// Construct Domoticz API Url
@@ -81,7 +88,6 @@ namespace NL.HNOGames.Domoticz.Data
 
                 if (!string.IsNullOrEmpty(server.LOCAL_SERVER_USERNAME))
                 {
-                    RefreshClient();
                     var byteArray = Encoding.UTF8.GetBytes(
                         server.LOCAL_SERVER_USERNAME +
                         ":" +
@@ -90,19 +96,15 @@ namespace NL.HNOGames.Domoticz.Data
                         new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",
                             Convert.ToBase64String(byteArray));
                 }
-                else
+                else if (!string.IsNullOrEmpty(server.REMOTE_SERVER_USERNAME))
                 {
-                    if (!string.IsNullOrEmpty(server.REMOTE_SERVER_USERNAME))
-                    {
-                        RefreshClient();
-                        var byteArray = Encoding.UTF8.GetBytes(
-                            server.REMOTE_SERVER_USERNAME +
-                            ":" +
-                            server.REMOTE_SERVER_PASSWORD);
-                        Client.DefaultRequestHeaders.Authorization =
-                            new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",
-                                Convert.ToBase64String(byteArray));
-                    }
+                    var byteArray = Encoding.UTF8.GetBytes(
+                        server.REMOTE_SERVER_USERNAME +
+                        ":" +
+                        server.REMOTE_SERVER_PASSWORD);
+                    Client.DefaultRequestHeaders.Authorization =
+                        new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",
+                            Convert.ToBase64String(byteArray));
                 }
             }
             else
@@ -116,7 +118,6 @@ namespace NL.HNOGames.Domoticz.Data
 
                 if (!string.IsNullOrEmpty(server.REMOTE_SERVER_USERNAME))
                 {
-                    RefreshClient();
                     var byteArray =
                         Encoding.UTF8.GetBytes(server.REMOTE_SERVER_USERNAME + ":" + server.REMOTE_SERVER_PASSWORD);
                     Client.DefaultRequestHeaders.Authorization =
@@ -156,7 +157,6 @@ namespace NL.HNOGames.Domoticz.Data
 
                 if (!string.IsNullOrEmpty(server.LOCAL_SERVER_USERNAME))
                 {
-                    RefreshClient();
                     var byteArray = Encoding.UTF8.GetBytes(
                         server.LOCAL_SERVER_USERNAME +
                         ":" +
@@ -165,11 +165,8 @@ namespace NL.HNOGames.Domoticz.Data
                         new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",
                             Convert.ToBase64String(byteArray));
                 }
-                else
+                else if (!string.IsNullOrEmpty(server.REMOTE_SERVER_USERNAME))
                 {
-                    if (!string.IsNullOrEmpty(server.REMOTE_SERVER_USERNAME))
-                    {
-                        RefreshClient();
                         var byteArray = Encoding.UTF8.GetBytes(
                             server.REMOTE_SERVER_USERNAME +
                             ":" +
@@ -177,7 +174,6 @@ namespace NL.HNOGames.Domoticz.Data
                         Client.DefaultRequestHeaders.Authorization =
                             new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",
                                 Convert.ToBase64String(byteArray));
-                    }
                 }
             }
             else
@@ -188,10 +184,8 @@ namespace NL.HNOGames.Domoticz.Data
                 baseUrl = server.REMOTE_SERVER_URL;
                 port = server.REMOTE_SERVER_PORT;
                 directory = server.REMOTE_SERVER_DIRECTORY;
-
                 if (!string.IsNullOrEmpty(server.REMOTE_SERVER_USERNAME))
                 {
-                    RefreshClient();
                     var byteArray =
                         Encoding.UTF8.GetBytes(server.REMOTE_SERVER_USERNAME + ":" + server.REMOTE_SERVER_PASSWORD);
                     Client.DefaultRequestHeaders.Authorization =
@@ -367,35 +361,17 @@ namespace NL.HNOGames.Domoticz.Data
             return fullString;
         }
 
+        /// <summary>
+        /// Dispose
+        /// </summary>
+        public void Dispose()
+        {
+            Client.Dispose();
+        }
+
         #endregion
 
         #region Private
-
-        /// <summary>
-        /// Refresh client object
-        /// </summary>
-        private void RefreshClient()
-        {
-            App.AddLog("Refreshing http client");
-            CleanClient();
-            switch (Xamarin.Forms.Device.RuntimePlatform)
-            {
-                case Xamarin.Forms.Device.Android:
-                    Client = new HttpClient(DependencyService.Get<IHTTPClientHandlerCreationService>().GetInsecureHandler())
-                    {
-                        MaxResponseContentBufferSize = 25600000,
-                        Timeout = TimeSpan.FromMilliseconds(10000),
-                    };
-                    break;
-                default:
-                    Client = new HttpClient(new NativeMessageHandler(false, false, _cookieHandler))
-                    {
-                        MaxResponseContentBufferSize = 25600000,
-                        Timeout = TimeSpan.FromMilliseconds(10000),
-                    };
-                    break;
-            }
-        }
 
         /// <summary>
         /// Is User On Local Wifi Async

@@ -283,15 +283,5 @@ namespace NL.HNOGames.Domoticz.Views
             if (!App.AppSettings.SpeechEnabled)
                 _showSpeech = false;
         }
-
-        /// <summary>
-        /// Disappearing
-        /// </summary>
-        protected override void OnDisappearing()
-        {
-            if (App.ConnectionService != null)
-                App.ConnectionService.CleanClient();
-            base.OnDisappearing();
-        }
     }
 }

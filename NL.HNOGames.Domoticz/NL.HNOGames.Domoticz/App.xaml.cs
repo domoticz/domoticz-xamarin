@@ -74,7 +74,7 @@ namespace NL.HNOGames.Domoticz
         /// <summary>
         /// Gets or sets the ServerConfig
         /// </summary>
-        private static Models.ConfigModel ServerConfig { get; set; }
+        private static ConfigModel ServerConfig { get; set; }
 
         #endregion
 

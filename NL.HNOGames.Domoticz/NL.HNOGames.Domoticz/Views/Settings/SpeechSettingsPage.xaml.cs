@@ -2,6 +2,8 @@
 using NL.HNOGames.Domoticz.Models;
 using NL.HNOGames.Domoticz.Resources;
 using NL.HNOGames.Domoticz.Views.Dialog;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
 using Plugin.SpeechRecognition;
 using Rg.Plugins.Popup.Services;
 using System;
@@ -9,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace NL.HNOGames.Domoticz.Views.Settings
 {
@@ -107,12 +110,26 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             }
             else
             {
-                var granted = await CrossSpeechRecognition.Current.RequestPermission();
-                if (granted != SpeechRecognizerStatus.Available)
+                try
                 {
-                    App.AddLog("Permission denied for speech recognition");
-                    App.ShowToast("Don't have the permission for the mic");
-                    return false;
+                    var status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Microphone);
+                    if (status != PermissionStatus.Granted)
+                    {
+                        var newStatus = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Microphone);
+                        if (!newStatus.ContainsKey(Permission.Microphone))
+                            return false;
+                        status = newStatus[Permission.Microphone];
+                        if (status != PermissionStatus.Granted)
+                        {
+                            App.AddLog("Permission denied for speech recognition");
+                            App.ShowToast("Don't have the permission for the microphone, check your app permission settings.");
+                            return false;
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    //Something went wrong
                 }
             }
             return true;

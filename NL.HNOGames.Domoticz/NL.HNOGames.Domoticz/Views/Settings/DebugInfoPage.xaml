@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <ContentPage
     x:Class="NL.HNOGames.Domoticz.Views.Settings.DebugInfoPage"
     xmlns="http://xamarin.com/schemas/2014/forms"

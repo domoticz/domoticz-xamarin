@@ -64,8 +64,6 @@ namespace NL.HNOGames.Domoticz.Droid
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextColor = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.ProgressWheel_ahTextColor;
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextSize = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.ProgressWheel_ahTextSize;
 			global::ModernHttpClient.Resource.String.library_name = global::NL.HNOGames.Domoticz.Droid.Resource.String.library_name;
-			global::PCLStorage.Resource.String.ApplicationName = global::NL.HNOGames.Domoticz.Droid.Resource.String.ApplicationName;
-			global::PCLStorage.Resource.String.Hello = global::NL.HNOGames.Domoticz.Droid.Resource.String.Hello;
 			global::Plugin.Fingerprint.Resource.Drawable.fingerprint_white = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.fingerprint_white;
 			global::Plugin.Fingerprint.Resource.Id.fingerprint_btnCancel = global::NL.HNOGames.Domoticz.Droid.Resource.Id.fingerprint_btnCancel;
 			global::Plugin.Fingerprint.Resource.Id.fingerprint_btnFallback = global::NL.HNOGames.Domoticz.Droid.Resource.Id.fingerprint_btnFallback;

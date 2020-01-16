@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <ContentPage
     x:Class="NL.HNOGames.Domoticz.Views.Settings.QrCodeSettingsPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
@@ -51,91 +50,91 @@
                     x:Name="listView"
                     BackgroundColor="{DynamicResource LightBackgroundColor}"
                     HasUnevenRows="True"
-                    RowHeight="130"
                     SeparatorVisibility="None">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <custcontrol:CustomViewCell>
-                                <StackLayout
-                                    Margin="0"
-                                    Padding="0"
-                                    HorizontalOptions="FillAndExpand"
-                                    Orientation="Vertical"
-                                    VerticalOptions="StartAndExpand">
-                                    <StackLayout.Padding>
-                                        <OnIdiom x:TypeArguments="Thickness">
-                                            <OnIdiom.Phone>20,10,20,10</OnIdiom.Phone>
-                                            <OnIdiom.Tablet>150,10,150,10</OnIdiom.Tablet>
-                                        </OnIdiom>
-                                    </StackLayout.Padding>
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*" />
-                                        </Grid.ColumnDefinitions>
-                                        <StackLayout
-                                            Grid.Column="0"
-                                            HorizontalOptions="FillAndExpand"
-                                            Orientation="Vertical"
-                                            VerticalOptions="StartAndExpand">
+                                <StackLayout Spacing="0">
+                                    <StackLayout
+                                        Margin="0"
+                                        Padding="0"
+                                        HorizontalOptions="FillAndExpand"
+                                        Orientation="Vertical"
+                                        VerticalOptions="StartAndExpand">
+                                        <StackLayout.Padding>
+                                            <OnIdiom x:TypeArguments="Thickness">
+                                                <OnIdiom.Phone>20,10,20,10</OnIdiom.Phone>
+                                                <OnIdiom.Tablet>150,10,150,10</OnIdiom.Tablet>
+                                            </OnIdiom>
+                                        </StackLayout.Padding>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
                                             <StackLayout
+                                                Grid.Column="0"
                                                 HorizontalOptions="FillAndExpand"
-                                                Orientation="Horizontal"
+                                                Orientation="Vertical"
                                                 VerticalOptions="StartAndExpand">
                                                 <StackLayout
-                                                    Padding="10,0,0,0"
                                                     HorizontalOptions="FillAndExpand"
-                                                    Orientation="Vertical"
-                                                    VerticalOptions="Center">
-                                                    <Label
-                                                        LineBreakMode="TailTruncation"
-                                                        Style="{StaticResource HeaderType}"
-                                                        Text="{Binding Name}" />
-                                                    <custcontrol:MultiLineLabel
-                                                        LineBreakMode="WordWrap"
-                                                        Lines="2"
-                                                        Style="{StaticResource DetailType}"
-                                                        Text="{Binding SwitchDescription}" />
-                                                </StackLayout>
-                                                <StackLayout
-                                                    Margin="0,-5,5,0"
-                                                    HorizontalOptions="FillAndExpand"
-                                                    Orientation="Vertical"
-                                                    VerticalOptions="CenterAndExpand">
+                                                    Orientation="Horizontal"
+                                                    VerticalOptions="StartAndExpand">
                                                     <StackLayout
-                                                        HorizontalOptions="End"
+                                                        Padding="10,0,0,0"
+                                                        HorizontalOptions="FillAndExpand"
+                                                        Orientation="Vertical"
+                                                        VerticalOptions="Center">
+                                                        <Label
+                                                            LineBreakMode="TailTruncation"
+                                                            Style="{StaticResource HeaderType}"
+                                                            Text="{Binding Name}" />
+                                                        <custcontrol:MultiLineLabel
+                                                            LineBreakMode="WordWrap"
+                                                            Lines="2"
+                                                            Style="{StaticResource DetailType}"
+                                                            Text="{Binding SwitchDescription}" />
+                                                    </StackLayout>
+                                                    <StackLayout
+                                                        Margin="0,-5,5,0"
+                                                        HorizontalOptions="FillAndExpand"
                                                         Orientation="Vertical"
                                                         VerticalOptions="CenterAndExpand">
-                                                        <custcontrol:TintedCachedImage
-                                                            x:Name="btnDeleteButton"
-                                                            HeightRequest="25"
+                                                        <StackLayout
                                                             HorizontalOptions="End"
-                                                            Source="baseline_delete_black_24.png"
-                                                            TintColor="#EF5350"
-                                                            VerticalOptions="End"
-                                                            WidthRequest="25">
-                                                            <custcontrol:TintedCachedImage.GestureRecognizers>
-                                                                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="btnDeleteButton_Clicked" />
-                                                            </custcontrol:TintedCachedImage.GestureRecognizers>
-                                                        </custcontrol:TintedCachedImage>
-                                                        <custcontrol:TintedCachedImage
-                                                            x:Name="btnConnect"
-                                                            Margin="0,5,0,0"
-                                                            HeightRequest="25"
-                                                            HorizontalOptions="End"
-                                                            Source="baseline_link_black_24.png"
-                                                            TintColor="#66BB6A"
-                                                            VerticalOptions="End"
-                                                            WidthRequest="25">
-                                                            <custcontrol:TintedCachedImage.GestureRecognizers>
-                                                                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="btnConnect_Clicked" />
-                                                            </custcontrol:TintedCachedImage.GestureRecognizers>
-                                                        </custcontrol:TintedCachedImage>
+                                                            Orientation="Vertical"
+                                                            VerticalOptions="CenterAndExpand">
+                                                            <custcontrol:TintedCachedImage
+                                                                x:Name="btnDeleteButton"
+                                                                HeightRequest="25"
+                                                                HorizontalOptions="End"
+                                                                Source="baseline_delete_black_24.png"
+                                                                TintColor="#EF5350"
+                                                                VerticalOptions="End"
+                                                                WidthRequest="25">
+                                                                <custcontrol:TintedCachedImage.GestureRecognizers>
+                                                                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="btnDeleteButton_Clicked" />
+                                                                </custcontrol:TintedCachedImage.GestureRecognizers>
+                                                            </custcontrol:TintedCachedImage>
+                                                            <custcontrol:TintedCachedImage
+                                                                x:Name="btnConnect"
+                                                                Margin="0,5,0,0"
+                                                                HeightRequest="25"
+                                                                HorizontalOptions="End"
+                                                                Source="baseline_link_black_24.png"
+                                                                TintColor="#66BB6A"
+                                                                VerticalOptions="End"
+                                                                WidthRequest="25">
+                                                                <custcontrol:TintedCachedImage.GestureRecognizers>
+                                                                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="btnConnect_Clicked" />
+                                                                </custcontrol:TintedCachedImage.GestureRecognizers>
+                                                            </custcontrol:TintedCachedImage>
+                                                        </StackLayout>
                                                     </StackLayout>
                                                 </StackLayout>
                                             </StackLayout>
-                                        </StackLayout>
-                                    </Grid>
-
+                                        </Grid>
+                                    </StackLayout>
                                     <BoxView Style="{StaticResource ListSeperator}" />
                                 </StackLayout>
                             </custcontrol:CustomViewCell>

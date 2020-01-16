@@ -791,9 +791,6 @@
     <PackageReference Include="OxyPlot.Xamarin.Forms">
       <Version>1.1.0-unstable0011</Version>
     </PackageReference>
-    <PackageReference Include="PCLStorage">
-      <Version>1.0.2</Version>
-    </PackageReference>
     <PackageReference Include="Plugin.DeviceOrientation">
       <Version>1.0.7</Version>
     </PackageReference>
@@ -808,6 +805,9 @@
     </PackageReference>
     <PackageReference Include="Plugin.Multilingual">
       <Version>1.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="Plugin.Permissions">
+      <Version>3.0.0.12</Version>
     </PackageReference>
     <PackageReference Include="Plugin.SpeechRecognition">
       <Version>1.0.0</Version>
@@ -1039,6 +1039,9 @@
     </PackageReference>
     <PackageReference Include="XLabs.Cryptography">
       <Version>2.0.5782</Version>
+    </PackageReference>
+    <PackageReference Include="ZXing.Net.Mobile">
+      <Version>2.4.1</Version>
     </PackageReference>
     <PackageReference Include="ZXing.Net.Mobile.Forms">
       <Version>2.4.1</Version>

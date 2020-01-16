@@ -2,7 +2,6 @@
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using ZXing.Mobile;
 using Plugin.FirebasePushNotification;
 using Plugin.Fingerprint;
 using Plugin.InAppBilling;
@@ -42,7 +41,6 @@ namespace NL.HNOGames.Domoticz.Droid
             FirebasePushNotificationManager.ProcessIntent(this, Intent);
             OxyPlot.Xamarin.Forms.Platform.Android.PlotViewRenderer.Init();
             ZXing.Net.Mobile.Forms.Android.Platform.Init();
-            MobileBarcodeScanner.Initialize(Application);
             XamEffects.Droid.Effects.Init();
 
             TabLayoutResource = Resource.Layout.Tabbar;
@@ -61,7 +59,7 @@ namespace NL.HNOGames.Domoticz.Droid
         {
             PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-            global::ZXing.Net.Mobile.Forms.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            global::ZXing.Net.Mobile.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults); 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 

@@ -1,9 +1,12 @@
 ﻿using NL.HNOGames.Domoticz.Resources;
 using NL.HNOGames.Domoticz.ViewModels;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
 using Plugin.SpeechRecognition;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using ZXing;
@@ -110,44 +113,47 @@ namespace NL.HNOGames.Domoticz.Views
         /// <summary>
         /// Speech Recognition
         /// </summary>
-        private void tiSpeechCode_Activated()
+        private async void tiSpeechCode_Activated()
         {
             try
             {
-                App.ShowLoading(AppResources.Speech);
-                listener = CrossSpeechRecognition
-                    .Current
-                    .ListenUntilPause()
-                    .Subscribe(async phrase =>
-                    {
-                        App.HideLoading();
-                        App.ShowToast(phrase);
-                        if (listener != null)
-                            listener.Dispose();
-                        try
+                if (await ValidateSpeechRecognition())
+                {
+                    App.ShowLoading(AppResources.Speech);
+                    listener = CrossSpeechRecognition
+                        .Current
+                        .ListenUntilPause()
+                        .Subscribe(async phrase =>
                         {
-                            var speechID = phrase.GetHashCode() + "";
-                            var speechCommand = App.AppSettings.SpeechCommands.FirstOrDefault(o => o.Id == speechID);
-                            if (speechCommand != null && speechCommand.Enabled)
+                            App.HideLoading();
+                            App.ShowToast(phrase);
+                            if (listener != null)
+                                listener.Dispose();
+                            try
                             {
-                                App.AddLog("Speech Command Found: " + speechCommand);
-                                App.ShowToast(AppResources.Speech + " " + speechCommand.Name + ": " + AppResources.switch_toggled + " " + speechCommand.SwitchName);
-                                await App.ApiService.HandleSwitch(speechCommand.SwitchIDX, speechCommand.SwitchPassword, -1, speechCommand.Value,
-                                    speechCommand.IsScene);
-                                App.SetMainPage();
+                                var speechID = phrase.GetHashCode() + "";
+                                var speechCommand = App.AppSettings.SpeechCommands.FirstOrDefault(o => o.Id == speechID);
+                                if (speechCommand != null && speechCommand.Enabled)
+                                {
+                                    App.AddLog("Speech Command Found: " + speechCommand);
+                                    App.ShowToast(AppResources.Speech + " " + speechCommand.Name + ": " + AppResources.switch_toggled + " " + speechCommand.SwitchName);
+                                    await App.ApiService.HandleSwitch(speechCommand.SwitchIDX, speechCommand.SwitchPassword, -1, speechCommand.Value,
+                                        speechCommand.IsScene);
+                                    App.SetMainPage();
+                                }
+                                else
+                                {
+                                    App.AddLog("Speech Command not registered: " + speechID);
+                                    App.ShowToast(
+                                        speechCommand == null ? AppResources.Speech_found : AppResources.Speech_disabled);
+                                }
                             }
-                            else
+                            catch (Exception ex)
                             {
-                                App.AddLog("Speech Command not registered: " + speechID);
-                                App.ShowToast(
-                                    speechCommand == null ? AppResources.Speech_found : AppResources.Speech_disabled);
+                                App.AddLog(ex.Message);
                             }
-                        }
-                        catch (Exception ex)
-                        {
-                            App.AddLog(ex.Message);
-                        }
-                    });
+                        });
+                }
             }
             catch (Exception ex)
             {
@@ -159,58 +165,129 @@ namespace NL.HNOGames.Domoticz.Views
         }
 
         /// <summary>
+        /// Check if this feature is supported for your device
+        /// </summary>
+        /// <returns></returns>
+        private async Task<bool> ValidateCameraPermissions()
+        {
+            try
+            {
+                var status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);
+                if (status != PermissionStatus.Granted)
+                {
+                    var newStatus = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Camera);
+                    if (!newStatus.ContainsKey(Permission.Camera))
+                        return false;
+                    status = newStatus[Permission.Camera];
+                    if (status != PermissionStatus.Granted)
+                    {
+                        App.AddLog("Permission denied for camera");
+                        App.ShowToast("Don't have the permission for the camera, check your app permission settings.");
+                        return false;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                //Something went wrong
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Check if this feature is supported for your device
+        /// </summary>
+        /// <returns></returns>
+        private async Task<bool> ValidateSpeechRecognition()
+        {
+            if (!CrossSpeechRecognition.Current.IsSupported)
+            {
+                App.ShowToast("Speech recognition is not supported for this device at this moment..");
+                return false;
+            }
+            else
+            {
+                try
+                {
+                    var status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Microphone);
+                    if (status != PermissionStatus.Granted)
+                    {
+                        var newStatus = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Microphone);
+                        if (!newStatus.ContainsKey(Permission.Microphone))
+                            return false;
+                        status = newStatus[Permission.Microphone];
+                        if (status != PermissionStatus.Granted)
+                        {
+                            App.AddLog("Permission denied for speech recognition");
+                            App.ShowToast("Don't have the permission for the microphone, check your app permission settings.");
+                            return false;
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    //Something went wrong
+                }
+            }
+            return true;
+        }
+
+        /// <summary>
         /// Scan QR Code
         /// </summary>
         private async void tiQRCode_Activated()
         {
             if (!App.AppSettings.QRCodeEnabled)
                 return;
-
-            var expectedFormat = BarcodeFormat.QR_CODE;
-            var opts = new ZXing.Mobile.MobileBarcodeScanningOptions
+            if (await ValidateCameraPermissions())
             {
-                PossibleFormats = new List<ZXing.BarcodeFormat> { expectedFormat }
-            };
-            System.Diagnostics.Debug.WriteLine("Scanning " + expectedFormat);
-
-            if (Device.RuntimePlatform == Device.iOS)
-            {
-                var scanner = new ZXing.Mobile.MobileBarcodeScanner();
-                var result = await scanner.Scan();
-
-                if (result == null) return;
-                try
+                if (Device.RuntimePlatform == Device.iOS)
                 {
-                    var qrCodeId = result.Text.GetHashCode() + "";
-                    processQrId(qrCodeId);
-                }
-                catch (Exception ex)
-                {
-                    App.AddLog(ex.Message);
-                }
-            }
-            else
-            {
-                var scanPage = new ZXingScannerPage(opts);
-                scanPage.OnScanResult += (result) =>
-                {
-                    scanPage.IsScanning = false;
+                    var scanner = new ZXing.Mobile.MobileBarcodeScanner();
+                    var result = await scanner.Scan();
 
-                    Device.BeginInvokeOnMainThread(async () =>
+                    if (result == null) return;
+                    try
                     {
-                        await Navigation.PopAsync();
-                        try
+                        var qrCodeId = result.Text.GetHashCode() + "";
+                        processQrId(qrCodeId);
+                    }
+                    catch (Exception ex)
+                    {
+                        App.AddLog(ex.Message);
+                    }
+                }
+                else
+                {
+                    const BarcodeFormat expectedFormat = BarcodeFormat.QR_CODE;
+                    var opts = new ZXing.Mobile.MobileBarcodeScanningOptions
+                    {
+                        PossibleFormats = new List<BarcodeFormat> { expectedFormat }
+                    };
+                    System.Diagnostics.Debug.WriteLine("Scanning " + expectedFormat);
+
+                    var scanPage = new ZXingScannerPage(opts);
+                    scanPage.OnScanResult += (result) =>
+                    {
+                        scanPage.IsScanning = false;
+
+                        Device.BeginInvokeOnMainThread(async () =>
                         {
-                            var qrCodeId = result.Text.GetHashCode() + "";
-                            processQrId(qrCodeId);
-                        }
-                        catch (Exception ex)
-                        {
-                            App.AddLog(ex.Message);
-                        }
-                    });
-                };
-                await Navigation.PushAsync(scanPage);
+                            await Navigation.PopAsync();
+                            try
+                            {
+                                var qrCodeId = result.Text.GetHashCode() + "";
+                                processQrId(qrCodeId);
+                            }
+                            catch (Exception ex)
+                            {
+                                App.AddLog(ex.Message);
+                            }
+                        });
+                    };
+
+                    await Navigation.PushAsync(scanPage);
+                }
             }
         }
 

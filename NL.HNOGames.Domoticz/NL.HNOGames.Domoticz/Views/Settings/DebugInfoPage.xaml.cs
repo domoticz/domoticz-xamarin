@@ -1,6 +1,6 @@
 ﻿using NL.HNOGames.Domoticz.Resources;
-using Plugin.Share;
 using System;
+using Xamarin.Essentials;
 
 namespace NL.HNOGames.Domoticz.Views.Settings
 {
@@ -47,13 +47,11 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// <param name="e">The e<see cref="EventArgs"/></param>
         private async void ToolbarItem_Activated(object sender, EventArgs e)
         {
-            //App.AppSettings.EnableDebugging, AppResources.category_debug + " Domoticz"
-            var oMessage = new Plugin.Share.Abstractions.ShareMessage
+            await Share.RequestAsync(new ShareTextRequest
             {
                 Text = App.AppSettings.DebugInfo,
                 Title = AppResources.category_debug + "- Domoticz"
-            };
-            await CrossShare.Current.Share(oMessage);
+            });
         }
 
         #endregion

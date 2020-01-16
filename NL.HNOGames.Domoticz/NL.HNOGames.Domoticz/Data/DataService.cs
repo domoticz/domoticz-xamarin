@@ -1,16 +1,14 @@
 ﻿using Newtonsoft.Json;
+using NL.HNOGames.Domoticz.Helpers;
 using NL.HNOGames.Domoticz.Models;
 using Plugin.DeviceInfo;
 using System;
-using System.IO;
-using System.Net.Http;
-using System.Threading.Tasks;
 using System.Linq;
 using System.Net;
-using System.Threading;
+using System.Net.Http;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Device = NL.HNOGames.Domoticz.Models.Device;
-using NL.HNOGames.Domoticz.Helpers;
 
 namespace NL.HNOGames.Domoticz.Data
 {
@@ -19,18 +17,31 @@ namespace NL.HNOGames.Domoticz.Data
     /// </summary>
     public class DataService
     {
-        public HttpResponseMessage Response;
+        #region Variables
 
         /// <summary>
+        /// Defines the Response
+        /// </summary>
+        public HttpResponseMessage Response;
+
+        #endregion
+
+        #region Properties
+
+        /// <summary>
+        /// Gets or sets the Server
         /// Get server App.AppSettings
         /// </summary>
         public ServerSettings Server { get; set; }
 
-        #region Data
+        #endregion
+
+        #region Public
 
         /// <summary>
         /// check https certificate
         /// </summary>
+        /// <returns>The <see cref="Task{bool}"/></returns>
         public async Task<bool> CheckHttpCertificate()
         {
             if (Server == null)
@@ -56,6 +67,7 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz version
         /// </summary>
+        /// <returns>The <see cref="Task{SunRiseModel}"/></returns>
         public async Task<SunRiseModel> GetSunRise()
         {
             if (Server == null)
@@ -81,6 +93,7 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz version
         /// </summary>
+        /// <returns>The <see cref="Task{VersionModel}"/></returns>
         public async Task<VersionModel> GetVersion()
         {
             if (Server == null)
@@ -137,6 +150,7 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz get all plans
         /// </summary>
+        /// <returns>The <see cref="Task{PlansModel}"/></returns>
         public async Task<PlansModel> GetPlans()
         {
             if (Server == null)
@@ -163,6 +177,9 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz get a specific device object
         /// </summary>
+        /// <param name="idx">The idx<see cref="string"/></param>
+        /// <param name="isSceneOrGroup">The isSceneOrGroup<see cref="bool"/></param>
+        /// <returns>The <see cref="Task{Device}"/></returns>
         public async Task<Device> GetDevice(string idx, bool isSceneOrGroup)
         {
             if (Server == null)
@@ -178,6 +195,7 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz get all cameras
         /// </summary>
+        /// <returns>The <see cref="Task{CameraModel}"/></returns>
         public async Task<CameraModel> GetCameras()
         {
             if (Server == null)
@@ -203,6 +221,8 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz camera image stream
         /// </summary>
+        /// <param name="idx">The idx<see cref="string"/></param>
+        /// <returns>The <see cref="Task{byte[]}"/></returns>
         public async Task<byte[]> GetCameraStream(string idx)
         {
             if (Server == null || string.IsNullOrEmpty(idx))
@@ -234,6 +254,9 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz get all devices
         /// </summary>
+        /// <param name="plan">The plan<see cref="int"/></param>
+        /// <param name="filter">The filter<see cref="string"/></param>
+        /// <returns>The <see cref="Task{DevicesModel}"/></returns>
         public async Task<DevicesModel> GetDevices(int plan = 0, string filter = null)
         {
             if (Server == null)
@@ -264,6 +287,8 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz get notifications for a device
         /// </summary>
+        /// <param name="device">The device<see cref="Device"/></param>
+        /// <returns>The <see cref="Task{NotificationModel}"/></returns>
         public async Task<NotificationModel> GetNotifications(Device device)
         {
             if (Server == null)
@@ -290,6 +315,8 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz get timers for a device
         /// </summary>
+        /// <param name="idx">The idx<see cref="string"/></param>
+        /// <returns>The <see cref="Task{TimerModel}"/></returns>
         public async Task<TimerModel> GetTimers(string idx)
         {
             if (Server == null)
@@ -316,6 +343,7 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz get logs for the server
         /// </summary>
+        /// <returns>The <see cref="Task{ServerLogsModel}"/></returns>
         public async Task<ServerLogsModel> GetServerLogs()
         {
             if (Server == null)
@@ -340,10 +368,10 @@ namespace NL.HNOGames.Domoticz.Data
             return null;
         }
 
-
         /// <summary>
         /// Domoticz get user variables for this server
         /// </summary>
+        /// <returns>The <see cref="Task{UserVariableModel}"/></returns>
         public async Task<UserVariableModel> GetUserVariables()
         {
             if (Server == null)
@@ -371,6 +399,7 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz get events
         /// </summary>
+        /// <returns>The <see cref="Task{EventModel}"/></returns>
         public async Task<EventModel> GetEvents()
         {
             if (Server == null)
@@ -398,6 +427,10 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz get logs for a device
         /// </summary>
+        /// <param name="deviceIdx">The deviceIdx<see cref="string"/></param>
+        /// <param name="isScene">The isScene<see cref="bool"/></param>
+        /// <param name="textLog">The textLog<see cref="bool"/></param>
+        /// <returns>The <see cref="Task{LogModel}"/></returns>
         public async Task<LogModel> GetLogs(string deviceIdx, bool isScene = false, bool textLog = false)
         {
             if (Server == null)
@@ -424,12 +457,13 @@ namespace NL.HNOGames.Domoticz.Data
                 App.AddLog(ex.Message);
             }
             return null;
-
         }
 
         /// <summary>
         /// Domoticz get all scene and groups
         /// </summary>
+        /// <param name="filter">The filter<see cref="string"/></param>
+        /// <returns>The <see cref="Task{SceneModel}"/></returns>
         public async Task<SceneModel> GetScenes(string filter)
         {
             if (Server == null)
@@ -458,6 +492,8 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz get all temperature devices
         /// </summary>
+        /// <param name="filter">The filter<see cref="string"/></param>
+        /// <returns>The <see cref="Task{DevicesModel}"/></returns>
         public async Task<DevicesModel> GetTemperature(string filter)
         {
             if (Server == null)
@@ -486,6 +522,8 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz get all weather devices
         /// </summary>
+        /// <param name="filter">The filter<see cref="string"/></param>
+        /// <returns>The <see cref="Task{DevicesModel}"/></returns>
         public async Task<DevicesModel> GetWeather(string filter)
         {
             if (Server == null)
@@ -514,6 +552,8 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz get all utilities devices
         /// </summary>
+        /// <param name="filter">The filter<see cref="string"/></param>
+        /// <returns>The <see cref="Task{DevicesModel}"/></returns>
         public async Task<DevicesModel> GetUtilities(string filter)
         {
             if (Server == null)
@@ -542,6 +582,8 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz get favorite devices
         /// </summary>
+        /// <param name="filter">The filter<see cref="string"/></param>
+        /// <returns>The <see cref="Task{DevicesModel}"/></returns>
         public async Task<DevicesModel> GetFavorites(string filter)
         {
             if (Server == null)
@@ -567,10 +609,13 @@ namespace NL.HNOGames.Domoticz.Data
             return null;
         }
 
-
         /// <summary>
         /// Domoticz get Graph data
         /// </summary>
+        /// <param name="idx">The idx<see cref="string"/></param>
+        /// <param name="type">The type<see cref="string"/></param>
+        /// <param name="range">The range<see cref="ConstantValues.GraphRange"/></param>
+        /// <returns>The <see cref="Task{GraphModel}"/></returns>
         public async Task<GraphModel> GetGraphData(string idx, string type, ConstantValues.GraphRange range = ConstantValues.GraphRange.Day)
         {
             if (Server == null)
@@ -597,14 +642,15 @@ namespace NL.HNOGames.Domoticz.Data
             return null;
         }
 
-        #endregion Data
-
-
-        #region Actions
-
         /// <summary>
         /// Domoticz set action
         /// </summary>
+        /// <param name="idx">The idx<see cref="string"/></param>
+        /// <param name="jsonUrl">The jsonUrl<see cref="int"/></param>
+        /// <param name="jsonAction">The jsonAction<see cref="int"/></param>
+        /// <param name="value">The value<see cref="double"/></param>
+        /// <param name="password">The password<see cref="string"/></param>
+        /// <returns>The <see cref="Task{ActionModel}"/></returns>
         public async Task<ActionModel> SetAction(string idx, int jsonUrl, int jsonAction, double value, string password)
         {
             if (Server == null)
@@ -634,6 +680,12 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz set RGB action
         /// </summary>
+        /// <param name="idx">The idx<see cref="string"/></param>
+        /// <param name="jsonUrl">The jsonUrl<see cref="int"/></param>
+        /// <param name="hex">The hex<see cref="string"/></param>
+        /// <param name="brightness">The brightness<see cref="int"/></param>
+        /// <param name="password">The password<see cref="string"/></param>
+        /// <returns>The <see cref="Task{ActionModel}"/></returns>
         public async Task<ActionModel> SetRGBAction(string idx, int jsonUrl, string hex, int brightness, string password)
         {
             if (Server == null)
@@ -667,6 +719,10 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz get favorite devices
         /// </summary>
+        /// <param name="idx">The idx<see cref="string"/></param>
+        /// <param name="isScene">The isScene<see cref="bool"/></param>
+        /// <param name="favorite">The favorite<see cref="bool"/></param>
+        /// <returns>The <see cref="Task{bool}"/></returns>
         public async Task<bool> SetFavorite(string idx, bool isScene, bool favorite)
         {
             if (Server == null)
@@ -693,6 +749,10 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz set dimmer value level
         /// </summary>
+        /// <param name="idx">The idx<see cref="string"/></param>
+        /// <param name="value">The value<see cref="float"/></param>
+        /// <param name="password">The password<see cref="string"/></param>
+        /// <returns>The <see cref="Task{bool}"/></returns>
         public async Task<bool> SetDimmer(string idx, float value, string password = null)
         {
             if (Server == null)
@@ -718,6 +778,10 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz set color
         /// </summary>
+        /// <param name="idx">The idx<see cref="string"/></param>
+        /// <param name="value">The value<see cref="Color"/></param>
+        /// <param name="password">The password<see cref="string"/></param>
+        /// <returns>The <see cref="Task{bool}"/></returns>
         public async Task<bool> SetColor(string idx, Color value, string password = null)
         {
             if (Server == null)
@@ -740,6 +804,9 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz set events on off value
         /// </summary>
+        /// <param name="idx">The idx<see cref="string"/></param>
+        /// <param name="value">The value<see cref="bool"/></param>
+        /// <returns>The <see cref="Task{bool}"/></returns>
         public async Task<bool> SetEvent(string idx, bool value)
         {
             if (Server == null)
@@ -761,10 +828,14 @@ namespace NL.HNOGames.Domoticz.Data
             return false;
         }
 
-
         /// <summary>
         /// Domoticz get all temperature devices
         /// </summary>
+        /// <param name="idx">The idx<see cref="string"/></param>
+        /// <param name="name">The name<see cref="string"/></param>
+        /// <param name="type">The type<see cref="string"/></param>
+        /// <param name="newValue">The newValue<see cref="string"/></param>
+        /// <returns>The <see cref="Task{bool}"/></returns>
         public async Task<bool> SetUserVariable(string idx, string name, string type, string newValue)
         {
             if (Server == null || string.IsNullOrEmpty(idx) || string.IsNullOrEmpty(name) || string.IsNullOrEmpty(type))
@@ -799,6 +870,11 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz set switch on off value
         /// </summary>
+        /// <param name="idx">The idx<see cref="string"/></param>
+        /// <param name="value">The value<see cref="bool"/></param>
+        /// <param name="isScene">The isScene<see cref="bool"/></param>
+        /// <param name="password">The password<see cref="string"/></param>
+        /// <returns>The <see cref="Task{bool}"/></returns>
         public async Task<bool> SetSwitch(string idx, bool value, bool isScene, string password = null)
         {
             if (Server == null)
@@ -836,6 +912,11 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz set point to new float value
         /// </summary>
+        /// <param name="idx">The idx<see cref="string"/></param>
+        /// <param name="value">The value<see cref="double"/></param>
+        /// <param name="oldvalue">The oldvalue<see cref="double"/></param>
+        /// <param name="password">The password<see cref="string"/></param>
+        /// <returns>The <see cref="Task{bool}"/></returns>
         public async Task<bool> SetPoint(string idx, double value, double oldvalue, string password = null)
         {
             if (Server == null)
@@ -861,6 +942,10 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz set switch on off value
         /// </summary>
+        /// <param name="idx">The idx<see cref="string"/></param>
+        /// <param name="value">The value<see cref="int"/></param>
+        /// <param name="password">The password<see cref="string"/></param>
+        /// <returns>The <see cref="Task{bool}"/></returns>
         public async Task<bool> SetBlind(string idx, int value = ConstantValues.Device.Switch.Action.OFF, string password = null)
         {
             if (Server == null)
@@ -883,10 +968,12 @@ namespace NL.HNOGames.Domoticz.Data
             return false;
         }
 
-
         /// <summary>
         /// Domoticz set state of security panel
         /// </summary>
+        /// <param name="secStatus">The secStatus<see cref="int"/></param>
+        /// <param name="secMd5Code">The secMd5Code<see cref="string"/></param>
+        /// <returns>The <see cref="Task{bool}"/></returns>
         public async Task<bool> SetSecurityPanel(int secStatus, string secMd5Code)
         {
             if (Server == null)
@@ -920,6 +1007,8 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz clean device id
         /// </summary>
+        /// <param name="deviceId">The deviceId<see cref="string"/></param>
+        /// <returns>The <see cref="Task{bool}"/></returns>
         public async Task<bool> CleanRegisteredDevice(string deviceId)
         {
             if (Server == null || string.IsNullOrEmpty(deviceId))
@@ -948,6 +1037,9 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Domoticz register device for GCM
         /// </summary>
+        /// <param name="deviceId">The deviceId<see cref="string"/></param>
+        /// <param name="senderId">The senderId<see cref="string"/></param>
+        /// <returns>The <see cref="Task{bool}"/></returns>
         public async Task<bool> RegisterDevice(string deviceId, string senderId)
         {
             try
@@ -981,6 +1073,12 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Handle a toggle of a switch from a service like qrcode/speech/geo
         /// </summary>
+        /// <param name="idx">The idx<see cref="string"/></param>
+        /// <param name="password">The password<see cref="string"/></param>
+        /// <param name="inputJsonAction">The inputJsonAction<see cref="int"/></param>
+        /// <param name="value">The value<see cref="string"/></param>
+        /// <param name="isSceneOrGroup">The isSceneOrGroup<see cref="bool"/></param>
+        /// <returns>The <see cref="Task{bool}"/></returns>
         public async Task<bool> HandleSwitch(string idx, string password, int inputJsonAction, string value, bool isSceneOrGroup = false)
         {
             if (string.IsNullOrEmpty(idx))
@@ -1105,6 +1203,6 @@ namespace NL.HNOGames.Domoticz.Data
             return false;
         }
 
-        #endregion Actions
+        #endregion
     }
 }

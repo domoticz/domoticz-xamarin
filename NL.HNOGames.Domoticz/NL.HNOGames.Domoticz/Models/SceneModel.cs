@@ -1,31 +1,71 @@
 ﻿using Humanizer;
-using Humanizer.Configuration;
-using Humanizer.DateTimeHumanizeStrategy;
 using NL.HNOGames.Domoticz.Data;
 using NL.HNOGames.Domoticz.Resources;
 using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NL.HNOGames.Domoticz.Models
 {
+    /// <summary>
+    /// Defines the <see cref="SceneModel" />
+    /// </summary>
     public class SceneModel
     {
+        #region Properties
+
+        /// <summary>
+        /// Gets or sets the ActTime
+        /// </summary>
         public int ActTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether AllowWidgetOrdering
+        /// </summary>
         public bool AllowWidgetOrdering { get; set; }
+
+        /// <summary>
+        /// Gets or sets the ServerTime
+        /// </summary>
         public string ServerTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Sunrise
+        /// </summary>
         public string Sunrise { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Sunset
+        /// </summary>
         public string Sunset { get; set; }
+
+        /// <summary>
+        /// Gets or sets the result
+        /// </summary>
         public Scene[] result { get; set; }
+
+        /// <summary>
+        /// Gets or sets the status
+        /// </summary>
         public string status { get; set; }
+
+        /// <summary>
+        /// Gets or sets the title
+        /// </summary>
         public string title { get; set; }
+
+        #endregion
     }
 
+    /// <summary>
+    /// Defines the <see cref="Scene" />
+    /// </summary>
     public class Scene
     {
+        #region Properties
+
+        /// <summary>
+        /// Gets the Icon
+        /// </summary>
         public String Icon
         {
             get
@@ -40,6 +80,9 @@ namespace NL.HNOGames.Domoticz.Models
             }
         }
 
+        /// <summary>
+        /// Gets the Opacity
+        /// </summary>
         public double Opacity
         {
             get
@@ -51,6 +94,9 @@ namespace NL.HNOGames.Domoticz.Models
             }
         }
 
+        /// <summary>
+        /// Gets the FavoriteIcon
+        /// </summary>
         public String FavoriteIcon
         {
             get
@@ -58,6 +104,10 @@ namespace NL.HNOGames.Domoticz.Models
                 return Favorite > 0 ? "ic_star.png" : "ic_star_border.png";
             }
         }
+
+        /// <summary>
+        /// Gets the FavoriteIconTintColor
+        /// </summary>
         public String FavoriteIconTintColor
         {
             get
@@ -66,6 +116,9 @@ namespace NL.HNOGames.Domoticz.Models
             }
         }
 
+        /// <summary>
+        /// Gets a value indicating whether StatusBoolean
+        /// </summary>
         public bool StatusBoolean
         {
             get
@@ -85,6 +138,9 @@ namespace NL.HNOGames.Domoticz.Models
             }
         }
 
+        /// <summary>
+        /// Gets a value indicating whether FavoriteBoolean
+        /// </summary>
         public bool FavoriteBoolean
         {
             get
@@ -92,6 +148,10 @@ namespace NL.HNOGames.Domoticz.Models
                 return Favorite == 1;
             }
         }
+
+        /// <summary>
+        /// Gets the LastUpdateDescription
+        /// </summary>
         public String LastUpdateDescription
         {
             get
@@ -102,6 +162,9 @@ namespace NL.HNOGames.Domoticz.Models
             }
         }
 
+        /// <summary>
+        /// Gets the TypeDescription
+        /// </summary>
         public String TypeDescription
         {
             get
@@ -110,18 +173,66 @@ namespace NL.HNOGames.Domoticz.Models
             }
         }
 
+        /// <summary>
+        /// Gets or sets the Description
+        /// </summary>
         public string Description { get; set; }
-        public int Favorite { get; set; }
-        public string LastUpdate { get; set; }
-        public string Name { get; set; }
-        public string OffAction { get; set; }
-        public string OnAction { get; set; }
-        public bool Protected { get; set; }
-        public string Status { get; set; }
-        public string Timers { get; set; }
-        public string Type { get; set; }
-        public bool UsedByCamera { get; set; }
-        public string idx { get; set; }
-    }
 
+        /// <summary>
+        /// Gets or sets the Favorite
+        /// </summary>
+        public int Favorite { get; set; }
+
+        /// <summary>
+        /// Gets or sets the LastUpdate
+        /// </summary>
+        public string LastUpdate { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Name
+        /// </summary>
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets the OffAction
+        /// </summary>
+        public string OffAction { get; set; }
+
+        /// <summary>
+        /// Gets or sets the OnAction
+        /// </summary>
+        public string OnAction { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether Protected
+        /// </summary>
+        public bool Protected { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Status
+        /// </summary>
+        public string Status { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Timers
+        /// </summary>
+        public string Timers { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Type
+        /// </summary>
+        public string Type { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether UsedByCamera
+        /// </summary>
+        public bool UsedByCamera { get; set; }
+
+        /// <summary>
+        /// Gets or sets the idx
+        /// </summary>
+        public string idx { get; set; }
+
+        #endregion
+    }
 }

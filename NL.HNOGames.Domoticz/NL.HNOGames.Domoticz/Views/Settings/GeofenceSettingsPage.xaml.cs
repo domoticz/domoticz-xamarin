@@ -1,24 +1,35 @@
-﻿using System;
-using Xamarin.Forms;
-using System.Linq;
-using System.Reactive.Linq;
-using System.Collections.Generic;
+﻿using NL.HNOGames.Domoticz.Controls;
 using NL.HNOGames.Domoticz.Resources;
-using Rg.Plugins.Popup.Services;
 using NL.HNOGames.Domoticz.Views.Dialog;
-using Acr.UserDialogs;
-using System.Threading.Tasks;
-using NL.HNOGames.Domoticz.Controls;
+using Rg.Plugins.Popup.Services;
+using System;
+using System.Collections.Generic;
 
 namespace NL.HNOGames.Domoticz.Views.Settings
 {
+    /// <summary>
+    /// Defines the <see cref="GeofenceSettingsPage" />
+    /// </summary>
     public partial class GeofenceSettingsPage
     {
-        private readonly List<Models.GeofenceModel> _oListSource;
-        private Models.GeofenceModel _oSelectedGeofenceCommand;
+        #region Variables
 
         /// <summary>
-        /// Constructor of Geofence page
+        /// Defines the _oListSource
+        /// </summary>
+        private readonly List<Models.GeofenceModel> _oListSource;
+
+        /// <summary>
+        /// Defines the _oSelectedGeofenceCommand
+        /// </summary>
+        private Models.GeofenceModel _oSelectedGeofenceCommand;
+
+        #endregion
+
+        #region Constructor & Destructor
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GeofenceSettingsPage"/> class.
         /// </summary>
         public GeofenceSettingsPage()
         {
@@ -42,6 +53,32 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                 listView.ItemsSource = _oListSource;
         }
 
+        #endregion
+
+        #region Public
+
+        /// <summary>
+        /// Connect device to Geofence Command
+        /// </summary>
+        /// <param name="device">The device<see cref="Models.Device"/></param>
+        /// <param name="password">The password<see cref="String"/></param>
+        /// <param name="value">The value<see cref="String"/></param>
+        public void DelegateMethod(Models.Device device, String password, String value)
+        {
+            App.ShowToast("Connecting " + _oSelectedGeofenceCommand.Name + " with switch " + device.Name);
+            _oSelectedGeofenceCommand.SwitchIDX = device.idx;
+            _oSelectedGeofenceCommand.SwitchName = device.Name;
+            _oSelectedGeofenceCommand.Value = value;
+            _oSelectedGeofenceCommand.SwitchPassword = password;
+            _oSelectedGeofenceCommand.IsScene = device.IsScene;
+            _oSelectedGeofenceCommand.IsScene = device.IsScene;
+            SaveAndRefresh();
+        }
+
+        #endregion
+
+        #region Private
+
         /// <summary>
         /// Check if this feature is supported for your device
         /// </summary>
@@ -51,73 +88,34 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             return true;
         }
 
-      /// <summary>
-      /// Add new Geofence Command to system
-      /// </summary>
-      private void ToolbarItem_Activated(object sender, EventArgs e)
-      {
-         if (!ValidateGeofenceSupported())
-         {
-            swEnableGeofence.IsToggled = false;
-            return;
-         }
+        /// <summary>
+        /// Add new Geofence Command to system
+        /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="EventArgs"/></param>
+        private void ToolbarItem_Activated(object sender, EventArgs e)
+        {
+            if (!ValidateGeofenceSupported())
+            {
+                swEnableGeofence.IsToggled = false;
+                return;
+            }
+        }
 
-         //try
-         //{
-         //    var result = await CrossPlacePicker.Current.Display();
-         //    if (result != null)
-         //    {
-         //        await AddNewRecordAsync(result.PlaceId, result);
-         //    }
-         //}
-         //catch (Exception ex)
-         //{
-         //    if (ex != null &&
-         //        !string.IsNullOrEmpty(ex.Message))
-         //    {
-         //        App.ShowToast(ex.ToString());
-         //        App.AddLog(ex.Message);
-         //    }
-         //}
-      }
+        /// <summary>
+        /// Create new Geofence object
+        /// </summary>
+        /// <param name="GeofenceID">The GeofenceID<see cref="string"/></param>
+        private void AddNewRecord(string GeofenceID)
+        {
+        }
 
-      /// <summary>
-      /// Create new Geofence object
-      /// </summary>
-      private void AddNewRecord(string GeofenceID)
-      {
-         //if (location == null)
-         //    return;
-
-         //var r = await UserDialogs.Instance.PromptAsync(AppResources.radius,
-         //        inputType: InputType.Number);
-
-         //int radius = 500;
-         //await Task.Delay(500);
-         //if (r.Ok)
-         //    radius = Convert.ToInt32(r.Text);
-         //else
-         //    return;
-
-         //var GeofenceObject = new Models.GeofenceModel()
-         //{
-         //    Id = GeofenceID,
-         //    Name = location.Name,
-         //    Latitude = location.Coordinates.Latitude,
-         //    Longitude = location.Coordinates.Longitude,
-         //    Address = location.Address,
-         //    Radius = radius,
-         //    Enabled = true,
-         //};
-
-         //_oListSource.Add(GeofenceObject);
-         //SaveAndRefresh();
-      }
-
-      /// <summary>
-      /// Delete a Geofence Command from the list
-      /// </summary>
-      private void btnDeleteButton_Clicked(object sender, EventArgs e)
+        /// <summary>
+        /// Delete a Geofence Command from the list
+        /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="EventArgs"/></param>
+        private void btnDeleteButton_Clicked(object sender, EventArgs e)
         {
             var oGeofenceCommand = (Models.GeofenceModel)((TintedCachedImage)sender).BindingContext;
             App.ShowToast(AppResources.something_deleted.Replace("%1$s", oGeofenceCommand.Name));
@@ -138,6 +136,8 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// <summary>
         /// Connect device to Geofence Command
         /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="EventArgs"/></param>
         private async void btnConnect_Clicked(object sender, EventArgs e)
         {
             _oSelectedGeofenceCommand = (Models.GeofenceModel)((TintedCachedImage)sender).BindingContext;
@@ -146,19 +146,6 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             await PopupNavigation.Instance.PushAsync(oSwitchPopup);
         }
 
-        /// <summary>
-        /// Connect device to Geofence Command
-        /// </summary>
-        public void DelegateMethod(Models.Device device, String password, String value)
-        {
-            App.ShowToast("Connecting " + _oSelectedGeofenceCommand.Name + " with switch " + device.Name);
-            _oSelectedGeofenceCommand.SwitchIDX = device.idx;
-            _oSelectedGeofenceCommand.SwitchName = device.Name;
-            _oSelectedGeofenceCommand.Value = value;
-            _oSelectedGeofenceCommand.SwitchPassword = password;
-            _oSelectedGeofenceCommand.IsScene = device.IsScene;
-            _oSelectedGeofenceCommand.IsScene = device.IsScene;
-            SaveAndRefresh();
-        }
+        #endregion
     }
 }

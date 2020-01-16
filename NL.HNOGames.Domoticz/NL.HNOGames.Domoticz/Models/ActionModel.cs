@@ -1,15 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NL.HNOGames.Domoticz.Models
+﻿namespace NL.HNOGames.Domoticz.Models
 {
+    /// <summary>
+    /// Defines the <see cref="ActionModel" />
+    /// </summary>
     public class ActionModel
     {
+        #region Properties
+
+        /// <summary>
+        /// Gets or sets the message
+        /// </summary>
         public string message { get; set; }
+
+        /// <summary>
+        /// Gets or sets the status
+        /// </summary>
         public string status { get; set; }
+
+        /// <summary>
+        /// Gets or sets the title
+        /// </summary>
         public string title { get; set; }
+
+        #endregion
     }
 }

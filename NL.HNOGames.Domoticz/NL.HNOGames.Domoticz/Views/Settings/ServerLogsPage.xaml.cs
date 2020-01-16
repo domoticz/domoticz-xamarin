@@ -8,114 +8,151 @@ using Xamarin.Forms;
 
 namespace NL.HNOGames.Domoticz.Views.Settings
 {
-   public partial class ServerLogsPage
-   {
-      private List<ServerLog> _logList;
+    /// <summary>
+    /// Defines the <see cref="ServerLogsPage" />
+    /// </summary>
+    public partial class ServerLogsPage
+    {
+        #region Variables
 
-      public ServerLogsPage()
-      {
-         InitializeComponent();
+        /// <summary>
+        /// Defines the _logList
+        /// </summary>
+        private List<ServerLog> _logList;
 
-         searchIcon.GestureRecognizers.Add(new TapGestureRecognizer { Command = new Command(OnSearchIconTapped) });
-         searchBar.TextChanged += searchBar_TextChanged;
-         searchBar.Cancelled += (s, e) => OnCancelled();
-      }
+        #endregion
 
-      private void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
-      {
-         listView.SelectedItem = null;
-      }
+        #region Constructor & Destructor
 
-      protected override void OnAppearing()
-      {
-         base.OnAppearing();
-         new Command(async () => await ExecuteLoadLogsCommand()).Execute(null);
-      }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ServerLogsPage"/> class.
+        /// </summary>
+        public ServerLogsPage()
+        {
+            InitializeComponent();
 
-      private async Task ExecuteLoadLogsCommand()
-      {
-         App.ShowLoading();
-         _logList = new List<ServerLog>();
-         var logs = await App.ApiService.GetServerLogs();
+            searchIcon.GestureRecognizers.Add(new TapGestureRecognizer { Command = new Command(OnSearchIconTapped) });
+            searchBar.TextChanged += searchBar_TextChanged;
+            searchBar.Cancelled += (s, e) => OnCancelled();
+        }
 
-         if (logs?.result != null)
-         {
-            foreach (var n in logs.result)
-               _logList.Add(n);
-            _logList.Reverse();
-            listView.ItemsSource = _logList;
-            App.HideLoading();
-         }
-         else
-         {
-            App.HideLoading();
-            App.ShowToast(AppResources.error_logs);
-            await Navigation.PopAsync();
-         }
-      }
+        #endregion
 
-      /// <summary>
-      /// Filter changed
-      /// </summary>
-      private void searchBar_TextChanged(object sender, TextChangedEventArgs e)
-      {
-         try
-         {
-            var filterText = e.NewTextValue.ToLower().Trim();
-            if (filterText == string.Empty)
+        #region Private
+
+        /// <summary>
+        /// The OnItemSelected
+        /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="args">The args<see cref="SelectedItemChangedEventArgs"/></param>
+        private void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        {
+            listView.SelectedItem = null;
+        }
+
+        /// <summary>
+        /// The ExecuteLoadLogsCommand
+        /// </summary>
+        /// <returns>The <see cref="Task"/></returns>
+        private async Task ExecuteLoadLogsCommand()
+        {
+            App.ShowLoading();
+            _logList = new List<ServerLog>();
+            var logs = await App.ApiService.GetServerLogs();
+
+            if (logs?.result != null)
             {
-               listView.ItemsSource = null;
-               listView.ItemsSource = _logList;
+                foreach (var n in logs.result)
+                    _logList.Add(n);
+                _logList.Reverse();
+                listView.ItemsSource = _logList;
+                App.HideLoading();
             }
             else
             {
-               listView.ItemsSource = null;
-               listView.ItemsSource = _logList.Where(i => i.message.ToLower().Trim().Contains(filterText));
+                App.HideLoading();
+                App.ShowToast(AppResources.error_logs);
+                await Navigation.PopAsync();
             }
-         }
-         catch (Exception)
-         {
-            listView.ItemsSource = null;
-            listView.ItemsSource = _logList;
-         }
-      }
+        }
 
-      #region SearchBar
+        /// <summary>
+        /// Filter changed
+        /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="TextChangedEventArgs"/></param>
+        private void searchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                var filterText = e.NewTextValue.ToLower().Trim();
+                if (filterText == string.Empty)
+                {
+                    listView.ItemsSource = null;
+                    listView.ItemsSource = _logList;
+                }
+                else
+                {
+                    listView.ItemsSource = null;
+                    listView.ItemsSource = _logList.Where(i => i.message.ToLower().Trim().Contains(filterText));
+                }
+            }
+            catch (Exception)
+            {
+                listView.ItemsSource = null;
+                listView.ItemsSource = _logList;
+            }
+        }
 
-      private void OnSearchIconTapped()
-      {
-         BatchBegin();
-         try
-         {
-            NavigationPage.SetHasBackButton(this, false);
-            titleLayout.IsVisible = false;
-            searchIcon.IsVisible = false;
-            searchBar.IsVisible = true;
-            searchBar.Focus();
-         }
-         finally
-         {
-            BatchCommit();
-         }
-      }
+        /// <summary>
+        /// The OnSearchIconTapped
+        /// </summary>
+        private void OnSearchIconTapped()
+        {
+            BatchBegin();
+            try
+            {
+                NavigationPage.SetHasBackButton(this, false);
+                titleLayout.IsVisible = false;
+                searchIcon.IsVisible = false;
+                searchBar.IsVisible = true;
+                searchBar.Focus();
+            }
+            finally
+            {
+                BatchCommit();
+            }
+        }
 
-      private void OnCancelled()
-      {
-         BatchBegin();
-         try
-         {
-            NavigationPage.SetHasBackButton(this, true);
-            searchBar.IsVisible = false;
-            searchBar.Text = string.Empty;
-            titleLayout.IsVisible = true;
-            searchIcon.IsVisible = true;
-         }
-         finally
-         {
-            BatchCommit();
-         }
-      }
+        /// <summary>
+        /// The OnCancelled
+        /// </summary>
+        private void OnCancelled()
+        {
+            BatchBegin();
+            try
+            {
+                NavigationPage.SetHasBackButton(this, true);
+                searchBar.IsVisible = false;
+                searchBar.Text = string.Empty;
+                titleLayout.IsVisible = true;
+                searchIcon.IsVisible = true;
+            }
+            finally
+            {
+                BatchCommit();
+            }
+        }
 
-      #endregion
-   }
+        #endregion
+
+        /// <summary>
+        /// The OnAppearing
+        /// </summary>
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            new Command(async () => await ExecuteLoadLogsCommand()).Execute(null);
+        }
+    }
 }

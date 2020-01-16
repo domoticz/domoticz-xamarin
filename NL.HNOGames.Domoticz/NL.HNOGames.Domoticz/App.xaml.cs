@@ -1,36 +1,84 @@
 ﻿using Acr.UserDialogs;
+using DLToolkit.Forms.Controls;
 using NL.HNOGames.Domoticz.Data;
 using NL.HNOGames.Domoticz.Helpers;
+using NL.HNOGames.Domoticz.Models;
 using NL.HNOGames.Domoticz.Resources;
 using NL.HNOGames.Domoticz.Views;
 using NL.HNOGames.Domoticz.Views.StartUp;
+using Plugin.Fingerprint;
+using Plugin.Fingerprint.Abstractions;
+using Plugin.FirebasePushNotification;
+using Plugin.Multilingual;
 using Plugin.TextToSpeech;
 using System;
 using System.Linq;
-using DLToolkit.Forms.Controls;
+using System.Threading;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using System.Threading;
-using Plugin.Multilingual;
-using Plugin.Fingerprint;
-using Plugin.Fingerprint.Abstractions;
-using System.Threading.Tasks;
-using NL.HNOGames.Domoticz.Models;
 using Device = Xamarin.Forms.Device;
-using Plugin.FirebasePushNotification;
-using System.Net;
+
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace NL.HNOGames.Domoticz
 {
+    /// <summary>
+    /// Defines the <see cref="App" />
+    /// </summary>
     public partial class App
     {
-        public static ConnectionService ConnectionService { get; private set; }
-        public static DataService ApiService { get; private set; }
-        public static Settings AppSettings { get; private set; }
-        public static SunRiseModel SunRiseInfo { get; private set; }
-        private static Models.ConfigModel ServerConfig { get; set; }
+        #region Variables
+
+        /// <summary>
+        /// Defines the _loadingDialog
+        /// </summary>
         private static IProgressDialog _loadingDialog;
+
+        #endregion
+
+        #region Constructor & Destructor
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="App"/> class.
+        /// </summary>
+        public App()
+        {
+            Init();
+        }
+
+        #endregion
+
+        #region Properties
+
+        /// <summary>
+        /// Gets the ConnectionService
+        /// </summary>
+        public static ConnectionService ConnectionService { get; private set; }
+
+        /// <summary>
+        /// Gets the ApiService
+        /// </summary>
+        public static DataService ApiService { get; private set; }
+
+        /// <summary>
+        /// Gets the AppSettings
+        /// </summary>
+        public static Settings AppSettings { get; private set; }
+
+        /// <summary>
+        /// Gets the SunRiseInfo
+        /// </summary>
+        public static SunRiseModel SunRiseInfo { get; private set; }
+
+        /// <summary>
+        /// Gets or sets the ServerConfig
+        /// </summary>
+        private static Models.ConfigModel ServerConfig { get; set; }
+
+        #endregion
+
+        #region Public
 
         /// <summary>
         /// Load the server config
@@ -58,6 +106,7 @@ namespace NL.HNOGames.Domoticz
         /// <summary>
         /// Show a loading screen
         /// </summary>
+        /// <param name="text">The text<see cref="string"/></param>
         public static void ShowLoading(string text = null)
         {
             if (string.IsNullOrEmpty(text))
@@ -75,8 +124,11 @@ namespace NL.HNOGames.Domoticz
         }
 
         /// <summary>
-        ///     Show a loading screen with cancel button
+        /// Show a loading screen with cancel button
         /// </summary>
+        /// <param name="text">The text<see cref="string"/></param>
+        /// <param name="cancelText">The cancelText<see cref="string"/></param>
+        /// <param name="cts">The cts<see cref="CancellationTokenSource"/></param>
         public static void ShowLoading(string text, string cancelText, CancellationTokenSource cts)
         {
             if (string.IsNullOrEmpty(text))
@@ -105,164 +157,10 @@ namespace NL.HNOGames.Domoticz
             _loadingDialog?.Hide();
         }
 
-        public App()
-        {
-            Init();
-        }
-
-        /// <summary>
-        /// Init the page
-        /// </summary>
-        private void Init()
-        {
-            InitializeComponent();
-
-            FlowListView.Init();
-            AppSettings = new Settings { DebugInfo = string.Empty };
-
-            SetLanguage();
-            ConnectionService = new ConnectionService();
-            ApiService = new DataService { Server = AppSettings.ActiveServerSettings };
-
-            if (Current.Resources == null)
-                Current.Resources = new ResourceDictionary();
-
-            SetTheme();
-            SetMainPage();
-            CheckFingerprint();
-        }
-
-        /// <summary>
-        /// On start, register the notification services
-        /// </summary>
-        protected override void OnStart()
-        {
-            // Handle when your app starts
-            CrossFirebasePushNotification.Current.Subscribe("general");
-            CrossFirebasePushNotification.Current.OnTokenRefresh += (s, p) =>
-            {
-                registerAsync(p.Token);
-                System.Diagnostics.Debug.WriteLine($"TOKEN REC: {p.Token}");
-            };
-            registerAsync(CrossFirebasePushNotification.Current.Token);
-
-            CrossFirebasePushNotification.Current.OnNotificationReceived += (s, p) =>
-            {
-                try
-                {
-                    AddLog("GCM: Notification received");
-                    AddLog(p.Data.ToString());
-
-                    var body = p.Data.ContainsKey("body") ? p.Data["body"].ToString() : null;
-                    var title = p.Data.ContainsKey("title") ? p.Data["title"].ToString() : null;
-                    if (string.IsNullOrEmpty(title))
-                        title = p.Data.ContainsKey("subject") ? p.Data["subject"].ToString() : null;
-                    if (string.Compare(title, body, true) == 0)
-                        title = "Domoticz";
-
-                    // Show dialog
-                    UserDialogs.Instance.Alert(body, title, AppResources.ok);
-                }
-                catch (Exception)
-                { }
-            };
-        }
-
-        /// <summary>
-        /// Store the latest know token
-        /// </summary>
-        /// <param name="token"></param>
-        private async void registerAsync(string token)
-        {
-            AddLog(string.Format("GCM: Push Notification - Device Registered - Token : {0}", token));
-            var Id = UsefulBits.GetDeviceID();
-            bool bSuccess = await ApiService.RegisterDevice(Id, token);
-            if (bSuccess)
-                AddLog("GCM: Device registered on Domoticz");
-            else
-                AddLog("GCM: Device not registered on Domoticz");
-        }
-
-        /// <summary>
-        /// Check fingerprint security
-        /// </summary>
-        private static async void CheckFingerprint()
-        {
-            if (AppSettings.EnableFingerprintSecurity)
-            {
-                var result = await CrossFingerprint.Current.AuthenticateAsync(new AuthenticationRequestConfiguration(AppResources.category_startup_security)
-                {
-                    AllowAlternativeAuthentication = true,
-                    CancelTitle = AppResources.cancel,
-                    UseDialog = true,
-                    FallbackTitle = (Device.RuntimePlatform != Device.Android) ? AppResources.welcome_local_server_password : string.Empty,
-                });
-                switch (result.Status)
-                {
-                    case FingerprintAuthenticationResultStatus.Succeeded:
-                        break;
-                    case FingerprintAuthenticationResultStatus.FallbackRequested:
-                        var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password, inputType: InputType.Password);
-                        await Task.Delay(500);
-                        if (!r.Ok || string.IsNullOrEmpty(r.Text) ||
-                           (r.Text != AppSettings.ActiveServerSettings.LOCAL_SERVER_PASSWORD && r.Text != AppSettings.ActiveServerSettings.REMOTE_SERVER_PASSWORD))
-                        {
-                            App.AddLog("Not authorized for login");
-                            DependencyService.Get<ICloseApplication>().Close();//close the application
-                        }
-                        break;
-                    default:// All other options
-                        App.AddLog("Not authorized for login");
-                        DependencyService.Get<ICloseApplication>().Close();//close the application
-                        break;
-                }
-            }
-        }
-
-        /// <summary>
-        /// Set language
-        /// </summary>
-        private static void SetLanguage()
-        {
-            try
-            {
-                //set language
-                if (!string.IsNullOrEmpty(App.AppSettings.SpecifiedLanguage))
-                {
-                    CrossMultilingual.Current.CurrentCultureInfo = CrossMultilingual.Current.NeutralCultureInfoList.ToList().First(element => element.EnglishName.Contains(App.AppSettings.SpecifiedLanguage));
-                    AppResources.Culture = CrossMultilingual.Current.CurrentCultureInfo;
-                }
-                else
-                {
-                    AppResources.Culture = CrossMultilingual.Current.DeviceCultureInfo;
-                    App.AppSettings.SpecifiedLanguage = CrossMultilingual.Current.DeviceCultureInfo.EnglishName;
-                }
-            }
-            catch (Exception)
-            { }
-        }
-
-        /// <summary>
-        /// Set the theme of the app (Dark or light)
-        /// </summary>
-        private static void SetTheme()
-        {
-            Type merge;
-            if (AppSettings.DarkTheme)
-            {
-                if (Xamarin.Forms.Device.RuntimePlatform == Xamarin.Forms.Device.Android)
-                    merge = (new Themes.DarkAndroid()).GetType();
-                else
-                    merge = (new Themes.DarkiOS()).GetType();
-            }
-            else
-                merge = (new Themes.Base()).GetType();
-            Current.Resources.MergedWith = merge;
-        }
-
         /// <summary>
         /// Log information
         /// </summary>
+        /// <param name="text">The text<see cref="string"/></param>
         public static void AddLog(string text)
         {
             try
@@ -279,6 +177,7 @@ namespace NL.HNOGames.Domoticz
         /// <summary>
         /// Show toast information
         /// </summary>
+        /// <param name="text">The text<see cref="string"/></param>
         public static void ShowToast(string text)
         {
             if (string.IsNullOrEmpty(text))
@@ -379,6 +278,162 @@ namespace NL.HNOGames.Domoticz
             {
                 AddLog(ex.Message);
             }
+        }
+
+        #endregion
+
+        #region Private
+
+        /// <summary>
+        /// Init the page
+        /// </summary>
+        private void Init()
+        {
+            InitializeComponent();
+
+            FlowListView.Init();
+            AppSettings = new Settings { DebugInfo = string.Empty };
+
+            SetLanguage();
+            ConnectionService = new ConnectionService();
+            ApiService = new DataService { Server = AppSettings.ActiveServerSettings };
+
+            if (Current.Resources == null)
+                Current.Resources = new ResourceDictionary();
+
+            SetTheme();
+            SetMainPage();
+            CheckFingerprint();
+        }
+
+        /// <summary>
+        /// Store the latest know token
+        /// </summary>
+        /// <param name="token"></param>
+        private async void registerAsync(string token)
+        {
+            AddLog(string.Format("GCM: Push Notification - Device Registered - Token : {0}", token));
+            var Id = UsefulBits.GetDeviceID();
+            bool bSuccess = await ApiService.RegisterDevice(Id, token);
+            if (bSuccess)
+                AddLog("GCM: Device registered on Domoticz");
+            else
+                AddLog("GCM: Device not registered on Domoticz");
+        }
+
+        /// <summary>
+        /// Check fingerprint security
+        /// </summary>
+        private static async void CheckFingerprint()
+        {
+            if (AppSettings.EnableFingerprintSecurity)
+            {
+                var result = await CrossFingerprint.Current.AuthenticateAsync(new AuthenticationRequestConfiguration(AppResources.category_startup_security)
+                {
+                    AllowAlternativeAuthentication = true,
+                    CancelTitle = AppResources.cancel,
+                    UseDialog = true,
+                    FallbackTitle = (Device.RuntimePlatform != Device.Android) ? AppResources.welcome_local_server_password : string.Empty,
+                });
+                switch (result.Status)
+                {
+                    case FingerprintAuthenticationResultStatus.Succeeded:
+                        break;
+                    case FingerprintAuthenticationResultStatus.FallbackRequested:
+                        var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password, inputType: InputType.Password);
+                        await Task.Delay(500);
+                        if (!r.Ok || string.IsNullOrEmpty(r.Text) ||
+                           (r.Text != AppSettings.ActiveServerSettings.LOCAL_SERVER_PASSWORD && r.Text != AppSettings.ActiveServerSettings.REMOTE_SERVER_PASSWORD))
+                        {
+                            App.AddLog("Not authorized for login");
+                            DependencyService.Get<ICloseApplication>().Close();//close the application
+                        }
+                        break;
+                    default:// All other options
+                        App.AddLog("Not authorized for login");
+                        DependencyService.Get<ICloseApplication>().Close();//close the application
+                        break;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Set language
+        /// </summary>
+        private static void SetLanguage()
+        {
+            try
+            {
+                //set language
+                if (!string.IsNullOrEmpty(App.AppSettings.SpecifiedLanguage))
+                {
+                    CrossMultilingual.Current.CurrentCultureInfo = CrossMultilingual.Current.NeutralCultureInfoList.ToList().First(element => element.EnglishName.Contains(App.AppSettings.SpecifiedLanguage));
+                    AppResources.Culture = CrossMultilingual.Current.CurrentCultureInfo;
+                }
+                else
+                {
+                    AppResources.Culture = CrossMultilingual.Current.DeviceCultureInfo;
+                    App.AppSettings.SpecifiedLanguage = CrossMultilingual.Current.DeviceCultureInfo.EnglishName;
+                }
+            }
+            catch (Exception)
+            { }
+        }
+
+        /// <summary>
+        /// Set the theme of the app (Dark or light)
+        /// </summary>
+        private static void SetTheme()
+        {
+            Type merge;
+            if (AppSettings.DarkTheme)
+            {
+                if (Xamarin.Forms.Device.RuntimePlatform == Xamarin.Forms.Device.Android)
+                    merge = (new Themes.DarkAndroid()).GetType();
+                else
+                    merge = (new Themes.DarkiOS()).GetType();
+            }
+            else
+                merge = (new Themes.Base()).GetType();
+            Current.Resources.MergedWith = merge;
+        }
+
+        #endregion
+
+        /// <summary>
+        /// On start, register the notification services
+        /// </summary>
+        protected override void OnStart()
+        {
+            // Handle when your app starts
+            CrossFirebasePushNotification.Current.Subscribe("general");
+            CrossFirebasePushNotification.Current.OnTokenRefresh += (s, p) =>
+            {
+                registerAsync(p.Token);
+                System.Diagnostics.Debug.WriteLine($"TOKEN REC: {p.Token}");
+            };
+            registerAsync(CrossFirebasePushNotification.Current.Token);
+
+            CrossFirebasePushNotification.Current.OnNotificationReceived += (s, p) =>
+            {
+                try
+                {
+                    AddLog("GCM: Notification received");
+                    AddLog(p.Data.ToString());
+
+                    var body = p.Data.ContainsKey("body") ? p.Data["body"].ToString() : null;
+                    var title = p.Data.ContainsKey("title") ? p.Data["title"].ToString() : null;
+                    if (string.IsNullOrEmpty(title))
+                        title = p.Data.ContainsKey("subject") ? p.Data["subject"].ToString() : null;
+                    if (string.Compare(title, body, true) == 0)
+                        title = "Domoticz";
+
+                    // Show dialog
+                    UserDialogs.Instance.Alert(body, title, AppResources.ok);
+                }
+                catch (Exception)
+                { }
+            };
         }
     }
 }

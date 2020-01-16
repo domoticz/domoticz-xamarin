@@ -11,20 +11,55 @@ using ZXing.Net.Mobile.Forms;
 
 namespace NL.HNOGames.Domoticz.Views
 {
+    /// <summary>
+    /// Defines the <see cref="OverviewTabbedPage" />
+    /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class OverviewTabbedPage
     {
-        private readonly OverviewViewModel _viewModel;
-        private static IDisposable listener = null;
-        public static bool EmptyDialogShown = false;
-        private bool _settingsOpened;
-
-        private bool _showPlans = true;
-        private bool _showQRCode = true;
-        private bool _showSpeech = true;
+        #region Variables
 
         /// <summary>
-        /// Constructor
+        /// Defines the _viewModel
+        /// </summary>
+        private readonly OverviewViewModel _viewModel;
+
+        /// <summary>
+        /// Defines the listener
+        /// </summary>
+        private static IDisposable listener = null;
+
+        /// <summary>
+        /// Defines the EmptyDialogShown
+        /// </summary>
+        public static bool EmptyDialogShown = false;
+
+        /// <summary>
+        /// Defines the _settingsOpened
+        /// </summary>
+        private bool _settingsOpened;
+
+        /// <summary>
+        /// Defines the _showPlans
+        /// </summary>
+        private bool _showPlans = true;
+
+        /// <summary>
+        /// Defines the _showQRCode
+        /// </summary>
+        private bool _showQRCode = true;
+
+        /// <summary>
+        /// Defines the _showSpeech
+        /// </summary>
+        private bool _showSpeech = true;
+
+        #endregion
+
+        #region Constructor & Destructor
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OverviewTabbedPage"/> class.
         /// </summary>
         public OverviewTabbedPage()
         {
@@ -38,34 +73,9 @@ namespace NL.HNOGames.Domoticz.Views
             };
         }
 
-        /// <summary>
-        /// On Appearing of this screen
-        /// </summary>
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            if (_settingsOpened)
-            {
-                _settingsOpened = false;
-                BreakingSettingsChanged();
-            }
-            else
-                _viewModel.RefreshPlansCommand.Execute(null);
-            if (!App.AppSettings.QRCodeEnabled)
-                _showQRCode = false;
-            if (!App.AppSettings.SpeechEnabled)
-                _showSpeech = false;
-        }
+        #endregion
 
-        /// <summary>
-        /// Disappearing
-        /// </summary>
-        protected override void OnDisappearing()
-        {
-            if (App.ConnectionService != null)
-                App.ConnectionService.CleanClient();
-            base.OnDisappearing();
-        }
+        #region Private
 
         /// <summary>
         /// Show action sheet with plans
@@ -204,6 +214,10 @@ namespace NL.HNOGames.Domoticz.Views
             }
         }
 
+        /// <summary>
+        /// The processQrId
+        /// </summary>
+        /// <param name="qrCodeId">The qrCodeId<see cref="string"/></param>
         private async void processQrId(string qrCodeId)
         {
             var qrCode = App.AppSettings.QRCodes.FirstOrDefault(o => o.Id == qrCodeId);
@@ -226,6 +240,8 @@ namespace NL.HNOGames.Domoticz.Views
         /// <summary>
         /// Show a dialog with all options
         /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="EventArgs"/></param>
         private async void TiMore_Clicked(object sender, EventArgs e)
         {
             var actions = new List<string>();
@@ -245,6 +261,37 @@ namespace NL.HNOGames.Domoticz.Views
                 tiSpeechCode_Activated();
             else if (result == AppResources.wizard_button_settings)
                 OnSettingsClick();
+        }
+
+        #endregion
+
+        /// <summary>
+        /// On Appearing of this screen
+        /// </summary>
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            if (_settingsOpened)
+            {
+                _settingsOpened = false;
+                BreakingSettingsChanged();
+            }
+            else
+                _viewModel.RefreshPlansCommand.Execute(null);
+            if (!App.AppSettings.QRCodeEnabled)
+                _showQRCode = false;
+            if (!App.AppSettings.SpeechEnabled)
+                _showSpeech = false;
+        }
+
+        /// <summary>
+        /// Disappearing
+        /// </summary>
+        protected override void OnDisappearing()
+        {
+            if (App.ConnectionService != null)
+                App.ConnectionService.CleanClient();
+            base.OnDisappearing();
         }
     }
 }

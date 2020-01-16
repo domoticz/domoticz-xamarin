@@ -1,21 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NL.HNOGames.Domoticz.Helpers;
 using NL.HNOGames.Domoticz.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using NL.HNOGames.Domoticz.Helpers;
 
 namespace NL.HNOGames.Domoticz.Views
 {
+    /// <summary>
+    /// Defines the <see cref="CameraPage" />
+    /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CameraPage
     {
+        #region Variables
+
+        /// <summary>
+        /// Defines the _viewModel
+        /// </summary>
         private readonly CameraViewModel _viewModel;
+
+        /// <summary>
+        /// Defines the _oTimer
+        /// </summary>
         private Timer _oTimer;
 
+        #endregion
+
+        #region Constructor & Destructor
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CameraPage"/> class.
+        /// </summary>
         public CameraPage()
         {
             InitializeComponent();
@@ -41,13 +55,31 @@ namespace NL.HNOGames.Domoticz.Views
             }
         }
 
+        #endregion
+
+        #region Private
+
+        /// <summary>
+        /// Camera item selected
+        /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="ItemTappedEventArgs"/></param>
+        private async void ListView_OnFlowItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var item = e.Item as Models.Camera;
+            await Navigation.PushAsync(new CameraDetailPage(item));
+        }
+
+        #endregion
+
         /// <summary>
         /// On Appearing of the screen
         /// </summary>
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            _oTimer = new Timer((o) => {
+            _oTimer = new Timer((o) =>
+            {
                 Device.BeginInvokeOnMainThread(() => _viewModel.LoadCamerasCommand.Execute(null));
             }, null, 0, 5000);
         }
@@ -60,15 +92,6 @@ namespace NL.HNOGames.Domoticz.Views
             _oTimer?.Cancel();
             _oTimer?.Dispose();
             base.OnDisappearing();
-        }
-
-        /// <summary>
-        /// Camera item selected
-        /// </summary>
-        private async void ListView_OnFlowItemTapped(object sender, ItemTappedEventArgs e)
-        {
-            var item = e.Item as Models.Camera;
-            await Navigation.PushAsync(new CameraDetailPage(item));
         }
     }
 }

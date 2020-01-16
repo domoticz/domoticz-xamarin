@@ -4,21 +4,45 @@ using Xamarin.Forms.Internals;
 
 namespace NL.HNOGames.Domoticz.Controls
 {
-   [Preserve(AllMembers = true)]
-   public class TitleViewSearchBar : SearchBar
-   {
-      public static readonly BindableProperty CancelButtonTextProperty = BindableProperty.Create(nameof(CancelButtonText), typeof(string), typeof(TitleViewSearchBar), null);
-      public event EventHandler Cancelled;
+    /// <summary>
+    /// Defines the <see cref="TitleViewSearchBar" />
+    /// </summary>
+    [Preserve(AllMembers = true)]
+    public class TitleViewSearchBar : SearchBar
+    {
+        #region Variables
 
-      public string CancelButtonText
-      {
-         get => (string)GetValue(CancelButtonTextProperty);
-         set => SetValue(CancelButtonTextProperty, value);
-      }
+        /// <summary>
+        /// Defines the CancelButtonTextProperty
+        /// </summary>
+        public static readonly BindableProperty CancelButtonTextProperty = BindableProperty.Create(nameof(CancelButtonText), typeof(string), typeof(TitleViewSearchBar), null);
 
-      public void SendCancelled()
-      {
-         Cancelled?.Invoke(this, EventArgs.Empty);
-      }
-   }
+        #endregion
+
+        #region Properties
+
+        /// <summary>
+        /// Gets or sets the CancelButtonText
+        /// </summary>
+        public string CancelButtonText { get => (string)GetValue(CancelButtonTextProperty); set => SetValue(CancelButtonTextProperty, value); }
+
+        #endregion
+
+        #region Public
+
+        /// <summary>
+        /// The SendCancelled
+        /// </summary>
+        public void SendCancelled()
+        {
+            Cancelled?.Invoke(this, EventArgs.Empty);
+        }
+
+        #endregion
+
+        /// <summary>
+        /// Defines the Cancelled
+        /// </summary>
+        public event EventHandler Cancelled;
+    }
 }

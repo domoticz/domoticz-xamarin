@@ -6,35 +6,62 @@ using Xamarin.Forms;
 
 namespace NL.HNOGames.Domoticz.Controls
 {
-   public class TintedCachedImage : CachedImage
-   {
-      public static BindableProperty TintColorProperty = BindableProperty.Create(nameof(TintColor), typeof(Color), typeof(TintedCachedImage), Color.Transparent, propertyChanged: UpdateColor);
+    /// <summary>
+    /// Defines the <see cref="TintedCachedImage" />
+    /// </summary>
+    public class TintedCachedImage : CachedImage
+    {
+        #region Variables
 
-      public Color TintColor
-      {
-         get { return (Color)GetValue(TintColorProperty); }
-         set { SetValue(TintColorProperty, value); }
-      }
+        /// <summary>
+        /// Defines the TintColorProperty
+        /// </summary>
+        public static BindableProperty TintColorProperty = BindableProperty.Create(nameof(TintColor), typeof(Color), typeof(TintedCachedImage), Color.Transparent, propertyChanged: UpdateColor);
 
-      private static void UpdateColor(BindableObject bindable, object oldColor, object newColor)
-      {
-         try
-         {
-            var oldcolor = (Color)oldColor;
-            var newcolor = (Color)newColor;
+        #endregion
 
-            if (!oldcolor.Equals(newcolor))
+        #region Properties
+
+        /// <summary>
+        /// Gets or sets the TintColor
+        /// </summary>
+        public Color TintColor
+        {
+            get { return (Color)GetValue(TintColorProperty); }
+            set { SetValue(TintColorProperty, value); }
+        }
+
+        #endregion
+
+        #region Private
+
+        /// <summary>
+        /// The UpdateColor
+        /// </summary>
+        /// <param name="bindable">The bindable<see cref="BindableObject"/></param>
+        /// <param name="oldColor">The oldColor<see cref="object"/></param>
+        /// <param name="newColor">The newColor<see cref="object"/></param>
+        private static void UpdateColor(BindableObject bindable, object oldColor, object newColor)
+        {
+            try
             {
-               var view = (TintedCachedImage)bindable;
-               var transformations = new System.Collections.Generic.List<ITransformation>() {
+                var oldcolor = (Color)oldColor;
+                var newcolor = (Color)newColor;
+
+                if (!oldcolor.Equals(newcolor))
+                {
+                    var view = (TintedCachedImage)bindable;
+                    var transformations = new System.Collections.Generic.List<ITransformation>() {
                     new TintTransformation((int)(newcolor.R * 255), (int)(newcolor.G * 255), (int)(newcolor.B * 255), (int)(newcolor.A * 255)) {
                         EnableSolidColor = true
                     }
                 };
-               view.Transformations = transformations;
+                    view.Transformations = transformations;
+                }
             }
-         }
-         catch (Exception) { }
-      }
-   }
+            catch (Exception) { }
+        }
+
+        #endregion
+    }
 }

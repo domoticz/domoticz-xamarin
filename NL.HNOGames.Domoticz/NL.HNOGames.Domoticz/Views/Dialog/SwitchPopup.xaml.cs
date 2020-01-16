@@ -1,24 +1,58 @@
-﻿using System;
-using Xamarin.Forms;
-using System.Threading.Tasks;
-using Acr.UserDialogs;
+﻿using Acr.UserDialogs;
 using NL.HNOGames.Domoticz.Resources;
 using Rg.Plugins.Popup.Services;
+using System;
 using System.Linq;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace NL.HNOGames.Domoticz.Views.Dialog
 {
+    /// <summary>
+    /// Defines the <see cref="SwitchPopup" />
+    /// </summary>
     public partial class SwitchPopup
     {
-        public delegate void DeviceSelected(Models.Device device, string pasword, string value);
+        #region Constructor & Destructor
 
-        public DeviceSelected DeviceSelectedMethod { get; set; }
-
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SwitchPopup"/> class.
+        /// </summary>
         public SwitchPopup()
         {
             InitializeComponent();
         }
 
+        #endregion
+
+        #region Delegates
+
+        /// <summary>
+        /// The DeviceSelected
+        /// </summary>
+        /// <param name="device">The device<see cref="Models.Device"/></param>
+        /// <param name="pasword">The pasword<see cref="string"/></param>
+        /// <param name="value">The value<see cref="string"/></param>
+        public delegate void DeviceSelected(Models.Device device, string pasword, string value);
+
+        #endregion
+
+        #region Properties
+
+        /// <summary>
+        /// Gets or sets the DeviceSelectedMethod
+        /// </summary>
+        public DeviceSelected DeviceSelectedMethod { get; set; }
+
+        #endregion
+
+        #region Private
+
+        /// <summary>
+        /// The OnItemSelected
+        /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="args">The args<see cref="SelectedItemChangedEventArgs"/></param>
         private async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
             var item = args.SelectedItem as Models.Device;
@@ -55,12 +89,10 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
             await PopupNavigation.Instance.PopAsync();
         }
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            new Command(async () => await ExecuteGetSwitchesCommand()).Execute(null);
-        }
-
+        /// <summary>
+        /// The ExecuteGetSwitchesCommand
+        /// </summary>
+        /// <returns>The <see cref="Task"/></returns>
         private async Task ExecuteGetSwitchesCommand()
         {
             listView.IsRefreshing = true;
@@ -73,9 +105,25 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
             listView.IsRefreshing = false;
         }
 
+        /// <summary>
+        /// The btnCancel_Clicked
+        /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="EventArgs"/></param>
         private void btnCancel_Clicked(object sender, EventArgs e)
         {
             PopupNavigation.Instance.PopAsync();
+        }
+
+        #endregion
+
+        /// <summary>
+        /// The OnAppearing
+        /// </summary>
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            new Command(async () => await ExecuteGetSwitchesCommand()).Execute(null);
         }
     }
 }

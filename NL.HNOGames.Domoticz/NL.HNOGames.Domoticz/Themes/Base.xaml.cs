@@ -1,20 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace NL.HNOGames.Domoticz.Themes
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Base : ResourceDictionary
+    /// <summary>
+    /// Defines the <see cref="Base" />
+    /// </summary>
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class Base : ResourceDictionary
     {
-		public Base()
-		{
-			InitializeComponent ();
-		}
-	}
+        #region Constructor & Destructor
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Base"/> class.
+        /// </summary>
+        public Base()
+        {
+            InitializeComponent();
+        }
+
+        #endregion
+    }
 }

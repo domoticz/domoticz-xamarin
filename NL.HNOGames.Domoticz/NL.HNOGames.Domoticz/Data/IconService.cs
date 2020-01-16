@@ -2,8 +2,23 @@
 
 namespace NL.HNOGames.Domoticz.Data
 {
+    /// <summary>
+    /// Defines the <see cref="IconService" />
+    /// </summary>
     public class IconService
     {
+        #region Public
+
+        /// <summary>
+        /// The getDrawableIcon
+        /// </summary>
+        /// <param name="imgType">The imgType<see cref="String"/></param>
+        /// <param name="devType">The devType<see cref="String"/></param>
+        /// <param name="switchType">The switchType<see cref="String"/></param>
+        /// <param name="State">The State<see cref="bool"/></param>
+        /// <param name="useCustomImage">The useCustomImage<see cref="bool"/></param>
+        /// <param name="CustomImage">The CustomImage<see cref="String"/></param>
+        /// <returns>The <see cref="String"/></returns>
         public static String getDrawableIcon(String imgType, String devType, String switchType, bool State, bool useCustomImage, String CustomImage)
         {
             String standardImage = IconService.getDrawableIcon(imgType, devType, switchType, State);
@@ -99,6 +114,14 @@ namespace NL.HNOGames.Domoticz.Data
             return standardImage;
         }
 
+        /// <summary>
+        /// The getDrawableIcon
+        /// </summary>
+        /// <param name="imgType">The imgType<see cref="String"/></param>
+        /// <param name="devType">The devType<see cref="String"/></param>
+        /// <param name="switchType">The switchType<see cref="String"/></param>
+        /// <param name="State">The State<see cref="bool"/></param>
+        /// <returns>The <see cref="String"/></returns>
         public static String getDrawableIcon(String imgType, String devType, String switchType, bool State)
         {
             String iconDrawable = "defaultimage";
@@ -270,5 +293,7 @@ namespace NL.HNOGames.Domoticz.Data
             }
             return iconDrawable + ".png";
         }
+
+        #endregion
     }
 }

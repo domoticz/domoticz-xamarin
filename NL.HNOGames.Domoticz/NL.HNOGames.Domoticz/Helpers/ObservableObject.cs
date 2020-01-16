@@ -13,12 +13,12 @@ namespace NL.HNOGames.Domoticz.Helpers
         /// <summary>
         /// Sets the property.
         /// </summary>
-        /// <returns><c>true</c>, if property was set, <c>false</c> otherwise.</returns>
+        /// <typeparam name="T">The 1st type parameter.</typeparam>
         /// <param name="backingStore">Backing store.</param>
         /// <param name="value">Value.</param>
         /// <param name="propertyName">Property name.</param>
         /// <param name="onChanged">On changed.</param>
-        /// <typeparam name="T">The 1st type parameter.</typeparam>
+        /// <returns><c>true</c>, if property was set, <c>false</c> otherwise.</returns>
         protected bool SetProperty<T>(
             ref T backingStore, T value,
             [CallerMemberName]string propertyName = "",

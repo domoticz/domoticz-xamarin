@@ -2,14 +2,31 @@
 
 namespace NL.HNOGames.Domoticz.Controls
 {
-   public class ExtendedButton : Button
-   {
-      public static BindableProperty PaddingProperty = BindableProperty.Create(nameof(Padding), typeof(Thickness), typeof(ExtendedButton), default(Thickness), defaultBindingMode: BindingMode.OneWay);
+    /// <summary>
+    /// Defines the <see cref="ExtendedButton" />
+    /// </summary>
+    public class ExtendedButton : Button
+    {
+        #region Variables
 
-      public Thickness Padding
-      {
-         get { return (Thickness)GetValue(PaddingProperty); }
-         set { SetValue(PaddingProperty, value); }
-      }
-   }
+        /// <summary>
+        /// Defines the PaddingProperty
+        /// </summary>
+        public static BindableProperty PaddingProperty = BindableProperty.Create(nameof(Padding), typeof(Thickness), typeof(ExtendedButton), default(Thickness), defaultBindingMode: BindingMode.OneWay);
+
+        #endregion
+
+        #region Properties
+
+        /// <summary>
+        /// Gets or sets the Padding
+        /// </summary>
+        public Thickness Padding
+        {
+            get { return (Thickness)GetValue(PaddingProperty); }
+            set { SetValue(PaddingProperty, value); }
+        }
+
+        #endregion
+    }
 }

@@ -1,30 +1,42 @@
-﻿using Xamarin.Forms.Platform.Android;
-using Xamarin.Forms;
+﻿using Android.Content;
 using NL.HNOGames.Domoticz.Controls;
-using Android.Content;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.Android;
 
 namespace NL.HNOGames.Domoticz.Droid.Renderer
 {
-   public class CustomMultiLineLabelRenderer : LabelRenderer
-   {
-      /// <summary>
-      /// Constructor
-      /// </summary>
-      /// <param name="context"></param>
-      public CustomMultiLineLabelRenderer(Context context)
+    /// <summary>
+    /// Defines the <see cref="CustomMultiLineLabelRenderer" />
+    /// </summary>
+    public class CustomMultiLineLabelRenderer : LabelRenderer
+    {
+        #region Constructor & Destructor
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomMultiLineLabelRenderer"/> class.
+        /// </summary>
+        /// <param name="context"></param>
+        public CustomMultiLineLabelRenderer(Context context)
         : base(context)
-      { }
+        {
+        }
 
-      protected override void OnElementChanged(ElementChangedEventArgs<Label> e)
-      {
-         base.OnElementChanged(e);
+        #endregion
 
-         MultiLineLabel multiLineLabel = (MultiLineLabel)Element;
-         if (multiLineLabel != null && multiLineLabel.Lines != -1)
-         {
-            Control.SetSingleLine(false);
-            Control.SetLines(multiLineLabel.Lines);
-         }
-      }
-   }
+        /// <summary>
+        /// The OnElementChanged
+        /// </summary>
+        /// <param name="e">The e<see cref="ElementChangedEventArgs{Label}"/></param>
+        protected override void OnElementChanged(ElementChangedEventArgs<Label> e)
+        {
+            base.OnElementChanged(e);
+
+            MultiLineLabel multiLineLabel = (MultiLineLabel)Element;
+            if (multiLineLabel != null && multiLineLabel.Lines != -1)
+            {
+                Control.SetSingleLine(false);
+                Control.SetLines(multiLineLabel.Lines);
+            }
+        }
+    }
 }

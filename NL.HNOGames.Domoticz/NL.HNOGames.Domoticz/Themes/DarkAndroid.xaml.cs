@@ -1,20 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace NL.HNOGames.Domoticz.Themes
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class DarkAndroid : ResourceDictionary
+    /// <summary>
+    /// Defines the <see cref="DarkAndroid" />
+    /// </summary>
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class DarkAndroid : ResourceDictionary
     {
-		public DarkAndroid()
-		{
-			InitializeComponent ();
-		}
-	}
+        #region Constructor & Destructor
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DarkAndroid"/> class.
+        /// </summary>
+        public DarkAndroid()
+        {
+            InitializeComponent();
+        }
+
+        #endregion
+    }
 }

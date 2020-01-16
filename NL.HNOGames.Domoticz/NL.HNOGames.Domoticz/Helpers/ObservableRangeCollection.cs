@@ -1,40 +1,46 @@
-﻿using System;
+﻿using NL.HNOGames.Domoticz.Models;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
-using NL.HNOGames.Domoticz.Models;
 
 namespace NL.HNOGames.Domoticz.Helpers
 {
-    /// <summary> 
-    /// Represents a dynamic data collection that provides notifications when items get added, removed, or when the whole list is refreshed. 
-    /// </summary> 
-    /// <typeparam name="T"></typeparam> 
+    /// <summary>
+    /// Represents a dynamic data collection that provides notifications when items get added, removed, or when the whole list is refreshed.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class ObservableRangeCollection<T> : ObservableCollection<T>
     {
+        #region Constructor & Destructor
 
-        /// <summary> 
-        /// Initializes a new instance of the System.Collections.ObjectModel.ObservableCollection(Of T) class. 
-        /// </summary> 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ObservableRangeCollection{T}"/> class.
+        /// </summary>
         public ObservableRangeCollection()
             : base()
         {
         }
 
-        /// <summary> 
-        /// Initializes a new instance of the System.Collections.ObjectModel.ObservableCollection(Of T) class that contains elements copied from the specified collection. 
-        /// </summary> 
-        /// <param name="collection">collection: The collection from which the elements are copied.</param> 
-        /// <exception cref="System.ArgumentNullException">The collection parameter cannot be null.</exception> 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ObservableRangeCollection{T}"/> class.
+        /// </summary>
+        /// <param name="collection">collection: The collection from which the elements are copied.</param>
         public ObservableRangeCollection(IEnumerable<T> collection)
             : base(collection)
         {
         }
 
-        /// <summary> 
-        /// Adds the elements of the specified collection to the end of the ObservableCollection(Of T). 
-        /// </summary> 
+        #endregion
+
+        #region Public
+
+        /// <summary>
+        /// Adds the elements of the specified collection to the end of the ObservableCollection(Of T).
+        /// </summary>
+        /// <param name="collection">The collection<see cref="IEnumerable{T}"/></param>
+        /// <param name="notificationMode">The notificationMode<see cref="NotifyCollectionChangedAction"/></param>
         public void AddRange(IEnumerable<T> collection, NotifyCollectionChangedAction notificationMode = NotifyCollectionChangedAction.Add)
         {
             if (collection == null)
@@ -68,9 +74,10 @@ namespace NL.HNOGames.Domoticz.Helpers
             OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, changedItems, startIndex));
         }
 
-        /// <summary> 
-        /// Removes the first occurence of each item in the specified collection from ObservableCollection(Of T). 
-        /// </summary> 
+        /// <summary>
+        /// Removes the first occurence of each item in the specified collection from ObservableCollection(Of T).
+        /// </summary>
+        /// <param name="collection">The collection<see cref="IEnumerable{T}"/></param>
         public void RemoveRange(IEnumerable<T> collection)
         {
             if (collection == null)
@@ -81,17 +88,19 @@ namespace NL.HNOGames.Domoticz.Helpers
             OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
         }
 
-        /// <summary> 
-        /// Clears the current collection and replaces it with the specified item. 
-        /// </summary> 
+        /// <summary>
+        /// Clears the current collection and replaces it with the specified item.
+        /// </summary>
+        /// <param name="item">The item<see cref="T"/></param>
         public void Replace(T item)
         {
             ReplaceRange(new T[] { item });
         }
 
-        /// <summary> 
-        /// Clears the current collection and replaces it with the specified collection. 
-        /// </summary> 
+        /// <summary>
+        /// Clears the current collection and replaces it with the specified collection.
+        /// </summary>
+        /// <param name="collection">The collection<see cref="IEnumerable{T}"/></param>
         public void ReplaceRange(IEnumerable<T> collection)
         {
             if (collection == null)
@@ -100,6 +109,9 @@ namespace NL.HNOGames.Domoticz.Helpers
             Items.Clear();
             AddRange(collection, NotifyCollectionChangedAction.Reset);
         }
+
+        #endregion
+
 
         public static implicit operator ObservableRangeCollection<T>(ObservableRangeCollection<Device> v)
         {

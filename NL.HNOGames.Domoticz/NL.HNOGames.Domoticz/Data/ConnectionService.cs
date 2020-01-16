@@ -16,18 +16,39 @@ namespace NL.HNOGames.Domoticz.Data
     /// </summary>
     public class ConnectionService
     {
-        public HttpClient Client;
-        private string _latestUsedbaseUrl = string.Empty;
-        private readonly NativeCookieHandler _cookieHandler;
+        #region Variables
 
         /// <summary>
-        /// Constructor
+        /// Defines the Client
+        /// </summary>
+        public HttpClient Client;
+
+        /// <summary>
+        /// Defines the _latestUsedbaseUrl
+        /// </summary>
+        private string _latestUsedbaseUrl = string.Empty;
+
+        /// <summary>
+        /// Defines the _cookieHandler
+        /// </summary>
+        private readonly NativeCookieHandler _cookieHandler;
+
+        #endregion
+
+        #region Constructor & Destructor
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConnectionService"/> class.
         /// </summary>
         public ConnectionService()
         {
             _cookieHandler = new NativeCookieHandler();
             RefreshClient(); //default 
         }
+
+        #endregion
+
+        #region Public
 
         /// <summary>
         /// Clean client object
@@ -38,33 +59,11 @@ namespace NL.HNOGames.Domoticz.Data
         }
 
         /// <summary>
-        /// Refresh client object
-        /// </summary>
-        private void RefreshClient()
-        {
-            CleanClient();
-
-            switch (Xamarin.Forms.Device.RuntimePlatform)
-            {
-                case Xamarin.Forms.Device.Android:
-                    Client = new HttpClient(DependencyService.Get<IHTTPClientHandlerCreationService>().GetInsecureHandler());
-                    break;
-                default:
-                    Client = new HttpClient(new NativeMessageHandler(false, false, _cookieHandler));
-                    break;
-            }
-
-            Client.MaxResponseContentBufferSize = 25600000;
-            Client.Timeout = TimeSpan.FromMilliseconds(10000);
-
-#if OOTT
-         Client.DefaultRequestHeaders.Add("User-Agent", "mobileOOTTapp ios");
-#endif
-        }
-
-        /// <summary>
         /// Construct Domoticz API Url
         /// </summary>
+        /// <param name="server">The server<see cref="ServerSettings"/></param>
+        /// <param name="jsonUrl">The jsonUrl<see cref="string"/></param>
+        /// <returns>The <see cref="Task{string}"/></returns>
         public async Task<string> ConstructGetUrlAsync(ServerSettings server, string jsonUrl)
         {
             if (server == null)
@@ -134,6 +133,12 @@ namespace NL.HNOGames.Domoticz.Data
         /// <summary>
         /// Create the Url for settings (Post) values
         /// </summary>
+        /// <param name="server">The server<see cref="ServerSettings"/></param>
+        /// <param name="jsonSetUrl">The jsonSetUrl<see cref="int"/></param>
+        /// <param name="idx">The idx<see cref="string"/></param>
+        /// <param name="action">The action<see cref="int"/></param>
+        /// <param name="value">The value<see cref="double"/></param>
+        /// <returns>The <see cref="Task{string}"/></returns>
         public async Task<string> ConstructSetUrlAsync(ServerSettings server, int jsonSetUrl, string idx, int action,
             double value)
         {
@@ -363,14 +368,43 @@ namespace NL.HNOGames.Domoticz.Data
             return fullString;
         }
 
+        #endregion
+
+        #region Private
+
+        /// <summary>
+        /// Refresh client object
+        /// </summary>
+        private void RefreshClient()
+        {
+            CleanClient();
+
+            switch (Xamarin.Forms.Device.RuntimePlatform)
+            {
+                case Xamarin.Forms.Device.Android:
+                    Client = new HttpClient(DependencyService.Get<IHTTPClientHandlerCreationService>().GetInsecureHandler());
+                    break;
+                default:
+                    Client = new HttpClient(new NativeMessageHandler(false, false, _cookieHandler));
+                    break;
+            }
+
+            Client.MaxResponseContentBufferSize = 25600000;
+            Client.Timeout = TimeSpan.FromMilliseconds(10000);
+        }
+
         /// <summary>
         /// Is User On Local Wifi Async
         /// </summary>
+        /// <param name="server">The server<see cref="ServerSettings"/></param>
+        /// <returns>The <see cref="Task{bool}"/></returns>
         private static async Task<bool> IsUserOnLocalWifiAsync(ServerSettings server)
         {
             if (server != null && server.IS_LOCAL_SERVER_ADDRESS_DIFFERENT && !string.IsNullOrEmpty(server.LOCAL_SERVER_URL))
                 return await CrossConnectivity.Current.IsReachable(server.LOCAL_SERVER_URL, 1000);
             return false;
         }
+
+        #endregion
     }
 }

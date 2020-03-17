@@ -35,7 +35,6 @@ namespace NL.HNOGames.Domoticz.Droid
 
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
             CrossFingerprint.SetCurrentActivityResolver(() => CrossCurrentActivity.Current.Activity);
-            CrossFingerprint.SetDialogFragmentType<CustomFingerprintDialogFragment>();
             Plugin.InputKit.Platforms.Droid.Config.Init(this, savedInstanceState);
 
             FirebasePushNotificationManager.ProcessIntent(this, Intent);

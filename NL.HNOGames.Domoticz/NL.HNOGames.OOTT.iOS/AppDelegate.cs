@@ -7,6 +7,7 @@ using UserNotifications;
 using System.Net;
 using Plugin.FirebasePushNotification;
 using System.Collections.Generic;
+using NL.HNOGames.Domoticz;
 
 namespace NL.HNOGames.OOTT.iOS
 {

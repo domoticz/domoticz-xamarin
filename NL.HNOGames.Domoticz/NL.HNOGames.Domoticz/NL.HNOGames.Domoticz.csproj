@@ -164,7 +164,7 @@
     <PackageReference Include="OxyPlot.Core" Version="2015.1.708-alpha" />
     <PackageReference Include="OxyPlot.Xamarin.Forms" Version="1.1.0-unstable0011" />
     <PackageReference Include="Plugin.DeviceOrientation" Version="1.0.7" />
-    <PackageReference Include="Plugin.Fingerprint" Version="1.4.9" />
+    <PackageReference Include="Plugin.Fingerprint" Version="2.1.1" />
     <PackageReference Include="Plugin.FirebasePushNotification" Version="3.0.3" />
     <PackageReference Include="Plugin.InAppBilling" Version="2.0.0" />
     <PackageReference Include="Plugin.Multilingual" Version="1.0.2" />

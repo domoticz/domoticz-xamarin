@@ -328,11 +328,10 @@ namespace NL.HNOGames.Domoticz
         {
             if (AppSettings.EnableFingerprintSecurity)
             {
-                var result = await CrossFingerprint.Current.AuthenticateAsync(new AuthenticationRequestConfiguration(AppResources.category_startup_security)
+                var result = await CrossFingerprint.Current.AuthenticateAsync(new AuthenticationRequestConfiguration(AppResources.category_startup_security, String.Empty)
                 {
                     AllowAlternativeAuthentication = true,
                     CancelTitle = AppResources.cancel,
-                    UseDialog = true,
                     FallbackTitle = (Device.RuntimePlatform != Device.Android) ? AppResources.welcome_local_server_password : string.Empty,
                 });
                 switch (result.Status)

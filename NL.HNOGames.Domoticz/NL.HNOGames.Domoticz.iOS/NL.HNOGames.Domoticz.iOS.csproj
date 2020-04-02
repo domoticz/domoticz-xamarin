@@ -756,9 +756,6 @@
     <PackageReference Include="Acr.UserDialogs">
       <Version>7.0.4</Version>
     </PackageReference>
-    <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie">
-      <Version>2.7.1</Version>
-    </PackageReference>
     <PackageReference Include="DLToolkit.Forms.Controls.FlowListView">
       <Version>2.0.11</Version>
     </PackageReference>
@@ -990,9 +987,6 @@
     <PackageReference Include="Xam.Plugin.SimpleColorPicker">
       <Version>1.0.5</Version>
     </PackageReference>
-    <PackageReference Include="Xam.Plugins.Forms.DeviceOrientation">
-      <Version>1.0.1</Version>
-    </PackageReference>
     <PackageReference Include="Xam.Plugins.Notifier">
       <Version>3.0.1</Version>
     </PackageReference>
@@ -1018,13 +1012,13 @@
       <Version>4.1.1.2</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
-      <Version>4.5.0.495</Version>
+      <Version>4.5.0.530</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms.InputKit">
       <Version>3.2.2</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms.Visual.Material">
-      <Version>4.5.0.495</Version>
+      <Version>4.5.0.530</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Google.iOS.Core">
       <Version>3.1.0.3</Version>

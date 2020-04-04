@@ -6,6 +6,7 @@
     xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
+    Title="{resources:Translate wizard_button_settings}"
     ios:Page.UseSafeArea="true"
     Style="{StaticResource ContentPageType}"
     Visual="Material">
@@ -15,53 +16,42 @@
                 HorizontalOptions="FillAndExpand"
                 Orientation="Vertical"
                 Spacing="0">
-                <TableView
+                <StackLayout
                     x:Name="lyPremium"
-                    HasUnevenRows="true"
-                    Intent="Settings">
-                    <TableRoot>
-                        <TableSection Title="{resources:Translate premium_category}">
-                            <ViewCell>
-                                <StackLayout
-                                    HorizontalOptions="FillAndExpand"
-                                    Orientation="Horizontal"
-                                    Style="{StaticResource SettingsRowStackLayout}"
-                                    VerticalOptions="StartAndExpand">
-                                    <StackLayout
-                                        HorizontalOptions="StartAndExpand"
-                                        Orientation="Vertical"
-                                        VerticalOptions="Center">
-                                        <Label
-                                            HorizontalOptions="Start"
-                                            LineBreakMode="NoWrap"
-                                            Style="{StaticResource SettingsDetailType}"
-                                            Text="{resources:Translate premium_title}"
-                                            VerticalOptions="CenterAndExpand" />
-                                    </StackLayout>
-                                    <custcontrol:ExtendedButton
-                                        Padding="10,0,10,0"
-                                        Clicked="btnBuyPremium_Clicked"
-                                        HorizontalOptions="End"
-                                        Text="Buy"
-                                        VerticalOptions="Center" />
-                                    <custcontrol:ExtendedButton
-                                        x:Name="btnRestore"
-                                        Padding="10,0,10,0"
-                                        Clicked="BtnRestore_OnClicked"
-                                        HorizontalOptions="End"
-                                        Text="Restore"
-                                        VerticalOptions="Center" />
-                                </StackLayout>
-                            </ViewCell>
-                        </TableSection>
-                    </TableRoot>
-                </TableView>
-                <BoxView x:Name="sepPremium" Style="{StaticResource DetailSeperator}" />
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal"
+                    Style="{StaticResource SettingsRowStackLayout}"
+                    VerticalOptions="StartAndExpand">
+                    <StackLayout
+                        HorizontalOptions="StartAndExpand"
+                        Orientation="Vertical"
+                        VerticalOptions="Center">
+                        <Label
+                            HorizontalOptions="Start"
+                            LineBreakMode="NoWrap"
+                            Style="{StaticResource SettingsDetailType}"
+                            Text="{resources:Translate premium_title}"
+                            VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+                    <custcontrol:ExtendedButton
+                        Padding="10,0,10,0"
+                        Clicked="btnBuyPremium_Clicked"
+                        HorizontalOptions="End"
+                        Text="Buy"
+                        VerticalOptions="Center" />
+                    <custcontrol:ExtendedButton
+                        x:Name="btnRestore"
+                        Padding="10,0,10,0"
+                        Clicked="BtnRestore_OnClicked"
+                        HorizontalOptions="End"
+                        Text="Restore"
+                        VerticalOptions="Center" />
+                </StackLayout>
 
                 <TableView HasUnevenRows="true" Intent="Settings">
                     <TableRoot>
                         <TableSection Title="{resources:Translate title_dashboard}">
-                            <ViewCell>
+                            <ViewCell Tapped="btnEnableScreens_Clicked">
                                 <StackLayout
                                     HorizontalOptions="FillAndExpand"
                                     Orientation="Horizontal"
@@ -203,7 +193,7 @@
                                         VerticalOptions="Center" />
                                 </StackLayout>
                             </ViewCell>-->
-                            <ViewCell>
+                            <ViewCell Tapped="btnServerSetup_Clicked">
                                 <StackLayout
                                     HorizontalOptions="FillAndExpand"
                                     Orientation="Horizontal"
@@ -396,7 +386,7 @@
                         </TableSection>
 
                         <TableSection Title="{resources:Translate cameraActivity_name}">
-                            <ViewCell>
+                            <ViewCell Tapped="BtnCameras_OnClicked">
                                 <StackLayout
                                     HorizontalOptions="FillAndExpand"
                                     Orientation="Horizontal"
@@ -426,7 +416,7 @@
                         </TableSection>
 
                         <TableSection Title="{resources:Translate category_Speech}">
-                            <ViewCell>
+                            <ViewCell Tapped="btnSpeechSettings_Clicked">
                                 <StackLayout
                                     HorizontalOptions="FillAndExpand"
                                     Orientation="Horizontal"
@@ -486,7 +476,7 @@
                         </TableSection>-->
 
                         <TableSection Title="{resources:Translate category_QRCode}">
-                            <ViewCell>
+                            <ViewCell Tapped="btnQRCode_Clicked">
                                 <StackLayout
                                     HorizontalOptions="FillAndExpand"
                                     IsVisible="True"
@@ -517,7 +507,7 @@
                         </TableSection>
 
                         <TableSection Title="{resources:Translate category_advanced}">
-                            <ViewCell>
+                            <ViewCell Tapped="btnShowLog_Clicked">
                                 <StackLayout
                                     HorizontalOptions="FillAndExpand"
                                     Orientation="Horizontal"
@@ -544,7 +534,7 @@
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
                             </ViewCell>
-                            <ViewCell>
+                            <ViewCell Tapped="btnUserVars_Clicked">
                                 <StackLayout
                                     HorizontalOptions="FillAndExpand"
                                     Orientation="Horizontal"
@@ -571,7 +561,7 @@
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
                             </ViewCell>
-                            <ViewCell>
+                            <ViewCell Tapped="btnEvents_Clicked">
                                 <StackLayout
                                     HorizontalOptions="FillAndExpand"
                                     Orientation="Horizontal"
@@ -598,7 +588,7 @@
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
                             </ViewCell>
-                            <ViewCell>
+                            <ViewCell Tapped="btnDebugInfo_Clicked">
                                 <StackLayout
                                     HorizontalOptions="FillAndExpand"
                                     Orientation="Horizontal"

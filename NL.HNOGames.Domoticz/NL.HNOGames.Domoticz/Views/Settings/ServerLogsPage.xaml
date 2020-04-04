@@ -11,6 +11,7 @@
     Visual="Material">
     <NavigationPage.TitleView>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <!--  Search bar  -->
             <custcontrol:TitleViewSearchBar
                 x:Name="searchBar"
                 AbsoluteLayout.LayoutBounds="0,0,1,1"
@@ -26,27 +27,31 @@
                     <OnPlatform x:TypeArguments="Color" Android="White" />
                 </custcontrol:TitleViewSearchBar.CancelButtonColor>
             </custcontrol:TitleViewSearchBar>
-            <StackLayout
-                x:Name="titleLayout"
+
+            <!--  Title  -->
+            <Label
+                x:Name="title"
                 AbsoluteLayout.LayoutBounds="0,0,1,1"
                 AbsoluteLayout.LayoutFlags="All"
-                Orientation="Horizontal"
-                Spacing="0"
-                VerticalOptions="Center">
-                <Label
-                    x:Name="title"
-                    HorizontalTextAlignment="Start"
-                    Style="{DynamicResource TitleStyle}"
-                    Text="{resources:Translate title_logs}"
-                    VerticalOptions="Center"
-                    VerticalTextAlignment="Center" />
-            </StackLayout>
+                HorizontalTextAlignment="{OnPlatform Android=Start,
+                                                     iOS=Center}"
+                LineBreakMode="NoWrap"
+                Style="{DynamicResource TitleStyle}"
+                Text="{resources:Translate title_logs}"
+                VerticalOptions="Center"
+                VerticalTextAlignment="Center" />
+
+            <!--  Search icon  -->
             <Image
                 x:Name="searchIcon"
                 Margin="0,0,16,0"
                 AbsoluteLayout.LayoutBounds="1,0.5,AutoSize,AutoSize"
                 AbsoluteLayout.LayoutFlags="PositionProportional"
-                Source="baseline_search_white_24.png" />
+                Source="baseline_search_white_24.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnSearchIconTapped" />
+                </Image.GestureRecognizers>
+            </Image>
         </AbsoluteLayout>
     </NavigationPage.TitleView>
 

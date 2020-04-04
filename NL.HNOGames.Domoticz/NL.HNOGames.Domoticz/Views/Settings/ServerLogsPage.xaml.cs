@@ -31,7 +31,8 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         {
             InitializeComponent();
 
-            searchIcon.GestureRecognizers.Add(new TapGestureRecognizer { Command = new Command(OnSearchIconTapped) });
+            //searchIcon.GestureRecognizers.Add(new TapGestureRecognizer {NumberOfTapsRequired=1, Command = new Command(OnSearchIconTapped) });
+
             searchBar.TextChanged += searchBar_TextChanged;
             searchBar.Cancelled += (s, e) => OnCancelled();
         }
@@ -104,16 +105,13 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             }
         }
 
-        /// <summary>
-        /// The OnSearchIconTapped
-        /// </summary>
-        private void OnSearchIconTapped()
+        private async void OnSearchIconTapped(object sender, EventArgs e)
         {
             BatchBegin();
             try
             {
                 NavigationPage.SetHasBackButton(this, false);
-                titleLayout.IsVisible = false;
+                //titleLayout.IsVisible = false;
                 searchIcon.IsVisible = false;
                 searchBar.IsVisible = true;
                 searchBar.Focus();
@@ -135,7 +133,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                 NavigationPage.SetHasBackButton(this, true);
                 searchBar.IsVisible = false;
                 searchBar.Text = string.Empty;
-                titleLayout.IsVisible = true;
+                //titleLayout.IsVisible = true;
                 searchIcon.IsVisible = true;
             }
             finally

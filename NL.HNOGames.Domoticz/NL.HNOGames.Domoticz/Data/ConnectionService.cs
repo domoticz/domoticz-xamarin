@@ -53,7 +53,7 @@ namespace NL.HNOGames.Domoticz.Data
                     };
                     break;
                 default:
-                    Client = new HttpClient(new NativeMessageHandler(false, false, _cookieHandler))
+                    Client = new HttpClient(new NativeMessageHandler(false, true, _cookieHandler))
                     {
                         MaxResponseContentBufferSize = 25600000,
                         Timeout = TimeSpan.FromMilliseconds(10000),

@@ -1,7 +1,6 @@
 ﻿using Foundation;
 using UIKit;
 using System;
-using MTiRate;
 using NL.HNOGames.Domoticz.Helpers;
 using UserNotifications;
 using System.Net;
@@ -36,8 +35,6 @@ namespace NL.HNOGames.Domoticz.iOS
             global::Xamarin.Forms.Forms.Init();
             global::Xamarin.Forms.FormsMaterial.Init();
 
-            iRate.SharedInstance.DaysUntilPrompt = 10;
-            iRate.SharedInstance.UsesUntilPrompt = 20;
             ZXing.Net.Mobile.Forms.iOS.Platform.Init();
             Plugin.InputKit.Platforms.iOS.Config.Init();
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init();

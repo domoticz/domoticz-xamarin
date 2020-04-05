@@ -8,6 +8,7 @@ using NL.HNOGames.Domoticz.Views;
 using NL.HNOGames.Domoticz.Views.StartUp;
 using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
+using Plugin.FirebasePushNotification;
 using Plugin.Multilingual;
 using System;
 using System.Linq;
@@ -403,35 +404,34 @@ namespace NL.HNOGames.Domoticz
         /// </summary>
         protected override void OnStart()
         {
-            //// Handle when your app starts
-            //CrossFirebasePushNotification.Current.Subscribe("general");
-            //CrossFirebasePushNotification.Current.OnTokenRefresh += (s, p) =>
-            //{
-            //    registerAsync(p.Token);
-            //    System.Diagnostics.Debug.WriteLine($"TOKEN REC: {p.Token}");
-            //};
-            //registerAsync(CrossFirebasePushNotification.Current.Token);
+            // Handle when your app starts
+            CrossFirebasePushNotification.Current.Subscribe("general");
+            CrossFirebasePushNotification.Current.OnTokenRefresh += (s, p) =>
+            {
+                registerAsync(p.Token);
+                System.Diagnostics.Debug.WriteLine($"TOKEN REC: {p.Token}");
+            };
+            registerAsync(CrossFirebasePushNotification.Current.Token);
+            CrossFirebasePushNotification.Current.OnNotificationReceived += (s, p) =>
+            {
+                try
+                {
+                    AddLog("GCM: Notification received");
+                    AddLog(p.Data.ToString());
 
-            //CrossFirebasePushNotification.Current.OnNotificationReceived += (s, p) =>
-            //{
-            //    try
-            //    {
-            //        AddLog("GCM: Notification received");
-            //        AddLog(p.Data.ToString());
+                    var body = p.Data.ContainsKey("body") ? p.Data["body"].ToString() : null;
+                    var title = p.Data.ContainsKey("title") ? p.Data["title"].ToString() : null;
+                    if (string.IsNullOrEmpty(title))
+                        title = p.Data.ContainsKey("subject") ? p.Data["subject"].ToString() : null;
+                    if (string.Compare(title, body, true) == 0)
+                        title = "Domoticz";
 
-            //        var body = p.Data.ContainsKey("body") ? p.Data["body"].ToString() : null;
-            //        var title = p.Data.ContainsKey("title") ? p.Data["title"].ToString() : null;
-            //        if (string.IsNullOrEmpty(title))
-            //            title = p.Data.ContainsKey("subject") ? p.Data["subject"].ToString() : null;
-            //        if (string.Compare(title, body, true) == 0)
-            //            title = "Domoticz";
-
-            //        // Show dialog
-            //        UserDialogs.Instance.Alert(body, title, AppResources.ok);
-            //    }
-            //    catch (Exception)
-            //    { }
-            //};
+                    // Show dialog
+                    UserDialogs.Instance.Alert(body, title, AppResources.ok);
+                }
+                catch (Exception)
+                { }
+            };
         }
     }
 }

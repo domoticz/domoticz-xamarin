@@ -2,6 +2,7 @@
 using UIKit;
 using System;
 using UserNotifications;
+using Plugin.FirebasePushNotification;
 
 namespace NL.HNOGames.Domoticz.iOS
 {
@@ -61,7 +62,7 @@ namespace NL.HNOGames.Domoticz.iOS
             Rg.Plugins.Popup.Popup.Init();
             OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();
             XamEffects.iOS.Effects.Init();
-            //FirebasePushNotificationManager.Initialize(launchOptions, true);
+            FirebasePushNotificationManager.Initialize(launchOptions, true);
 
             application = new App();
             LoadApplication(application);
@@ -82,30 +83,30 @@ namespace NL.HNOGames.Domoticz.iOS
             });
         }
 
-        //public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
-        //{
-        //    FirebasePushNotificationManager.DidRegisterRemoteNotifications(deviceToken);
-        //}
+        public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
+        {
+            FirebasePushNotificationManager.DidRegisterRemoteNotifications(deviceToken);
+        }
 
-        //public override void FailedToRegisterForRemoteNotifications(UIApplication application, NSError error)
-        //{
-        //    FirebasePushNotificationManager.RemoteNotificationRegistrationFailed(error);
-        //}
+        public override void FailedToRegisterForRemoteNotifications(UIApplication application, NSError error)
+        {
+            FirebasePushNotificationManager.RemoteNotificationRegistrationFailed(error);
+        }
 
-        //// To receive notifications in foregroung on iOS 9 and below.
-        //// To receive notifications in background in any iOS version
-        //public override void DidReceiveRemoteNotification(UIApplication application, NSDictionary userInfo, Action<UIBackgroundFetchResult> completionHandler)
-        //{
-        //    // If you are receiving a notification message while your app is in the background,
-        //    // this callback will not be fired 'till the user taps on the notification launching the application.
+        // To receive notifications in foregroung on iOS 9 and below.
+        // To receive notifications in background in any iOS version
+        public override void DidReceiveRemoteNotification(UIApplication application, NSDictionary userInfo, Action<UIBackgroundFetchResult> completionHandler)
+        {
+            // If you are receiving a notification message while your app is in the background,
+            // this callback will not be fired 'till the user taps on the notification launching the application.
 
-        //    // If you disable method swizzling, you'll need to call this method. 
-        //    // This lets FCM track message delivery and analytics, which is performed
-        //    // automatically with method swizzling enabled.
-        //    FirebasePushNotificationManager.DidReceiveMessage(userInfo);
-        //    // Do your magic to handle the notification data
-        //    System.Console.WriteLine(userInfo);
-        //    completionHandler(UIBackgroundFetchResult.NewData);
-        //}
+            // If you disable method swizzling, you'll need to call this method. 
+            // This lets FCM track message delivery and analytics, which is performed
+            // automatically with method swizzling enabled.
+            FirebasePushNotificationManager.DidReceiveMessage(userInfo);
+            // Do your magic to handle the notification data
+            System.Console.WriteLine(userInfo);
+            completionHandler(UIBackgroundFetchResult.NewData);
+        }
     }
 }

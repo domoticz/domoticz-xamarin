@@ -7,16 +7,37 @@
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
     xmlns:selector="clr-namespace:NL.HNOGames.Domoticz.ViewSelector;assembly=NL.HNOGames.Domoticz"
-    Title="{resources:Translate category_QRCode}"
     ios:Page.UseSafeArea="true"
     Style="{StaticResource ContentPageType}"
     Visual="Material">
+
+    <NavigationPage.TitleView>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout
+                x:Name="titleLayout"
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                Orientation="Horizontal"
+                Spacing="0"
+                VerticalOptions="Center">
+                <Label
+                    x:Name="title"
+                    HorizontalTextAlignment="Start"
+                    Style="{DynamicResource TitleStyle}"
+                    Text="{resources:Translate category_QRCode}"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center" />
+            </StackLayout>
+        </AbsoluteLayout>
+    </NavigationPage.TitleView>
+
     <ContentPage.ToolbarItems>
         <ToolbarItem
             Clicked="ToolbarItem_Activated"
             Order="Primary"
             Text="{resources:Translate add}" />
     </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <ScrollView>
             <StackLayout

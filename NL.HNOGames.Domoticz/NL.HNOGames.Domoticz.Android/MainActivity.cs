@@ -2,7 +2,6 @@
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using Plugin.FirebasePushNotification;
 using Plugin.Fingerprint;
 using Plugin.InAppBilling;
 using Plugin.CurrentActivity;
@@ -37,7 +36,7 @@ namespace NL.HNOGames.Domoticz.Droid
             CrossFingerprint.SetCurrentActivityResolver(() => CrossCurrentActivity.Current.Activity);
             Plugin.InputKit.Platforms.Droid.Config.Init(this, savedInstanceState);
 
-            FirebasePushNotificationManager.ProcessIntent(this, Intent);
+            //FirebasePushNotificationManager.ProcessIntent(this, Intent);
             OxyPlot.Xamarin.Forms.Platform.Android.PlotViewRenderer.Init();
             ZXing.Net.Mobile.Forms.Android.Platform.Init();
             XamEffects.Droid.Effects.Init();
@@ -51,7 +50,7 @@ namespace NL.HNOGames.Domoticz.Droid
             global::Xamarin.Forms.FormsMaterial.Init(this, savedInstanceState);
 
             LoadApplication(new App());
-            FirebaseApp.InitializeApp(this);
+            //FirebaseApp.InitializeApp(this);
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
@@ -71,7 +70,7 @@ namespace NL.HNOGames.Domoticz.Droid
         protected override void OnNewIntent(Intent intent)
         {
             base.OnNewIntent(intent);
-            FirebasePushNotificationManager.ProcessIntent(this, intent);
+            //FirebasePushNotificationManager.ProcessIntent(this, intent);
         }
     }
 }

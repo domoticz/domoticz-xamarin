@@ -6,7 +6,6 @@ using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Plugin.CurrentActivity;
-using Plugin.FirebasePushNotification;
 
 namespace NL.HNOGames.Domoticz.Droid
 {
@@ -29,23 +28,23 @@ namespace NL.HNOGames.Domoticz.Droid
             base.OnCreate();
             RegisterActivityLifecycleCallbacks(this);
 
-            FirebaseApp.InitializeApp(this);
+            //FirebaseApp.InitializeApp(this);
             AppContext = ApplicationContext;
             CrossCurrentActivity.Current.Init(this);
 
-            //Set the default notification channel for your app when running Android Oreo
-            if (Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.O)
-            {
-                FirebasePushNotificationManager.DefaultNotificationChannelId = "Default";
-                FirebasePushNotificationManager.DefaultNotificationChannelName = "General";
-            }
+//            //Set the default notification channel for your app when running Android Oreo
+//            if (Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.O)
+//            {
+//                FirebasePushNotificationManager.DefaultNotificationChannelId = "Default";
+//                FirebasePushNotificationManager.DefaultNotificationChannelName = "General";
+//            }
 
-            //If debug you should reset the token each time.
-#if DEBUG
-            FirebasePushNotificationManager.Initialize(this, true);
-#else
-              FirebasePushNotificationManager.Initialize(this,false);
-#endif
+//            //If debug you should reset the token each time.
+//#if DEBUG
+//            FirebasePushNotificationManager.Initialize(this, true);
+//#else
+//              FirebasePushNotificationManager.Initialize(this,false);
+//#endif
 
             //CrossFirebasePushNotification.Current.OnNotificationReceived += (s, p) =>
             //{

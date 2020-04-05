@@ -6,10 +6,29 @@
     xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
-    Title="{resources:Translate server_settings}"
     ios:Page.UseSafeArea="true"
     Style="{StaticResource ContentPageType}"
     Visual="Material">
+    <NavigationPage.TitleView>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout
+                x:Name="titleLayout"
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                Orientation="Horizontal"
+                Spacing="0"
+                VerticalOptions="Center">
+                <Label
+                    x:Name="title"
+                    HorizontalTextAlignment="Start"
+                    Style="{DynamicResource TitleStyle}"
+                    Text="{resources:Translate server_settings}"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center" />
+            </StackLayout>
+        </AbsoluteLayout>
+    </NavigationPage.TitleView>
+
     <ContentPage.Content>
         <ScrollView>
             <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">

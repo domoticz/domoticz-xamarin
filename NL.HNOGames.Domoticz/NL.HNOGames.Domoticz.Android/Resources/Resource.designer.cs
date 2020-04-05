@@ -4306,275 +4306,6 @@ namespace NL.HNOGames.Domoticz.Droid
 			global::Plugin.Fingerprint.Resource.Styleable.View_paddingEnd = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.View_paddingEnd;
 			global::Plugin.Fingerprint.Resource.Styleable.View_paddingStart = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.View_paddingStart;
 			global::Plugin.Fingerprint.Resource.Styleable.View_theme = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.View_theme;
-			global::Plugin.FirebasePushNotification.Resource.Attribute.alpha = global::NL.HNOGames.Domoticz.Droid.Resource.Attribute.alpha;
-			global::Plugin.FirebasePushNotification.Resource.Attribute.buttonSize = global::NL.HNOGames.Domoticz.Droid.Resource.Attribute.buttonSize;
-			global::Plugin.FirebasePushNotification.Resource.Attribute.circleCrop = global::NL.HNOGames.Domoticz.Droid.Resource.Attribute.circleCrop;
-			global::Plugin.FirebasePushNotification.Resource.Attribute.colorScheme = global::NL.HNOGames.Domoticz.Droid.Resource.Attribute.colorScheme;
-			global::Plugin.FirebasePushNotification.Resource.Attribute.coordinatorLayoutStyle = global::NL.HNOGames.Domoticz.Droid.Resource.Attribute.coordinatorLayoutStyle;
-			global::Plugin.FirebasePushNotification.Resource.Attribute.font = global::NL.HNOGames.Domoticz.Droid.Resource.Attribute.font;
-			global::Plugin.FirebasePushNotification.Resource.Attribute.fontProviderAuthority = global::NL.HNOGames.Domoticz.Droid.Resource.Attribute.fontProviderAuthority;
-			global::Plugin.FirebasePushNotification.Resource.Attribute.fontProviderCerts = global::NL.HNOGames.Domoticz.Droid.Resource.Attribute.fontProviderCerts;
-			global::Plugin.FirebasePushNotification.Resource.Attribute.fontProviderFetchStrategy = global::NL.HNOGames.Domoticz.Droid.Resource.Attribute.fontProviderFetchStrategy;
-			global::Plugin.FirebasePushNotification.Resource.Attribute.fontProviderFetchTimeout = global::NL.HNOGames.Domoticz.Droid.Resource.Attribute.fontProviderFetchTimeout;
-			global::Plugin.FirebasePushNotification.Resource.Attribute.fontProviderPackage = global::NL.HNOGames.Domoticz.Droid.Resource.Attribute.fontProviderPackage;
-			global::Plugin.FirebasePushNotification.Resource.Attribute.fontProviderQuery = global::NL.HNOGames.Domoticz.Droid.Resource.Attribute.fontProviderQuery;
-			global::Plugin.FirebasePushNotification.Resource.Attribute.fontStyle = global::NL.HNOGames.Domoticz.Droid.Resource.Attribute.fontStyle;
-			global::Plugin.FirebasePushNotification.Resource.Attribute.fontVariationSettings = global::NL.HNOGames.Domoticz.Droid.Resource.Attribute.fontVariationSettings;
-			global::Plugin.FirebasePushNotification.Resource.Attribute.fontWeight = global::NL.HNOGames.Domoticz.Droid.Resource.Attribute.fontWeight;
-			global::Plugin.FirebasePushNotification.Resource.Attribute.imageAspectRatio = global::NL.HNOGames.Domoticz.Droid.Resource.Attribute.imageAspectRatio;
-			global::Plugin.FirebasePushNotification.Resource.Attribute.imageAspectRatioAdjust = global::NL.HNOGames.Domoticz.Droid.Resource.Attribute.imageAspectRatioAdjust;
-			global::Plugin.FirebasePushNotification.Resource.Attribute.keylines = global::NL.HNOGames.Domoticz.Droid.Resource.Attribute.keylines;
-			global::Plugin.FirebasePushNotification.Resource.Attribute.layout_anchor = global::NL.HNOGames.Domoticz.Droid.Resource.Attribute.layout_anchor;
-			global::Plugin.FirebasePushNotification.Resource.Attribute.layout_anchorGravity = global::NL.HNOGames.Domoticz.Droid.Resource.Attribute.layout_anchorGravity;
-			global::Plugin.FirebasePushNotification.Resource.Attribute.layout_behavior = global::NL.HNOGames.Domoticz.Droid.Resource.Attribute.layout_behavior;
-			global::Plugin.FirebasePushNotification.Resource.Attribute.layout_dodgeInsetEdges = global::NL.HNOGames.Domoticz.Droid.Resource.Attribute.layout_dodgeInsetEdges;
-			global::Plugin.FirebasePushNotification.Resource.Attribute.layout_insetEdge = global::NL.HNOGames.Domoticz.Droid.Resource.Attribute.layout_insetEdge;
-			global::Plugin.FirebasePushNotification.Resource.Attribute.layout_keyline = global::NL.HNOGames.Domoticz.Droid.Resource.Attribute.layout_keyline;
-			global::Plugin.FirebasePushNotification.Resource.Attribute.scopeUris = global::NL.HNOGames.Domoticz.Droid.Resource.Attribute.scopeUris;
-			global::Plugin.FirebasePushNotification.Resource.Attribute.statusBarBackground = global::NL.HNOGames.Domoticz.Droid.Resource.Attribute.statusBarBackground;
-			global::Plugin.FirebasePushNotification.Resource.Attribute.ttcIndex = global::NL.HNOGames.Domoticz.Droid.Resource.Attribute.ttcIndex;
-			global::Plugin.FirebasePushNotification.Resource.Color.common_google_signin_btn_text_dark = global::NL.HNOGames.Domoticz.Droid.Resource.Color.common_google_signin_btn_text_dark;
-			global::Plugin.FirebasePushNotification.Resource.Color.common_google_signin_btn_text_dark_default = global::NL.HNOGames.Domoticz.Droid.Resource.Color.common_google_signin_btn_text_dark_default;
-			global::Plugin.FirebasePushNotification.Resource.Color.common_google_signin_btn_text_dark_disabled = global::NL.HNOGames.Domoticz.Droid.Resource.Color.common_google_signin_btn_text_dark_disabled;
-			global::Plugin.FirebasePushNotification.Resource.Color.common_google_signin_btn_text_dark_focused = global::NL.HNOGames.Domoticz.Droid.Resource.Color.common_google_signin_btn_text_dark_focused;
-			global::Plugin.FirebasePushNotification.Resource.Color.common_google_signin_btn_text_dark_pressed = global::NL.HNOGames.Domoticz.Droid.Resource.Color.common_google_signin_btn_text_dark_pressed;
-			global::Plugin.FirebasePushNotification.Resource.Color.common_google_signin_btn_text_light = global::NL.HNOGames.Domoticz.Droid.Resource.Color.common_google_signin_btn_text_light;
-			global::Plugin.FirebasePushNotification.Resource.Color.common_google_signin_btn_text_light_default = global::NL.HNOGames.Domoticz.Droid.Resource.Color.common_google_signin_btn_text_light_default;
-			global::Plugin.FirebasePushNotification.Resource.Color.common_google_signin_btn_text_light_disabled = global::NL.HNOGames.Domoticz.Droid.Resource.Color.common_google_signin_btn_text_light_disabled;
-			global::Plugin.FirebasePushNotification.Resource.Color.common_google_signin_btn_text_light_focused = global::NL.HNOGames.Domoticz.Droid.Resource.Color.common_google_signin_btn_text_light_focused;
-			global::Plugin.FirebasePushNotification.Resource.Color.common_google_signin_btn_text_light_pressed = global::NL.HNOGames.Domoticz.Droid.Resource.Color.common_google_signin_btn_text_light_pressed;
-			global::Plugin.FirebasePushNotification.Resource.Color.common_google_signin_btn_tint = global::NL.HNOGames.Domoticz.Droid.Resource.Color.common_google_signin_btn_tint;
-			global::Plugin.FirebasePushNotification.Resource.Color.notification_action_color_filter = global::NL.HNOGames.Domoticz.Droid.Resource.Color.notification_action_color_filter;
-			global::Plugin.FirebasePushNotification.Resource.Color.notification_icon_bg_color = global::NL.HNOGames.Domoticz.Droid.Resource.Color.notification_icon_bg_color;
-			global::Plugin.FirebasePushNotification.Resource.Color.notification_material_background_media_default_color = global::NL.HNOGames.Domoticz.Droid.Resource.Color.notification_material_background_media_default_color;
-			global::Plugin.FirebasePushNotification.Resource.Color.primary_text_default_material_dark = global::NL.HNOGames.Domoticz.Droid.Resource.Color.primary_text_default_material_dark;
-			global::Plugin.FirebasePushNotification.Resource.Color.ripple_material_light = global::NL.HNOGames.Domoticz.Droid.Resource.Color.ripple_material_light;
-			global::Plugin.FirebasePushNotification.Resource.Color.secondary_text_default_material_dark = global::NL.HNOGames.Domoticz.Droid.Resource.Color.secondary_text_default_material_dark;
-			global::Plugin.FirebasePushNotification.Resource.Color.secondary_text_default_material_light = global::NL.HNOGames.Domoticz.Droid.Resource.Color.secondary_text_default_material_light;
-			global::Plugin.FirebasePushNotification.Resource.Dimension.compat_button_inset_horizontal_material = global::NL.HNOGames.Domoticz.Droid.Resource.Dimension.compat_button_inset_horizontal_material;
-			global::Plugin.FirebasePushNotification.Resource.Dimension.compat_button_inset_vertical_material = global::NL.HNOGames.Domoticz.Droid.Resource.Dimension.compat_button_inset_vertical_material;
-			global::Plugin.FirebasePushNotification.Resource.Dimension.compat_button_padding_horizontal_material = global::NL.HNOGames.Domoticz.Droid.Resource.Dimension.compat_button_padding_horizontal_material;
-			global::Plugin.FirebasePushNotification.Resource.Dimension.compat_button_padding_vertical_material = global::NL.HNOGames.Domoticz.Droid.Resource.Dimension.compat_button_padding_vertical_material;
-			global::Plugin.FirebasePushNotification.Resource.Dimension.compat_control_corner_material = global::NL.HNOGames.Domoticz.Droid.Resource.Dimension.compat_control_corner_material;
-			global::Plugin.FirebasePushNotification.Resource.Dimension.compat_notification_large_icon_max_height = global::NL.HNOGames.Domoticz.Droid.Resource.Dimension.compat_notification_large_icon_max_height;
-			global::Plugin.FirebasePushNotification.Resource.Dimension.compat_notification_large_icon_max_width = global::NL.HNOGames.Domoticz.Droid.Resource.Dimension.compat_notification_large_icon_max_width;
-			global::Plugin.FirebasePushNotification.Resource.Dimension.notification_action_icon_size = global::NL.HNOGames.Domoticz.Droid.Resource.Dimension.notification_action_icon_size;
-			global::Plugin.FirebasePushNotification.Resource.Dimension.notification_action_text_size = global::NL.HNOGames.Domoticz.Droid.Resource.Dimension.notification_action_text_size;
-			global::Plugin.FirebasePushNotification.Resource.Dimension.notification_big_circle_margin = global::NL.HNOGames.Domoticz.Droid.Resource.Dimension.notification_big_circle_margin;
-			global::Plugin.FirebasePushNotification.Resource.Dimension.notification_content_margin_start = global::NL.HNOGames.Domoticz.Droid.Resource.Dimension.notification_content_margin_start;
-			global::Plugin.FirebasePushNotification.Resource.Dimension.notification_large_icon_height = global::NL.HNOGames.Domoticz.Droid.Resource.Dimension.notification_large_icon_height;
-			global::Plugin.FirebasePushNotification.Resource.Dimension.notification_large_icon_width = global::NL.HNOGames.Domoticz.Droid.Resource.Dimension.notification_large_icon_width;
-			global::Plugin.FirebasePushNotification.Resource.Dimension.notification_main_column_padding_top = global::NL.HNOGames.Domoticz.Droid.Resource.Dimension.notification_main_column_padding_top;
-			global::Plugin.FirebasePushNotification.Resource.Dimension.notification_media_narrow_margin = global::NL.HNOGames.Domoticz.Droid.Resource.Dimension.notification_media_narrow_margin;
-			global::Plugin.FirebasePushNotification.Resource.Dimension.notification_right_icon_size = global::NL.HNOGames.Domoticz.Droid.Resource.Dimension.notification_right_icon_size;
-			global::Plugin.FirebasePushNotification.Resource.Dimension.notification_right_side_padding_top = global::NL.HNOGames.Domoticz.Droid.Resource.Dimension.notification_right_side_padding_top;
-			global::Plugin.FirebasePushNotification.Resource.Dimension.notification_small_icon_background_padding = global::NL.HNOGames.Domoticz.Droid.Resource.Dimension.notification_small_icon_background_padding;
-			global::Plugin.FirebasePushNotification.Resource.Dimension.notification_small_icon_size_as_large = global::NL.HNOGames.Domoticz.Droid.Resource.Dimension.notification_small_icon_size_as_large;
-			global::Plugin.FirebasePushNotification.Resource.Dimension.notification_subtext_size = global::NL.HNOGames.Domoticz.Droid.Resource.Dimension.notification_subtext_size;
-			global::Plugin.FirebasePushNotification.Resource.Dimension.notification_top_pad = global::NL.HNOGames.Domoticz.Droid.Resource.Dimension.notification_top_pad;
-			global::Plugin.FirebasePushNotification.Resource.Dimension.notification_top_pad_large_text = global::NL.HNOGames.Domoticz.Droid.Resource.Dimension.notification_top_pad_large_text;
-			global::Plugin.FirebasePushNotification.Resource.Dimension.subtitle_corner_radius = global::NL.HNOGames.Domoticz.Droid.Resource.Dimension.subtitle_corner_radius;
-			global::Plugin.FirebasePushNotification.Resource.Dimension.subtitle_outline_width = global::NL.HNOGames.Domoticz.Droid.Resource.Dimension.subtitle_outline_width;
-			global::Plugin.FirebasePushNotification.Resource.Dimension.subtitle_shadow_offset = global::NL.HNOGames.Domoticz.Droid.Resource.Dimension.subtitle_shadow_offset;
-			global::Plugin.FirebasePushNotification.Resource.Dimension.subtitle_shadow_radius = global::NL.HNOGames.Domoticz.Droid.Resource.Dimension.subtitle_shadow_radius;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.common_full_open_on_phone = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.common_full_open_on_phone;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.common_google_signin_btn_icon_dark = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.common_google_signin_btn_icon_dark;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.common_google_signin_btn_icon_dark_focused = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.common_google_signin_btn_icon_dark_focused;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.common_google_signin_btn_icon_dark_normal = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.common_google_signin_btn_icon_dark_normal;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.common_google_signin_btn_icon_dark_normal_background = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.common_google_signin_btn_icon_dark_normal_background;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.common_google_signin_btn_icon_disabled = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.common_google_signin_btn_icon_disabled;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.common_google_signin_btn_icon_light = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.common_google_signin_btn_icon_light;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.common_google_signin_btn_icon_light_focused = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.common_google_signin_btn_icon_light_focused;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.common_google_signin_btn_icon_light_normal = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.common_google_signin_btn_icon_light_normal;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.common_google_signin_btn_icon_light_normal_background = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.common_google_signin_btn_icon_light_normal_background;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.common_google_signin_btn_text_dark = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.common_google_signin_btn_text_dark;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.common_google_signin_btn_text_dark_focused = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.common_google_signin_btn_text_dark_focused;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.common_google_signin_btn_text_dark_normal = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.common_google_signin_btn_text_dark_normal;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.common_google_signin_btn_text_dark_normal_background = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.common_google_signin_btn_text_dark_normal_background;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.common_google_signin_btn_text_disabled = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.common_google_signin_btn_text_disabled;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.common_google_signin_btn_text_light = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.common_google_signin_btn_text_light;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.common_google_signin_btn_text_light_focused = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.common_google_signin_btn_text_light_focused;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.common_google_signin_btn_text_light_normal = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.common_google_signin_btn_text_light_normal;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.common_google_signin_btn_text_light_normal_background = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.common_google_signin_btn_text_light_normal_background;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.googleg_disabled_color_18 = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.googleg_disabled_color_18;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.googleg_standard_color_18 = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.googleg_standard_color_18;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.notification_action_background = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.notification_action_background;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.notification_bg = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.notification_bg;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.notification_bg_low = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.notification_bg_low;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.notification_bg_low_normal = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.notification_bg_low_normal;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.notification_bg_low_pressed = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.notification_bg_low_pressed;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.notification_bg_normal = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.notification_bg_normal;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.notification_bg_normal_pressed = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.notification_bg_normal_pressed;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.notification_icon_background = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.notification_icon_background;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.notification_template_icon_bg = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.notification_template_icon_bg;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.notification_template_icon_low_bg = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.notification_template_icon_low_bg;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.notification_tile_bg = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.notification_tile_bg;
-			global::Plugin.FirebasePushNotification.Resource.Drawable.notify_panel_notification_icon_bg = global::NL.HNOGames.Domoticz.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
-			global::Plugin.FirebasePushNotification.Resource.Id.action0 = global::NL.HNOGames.Domoticz.Droid.Resource.Id.action0;
-			global::Plugin.FirebasePushNotification.Resource.Id.actions = global::NL.HNOGames.Domoticz.Droid.Resource.Id.actions;
-			global::Plugin.FirebasePushNotification.Resource.Id.action_container = global::NL.HNOGames.Domoticz.Droid.Resource.Id.action_container;
-			global::Plugin.FirebasePushNotification.Resource.Id.action_divider = global::NL.HNOGames.Domoticz.Droid.Resource.Id.action_divider;
-			global::Plugin.FirebasePushNotification.Resource.Id.action_image = global::NL.HNOGames.Domoticz.Droid.Resource.Id.action_image;
-			global::Plugin.FirebasePushNotification.Resource.Id.action_text = global::NL.HNOGames.Domoticz.Droid.Resource.Id.action_text;
-			global::Plugin.FirebasePushNotification.Resource.Id.adjust_height = global::NL.HNOGames.Domoticz.Droid.Resource.Id.adjust_height;
-			global::Plugin.FirebasePushNotification.Resource.Id.adjust_width = global::NL.HNOGames.Domoticz.Droid.Resource.Id.adjust_width;
-			global::Plugin.FirebasePushNotification.Resource.Id.all = global::NL.HNOGames.Domoticz.Droid.Resource.Id.all;
-			global::Plugin.FirebasePushNotification.Resource.Id.async = global::NL.HNOGames.Domoticz.Droid.Resource.Id.async;
-			global::Plugin.FirebasePushNotification.Resource.Id.auto = global::NL.HNOGames.Domoticz.Droid.Resource.Id.auto;
-			global::Plugin.FirebasePushNotification.Resource.Id.blocking = global::NL.HNOGames.Domoticz.Droid.Resource.Id.blocking;
-			global::Plugin.FirebasePushNotification.Resource.Id.bottom = global::NL.HNOGames.Domoticz.Droid.Resource.Id.bottom;
-			global::Plugin.FirebasePushNotification.Resource.Id.cancel_action = global::NL.HNOGames.Domoticz.Droid.Resource.Id.cancel_action;
-			global::Plugin.FirebasePushNotification.Resource.Id.center = global::NL.HNOGames.Domoticz.Droid.Resource.Id.center;
-			global::Plugin.FirebasePushNotification.Resource.Id.center_horizontal = global::NL.HNOGames.Domoticz.Droid.Resource.Id.center_horizontal;
-			global::Plugin.FirebasePushNotification.Resource.Id.center_vertical = global::NL.HNOGames.Domoticz.Droid.Resource.Id.center_vertical;
-			global::Plugin.FirebasePushNotification.Resource.Id.chronometer = global::NL.HNOGames.Domoticz.Droid.Resource.Id.chronometer;
-			global::Plugin.FirebasePushNotification.Resource.Id.clip_horizontal = global::NL.HNOGames.Domoticz.Droid.Resource.Id.clip_horizontal;
-			global::Plugin.FirebasePushNotification.Resource.Id.clip_vertical = global::NL.HNOGames.Domoticz.Droid.Resource.Id.clip_vertical;
-			global::Plugin.FirebasePushNotification.Resource.Id.dark = global::NL.HNOGames.Domoticz.Droid.Resource.Id.dark;
-			global::Plugin.FirebasePushNotification.Resource.Id.end = global::NL.HNOGames.Domoticz.Droid.Resource.Id.end;
-			global::Plugin.FirebasePushNotification.Resource.Id.end_padder = global::NL.HNOGames.Domoticz.Droid.Resource.Id.end_padder;
-			global::Plugin.FirebasePushNotification.Resource.Id.fill = global::NL.HNOGames.Domoticz.Droid.Resource.Id.fill;
-			global::Plugin.FirebasePushNotification.Resource.Id.fill_horizontal = global::NL.HNOGames.Domoticz.Droid.Resource.Id.fill_horizontal;
-			global::Plugin.FirebasePushNotification.Resource.Id.fill_vertical = global::NL.HNOGames.Domoticz.Droid.Resource.Id.fill_vertical;
-			global::Plugin.FirebasePushNotification.Resource.Id.forever = global::NL.HNOGames.Domoticz.Droid.Resource.Id.forever;
-			global::Plugin.FirebasePushNotification.Resource.Id.icon = global::NL.HNOGames.Domoticz.Droid.Resource.Id.icon;
-			global::Plugin.FirebasePushNotification.Resource.Id.icon_group = global::NL.HNOGames.Domoticz.Droid.Resource.Id.icon_group;
-			global::Plugin.FirebasePushNotification.Resource.Id.icon_only = global::NL.HNOGames.Domoticz.Droid.Resource.Id.icon_only;
-			global::Plugin.FirebasePushNotification.Resource.Id.info = global::NL.HNOGames.Domoticz.Droid.Resource.Id.info;
-			global::Plugin.FirebasePushNotification.Resource.Id.italic = global::NL.HNOGames.Domoticz.Droid.Resource.Id.italic;
-			global::Plugin.FirebasePushNotification.Resource.Id.left = global::NL.HNOGames.Domoticz.Droid.Resource.Id.left;
-			global::Plugin.FirebasePushNotification.Resource.Id.light = global::NL.HNOGames.Domoticz.Droid.Resource.Id.light;
-			global::Plugin.FirebasePushNotification.Resource.Id.line1 = global::NL.HNOGames.Domoticz.Droid.Resource.Id.line1;
-			global::Plugin.FirebasePushNotification.Resource.Id.line3 = global::NL.HNOGames.Domoticz.Droid.Resource.Id.line3;
-			global::Plugin.FirebasePushNotification.Resource.Id.media_actions = global::NL.HNOGames.Domoticz.Droid.Resource.Id.media_actions;
-			global::Plugin.FirebasePushNotification.Resource.Id.none = global::NL.HNOGames.Domoticz.Droid.Resource.Id.none;
-			global::Plugin.FirebasePushNotification.Resource.Id.normal = global::NL.HNOGames.Domoticz.Droid.Resource.Id.normal;
-			global::Plugin.FirebasePushNotification.Resource.Id.notification_background = global::NL.HNOGames.Domoticz.Droid.Resource.Id.notification_background;
-			global::Plugin.FirebasePushNotification.Resource.Id.notification_main_column = global::NL.HNOGames.Domoticz.Droid.Resource.Id.notification_main_column;
-			global::Plugin.FirebasePushNotification.Resource.Id.notification_main_column_container = global::NL.HNOGames.Domoticz.Droid.Resource.Id.notification_main_column_container;
-			global::Plugin.FirebasePushNotification.Resource.Id.right = global::NL.HNOGames.Domoticz.Droid.Resource.Id.right;
-			global::Plugin.FirebasePushNotification.Resource.Id.right_icon = global::NL.HNOGames.Domoticz.Droid.Resource.Id.right_icon;
-			global::Plugin.FirebasePushNotification.Resource.Id.right_side = global::NL.HNOGames.Domoticz.Droid.Resource.Id.right_side;
-			global::Plugin.FirebasePushNotification.Resource.Id.standard = global::NL.HNOGames.Domoticz.Droid.Resource.Id.standard;
-			global::Plugin.FirebasePushNotification.Resource.Id.start = global::NL.HNOGames.Domoticz.Droid.Resource.Id.start;
-			global::Plugin.FirebasePushNotification.Resource.Id.status_bar_latest_event_content = global::NL.HNOGames.Domoticz.Droid.Resource.Id.status_bar_latest_event_content;
-			global::Plugin.FirebasePushNotification.Resource.Id.tag_transition_group = global::NL.HNOGames.Domoticz.Droid.Resource.Id.tag_transition_group;
-			global::Plugin.FirebasePushNotification.Resource.Id.tag_unhandled_key_event_manager = global::NL.HNOGames.Domoticz.Droid.Resource.Id.tag_unhandled_key_event_manager;
-			global::Plugin.FirebasePushNotification.Resource.Id.tag_unhandled_key_listeners = global::NL.HNOGames.Domoticz.Droid.Resource.Id.tag_unhandled_key_listeners;
-			global::Plugin.FirebasePushNotification.Resource.Id.text = global::NL.HNOGames.Domoticz.Droid.Resource.Id.text;
-			global::Plugin.FirebasePushNotification.Resource.Id.text2 = global::NL.HNOGames.Domoticz.Droid.Resource.Id.text2;
-			global::Plugin.FirebasePushNotification.Resource.Id.time = global::NL.HNOGames.Domoticz.Droid.Resource.Id.time;
-			global::Plugin.FirebasePushNotification.Resource.Id.title = global::NL.HNOGames.Domoticz.Droid.Resource.Id.title;
-			global::Plugin.FirebasePushNotification.Resource.Id.top = global::NL.HNOGames.Domoticz.Droid.Resource.Id.top;
-			global::Plugin.FirebasePushNotification.Resource.Id.wide = global::NL.HNOGames.Domoticz.Droid.Resource.Id.wide;
-			global::Plugin.FirebasePushNotification.Resource.Integer.cancel_button_image_alpha = global::NL.HNOGames.Domoticz.Droid.Resource.Integer.cancel_button_image_alpha;
-			global::Plugin.FirebasePushNotification.Resource.Integer.google_play_services_version = global::NL.HNOGames.Domoticz.Droid.Resource.Integer.google_play_services_version;
-			global::Plugin.FirebasePushNotification.Resource.Integer.status_bar_notification_info_maxnum = global::NL.HNOGames.Domoticz.Droid.Resource.Integer.status_bar_notification_info_maxnum;
-			global::Plugin.FirebasePushNotification.Resource.Layout.notification_action = global::NL.HNOGames.Domoticz.Droid.Resource.Layout.notification_action;
-			global::Plugin.FirebasePushNotification.Resource.Layout.notification_action_tombstone = global::NL.HNOGames.Domoticz.Droid.Resource.Layout.notification_action_tombstone;
-			global::Plugin.FirebasePushNotification.Resource.Layout.notification_media_action = global::NL.HNOGames.Domoticz.Droid.Resource.Layout.notification_media_action;
-			global::Plugin.FirebasePushNotification.Resource.Layout.notification_media_cancel_action = global::NL.HNOGames.Domoticz.Droid.Resource.Layout.notification_media_cancel_action;
-			global::Plugin.FirebasePushNotification.Resource.Layout.notification_template_big_media = global::NL.HNOGames.Domoticz.Droid.Resource.Layout.notification_template_big_media;
-			global::Plugin.FirebasePushNotification.Resource.Layout.notification_template_big_media_custom = global::NL.HNOGames.Domoticz.Droid.Resource.Layout.notification_template_big_media_custom;
-			global::Plugin.FirebasePushNotification.Resource.Layout.notification_template_big_media_narrow = global::NL.HNOGames.Domoticz.Droid.Resource.Layout.notification_template_big_media_narrow;
-			global::Plugin.FirebasePushNotification.Resource.Layout.notification_template_big_media_narrow_custom = global::NL.HNOGames.Domoticz.Droid.Resource.Layout.notification_template_big_media_narrow_custom;
-			global::Plugin.FirebasePushNotification.Resource.Layout.notification_template_custom_big = global::NL.HNOGames.Domoticz.Droid.Resource.Layout.notification_template_custom_big;
-			global::Plugin.FirebasePushNotification.Resource.Layout.notification_template_icon_group = global::NL.HNOGames.Domoticz.Droid.Resource.Layout.notification_template_icon_group;
-			global::Plugin.FirebasePushNotification.Resource.Layout.notification_template_lines_media = global::NL.HNOGames.Domoticz.Droid.Resource.Layout.notification_template_lines_media;
-			global::Plugin.FirebasePushNotification.Resource.Layout.notification_template_media = global::NL.HNOGames.Domoticz.Droid.Resource.Layout.notification_template_media;
-			global::Plugin.FirebasePushNotification.Resource.Layout.notification_template_media_custom = global::NL.HNOGames.Domoticz.Droid.Resource.Layout.notification_template_media_custom;
-			global::Plugin.FirebasePushNotification.Resource.Layout.notification_template_part_chronometer = global::NL.HNOGames.Domoticz.Droid.Resource.Layout.notification_template_part_chronometer;
-			global::Plugin.FirebasePushNotification.Resource.Layout.notification_template_part_time = global::NL.HNOGames.Domoticz.Droid.Resource.Layout.notification_template_part_time;
-			global::Plugin.FirebasePushNotification.Resource.String.common_google_play_services_enable_button = global::NL.HNOGames.Domoticz.Droid.Resource.String.common_google_play_services_enable_button;
-			global::Plugin.FirebasePushNotification.Resource.String.common_google_play_services_enable_text = global::NL.HNOGames.Domoticz.Droid.Resource.String.common_google_play_services_enable_text;
-			global::Plugin.FirebasePushNotification.Resource.String.common_google_play_services_enable_title = global::NL.HNOGames.Domoticz.Droid.Resource.String.common_google_play_services_enable_title;
-			global::Plugin.FirebasePushNotification.Resource.String.common_google_play_services_install_button = global::NL.HNOGames.Domoticz.Droid.Resource.String.common_google_play_services_install_button;
-			global::Plugin.FirebasePushNotification.Resource.String.common_google_play_services_install_text = global::NL.HNOGames.Domoticz.Droid.Resource.String.common_google_play_services_install_text;
-			global::Plugin.FirebasePushNotification.Resource.String.common_google_play_services_install_title = global::NL.HNOGames.Domoticz.Droid.Resource.String.common_google_play_services_install_title;
-			global::Plugin.FirebasePushNotification.Resource.String.common_google_play_services_notification_channel_name = global::NL.HNOGames.Domoticz.Droid.Resource.String.common_google_play_services_notification_channel_name;
-			global::Plugin.FirebasePushNotification.Resource.String.common_google_play_services_notification_ticker = global::NL.HNOGames.Domoticz.Droid.Resource.String.common_google_play_services_notification_ticker;
-			global::Plugin.FirebasePushNotification.Resource.String.common_google_play_services_unknown_issue = global::NL.HNOGames.Domoticz.Droid.Resource.String.common_google_play_services_unknown_issue;
-			global::Plugin.FirebasePushNotification.Resource.String.common_google_play_services_unsupported_text = global::NL.HNOGames.Domoticz.Droid.Resource.String.common_google_play_services_unsupported_text;
-			global::Plugin.FirebasePushNotification.Resource.String.common_google_play_services_update_button = global::NL.HNOGames.Domoticz.Droid.Resource.String.common_google_play_services_update_button;
-			global::Plugin.FirebasePushNotification.Resource.String.common_google_play_services_update_text = global::NL.HNOGames.Domoticz.Droid.Resource.String.common_google_play_services_update_text;
-			global::Plugin.FirebasePushNotification.Resource.String.common_google_play_services_update_title = global::NL.HNOGames.Domoticz.Droid.Resource.String.common_google_play_services_update_title;
-			global::Plugin.FirebasePushNotification.Resource.String.common_google_play_services_updating_text = global::NL.HNOGames.Domoticz.Droid.Resource.String.common_google_play_services_updating_text;
-			global::Plugin.FirebasePushNotification.Resource.String.common_google_play_services_wear_update_text = global::NL.HNOGames.Domoticz.Droid.Resource.String.common_google_play_services_wear_update_text;
-			global::Plugin.FirebasePushNotification.Resource.String.common_open_on_phone = global::NL.HNOGames.Domoticz.Droid.Resource.String.common_open_on_phone;
-			global::Plugin.FirebasePushNotification.Resource.String.common_signin_button_text = global::NL.HNOGames.Domoticz.Droid.Resource.String.common_signin_button_text;
-			global::Plugin.FirebasePushNotification.Resource.String.common_signin_button_text_long = global::NL.HNOGames.Domoticz.Droid.Resource.String.common_signin_button_text_long;
-			global::Plugin.FirebasePushNotification.Resource.String.fcm_fallback_notification_channel_label = global::NL.HNOGames.Domoticz.Droid.Resource.String.fcm_fallback_notification_channel_label;
-			global::Plugin.FirebasePushNotification.Resource.String.status_bar_notification_info_overflow = global::NL.HNOGames.Domoticz.Droid.Resource.String.status_bar_notification_info_overflow;
-			global::Plugin.FirebasePushNotification.Resource.Style.TextAppearance_Compat_Notification = global::NL.HNOGames.Domoticz.Droid.Resource.Style.TextAppearance_Compat_Notification;
-			global::Plugin.FirebasePushNotification.Resource.Style.TextAppearance_Compat_Notification_Info = global::NL.HNOGames.Domoticz.Droid.Resource.Style.TextAppearance_Compat_Notification_Info;
-			global::Plugin.FirebasePushNotification.Resource.Style.TextAppearance_Compat_Notification_Info_Media = global::NL.HNOGames.Domoticz.Droid.Resource.Style.TextAppearance_Compat_Notification_Info_Media;
-			global::Plugin.FirebasePushNotification.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::NL.HNOGames.Domoticz.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2;
-			global::Plugin.FirebasePushNotification.Resource.Style.TextAppearance_Compat_Notification_Line2_Media = global::NL.HNOGames.Domoticz.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2_Media;
-			global::Plugin.FirebasePushNotification.Resource.Style.TextAppearance_Compat_Notification_Media = global::NL.HNOGames.Domoticz.Droid.Resource.Style.TextAppearance_Compat_Notification_Media;
-			global::Plugin.FirebasePushNotification.Resource.Style.TextAppearance_Compat_Notification_Time = global::NL.HNOGames.Domoticz.Droid.Resource.Style.TextAppearance_Compat_Notification_Time;
-			global::Plugin.FirebasePushNotification.Resource.Style.TextAppearance_Compat_Notification_Time_Media = global::NL.HNOGames.Domoticz.Droid.Resource.Style.TextAppearance_Compat_Notification_Time_Media;
-			global::Plugin.FirebasePushNotification.Resource.Style.TextAppearance_Compat_Notification_Title = global::NL.HNOGames.Domoticz.Droid.Resource.Style.TextAppearance_Compat_Notification_Title;
-			global::Plugin.FirebasePushNotification.Resource.Style.TextAppearance_Compat_Notification_Title_Media = global::NL.HNOGames.Domoticz.Droid.Resource.Style.TextAppearance_Compat_Notification_Title_Media;
-			global::Plugin.FirebasePushNotification.Resource.Style.Widget_Compat_NotificationActionContainer = global::NL.HNOGames.Domoticz.Droid.Resource.Style.Widget_Compat_NotificationActionContainer;
-			global::Plugin.FirebasePushNotification.Resource.Style.Widget_Compat_NotificationActionText = global::NL.HNOGames.Domoticz.Droid.Resource.Style.Widget_Compat_NotificationActionText;
-			global::Plugin.FirebasePushNotification.Resource.Style.Widget_Support_CoordinatorLayout = global::NL.HNOGames.Domoticz.Droid.Resource.Style.Widget_Support_CoordinatorLayout;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.ColorStateListItem = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.ColorStateListItem;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.ColorStateListItem_alpha = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.ColorStateListItem_alpha;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.ColorStateListItem_android_alpha = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.ColorStateListItem_android_color = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.ColorStateListItem_android_color;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.CoordinatorLayout = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.CoordinatorLayout;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.CoordinatorLayout_keylines = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.CoordinatorLayout_keylines;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.CoordinatorLayout_Layout = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.CoordinatorLayout_Layout;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.FontFamily = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.FontFamily;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.FontFamilyFont = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.FontFamilyFont;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.FontFamilyFont_android_font = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.FontFamilyFont_android_font;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.FontFamilyFont_android_fontStyle = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.FontFamilyFont_android_fontVariationSettings = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.FontFamilyFont_android_fontVariationSettings;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.FontFamilyFont_android_fontWeight = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.FontFamilyFont_android_fontWeight;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.FontFamilyFont_android_ttcIndex = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.FontFamilyFont_android_ttcIndex;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.FontFamilyFont_font = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.FontFamilyFont_font;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.FontFamilyFont_fontStyle = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.FontFamilyFont_fontStyle;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.FontFamilyFont_fontVariationSettings = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.FontFamilyFont_fontVariationSettings;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.FontFamilyFont_fontWeight = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.FontFamilyFont_fontWeight;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.FontFamilyFont_ttcIndex = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.FontFamilyFont_ttcIndex;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.FontFamily_fontProviderAuthority = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.FontFamily_fontProviderCerts = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.FontFamily_fontProviderPackage = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.FontFamily_fontProviderQuery = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.GradientColor = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.GradientColor;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.GradientColorItem = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.GradientColorItem;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.GradientColorItem_android_color = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.GradientColorItem_android_color;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.GradientColorItem_android_offset = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.GradientColorItem_android_offset;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.GradientColor_android_centerColor = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.GradientColor_android_centerColor;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.GradientColor_android_centerX = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.GradientColor_android_centerX;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.GradientColor_android_centerY = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.GradientColor_android_centerY;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.GradientColor_android_endColor = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.GradientColor_android_endColor;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.GradientColor_android_endX = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.GradientColor_android_endX;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.GradientColor_android_endY = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.GradientColor_android_endY;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.GradientColor_android_gradientRadius = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.GradientColor_android_gradientRadius;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.GradientColor_android_startColor = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.GradientColor_android_startColor;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.GradientColor_android_startX = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.GradientColor_android_startX;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.GradientColor_android_startY = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.GradientColor_android_startY;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.GradientColor_android_tileMode = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.GradientColor_android_tileMode;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.GradientColor_android_type = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.GradientColor_android_type;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.LoadingImageView = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.LoadingImageView;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.LoadingImageView_circleCrop = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.LoadingImageView_circleCrop;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.LoadingImageView_imageAspectRatio = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.LoadingImageView_imageAspectRatio;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.LoadingImageView_imageAspectRatioAdjust = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.LoadingImageView_imageAspectRatioAdjust;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.SignInButton = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.SignInButton;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.SignInButton_buttonSize = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.SignInButton_buttonSize;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.SignInButton_colorScheme = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.SignInButton_colorScheme;
-			global::Plugin.FirebasePushNotification.Resource.Styleable.SignInButton_scopeUris = global::NL.HNOGames.Domoticz.Droid.Resource.Styleable.SignInButton_scopeUris;
 			global::Plugin.InputKit.Resource.Animation.abc_fade_in = global::NL.HNOGames.Domoticz.Droid.Resource.Animation.abc_fade_in;
 			global::Plugin.InputKit.Resource.Animation.abc_fade_out = global::NL.HNOGames.Domoticz.Droid.Resource.Animation.abc_fade_out;
 			global::Plugin.InputKit.Resource.Animation.abc_grow_fade_in_from_bottom = global::NL.HNOGames.Domoticz.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
@@ -23090,187 +22821,184 @@ namespace NL.HNOGames.Domoticz.Droid
 			public const int fallback_menu_item_share_link = 2131623997;
 			
 			// aapt resource value: 0x7F0E003E
-			public const int fcm_fallback_notification_channel_label = 2131623998;
+			public const int fingerprint_dialog_touch_sensor = 2131623998;
 			
 			// aapt resource value: 0x7F0E003F
-			public const int fingerprint_dialog_touch_sensor = 2131623999;
+			public const int fingerprint_error_hw_not_available = 2131623999;
 			
 			// aapt resource value: 0x7F0E0040
-			public const int fingerprint_error_hw_not_available = 2131624000;
+			public const int fingerprint_error_hw_not_present = 2131624000;
 			
 			// aapt resource value: 0x7F0E0041
-			public const int fingerprint_error_hw_not_present = 2131624001;
+			public const int fingerprint_error_lockout = 2131624001;
 			
 			// aapt resource value: 0x7F0E0042
-			public const int fingerprint_error_lockout = 2131624002;
+			public const int fingerprint_error_no_fingerprints = 2131624002;
 			
 			// aapt resource value: 0x7F0E0043
-			public const int fingerprint_error_no_fingerprints = 2131624003;
+			public const int fingerprint_error_user_canceled = 2131624003;
 			
 			// aapt resource value: 0x7F0E0044
-			public const int fingerprint_error_user_canceled = 2131624004;
+			public const int fingerprint_not_recognized = 2131624004;
 			
 			// aapt resource value: 0x7F0E0045
-			public const int fingerprint_not_recognized = 2131624005;
+			public const int firebase_database_url = 2131624005;
 			
 			// aapt resource value: 0x7F0E0046
-			public const int firebase_database_url = 2131624006;
+			public const int gcm_defaultSenderId = 2131624006;
 			
 			// aapt resource value: 0x7F0E0047
-			public const int gcm_defaultSenderId = 2131624007;
+			public const int gcm_fallback_notification_channel_label = 2131624007;
 			
 			// aapt resource value: 0x7F0E0048
-			public const int gcm_fallback_notification_channel_label = 2131624008;
+			public const int generic_error_user_canceled = 2131624008;
 			
 			// aapt resource value: 0x7F0E0049
-			public const int generic_error_user_canceled = 2131624009;
+			public const int google_api_key = 2131624009;
 			
 			// aapt resource value: 0x7F0E004A
-			public const int google_api_key = 2131624010;
+			public const int google_app_id = 2131624010;
 			
 			// aapt resource value: 0x7F0E004B
-			public const int google_app_id = 2131624011;
+			public const int google_crash_reporting_api_key = 2131624011;
 			
 			// aapt resource value: 0x7F0E004C
-			public const int google_crash_reporting_api_key = 2131624012;
-			
-			// aapt resource value: 0x7F0E004D
-			public const int google_storage_bucket = 2131624013;
+			public const int google_storage_bucket = 2131624012;
 			
 			// aapt resource value: 0x7F0E0001
 			public const int Hello = 2131623937;
 			
+			// aapt resource value: 0x7F0E004D
+			public const int hide_bottom_view_on_scroll_behavior = 2131624013;
+			
 			// aapt resource value: 0x7F0E004E
-			public const int hide_bottom_view_on_scroll_behavior = 2131624014;
+			public const int library_name = 2131624014;
 			
 			// aapt resource value: 0x7F0E004F
-			public const int library_name = 2131624015;
+			public const int mr_button_content_description = 2131624015;
 			
 			// aapt resource value: 0x7F0E0050
-			public const int mr_button_content_description = 2131624016;
+			public const int mr_cast_button_connected = 2131624016;
 			
 			// aapt resource value: 0x7F0E0051
-			public const int mr_cast_button_connected = 2131624017;
+			public const int mr_cast_button_connecting = 2131624017;
 			
 			// aapt resource value: 0x7F0E0052
-			public const int mr_cast_button_connecting = 2131624018;
+			public const int mr_cast_button_disconnected = 2131624018;
 			
 			// aapt resource value: 0x7F0E0053
-			public const int mr_cast_button_disconnected = 2131624019;
+			public const int mr_cast_dialog_title_view_placeholder = 2131624019;
 			
 			// aapt resource value: 0x7F0E0054
-			public const int mr_cast_dialog_title_view_placeholder = 2131624020;
+			public const int mr_chooser_searching = 2131624020;
 			
 			// aapt resource value: 0x7F0E0055
-			public const int mr_chooser_searching = 2131624021;
+			public const int mr_chooser_title = 2131624021;
 			
 			// aapt resource value: 0x7F0E0056
-			public const int mr_chooser_title = 2131624022;
+			public const int mr_controller_album_art = 2131624022;
 			
 			// aapt resource value: 0x7F0E0057
-			public const int mr_controller_album_art = 2131624023;
+			public const int mr_controller_casting_screen = 2131624023;
 			
 			// aapt resource value: 0x7F0E0058
-			public const int mr_controller_casting_screen = 2131624024;
+			public const int mr_controller_close_description = 2131624024;
 			
 			// aapt resource value: 0x7F0E0059
-			public const int mr_controller_close_description = 2131624025;
+			public const int mr_controller_collapse_group = 2131624025;
 			
 			// aapt resource value: 0x7F0E005A
-			public const int mr_controller_collapse_group = 2131624026;
+			public const int mr_controller_disconnect = 2131624026;
 			
 			// aapt resource value: 0x7F0E005B
-			public const int mr_controller_disconnect = 2131624027;
+			public const int mr_controller_expand_group = 2131624027;
 			
 			// aapt resource value: 0x7F0E005C
-			public const int mr_controller_expand_group = 2131624028;
+			public const int mr_controller_no_info_available = 2131624028;
 			
 			// aapt resource value: 0x7F0E005D
-			public const int mr_controller_no_info_available = 2131624029;
+			public const int mr_controller_no_media_selected = 2131624029;
 			
 			// aapt resource value: 0x7F0E005E
-			public const int mr_controller_no_media_selected = 2131624030;
+			public const int mr_controller_pause = 2131624030;
 			
 			// aapt resource value: 0x7F0E005F
-			public const int mr_controller_pause = 2131624031;
+			public const int mr_controller_play = 2131624031;
 			
 			// aapt resource value: 0x7F0E0060
-			public const int mr_controller_play = 2131624032;
+			public const int mr_controller_stop = 2131624032;
 			
 			// aapt resource value: 0x7F0E0061
-			public const int mr_controller_stop = 2131624033;
+			public const int mr_controller_stop_casting = 2131624033;
 			
 			// aapt resource value: 0x7F0E0062
-			public const int mr_controller_stop_casting = 2131624034;
+			public const int mr_controller_volume_slider = 2131624034;
 			
 			// aapt resource value: 0x7F0E0063
-			public const int mr_controller_volume_slider = 2131624035;
+			public const int mr_dialog_groupable_header = 2131624035;
 			
 			// aapt resource value: 0x7F0E0064
-			public const int mr_dialog_groupable_header = 2131624036;
+			public const int mr_dialog_transferable_header = 2131624036;
 			
 			// aapt resource value: 0x7F0E0065
-			public const int mr_dialog_transferable_header = 2131624037;
+			public const int mr_system_route_name = 2131624037;
 			
 			// aapt resource value: 0x7F0E0066
-			public const int mr_system_route_name = 2131624038;
+			public const int mr_user_route_category_name = 2131624038;
 			
 			// aapt resource value: 0x7F0E0067
-			public const int mr_user_route_category_name = 2131624039;
+			public const int mtrl_chip_close_icon_content_description = 2131624039;
 			
 			// aapt resource value: 0x7F0E0068
-			public const int mtrl_chip_close_icon_content_description = 2131624040;
+			public const int password_toggle_content_description = 2131624040;
 			
 			// aapt resource value: 0x7F0E0069
-			public const int password_toggle_content_description = 2131624041;
+			public const int path_password_eye = 2131624041;
 			
 			// aapt resource value: 0x7F0E006A
-			public const int path_password_eye = 2131624042;
+			public const int path_password_eye_mask_strike_through = 2131624042;
 			
 			// aapt resource value: 0x7F0E006B
-			public const int path_password_eye_mask_strike_through = 2131624043;
+			public const int path_password_eye_mask_visible = 2131624043;
 			
 			// aapt resource value: 0x7F0E006C
-			public const int path_password_eye_mask_visible = 2131624044;
+			public const int path_password_strike_through = 2131624044;
 			
 			// aapt resource value: 0x7F0E006D
-			public const int path_password_strike_through = 2131624045;
+			public const int place_autocomplete_clear_button = 2131624045;
 			
 			// aapt resource value: 0x7F0E006E
-			public const int place_autocomplete_clear_button = 2131624046;
+			public const int place_autocomplete_search_hint = 2131624046;
 			
 			// aapt resource value: 0x7F0E006F
-			public const int place_autocomplete_search_hint = 2131624047;
+			public const int project_id = 2131624047;
 			
 			// aapt resource value: 0x7F0E0070
-			public const int project_id = 2131624048;
+			public const int s1 = 2131624048;
 			
 			// aapt resource value: 0x7F0E0071
-			public const int s1 = 2131624049;
+			public const int s2 = 2131624049;
 			
 			// aapt resource value: 0x7F0E0072
-			public const int s2 = 2131624050;
+			public const int s3 = 2131624050;
 			
 			// aapt resource value: 0x7F0E0073
-			public const int s3 = 2131624051;
+			public const int s4 = 2131624051;
 			
 			// aapt resource value: 0x7F0E0074
-			public const int s4 = 2131624052;
+			public const int s5 = 2131624052;
 			
 			// aapt resource value: 0x7F0E0075
-			public const int s5 = 2131624053;
+			public const int s6 = 2131624053;
 			
 			// aapt resource value: 0x7F0E0076
-			public const int s6 = 2131624054;
+			public const int s7 = 2131624054;
 			
 			// aapt resource value: 0x7F0E0077
-			public const int s7 = 2131624055;
+			public const int search_menu_title = 2131624055;
 			
 			// aapt resource value: 0x7F0E0078
-			public const int search_menu_title = 2131624056;
-			
-			// aapt resource value: 0x7F0E0079
-			public const int status_bar_notification_info_overflow = 2131624057;
+			public const int status_bar_notification_info_overflow = 2131624056;
 			
 			static String()
 			{

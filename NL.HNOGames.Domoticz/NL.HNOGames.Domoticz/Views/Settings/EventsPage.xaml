@@ -16,17 +16,10 @@
                 x:Name="searchBar"
                 AbsoluteLayout.LayoutBounds="0,0,1,1"
                 AbsoluteLayout.LayoutFlags="All"
-                IsVisible="false">
-                <custcontrol:TitleViewSearchBar.TextColor>
-                    <OnPlatform x:TypeArguments="Color" Android="White" />
-                </custcontrol:TitleViewSearchBar.TextColor>
-                <custcontrol:TitleViewSearchBar.PlaceholderColor>
-                    <OnPlatform x:TypeArguments="Color" Android="White" />
-                </custcontrol:TitleViewSearchBar.PlaceholderColor>
-                <custcontrol:TitleViewSearchBar.CancelButtonColor>
-                    <OnPlatform x:TypeArguments="Color" Android="White" />
-                </custcontrol:TitleViewSearchBar.CancelButtonColor>
-            </custcontrol:TitleViewSearchBar>
+                CancelButtonColor="White "
+                IsVisible="false"
+                PlaceholderColor="White"
+                TextColor="White" />
             <StackLayout
                 x:Name="titleLayout"
                 AbsoluteLayout.LayoutBounds="0,0,1,1"

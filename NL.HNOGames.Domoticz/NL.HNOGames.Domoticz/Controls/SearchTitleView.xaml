@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="NL.HNOGames.Domoticz.Controls.SearchTitleView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:NL.HNOGames.Domoticz.Controls">
+    <ContentView.Content>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <!--  Search bar  -->
+            <local:TitleViewSearchBar
+                x:Name="searchBar"
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                IsVisible="false" />
+            <!--  Title  -->
+            <Label
+                x:Name="title"
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                HorizontalTextAlignment="{OnPlatform Android=Start,
+                                                     iOS=Center}"
+                LineBreakMode="NoWrap"
+                VerticalOptions="Center"
+                VerticalTextAlignment="Center" />
+            <!--  Search icon  -->
+            <Image
+                x:Name="searchIcon"
+                Margin="0,0,16,0"
+                AbsoluteLayout.LayoutBounds="1,0.5,AutoSize,AutoSize"
+                AbsoluteLayout.LayoutFlags="PositionProportional" />
+        </AbsoluteLayout>
+    </ContentView.Content>
+</ContentView>

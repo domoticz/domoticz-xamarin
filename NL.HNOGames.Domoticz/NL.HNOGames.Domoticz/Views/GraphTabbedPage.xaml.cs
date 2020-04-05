@@ -32,7 +32,7 @@ namespace NL.HNOGames.Domoticz.Views
         {
             InitializeComponent();
             App.AddLog("Loading screen: Graph");
-            Title = device.Name;
+            title.Text = device.Name;
             BarBackgroundColor = Color.FromHex("#22272B");
             BarTextColor = Color.White;
 

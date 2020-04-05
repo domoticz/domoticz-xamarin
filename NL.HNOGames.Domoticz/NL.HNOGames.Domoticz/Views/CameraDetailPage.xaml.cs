@@ -35,7 +35,7 @@ namespace NL.HNOGames.Domoticz.Views
             _selectedCamera = camera;
             InitializeComponent();
 
-            Title = camera.Name;
+            title.Text = camera.Name;
             cameraImage.Source = ImageSource.FromStream(() => new MemoryStream(camera.ImageBytes));
         }
 

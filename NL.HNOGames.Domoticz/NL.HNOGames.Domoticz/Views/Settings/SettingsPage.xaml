@@ -67,7 +67,10 @@
                         VerticalOptions="Center" />
                 </StackLayout>
 
-                <TableView HasUnevenRows="true" Intent="Settings">
+                <TableView
+                    HasUnevenRows="true"
+                    Intent="Settings"
+                    Style="{StaticResource TableViewType}">
                     <TableRoot>
                         <TableSection Title="{resources:Translate title_dashboard}">
                             <ViewCell Tapped="btnEnableScreens_Clicked">

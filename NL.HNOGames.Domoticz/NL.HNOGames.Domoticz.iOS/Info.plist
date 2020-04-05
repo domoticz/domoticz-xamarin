@@ -38,10 +38,10 @@
 	<true/>
 	<key>FIREBASE_ANALYTICS_COLLECTION_ENABLED</key>
 	<false/>
-  <key>NSPhotoLibraryAddUsageDescription</key>
-  <string>This app needs access to photo library for storing attachments</string>
-  <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-  <string>This app needs access to location to default the country and dialing code during sign up.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>This app needs access to photo library for storing attachments</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This app needs access to location to default the country and dialing code during sign up.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Can we use your camera</string>
 	<key>NSPhotoLibraryUsageDescription</key>
@@ -64,22 +64,22 @@
 		<true/>
 	</dict>
 	<key>CFBundleShortVersionString</key>
-	<string>0.0.96</string>
+	<string>0.1.1</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>CFBundleVersion</key>
-	<string>96</string>
+	<string>100</string>
 	<key>XSAppIconAssets</key>
 	<string>Resources/Media.xcassets/AppIcons.appiconset</string>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
 	<key>XSLaunchImageAssets</key>
 	<string>Resources/Media.xcassets/LaunchImages.launchimage</string>
-  <key>UILaunchStoryboardName</key>
-  <string>Launch</string>
-  <key>UIMainStoryboardFile</key>
-  <string>Launch</string>
-  <key>MinimumOSVersion</key>
-  <string>11.0</string>
+	<key>UILaunchStoryboardName</key>
+	<string>Launch</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Launch</string>
+	<key>MinimumOSVersion</key>
+	<string>11.0</string>
 </dict>
 </plist>

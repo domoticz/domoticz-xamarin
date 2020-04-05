@@ -40,6 +40,9 @@
     <Style x:Key="ContentPageType" TargetType="ContentPage">
         <Setter Property="BackgroundColor" Value="{DynamicResource LightBackgroundColor}" />
     </Style>
+    <Style x:Key="TableViewType" TargetType="TableView">
+        <Setter Property="BackgroundColor" Value="{DynamicResource LightBackgroundColor}" />
+    </Style>
     <Style x:Key="SearchBarType" TargetType="SearchBar">
         <Setter Property="TextColor" Value="White" />
         <Setter Property="PlaceholderColor" Value="White" />

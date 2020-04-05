@@ -143,7 +143,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
 
             //DarkTheme
             swDarkTheme.IsToggled = App.AppSettings.DarkTheme;
-            swDarkTheme.Toggled += (sender, args) =>
+            swDarkTheme.Toggled += async (sender, args) =>
             {
                 App.AppSettings.DarkTheme = swDarkTheme.IsToggled;
                 if (swDarkTheme.IsToggled && !App.AppSettings.PremiumBought)
@@ -152,6 +152,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                     App.ShowToast(AppResources.category_theme + " " + AppResources.premium_feature);
                 }
                 SetTheme();
+                await Navigation.PopAsync();
             };
 
             //Dashboard show switches
@@ -270,7 +271,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         {
             if (_oEnableScreenPage == null) return;
             App.AppSettings.EnabledScreens = _oEnableScreenPage.GetAllItems();
-            _goToMainScreen.Execute(null);
+            _goToMainScreen?.Execute(null);
         }
 
         /// <summary>

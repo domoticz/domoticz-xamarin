@@ -108,6 +108,9 @@ namespace NL.HNOGames.Domoticz.Data
                     case "Water":
                         standardImage = "water.png"; break;
 
+
+                    case "GoogleDevsHomeMini":
+                        standardImage = "ghome.png"; break;
                 }
             }
 

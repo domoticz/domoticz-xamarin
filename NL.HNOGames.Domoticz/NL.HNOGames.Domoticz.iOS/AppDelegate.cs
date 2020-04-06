@@ -1,206 +1,112 @@
-﻿
-using FFImageLoading.Forms.Touch;
-using Foundation;
+﻿using Foundation;
 using UIKit;
-
 using System;
-using MTiRate;
-using PushNotification.Plugin;
-using NL.HNOGames.Domoticz.Helpers;
 using UserNotifications;
-using Firebase.CloudMessaging;
-using Firebase.Core;
-using System.Net;
-using Google.Maps;
-using Plugin.Fingerprint;
-
-#if NETFX_CORE
-[assembly: Xamarin.Forms.Platform.WinRT.ExportRenderer(typeof(Xamarin.RangeSlider.Forms.RangeSlider), typeof(Xamarin.RangeSlider.Forms.RangeSliderRenderer))]
-#else
-[assembly: Xamarin.Forms.ExportRenderer(typeof(Xamarin.RangeSlider.Forms.RangeSlider), typeof(Xamarin.RangeSlider.Forms.RangeSliderRenderer))]
-#endif
+using Plugin.FirebasePushNotification;
 
 namespace NL.HNOGames.Domoticz.iOS
 {
-   [Register("AppDelegate")]
-   public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate, IUNUserNotificationCenterDelegate, IMessagingDelegate
-   {
-      public override bool FinishedLaunching(UIApplication app, NSDictionary options)
-      {
-         ServicePointManager.ServerCertificateValidationCallback +=
-             (sender, cert, chain, sslPolicyErrors) =>
-             {
-                System.Diagnostics.Debug.WriteLine(cert.GetSerialNumberString());
-                System.Diagnostics.Debug.WriteLine(cert.Issuer);
-                System.Diagnostics.Debug.WriteLine(cert.Subject);
-                return true;
-             };
+    [Register("AppDelegate")]
+    public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate, IUNUserNotificationCenterDelegate
+    {
+        #region Variables
 
-         UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, false);
-         UIApplication.SharedApplication.SetStatusBarHidden(false, false);
+        /// <summary>
+        /// Object reference to the application that we loaded
+        /// </summary>
+        private App application;
 
-         UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes()
-         {
-            Font = UIFont.FromName("HelveticaNeue-Light", (nfloat)20f),
-            TextColor = UIColor.White
-         });
+        #endregion
 
-         global::Xamarin.Forms.Forms.Init();
+        /// <summary>
+        /// This method is invoked when the application has loaded and is ready to run. In this
+        /// method you should instantiate the window, load the UI into it and then make the window
+        /// visible.
+        /// </summary>
+        /// <param name="uiApplication"></param>
+        /// <param name="launchOptions"></param>
+        /// <returns></returns>
+        /// <remarks>You have 17 seconds to return from this method, or iOS will terminate your application.</remarks>
+        public override bool FinishedLaunching(UIApplication uiApplication, NSDictionary launchOptions)
+        {
 
-         iRate.SharedInstance.DaysUntilPrompt = 10;
-         iRate.SharedInstance.UsesUntilPrompt = 20;
-         ZXing.Net.Mobile.Forms.iOS.Platform.Init();
-
-         CachedImageRenderer.Init();
-         SlideOverKit.iOS.SlideOverKit.Init();
-
-         Rg.Plugins.Popup.Popup.Init();
-         OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();
-
-         LoadApplication(new App(SaveToken));
-         CrossPushNotification.Initialize<CrossPushNotificationListener>();
-
-         // Register your app for remote notifications.
-         if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
-         {
-            // For iOS 10 display notification (sent via APNS)
-            UNUserNotificationCenter.Current.Delegate = this;
-            var authOptions = UNAuthorizationOptions.Alert | UNAuthorizationOptions.Badge | UNAuthorizationOptions.Sound;
-            UNUserNotificationCenter.Current.RequestAuthorization(authOptions, (granted, error) => {
-               Console.WriteLine(granted);
-            });
-         }
-         else
-         {
-            // iOS 9 or before
-            var allNotificationTypes = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound;
-            var settings = UIUserNotificationSettings.GetSettingsForTypes(allNotificationTypes, null);
-            UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
-         }
-
-         UIApplication.SharedApplication.RegisterForRemoteNotifications();
-
-
-         App.AddLog("GCM: Setup Firebase");
-         Firebase.Core.App.Configure();
-         Firebase.InstanceID.InstanceId.Notifications.ObserveTokenRefresh((sender, e) =>
-         {
-            var refreshedToken = Firebase.InstanceID.InstanceId.SharedInstance.Token;
-            tokenUploaded = false;
-            SaveToken();
-         });
-
-         return base.FinishedLaunching(app, options);
-      }
-
-      public override void DidEnterBackground(UIApplication application)
-      {
-         Messaging.SharedInstance.Disconnect();
-         Console.WriteLine("Disconnected from FCM");
-      }
-
-      private async void registerAsync(String token)
-      {
-         tokenUploaded = true;
-         App.AddLog(string.Format("GCM: Push Notification - Device Registered - Token : {0}", token));
-         String Id = UsefulBits.GetDeviceID();
-         bool bSuccess = await App.ApiService.RegisterDevice(Id, token);
-         if (bSuccess)
-            App.AddLog("GCM: Device registered on Domoticz");
-         else
-            App.AddLog("GCM: Device not registered on Domoticz");
-      }
-
-      private Boolean tokenUploaded = false;
-      private void connectFCM()
-      {
-         Messaging.SharedInstance.Connect((error) =>
-         {
-            if (error == null)
-               Messaging.SharedInstance.Subscribe("/topics/all");
-            App.AddLog(error != null ? "GCM: error occured: " + error.Description : "GCM: connect success");
-            if (!tokenUploaded)
+#if DEBUG
+            System.AppDomain.CurrentDomain.UnhandledException += (s, e) =>
             {
-               SaveToken();
-            }
-         });
-      }
+                // Set a breakpoint here to catch the unhandled exceptions
+                if (e.ExceptionObject is System.Exception ex)
+                {
+                    System.Console.WriteLine($"UNHANDLEDEXCEPTION: {ex.Message}");
+                    System.Console.WriteLine($"UNHANDLEDEXCEPTION: {ex.StackTrace}");
+                }
+            };
+            System.Threading.Tasks.TaskScheduler.UnobservedTaskException += (s, e) =>
+            {
+                // Set a breakpoint here to catch the unhandled exceptions
+                System.Console.WriteLine($"UNHANDLEDEXCEPTION: {e.Exception.Message}");
+                System.Console.WriteLine($"UNHANDLEDEXCEPTION: {e.Exception.StackTrace}");
+            };
+#endif
 
-      /// <summary>
-      /// Save token to domoticz
-      /// </summary>
-      private void SaveToken()
-      {
-         var token = Firebase.InstanceID.InstanceId.SharedInstance.Token;
-         if (token != null)
-            registerAsync(token);
-         else
-            App.AddLog("GCM: No token available");
+            SetStatusBar();
+            System.Net.ServicePointManager.ServerCertificateValidationCallback += (o, certificate, chain, errors) => true;
 
-         tokenUploaded = true;
-      }
+            global::Xamarin.Forms.Forms.Init();
 
-      public override void OnActivated(UIApplication uiApplication)
-      {
-         base.OnActivated(uiApplication);
-         connectFCM();
-      }
+            ZXing.Net.Mobile.Forms.iOS.Platform.Init();
+            Plugin.InputKit.Platforms.iOS.Config.Init();
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
 
-      // iOS 9 <=, fire when recieve notification foreground
-      public override void DidReceiveRemoteNotification(UIApplication application, NSDictionary userInfo, Action<UIBackgroundFetchResult> completionHandler)
-      {
-         if (App.AppSettings.EnableNotifications)
-         {
-            App.AddLog("GCM: Notification received");
-            App.AddLog(userInfo.ToString());
-            var body = WebUtility.UrlDecode(userInfo["gcm.notification.message"] as NSString);
-            var title = WebUtility.UrlDecode(userInfo["gcm.notification.title"] as NSString);
-            if (String.IsNullOrEmpty(title))
-               title = WebUtility.UrlDecode(userInfo["gcm.notification.subject"] as NSString);
-            if (String.Compare(title, body, true) == 0)
-               title = "Domoticz";
-            if (application.ApplicationState == UIApplicationState.Active)
-               debugAlert(title, body);
+            SlideOverKit.iOS.SlideOverKit.Init();
+            Plugin.InputKit.Platforms.iOS.Config.Init();
+            Rg.Plugins.Popup.Popup.Init();
+            OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();
+            XamEffects.iOS.Effects.Init();
+            FirebasePushNotificationManager.Initialize(launchOptions, true);
 
-            //else if (App.AppSettings.EnableNotifications)
-            //    CrossLocalNotifications.Current.Show(title, body);
-         }
-      }
+            application = new App();
+            LoadApplication(application);
+            return base.FinishedLaunching(uiApplication, launchOptions);
+        }
 
-      // iOS 10, fire when recieve notification foreground
-      [Export("userNotificationCenter:willPresentNotification:withCompletionHandler:")]
-      public void WillPresentNotification(UNUserNotificationCenter center, UNNotification notification, Action<UNNotificationPresentationOptions> completionHandler)
-      {
-         if (App.AppSettings.EnableNotifications)
-         {
-            App.AddLog("GCM: Notification received");
-            var title = WebUtility.UrlDecode(notification.Request.Content.Title);
-            var body = WebUtility.UrlDecode(notification.Request.Content.Body);
-            debugAlert(title, body);
-         }
-      }
+        /// <summary>
+        /// Set status bar
+        /// </summary>
+        private static void SetStatusBar()
+        {
+            UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, false);
+            UIApplication.SharedApplication.SetStatusBarHidden(false, false);
+            UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes()
+            {
+                Font = UIFont.FromName("HelveticaNeue-Light", (nfloat)20f),
+                TextColor = UIColor.White
+            });
+        }
 
-      private void debugAlert(string title, string message)
-      {
-         var alert = new UIAlertView(title ?? "Title", message ?? "Message", null, "Cancel", "OK");
-         alert.Show();
-      }
+        public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
+        {
+            FirebasePushNotificationManager.DidRegisterRemoteNotifications(deviceToken);
+        }
 
-      // Receive data message on iOS 10 devices.
-      public void ApplicationReceivedRemoteMessage(RemoteMessage remoteMessage)
-      {
-         App.AddLog("GCM: Notification received");
-         App.AddLog(remoteMessage.AppData.ToString());
-      }
+        public override void FailedToRegisterForRemoteNotifications(UIApplication application, NSError error)
+        {
+            FirebasePushNotificationManager.RemoteNotificationRegistrationFailed(error);
+        }
 
-      public void DidRefreshRegistrationToken(Messaging messaging, string fcmToken)
-      {
-         var token = String.IsNullOrEmpty(fcmToken) ? Firebase.InstanceID.InstanceId.SharedInstance.Token : fcmToken;
-         if (token != null)
-            registerAsync(token);
-         else
-            App.AddLog("GCM: No token available");
-         tokenUploaded = true;
-      }
-   }
+        // To receive notifications in foregroung on iOS 9 and below.
+        // To receive notifications in background in any iOS version
+        public override void DidReceiveRemoteNotification(UIApplication application, NSDictionary userInfo, Action<UIBackgroundFetchResult> completionHandler)
+        {
+            // If you are receiving a notification message while your app is in the background,
+            // this callback will not be fired 'till the user taps on the notification launching the application.
+
+            // If you disable method swizzling, you'll need to call this method. 
+            // This lets FCM track message delivery and analytics, which is performed
+            // automatically with method swizzling enabled.
+            FirebasePushNotificationManager.DidReceiveMessage(userInfo);
+            // Do your magic to handle the notification data
+            System.Console.WriteLine(userInfo);
+            completionHandler(UIBackgroundFetchResult.NewData);
+        }
+    }
 }

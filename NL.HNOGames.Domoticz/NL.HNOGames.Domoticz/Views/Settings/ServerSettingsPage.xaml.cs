@@ -7,22 +7,26 @@ using Xamarin.Forms.Xaml;
 
 namespace NL.HNOGames.Domoticz.Views.Settings
 {
+    /// <summary>
+    /// Defines the <see cref="ServerSettingsPage" />
+    /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ServerSettingsPage
     {
+        #region Variables
+
+        /// <summary>
+        /// Defines the _oServerSettings
+        /// </summary>
         private ServerSettings _oServerSettings;
 
-        public ServerSettings ServerSettings
-        {
-            //Property that will be used to get and set the item
-            get => _oServerSettings;
-            set
-            {
-                _oServerSettings = value;
-                BindingContext = _oServerSettings;
-            }
-        }
+        #endregion
 
+        #region Constructor & Destructor
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ServerSettingsPage"/> class.
+        /// </summary>
         public ServerSettingsPage()
         {
             ServerSettings = App.AppSettings.ActiveServerSettings ?? new ServerSettings();
@@ -44,9 +48,61 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             txtLocalUsername.Completed += (object sender, EventArgs e) => { txtLocalPassword.Focus(); };
         }
 
+        #endregion
+
+        #region Properties
+
+        /// <summary>
+        /// Gets or sets the ServerSettings
+        /// </summary>
+        public ServerSettings ServerSettings
+        {
+            //Property that will be used to get and set the item
+            get => _oServerSettings;
+            set
+            {
+                _oServerSettings = value;
+                BindingContext = _oServerSettings;
+            }
+        }
+
+        #endregion
+
+        #region Public
+
+        /// <summary>
+        /// Validate mandatory settings
+        /// </summary>
+        /// <returns>The <see cref="bool"/></returns>
+        public bool ValidateServerSettings()
+        {
+            if (string.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_URL))
+                return false;
+            //if (string.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_PORT))
+            //    return false;
+            if (!ServerSettings.IS_LOCAL_SERVER_ADDRESS_DIFFERENT) return true;
+            return !string.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_URL);
+        }
+
+        /// <summary>
+        /// Validate mandatory settings
+        /// </summary>
+        /// <returns>The <see cref="bool"/></returns>
+        public bool ValidateServerUrl()
+        {
+            return !ServerSettings.LOCAL_SERVER_URL.Contains("http") &&
+                   !ServerSettings.REMOTE_SERVER_URL.Contains("http");
+        }
+
+        #endregion
+
+        #region Private
+
         /// <summary>
         /// reset all values
         /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="EventArgs"/></param>
         private void btnReset_Clicked(object sender, EventArgs e)
         {
             swEnableLocalSettings.IsToggled = false;
@@ -68,6 +124,8 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// <summary>
         /// show demo account
         /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="EventArgs"/></param>
         private void BtnDemo_OnClicked(object sender, EventArgs e)
         {
             swEnableLocalSettings.IsToggled = false;
@@ -87,38 +145,18 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// <summary>
         /// Enable local settings
         /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="ToggledEventArgs"/></param>
         private void swEnableLocalSettings_Toggled(object sender, ToggledEventArgs e)
         {
             lyLocalSettings.IsVisible = swEnableLocalSettings.IsToggled;
         }
 
         /// <summary>
-        /// Validate mandatory settings
-        /// </summary>
-        public bool ValidateServerSettings()
-        {
-            if (string.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_URL))
-                return false;
-            //if (string.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_PORT))
-            //    return false;
-            if (!ServerSettings.IS_LOCAL_SERVER_ADDRESS_DIFFERENT) return true;
-            return !string.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_URL);
-            //if (string.IsNullOrEmpty(ServerSettings.REMOTE_SERVER_PORT))
-            //    return false;
-        }
-
-        /// <summary>
-        /// Validate mandatory settings
-        /// </summary>
-        public bool ValidateServerUrl()
-        {
-            return !ServerSettings.LOCAL_SERVER_URL.Contains("http") &&
-                   !ServerSettings.REMOTE_SERVER_URL.Contains("http");
-        }
-
-        /// <summary>
         /// Connection Finished
         /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="EventArgs"/></param>
         private void btnFinish_Clicked(object sender, EventArgs e)
         {
             App.SetMainPage();
@@ -192,6 +230,8 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// <summary>
         /// Check server settings
         /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="EventArgs"/></param>
         private void btnCheck_Clicked(object sender, EventArgs e)
         {
             ProcessServerSettings();
@@ -200,10 +240,14 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// <summary>
         /// Check if HTTPS is selected
         /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="EventArgs"/></param>
         private void TxtRemoteProtocol_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             lblSSLWarning.IsVisible = string.Compare(txtRemoteProtocol.Items[txtRemoteProtocol.SelectedIndex], "https",
                                           StringComparison.OrdinalIgnoreCase) == 0;
         }
+
+        #endregion
     }
 }

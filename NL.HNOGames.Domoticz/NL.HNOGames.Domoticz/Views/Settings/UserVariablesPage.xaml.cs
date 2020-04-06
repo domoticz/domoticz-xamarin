@@ -1,30 +1,57 @@
-﻿using System;
-using Xamarin.Forms;
-using System.Threading.Tasks;
-using System.Collections.Generic;
+﻿using Acr.UserDialogs;
 using NL.HNOGames.Domoticz.Models;
 using NL.HNOGames.Domoticz.Resources;
-using System.Linq;
-using Acr.UserDialogs;
+using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace NL.HNOGames.Domoticz.Views.Settings
 {
+    /// <summary>
+    /// Defines the <see cref="UserVariablesPage" />
+    /// </summary>
     public partial class UserVariablesPage
     {
+        #region Variables
+
+        /// <summary>
+        /// Defines the _userList
+        /// </summary>
         private List<UserVariable> _userList;
 
+        #endregion
+
+        #region Constructor & Destructor
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserVariablesPage"/> class.
+        /// </summary>
         public UserVariablesPage()
         {
             InitializeComponent();
+
+            searchIcon.GestureRecognizers.Add(new TapGestureRecognizer { Command = new Command(OnSearchIconTapped) });
+            searchBar.TextChanged += searchBar_TextChanged;
+            searchBar.Cancelled += (s, e) => OnCancelled();
         }
 
+        #endregion
+
+        #region Private
+
+        /// <summary>
+        /// The OnItemSelected
+        /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="args">The args<see cref="SelectedItemChangedEventArgs"/></param>
         private async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
             try
             {
-                var selectedVar = args.SelectedItem as Models.UserVariable;
-                if (selectedVar == null) return;
+                if (!(args.SelectedItem is UserVariable selectedVar)) return;
 
                 var r = await UserDialogs.Instance.PromptAsync(selectedVar.Name + " -> " + selectedVar.TypeValue, AppResources.title_vars,
                     inputType: selectedVar.Type == "0" || selectedVar.Type == "1" ? InputType.Number : InputType.Default);
@@ -44,12 +71,19 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                 }
                 listView.SelectedItem = null;
             }
-            catch (Exception) {
+            catch (Exception)
+            {
                 App.ShowToast(AppResources.var_input_error);
                 new Command(async () => await ExecuteLoadLogsCommand()).Execute(null);
             }
         }
 
+        /// <summary>
+        /// The ValidateInput
+        /// </summary>
+        /// <param name="input">The input<see cref="String"/></param>
+        /// <param name="type">The type<see cref="String"/></param>
+        /// <returns>The <see cref="bool"/></returns>
         private bool ValidateInput(String input, String type)
         {
             try
@@ -77,12 +111,10 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             return true;
         }
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            new Command(async () => await ExecuteLoadLogsCommand()).Execute(null);
-        }
-
+        /// <summary>
+        /// The ExecuteLoadLogsCommand
+        /// </summary>
+        /// <returns>The <see cref="Task"/></returns>
         private async Task ExecuteLoadLogsCommand()
         {
             App.ShowLoading();
@@ -107,7 +139,9 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// <summary>
         /// Filter changed
         /// </summary>
-        private void sbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="TextChangedEventArgs"/></param>
+        private void searchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
             try
             {
@@ -128,6 +162,57 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                 listView.ItemsSource = null;
                 listView.ItemsSource = _userList;
             }
+        }
+
+        /// <summary>
+        /// The OnSearchIconTapped
+        /// </summary>
+        private void OnSearchIconTapped()
+        {
+            BatchBegin();
+            try
+            {
+                NavigationPage.SetHasBackButton(this, false);
+                titleLayout.IsVisible = false;
+                searchIcon.IsVisible = false;
+                searchBar.IsVisible = true;
+                searchBar.Focus();
+            }
+            finally
+            {
+                BatchCommit();
+            }
+        }
+
+        /// <summary>
+        /// The OnCancelled
+        /// </summary>
+        private void OnCancelled()
+        {
+            BatchBegin();
+            try
+            {
+                NavigationPage.SetHasBackButton(this, true);
+                searchBar.IsVisible = false;
+                searchBar.Text = string.Empty;
+                titleLayout.IsVisible = true;
+                searchIcon.IsVisible = true;
+            }
+            finally
+            {
+                BatchCommit();
+            }
+        }
+
+        #endregion
+
+        /// <summary>
+        /// The OnAppearing
+        /// </summary>
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            new Command(async () => await ExecuteLoadLogsCommand()).Execute(null);
         }
     }
 }

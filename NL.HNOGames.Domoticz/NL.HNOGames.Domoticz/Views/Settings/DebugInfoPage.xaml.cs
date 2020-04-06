@@ -1,11 +1,19 @@
-﻿using System;
-using Plugin.Share;
-using NL.HNOGames.Domoticz.Resources;
+﻿using NL.HNOGames.Domoticz.Resources;
+using System;
+using Xamarin.Essentials;
 
 namespace NL.HNOGames.Domoticz.Views.Settings
 {
+    /// <summary>
+    /// Defines the <see cref="DebugInfoPage" />
+    /// </summary>
     public partial class DebugInfoPage
     {
+        #region Constructor & Destructor
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DebugInfoPage"/> class.
+        /// </summary>
         public DebugInfoPage()
         {
             InitializeComponent();
@@ -28,15 +36,24 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             };
         }
 
+        #endregion
+
+        #region Private
+
+        /// <summary>
+        /// The ToolbarItem_Activated
+        /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="EventArgs"/></param>
         private async void ToolbarItem_Activated(object sender, EventArgs e)
         {
-            //App.AppSettings.EnableDebugging, AppResources.category_debug + " Domoticz"
-            var oMessage = new Plugin.Share.Abstractions.ShareMessage
+            await Share.RequestAsync(new ShareTextRequest
             {
                 Text = App.AppSettings.DebugInfo,
                 Title = AppResources.category_debug + "- Domoticz"
-            };
-            await CrossShare.Current.Share(oMessage);
+            });
         }
+
+        #endregion
     }
 }

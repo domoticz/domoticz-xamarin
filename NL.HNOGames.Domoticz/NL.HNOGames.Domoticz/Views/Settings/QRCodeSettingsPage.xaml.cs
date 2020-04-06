@@ -1,27 +1,45 @@
-﻿using System;
-using Xamarin.Forms;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using NL.HNOGames.Domoticz.Resources;
-using System.Linq;
+﻿using Acr.UserDialogs;
+using NL.HNOGames.Domoticz.Controls;
 using NL.HNOGames.Domoticz.Models;
-using Acr.UserDialogs;
-using Rg.Plugins.Popup.Services;
+using NL.HNOGames.Domoticz.Resources;
 using NL.HNOGames.Domoticz.Views.Dialog;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
+using Rg.Plugins.Popup.Services;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using ZXing;
 using ZXing.Net.Mobile.Forms;
+using static System.Net.Mime.MediaTypeNames;
 using Device = Xamarin.Forms.Device;
-using NL.HNOGames.Domoticz.Controls;
 
 namespace NL.HNOGames.Domoticz.Views.Settings
 {
+    /// <summary>
+    /// Defines the <see cref="QrCodeSettingsPage" />
+    /// </summary>
     public partial class QrCodeSettingsPage
     {
-        private readonly List<QRCodeModel> _oListSource;
-        private QRCodeModel _oSelectedQrCode;
+        #region Variables
 
         /// <summary>
-        /// Constructor of QRCode page
+        /// Defines the _oListSource
+        /// </summary>
+        private readonly List<QRCodeModel> _oListSource;
+
+        /// <summary>
+        /// Defines the _oSelectedQrCode
+        /// </summary>
+        private QRCodeModel _oSelectedQrCode;
+
+        #endregion
+
+        #region Constructor & Destructor
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QrCodeSettingsPage"/> class.
         /// </summary>
         public QrCodeSettingsPage()
         {
@@ -36,73 +54,114 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                 listView.ItemsSource = _oListSource;
         }
 
+        #endregion
+
+        #region Private
+
         /// <summary>
         /// Add new qr code to system
         /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="EventArgs"/></param>
         private async void ToolbarItem_Activated(object sender, EventArgs e)
         {
             if (!App.AppSettings.QRCodeEnabled)
                 return;
-
-            if (Device.RuntimePlatform == Device.iOS)
+            if (await ValidatePermissions())
             {
-                var scanner = new ZXing.Mobile.MobileBarcodeScanner();
-                var result = await scanner.Scan();
+                if (Device.RuntimePlatform == Device.iOS)
+                {
+                    var scanner = new ZXing.Mobile.MobileBarcodeScanner();
+                    var result = await scanner.Scan();
 
-                if (result == null) return;
-                try
-                {
-                    var qrCodeId = result.Text.GetHashCode() + "";
-                    if (_oListSource.Any(o => string.Compare(o.Id, qrCodeId, StringComparison.OrdinalIgnoreCase) == 0))
-                        App.ShowToast(AppResources.qrcode_exists);
-                    else
-                        AddNewRecord(qrCodeId);
-                }
-                catch (Exception ex)
-                {
-                    App.AddLog(ex.Message);
-                }
-            }
-            else
-            {
-                const BarcodeFormat expectedFormat = BarcodeFormat.QR_CODE;
-                var opts = new ZXing.Mobile.MobileBarcodeScanningOptions
-                {
-                    PossibleFormats = new List<BarcodeFormat> {expectedFormat}
-                };
-                System.Diagnostics.Debug.WriteLine("Scanning " + expectedFormat);
-
-                var scanPage = new ZXingScannerPage(opts);
-                scanPage.OnScanResult += (result) =>
-                {
-                    scanPage.IsScanning = false;
-
-                    Device.BeginInvokeOnMainThread(async () =>
+                    if (result == null) return;
+                    try
                     {
-                        await Navigation.PopAsync();
-                        try
-                        {
-                            var qrCodeId = result.Text.GetHashCode() + "";
-                            if (_oListSource.Any(
-                                o => string.Compare(o.Id, qrCodeId, StringComparison.OrdinalIgnoreCase) == 0))
-                                App.ShowToast(AppResources.qrcode_exists);
-                            else
-                                AddNewRecord(qrCodeId);
-                        }
-                        catch (Exception ex)
-                        {
-                            App.AddLog(ex.Message);
-                        }
-                    });
-                };
+                        var qrCodeId = result.Text.GetHashCode() + "";
+                        if (_oListSource.Any(o => string.Compare(o.Id, qrCodeId, StringComparison.OrdinalIgnoreCase) == 0))
+                            App.ShowToast(AppResources.qrcode_exists);
+                        else
+                            AddNewRecord(qrCodeId);
+                    }
+                    catch (Exception ex)
+                    {
+                        App.AddLog(ex.Message);
+                    }
+                }
+                else
+                {
+                    const BarcodeFormat expectedFormat = BarcodeFormat.QR_CODE;
+                    var opts = new ZXing.Mobile.MobileBarcodeScanningOptions
+                    {
+                        PossibleFormats = new List<BarcodeFormat> { expectedFormat }
+                    };
+                    System.Diagnostics.Debug.WriteLine("Scanning " + expectedFormat);
 
-                await Navigation.PushAsync(scanPage);
+                    var scanPage = new ZXingScannerPage(opts);
+                    scanPage.OnScanResult += (result) =>
+                    {
+                        scanPage.IsScanning = false;
+
+                        Device.BeginInvokeOnMainThread(async () =>
+                        {
+                            await Navigation.PopAsync();
+                            try
+                            {
+                                var qrCodeId = result.Text.GetHashCode() + "";
+                                if (_oListSource.Any(
+                                    o => string.Compare(o.Id, qrCodeId, StringComparison.OrdinalIgnoreCase) == 0))
+                                    App.ShowToast(AppResources.qrcode_exists);
+                                else
+                                    AddNewRecord(qrCodeId);
+                            }
+                            catch (Exception ex)
+                            {
+                                App.AddLog(ex.Message);
+                            }
+                        });
+                    };
+
+                    await Navigation.PushAsync(scanPage);
+                }
             }
         }
 
         /// <summary>
+        /// Check if this feature is supported for your device
+        /// </summary>
+        /// <returns></returns>
+        private async Task<bool> ValidatePermissions()
+        {
+            try
+            {
+                var status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);
+                if (status != PermissionStatus.Granted)
+                {
+                    var newStatus = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Camera);
+                    if (!newStatus.ContainsKey(Permission.Camera))
+                        return false;
+                    status = newStatus[Permission.Camera];
+                    if (status != PermissionStatus.Granted)
+                    {
+                        App.AddLog("Permission denied for camera");
+                        App.ShowToast("Don't have the permission for the camera, check your app permission settings.");
+                        return false;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                //Something went wrong
+            }
+
+            return true;
+        }
+
+
+        /// <summary>
         /// Create new QR Code object
         /// </summary>
+        /// <param name="qrCodeId">The qrCodeId<see cref="string"/></param>
         private void AddNewRecord(string qrCodeId)
         {
             Device.BeginInvokeOnMainThread(async () =>
@@ -128,9 +187,11 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// <summary>
         /// Delete a QR Code from the list
         /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="EventArgs"/></param>
         private void btnDeleteButton_Clicked(object sender, EventArgs e)
         {
-            var oQrCode = (QRCodeModel) ((TintedCachedImage) sender).BindingContext;
+            var oQrCode = (QRCodeModel)((TintedCachedImage)sender).BindingContext;
             App.ShowToast(AppResources.something_deleted.Replace("%1$s", oQrCode.Name));
             _oListSource.Remove(oQrCode);
             SaveAndRefresh();
@@ -149,9 +210,11 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// <summary>
         /// Connect device to QR Code
         /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="EventArgs"/></param>
         private async void btnConnect_Clicked(object sender, EventArgs e)
         {
-            _oSelectedQrCode = (QRCodeModel) ((TintedCachedImage) sender).BindingContext;
+            _oSelectedQrCode = (QRCodeModel)((TintedCachedImage)sender).BindingContext;
             var oSwitchPopup = new SwitchPopup();
             oSwitchPopup.DeviceSelectedMethod += DelegateMethod;
             await PopupNavigation.Instance.PushAsync(oSwitchPopup);
@@ -160,6 +223,9 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// <summary>
         /// Connect device to QR Code
         /// </summary>
+        /// <param name="device">The device<see cref="Models.Device"/></param>
+        /// <param name="password">The password<see cref="string"/></param>
+        /// <param name="value">The value<see cref="string"/></param>
         private void DelegateMethod(Models.Device device, string password, string value)
         {
             App.ShowToast("Connecting " + _oSelectedQrCode.Name + " with switch " + device.Name);
@@ -168,8 +234,9 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             _oSelectedQrCode.Value = value;
             _oSelectedQrCode.SwitchPassword = password;
             _oSelectedQrCode.IsScene = device.IsScene;
-            _oSelectedQrCode.IsScene = device.IsScene;
             SaveAndRefresh();
         }
+
+        #endregion
     }
 }

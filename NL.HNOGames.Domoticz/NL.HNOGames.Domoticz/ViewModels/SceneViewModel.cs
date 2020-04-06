@@ -1,29 +1,36 @@
-﻿using System;
-using System.Threading.Tasks;
-
-using NL.HNOGames.Domoticz.Helpers;
-using NL.HNOGames.Domoticz.Views;
-
-using Xamarin.Forms;
+﻿using NL.HNOGames.Domoticz.Helpers;
 using NL.HNOGames.Domoticz.Resources;
+using NL.HNOGames.Domoticz.Views;
+using System;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace NL.HNOGames.Domoticz.ViewModels
 {
+    /// <summary>
+    /// Defines the <see cref="SceneViewModel" />
+    /// </summary>
     public class SceneViewModel : BaseViewModel
     {
-        public ObservableRangeCollection<Models.Scene> Devices { get; set; }
-        public Command LoadFavoriteCommand { get; set; }
-        public Command RefreshFavoriteCommand { get; set; }
-        public Command RefreshActionCommand { get; set; }
+        #region Variables
+
+        /// <summary>
+        /// Defines the OldData
+        /// </summary>
         public bool OldData;
 
-
-        public delegate void SetListViewVisibility(bool visible);
-
-        public SetListViewVisibility SetListViewVisibilityMethod { get; set; }
+        /// <summary>
+        /// Defines the SomethingFound
+        /// </summary>
         public bool SomethingFound = true;
 
+        #endregion
 
+        #region Constructor & Destructor
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SceneViewModel"/> class.
+        /// </summary>
         public SceneViewModel()
         {
             Title = AppResources.title_scenes;
@@ -39,6 +46,54 @@ namespace NL.HNOGames.Domoticz.ViewModels
             LoadCache = false;
         }
 
+        #endregion
+
+        #region Delegates
+
+        /// <summary>
+        /// The SetListViewVisibility
+        /// </summary>
+        /// <param name="visible">The visible<see cref="bool"/></param>
+        public delegate void SetListViewVisibility(bool visible);
+
+        #endregion
+
+        #region Properties
+
+        /// <summary>
+        /// Gets or sets the Devices
+        /// </summary>
+        public ObservableRangeCollection<Models.Scene> Devices { get; set; }
+
+        /// <summary>
+        /// Gets or sets the LoadFavoriteCommand
+        /// </summary>
+        public Command LoadFavoriteCommand { get; set; }
+
+        /// <summary>
+        /// Gets or sets the RefreshFavoriteCommand
+        /// </summary>
+        public Command RefreshFavoriteCommand { get; set; }
+
+        /// <summary>
+        /// Gets or sets the RefreshActionCommand
+        /// </summary>
+        public Command RefreshActionCommand { get; set; }
+
+        /// <summary>
+        /// Gets or sets the SetListViewVisibilityMethod
+        /// </summary>
+        public SetListViewVisibility SetListViewVisibilityMethod { get; set; }
+
+        #endregion
+
+        #region Private
+
+        /// <summary>
+        /// The ExecuteLoadFavoritesCommand
+        /// </summary>
+        /// <param name="refresh">The refresh<see cref="bool"/></param>
+        /// <returns>The <see cref="Task"/></returns>
         private async Task ExecuteLoadFavoritesCommand(bool refresh)
         {
             if (Devices == null || refresh)
@@ -80,5 +135,7 @@ namespace NL.HNOGames.Domoticz.ViewModels
 
             IsBusy = false;
         }
+
+        #endregion
     }
 }

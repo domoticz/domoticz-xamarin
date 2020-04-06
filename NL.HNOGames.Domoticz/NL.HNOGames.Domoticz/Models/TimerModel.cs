@@ -1,22 +1,43 @@
 ﻿using NL.HNOGames.Domoticz.Resources;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NL.HNOGames.Domoticz.Models
 {
+    /// <summary>
+    /// Defines the <see cref="TimerModel" />
+    /// </summary>
     public class TimerModel
     {
+        #region Properties
+
+        /// <summary>
+        /// Gets or sets the result
+        /// </summary>
         public Timer[] result { get; set; }
+
+        /// <summary>
+        /// Gets or sets the status
+        /// </summary>
         public string status { get; set; }
+
+        /// <summary>
+        /// Gets or sets the title
+        /// </summary>
         public string title { get; set; }
 
+        #endregion
     }
 
+    /// <summary>
+    /// Defines the <see cref="Timer" />
+    /// </summary>
     public class Timer
     {
+        #region Properties
+
+        /// <summary>
+        /// Gets the TypeDescription
+        /// </summary>
         public String TypeDescription
         {
             get
@@ -56,6 +77,9 @@ namespace NL.HNOGames.Domoticz.Models
             }
         }
 
+        /// <summary>
+        /// Gets the CommandDescription
+        /// </summary>
         public String CommandDescription
         {
             get
@@ -69,6 +93,9 @@ namespace NL.HNOGames.Domoticz.Models
             }
         }
 
+        /// <summary>
+        /// Gets the Description
+        /// </summary>
         public String Description
         {
             get
@@ -76,7 +103,7 @@ namespace NL.HNOGames.Domoticz.Models
                 String returnvalue = Active;
 
                 if (Date != null && Date.Length > 0)
-                    returnvalue = Active + " | " +Date;
+                    returnvalue = Active + " | " + Date;
                 else
                 {
                     if (Days == 128)
@@ -95,16 +122,61 @@ namespace NL.HNOGames.Domoticz.Models
             }
         }
 
+        /// <summary>
+        /// Gets or sets the Active
+        /// </summary>
         public string Active { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Date
+        /// </summary>
         public string Date { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Days
+        /// </summary>
         public int Days { get; set; }
+
+        /// <summary>
+        /// Gets or sets the MDay
+        /// </summary>
         public int MDay { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Month
+        /// </summary>
         public int Month { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Occurence
+        /// </summary>
         public int Occurence { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Temperature
+        /// </summary>
         public float Temperature { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Time
+        /// </summary>
         public string Time { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Type
+        /// </summary>
         public int Type { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Cmd
+        /// </summary>
         public int Cmd { get; set; }
+
+        /// <summary>
+        /// Gets or sets the idx
+        /// </summary>
         public string idx { get; set; }
+
+        #endregion
     }
 }

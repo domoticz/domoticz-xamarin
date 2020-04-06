@@ -1,6 +1,6 @@
+using Newtonsoft.Json;
 using Plugin.Settings;
 using Plugin.Settings.Abstractions;
-using Newtonsoft.Json;
 using System;
 
 namespace NL.HNOGames.Domoticz.Helpers
@@ -8,10 +8,15 @@ namespace NL.HNOGames.Domoticz.Helpers
     /// <summary>
     /// This is the Settings static class that can be used in your Core solution or in any
     /// of your client applications. All settings are laid out the same exact way with getters
-    /// and setters. 
+    /// and setters.
     /// </summary>
     public static class Cache
     {
+        #region Properties
+
+        /// <summary>
+        /// Gets the AppCache
+        /// </summary>
         private static ISettings AppCache
         {
             get
@@ -20,9 +25,16 @@ namespace NL.HNOGames.Domoticz.Helpers
             }
         }
 
+        #endregion
+
+        #region Public
+
         /// <summary>
         /// Get cache from settings
         /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="key">The key<see cref="String"/></param>
+        /// <returns>The <see cref="T"/></returns>
         public static T GetCache<T>(String key)
         {
             try
@@ -46,11 +58,15 @@ namespace NL.HNOGames.Domoticz.Helpers
         /// <summary>
         /// Set cache from settings
         /// </summary>
+        /// <param name="key">The key<see cref="String"/></param>
+        /// <param name="value">The value<see cref="object"/></param>
         public static void SetCache(String key, object value)
         {
             if (string.IsNullOrEmpty(key) || value == null)
                 return;
             AppCache.AddOrUpdateValue(key, JsonConvert.SerializeObject(value));
         }
+
+        #endregion
     }
 }

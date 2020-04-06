@@ -1,37 +1,72 @@
-﻿using NL.HNOGames.Domoticz.Resources;
+﻿using NL.HNOGames.Domoticz.Data;
+using NL.HNOGames.Domoticz.Models;
+using NL.HNOGames.Domoticz.Resources;
 using OxyPlot;
 using OxyPlot.Annotations;
 using OxyPlot.Axes;
 using OxyPlot.Series;
+using Plugin.DeviceOrientation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using NL.HNOGames.Domoticz.Data;
-using NL.HNOGames.Domoticz.Models;
 using Xamarin.Forms.Xaml;
-using Plugin.DeviceOrientation;
 
 namespace NL.HNOGames.Domoticz.Views
 {
+    /// <summary>
+    /// Defines the <see cref="GraphPage" />
+    /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GraphPage
     {
+        #region Variables
+
+        /// <summary>
+        /// Defines the _range
+        /// </summary>
         private readonly ConstantValues.GraphRange _range;
+
+        /// <summary>
+        /// Defines the _model
+        /// </summary>
         private PlotModel _model;
+
+        /// <summary>
+        /// Defines the _selectedDevice
+        /// </summary>
         private readonly Device _selectedDevice;
+
+        /// <summary>
+        /// Defines the _type
+        /// </summary>
         private readonly string _type;
+
+        /// <summary>
+        /// Defines the _random
+        /// </summary>
         private readonly Random _random = new Random();
+
+        /// <summary>
+        /// Defines the _originalSeries
+        /// </summary>
         private List<Series> _originalSeries;
 
-        private String activeFilter = AppResources.filterOn_all;
+        /// <summary>
+        /// Defines the activeFilter
+        /// </summary>
+        private string activeFilter = AppResources.filterOn_all;
 
-        private void OrientationChanged(object sender, Plugin.DeviceOrientation.Abstractions.OrientationChangedEventArgs e)
-        {
-            //refresh graph
-            InitGraphData();
-        }
+        #endregion
 
+        #region Constructor & Destructor
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GraphPage"/> class.
+        /// </summary>
+        /// <param name="device">The device<see cref="Device"/></param>
+        /// <param name="sensor">The sensor<see cref="string"/></param>
+        /// <param name="showRange">The showRange<see cref="ConstantValues.GraphRange"/></param>
         public GraphPage(Device device,
             string sensor = "temp",
             ConstantValues.GraphRange showRange = ConstantValues.GraphRange.Day)
@@ -47,12 +82,16 @@ namespace NL.HNOGames.Domoticz.Views
                 CrossDeviceOrientation.Current.OrientationChanged += OrientationChanged;
         }
 
+        #endregion
+
+        #region Public
+
         /// <summary>
         /// Init graph objects/views
         /// </summary>
         public async void InitGraphData()
         {
-            if (_selectedDevice == null)
+            if (_selectedDevice == null || string.IsNullOrEmpty(_selectedDevice.idx))
                 return;
 
             try
@@ -69,6 +108,39 @@ namespace NL.HNOGames.Domoticz.Views
             {
                 App.AddLog(ex.Message);
             }
+        }
+
+        /// <summary>
+        /// Filter the graph
+        /// </summary>
+        /// <returns>The <see cref="Task"/></returns>
+        public async Task FilterAsync()
+        {
+            RevertOriginalSource();
+            var actions = CreateFilterMenu();
+            if (actions.Count > 0)
+            {
+                activeFilter = await DisplayActionSheet(AppResources.filter, AppResources.cancel, null,
+                    actions.ToArray());
+                FilterGraphResult();
+                oGraphView.Model = _model;
+                oGraphView.Model.InvalidatePlot(true);
+            }
+        }
+
+        #endregion
+
+        #region Private
+
+        /// <summary>
+        /// The OrientationChanged
+        /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="Plugin.DeviceOrientation.Abstractions.OrientationChangedEventArgs"/></param>
+        private void OrientationChanged(object sender, Plugin.DeviceOrientation.Abstractions.OrientationChangedEventArgs e)
+        {
+            //refresh graph
+            InitGraphData();
         }
 
         /// <summary>
@@ -263,6 +335,8 @@ namespace NL.HNOGames.Domoticz.Views
         /// <summary>
         /// Map Temperature lines
         /// </summary>
+        /// <param name="graphData">The graphData<see cref="GraphModel"/></param>
+        /// <param name="dateTimeList">The dateTimeList<see cref="IReadOnlyList{DateTime?}"/></param>
         private void MapTemperatureLines(GraphModel graphData, IReadOnlyList<DateTime?> dateTimeList)
         {
             if (!graphData.result.Any(item => item.hasTemperatureRange())) return;
@@ -290,6 +364,10 @@ namespace NL.HNOGames.Domoticz.Views
         /// <summary>
         /// Create Graph Line
         /// </summary>
+        /// <param name="title">The title<see cref="string"/></param>
+        /// <param name="graphData">The graphData<see cref="IEnumerable{double?}"/></param>
+        /// <param name="graphDateTime">The graphDateTime<see cref="IReadOnlyList{DateTime?}"/></param>
+        /// <returns>The <see cref="LineSeries"/></returns>
         private LineSeries CreateLine(string title, IEnumerable<double?> graphData,
             IReadOnlyList<DateTime?> graphDateTime)
         {
@@ -313,6 +391,8 @@ namespace NL.HNOGames.Domoticz.Views
         /// <summary>
         /// Init line object with values
         /// </summary>
+        /// <param name="title">The title<see cref="string"/></param>
+        /// <returns>The <see cref="LineSeries"/></returns>
         private LineSeries CreateLine(string title)
         {
             var lineColor = $"#{_random.Next(0x1000000):X6}";
@@ -380,23 +460,6 @@ namespace NL.HNOGames.Domoticz.Views
         }
 
         /// <summary>
-        /// Filter the graph
-        /// </summary>
-        public async Task FilterAsync()
-        {
-            RevertOriginalSource();
-            var actions = CreateFilterMenu();
-            if (actions.Count > 0)
-            {
-                activeFilter = await DisplayActionSheet(AppResources.filter, AppResources.cancel, null,
-                    actions.ToArray());
-                FilterGraphResult();
-                oGraphView.Model = _model;
-                oGraphView.Model.InvalidatePlot(true);
-            }
-        }
-
-        /// <summary>
         /// Filter the graph result
         /// </summary>
         private void FilterGraphResult()
@@ -440,6 +503,7 @@ namespace NL.HNOGames.Domoticz.Views
         /// <summary>
         /// Create Filter menu
         /// </summary>
+        /// <returns>The <see cref="List{string}"/></returns>
         private List<string> CreateFilterMenu()
         {
             var actions = new List<string>();
@@ -448,5 +512,7 @@ namespace NL.HNOGames.Domoticz.Views
             actions.AddRange(_model.Series.Select(serie => serie.Title));
             return actions;
         }
+
+        #endregion
     }
 }

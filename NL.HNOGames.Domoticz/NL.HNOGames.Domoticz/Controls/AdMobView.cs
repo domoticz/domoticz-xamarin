@@ -1,14 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace NL.HNOGames.Domoticz.Controls
 {
+    /// <summary>
+    /// Admob view
+    /// </summary>
     public class AdMobView : ContentView
     {
-        public AdMobView() { }
+        #region Constructor & Destructor
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AdMobView"/> class.
+        /// </summary>
+        public AdMobView()
+        {
+        }
+
+        #endregion
     }
 }

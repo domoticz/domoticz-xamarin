@@ -1,19 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace NL.HNOGames.Domoticz.Themes
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class DarkiOS : ResourceDictionary
+    /// <summary>
+    /// Defines the <see cref="DarkiOS" />
+    /// </summary>
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class DarkiOS : ResourceDictionary
     {
-		public DarkiOS()
-		{
-			InitializeComponent ();
-		}
-	}
+        #region Constructor & Destructor
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DarkiOS"/> class.
+        /// </summary>
+        public DarkiOS()
+        {
+            InitializeComponent();
+        }
+
+        #endregion
+    }
 }

@@ -1,28 +1,68 @@
 ﻿using NL.HNOGames.Domoticz.Resources;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NL.HNOGames.Domoticz.Models
 {
+    /// <summary>
+    /// Defines the <see cref="NotificationModel" />
+    /// </summary>
     public class NotificationModel
     {
+        #region Properties
+
+        /// <summary>
+        /// Gets or sets the notifiers
+        /// </summary>
         public Notifier[] notifiers { get; set; }
+
+        /// <summary>
+        /// Gets or sets the result
+        /// </summary>
         public Notification[] result { get; set; }
+
+        /// <summary>
+        /// Gets or sets the status
+        /// </summary>
         public string status { get; set; }
+
+        /// <summary>
+        /// Gets or sets the title
+        /// </summary>
         public string title { get; set; }
+
+        #endregion
     }
 
+    /// <summary>
+    /// Defines the <see cref="Notifier" />
+    /// </summary>
     public class Notifier
     {
+        #region Properties
+
+        /// <summary>
+        /// Gets or sets the description
+        /// </summary>
         public string description { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name
+        /// </summary>
         public string name { get; set; }
+
+        #endregion
     }
 
+    /// <summary>
+    /// Defines the <see cref="Notification" />
+    /// </summary>
     public class Notification
     {
+        #region Properties
+
+        /// <summary>
+        /// Gets the PriorityDescription
+        /// </summary>
         public String PriorityDescription
         {
             get
@@ -43,6 +83,9 @@ namespace NL.HNOGames.Domoticz.Models
             }
         }
 
+        /// <summary>
+        /// Gets the SystemsDescription
+        /// </summary>
         public String SystemsDescription
         {
             get
@@ -57,12 +100,36 @@ namespace NL.HNOGames.Domoticz.Models
             }
         }
 
+        /// <summary>
+        /// Gets or sets the ActiveSystems
+        /// </summary>
         public string ActiveSystems { get; set; }
-        public string CustomMessage { get; set; }
-        public string Params { get; set; }
-        public int Priority { get; set; }
-        public bool SendAlways { get; set; }
-        public int idx { get; set; }
-    }
 
+        /// <summary>
+        /// Gets or sets the CustomMessage
+        /// </summary>
+        public string CustomMessage { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Params
+        /// </summary>
+        public string Params { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Priority
+        /// </summary>
+        public int Priority { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether SendAlways
+        /// </summary>
+        public bool SendAlways { get; set; }
+
+        /// <summary>
+        /// Gets or sets the idx
+        /// </summary>
+        public int idx { get; set; }
+
+        #endregion
+    }
 }

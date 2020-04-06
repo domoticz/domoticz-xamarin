@@ -2,8 +2,10 @@
 
 namespace NL.HNOGames.Domoticz.Controls
 {
+    /// <summary>
+    /// Defines the <see cref="MaterialFrame" />
+    /// </summary>
     public class MaterialFrame : Frame
     {
-        // no other code needs to go here unless you want more customizable properties.
     }
 }

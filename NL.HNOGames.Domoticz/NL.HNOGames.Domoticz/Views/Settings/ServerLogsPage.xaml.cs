@@ -1,33 +1,60 @@
-﻿using System;
-using Xamarin.Forms;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using NL.HNOGames.Domoticz.Models;
+﻿using NL.HNOGames.Domoticz.Models;
 using NL.HNOGames.Domoticz.Resources;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace NL.HNOGames.Domoticz.Views.Settings
 {
+    /// <summary>
+    /// Defines the <see cref="ServerLogsPage" />
+    /// </summary>
     public partial class ServerLogsPage
     {
+        #region Variables
+
+        /// <summary>
+        /// Defines the _logList
+        /// </summary>
         private List<ServerLog> _logList;
 
+        #endregion
+
+        #region Constructor & Destructor
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ServerLogsPage"/> class.
+        /// </summary>
         public ServerLogsPage()
         {
             InitializeComponent();
+
+            //searchIcon.GestureRecognizers.Add(new TapGestureRecognizer {NumberOfTapsRequired=1, Command = new Command(OnSearchIconTapped) });
+
+            searchBar.TextChanged += searchBar_TextChanged;
+            searchBar.Cancelled += (s, e) => OnCancelled();
         }
 
+        #endregion
+
+        #region Private
+
+        /// <summary>
+        /// The OnItemSelected
+        /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="args">The args<see cref="SelectedItemChangedEventArgs"/></param>
         private void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
             listView.SelectedItem = null;
         }
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            new Command(async () => await ExecuteLoadLogsCommand()).Execute(null);
-        }
-
+        /// <summary>
+        /// The ExecuteLoadLogsCommand
+        /// </summary>
+        /// <returns>The <see cref="Task"/></returns>
         private async Task ExecuteLoadLogsCommand()
         {
             App.ShowLoading();
@@ -53,7 +80,9 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// <summary>
         /// Filter changed
         /// </summary>
-        private void sbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="TextChangedEventArgs"/></param>
+        private void searchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
             try
             {
@@ -74,6 +103,54 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                 listView.ItemsSource = null;
                 listView.ItemsSource = _logList;
             }
+        }
+
+        private async void OnSearchIconTapped(object sender, EventArgs e)
+        {
+            BatchBegin();
+            try
+            {
+                NavigationPage.SetHasBackButton(this, false);
+                //titleLayout.IsVisible = false;
+                searchIcon.IsVisible = false;
+                searchBar.IsVisible = true;
+                searchBar.Focus();
+            }
+            finally
+            {
+                BatchCommit();
+            }
+        }
+
+        /// <summary>
+        /// The OnCancelled
+        /// </summary>
+        private void OnCancelled()
+        {
+            BatchBegin();
+            try
+            {
+                NavigationPage.SetHasBackButton(this, true);
+                searchBar.IsVisible = false;
+                searchBar.Text = string.Empty;
+                //titleLayout.IsVisible = true;
+                searchIcon.IsVisible = true;
+            }
+            finally
+            {
+                BatchCommit();
+            }
+        }
+
+        #endregion
+
+        /// <summary>
+        /// The OnAppearing
+        /// </summary>
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            new Command(async () => await ExecuteLoadLogsCommand()).Execute(null);
         }
     }
 }

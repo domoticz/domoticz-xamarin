@@ -1,42 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
+﻿using Android.Content;
 using Android.Views;
-using Android.Widget;
 using NL.HNOGames.Domoticz.Controls;
 using NL.HNOGames.Domoticz.Droid.Renderer;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
+
 [assembly: ExportRenderer(typeof(ExtendedSlider), typeof(ExtendedSliderRenderer))]
 namespace NL.HNOGames.Domoticz.Droid.Renderer
 {
+    /// <summary>
+    /// Defines the <see cref="ExtendedSliderRenderer" />
+    /// </summary>
     public class ExtendedSliderRenderer : SliderRenderer
     {
-      /// <summary>
-      /// Constructor
-      /// </summary>
-      /// <param name="context"></param>
-      public ExtendedSliderRenderer(Context context)
+        #region Constructor & Destructor
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtendedSliderRenderer"/> class.
+        /// </summary>
+        /// <param name="context"></param>
+        public ExtendedSliderRenderer(Context context)
         : base(context)
-      { }
-
-      protected override void OnElementChanged(ElementChangedEventArgs<Slider> e)
         {
-            base.OnElementChanged(e);
-
-            if (Control != null)
-            {
-                Control.Touch += Control_Touch;
-            }
         }
 
+        #endregion
+
+        #region Private
+
+        /// <summary>
+        /// The Control_Touch
+        /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="TouchEventArgs"/></param>
         private void Control_Touch(object sender, TouchEventArgs e)
         {
             var slider = Element as ExtendedSlider;
@@ -56,6 +53,22 @@ namespace NL.HNOGames.Domoticz.Droid.Renderer
             }
 
             e.Handled = false;
+        }
+
+        #endregion
+
+        /// <summary>
+        /// The OnElementChanged
+        /// </summary>
+        /// <param name="e">The e<see cref="ElementChangedEventArgs{Slider}"/></param>
+        protected override void OnElementChanged(ElementChangedEventArgs<Slider> e)
+        {
+            base.OnElementChanged(e);
+
+            if (Control != null)
+            {
+                Control.Touch += Control_Touch;
+            }
         }
     }
 }

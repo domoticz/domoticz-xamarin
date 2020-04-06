@@ -1,17 +1,21 @@
 ﻿using NL.HNOGames.Domoticz.Data;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NL.HNOGames.Domoticz.Helpers
 {
+    /// <summary>
+    /// Defines the <see cref="ViewHelper" />
+    /// </summary>
     public static class ViewHelper
     {
+        #region Public
+
         /// <summary>
         /// Dynamicly determine the height of a table row
         /// </summary>
+        /// <param name="mDeviceInfo">The mDeviceInfo<see cref="Models.Device"/></param>
+        /// <param name="dashboard">The dashboard<see cref="Boolean"/></param>
+        /// <returns>The <see cref="int"/></returns>
         public static int GetTemplateHeight(Models.Device mDeviceInfo, Boolean dashboard)
         {
             int oReturnvalue = 130;
@@ -74,15 +78,17 @@ namespace NL.HNOGames.Domoticz.Helpers
                     case ConstantValues.Device.Type.Value.BLINDINVERTED:
                     case ConstantValues.Device.Type.Value.BLINDVENETIAN:
                     case ConstantValues.Device.Type.Value.BLINDVENETIANUS:
-                            oReturnvalue = 130;
+                        oReturnvalue = 130;
                         break;
                 }
             }
 
-            if(dashboard && !App.AppSettings.ShowExtraData)
+            if (dashboard && !App.AppSettings.ShowExtraData)
                 oReturnvalue = oReturnvalue - 30;
 
             return oReturnvalue;
         }
+
+        #endregion
     }
 }

@@ -56,7 +56,7 @@ namespace NL.HNOGames.Domoticz.iOS
             ZXing.Net.Mobile.Forms.iOS.Platform.Init();
             Plugin.InputKit.Platforms.iOS.Config.Init();
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
-
+            Google.MobileAds.MobileAds.Configure("ca-app-pub-2210179934394995~1038717065");
             SlideOverKit.iOS.SlideOverKit.Init();
             Plugin.InputKit.Platforms.iOS.Config.Init();
             Rg.Plugins.Popup.Popup.Init();

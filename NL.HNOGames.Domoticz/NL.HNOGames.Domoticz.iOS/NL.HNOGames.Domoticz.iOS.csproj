@@ -804,6 +804,12 @@
     <PackageReference Include="Rg.Plugins.Popup">
       <Version>1.2.0.223</Version>
     </PackageReference>
+    <PackageReference Include="Shiny.Core">
+      <Version>1.1.0.1473</Version>
+    </PackageReference>
+    <PackageReference Include="Shiny.Locations">
+      <Version>1.1.0.1473</Version>
+    </PackageReference>
     <PackageReference Include="SlideOverKit">
       <Version>2.1.6.2</Version>
     </PackageReference>

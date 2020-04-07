@@ -3,6 +3,7 @@ using UIKit;
 using System;
 using UserNotifications;
 using Plugin.FirebasePushNotification;
+using NL.HNOGames.Domoticz.Service;
 
 namespace NL.HNOGames.Domoticz.iOS
 {
@@ -62,6 +63,8 @@ namespace NL.HNOGames.Domoticz.iOS
             Rg.Plugins.Popup.Popup.Init();
             OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();
             XamEffects.iOS.Effects.Init();
+            Shiny.iOSShinyHost.Init(new MyShinyStartup());
+
             FirebasePushNotificationManager.Initialize(launchOptions, true);
 
             application = new App();

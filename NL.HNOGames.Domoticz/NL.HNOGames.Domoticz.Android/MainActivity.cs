@@ -11,6 +11,7 @@ using NL.HNOGames.Domoticz.Droid.Helpers;
 using Plugin.Permissions;
 using Android.Runtime;
 using Firebase;
+using Shiny;
 
 namespace NL.HNOGames.Domoticz.Droid
 {
@@ -58,7 +59,8 @@ namespace NL.HNOGames.Domoticz.Droid
         {
             PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-            global::ZXing.Net.Mobile.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults); 
+            global::ZXing.Net.Mobile.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            AndroidShinyHost.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 

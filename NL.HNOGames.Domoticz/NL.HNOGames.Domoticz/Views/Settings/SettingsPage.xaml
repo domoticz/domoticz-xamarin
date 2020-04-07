@@ -467,7 +467,7 @@
                             </ViewCell>
                         </TableSection>
 
-                        <!--<TableSection Title="{resources:Translate title_geofence}">
+                        <TableSection Title="{resources:Translate title_geofence}">
                             <ViewCell>
                                 <StackLayout
                                     HorizontalOptions="FillAndExpand"
@@ -495,7 +495,7 @@
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
                             </ViewCell>
-                        </TableSection>-->
+                        </TableSection>
 
                         <TableSection Title="{resources:Translate category_QRCode}">
                             <ViewCell Tapped="btnQRCode_Clicked">

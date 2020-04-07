@@ -599,6 +599,10 @@ namespace NL.HNOGames.Domoticz.Helpers
         {
             get
             {
+#if DEBUG
+                return true;
+#endif
+
                 if (Xamarin.Forms.Device.RuntimePlatform == Xamarin.Forms.Device.Android)
                     return true;//only support paid/premium for iOS for now
                 return AppSettings.GetValueOrDefault(PremiumSettingsKey, false);

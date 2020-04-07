@@ -439,7 +439,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             if (App.AppSettings.PremiumBought)
                 await Navigation.PushAsync(new GeofenceSettingsPage());
             else
-                App.ShowToast(AppResources.Speech + " " + AppResources.premium_feature);
+                App.ShowToast(AppResources.geofence + " " + AppResources.premium_feature);
         }
 
         /// <summary>

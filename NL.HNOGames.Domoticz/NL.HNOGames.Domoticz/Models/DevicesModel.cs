@@ -290,7 +290,11 @@ namespace NL.HNOGames.Domoticz.Models
                         dataText += ", " + AppResources.rainrate + ": " + this.RainRate + " mm/h";
                     if (string.IsNullOrEmpty(dataText))
                         dataText = Data;
-                    return string.Format("{0}: {1}", AppResources.status, dataText);
+
+                    if (!dataText.StartsWith(AppResources.usage) && !dataText.StartsWith(AppResources.direction))
+                        return string.Format("{0}: {1}", AppResources.status, dataText);
+                    else
+                        return dataText;
                 }
                 catch (Exception ex)
                 {

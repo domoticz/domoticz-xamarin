@@ -47,70 +47,69 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout
-                HorizontalOptions="FillAndExpand"
-                Orientation="Vertical"
-                VerticalOptions="StartAndExpand">
-                <StackLayout.Padding>
-                    <OnIdiom x:TypeArguments="Thickness">
-                        <OnIdiom.Phone>20,20,20,20</OnIdiom.Phone>
-                        <OnIdiom.Tablet>150,30,150,30</OnIdiom.Tablet>
-                    </OnIdiom>
-                </StackLayout.Padding>
-                <StackLayout
-                    HorizontalOptions="FillAndExpand"
-                    Orientation="Horizontal"
-                    VerticalOptions="StartAndExpand">
-                    <StackLayout
-                        HorizontalOptions="StartAndExpand"
-                        Orientation="Vertical"
-                        VerticalOptions="Center">
-                        <Label
-                            HorizontalOptions="Start"
-                            Style="{StaticResource SettingsDetailType}"
-                            Text="{resources:Translate debug_switch_summary_on}"
-                            VerticalOptions="CenterAndExpand" />
-                    </StackLayout>
-                    <Switch
-                        x:Name="swEnableDebugging"
-                        HorizontalOptions="End"
-                        VerticalOptions="Center" />
-                </StackLayout>
-                <StackLayout
-                    HorizontalOptions="FillAndExpand"
-                    Orientation="Horizontal"
-                    VerticalOptions="StartAndExpand">
-                    <StackLayout
-                        HorizontalOptions="StartAndExpand"
-                        Orientation="Vertical"
-                        VerticalOptions="Center">
-                        <Label
-                            HorizontalOptions="Start"
-                            Style="{StaticResource SettingsDetailType}"
-                            Text="Also log JSON results?"
-                            VerticalOptions="CenterAndExpand" />
-                    </StackLayout>
-                    <Switch
-                        x:Name="swEnableJSONDebugging"
-                        HorizontalOptions="End"
-                        VerticalOptions="Center" />
-                </StackLayout>
-
-                <Editor
-                    x:Name="txtInfo"
-                    BackgroundColor="{StaticResource CardBackgroundColor}"
-                    HorizontalOptions="FillAndExpand"
-                    Style="{StaticResource EditorType}"
-                    VerticalOptions="FillAndExpand">
-                    <Editor.Margin>
-                        <OnIdiom x:TypeArguments="Thickness">
-                            <OnIdiom.Phone>-20,20,-20,20</OnIdiom.Phone>
-                            <OnIdiom.Tablet>-150,30,-150,30</OnIdiom.Tablet>
-                        </OnIdiom>
-                    </Editor.Margin>
-                </Editor>
-            </StackLayout>
-        </ScrollView>
+        <TableView
+            HasUnevenRows="true"
+            Intent="Settings"
+            Style="{StaticResource TableViewType}">
+            <TableRoot>
+                <TableSection>
+                    <ViewCell>
+                        <StackLayout
+                            HorizontalOptions="FillAndExpand"
+                            Orientation="Horizontal"
+                            Style="{StaticResource SettingsRowStackLayout}"
+                            VerticalOptions="StartAndExpand">
+                            <StackLayout
+                                HorizontalOptions="StartAndExpand"
+                                Orientation="Vertical"
+                                VerticalOptions="Center">
+                                <Label
+                                    HorizontalOptions="Start"
+                                    Style="{StaticResource SettingsDetailType}"
+                                    Text="{resources:Translate debug_switch_summary_on}"
+                                    VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
+                            <Switch
+                                x:Name="swEnableDebugging"
+                                HorizontalOptions="End"
+                                VerticalOptions="Center" />
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout
+                            HorizontalOptions="FillAndExpand"
+                            Orientation="Horizontal"
+                            Style="{StaticResource SettingsRowStackLayout}"
+                            VerticalOptions="StartAndExpand">
+                            <StackLayout
+                                HorizontalOptions="StartAndExpand"
+                                Orientation="Vertical"
+                                VerticalOptions="Center">
+                                <Label
+                                    HorizontalOptions="Start"
+                                    Style="{StaticResource SettingsDetailType}"
+                                    Text="Also log JSON results?"
+                                    VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
+                            <Switch
+                                x:Name="swEnableJSONDebugging"
+                                HorizontalOptions="End"
+                                VerticalOptions="Center" />
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection Title="{resources:Translate category_debug}">
+                    <ViewCell>
+                        <Editor
+                            x:Name="txtInfo"
+                            Margin="20"
+                            BackgroundColor="{StaticResource CardBackgroundColor}"
+                            HorizontalOptions="FillAndExpand"
+                            Style="{StaticResource EditorType}"
+                            VerticalOptions="FillAndExpand" />
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
     </ContentPage.Content>
 </ContentPage>

@@ -1675,4 +1675,7 @@
   <data name="app_name" xml:space="preserve">
     <value>Domoticz</value>
   </data>
+  <data name="noSwitchSelected_explanation_Geofences" xml:space="preserve">
+    <value>For this geofence to have effect, a switch should be linked</value>
+  </data>
 </root>

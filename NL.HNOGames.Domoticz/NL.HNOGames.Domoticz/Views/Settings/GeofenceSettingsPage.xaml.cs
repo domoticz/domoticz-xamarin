@@ -1,9 +1,13 @@
 ﻿using NL.HNOGames.Domoticz.Controls;
+using NL.HNOGames.Domoticz.Models;
 using NL.HNOGames.Domoticz.Resources;
 using NL.HNOGames.Domoticz.Views.Dialog;
 using Rg.Plugins.Popup.Services;
+using Shiny;
+using Shiny.Locations;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace NL.HNOGames.Domoticz.Views.Settings
 {
@@ -17,12 +21,12 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// <summary>
         /// Defines the _oListSource
         /// </summary>
-        private readonly List<Models.GeofenceModel> _oListSource;
+        private List<Models.GeofenceModel> _oListSource;
 
         /// <summary>
         /// Defines the _oSelectedGeofenceCommand
         /// </summary>
-        private Models.GeofenceModel _oSelectedGeofenceCommand;
+        private GeofenceModel _oSelectedGeofenceCommand;
 
         #endregion
 
@@ -41,16 +45,12 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             swEnableGeofence.Toggled += (sender, args) =>
             {
                 App.AppSettings.GeofenceEnabled = swEnableGeofence.IsToggled;
-                if (swEnableGeofence.IsToggled)
-                {
-                    if (!ValidateGeofenceSupported())
-                        swEnableGeofence.IsToggled = false;
-                }
             };
 
             _oListSource = App.AppSettings.GeofenceCommands;
-            if (_oListSource != null)
-                listView.ItemsSource = _oListSource;
+            if (_oListSource == null)
+                _oListSource = new List<GeofenceModel>();
+            listView.ItemsSource = _oListSource;
         }
 
         #endregion
@@ -83,8 +83,23 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// Check if this feature is supported for your device
         /// </summary>
         /// <returns></returns>
-        private bool ValidateGeofenceSupported()
+        private async Task<bool> ValidateGeofenceSupportedAsync()
         {
+            try
+            {
+                var geofences = ShinyHost.Resolve<IGeofenceManager>();
+                var status = await geofences.RequestAccess();
+                if (status != AccessState.Available)
+                {
+                    App.AddLog("Permission denied for getting your location");
+                    App.ShowToast("Don't have the permission for getting your location, check your app permission settings.");
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                //Something went wrong
+            }
             return true;
         }
 
@@ -93,21 +108,38 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// </summary>
         /// <param name="sender">The sender<see cref="object"/></param>
         /// <param name="e">The e<see cref="EventArgs"/></param>
-        private void ToolbarItem_Activated(object sender, EventArgs e)
+        private async void ToolbarItem_Activated(object sender, EventArgs e)
         {
-            if (!ValidateGeofenceSupported())
+            if (!await ValidateGeofenceSupportedAsync())
             {
                 swEnableGeofence.IsToggled = false;
                 return;
             }
+            await Navigation.PushAsync(new LocationPickerPage(OnLocationChoosen));
         }
 
         /// <summary>
-        /// Create new Geofence object
+        /// On location choosen
         /// </summary>
-        /// <param name="GeofenceID">The GeofenceID<see cref="string"/></param>
-        private void AddNewRecord(string GeofenceID)
+        private void OnLocationChoosen(int radius, string address, Xamarin.Forms.Maps.Position location)
         {
+            if (location == null)
+                return;
+            if (string.IsNullOrEmpty(address))
+                address = $"{location.Latitude} {location.Longitude}";
+            var geofence = new GeofenceModel()
+            {
+                Id = address.GetHashCode().ToString(),
+                Name = address,
+                Latitude = location.Latitude,
+                Longitude = location.Longitude,
+                Enabled = true,
+            };
+
+            _oListSource.Add(geofence);
+
+            SaveAndRefresh();
+            App.ShowToast(AppResources.noSwitchSelected_explanation_Geofences);
         }
 
         /// <summary>

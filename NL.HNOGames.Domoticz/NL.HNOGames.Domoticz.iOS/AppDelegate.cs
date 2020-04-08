@@ -64,6 +64,7 @@ namespace NL.HNOGames.Domoticz.iOS
             OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();
             XamEffects.iOS.Effects.Init();
             Shiny.iOSShinyHost.Init(new MyShinyStartup());
+            Xamarin.FormsMaps.Init();
 
             FirebasePushNotificationManager.Initialize(launchOptions, true);
 

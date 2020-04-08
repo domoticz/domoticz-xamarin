@@ -7,7 +7,6 @@ using Plugin.Fingerprint;
 using Plugin.InAppBilling;
 using Plugin.CurrentActivity;
 using Android.Content;
-using NL.HNOGames.Domoticz.Droid.Helpers;
 using Plugin.Permissions;
 using Android.Runtime;
 using Firebase;
@@ -42,6 +41,7 @@ namespace NL.HNOGames.Domoticz.Droid
             OxyPlot.Xamarin.Forms.Platform.Android.PlotViewRenderer.Init();
             ZXing.Net.Mobile.Forms.Android.Platform.Init();
             XamEffects.Droid.Effects.Init();
+            Xamarin.FormsMaps.Init(this, savedInstanceState);
 
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;

@@ -28,6 +28,7 @@
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>location</string>
 		<string>remote-notification</string>
 	</array>
 	<key>UIRequiresFullScreen</key>
@@ -81,9 +82,5 @@
 	<string>Launch</string>
 	<key>MinimumOSVersion</key>
 	<string>11.0</string>
-  <key>UIBackgroundModes</key>
-  <array>
-    <string>location</string>
-  </array>
 </dict>
 </plist>

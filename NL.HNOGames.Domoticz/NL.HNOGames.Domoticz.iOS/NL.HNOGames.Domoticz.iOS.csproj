@@ -849,6 +849,9 @@
     <PackageReference Include="Xamarin.Forms.InputKit">
       <Version>3.2.2</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Forms.Maps">
+      <Version>4.5.0.530</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms.Visual.Material">
       <Version>4.5.0.530</Version>
     </PackageReference>

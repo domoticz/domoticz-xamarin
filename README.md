@@ -15,8 +15,7 @@ http://hnogames.nl/domoticz.html
 
 # Apple Store
 -----
-NOT YET.. We're beta testing!!!
-
+[![app-store](https://user-images.githubusercontent.com/14561640/78928798-8b15b380-7aa1-11ea-8677-7d1aaabb48c5.png)](https://www.domoticz.com/forum/viewtopic.php?f=36&t=17025)
 
 # Google Play Store
 -----

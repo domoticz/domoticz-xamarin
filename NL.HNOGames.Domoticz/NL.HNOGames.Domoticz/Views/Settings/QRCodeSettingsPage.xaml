@@ -155,7 +155,6 @@
                                                     </StackLayout>
                                                 </Grid>
                                             </StackLayout>
-                                            <BoxView Style="{StaticResource ListSeperator}" />
                                         </StackLayout>
                                     </custcontrol:CustomViewCell>
                                 </DataTemplate>

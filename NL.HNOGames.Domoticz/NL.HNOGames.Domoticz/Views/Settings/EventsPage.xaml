@@ -58,39 +58,26 @@
                     <DataTemplate>
                         <custcontrol:CustomViewCell>
                             <StackLayout
-                                Margin="0"
+                                Margin="20"
+                                Padding="0"
                                 HorizontalOptions="FillAndExpand"
-                                Orientation="Vertical"
+                                Orientation="Horizontal"
                                 VerticalOptions="StartAndExpand">
-                                <StackLayout.Padding>
-                                    <OnIdiom x:TypeArguments="Thickness">
-                                        <OnIdiom.Phone>20,10,20,10</OnIdiom.Phone>
-                                        <OnIdiom.Tablet>150,10,150,10</OnIdiom.Tablet>
-                                    </OnIdiom>
-                                </StackLayout.Padding>
                                 <StackLayout
                                     Margin="0"
                                     Padding="0"
                                     HorizontalOptions="FillAndExpand"
-                                    Orientation="Horizontal"
+                                    Orientation="Vertical"
                                     VerticalOptions="StartAndExpand">
-                                    <StackLayout
-                                        Margin="0"
-                                        Padding="0"
-                                        HorizontalOptions="FillAndExpand"
-                                        Orientation="Vertical"
-                                        VerticalOptions="StartAndExpand">
-                                        <Label Style="{StaticResource HeaderDarkType}" Text="{Binding Name}" />
-                                        <Label Style="{StaticResource DetailType}" Text="{Binding Data}" />
-                                    </StackLayout>
-                                    <Switch
-                                        x:Name="btnSwitch"
-                                        HorizontalOptions="End"
-                                        IsToggled="{Binding Enabled}"
-                                        Toggled="btnSwitch_Toggled"
-                                        VerticalOptions="CenterAndExpand" />
+                                    <Label Style="{StaticResource HeaderDarkType}" Text="{Binding Name}" />
+                                    <Label Style="{StaticResource DetailType}" Text="{Binding Data}" />
                                 </StackLayout>
-                                <BoxView Style="{StaticResource ListSeperator}" />
+                                <Switch
+                                    x:Name="btnSwitch"
+                                    HorizontalOptions="End"
+                                    IsToggled="{Binding Enabled}"
+                                    Toggled="btnSwitch_Toggled"
+                                    VerticalOptions="CenterAndExpand" />
                             </StackLayout>
                         </custcontrol:CustomViewCell>
                     </DataTemplate>

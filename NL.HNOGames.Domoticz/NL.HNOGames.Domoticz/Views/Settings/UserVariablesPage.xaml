@@ -69,7 +69,6 @@
                                 </StackLayout.Padding>
                                 <Label Style="{StaticResource HeaderDarkType}" Text="{Binding Name}" />
                                 <Label Style="{StaticResource DetailType}" Text="{Binding Data}" />
-                                <BoxView Style="{StaticResource ListSeperator}" />
                             </StackLayout>
                         </custcontrol:CustomViewCell>
                     </DataTemplate>

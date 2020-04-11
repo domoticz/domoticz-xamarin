@@ -47,7 +47,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                 App.AppSettings.GeofenceEnabled = swEnableGeofence.IsToggled;
             };
 
-            _oListSource = App.AppSettings.GeofenceCommands;
+            _oListSource = App.AppSettings.Geofences;
             if (_oListSource == null)
                 _oListSource = new List<GeofenceModel>();
             listView.ItemsSource = _oListSource;
@@ -160,7 +160,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// </summary>
         private void SaveAndRefresh()
         {
-            App.AppSettings.GeofenceCommands = _oListSource;
+            App.AppSettings.Geofences = _oListSource;
             listView.ItemsSource = null;
             listView.ItemsSource = _oListSource;
         }

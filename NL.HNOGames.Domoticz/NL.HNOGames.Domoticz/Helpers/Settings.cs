@@ -434,10 +434,10 @@ namespace NL.HNOGames.Domoticz.Helpers
         }
 
         /// <summary>
-        /// Gets or sets the GeofenceCommands
+        /// Gets or sets the Geofences
         /// Specify Geofence models
         /// </summary>
-        public List<GeofenceModel> GeofenceCommands
+        public List<GeofenceModel> Geofences
         {
             get
             {

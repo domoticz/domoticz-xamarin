@@ -3,6 +3,8 @@ using NL.HNOGames.Domoticz.ViewModels;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
 using Plugin.SpeechRecognition;
+using Shiny;
+using Shiny.Locations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -345,7 +347,7 @@ namespace NL.HNOGames.Domoticz.Views
         /// <summary>
         /// On Appearing of this screen
         /// </summary>
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
             if (_settingsOpened)
@@ -359,6 +361,37 @@ namespace NL.HNOGames.Domoticz.Views
                 _showQRCode = false;
             if (!App.AppSettings.SpeechEnabled)
                 _showSpeech = false;
+            await SetupGeofencesAsync();
+        }
+
+        /// <summary>
+        /// Setup geofences
+        /// </summary>
+        private async Task SetupGeofencesAsync()
+        {
+            if (App.AppSettings.GeofenceEnabled)
+            {
+                App.AddLog("Recreating all registed geofences");
+                var geofences = ShinyHost.Resolve<IGeofenceManager>();
+                await geofences.StopAllMonitoring();
+                foreach (var geofence in App.AppSettings.Geofences)
+                {
+                    if (geofence.Enabled)
+                    {
+                        App.AddLog($"Started monitoring for Geofence {geofence.Name}");
+                        await geofences.StartMonitoring(new GeofenceRegion(
+                               geofence.Id,
+                               new Position(geofence.Latitude, geofence.Longitude),
+                               Distance.FromMeters(geofence.Radius)
+                           )
+                        {
+                            NotifyOnEntry = true,
+                            NotifyOnExit = true,
+                            SingleUse = false
+                        });
+                    }
+                }
+            }
         }
     }
 }

@@ -112,6 +112,11 @@ namespace NL.HNOGames.Domoticz.Helpers
         private const string EnableGeofenceSettingsKey = "enable_geofence_settings_key2";
 
         /// <summary>
+        /// Defines the EnableGeofenceSettingsKey
+        /// </summary>
+        private const string EnableGeofenceNotificationsSettingsKey = "enable_geofence_notifications_settings_key2";
+
+        /// <summary>
         /// Defines the GeofenceSettingsKey
         /// </summary>
         private const string GeofenceSettingsKey = "geofence_settings_key2";
@@ -430,6 +435,22 @@ namespace NL.HNOGames.Domoticz.Helpers
             set
             {
                 AppSettings.AddOrUpdateValue(EnableGeofenceSettingsKey, value);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether GeofenceEnabled
+        /// Enable the Geofence feature
+        /// </summary>
+        public bool GeofenceNotificationsEnabled
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(EnableGeofenceNotificationsSettingsKey, false);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(EnableGeofenceNotificationsSettingsKey, value);
             }
         }
 

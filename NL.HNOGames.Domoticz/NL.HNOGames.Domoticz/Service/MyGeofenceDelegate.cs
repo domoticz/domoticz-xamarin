@@ -1,4 +1,7 @@
-﻿using Shiny.Locations;
+﻿using NL.HNOGames.Domoticz.Resources;
+using Plugin.LocalNotifications;
+using Shiny.Locations;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -26,6 +29,12 @@ namespace NL.HNOGames.Domoticz.Service
             {
                 App.AddLog("Geofence ID Found: " + geofenceId);
                 _ = await App.ApiService.HandleSwitch(geofence.SwitchIDX, geofence.SwitchPassword, state == GeofenceState.Entered ? 1 : 0, geofence.Value, geofence.IsScene);
+                if (App.AppSettings.GeofenceNotificationsEnabled)
+                {
+                    App.AddLog("Creating notification for : " + geofence.Name);
+                    CrossLocalNotifications.Current.Show(state == GeofenceState.Entered ? AppResources.geofence_location_entering.Replace("%1$s", geofence.Name) : AppResources.geofence_location_leaving.Replace("%1$s", geofence.Name),
+                        state == GeofenceState.Entered ? AppResources.geofence_location_entering_text : AppResources.geofence_location_leaving_text);
+                }
             }
             else
                 App.AddLog("Geofence ID not registered: " + geofenceId);

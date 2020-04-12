@@ -47,6 +47,12 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                 App.AppSettings.GeofenceEnabled = swEnableGeofence.IsToggled;
             };
 
+            swEnableGeofenceNotifications.IsToggled = App.AppSettings.GeofenceNotificationsEnabled;
+            swEnableGeofenceNotifications.Toggled += (sender, args) =>
+            {
+                App.AppSettings.GeofenceNotificationsEnabled = swEnableGeofenceNotifications.IsToggled;
+            };
+            
             _oListSource = App.AppSettings.Geofences;
             if (_oListSource == null)
                 _oListSource = new List<GeofenceModel>();

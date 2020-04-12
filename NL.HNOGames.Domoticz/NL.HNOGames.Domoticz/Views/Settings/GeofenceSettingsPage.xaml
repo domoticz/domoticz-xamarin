@@ -29,15 +29,14 @@
             </StackLayout>
         </AbsoluteLayout>
     </NavigationPage.TitleView>
-
     <ContentPage.ToolbarItems>
         <ToolbarItem
             Clicked="ToolbarItem_Activated"
             Order="Primary"
             Text="{resources:Translate add}" />
     </ContentPage.ToolbarItems>
-    <ContentPage.Content>
 
+    <ContentPage.Content>
         <TableView
             HasUnevenRows="true"
             Intent="Settings"
@@ -62,6 +61,28 @@
                             </StackLayout>
                             <Switch
                                 x:Name="swEnableGeofence"
+                                HorizontalOptions="End"
+                                VerticalOptions="Center" />
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout
+                            HorizontalOptions="FillAndExpand"
+                            Orientation="Horizontal"
+                            Style="{StaticResource SettingsRowStackLayout}"
+                            VerticalOptions="StartAndExpand">
+                            <StackLayout
+                                HorizontalOptions="StartAndExpand"
+                                Orientation="Vertical"
+                                VerticalOptions="Center">
+                                <Label
+                                    HorizontalOptions="Start"
+                                    Style="{StaticResource SettingsDetailType}"
+                                    Text="{resources:Translate description_geofence_notifications}"
+                                    VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
+                            <Switch
+                                x:Name="swEnableGeofenceNotifications"
                                 HorizontalOptions="End"
                                 VerticalOptions="Center" />
                         </StackLayout>

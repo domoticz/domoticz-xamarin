@@ -11,6 +11,7 @@ using Plugin.Permissions;
 using Android.Runtime;
 using Firebase;
 using Shiny;
+using Plugin.LocalNotifications;
 
 namespace NL.HNOGames.Domoticz.Droid
 {
@@ -42,7 +43,7 @@ namespace NL.HNOGames.Domoticz.Droid
             ZXing.Net.Mobile.Forms.Android.Platform.Init();
             XamEffects.Droid.Effects.Init();
             Xamarin.FormsMaps.Init(this, savedInstanceState);
-
+            LocalNotificationsImplementation.NotificationIconId = Resource.Mipmap.ic_launcher_round;
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 

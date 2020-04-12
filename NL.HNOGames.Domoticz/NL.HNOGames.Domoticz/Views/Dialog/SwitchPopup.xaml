@@ -1,85 +1,65 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
-<pages:PopupPage
-   x:Class="NL.HNOGames.Domoticz.Views.Dialog.SwitchPopup"
-   xmlns="http://xamarin.com/schemas/2014/forms"
-   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-   xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
-   xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
-   xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz">
-
-   <StackLayout
-      Margin="20,10,20,20"
-      Padding="20,10,20,20"
-      BackgroundColor="{StaticResource LightBackgroundColor}"
-      HorizontalOptions="FillAndExpand"
-      Opacity="1"
-      Orientation="Vertical"
-      VerticalOptions="Center">
-
-      <Label
-         x:Name="lvlTitle"
-         Margin="0,20,0,10"
-         Style="{StaticResource HeaderType}"
-         Text="Connect Switch" />
-      <ListView
-         x:Name="listView"
-         BackgroundColor="{DynamicResource LightBackgroundColor}"
-         HasUnevenRows="true"
-         ItemSelected="OnItemSelected"
-         VerticalOptions="FillAndExpand">
-         <ListView.ItemTemplate>
-            <DataTemplate>
-               <custcontrol:CustomViewCell RowHeight="75">
-                  <Grid Style="{StaticResource DashboardDeviceCardType}">
-                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="50" />
-                        <ColumnDefinition Width="*" />
-                     </Grid.ColumnDefinitions>
-                     <StackLayout
-                        Grid.Column="0"
-                        HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Center">
-                        <custcontrol:TintedCachedImage
-                           ErrorPlaceholder="ic_launcher.png"
-                           HeightRequest="30"
-                           Opacity="{Binding Opacity}"
-                           Source="{Binding Icon}"
-                           WidthRequest="30" />
-                     </StackLayout>
-                     <StackLayout
-                        Grid.Column="1"
-                        HorizontalOptions="FillAndExpand"
-                        Orientation="Vertical"
-                        VerticalOptions="CenterAndExpand">
-                        <StackLayout
-                           HorizontalOptions="FillAndExpand"
-                           Orientation="Horizontal"
-                           VerticalOptions="CenterAndExpand">
-                           <StackLayout
-                              Padding="0,10,0,0"
-                              HorizontalOptions="FillAndExpand"
-                              Orientation="Vertical"
-                              VerticalOptions="CenterAndExpand">
-                              <Label
-                                 LineBreakMode="TailTruncation"
-                                 Style="{StaticResource HeaderType}"
-                                 Text="{Binding Name}" />
-                           </StackLayout>
-                        </StackLayout>
-                     </StackLayout>
-                  </Grid>
-               </custcontrol:CustomViewCell>
-            </DataTemplate>
-         </ListView.ItemTemplate>
-      </ListView>
-
-      <custcontrol:ExtendedButton
-         x:Name="btnCancel"
-         Padding="20,0,20,0"
-         Clicked="btnCancel_Clicked"
-         HorizontalOptions="Fill"
-         IsEnabled="True"
-         Text="{resources:Translate cancel}" />
-   </StackLayout>
-</pages:PopupPage>
+<ContentPage
+    x:Class="NL.HNOGames.Domoticz.Views.Dialog.SwitchPopup"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    Title="Connect Switch"
+    ios:Page.UseSafeArea="true"
+    Style="{StaticResource ContentPageType}"
+    Visual="Material">
+    <ContentPage.Content>
+        <ListView
+            x:Name="listView"
+            BackgroundColor="{DynamicResource LightBackgroundColor}"
+            HasUnevenRows="true"
+            ItemSelected="OnItemSelected"
+            VerticalOptions="FillAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <custcontrol:CustomViewCell RowHeight="75">
+                        <Grid Style="{StaticResource DashboardDeviceCardType}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout
+                                Grid.Column="0"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Center">
+                                <custcontrol:TintedCachedImage
+                                    ErrorPlaceholder="ic_launcher.png"
+                                    HeightRequest="30"
+                                    Opacity="{Binding Opacity}"
+                                    Source="{Binding Icon}"
+                                    WidthRequest="30" />
+                            </StackLayout>
+                            <StackLayout
+                                Grid.Column="1"
+                                HorizontalOptions="FillAndExpand"
+                                Orientation="Vertical"
+                                VerticalOptions="CenterAndExpand">
+                                <StackLayout
+                                    HorizontalOptions="FillAndExpand"
+                                    Orientation="Horizontal"
+                                    VerticalOptions="CenterAndExpand">
+                                    <StackLayout
+                                        Padding="0,10,0,0"
+                                        HorizontalOptions="FillAndExpand"
+                                        Orientation="Vertical"
+                                        VerticalOptions="CenterAndExpand">
+                                        <Label
+                                            LineBreakMode="TailTruncation"
+                                            Style="{StaticResource HeaderType}"
+                                            Text="{Binding Name}" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </Grid>
+                    </custcontrol:CustomViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

@@ -133,6 +133,10 @@
                                                                     Lines="2"
                                                                     Style="{StaticResource DetailType}"
                                                                     Text="{Binding SwitchDescription}" />
+                                                                <custcontrol:MultiLineLabel
+                                                                    LineBreakMode="TailTruncation"
+                                                                    Style="{StaticResource DetailSmallType}"
+                                                                    Text="{Binding RadiusDescription}" />
                                                             </StackLayout>
                                                             <StackLayout
                                                                 Margin="0,-5,5,0"

@@ -77,11 +77,22 @@ namespace NL.HNOGames.Domoticz.Models
         /// <summary>
         /// Gets the SwitchDescription
         /// </summary>
-        public String SwitchDescription
+        public string SwitchDescription
         {
             get
             {
                 return string.IsNullOrEmpty(SwitchName) ? AppResources.connectedSwitch + ": -" : AppResources.connectedSwitch + ": " + SwitchName;
+            }
+        }
+
+        /// <summary>
+        /// Gets the RadiusDescription
+        /// </summary>
+        public string RadiusDescription
+        {
+            get
+            {
+                return AppResources.radius + ": " + Radius;
             }
         }
 

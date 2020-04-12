@@ -5,20 +5,39 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-    Title="Connect Switch"
     ios:Page.UseSafeArea="true"
     Style="{StaticResource ContentPageType}"
     Visual="Material">
+    <NavigationPage.TitleView>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout
+                x:Name="titleLayout"
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                Orientation="Horizontal"
+                Spacing="0"
+                VerticalOptions="Center">
+                <Label
+                    x:Name="title"
+                    HorizontalTextAlignment="Start"
+                    Style="{DynamicResource TitleStyle}"
+                    Text="Connect Switch"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center" />
+            </StackLayout>
+        </AbsoluteLayout>
+    </NavigationPage.TitleView>
+
     <ContentPage.Content>
         <ListView
             x:Name="listView"
-            BackgroundColor="{DynamicResource LightBackgroundColor}"
-            HasUnevenRows="true"
+            HasUnevenRows="False"
             ItemSelected="OnItemSelected"
+            RowHeight="75"
             VerticalOptions="FillAndExpand">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <custcontrol:CustomViewCell RowHeight="75">
+                    <custcontrol:CustomViewCell>
                         <Grid Style="{StaticResource DashboardDeviceCardType}">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="50" />
@@ -37,6 +56,7 @@
                             </StackLayout>
                             <StackLayout
                                 Grid.Column="1"
+                                Margin="20"
                                 HorizontalOptions="FillAndExpand"
                                 Orientation="Vertical"
                                 VerticalOptions="CenterAndExpand">

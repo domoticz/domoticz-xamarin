@@ -120,9 +120,9 @@ namespace NL.HNOGames.Domoticz.Views
             if (result == AppResources.favorite)
                 await SetFavorite(item);
             else if (result == AppResources.button_status_log)
-                await PopupNavigation.Instance.PushAsync(new LogsPopup(tempDevice));
+                await Navigation.PushAsync(new LogsPopup(tempDevice));
             else if (result == AppResources.button_status_timer)
-                await PopupNavigation.Instance.PushAsync(new TimersPopup(tempDevice));
+                await Navigation.PushAsync(new TimersPopup(tempDevice));
             listView.SelectedItem = null;
         }
 

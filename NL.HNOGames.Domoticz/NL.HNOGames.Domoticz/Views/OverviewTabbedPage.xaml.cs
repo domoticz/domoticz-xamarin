@@ -360,6 +360,7 @@ namespace NL.HNOGames.Domoticz.Views
         /// <param name="NFCId">The NFCId<see cref="string"/></param>
         private async void processNFC(string NFCId)
         {
+            App.HideLoading();
             var nfcTag = App.AppSettings.NFCTags.FirstOrDefault(o => o.Id == NFCId);
             if (nfcTag != null && nfcTag.Enabled)
             {
@@ -457,7 +458,11 @@ namespace NL.HNOGames.Domoticz.Views
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            CrossNFC.Current.StopListening();
+            try
+            {
+                CrossNFC.Current.StopListening();
+            }
+            catch (Exception) { }
         }
 
         /// <summary>

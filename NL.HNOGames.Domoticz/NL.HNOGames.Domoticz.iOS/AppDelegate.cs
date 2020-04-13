@@ -5,6 +5,7 @@ using UserNotifications;
 using CoreNFC;
 using Plugin.FirebasePushNotification;
 using NL.HNOGames.Domoticz.Service;
+using Plugin.NFC;
 
 namespace NL.HNOGames.Domoticz.iOS
 {

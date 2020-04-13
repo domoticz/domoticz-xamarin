@@ -218,7 +218,12 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            CrossNFC.Current.StopListening();
+
+            try
+            {
+                CrossNFC.Current.StopListening();
+            }
+            catch (Exception) { }
         }
 
         #endregion

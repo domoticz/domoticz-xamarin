@@ -37,6 +37,9 @@ namespace NL.HNOGames.Domoticz.Droid
             Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
+            CrossNFC.Init(this);
+            CrossNFC.OnNewIntent(Intent);
+
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
             CrossFingerprint.SetCurrentActivityResolver(() => CrossCurrentActivity.Current.Activity);
             Plugin.InputKit.Platforms.Droid.Config.Init(this, savedInstanceState);
@@ -49,7 +52,6 @@ namespace NL.HNOGames.Domoticz.Droid
             LocalNotificationsImplementation.NotificationIconId = Resource.Mipmap.ic_launcher_round;
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
-
             base.OnCreate(savedInstanceState);
 
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
@@ -57,7 +59,6 @@ namespace NL.HNOGames.Domoticz.Droid
 
             LoadApplication(new App());
             FirebaseApp.InitializeApp(this);
-            CrossNFC.OnNewIntent(Intent);
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)

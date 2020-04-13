@@ -75,7 +75,7 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
         /// <param name="e">The e<see cref="EventArgs"/></param>
         private void btnOK_Clicked(object sender, EventArgs e)
         {
-            PopupNavigation.Instance.PopAsync();
+            Navigation.PopAsync();
         }
 
         #endregion

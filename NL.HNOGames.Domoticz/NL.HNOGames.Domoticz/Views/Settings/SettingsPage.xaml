@@ -187,34 +187,6 @@
                         </TableSection>
 
                         <TableSection Title="{resources:Translate category_server}">
-                            <!--<ViewCell>
-                                <StackLayout
-                                    HorizontalOptions="FillAndExpand"
-                                    IsVisible="False"
-                                    Orientation="Horizontal"
-                                    Style="{StaticResource SettingsRowStackLayout}"
-                                    VerticalOptions="StartAndExpand">
-                                    <StackLayout
-                                        HorizontalOptions="StartAndExpand"
-                                        Orientation="Vertical"
-                                        VerticalOptions="Center">
-                                        <Label
-                                            HorizontalOptions="Start"
-                                            Style="{StaticResource SettingsDetailType}"
-                                            Text="{resources:Translate multi_server}"
-                                            VerticalOptions="CenterAndExpand" />
-                                        <Label
-                                            HorizontalOptions="Start"
-                                            Style="{StaticResource DetailSmallType}"
-                                            Text="{resources:Translate multi_server_settings}"
-                                            VerticalOptions="CenterAndExpand" />
-                                    </StackLayout>
-                                    <Switch
-                                        x:Name="swEnableMultiServer"
-                                        HorizontalOptions="End"
-                                        VerticalOptions="Center" />
-                                </StackLayout>
-                            </ViewCell>-->
                             <ViewCell Tapped="btnServerSetup_Clicked">
                                 <StackLayout
                                     HorizontalOptions="FillAndExpand"
@@ -319,9 +291,6 @@
                                         Style="{StaticResource PickerType}" />
                                 </StackLayout>
                             </ViewCell>
-                        </TableSection>
-
-                        <TableSection Title="{resources:Translate notification_screen_title}">
                             <ViewCell>
                                 <StackLayout
                                     HorizontalOptions="FillAndExpand"
@@ -335,7 +304,7 @@
                                         <Label
                                             HorizontalOptions="Start"
                                             Style="{StaticResource SettingsDetailType}"
-                                            Text="{resources:Translate enable_notifications_title}"
+                                            Text="{resources:Translate notification_screen_title}"
                                             VerticalOptions="CenterAndExpand" />
                                         <Label
                                             HorizontalOptions="Start"
@@ -349,9 +318,6 @@
                                         VerticalOptions="Center" />
                                 </StackLayout>
                             </ViewCell>
-                        </TableSection>
-
-                        <TableSection Title="{resources:Translate category_startup_security}">
                             <ViewCell>
                                 <StackLayout
                                     HorizontalOptions="FillAndExpand"
@@ -365,7 +331,7 @@
                                         <Label
                                             HorizontalOptions="Start"
                                             Style="{StaticResource SettingsDetailType}"
-                                            Text="{resources:Translate security_settings}"
+                                            Text="{resources:Translate category_startup_security}"
                                             VerticalOptions="CenterAndExpand" />
                                         <Label
                                             HorizontalOptions="Start"
@@ -379,9 +345,6 @@
                                         VerticalOptions="Center" />
                                 </StackLayout>
                             </ViewCell>
-                        </TableSection>
-
-                        <TableSection Title="{resources:Translate category_theme}">
                             <ViewCell>
                                 <StackLayout
                                     HorizontalOptions="FillAndExpand"
@@ -394,8 +357,12 @@
                                         VerticalOptions="Center">
                                         <Label
                                             HorizontalOptions="Start"
-                                            LineBreakMode="NoWrap"
                                             Style="{StaticResource SettingsDetailType}"
+                                            Text="{resources:Translate category_theme}"
+                                            VerticalOptions="CenterAndExpand" />
+                                        <Label
+                                            HorizontalOptions="Start"
+                                            Style="{StaticResource DetailSmallType}"
                                             Text="{resources:Translate set_dark_theme}"
                                             VerticalOptions="CenterAndExpand" />
                                     </StackLayout>
@@ -405,9 +372,7 @@
                                         VerticalOptions="Center" />
                                 </StackLayout>
                             </ViewCell>
-                        </TableSection>
 
-                        <TableSection Title="{resources:Translate cameraActivity_name}">
                             <ViewCell Tapped="BtnCameras_OnClicked">
                                 <StackLayout
                                     HorizontalOptions="FillAndExpand"
@@ -420,7 +385,6 @@
                                         VerticalOptions="Center">
                                         <Label
                                             HorizontalOptions="Start"
-                                            LineBreakMode="NoWrap"
                                             Style="{StaticResource SettingsDetailType}"
                                             Text="{resources:Translate cameraActivity_name}"
                                             VerticalOptions="CenterAndExpand" />
@@ -437,7 +401,7 @@
                             </ViewCell>
                         </TableSection>
 
-                        <TableSection Title="{resources:Translate category_Speech}">
+                        <TableSection Title="{resources:Translate category_advanced}">
                             <ViewCell Tapped="btnSpeechSettings_Clicked">
                                 <StackLayout
                                     HorizontalOptions="FillAndExpand"
@@ -450,9 +414,13 @@
                                         VerticalOptions="Center">
                                         <Label
                                             HorizontalOptions="Start"
-                                            LineBreakMode="NoWrap"
                                             Style="{StaticResource SettingsDetailType}"
                                             Text="{resources:Translate category_Speech}"
+                                            VerticalOptions="CenterAndExpand" />
+                                        <Label
+                                            HorizontalOptions="Start"
+                                            Style="{StaticResource DetailSmallType}"
+                                            Text="{resources:Translate speech_enable_settings}"
                                             VerticalOptions="CenterAndExpand" />
                                     </StackLayout>
                                     <custcontrol:TintedCachedImage
@@ -465,10 +433,8 @@
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
                             </ViewCell>
-                        </TableSection>
 
-                        <TableSection Title="{resources:Translate title_geofence}">
-                            <ViewCell>
+                            <ViewCell Tapped="btnGeofenceSettings_Clicked">
                                 <StackLayout
                                     HorizontalOptions="FillAndExpand"
                                     Orientation="Horizontal"
@@ -480,8 +446,12 @@
                                         VerticalOptions="Center">
                                         <Label
                                             HorizontalOptions="Start"
-                                            LineBreakMode="NoWrap"
                                             Style="{StaticResource SettingsDetailType}"
+                                            Text="{resources:Translate title_geofence}"
+                                            VerticalOptions="CenterAndExpand" />
+                                        <Label
+                                            HorizontalOptions="Start"
+                                            Style="{StaticResource DetailSmallType}"
                                             Text="{resources:Translate description_geofence}"
                                             VerticalOptions="CenterAndExpand" />
                                     </StackLayout>
@@ -495,10 +465,8 @@
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
                             </ViewCell>
-                        </TableSection>
 
-                        <TableSection Title="{resources:Translate nfc}">
-                            <ViewCell>
+                            <ViewCell Tapped="btnNFCSettings_Clicked">
                                 <StackLayout
                                     HorizontalOptions="FillAndExpand"
                                     Orientation="Horizontal"
@@ -510,8 +478,12 @@
                                         VerticalOptions="Center">
                                         <Label
                                             HorizontalOptions="Start"
-                                            LineBreakMode="NoWrap"
                                             Style="{StaticResource SettingsDetailType}"
+                                            Text="{resources:Translate nfc}"
+                                            VerticalOptions="CenterAndExpand" />
+                                        <Label
+                                            HorizontalOptions="Start"
+                                            Style="{StaticResource DetailSmallType}"
                                             Text="{resources:Translate nfc_enable_settings}"
                                             VerticalOptions="CenterAndExpand" />
                                     </StackLayout>
@@ -525,9 +497,7 @@
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
                             </ViewCell>
-                        </TableSection>
 
-                        <TableSection Title="{resources:Translate category_QRCode}">
                             <ViewCell Tapped="btnQRCode_Clicked">
                                 <StackLayout
                                     HorizontalOptions="FillAndExpand"
@@ -541,9 +511,13 @@
                                         VerticalOptions="Center">
                                         <Label
                                             HorizontalOptions="Start"
-                                            LineBreakMode="NoWrap"
                                             Style="{StaticResource SettingsDetailType}"
                                             Text="{resources:Translate category_QRCode}"
+                                            VerticalOptions="CenterAndExpand" />
+                                        <Label
+                                            HorizontalOptions="Start"
+                                            Style="{StaticResource DetailSmallType}"
+                                            Text="{resources:Translate qrcode_enable_settings}"
                                             VerticalOptions="CenterAndExpand" />
                                     </StackLayout>
                                     <custcontrol:TintedCachedImage
@@ -558,7 +532,7 @@
                             </ViewCell>
                         </TableSection>
 
-                        <TableSection Title="{resources:Translate category_advanced}">
+                        <TableSection Title="{resources:Translate timer_other}">
                             <ViewCell Tapped="btnShowLog_Clicked">
                                 <StackLayout
                                     HorizontalOptions="FillAndExpand"

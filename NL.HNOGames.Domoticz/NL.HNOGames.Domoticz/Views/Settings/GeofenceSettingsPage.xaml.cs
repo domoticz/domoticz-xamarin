@@ -2,7 +2,6 @@
 using NL.HNOGames.Domoticz.Models;
 using NL.HNOGames.Domoticz.Resources;
 using NL.HNOGames.Domoticz.Views.Dialog;
-using Rg.Plugins.Popup.Services;
 using Shiny;
 using Shiny.Locations;
 using System;
@@ -52,7 +51,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             {
                 App.AppSettings.GeofenceNotificationsEnabled = swEnableGeofenceNotifications.IsToggled;
             };
-            
+
             _oListSource = App.AppSettings.Geofences;
             if (_oListSource == null)
                 _oListSource = new List<GeofenceModel>();
@@ -140,12 +139,12 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                 Latitude = location.Latitude,
                 Longitude = location.Longitude,
                 Enabled = true,
+                Radius = radius,
             };
 
             _oListSource.Add(geofence);
-
-            SaveAndRefresh();
             App.ShowToast(AppResources.noSwitchSelected_explanation_Geofences);
+            SaveAndRefresh();
         }
 
         /// <summary>

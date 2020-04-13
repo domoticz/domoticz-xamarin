@@ -1,11 +1,6 @@
 ﻿using Acr.UserDialogs;
-using NL.HNOGames.Domoticz.Controls;
 using NL.HNOGames.Domoticz.Resources;
-using NL.HNOGames.Domoticz.Views.Dialog;
-using Rg.Plugins.Popup.Services;
-using Shiny;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Essentials;

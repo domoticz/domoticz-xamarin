@@ -31,52 +31,60 @@
     <ContentPage.Content>
         <ListView
             x:Name="listView"
-            HasUnevenRows="False"
+            HasUnevenRows="true"
             ItemSelected="OnItemSelected"
-            RowHeight="75"
+            SeparatorVisibility="None"
             VerticalOptions="FillAndExpand">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <custcontrol:CustomViewCell>
-                        <Grid Style="{StaticResource DashboardDeviceCardType}">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="50" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
+                        <StackLayout Spacing="0">
                             <StackLayout
-                                Grid.Column="0"
-                                HorizontalOptions="FillAndExpand"
-                                VerticalOptions="Center">
-                                <custcontrol:TintedCachedImage
-                                    ErrorPlaceholder="ic_launcher.png"
-                                    HeightRequest="30"
-                                    Opacity="{Binding Opacity}"
-                                    Source="{Binding Icon}"
-                                    WidthRequest="30" />
-                            </StackLayout>
-                            <StackLayout
-                                Grid.Column="1"
-                                Margin="20"
-                                HorizontalOptions="FillAndExpand"
-                                Orientation="Vertical"
-                                VerticalOptions="CenterAndExpand">
-                                <StackLayout
-                                    HorizontalOptions="FillAndExpand"
-                                    Orientation="Horizontal"
-                                    VerticalOptions="CenterAndExpand">
+                                Spacing="16"
+                                Style="{StaticResource RowStackLayout}"
+                                VerticalOptions="FillAndExpand">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
                                     <StackLayout
-                                        Padding="0,10,0,0"
+                                        Grid.Column="0"
+                                        HorizontalOptions="FillAndExpand"
+                                        VerticalOptions="CenterAndExpand">
+                                        <custcontrol:TintedCachedImage
+                                            ErrorPlaceholder="ic_launcher.png"
+                                            HeightRequest="30"
+                                            Opacity="{Binding Opacity}"
+                                            Source="{Binding Icon}"
+                                            WidthRequest="30" />
+                                    </StackLayout>
+                                    <StackLayout
+                                        Grid.Column="1"
                                         HorizontalOptions="FillAndExpand"
                                         Orientation="Vertical"
-                                        VerticalOptions="CenterAndExpand">
+                                        VerticalOptions="Center">
                                         <Label
                                             LineBreakMode="TailTruncation"
                                             Style="{StaticResource HeaderType}"
                                             Text="{Binding Name}" />
+                                        <custcontrol:MultiLineLabel
+                                            LineBreakMode="WordWrap"
+                                            Lines="2"
+                                            Style="{StaticResource DetailType}"
+                                            Text="{Binding DataDescription}" />
+                                        <Label
+                                            HorizontalOptions="Start"
+                                            IsVisible="{Binding ShowExtraData}"
+                                            LineBreakMode="TailTruncation"
+                                            Style="{StaticResource DetailSmallType}"
+                                            Text="{Binding LastUpdateDescription}"
+                                            VerticalOptions="End" />
                                     </StackLayout>
-                                </StackLayout>
+                                </Grid>
                             </StackLayout>
-                        </Grid>
+                            <BoxView Style="{StaticResource ListSeperator}" />
+                        </StackLayout>
                     </custcontrol:CustomViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

@@ -443,6 +443,19 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         }
 
         /// <summary>
+        /// The btnNFCSettings_Clicked
+        /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="EventArgs"/></param>
+        private async void btnNFCSettings_Clicked(object sender, EventArgs e)
+        {
+            if (App.AppSettings.PremiumBought)
+                await Navigation.PushAsync(new NFCSettingsPage());
+            else
+                App.ShowToast(AppResources.nfc + " " + AppResources.premium_feature);
+        }
+        
+        /// <summary>
         /// The pckrLanguages_SelectedIndexChanged
         /// </summary>
         /// <param name="sender">The sender<see cref="object"/></param>

@@ -92,6 +92,16 @@ namespace NL.HNOGames.Domoticz.Helpers
         private const string EnableQRCodeSettingsKey = "enable_qrcode_settings_key2";
 
         /// <summary>
+        /// Defines the EnableNFCSettingsKey
+        /// </summary>
+        private const string EnableNFCSettingsKey = "enable_nfc_settings_key2";
+
+        /// <summary>
+        /// Defines the NFCSettingsKey
+        /// </summary>
+        private const string NFCSettingsKey = "nfc_settings_key2";
+
+        /// <summary>
         /// Defines the QRCodesSettingsKey
         /// </summary>
         private const string QRCodesSettingsKey = "qrcode_settings_key2";
@@ -331,6 +341,21 @@ namespace NL.HNOGames.Domoticz.Helpers
         }
 
         /// <summary>
+        /// Gets or sets a value indicating whether NFCEnabled
+        /// Enable the NFC feature
+        /// </summary>
+        public bool NFCEnabled
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(EnableNFCSettingsKey, false);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(EnableNFCSettingsKey, value);
+            }
+        }
+        /// <summary>
         /// Gets or sets a value indicating whether QRCodeEnabled
         /// Enable the QRCode feature
         /// </summary>
@@ -347,9 +372,39 @@ namespace NL.HNOGames.Domoticz.Helpers
         }
 
         /// <summary>
-        /// Gets or sets the QRCodes
-        /// Specify QR Code objects
+        /// Gets or sets the NFCTags
+        /// Specify NFC Tags objects
         /// </summary>
+        public List<NFCModel> NFCTags
+        {
+            get
+            {
+                try
+                {
+                    string resultCache = AppSettings.GetValueOrDefault(NFCSettingsKey, string.Empty);
+                    if (!string.IsNullOrEmpty(resultCache))
+                    {
+                        var value = JsonConvert.DeserializeObject<List<NFCModel>>(resultCache);
+                        return value;
+                    }
+                    else
+                        return new List<NFCModel>();
+                }
+                catch (Exception) { }
+                return new List<NFCModel>();
+            }
+            set
+            {
+                if (value == null)
+                    return;
+                AppSettings.AddOrUpdateValue(NFCSettingsKey, JsonConvert.SerializeObject(value));
+            }
+        }
+        
+        /// <summary>
+         /// Gets or sets the QRCodes
+         /// Specify QR Code objects
+         /// </summary>
         public List<QRCodeModel> QRCodes
         {
             get

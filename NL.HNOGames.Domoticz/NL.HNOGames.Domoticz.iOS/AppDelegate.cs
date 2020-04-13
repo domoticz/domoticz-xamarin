@@ -2,6 +2,7 @@
 using UIKit;
 using System;
 using UserNotifications;
+using CoreNFC;
 using Plugin.FirebasePushNotification;
 using NL.HNOGames.Domoticz.Service;
 

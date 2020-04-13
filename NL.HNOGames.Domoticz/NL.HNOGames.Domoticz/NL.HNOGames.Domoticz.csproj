@@ -167,6 +167,7 @@
     <PackageReference Include="Plugin.FirebasePushNotification" Version="3.1.6" />
     <PackageReference Include="Plugin.InAppBilling" Version="2.0.0" />
     <PackageReference Include="Plugin.Multilingual" Version="1.0.2" />
+    <PackageReference Include="Plugin.NFC" Version="0.1.15" />
     <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
     <PackageReference Include="Plugin.SpeechRecognition" Version="1.0.0" />
     <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.2" />
@@ -362,6 +363,9 @@
     </Compile>
     <Compile Update="Views\Settings\LocationPickerPage.xaml.cs">
       <DependentUpon>LocationPickerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Settings\NFCSettingsPage.xaml.cs">
+      <DependentUpon>NFCSettingsPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

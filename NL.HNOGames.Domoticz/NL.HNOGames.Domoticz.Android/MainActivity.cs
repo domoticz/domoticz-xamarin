@@ -12,10 +12,13 @@ using Android.Runtime;
 using Firebase;
 using Shiny;
 using Plugin.LocalNotifications;
+using Android.Nfc;
+using Plugin.NFC;
 
 namespace NL.HNOGames.Domoticz.Droid
 {
     [Activity(Label = "@string/app_name", Icon = "@mipmap/ic_launcher", RoundIcon = "@mipmap/ic_launcher_round", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [IntentFilter(new[] { NfcAdapter.ActionNdefDiscovered }, Categories = new[] { "android.intent.category.DEFAULT" }, DataMimeType = "*/*")]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -54,6 +57,7 @@ namespace NL.HNOGames.Domoticz.Droid
 
             LoadApplication(new App());
             FirebaseApp.InitializeApp(this);
+            CrossNFC.OnNewIntent(Intent);
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
@@ -75,6 +79,7 @@ namespace NL.HNOGames.Domoticz.Droid
         {
             base.OnNewIntent(intent);
             FirebasePushNotificationManager.ProcessIntent(this, intent);
+            CrossNFC.OnNewIntent(intent);
         }
     }
 }

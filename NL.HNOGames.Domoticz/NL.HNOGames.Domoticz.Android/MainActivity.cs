@@ -7,14 +7,18 @@ using Plugin.Fingerprint;
 using Plugin.InAppBilling;
 using Plugin.CurrentActivity;
 using Android.Content;
-using NL.HNOGames.Domoticz.Droid.Helpers;
 using Plugin.Permissions;
 using Android.Runtime;
 using Firebase;
+using Shiny;
+using Plugin.LocalNotifications;
+using Android.Nfc;
+using Plugin.NFC;
 
 namespace NL.HNOGames.Domoticz.Droid
 {
     [Activity(Label = "@string/app_name", Icon = "@mipmap/ic_launcher", RoundIcon = "@mipmap/ic_launcher_round", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [IntentFilter(new[] { NfcAdapter.ActionNdefDiscovered }, Categories = new[] { "android.intent.category.DEFAULT" }, DataMimeType = "*/*")]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -33,6 +37,9 @@ namespace NL.HNOGames.Domoticz.Droid
             Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
+            CrossNFC.Init(this);
+            CrossNFC.OnNewIntent(Intent);
+
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
             CrossFingerprint.SetCurrentActivityResolver(() => CrossCurrentActivity.Current.Activity);
             Plugin.InputKit.Platforms.Droid.Config.Init(this, savedInstanceState);
@@ -41,10 +48,10 @@ namespace NL.HNOGames.Domoticz.Droid
             OxyPlot.Xamarin.Forms.Platform.Android.PlotViewRenderer.Init();
             ZXing.Net.Mobile.Forms.Android.Platform.Init();
             XamEffects.Droid.Effects.Init();
-
+            Xamarin.FormsMaps.Init(this, savedInstanceState);
+            LocalNotificationsImplementation.NotificationIconId = Resource.Mipmap.ic_launcher_round;
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
-
             base.OnCreate(savedInstanceState);
 
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
@@ -58,7 +65,8 @@ namespace NL.HNOGames.Domoticz.Droid
         {
             PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-            global::ZXing.Net.Mobile.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults); 
+            global::ZXing.Net.Mobile.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            AndroidShinyHost.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
@@ -72,6 +80,7 @@ namespace NL.HNOGames.Domoticz.Droid
         {
             base.OnNewIntent(intent);
             FirebasePushNotificationManager.ProcessIntent(this, intent);
+            CrossNFC.OnNewIntent(intent);
         }
     }
 }

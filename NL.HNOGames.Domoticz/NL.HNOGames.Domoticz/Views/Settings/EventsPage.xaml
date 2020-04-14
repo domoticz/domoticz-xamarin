@@ -45,57 +45,51 @@
     </NavigationPage.TitleView>
 
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
-            <ListView
-                x:Name="listView"
-                BackgroundColor="{DynamicResource LightBackgroundColor}"
-                HasUnevenRows="true"
-                ItemSelected="OnItemSelected"
-                RowHeight="80"
-                SeparatorVisibility="None"
-                VerticalOptions="FillAndExpand">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <custcontrol:CustomViewCell>
+        <ListView
+            x:Name="listView"
+            HasUnevenRows="true"
+            ItemSelected="OnItemSelected"
+            SeparatorVisibility="None"
+            VerticalOptions="FillAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <custcontrol:CustomViewCell>
+                        <StackLayout Spacing="0">
                             <StackLayout
-                                Margin="0"
-                                HorizontalOptions="FillAndExpand"
-                                Orientation="Vertical"
-                                VerticalOptions="StartAndExpand">
-                                <StackLayout.Padding>
-                                    <OnIdiom x:TypeArguments="Thickness">
-                                        <OnIdiom.Phone>20,10,20,10</OnIdiom.Phone>
-                                        <OnIdiom.Tablet>150,10,150,10</OnIdiom.Tablet>
-                                    </OnIdiom>
-                                </StackLayout.Padding>
+                                Orientation="Horizontal"
+                                Spacing="16"
+                                Style="{StaticResource RowStackLayout}"
+                                VerticalOptions="FillAndExpand">
                                 <StackLayout
                                     Margin="0"
                                     Padding="0"
                                     HorizontalOptions="FillAndExpand"
-                                    Orientation="Horizontal"
+                                    Orientation="Vertical"
                                     VerticalOptions="StartAndExpand">
-                                    <StackLayout
-                                        Margin="0"
-                                        Padding="0"
-                                        HorizontalOptions="FillAndExpand"
-                                        Orientation="Vertical"
-                                        VerticalOptions="StartAndExpand">
-                                        <Label Style="{StaticResource HeaderDarkType}" Text="{Binding Name}" />
-                                        <Label Style="{StaticResource DetailType}" Text="{Binding Data}" />
-                                    </StackLayout>
-                                    <Switch
-                                        x:Name="btnSwitch"
-                                        HorizontalOptions="End"
-                                        IsToggled="{Binding Enabled}"
-                                        Toggled="btnSwitch_Toggled"
-                                        VerticalOptions="CenterAndExpand" />
+                                    <Label
+                                        LineBreakMode="TailTruncation"
+                                        Style="{StaticResource HeaderType}"
+                                        Text="{Binding Name}" />
+                                    <custcontrol:MultiLineLabel
+                                        Margin="0,-10,0,0"
+                                        LineBreakMode="WordWrap"
+                                        Lines="2"
+                                        Style="{StaticResource DetailType}"
+                                        Text="{Binding Data}" />
                                 </StackLayout>
-                                <BoxView Style="{StaticResource ListSeperator}" />
+
+                                <Switch
+                                    x:Name="btnSwitch"
+                                    HorizontalOptions="End"
+                                    IsToggled="{Binding Enabled}"
+                                    Toggled="btnSwitch_Toggled"
+                                    VerticalOptions="CenterAndExpand" />
                             </StackLayout>
-                        </custcontrol:CustomViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+                            <BoxView Style="{StaticResource ListSeperator}" />
+                        </StackLayout>
+                    </custcontrol:CustomViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </ContentPage.Content>
 </ContentPage>

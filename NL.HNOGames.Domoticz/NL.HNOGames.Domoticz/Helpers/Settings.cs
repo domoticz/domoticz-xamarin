@@ -92,6 +92,16 @@ namespace NL.HNOGames.Domoticz.Helpers
         private const string EnableQRCodeSettingsKey = "enable_qrcode_settings_key2";
 
         /// <summary>
+        /// Defines the EnableNFCSettingsKey
+        /// </summary>
+        private const string EnableNFCSettingsKey = "enable_nfc_settings_key2";
+
+        /// <summary>
+        /// Defines the NFCSettingsKey
+        /// </summary>
+        private const string NFCSettingsKey = "nfc_settings_key2";
+
+        /// <summary>
         /// Defines the QRCodesSettingsKey
         /// </summary>
         private const string QRCodesSettingsKey = "qrcode_settings_key2";
@@ -110,6 +120,11 @@ namespace NL.HNOGames.Domoticz.Helpers
         /// Defines the EnableGeofenceSettingsKey
         /// </summary>
         private const string EnableGeofenceSettingsKey = "enable_geofence_settings_key2";
+
+        /// <summary>
+        /// Defines the EnableGeofenceSettingsKey
+        /// </summary>
+        private const string EnableGeofenceNotificationsSettingsKey = "enable_geofence_notifications_settings_key2";
 
         /// <summary>
         /// Defines the GeofenceSettingsKey
@@ -326,6 +341,21 @@ namespace NL.HNOGames.Domoticz.Helpers
         }
 
         /// <summary>
+        /// Gets or sets a value indicating whether NFCEnabled
+        /// Enable the NFC feature
+        /// </summary>
+        public bool NFCEnabled
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(EnableNFCSettingsKey, false);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(EnableNFCSettingsKey, value);
+            }
+        }
+        /// <summary>
         /// Gets or sets a value indicating whether QRCodeEnabled
         /// Enable the QRCode feature
         /// </summary>
@@ -342,9 +372,39 @@ namespace NL.HNOGames.Domoticz.Helpers
         }
 
         /// <summary>
-        /// Gets or sets the QRCodes
-        /// Specify QR Code objects
+        /// Gets or sets the NFCTags
+        /// Specify NFC Tags objects
         /// </summary>
+        public List<NFCModel> NFCTags
+        {
+            get
+            {
+                try
+                {
+                    string resultCache = AppSettings.GetValueOrDefault(NFCSettingsKey, string.Empty);
+                    if (!string.IsNullOrEmpty(resultCache))
+                    {
+                        var value = JsonConvert.DeserializeObject<List<NFCModel>>(resultCache);
+                        return value;
+                    }
+                    else
+                        return new List<NFCModel>();
+                }
+                catch (Exception) { }
+                return new List<NFCModel>();
+            }
+            set
+            {
+                if (value == null)
+                    return;
+                AppSettings.AddOrUpdateValue(NFCSettingsKey, JsonConvert.SerializeObject(value));
+            }
+        }
+        
+        /// <summary>
+         /// Gets or sets the QRCodes
+         /// Specify QR Code objects
+         /// </summary>
         public List<QRCodeModel> QRCodes
         {
             get
@@ -434,10 +494,26 @@ namespace NL.HNOGames.Domoticz.Helpers
         }
 
         /// <summary>
-        /// Gets or sets the GeofenceCommands
+        /// Gets or sets a value indicating whether GeofenceEnabled
+        /// Enable the Geofence feature
+        /// </summary>
+        public bool GeofenceNotificationsEnabled
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(EnableGeofenceNotificationsSettingsKey, false);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(EnableGeofenceNotificationsSettingsKey, value);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the Geofences
         /// Specify Geofence models
         /// </summary>
-        public List<GeofenceModel> GeofenceCommands
+        public List<GeofenceModel> Geofences
         {
             get
             {
@@ -599,6 +675,10 @@ namespace NL.HNOGames.Domoticz.Helpers
         {
             get
             {
+#if DEBUG
+                return true;
+#endif
+
                 if (Xamarin.Forms.Device.RuntimePlatform == Xamarin.Forms.Device.Android)
                     return true;//only support paid/premium for iOS for now
                 return AppSettings.GetValueOrDefault(PremiumSettingsKey, false);

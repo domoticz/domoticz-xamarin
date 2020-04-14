@@ -439,9 +439,22 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             if (App.AppSettings.PremiumBought)
                 await Navigation.PushAsync(new GeofenceSettingsPage());
             else
-                App.ShowToast(AppResources.Speech + " " + AppResources.premium_feature);
+                App.ShowToast(AppResources.geofence + " " + AppResources.premium_feature);
         }
 
+        /// <summary>
+        /// The btnNFCSettings_Clicked
+        /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="EventArgs"/></param>
+        private async void btnNFCSettings_Clicked(object sender, EventArgs e)
+        {
+            if (App.AppSettings.PremiumBought)
+                await Navigation.PushAsync(new NFCSettingsPage());
+            else
+                App.ShowToast(AppResources.nfc + " " + AppResources.premium_feature);
+        }
+        
         /// <summary>
         /// The pckrLanguages_SelectedIndexChanged
         /// </summary>

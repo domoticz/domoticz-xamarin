@@ -269,7 +269,11 @@ namespace NL.HNOGames.Domoticz.Models
                     if (this.Temp.HasValue)
                         dataText += !string.IsNullOrEmpty(dataText) ? ", " + AppResources.temp + ": " + this.Temp + " " + App.GetServerConfig().TempSign : AppResources.temp + ": " + this.Temp + " " + App.GetServerConfig().TempSign;
                     if (!string.IsNullOrEmpty(this.HumidityStatus))
+                    {
                         dataText += !string.IsNullOrEmpty(dataText) ? ", " + AppResources.humidity + ": " + this.HumidityStatus : AppResources.humidity + ": " + this.HumidityStatus;
+                        if (this.Humidity > 0)
+                            dataText += $" ({Humidity}%)";
+                    }
 
                     if (!string.IsNullOrEmpty(this.Speed))
                         dataText += !string.IsNullOrEmpty(dataText) ? ", " + AppResources.speed + ": " + this.Speed + " " + App.GetServerConfig().WindSign : AppResources.speed + ": " + this.Speed + " " + App.GetServerConfig().WindSign;
@@ -286,7 +290,11 @@ namespace NL.HNOGames.Domoticz.Models
                         dataText += ", " + AppResources.rainrate + ": " + this.RainRate + " mm/h";
                     if (string.IsNullOrEmpty(dataText))
                         dataText = Data;
-                    return string.Format("{0}: {1}", AppResources.status, dataText);
+
+                    if (!dataText.StartsWith(AppResources.usage) && !dataText.StartsWith(AppResources.direction))
+                        return string.Format("{0}: {1}", AppResources.status, dataText);
+                    else
+                        return dataText;
                 }
                 catch (Exception ex)
                 {

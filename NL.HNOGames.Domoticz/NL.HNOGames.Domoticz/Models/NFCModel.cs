@@ -4,34 +4,10 @@ using System;
 namespace NL.HNOGames.Domoticz.Models
 {
     /// <summary>
-    /// Defines the <see cref="GeofenceModel" />
+    /// Defines the <see cref="NFCModel" />
     /// </summary>
-    public class GeofenceModel
+    public class NFCModel
     {
-        #region Variables
-
-        /// <summary>
-        /// Defines the Radius
-        /// </summary>
-        public int Radius = 400;
-
-        /// <summary>
-        /// Defines the Latitude
-        /// </summary>
-        public double Latitude;
-
-        /// <summary>
-        /// Defines the Longitude
-        /// </summary>
-        public double Longitude;
-
-        /// <summary>
-        /// Defines the Address
-        /// </summary>
-        public String Address;
-
-        #endregion
-
         #region Properties
 
         /// <summary>
@@ -77,22 +53,11 @@ namespace NL.HNOGames.Domoticz.Models
         /// <summary>
         /// Gets the SwitchDescription
         /// </summary>
-        public string SwitchDescription
+        public String SwitchDescription
         {
             get
             {
                 return string.IsNullOrEmpty(SwitchName) ? AppResources.connectedSwitch + ": -" : AppResources.connectedSwitch + ": " + SwitchName;
-            }
-        }
-
-        /// <summary>
-        /// Gets the RadiusDescription
-        /// </summary>
-        public string RadiusDescription
-        {
-            get
-            {
-                return AppResources.radius + ": " + Radius;
             }
         }
 

@@ -86,7 +86,7 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
             }
 
             DeviceSelectedMethod?.Invoke(item, password, value);
-            await PopupNavigation.Instance.PopAsync();
+            await Navigation.PopAsync();
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
         /// <param name="e">The e<see cref="EventArgs"/></param>
         private void btnCancel_Clicked(object sender, EventArgs e)
         {
-            PopupNavigation.Instance.PopAsync();
+            Navigation.PopAsync();
         }
 
         #endregion

@@ -758,12 +758,14 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <AbsoluteLayout
-            x:Name="lyMain"
-            HorizontalOptions="FillAndExpand"
-            VerticalOptions="FillAndExpand">
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
             <ListView
                 x:Name="listView"
+                Grid.Row="0"
                 AbsoluteLayout.LayoutBounds="0,0,1,1"
                 AbsoluteLayout.LayoutFlags="All"
                 BackgroundColor="{DynamicResource LightBackgroundColor}"
@@ -780,8 +782,9 @@
                 VerticalOptions="FillAndExpand" />
             <custcontrol:AdMobView
                 x:Name="adView"
-                HeightRequest="70"
+                Grid.Row="1"
+                HeightRequest="90"
                 HorizontalOptions="FillAndExpand" />
-        </AbsoluteLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

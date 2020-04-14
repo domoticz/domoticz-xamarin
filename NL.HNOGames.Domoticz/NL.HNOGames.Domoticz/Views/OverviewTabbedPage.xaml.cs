@@ -1,8 +1,11 @@
 ﻿using NL.HNOGames.Domoticz.Resources;
 using NL.HNOGames.Domoticz.ViewModels;
+using Plugin.NFC;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
 using Plugin.SpeechRecognition;
+using Shiny;
+using Shiny.Locations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,6 +54,11 @@ namespace NL.HNOGames.Domoticz.Views
         /// Defines the _showQRCode
         /// </summary>
         private bool _showQRCode = true;
+
+        /// <summary>
+        /// Defines the _showNFC
+        /// </summary>
+        private bool _showNFC = true;
 
         /// <summary>
         /// Defines the _showSpeech
@@ -168,6 +176,35 @@ namespace NL.HNOGames.Domoticz.Views
         /// Check if this feature is supported for your device
         /// </summary>
         /// <returns></returns>
+        private bool ValidateNFCPermissions()
+        {
+            try
+            {
+                if (!CrossNFC.Current.IsAvailable)
+                {
+
+                    App.ShowToast(AppResources.nfc_not_supported);
+                    return false;
+                }
+
+                if (!CrossNFC.Current.IsEnabled)
+                {
+                    App.ShowToast("NFC Reader not enabled. Please turn it on in the settings.");
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                //Something went wrong
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Check if this feature is supported for your device
+        /// </summary>
+        /// <returns></returns>
         private async Task<bool> ValidateCameraPermissions()
         {
             try
@@ -233,6 +270,32 @@ namespace NL.HNOGames.Domoticz.Views
         }
 
         /// <summary>
+        /// Scan NFC
+        /// </summary>
+        private void tiNFC_Activated()
+        {
+            if (!App.AppSettings.NFCEnabled)
+                return;
+            if (ValidateNFCPermissions())
+            {
+                App.ShowLoading(AppResources.nfc_register);
+                CrossNFC.Current.OnMessageReceived += OnNFCMessageReceived;
+                CrossNFC.Current.OnTagDiscovered += OnNFCDiscovered;
+                CrossNFC.Current.StartListening();
+            }
+        }
+
+        private void OnNFCDiscovered(ITagInfo tagInfo, bool format)
+        {
+            OnNFCMessageReceived(tagInfo);
+        }
+
+        private void OnNFCMessageReceived(ITagInfo tagInfo)
+        {
+            processNFC(tagInfo.SerialNumber);
+        }
+
+        /// <summary>
         /// Scan QR Code
         /// </summary>
         private async void tiQRCode_Activated()
@@ -292,6 +355,29 @@ namespace NL.HNOGames.Domoticz.Views
         }
 
         /// <summary>
+        /// The processNFC
+        /// </summary>
+        /// <param name="NFCId">The NFCId<see cref="string"/></param>
+        private async void processNFC(string NFCId)
+        {
+            App.HideLoading();
+            var nfcTag = App.AppSettings.NFCTags.FirstOrDefault(o => o.Id == NFCId);
+            if (nfcTag != null && nfcTag.Enabled)
+            {
+                App.AddLog("NFC tag Found: " + NFCId);
+                App.ShowToast(AppResources.nfc + " " + nfcTag.Name);
+                _ = await App.ApiService.HandleSwitch(nfcTag.SwitchIDX, nfcTag.SwitchPassword, -1, nfcTag.Value,
+                nfcTag.IsScene);
+                App.SetMainPage();
+            }
+            else
+            {
+                App.AddLog("NFC tag not registered: " + NFCId);
+                App.ShowToast(nfcTag == null ? AppResources.nfc_tag_found : AppResources.enable_nfc);
+            }
+        }
+
+        /// <summary>
         /// The processQrId
         /// </summary>
         /// <param name="qrCodeId">The qrCodeId<see cref="string"/></param>
@@ -324,6 +410,8 @@ namespace NL.HNOGames.Domoticz.Views
             var actions = new List<string>();
             if (_showPlans)
                 actions.Add(AppResources.title_plans);
+            if (_showNFC)
+                actions.Add(AppResources.nfc);
             if (_showQRCode)
                 actions.Add(AppResources.qrcode);
             if (_showSpeech)
@@ -334,6 +422,8 @@ namespace NL.HNOGames.Domoticz.Views
                 OnShowPlans();
             else if (result == AppResources.qrcode)
                 tiQRCode_Activated();
+            else if (result == AppResources.nfc)
+                tiNFC_Activated();
             else if (result == AppResources.Speech)
                 tiSpeechCode_Activated();
             else if (result == AppResources.wizard_button_settings)
@@ -345,7 +435,7 @@ namespace NL.HNOGames.Domoticz.Views
         /// <summary>
         /// On Appearing of this screen
         /// </summary>
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
             if (_settingsOpened)
@@ -355,10 +445,54 @@ namespace NL.HNOGames.Domoticz.Views
             }
             else
                 _viewModel.RefreshPlansCommand.Execute(null);
-            if (!App.AppSettings.QRCodeEnabled)
-                _showQRCode = false;
-            if (!App.AppSettings.SpeechEnabled)
-                _showSpeech = false;
+
+            _showQRCode = App.AppSettings.QRCodeEnabled;
+            _showNFC = App.AppSettings.NFCEnabled;
+            _showSpeech = App.AppSettings.SpeechEnabled;
+            await SetupGeofencesAsync();
+        }
+
+        /// <summary>
+        /// On disappearing
+        /// </summary>
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            try
+            {
+                CrossNFC.Current.StopListening();
+            }
+            catch (Exception) { }
+        }
+
+        /// <summary>
+        /// Setup geofences
+        /// </summary>
+        private async Task SetupGeofencesAsync()
+        {
+            if (App.AppSettings.GeofenceEnabled)
+            {
+                App.AddLog("Recreating all registed geofences");
+                var geofences = ShinyHost.Resolve<IGeofenceManager>();
+                await geofences.StopAllMonitoring();
+                foreach (var geofence in App.AppSettings.Geofences)
+                {
+                    if (geofence.Enabled)
+                    {
+                        App.AddLog($"Started monitoring for Geofence {geofence.Name}");
+                        await geofences.StartMonitoring(new GeofenceRegion(
+                               geofence.Id,
+                               new Position(geofence.Latitude, geofence.Longitude),
+                               Distance.FromMeters(geofence.Radius)
+                           )
+                        {
+                            NotifyOnEntry = true,
+                            NotifyOnExit = true,
+                            SingleUse = false
+                        });
+                    }
+                }
+            }
         }
     }
 }

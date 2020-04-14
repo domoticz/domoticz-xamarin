@@ -172,11 +172,11 @@ namespace NL.HNOGames.Domoticz.Views
             if (result == AppResources.favorite)
                 await SetFavorite(item);
             else if (result == AppResources.button_status_notifications)
-                await PopupNavigation.Instance.PushAsync(new NotificationsPopup(item));
+                await Navigation.PushAsync(new NotificationsPopup(item));
             else if (result == AppResources.button_status_timer)
-                await PopupNavigation.Instance.PushAsync(new TimersPopup(item));
+                await Navigation.PushAsync(new TimersPopup(item));
             else if (result == AppResources.button_status_log)
-                await PopupNavigation.Instance.PushAsync(new LogsPopup(item));
+                await Navigation.PushAsync(new LogsPopup(item));
             else if (result == AppResources.wizard_graph)
             {
                 switch (_viewModel.ScreenType)

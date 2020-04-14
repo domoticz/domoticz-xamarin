@@ -2,7 +2,10 @@
 using UIKit;
 using System;
 using UserNotifications;
+using CoreNFC;
 using Plugin.FirebasePushNotification;
+using NL.HNOGames.Domoticz.Service;
+using Plugin.NFC;
 
 namespace NL.HNOGames.Domoticz.iOS
 {
@@ -56,13 +59,36 @@ namespace NL.HNOGames.Domoticz.iOS
             ZXing.Net.Mobile.Forms.iOS.Platform.Init();
             Plugin.InputKit.Platforms.iOS.Config.Init();
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
-
+            Google.MobileAds.MobileAds.Configure("ca-app-pub-2210179934394995~1038717065");
             SlideOverKit.iOS.SlideOverKit.Init();
             Plugin.InputKit.Platforms.iOS.Config.Init();
             Rg.Plugins.Popup.Popup.Init();
             OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();
             XamEffects.iOS.Effects.Init();
+            Shiny.iOSShinyHost.Init(new MyShinyStartup());
+            Xamarin.FormsMaps.Init();
+
             FirebasePushNotificationManager.Initialize(launchOptions, true);
+
+            if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
+            {
+                // Ask the user for permission to get notifications on iOS 10.0+
+                UNUserNotificationCenter.Current.RequestAuthorization(
+                    UNAuthorizationOptions.Alert | UNAuthorizationOptions.Badge | UNAuthorizationOptions.Sound,
+                    (approved, error) => { });
+
+                // Watch for notifications while app is active
+                UNUserNotificationCenter.Current.Delegate = new UserNotificationCenterDelegate();
+            }
+            else if (UIDevice.CurrentDevice.CheckSystemVersion(8, 0))
+            {
+                // Ask the user for permission to get notifications on iOS 8.0+
+                var settings = UIUserNotificationSettings.GetSettingsForTypes(
+                    UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound,
+                    new NSSet());
+
+                UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
+            }
 
             application = new App();
             LoadApplication(application);

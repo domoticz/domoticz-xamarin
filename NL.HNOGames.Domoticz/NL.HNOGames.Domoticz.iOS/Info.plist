@@ -28,6 +28,7 @@
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>location</string>
 		<string>remote-notification</string>
 	</array>
 	<key>UIRequiresFullScreen</key>
@@ -52,6 +53,8 @@
 	<string>Can we use your location for geofences</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Can we use your calendar</string>
+	<key>NFCReaderUsageDescription</key>
+	<string>Toggle switches via NFC.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>Enable speech recognition in the app</string>
 	<key>NSMicrophoneUsageDescription</key>
@@ -64,11 +67,11 @@
 		<true/>
 	</dict>
 	<key>CFBundleShortVersionString</key>
-	<string>0.1.2</string>
+	<string>0.1.7</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>CFBundleVersion</key>
-	<string>101</string>
+	<string>109</string>
 	<key>XSAppIconAssets</key>
 	<string>Resources/Media.xcassets/AppIcons.appiconset</string>
 	<key>UIUserInterfaceStyle</key>

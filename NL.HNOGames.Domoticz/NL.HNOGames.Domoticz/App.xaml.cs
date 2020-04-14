@@ -326,33 +326,40 @@ namespace NL.HNOGames.Domoticz
         /// </summary>
         private static async void CheckFingerprint()
         {
-            if (AppSettings.EnableFingerprintSecurity)
+            try
             {
-                var result = await CrossFingerprint.Current.AuthenticateAsync(new AuthenticationRequestConfiguration(AppResources.category_startup_security, String.Empty)
+                if (AppSettings.EnableFingerprintSecurity)
                 {
-                    AllowAlternativeAuthentication = true,
-                    CancelTitle = AppResources.cancel,
-                    FallbackTitle = (Device.RuntimePlatform != Device.Android) ? AppResources.welcome_local_server_password : string.Empty,
-                });
-                switch (result.Status)
-                {
-                    case FingerprintAuthenticationResultStatus.Succeeded:
-                        break;
-                    case FingerprintAuthenticationResultStatus.FallbackRequested:
-                        var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password, inputType: InputType.Password);
-                        await Task.Delay(500);
-                        if (!r.Ok || string.IsNullOrEmpty(r.Text) ||
-                           (r.Text != AppSettings.ActiveServerSettings.LOCAL_SERVER_PASSWORD && r.Text != AppSettings.ActiveServerSettings.REMOTE_SERVER_PASSWORD))
-                        {
+                    AuthenticationRequestConfiguration conf =
+                        new AuthenticationRequestConfiguration(AppResources.category_startup_security,
+                        "Authenticate access to Domoticz.");
+                    var result = await CrossFingerprint.Current.AuthenticateAsync(conf);
+                    switch (result.Status)
+                    {
+                        case FingerprintAuthenticationResultStatus.Succeeded:
+                            break;
+                        case FingerprintAuthenticationResultStatus.FallbackRequested:
+                            var r = await UserDialogs.Instance.PromptAsync(AppResources.welcome_remote_server_password, inputType: InputType.Password);
+                            await Task.Delay(500);
+                            if (!r.Ok || string.IsNullOrEmpty(r.Text) ||
+                               (r.Text != AppSettings.ActiveServerSettings.LOCAL_SERVER_PASSWORD && r.Text != AppSettings.ActiveServerSettings.REMOTE_SERVER_PASSWORD))
+                            {
+                                App.AddLog("Not authorized for login");
+                                DependencyService.Get<ICloseApplication>().Close();//close the application
+                            }
+                            break;
+                        default:// All other options
                             App.AddLog("Not authorized for login");
                             DependencyService.Get<ICloseApplication>().Close();//close the application
-                        }
-                        break;
-                    default:// All other options
-                        App.AddLog("Not authorized for login");
-                        DependencyService.Get<ICloseApplication>().Close();//close the application
-                        break;
+                            break;
+                    }
                 }
+            }
+            catch(Exception ex)
+            {
+                App.AddLog(ex.Message);
+                App.AddLog("Not authorized for login");
+                DependencyService.Get<ICloseApplication>().Close();//close the application
             }
         }
 

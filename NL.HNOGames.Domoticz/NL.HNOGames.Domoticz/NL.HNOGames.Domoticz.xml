@@ -540,7 +540,7 @@
             Enable the Geofence feature
             </summary>
         </member>
-        <member name="P:NL.HNOGames.Domoticz.Helpers.Settings.GeofenceCommands">
+        <member name="P:NL.HNOGames.Domoticz.Helpers.Settings.Geofences">
             <summary>
             Specify Geofence models
             </summary>

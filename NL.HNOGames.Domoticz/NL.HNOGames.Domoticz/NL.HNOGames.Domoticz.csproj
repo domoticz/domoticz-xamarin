@@ -167,9 +167,12 @@
     <PackageReference Include="Plugin.FirebasePushNotification" Version="3.1.6" />
     <PackageReference Include="Plugin.InAppBilling" Version="2.0.0" />
     <PackageReference Include="Plugin.Multilingual" Version="1.0.2" />
+    <PackageReference Include="Plugin.NFC" Version="0.1.15" />
     <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
     <PackageReference Include="Plugin.SpeechRecognition" Version="1.0.0" />
-    <PackageReference Include="Rg.Plugins.Popup" Version="1.2.0.223" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.2" />
+    <PackageReference Include="Shiny.Core" Version="1.1.0.1473" />
+    <PackageReference Include="Shiny.Locations" Version="1.1.0.1473" />
     <PackageReference Include="SlideOverKit" Version="2.1.6.2" />
     <PackageReference Include="Splat" Version="9.4.1" />
     <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
@@ -182,9 +185,10 @@
     <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.11.982" />
-    <PackageReference Include="Xamarin.Forms" Version="4.5.0.530" />
+    <PackageReference Include="Xamarin.Forms" Version="4.5.0.617" />
     <PackageReference Include="Xamarin.Forms.InputKit" Version="3.2.2" />
-    <PackageReference Include="Xamarin.Forms.Visual.Material" Version="4.5.0.530" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="4.5.0.617" />
+    <PackageReference Include="Xamarin.Forms.Visual.Material" Version="4.5.0.617" />
     <PackageReference Include="XamEffects" Version="1.6.3" />
     <PackageReference Include="XLabs.Cryptography" Version="2.0.5782" />
     <PackageReference Include="ZXing.Net.Mobile" Version="2.4.1" />
@@ -356,6 +360,12 @@
     </Compile>
     <Compile Update="Views\Dialog\ColorPopup.xaml.cs">
       <DependentUpon>ColorPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Settings\LocationPickerPage.xaml.cs">
+      <DependentUpon>LocationPickerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Settings\NFCSettingsPage.xaml.cs">
+      <DependentUpon>NFCSettingsPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

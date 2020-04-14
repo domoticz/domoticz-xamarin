@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="NL.HNOGames.Domoticz.Views.Settings.GeofenceSettingsPage"
+    x:Class="NL.HNOGames.Domoticz.Views.Settings.NFCSettingsPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
+    xmlns:selector="clr-namespace:NL.HNOGames.Domoticz.ViewSelector;assembly=NL.HNOGames.Domoticz"
     ios:Page.UseSafeArea="true"
     Style="{StaticResource ContentPageType}"
     Visual="Material">
@@ -23,12 +24,13 @@
                     x:Name="title"
                     HorizontalTextAlignment="Start"
                     Style="{DynamicResource TitleStyle}"
-                    Text="{resources:Translate category_geofencing}"
+                    Text="{resources:Translate category_nfc}"
                     VerticalOptions="Center"
                     VerticalTextAlignment="Center" />
             </StackLayout>
         </AbsoluteLayout>
     </NavigationPage.TitleView>
+
     <ContentPage.ToolbarItems>
         <ToolbarItem
             Clicked="ToolbarItem_Activated"
@@ -37,6 +39,7 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
+
         <TableView
             HasUnevenRows="true"
             Intent="Settings"
@@ -56,40 +59,18 @@
                                 <Label
                                     HorizontalOptions="Start"
                                     Style="{StaticResource SettingsDetailType}"
-                                    Text="{resources:Translate description_geofence}"
+                                    Text="{resources:Translate nfc_enable_settings}"
                                     VerticalOptions="CenterAndExpand" />
                             </StackLayout>
                             <Switch
-                                x:Name="swEnableGeofence"
-                                HorizontalOptions="End"
-                                VerticalOptions="Center" />
-                        </StackLayout>
-                    </ViewCell>
-                    <ViewCell>
-                        <StackLayout
-                            HorizontalOptions="FillAndExpand"
-                            Orientation="Horizontal"
-                            Style="{StaticResource SettingsRowStackLayout}"
-                            VerticalOptions="StartAndExpand">
-                            <StackLayout
-                                HorizontalOptions="StartAndExpand"
-                                Orientation="Vertical"
-                                VerticalOptions="Center">
-                                <Label
-                                    HorizontalOptions="Start"
-                                    Style="{StaticResource SettingsDetailType}"
-                                    Text="{resources:Translate description_geofence_notifications}"
-                                    VerticalOptions="CenterAndExpand" />
-                            </StackLayout>
-                            <Switch
-                                x:Name="swEnableGeofenceNotifications"
+                                x:Name="swEnableNFC"
                                 HorizontalOptions="End"
                                 VerticalOptions="Center" />
                         </StackLayout>
                     </ViewCell>
                 </TableSection>
 
-                <TableSection Title="{resources:Translate category_geofencing}">
+                <TableSection Title="{resources:Translate category_nfc}">
                     <ViewCell>
                         <ListView
                             x:Name="listView"
@@ -133,10 +114,6 @@
                                                                     Lines="2"
                                                                     Style="{StaticResource DetailType}"
                                                                     Text="{Binding SwitchDescription}" />
-                                                                <custcontrol:MultiLineLabel
-                                                                    LineBreakMode="TailTruncation"
-                                                                    Style="{StaticResource DetailSmallType}"
-                                                                    Text="{Binding RadiusDescription}" />
                                                             </StackLayout>
                                                             <StackLayout
                                                                 Margin="0,-5,5,0"

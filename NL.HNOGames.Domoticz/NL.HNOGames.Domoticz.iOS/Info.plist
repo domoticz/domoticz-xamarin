@@ -53,9 +53,9 @@
 	<string>Can we use your location for geofences</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Can we use your calendar</string>
-  <key>NFCReaderUsageDescription</key>
-  <string>Toggle switches via NFC.</string>
-  <key>NSSpeechRecognitionUsageDescription</key>
+	<key>NFCReaderUsageDescription</key>
+	<string>Toggle switches via NFC.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>Enable speech recognition in the app</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>We need the microphone for speech recognition</string>
@@ -67,11 +67,11 @@
 		<true/>
 	</dict>
 	<key>CFBundleShortVersionString</key>
-	<string>0.1.4</string>
+	<string>0.1.7</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>CFBundleVersion</key>
-	<string>105</string>
+	<string>109</string>
 	<key>XSAppIconAssets</key>
 	<string>Resources/Media.xcassets/AppIcons.appiconset</string>
 	<key>UIUserInterfaceStyle</key>

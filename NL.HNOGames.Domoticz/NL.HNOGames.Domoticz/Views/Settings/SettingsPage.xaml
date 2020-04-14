@@ -434,7 +434,7 @@
                                 </StackLayout>
                             </ViewCell>
 
-                            <!--<ViewCell Tapped="btnGeofenceSettings_Clicked">
+                            <ViewCell Tapped="btnGeofenceSettings_Clicked">
                                 <StackLayout
                                     HorizontalOptions="FillAndExpand"
                                     Orientation="Horizontal"
@@ -496,7 +496,7 @@
                                         <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="btnNFCSettings_Clicked" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                            </ViewCell>-->
+                            </ViewCell>
 
                             <ViewCell Tapped="btnQRCode_Clicked">
                                 <StackLayout

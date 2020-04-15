@@ -278,7 +278,9 @@ namespace NL.HNOGames.Domoticz.Views
                 return;
             if (ValidateNFCPermissions())
             {
-                App.ShowLoading(AppResources.nfc_register);
+                if (Device.RuntimePlatform == Device.Android)
+                    App.ShowLoading(AppResources.nfc_register, AppResources.cancel, null);
+
                 CrossNFC.Current.OnMessageReceived += OnNFCMessageReceived;
                 CrossNFC.Current.OnTagDiscovered += OnNFCDiscovered;
                 CrossNFC.Current.StartListening();
@@ -360,7 +362,8 @@ namespace NL.HNOGames.Domoticz.Views
         /// <param name="NFCId">The NFCId<see cref="string"/></param>
         private async void processNFC(string NFCId)
         {
-            App.HideLoading();
+            if (Device.RuntimePlatform == Device.Android)
+                App.HideLoading();
             var nfcTag = App.AppSettings.NFCTags.FirstOrDefault(o => o.Id == NFCId);
             if (nfcTag != null && nfcTag.Enabled)
             {

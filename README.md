@@ -9,13 +9,14 @@ This project is a multiplatform app for Domoticz, implemented for iOS and Androi
 -----
 **Domoticz** is a very light weight home automation system that lets you monitor and configure various devices like: lights, switches, various sensors/meters like temperature, rainfall, wind, Ultraviolet (UV) radiation, electricity usage/production, gas consumption, water consumption and much more. Notifications/alerts can be sent to any mobile device.
 
-For Closed Beta registration or more information check:  
+For Beta registration or more information check:  
 http://hnogames.nl/domoticz.html
 
 
 # Apple Store
 -----
 [![app-store](https://user-images.githubusercontent.com/14561640/78928798-8b15b380-7aa1-11ea-8677-7d1aaabb48c5.png)](https://www.domoticz.com/forum/viewtopic.php?f=36&t=17025)
+
 
 # Google Play Store
 -----

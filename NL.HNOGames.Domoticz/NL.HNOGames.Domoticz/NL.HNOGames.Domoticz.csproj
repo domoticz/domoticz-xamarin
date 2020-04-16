@@ -175,7 +175,7 @@
     <PackageReference Include="Shiny.Locations" Version="1.1.0.1473" />
     <PackageReference Include="SlideOverKit" Version="2.1.6.2" />
     <PackageReference Include="Splat" Version="9.4.1" />
-    <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
+    <PackageReference Include="Xam.Plugin.Connectivity" Version="4.0.0.190-beta" />
     <PackageReference Include="Xam.Plugin.DeviceInfo" Version="4.1.1" />
     <PackageReference Include="Xam.Plugin.SimpleColorPicker" Version="1.0.5" />
     <PackageReference Include="Xam.Plugins.Notifier" Version="3.0.1" />

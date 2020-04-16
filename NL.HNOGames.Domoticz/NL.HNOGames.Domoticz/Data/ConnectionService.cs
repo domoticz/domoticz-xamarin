@@ -167,13 +167,13 @@ namespace NL.HNOGames.Domoticz.Data
                 }
                 else if (!string.IsNullOrEmpty(server.REMOTE_SERVER_USERNAME))
                 {
-                        var byteArray = Encoding.UTF8.GetBytes(
-                            server.REMOTE_SERVER_USERNAME +
-                            ":" +
-                            server.REMOTE_SERVER_PASSWORD);
-                        Client.DefaultRequestHeaders.Authorization =
-                            new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",
-                                Convert.ToBase64String(byteArray));
+                    var byteArray = Encoding.UTF8.GetBytes(
+                        server.REMOTE_SERVER_USERNAME +
+                        ":" +
+                        server.REMOTE_SERVER_PASSWORD);
+                    Client.DefaultRequestHeaders.Authorization =
+                        new System.Net.Http.Headers.AuthenticationHeaderValue("Basic",
+                            Convert.ToBase64String(byteArray));
                 }
             }
             else
@@ -380,9 +380,15 @@ namespace NL.HNOGames.Domoticz.Data
         /// <returns>The <see cref="Task{bool}"/></returns>
         private static async Task<bool> IsUserOnLocalWifiAsync(ServerSettings server)
         {
-            if (server != null && server.IS_LOCAL_SERVER_ADDRESS_DIFFERENT && !string.IsNullOrEmpty(server.LOCAL_SERVER_URL))
-                return await CrossConnectivity.Current.IsReachable(server.LOCAL_SERVER_URL, 1000);
-            return false;
+            if (server == null || !server.IS_LOCAL_SERVER_ADDRESS_DIFFERENT || string.IsNullOrEmpty(server.LOCAL_SERVER_URL))
+                return false;
+
+            var protocol = server.LOCAL_SERVER_PROTOCOL == 0 ? ConstantValues.Url.Protocol.HTTP : ConstantValues.Url.Protocol.HTTPS;
+            var localUri = $"{protocol}{server.LOCAL_SERVER_URL}:{server.LOCAL_SERVER_PORT}";
+            if (!string.IsNullOrEmpty(server.LOCAL_SERVER_DIRECTORY))
+                localUri += $"/{server.LOCAL_SERVER_DIRECTORY}";
+
+            return await CrossConnectivity.Current.IsRemoteReachable(new Uri(localUri), TimeSpan.FromSeconds(5));
         }
 
         #endregion

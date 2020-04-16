@@ -66,12 +66,8 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>CFBundleShortVersionString</key>
-	<string>0.1.10</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
-	<key>CFBundleVersion</key>
-	<string>120</string>
 	<key>XSAppIconAssets</key>
 	<string>Resources/Media.xcassets/AppIcons.appiconset</string>
 	<key>UIUserInterfaceStyle</key>
@@ -84,5 +80,9 @@
 	<string>Launch</string>
 	<key>MinimumOSVersion</key>
 	<string>11.0</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.1.11</string>
+	<key>CFBundleVersion</key>
+	<string>121</string>
 </dict>
 </plist>

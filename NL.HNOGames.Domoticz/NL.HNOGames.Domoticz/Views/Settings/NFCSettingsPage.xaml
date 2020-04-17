@@ -39,7 +39,6 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-
         <TableView
             HasUnevenRows="true"
             Intent="Settings"

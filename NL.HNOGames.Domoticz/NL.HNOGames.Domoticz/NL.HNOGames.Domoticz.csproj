@@ -162,6 +162,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="OxyPlot.Core" Version="2015.1.708-alpha" />
     <PackageReference Include="OxyPlot.Xamarin.Forms" Version="1.1.0-unstable0011" />
+    <PackageReference Include="Plugin.AppShortcuts" Version="1.0.0.3" />
     <PackageReference Include="Plugin.DeviceOrientation" Version="1.0.7" />
     <PackageReference Include="Plugin.Fingerprint" Version="2.1.1" />
     <PackageReference Include="Plugin.FirebasePushNotification" Version="3.1.6" />

@@ -1,5 +1,7 @@
 ﻿using NL.HNOGames.Domoticz.Resources;
 using NL.HNOGames.Domoticz.ViewModels;
+using Plugin.AppShortcuts;
+using Plugin.AppShortcuts.Icons;
 using Plugin.NFC;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
@@ -121,7 +123,7 @@ namespace NL.HNOGames.Domoticz.Views
         /// <summary>
         /// Speech Recognition
         /// </summary>
-        private async void tiSpeechCode_Activated()
+        public async void tiSpeechCode_Activated()
         {
             try
             {
@@ -272,7 +274,7 @@ namespace NL.HNOGames.Domoticz.Views
         /// <summary>
         /// Scan NFC
         /// </summary>
-        private void tiNFC_Activated()
+        public void tiNFC_Activated()
         {
             if (!App.AppSettings.NFCEnabled)
                 return;
@@ -300,7 +302,7 @@ namespace NL.HNOGames.Domoticz.Views
         /// <summary>
         /// Scan QR Code
         /// </summary>
-        private async void tiQRCode_Activated()
+        public async void tiQRCode_Activated()
         {
             if (!App.AppSettings.QRCodeEnabled)
                 return;
@@ -441,6 +443,8 @@ namespace NL.HNOGames.Domoticz.Views
         protected override async void OnAppearing()
         {
             base.OnAppearing();
+            SetupShortcut();
+
             if (_settingsOpened)
             {
                 _settingsOpened = false;
@@ -466,6 +470,63 @@ namespace NL.HNOGames.Domoticz.Views
                 CrossNFC.Current.StopListening();
             }
             catch (Exception) { }
+        }
+
+        /// <summary>
+        /// Setup shortcuts
+        /// </summary>
+        private async void SetupShortcut()
+        {
+            try
+            {
+                if (!CrossAppShortcuts.IsSupported)
+                    return;
+                var shortcuts = await CrossAppShortcuts.Current.GetShortcuts();
+                if (App.AppSettings.NFCEnabled)
+                {
+                    var item = shortcuts.FirstOrDefault(o => string.Equals(o.Uri, "stc://NL.HNOGames.Domoticz.NFC"));
+                    if (item == null)
+                    {
+                        App.AddLog("Setting up NFC shortcut");
+                        var nfcShortCut = new Shortcut
+                        {
+                            Label = AppResources.nfc,
+                            Description = AppResources.nfc_register,
+                            Icon = new UpdateIcon(),
+                            Uri = $"stc://NL.HNOGames.Domoticz.NFC"
+                        };
+                        await CrossAppShortcuts.Current.AddShortcut(nfcShortCut);
+                    }
+                }
+                if (App.AppSettings.QRCodeEnabled)
+                {
+                    App.AddLog("Setting up QR code shortcut");
+                    var qrcodeShortCut = new Shortcut
+                    {
+                        Label = AppResources.qrcode,
+                        Description = AppResources.qrcode_register,
+                        Icon = new UpdateIcon(),
+                        Uri = $"stc://NL.HNOGames.Domoticz.QRCode"
+                    };
+                    await CrossAppShortcuts.Current.AddShortcut(qrcodeShortCut);
+                }
+                if (App.AppSettings.SpeechEnabled)
+                {
+                    App.AddLog("Setting up Speech shortcut");
+                    var qrcodeShortCut = new Shortcut
+                    {
+                        Label = AppResources.Speech,
+                        Description = AppResources.Speech_register,
+                        Icon = new UpdateIcon(),
+                        Uri = $"stc://NL.HNOGames.Domoticz.Speech"
+                    };
+                    await CrossAppShortcuts.Current.AddShortcut(qrcodeShortCut);
+                }
+            }
+            catch (Exception ex)
+            {
+                App.AddLog("Error on creating shortcuts: " + ex.Message);
+            }
         }
 
         /// <summary>

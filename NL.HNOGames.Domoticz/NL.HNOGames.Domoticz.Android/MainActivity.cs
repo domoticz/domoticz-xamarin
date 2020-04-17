@@ -14,6 +14,7 @@ using Shiny;
 using Plugin.LocalNotifications;
 using Android.Nfc;
 using Plugin.NFC;
+using Plugin.AppShortcuts;
 
 namespace NL.HNOGames.Domoticz.Droid
 {
@@ -40,6 +41,7 @@ namespace NL.HNOGames.Domoticz.Droid
             CrossNFC.Init(this);
             CrossNFC.OnNewIntent(Intent);
 
+            CrossAppShortcuts.Current.Init();
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
             CrossFingerprint.SetCurrentActivityResolver(() => CrossCurrentActivity.Current.Activity);
             Plugin.InputKit.Platforms.Droid.Config.Init(this, savedInstanceState);

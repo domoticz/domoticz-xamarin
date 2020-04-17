@@ -76,6 +76,11 @@ namespace NL.HNOGames.Domoticz
         /// </summary>
         private static ConfigModel ServerConfig { get; set; }
 
+        /// <summary>
+        /// Overview tabbed page
+        /// </summary>
+        public static OverviewTabbedPage oOverviewTabbedPage;
+
         #endregion
 
         #region Public
@@ -213,7 +218,7 @@ namespace NL.HNOGames.Domoticz
                     ApiService.RefreshConfig();
                     GetServerConfig();
 
-                    var oOverviewTabbedPage = new OverviewTabbedPage
+                    oOverviewTabbedPage = new OverviewTabbedPage
                     {
                         BarBackgroundColor = Color.FromHex("#22272B"),
                         BarTextColor = Color.White,
@@ -439,6 +444,31 @@ namespace NL.HNOGames.Domoticz
                 catch (Exception)
                 { }
             };
+        }
+
+        /// <summary>
+        /// On app link request received
+        /// </summary>
+        protected override void OnAppLinkRequestReceived(Uri uri)
+        {
+            var url = uri.ToString();
+            if (url.ToLower().Contains("nfc"))
+            {
+                SetMainPage();
+                oOverviewTabbedPage.tiNFC_Activated();
+            }
+            else if (url.ToLower().Contains("qrcode"))
+            {
+                SetMainPage();
+                oOverviewTabbedPage.tiQRCode_Activated();
+            }
+            else if (url.ToLower().Contains("speech"))
+            {
+                SetMainPage();
+                oOverviewTabbedPage.tiSpeechCode_Activated();
+            }
+            else
+                base.OnAppLinkRequestReceived(uri);
         }
     }
 }

@@ -500,27 +500,35 @@ namespace NL.HNOGames.Domoticz.Views
                 }
                 if (App.AppSettings.QRCodeEnabled)
                 {
-                    App.AddLog("Setting up QR code shortcut");
-                    var qrcodeShortCut = new Shortcut
+                    var item = shortcuts.FirstOrDefault(o => string.Equals(o.Uri, "stc://NL.HNOGames.Domoticz.QRCode"));
+                    if (item == null)
                     {
-                        Label = AppResources.qrcode,
-                        Description = AppResources.qrcode_register,
-                        Icon = new UpdateIcon(),
-                        Uri = $"stc://NL.HNOGames.Domoticz.QRCode"
-                    };
-                    await CrossAppShortcuts.Current.AddShortcut(qrcodeShortCut);
+                        App.AddLog("Setting up QR code shortcut");
+                        var qrcodeShortCut = new Shortcut
+                        {
+                            Label = AppResources.qrcode,
+                            Description = AppResources.qrcode_register,
+                            Icon = new UpdateIcon(),
+                            Uri = $"stc://NL.HNOGames.Domoticz.QRCode"
+                        };
+                        await CrossAppShortcuts.Current.AddShortcut(qrcodeShortCut);
+                    }
                 }
                 if (App.AppSettings.SpeechEnabled)
                 {
-                    App.AddLog("Setting up Speech shortcut");
-                    var qrcodeShortCut = new Shortcut
+                    var item = shortcuts.FirstOrDefault(o => string.Equals(o.Uri, "stc://NL.HNOGames.Domoticz.Speech"));
+                    if (item == null)
                     {
-                        Label = AppResources.Speech,
-                        Description = AppResources.Speech_register,
-                        Icon = new UpdateIcon(),
-                        Uri = $"stc://NL.HNOGames.Domoticz.Speech"
-                    };
-                    await CrossAppShortcuts.Current.AddShortcut(qrcodeShortCut);
+                        App.AddLog("Setting up Speech shortcut");
+                        var speechShortcut = new Shortcut
+                        {
+                            Label = AppResources.Speech,
+                            Description = AppResources.Speech_register,
+                            Icon = new UpdateIcon(),
+                            Uri = $"stc://NL.HNOGames.Domoticz.Speech"
+                        };
+                        await CrossAppShortcuts.Current.AddShortcut(speechShortcut);
+                    }
                 }
             }
             catch (Exception ex)

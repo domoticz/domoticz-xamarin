@@ -539,7 +539,7 @@ namespace NL.HNOGames.Domoticz.Views
                     {
                         Label = AppResources.nfc,
                         Description = AppResources.nfc_register,
-                        Icon = new UpdateIcon(),
+                        Icon = new ShareIcon(),
                         Uri = $"stc://NL.HNOGames.Domoticz.NFC"
                     };
                     await CrossAppShortcuts.Current.AddShortcut(nfcShortCut);
@@ -551,7 +551,7 @@ namespace NL.HNOGames.Domoticz.Views
                     {
                         Label = AppResources.qrcode,
                         Description = AppResources.qrcode_register,
-                        Icon = new UpdateIcon(),
+                        Icon = new CapturePhotoIcon(),
                         Uri = $"stc://NL.HNOGames.Domoticz.QRCode"
                     };
                     await CrossAppShortcuts.Current.AddShortcut(qrcodeShortCut);
@@ -563,7 +563,7 @@ namespace NL.HNOGames.Domoticz.Views
                     {
                         Label = AppResources.Speech,
                         Description = AppResources.Speech_register,
-                        Icon = new UpdateIcon(),
+                        Icon = new AudioIcon(),
                         Uri = $"stc://NL.HNOGames.Domoticz.Speech"
                     };
                     await CrossAppShortcuts.Current.AddShortcut(speechShortcut);

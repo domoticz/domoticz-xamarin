@@ -22,56 +22,5 @@
             </ToolbarItem.Icon>
         </ToolbarItem>
 
-        <!--<ToolbarItem
-         x:Name="tiPlans"
-         Clicked="OnShowPlansClick"
-         Order="Primary"
-         Text="{resources:Translate title_plans}">
-         <ToolbarItem.Icon>
-            <OnPlatform
-               x:TypeArguments="FileImageSource"
-               Android="ic_home.png"
-               iOS="ic_home.png" />
-         </ToolbarItem.Icon>
-      </ToolbarItem>
-
-      <ToolbarItem
-         x:Name="tiQRCode"
-         Clicked="tiQRCode_Activated"
-         Order="Primary"
-         Text="{resources:Translate action_qrcode_scan}">
-         <ToolbarItem.Icon>
-            <OnPlatform
-               x:TypeArguments="FileImageSource"
-               Android="ic_qrcode.png"
-               iOS="ic_qrcode.png" />
-         </ToolbarItem.Icon>
-      </ToolbarItem>
-
-      <ToolbarItem
-         x:Name="tiSpeechCode"
-         Clicked="tiSpeechCode_Activated"
-         Order="Primary"
-         Text="{resources:Translate action_speech}">
-         <ToolbarItem.Icon>
-            <OnPlatform
-               x:TypeArguments="FileImageSource"
-               Android="ic_keyboard_voice.png"
-               iOS="ic_keyboard_voice.png" />
-         </ToolbarItem.Icon>
-      </ToolbarItem>
-
-      <ToolbarItem
-         Clicked="OnSettingsClick"
-         Order="Primary"
-         Text="{resources:Translate action_settings}">
-         <ToolbarItem.Icon>
-            <OnPlatform
-               x:TypeArguments="FileImageSource"
-               Android="ic_settings.png"
-               iOS="ic_settings.png" />
-         </ToolbarItem.Icon>
-      </ToolbarItem>-->
-
     </custcontrol:CustomTabbedPage.ToolbarItems>
 </custcontrol:CustomTabbedPage>

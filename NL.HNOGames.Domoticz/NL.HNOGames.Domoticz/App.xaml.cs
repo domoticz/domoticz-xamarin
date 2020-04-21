@@ -17,6 +17,7 @@ using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using static NL.HNOGames.Domoticz.Views.OverviewTabbedPage;
 using Device = Xamarin.Forms.Device;
 
 
@@ -203,7 +204,7 @@ namespace NL.HNOGames.Domoticz
         /// <summary>
         /// Setup mainpage
         /// </summary>
-        public static void SetMainPage()
+        public static void SetMainPage(StartWith? startWith = null)
         {
             try
             {
@@ -218,7 +219,7 @@ namespace NL.HNOGames.Domoticz
                     ApiService.RefreshConfig();
                     GetServerConfig();
 
-                    oOverviewTabbedPage = new OverviewTabbedPage
+                    oOverviewTabbedPage = new OverviewTabbedPage(startWith)
                     {
                         BarBackgroundColor = Color.FromHex("#22272B"),
                         BarTextColor = Color.White,
@@ -453,20 +454,11 @@ namespace NL.HNOGames.Domoticz
         {
             var url = uri.ToString();
             if (url.ToLower().Contains("nfc"))
-            {
-                SetMainPage();
-                oOverviewTabbedPage.tiNFC_Activated();
-            }
+                SetMainPage(StartWith.NFC);
             else if (url.ToLower().Contains("qrcode"))
-            {
-                SetMainPage();
-                oOverviewTabbedPage.tiQRCode_Activated();
-            }
+                SetMainPage(StartWith.QRCode);
             else if (url.ToLower().Contains("speech"))
-            {
-                SetMainPage();
-                oOverviewTabbedPage.tiSpeechCode_Activated();
-            }
+                SetMainPage(StartWith.Speech);
             else
                 base.OnAppLinkRequestReceived(uri);
         }

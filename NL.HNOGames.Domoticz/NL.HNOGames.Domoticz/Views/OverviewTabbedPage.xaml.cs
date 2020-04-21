@@ -25,6 +25,16 @@ namespace NL.HNOGames.Domoticz.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class OverviewTabbedPage
     {
+        /// <summary>
+        /// Starts with enum
+        /// </summary>
+        public enum StartWith
+        {
+            NFC,
+            QRCode,
+            Speech
+        }
+
         #region Variables
 
         /// <summary>
@@ -67,6 +77,11 @@ namespace NL.HNOGames.Domoticz.Views
         /// </summary>
         private bool _showSpeech = true;
 
+        /// <summary>
+        /// Starts with
+        /// </summary>
+        private StartWith? _start = null;
+
         #endregion
 
         #region Constructor & Destructor
@@ -78,6 +93,21 @@ namespace NL.HNOGames.Domoticz.Views
         {
             InitializeComponent();
 
+            BindingContext = _viewModel = new OverviewViewModel();
+            _viewModel.PlansLoadedMethod += () =>
+            {
+                if (_viewModel.Plans == null || _viewModel.Plans.Count <= 0)
+                    _showPlans = false;
+            };
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OverviewTabbedPage"/> class.
+        /// </summary>
+        public OverviewTabbedPage(StartWith? start)
+        {
+            InitializeComponent();
+            _start = start;
             BindingContext = _viewModel = new OverviewViewModel();
             _viewModel.PlansLoadedMethod += () =>
             {
@@ -457,6 +487,23 @@ namespace NL.HNOGames.Domoticz.Views
             _showNFC = App.AppSettings.NFCEnabled;
             _showSpeech = App.AppSettings.SpeechEnabled;
             await SetupGeofencesAsync();
+
+            if (_start != null)
+            {
+                switch (_start)
+                {
+                    case StartWith.NFC: 
+                        tiNFC_Activated(); 
+                        break;
+                    case StartWith.QRCode: 
+                        tiQRCode_Activated(); 
+                        break;
+                    case StartWith.Speech: 
+                        tiSpeechCode_Activated(); 
+                        break;
+                }
+            }
+            _start = null;//reset
         }
 
         /// <summary>
@@ -482,53 +529,44 @@ namespace NL.HNOGames.Domoticz.Views
                 if (!CrossAppShortcuts.IsSupported)
                     return;
                 var shortcuts = await CrossAppShortcuts.Current.GetShortcuts();
+                foreach (var s in shortcuts)
+                    await CrossAppShortcuts.Current.RemoveShortcut(s.ShortcutId);
+
                 if (App.AppSettings.NFCEnabled)
                 {
-                    var item = shortcuts.FirstOrDefault(o => string.Equals(o.Uri, "stc://NL.HNOGames.Domoticz.NFC"));
-                    if (item == null)
+                    App.AddLog("Setting up NFC shortcut");
+                    var nfcShortCut = new Shortcut
                     {
-                        App.AddLog("Setting up NFC shortcut");
-                        var nfcShortCut = new Shortcut
-                        {
-                            Label = AppResources.nfc,
-                            Description = AppResources.nfc_register,
-                            Icon = new UpdateIcon(),
-                            Uri = $"stc://NL.HNOGames.Domoticz.NFC"
-                        };
-                        await CrossAppShortcuts.Current.AddShortcut(nfcShortCut);
-                    }
+                        Label = AppResources.nfc,
+                        Description = AppResources.nfc_register,
+                        Icon = new UpdateIcon(),
+                        Uri = $"stc://NL.HNOGames.Domoticz.NFC"
+                    };
+                    await CrossAppShortcuts.Current.AddShortcut(nfcShortCut);
                 }
                 if (App.AppSettings.QRCodeEnabled)
                 {
-                    var item = shortcuts.FirstOrDefault(o => string.Equals(o.Uri, "stc://NL.HNOGames.Domoticz.QRCode"));
-                    if (item == null)
+                    App.AddLog("Setting up QR code shortcut");
+                    var qrcodeShortCut = new Shortcut
                     {
-                        App.AddLog("Setting up QR code shortcut");
-                        var qrcodeShortCut = new Shortcut
-                        {
-                            Label = AppResources.qrcode,
-                            Description = AppResources.qrcode_register,
-                            Icon = new UpdateIcon(),
-                            Uri = $"stc://NL.HNOGames.Domoticz.QRCode"
-                        };
-                        await CrossAppShortcuts.Current.AddShortcut(qrcodeShortCut);
-                    }
+                        Label = AppResources.qrcode,
+                        Description = AppResources.qrcode_register,
+                        Icon = new UpdateIcon(),
+                        Uri = $"stc://NL.HNOGames.Domoticz.QRCode"
+                    };
+                    await CrossAppShortcuts.Current.AddShortcut(qrcodeShortCut);
                 }
                 if (App.AppSettings.SpeechEnabled)
                 {
-                    var item = shortcuts.FirstOrDefault(o => string.Equals(o.Uri, "stc://NL.HNOGames.Domoticz.Speech"));
-                    if (item == null)
+                    App.AddLog("Setting up Speech shortcut");
+                    var speechShortcut = new Shortcut
                     {
-                        App.AddLog("Setting up Speech shortcut");
-                        var speechShortcut = new Shortcut
-                        {
-                            Label = AppResources.Speech,
-                            Description = AppResources.Speech_register,
-                            Icon = new UpdateIcon(),
-                            Uri = $"stc://NL.HNOGames.Domoticz.Speech"
-                        };
-                        await CrossAppShortcuts.Current.AddShortcut(speechShortcut);
-                    }
+                        Label = AppResources.Speech,
+                        Description = AppResources.Speech_register,
+                        Icon = new UpdateIcon(),
+                        Uri = $"stc://NL.HNOGames.Domoticz.Speech"
+                    };
+                    await CrossAppShortcuts.Current.AddShortcut(speechShortcut);
                 }
             }
             catch (Exception ex)

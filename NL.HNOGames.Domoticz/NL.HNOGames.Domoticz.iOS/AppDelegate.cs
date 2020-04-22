@@ -96,6 +96,16 @@ namespace NL.HNOGames.Domoticz.iOS
         }
 
         /// <summary>
+        /// Perform action for shortcut item
+        /// </summary>
+        public override void PerformActionForShortcutItem(UIApplication application, UIApplicationShortcutItem shortcutItem, UIOperationHandler completionHandler)
+        {
+            var uri = Plugin.AppShortcuts.iOS.ArgumentsHelper.GetUriFromApplicationShortcutItem(shortcutItem);
+            if (uri != null)
+                Xamarin.Forms.Application.Current.SendOnAppLinkRequestReceived(uri);
+        }
+
+        /// <summary>
         /// Set status bar
         /// </summary>
         private static void SetStatusBar()

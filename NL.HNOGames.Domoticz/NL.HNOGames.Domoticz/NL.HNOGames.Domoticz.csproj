@@ -155,7 +155,7 @@
     <PackageReference Include="Acr.UserDialogs" Version="7.1.0.442" />
     <PackageReference Include="DLToolkit.Forms.Controls.FlowListView" Version="2.0.11" />
     <PackageReference Include="FolderPath" Version="1.1.1" />
-    <PackageReference Include="Humanizer" Version="2.7.9" />
+    <PackageReference Include="Humanizer" Version="2.8.2" />
     <PackageReference Include="Microsoft.NETCore.Platforms" Version="3.1.0" />
     <PackageReference Include="Microsoft.NETCore.Targets" Version="3.1.0" />
     <PackageReference Include="modernhttpclient" Version="2.4.2" />
@@ -182,7 +182,7 @@
     <PackageReference Include="Xam.Plugins.Notifier" Version="3.0.1" />
     <PackageReference Include="Xam.Plugins.Settings" Version="4.0.0.7" />
     <PackageReference Include="Xamarin.Build.Download" Version="0.4.11" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.5.2" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3" />
     <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.11.982" />

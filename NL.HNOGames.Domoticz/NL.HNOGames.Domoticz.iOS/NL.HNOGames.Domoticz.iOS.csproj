@@ -755,7 +755,7 @@
       <Version>2.0.11</Version>
     </PackageReference>
     <PackageReference Include="Humanizer">
-      <Version>2.7.9</Version>
+      <Version>2.8.2</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.CSharp">
       <Version>4.7.0</Version>
@@ -842,7 +842,7 @@
       <Version>0.4.11</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Essentials">
-      <Version>1.5.2</Version>
+      <Version>1.5.3</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.FFImageLoading.Forms">
       <Version>2.4.11.982</Version>

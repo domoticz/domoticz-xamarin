@@ -117,6 +117,21 @@ namespace NL.HNOGames.Domoticz.Helpers
         private const string SpeechSettingsKey = "speech_settings_key2";
 
         /// <summary>
+        /// Defines the BeaconSettingsKey
+        /// </summary>
+        private const string BeaconSettingsKey = "beacon_settings_key";
+
+        /// <summary>
+        /// Defines the EnableBeaconSettingsKey
+        /// </summary>
+        private const string EnableBeaconNotificationsSettingsKey = "enable_beacon_notifications_settings_key";
+
+        /// <summary>
+        /// Defines the EnableBeaconSettingsKey
+        /// </summary>
+        private const string EnableBeaconSettingsKey = "enable_beacon_settings_key";
+
+        /// <summary>
         /// Defines the EnableGeofenceSettingsKey
         /// </summary>
         private const string EnableGeofenceSettingsKey = "enable_geofence_settings_key2";
@@ -490,6 +505,68 @@ namespace NL.HNOGames.Domoticz.Helpers
             set
             {
                 AppSettings.AddOrUpdateValue(EnableGeofenceSettingsKey, value);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether BeaconEnabled
+        /// Enable the Beacon feature
+        /// </summary>
+        public bool BeaconEnabled
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(EnableBeaconSettingsKey, false);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(EnableBeaconSettingsKey, value);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether BeaconEnabled
+        /// Enable the Beacon feature
+        /// </summary>
+        public bool BeaconNotificationsEnabled
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(EnableBeaconNotificationsSettingsKey, false);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(EnableBeaconNotificationsSettingsKey, value);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the Beacons
+        /// Specify Beacon models
+        /// </summary>
+        public List<BeaconModel> Beacons
+        {
+            get
+            {
+                try
+                {
+                    String resultCache = AppSettings.GetValueOrDefault(BeaconSettingsKey, string.Empty);
+                    if (!string.IsNullOrEmpty(resultCache))
+                    {
+                        var value = JsonConvert.DeserializeObject<List<BeaconModel>>(resultCache);
+                        return value;
+                    }
+                    else
+                        return new List<BeaconModel>();
+                }
+                catch (Exception) { }
+                return new List<BeaconModel>();
+            }
+            set
+            {
+                if (value == null)
+                    return;
+                AppSettings.AddOrUpdateValue(BeaconSettingsKey, JsonConvert.SerializeObject(value));
             }
         }
 

@@ -172,17 +172,18 @@
     <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
     <PackageReference Include="Plugin.SpeechRecognition" Version="1.0.0" />
     <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.2" />
+    <PackageReference Include="Shiny.Beacons" Version="1.1.0.1473-beta" />
     <PackageReference Include="Shiny.Core" Version="1.1.0.1473" />
     <PackageReference Include="Shiny.Locations" Version="1.1.0.1473" />
     <PackageReference Include="SlideOverKit" Version="2.1.6.2" />
-    <PackageReference Include="Splat" Version="9.4.1" />
+    <PackageReference Include="Splat" Version="9.4.5" />
     <PackageReference Include="Xam.Plugin.Connectivity" Version="4.0.0.190-beta" />
     <PackageReference Include="Xam.Plugin.DeviceInfo" Version="4.1.1" />
     <PackageReference Include="Xam.Plugin.SimpleColorPicker" Version="1.0.5" />
     <PackageReference Include="Xam.Plugins.Notifier" Version="3.0.1" />
     <PackageReference Include="Xam.Plugins.Settings" Version="4.0.0.7" />
     <PackageReference Include="Xamarin.Build.Download" Version="0.4.11" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.5.3" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.1" />
     <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.11.982" />
@@ -361,6 +362,12 @@
     </Compile>
     <Compile Update="Views\Dialog\ColorPopup.xaml.cs">
       <DependentUpon>ColorPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Settings\BeaconSettingsPage.xaml.cs">
+      <DependentUpon>BeaconSettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Settings\BeaconConfigPage.xaml.cs">
+      <DependentUpon>BeaconConfigPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Settings\LocationPickerPage.xaml.cs">
       <DependentUpon>LocationPickerPage.xaml</DependentUpon>

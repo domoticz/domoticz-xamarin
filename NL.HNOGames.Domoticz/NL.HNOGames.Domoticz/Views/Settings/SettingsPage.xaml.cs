@@ -443,6 +443,19 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         }
 
         /// <summary>
+        /// The btnBeaconSettings_Clicked
+        /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="EventArgs"/></param>
+        private async void btnBeaconSettings_Clicked(object sender, EventArgs e)
+        {
+            if (App.AppSettings.PremiumBought)
+                await Navigation.PushAsync(new BeaconSettingsPage());
+            else
+                App.ShowToast(AppResources.beacon + " " + AppResources.premium_feature);
+        }
+
+        /// <summary>
         /// The btnNFCSettings_Clicked
         /// </summary>
         /// <param name="sender">The sender<see cref="object"/></param>

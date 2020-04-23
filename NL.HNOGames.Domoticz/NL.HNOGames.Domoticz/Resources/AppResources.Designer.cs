@@ -322,6 +322,24 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to iBeacons.
+        /// </summary>
+        public static string beacon {
+            get {
+                return ResourceManager.GetString("beacon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Region monitoring is limited to 20 regions and can function in the background.
+        /// </summary>
+        public static string beacon_max_error {
+            get {
+                return ResourceManager.GetString("beacon_max_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Turning blind down.
         /// </summary>
         public static string blind_down {
@@ -543,6 +561,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static string category_auto {
             get {
                 return ResourceManager.GetString("category_auto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registed iBeacons.
+        /// </summary>
+        public static string category_beacon {
+            get {
+                return ResourceManager.GetString("category_beacon", resourceCulture);
             }
         }
         
@@ -1011,6 +1038,24 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static string delete_short {
             get {
                 return ResourceManager.GetString("delete_short", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable and config iBeacons.
+        /// </summary>
+        public static string description_beacon {
+            get {
+                return ResourceManager.GetString("description_beacon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable notifications for when a iBeacon event happens.
+        /// </summary>
+        public static string description_beacon_notifications {
+            get {
+                return ResourceManager.GetString("description_beacon_notifications", resourceCulture);
             }
         }
         
@@ -2127,6 +2172,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static string noSwitchSelected_explanation {
             get {
                 return ResourceManager.GetString("noSwitchSelected_explanation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to For this iBeacons to have effect, a switch should be linked.
+        /// </summary>
+        public static string noswitchselected_explanation_beacons {
+            get {
+                return ResourceManager.GetString("noswitchselected_explanation_beacons", resourceCulture);
             }
         }
         
@@ -3634,11 +3688,29 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add new iBeacons.
+        /// </summary>
+        public static string title_add_beacon {
+            get {
+                return ResourceManager.GetString("title_add_beacon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add location.
         /// </summary>
         public static string title_add_location {
             get {
                 return ResourceManager.GetString("title_add_location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to iBeacons.
+        /// </summary>
+        public static string title_beacon {
+            get {
+                return ResourceManager.GetString("title_beacon", resourceCulture);
             }
         }
         
@@ -3810,6 +3882,51 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static string total {
             get {
                 return ResourceManager.GetString("total", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Marjor Id (optional).
+        /// </summary>
+        public static string txt_beacon_MajorId {
+            get {
+                return ResourceManager.GetString("txt_beacon_MajorId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minor ID (optional).
+        /// </summary>
+        public static string txt_beacon_MinorId {
+            get {
+                return ResourceManager.GetString("txt_beacon_MinorId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UUID (example: e97a80e9-4b90-45af-acfa-a5c98cdba511).
+        /// </summary>
+        public static string txt_beacon_UUID {
+            get {
+                return ResourceManager.GetString("txt_beacon_UUID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please fill in a device UUID (mandatory).
+        /// </summary>
+        public static string txt_beacon_UUID_error {
+            get {
+                return ResourceManager.GetString("txt_beacon_UUID_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The UUID should be in the next format: 00000000-0000-0000-0000-000000000000.
+        /// </summary>
+        public static string txt_beacon_UUID_error2 {
+            get {
+                return ResourceManager.GetString("txt_beacon_UUID_error2", resourceCulture);
             }
         }
         

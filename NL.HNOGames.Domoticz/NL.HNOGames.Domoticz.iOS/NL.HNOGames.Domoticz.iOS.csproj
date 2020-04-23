@@ -811,6 +811,9 @@
     <PackageReference Include="Rg.Plugins.Popup">
       <Version>2.0.0.2</Version>
     </PackageReference>
+    <PackageReference Include="Shiny.Beacons">
+      <Version>1.1.0.1473-beta</Version>
+    </PackageReference>
     <PackageReference Include="Shiny.Core">
       <Version>1.1.0.1473</Version>
     </PackageReference>
@@ -821,7 +824,7 @@
       <Version>2.1.6.2</Version>
     </PackageReference>
     <PackageReference Include="Splat">
-      <Version>9.4.1</Version>
+      <Version>9.4.5</Version>
     </PackageReference>
     <PackageReference Include="Xam.Plugin.Connectivity">
       <Version>4.0.0.190-beta</Version>
@@ -842,7 +845,7 @@
       <Version>0.4.11</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Essentials">
-      <Version>1.5.3</Version>
+      <Version>1.5.3.1</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.FFImageLoading.Forms">
       <Version>2.4.11.982</Version>

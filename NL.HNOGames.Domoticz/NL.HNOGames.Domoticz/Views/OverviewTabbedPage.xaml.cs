@@ -7,6 +7,7 @@ using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
 using Plugin.SpeechRecognition;
 using Shiny;
+using Shiny.Beacons;
 using Shiny.Locations;
 using System;
 using System.Collections.Generic;
@@ -486,7 +487,9 @@ namespace NL.HNOGames.Domoticz.Views
             _showQRCode = App.AppSettings.QRCodeEnabled;
             _showNFC = App.AppSettings.NFCEnabled;
             _showSpeech = App.AppSettings.SpeechEnabled;
+
             await SetupGeofencesAsync();
+            await SetupBeaconsAsync();
 
             if (_start != null)
             {
@@ -600,6 +603,27 @@ namespace NL.HNOGames.Domoticz.Views
                             NotifyOnExit = true,
                             SingleUse = false
                         });
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Setup beacons
+        /// </summary>
+        private async Task SetupBeaconsAsync()
+        {
+            if (App.AppSettings.BeaconEnabled)
+            {
+                App.AddLog("Recreating all registed beacons");
+                var beacons = ShinyHost.Resolve<IBeaconManager>();
+                await beacons.StopAllMonitoring();
+                foreach (var b in App.AppSettings.Beacons)
+                {
+                    if (b.Enabled)
+                    {
+                        App.AddLog($"Started monitoring for Beacon {b.Name}");
+                        await beacons.StartMonitoring(new BeaconRegion(b.Name, b.UUID, b.Major, b.Minor));
                     }
                 }
             }

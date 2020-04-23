@@ -1687,4 +1687,43 @@
   <data name="shortcut_speech" xml:space="preserve">
     <value>Listen for a speech command</value>
   </data>
+  <data name="beacon" xml:space="preserve">
+    <value>iBeacons</value>
+  </data>
+  <data name="category_beacon" xml:space="preserve">
+    <value>Registed iBeacons</value>
+  </data>
+  <data name="description_beacon" xml:space="preserve">
+    <value>Enable and config iBeacons</value>
+  </data>
+  <data name="noswitchselected_explanation_beacons" xml:space="preserve">
+    <value>For this iBeacons to have effect, a switch should be linked</value>
+  </data>
+  <data name="title_beacon" xml:space="preserve">
+    <value>iBeacons</value>
+  </data>
+  <data name="title_add_beacon" xml:space="preserve">
+    <value>Add new iBeacons</value>
+  </data>
+  <data name="txt_beacon_MajorId" xml:space="preserve">
+    <value>Marjor Id (optional)</value>
+  </data>
+  <data name="txt_beacon_MinorId" xml:space="preserve">
+    <value>Minor ID (optional)</value>
+  </data>
+  <data name="txt_beacon_UUID" xml:space="preserve">
+    <value>UUID (example: e97a80e9-4b90-45af-acfa-a5c98cdba511)</value>
+  </data>
+  <data name="txt_beacon_UUID_error" xml:space="preserve">
+    <value>Please fill in a device UUID (mandatory)</value>
+  </data>
+  <data name="txt_beacon_UUID_error2" xml:space="preserve">
+    <value>The UUID should be in the next format: 00000000-0000-0000-0000-000000000000</value>
+  </data>
+  <data name="description_beacon_notifications" xml:space="preserve">
+    <value>Enable notifications for when a iBeacon event happens</value>
+  </data>
+  <data name="beacon_max_error" xml:space="preserve">
+    <value>Region monitoring is limited to 20 regions and can function in the background</value>
+  </data>
 </root>

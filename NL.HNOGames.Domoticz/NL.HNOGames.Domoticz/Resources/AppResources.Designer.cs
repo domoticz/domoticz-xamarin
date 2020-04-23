@@ -3688,7 +3688,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add new iBeacons.
+        ///   Looks up a localized string similar to Add new iBeacon.
         /// </summary>
         public static string title_add_beacon {
             get {

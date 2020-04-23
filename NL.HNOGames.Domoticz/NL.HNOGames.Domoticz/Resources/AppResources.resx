@@ -1703,7 +1703,7 @@
     <value>iBeacons</value>
   </data>
   <data name="title_add_beacon" xml:space="preserve">
-    <value>Add new iBeacons</value>
+    <value>Add new iBeacon</value>
   </data>
   <data name="txt_beacon_MajorId" xml:space="preserve">
     <value>Marjor Id (optional)</value>

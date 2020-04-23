@@ -1678,4 +1678,13 @@
   <data name="noSwitchSelected_explanation_Geofences" xml:space="preserve">
     <value>For this geofence to have effect, a switch should be linked</value>
   </data>
+  <data name="shortcut_nfc" xml:space="preserve">
+    <value>Scan a NFC tag</value>
+  </data>
+  <data name="shortcut_qrcode" xml:space="preserve">
+    <value>Scan a QR code</value>
+  </data>
+  <data name="shortcut_speech" xml:space="preserve">
+    <value>Listen for a speech command</value>
+  </data>
 </root>

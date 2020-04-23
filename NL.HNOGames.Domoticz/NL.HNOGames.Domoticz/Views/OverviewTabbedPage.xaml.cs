@@ -538,7 +538,7 @@ namespace NL.HNOGames.Domoticz.Views
                     var nfcShortCut = new Shortcut
                     {
                         Label = AppResources.nfc,
-                        Description = AppResources.nfc_register,
+                        Description = AppResources.shortcut_nfc,
                         Icon = new ShareIcon(),
                         Uri = $"stc://NL.HNOGames.Domoticz.NFC"
                     };
@@ -550,7 +550,7 @@ namespace NL.HNOGames.Domoticz.Views
                     var qrcodeShortCut = new Shortcut
                     {
                         Label = AppResources.qrcode,
-                        Description = AppResources.qrcode_register,
+                        Description = AppResources.shortcut_qrcode,
                         Icon = new CapturePhotoIcon(),
                         Uri = $"stc://NL.HNOGames.Domoticz.QRCode"
                     };
@@ -562,7 +562,7 @@ namespace NL.HNOGames.Domoticz.Views
                     var speechShortcut = new Shortcut
                     {
                         Label = AppResources.Speech,
-                        Description = AppResources.Speech_register,
+                        Description = AppResources.shortcut_speech,
                         Icon = new AudioIcon(),
                         Uri = $"stc://NL.HNOGames.Domoticz.Speech"
                     };

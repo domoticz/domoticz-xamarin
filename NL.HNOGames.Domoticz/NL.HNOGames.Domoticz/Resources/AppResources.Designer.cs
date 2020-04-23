@@ -3103,6 +3103,33 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Scan a NFC tag.
+        /// </summary>
+        public static string shortcut_nfc {
+            get {
+                return ResourceManager.GetString("shortcut_nfc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scan a QR code.
+        /// </summary>
+        public static string shortcut_qrcode {
+            get {
+                return ResourceManager.GetString("shortcut_qrcode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Listen for a speech command.
+        /// </summary>
+        public static string shortcut_speech {
+            get {
+                return ResourceManager.GetString("shortcut_speech", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show dashboard as grid.
         /// </summary>
         public static string show_dashboard_list_off {

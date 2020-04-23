@@ -14,11 +14,13 @@ using Shiny;
 using Plugin.LocalNotifications;
 using Android.Nfc;
 using Plugin.NFC;
+using Plugin.AppShortcuts;
 
 namespace NL.HNOGames.Domoticz.Droid
 {
     [Activity(Label = "@string/app_name", Icon = "@mipmap/ic_launcher", RoundIcon = "@mipmap/ic_launcher_round", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     [IntentFilter(new[] { NfcAdapter.ActionNdefDiscovered }, Categories = new[] { "android.intent.category.DEFAULT" }, DataMimeType = "*/*")]
+    [IntentFilter(new[] { Intent.ActionView }, Categories = new[] { Intent.CategoryDefault }, DataScheme = "stc", AutoVerify = true)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -40,6 +42,7 @@ namespace NL.HNOGames.Domoticz.Droid
             CrossNFC.Init(this);
             CrossNFC.OnNewIntent(Intent);
 
+            CrossAppShortcuts.Current.Init();
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
             CrossFingerprint.SetCurrentActivityResolver(() => CrossCurrentActivity.Current.Activity);
             Plugin.InputKit.Platforms.Droid.Config.Init(this, savedInstanceState);

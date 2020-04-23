@@ -17,6 +17,7 @@ using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using static NL.HNOGames.Domoticz.Views.OverviewTabbedPage;
 using Device = Xamarin.Forms.Device;
 
 
@@ -75,6 +76,11 @@ namespace NL.HNOGames.Domoticz
         /// Gets or sets the ServerConfig
         /// </summary>
         private static ConfigModel ServerConfig { get; set; }
+
+        /// <summary>
+        /// Overview tabbed page
+        /// </summary>
+        public static OverviewTabbedPage oOverviewTabbedPage;
 
         #endregion
 
@@ -198,7 +204,7 @@ namespace NL.HNOGames.Domoticz
         /// <summary>
         /// Setup mainpage
         /// </summary>
-        public static void SetMainPage()
+        public static void SetMainPage(StartWith? startWith = null)
         {
             try
             {
@@ -213,7 +219,7 @@ namespace NL.HNOGames.Domoticz
                     ApiService.RefreshConfig();
                     GetServerConfig();
 
-                    var oOverviewTabbedPage = new OverviewTabbedPage
+                    oOverviewTabbedPage = new OverviewTabbedPage(startWith)
                     {
                         BarBackgroundColor = Color.FromHex("#22272B"),
                         BarTextColor = Color.White,
@@ -439,6 +445,22 @@ namespace NL.HNOGames.Domoticz
                 catch (Exception)
                 { }
             };
+        }
+
+        /// <summary>
+        /// On app link request received
+        /// </summary>
+        protected override void OnAppLinkRequestReceived(Uri uri)
+        {
+            var url = uri.ToString();
+            if (url.ToLower().Contains("nfc"))
+                SetMainPage(StartWith.NFC);
+            else if (url.ToLower().Contains("qrcode"))
+                SetMainPage(StartWith.QRCode);
+            else if (url.ToLower().Contains("speech"))
+                SetMainPage(StartWith.Speech);
+            else
+                base.OnAppLinkRequestReceived(uri);
         }
     }
 }

@@ -1,10 +1,13 @@
 ﻿using NL.HNOGames.Domoticz.Resources;
 using NL.HNOGames.Domoticz.ViewModels;
+using Plugin.AppShortcuts;
+using Plugin.AppShortcuts.Icons;
 using Plugin.NFC;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
 using Plugin.SpeechRecognition;
 using Shiny;
+using Shiny.Beacons;
 using Shiny.Locations;
 using System;
 using System.Collections.Generic;
@@ -23,6 +26,16 @@ namespace NL.HNOGames.Domoticz.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class OverviewTabbedPage
     {
+        /// <summary>
+        /// Starts with enum
+        /// </summary>
+        public enum StartWith
+        {
+            NFC,
+            QRCode,
+            Speech
+        }
+
         #region Variables
 
         /// <summary>
@@ -65,6 +78,11 @@ namespace NL.HNOGames.Domoticz.Views
         /// </summary>
         private bool _showSpeech = true;
 
+        /// <summary>
+        /// Starts with
+        /// </summary>
+        private StartWith? _start = null;
+
         #endregion
 
         #region Constructor & Destructor
@@ -76,6 +94,21 @@ namespace NL.HNOGames.Domoticz.Views
         {
             InitializeComponent();
 
+            BindingContext = _viewModel = new OverviewViewModel();
+            _viewModel.PlansLoadedMethod += () =>
+            {
+                if (_viewModel.Plans == null || _viewModel.Plans.Count <= 0)
+                    _showPlans = false;
+            };
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OverviewTabbedPage"/> class.
+        /// </summary>
+        public OverviewTabbedPage(StartWith? start)
+        {
+            InitializeComponent();
+            _start = start;
             BindingContext = _viewModel = new OverviewViewModel();
             _viewModel.PlansLoadedMethod += () =>
             {
@@ -121,7 +154,7 @@ namespace NL.HNOGames.Domoticz.Views
         /// <summary>
         /// Speech Recognition
         /// </summary>
-        private async void tiSpeechCode_Activated()
+        public async void tiSpeechCode_Activated()
         {
             try
             {
@@ -272,13 +305,15 @@ namespace NL.HNOGames.Domoticz.Views
         /// <summary>
         /// Scan NFC
         /// </summary>
-        private void tiNFC_Activated()
+        public void tiNFC_Activated()
         {
             if (!App.AppSettings.NFCEnabled)
                 return;
             if (ValidateNFCPermissions())
             {
-                App.ShowLoading(AppResources.nfc_register);
+                if (Device.RuntimePlatform == Device.Android)
+                    App.ShowLoading(AppResources.nfc_register, AppResources.cancel, null);
+
                 CrossNFC.Current.OnMessageReceived += OnNFCMessageReceived;
                 CrossNFC.Current.OnTagDiscovered += OnNFCDiscovered;
                 CrossNFC.Current.StartListening();
@@ -298,7 +333,7 @@ namespace NL.HNOGames.Domoticz.Views
         /// <summary>
         /// Scan QR Code
         /// </summary>
-        private async void tiQRCode_Activated()
+        public async void tiQRCode_Activated()
         {
             if (!App.AppSettings.QRCodeEnabled)
                 return;
@@ -360,7 +395,8 @@ namespace NL.HNOGames.Domoticz.Views
         /// <param name="NFCId">The NFCId<see cref="string"/></param>
         private async void processNFC(string NFCId)
         {
-            App.HideLoading();
+            if (Device.RuntimePlatform == Device.Android)
+                App.HideLoading();
             var nfcTag = App.AppSettings.NFCTags.FirstOrDefault(o => o.Id == NFCId);
             if (nfcTag != null && nfcTag.Enabled)
             {
@@ -438,6 +474,8 @@ namespace NL.HNOGames.Domoticz.Views
         protected override async void OnAppearing()
         {
             base.OnAppearing();
+            SetupShortcut();
+
             if (_settingsOpened)
             {
                 _settingsOpened = false;
@@ -449,7 +487,26 @@ namespace NL.HNOGames.Domoticz.Views
             _showQRCode = App.AppSettings.QRCodeEnabled;
             _showNFC = App.AppSettings.NFCEnabled;
             _showSpeech = App.AppSettings.SpeechEnabled;
+
             await SetupGeofencesAsync();
+            await SetupBeaconsAsync();
+
+            if (_start != null)
+            {
+                switch (_start)
+                {
+                    case StartWith.NFC: 
+                        tiNFC_Activated(); 
+                        break;
+                    case StartWith.QRCode: 
+                        tiQRCode_Activated(); 
+                        break;
+                    case StartWith.Speech: 
+                        tiSpeechCode_Activated(); 
+                        break;
+                }
+            }
+            _start = null;//reset
         }
 
         /// <summary>
@@ -463,6 +520,62 @@ namespace NL.HNOGames.Domoticz.Views
                 CrossNFC.Current.StopListening();
             }
             catch (Exception) { }
+        }
+
+        /// <summary>
+        /// Setup shortcuts
+        /// </summary>
+        private async void SetupShortcut()
+        {
+            try
+            {
+                if (!CrossAppShortcuts.IsSupported)
+                    return;
+                var shortcuts = await CrossAppShortcuts.Current.GetShortcuts();
+                foreach (var s in shortcuts)
+                    await CrossAppShortcuts.Current.RemoveShortcut(s.ShortcutId);
+
+                if (App.AppSettings.NFCEnabled)
+                {
+                    App.AddLog("Setting up NFC shortcut");
+                    var nfcShortCut = new Shortcut
+                    {
+                        Label = AppResources.nfc,
+                        Description = AppResources.shortcut_nfc,
+                        Icon = new ShareIcon(),
+                        Uri = $"stc://NL.HNOGames.Domoticz.NFC"
+                    };
+                    await CrossAppShortcuts.Current.AddShortcut(nfcShortCut);
+                }
+                if (App.AppSettings.QRCodeEnabled)
+                {
+                    App.AddLog("Setting up QR code shortcut");
+                    var qrcodeShortCut = new Shortcut
+                    {
+                        Label = AppResources.qrcode,
+                        Description = AppResources.shortcut_qrcode,
+                        Icon = new CapturePhotoIcon(),
+                        Uri = $"stc://NL.HNOGames.Domoticz.QRCode"
+                    };
+                    await CrossAppShortcuts.Current.AddShortcut(qrcodeShortCut);
+                }
+                if (App.AppSettings.SpeechEnabled)
+                {
+                    App.AddLog("Setting up Speech shortcut");
+                    var speechShortcut = new Shortcut
+                    {
+                        Label = AppResources.Speech,
+                        Description = AppResources.shortcut_speech,
+                        Icon = new AudioIcon(),
+                        Uri = $"stc://NL.HNOGames.Domoticz.Speech"
+                    };
+                    await CrossAppShortcuts.Current.AddShortcut(speechShortcut);
+                }
+            }
+            catch (Exception ex)
+            {
+                App.AddLog("Error on creating shortcuts: " + ex.Message);
+            }
         }
 
         /// <summary>
@@ -490,6 +603,27 @@ namespace NL.HNOGames.Domoticz.Views
                             NotifyOnExit = true,
                             SingleUse = false
                         });
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Setup beacons
+        /// </summary>
+        private async Task SetupBeaconsAsync()
+        {
+            if (App.AppSettings.BeaconEnabled)
+            {
+                App.AddLog("Recreating all registed beacons");
+                var beacons = ShinyHost.Resolve<IBeaconManager>();
+                await beacons.StopAllMonitoring();
+                foreach (var b in App.AppSettings.Beacons)
+                {
+                    if (b.Enabled)
+                    {
+                        App.AddLog($"Started monitoring for Beacon {b.Name}");
+                        await beacons.StartMonitoring(new BeaconRegion(b.Name, b.UUID, b.Major, b.Minor));
                     }
                 }
             }

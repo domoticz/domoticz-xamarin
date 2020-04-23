@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="NL.HNOGames.Domoticz.Views.Settings.NFCSettingsPage"
+    x:Class="NL.HNOGames.Domoticz.Views.Settings.BeaconSettingsPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
-    xmlns:selector="clr-namespace:NL.HNOGames.Domoticz.ViewSelector;assembly=NL.HNOGames.Domoticz"
     ios:Page.UseSafeArea="true"
     Style="{StaticResource ContentPageType}"
     Visual="Material">
@@ -24,13 +23,12 @@
                     x:Name="title"
                     HorizontalTextAlignment="Start"
                     Style="{DynamicResource TitleStyle}"
-                    Text="{resources:Translate category_nfc}"
+                    Text="{resources:Translate title_beacon}"
                     VerticalOptions="Center"
                     VerticalTextAlignment="Center" />
             </StackLayout>
         </AbsoluteLayout>
     </NavigationPage.TitleView>
-
     <ContentPage.ToolbarItems>
         <ToolbarItem
             Clicked="ToolbarItem_Activated"
@@ -58,18 +56,40 @@
                                 <Label
                                     HorizontalOptions="Start"
                                     Style="{StaticResource SettingsDetailType}"
-                                    Text="{resources:Translate nfc_enable_settings}"
+                                    Text="{resources:Translate description_beacon}"
                                     VerticalOptions="CenterAndExpand" />
                             </StackLayout>
                             <Switch
-                                x:Name="swEnableNFC"
+                                x:Name="swEnableBeacon"
+                                HorizontalOptions="End"
+                                VerticalOptions="Center" />
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout
+                            HorizontalOptions="FillAndExpand"
+                            Orientation="Horizontal"
+                            Style="{StaticResource SettingsRowStackLayout}"
+                            VerticalOptions="StartAndExpand">
+                            <StackLayout
+                                HorizontalOptions="StartAndExpand"
+                                Orientation="Vertical"
+                                VerticalOptions="Center">
+                                <Label
+                                    HorizontalOptions="Start"
+                                    Style="{StaticResource SettingsDetailType}"
+                                    Text="{resources:Translate description_beacon_notifications}"
+                                    VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
+                            <Switch
+                                x:Name="swEnableBeaconNotifications"
                                 HorizontalOptions="End"
                                 VerticalOptions="Center" />
                         </StackLayout>
                     </ViewCell>
                 </TableSection>
 
-                <TableSection Title="{resources:Translate category_nfc}">
+                <TableSection Title="{resources:Translate category_beacon}">
                     <ViewCell>
                         <ListView
                             x:Name="listView"
@@ -113,6 +133,10 @@
                                                                     Lines="2"
                                                                     Style="{StaticResource DetailType}"
                                                                     Text="{Binding SwitchDescription}" />
+                                                                <custcontrol:MultiLineLabel
+                                                                    LineBreakMode="TailTruncation"
+                                                                    Style="{StaticResource DetailSmallType}"
+                                                                    Text="{Binding RadiusDescription}" />
                                                             </StackLayout>
                                                             <StackLayout
                                                                 Margin="0,-5,5,0"

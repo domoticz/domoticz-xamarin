@@ -1726,4 +1726,7 @@
   <data name="beacon_max_error" xml:space="preserve">
     <value>Region monitoring is limited to 20 regions and can function in the background</value>
   </data>
+  <data name="Beacon_name" xml:space="preserve">
+    <value>iBeacon name</value>
+  </data>
 </root>

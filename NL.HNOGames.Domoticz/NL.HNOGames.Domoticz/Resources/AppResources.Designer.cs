@@ -340,6 +340,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to iBeacon name.
+        /// </summary>
+        public static string Beacon_name {
+            get {
+                return ResourceManager.GetString("Beacon_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Turning blind down.
         /// </summary>
         public static string blind_down {

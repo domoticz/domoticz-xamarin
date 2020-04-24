@@ -92,7 +92,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
 
         private async Task<string> GetNameAsync()
         {
-            var result = await UserDialogs.Instance.PromptAsync(new PromptConfig() { InputType = InputType.Number, Title = AppResources.Beacon_name });
+            var result = await UserDialogs.Instance.PromptAsync(new PromptConfig() { InputType = InputType.Number, Title = AppResources.beacon });
             if (result.Ok)
                 return result.Value;
             return null;

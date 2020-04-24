@@ -143,7 +143,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             };
 
             _oListSource.Add(geofence);
-            App.ShowToast(AppResources.noSwitchSelected_explanation_Geofences);
+            App.ShowToast(AppResources.noSwitchSelected_explanation);
             SaveAndRefresh();
         }
 

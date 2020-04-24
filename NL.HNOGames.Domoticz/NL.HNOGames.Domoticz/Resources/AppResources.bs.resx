@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="utf-8"?>  <root> <resheader name="resmimetype">		<value>text/microsoft-resx</value>	</resheader>	<resheader name="version">		<value>2.0</value>	</resheader>	<resheader name="reader">		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>	<resheader name="writer">		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>
+<data name="premium_category" xml:space="preserve"><value>Kupi Premijum!</value></data>
+<data name="premium_title" xml:space="preserve"><value>Preuzmi Premijum verziju!</value></data>
+<data name="premium_feature" xml:space="preserve"><value>Ovo je značajka premijum verzije, molim vas kupite je i pomozite razvoj!</value></data>
+<data name="drawer_open" xml:space="preserve"><value>Open navigation drawer</value></data>
+<data name="drawer_close" xml:space="preserve"><value>Close navigation drawer</value></data>
+<data name="msg_please_wait" xml:space="preserve"><value>Molimo sačekajte...</value></data>
+<data name="changelog" xml:space="preserve"><value>Log promjena</value></data>
+<data name="button_state_on" xml:space="preserve"><value>Uključi</value></data>
+<data name="button_state_off" xml:space="preserve"><value>Isključi</value></data>
+<data name="button_state_closed" xml:space="preserve"><value>Zatvoreno</value></data>
+<data name="button_state_open" xml:space="preserve"><value>Otvori</value></data>
+<data name="button_state_lock" xml:space="preserve"><value>Lock</value></data>
+<data name="button_state_unlock" xml:space="preserve"><value>Unlock</value></data>
+<data name="button_status_log" xml:space="preserve"><value>Log</value></data>
+<data name="button_status_day" xml:space="preserve"><value>Dan</value></data>
+<data name="button_status_week" xml:space="preserve"><value>Sedmica</value></data>
+<data name="button_status_month" xml:space="preserve"><value>Mjesec</value></data>
+<data name="button_status_year" xml:space="preserve"><value>Godina</value></data>
+<data name="button_status_timer" xml:space="preserve"><value>Tajmer</value></data>
+<data name="button_status_notifications" xml:space="preserve"><value>Obavještenja</value></data>
+<data name="button_color" xml:space="preserve"><value>Boja</value></data>
+<data name="button_arm" xml:space="preserve"><value>Naoružaj</value></data>
+<data name="button_disarm" xml:space="preserve"><value>Razoružaj</value></data>
+<data name="button_state_full_light" xml:space="preserve"><value>Full light</value></data>
+<data name="button_state_night" xml:space="preserve"><value>Night light</value></data>
+<data name="sunrise" xml:space="preserve"><value>Sunrise</value></data>
+<data name="sunset" xml:space="preserve"><value>Sunset</value></data>
+<data name="now" xml:space="preserve"><value>Now</value></data>
+<data name="astrTwilightStart" xml:space="preserve"><value>Astronomical twilight start</value></data>
+<data name="astrTwilightEnd" xml:space="preserve"><value>Astronomical twilight end</value></data>
+<data name="civTwilightStart" xml:space="preserve"><value>Civil twilight start</value></data>
+<data name="civTwilightEnd" xml:space="preserve"><value>Civil twilight end</value></data>
+<data name="nautTwilightStart" xml:space="preserve"><value>Nautical twilight start</value></data>
+<data name="nautTwilightEnd" xml:space="preserve"><value>Nautical twilight end</value></data>
+<data name="last_update" xml:space="preserve"><value>Posljednje viđeno</value></data>
+<data name="signal_level" xml:space="preserve"><value>Nivo signala</value></data>
+<data name="battery_level" xml:space="preserve"><value>Nivo baterija</value></data>
+<data name="data" xml:space="preserve"><value>Podaci</value></data>
+<data name="hardware" xml:space="preserve"><value>Hardware</value></data>
+<data name="temperature" xml:space="preserve"><value>Temperatura</value></data>
+<data name="status" xml:space="preserve"><value>Status</value></data>
+<data name="switch_rgb_wwcolor" xml:space="preserve"><value>RGB color or warm white</value></data>
+<data name="set_point" xml:space="preserve"><value>Odabir vrijednosti</value></data>
+<data name="set_point_min" xml:space="preserve"><value>Odaberi minimalnu vrijednost</value></data>
+<data name="set_point_min_description" xml:space="preserve"><value>Minimalna temperatura koju možete odabrati na vašem termostatu</value></data>
+<data name="set_point_max" xml:space="preserve"><value>Odaberi maksimalnu vrijednost</value></data>
+<data name="set_point_max_description" xml:space="preserve"><value>Maksimalna temperatura koju možete odabrati na vašem termostatu</value></data>
+<data name="action_success" xml:space="preserve"><value>Uspješno izvršeno</value></data>
+<data name="action_failed" xml:space="preserve"><value>Neuspješno</value></data>
+<data name="action_unknown" xml:space="preserve"><value>Rezultat nepoznat</value></data>
+<data name="choose_status" xml:space="preserve"><value>Odaberi stanje</value></data>
+<data name="normal" xml:space="preserve"><value>Normalno</value></data>
+<data name="economy" xml:space="preserve"><value>Ekonomično</value></data>
+<data name="away" xml:space="preserve"><value>Vani</value></data>
+<data name="day_off" xml:space="preserve"><value>Kraj dana</value></data>
+<data name="custom" xml:space="preserve"><value>Prilagođeno</value></data>
+<data name="heating_off" xml:space="preserve"><value>Grijanje ugašeno</value></data>
+<data name="selector_value" xml:space="preserve"><value>Odabir vrijednosti</value></data>
+<data name="debug_textview_title" xml:space="preserve"><value>Info uklanjanja grešaka</value></data>
+<data name="msg_copiedToClipboard" xml:space="preserve"><value>Tekst je kopiran u međuspremnik</value></data>
+<data name="favorite" xml:space="preserve"><value>Favoriti</value></data>
+<data name="yes" xml:space="preserve"><value>Da</value></data>
+<data name="no" xml:space="preserve"><value>Ne</value></data>
+<data name="are_you_sure" xml:space="preserve"><value>Jeste li sigurni?</value></data>
+<data name="are_you_sure_clear_settings" xml:space="preserve"><value>Jeste li sigurni?? Ovo također čisti sve početne postavke dodataka, pa ćete ih morati ponovo dodati.</value></data>
+<data name="add" xml:space="preserve"><value>Dodaj</value></data>
+<data name="cancel" xml:space="preserve"><value>Odustani</value></data>
+<data name="ok" xml:space="preserve"><value>OK</value></data>
+<data name="request_again" xml:space="preserve"><value>Ponovi zahtjev</value></data>
+<data name="upgrade" xml:space="preserve"><value>NADOGRADNJA</value></data>
+<data name="something_went_wrong" xml:space="preserve"><value>Nešto je pošlo pogrešno</value></data>
+<data name="no_network_available" xml:space="preserve"><value>Greška: Nema dostupne konekcije</value></data>
+<data name="oops" xml:space="preserve"><value>UUPS!</value></data>
+<data name="to" xml:space="preserve"><value>"za"</value></data>
+<data name="retry" xml:space="preserve"><value>Ponovi</value></data>
+<data name="undo" xml:space="preserve"><value>Vrati</value></data>
+<data name="something_deleted" xml:space="preserve"><value>%1$s obrisano</value></data>
+<data name="switch_on" xml:space="preserve"><value>Uključi prekidač</value></data>
+<data name="switch_off" xml:space="preserve"><value>Isključi prekidač</value></data>
+<data name="switch_night" xml:space="preserve"><value>Turning switch to night light</value></data>
+<data name="switch_full" xml:space="preserve"><value>Turning switch to full light</value></data>
+<data name="blind_up" xml:space="preserve"><value>Podigni zavjese</value></data>
+<data name="blind_down" xml:space="preserve"><value>Spusti zavjese</value></data>
+<data name="blind_stop" xml:space="preserve"><value>Zaustavi zavjese</value></data>
+<data name="filter_on" xml:space="preserve"><value>Uključi filter</value></data>
+<data name="filterOn_on" xml:space="preserve"><value>Uključi status</value></data>
+<data name="filterOn_off" xml:space="preserve"><value>Isključi status</value></data>
+<data name="filterOn_static" xml:space="preserve"><value>Statički uređaji</value></data>
+<data name="filterOn_all" xml:space="preserve"><value>Svi uređaji</value></data>
+<data name="filter" xml:space="preserve"><value>Filter</value></data>
+<data name="filter_devices" xml:space="preserve"><value>Uređaj za filtriranje</value></data>
+<data name="filter_graph_empty" xml:space="preserve"><value>Molimo odaberite filter</value></data>
+<data name="choose_color" xml:space="preserve"><value>Odaberite boju</value></data>
+<data name="no_data_on_domoticz" xml:space="preserve"><value>Nema podataka na Domoticz serveru</value></data>
+<data name="row_icon_description" xml:space="preserve"><value>row icon</value></data>
+<data name="error_image_description" xml:space="preserve"><value>Slika greške</value></data>
+<data name="device_image_description" xml:space="preserve"><value>Slika uređaja</value></data>
+<data name="white" xml:space="preserve"><value>Bijelo</value></data>
+<data name="refresh" xml:space="preserve"><value>Osvježi</value></data>
+<data name="domoticz_logo" xml:space="preserve"><value>Domoticz logo</value></data>
+<data name="this_take_minutes" xml:space="preserve"><value>Ovo može potrajati nekoliko minuta.</value></data>
+<data name="continue_question" xml:space="preserve"><value>Nastaviti?</value></data>
+<data name="cant_remove_default_server" xml:space="preserve"><value>Ne možete ukloniti zadani server</value></data>
+<data name="restart_required_msg" xml:space="preserve"><value>Za postavljanje odabranog jezika, program je potrebno ponovo pokrenuti</value></data>
+<data name="filter_all" xml:space="preserve"><value>All</value></data>
+<data name="filter_normal" xml:space="preserve"><value>Normal</value></data>
+<data name="filter_status" xml:space="preserve"><value>Status</value></data>
+<data name="filter_error" xml:space="preserve"><value>Error</value></data>
+<data name="use_demo_setup" xml:space="preserve"><value>Use demo setup</value></data>
+<data name="auto_refresh_time" xml:space="preserve"><value>Refresh timer</value></data>
+<data name="setautorefreshtime" xml:space="preserve"><value>Set a specific timer for the auto refresh in seconds.</value></data>
+<data name="action_switch_server" xml:space="preserve"><value>Promjeni server</value></data>
+<data name="action_settings" xml:space="preserve"><value>Postavke</value></data>
+<data name="action_filter" xml:space="preserve"><value>Filter</value></data>
+<data name="action_camera_play" xml:space="preserve"><value>Pokreni</value></data>
+<data name="action_camera_pause" xml:space="preserve"><value>Pauza</value></data>
+<data name="action_qrcode_scan" xml:space="preserve"><value>Skeniraj QR kod</value></data>
+<data name="action_bluetooth_show" xml:space="preserve"><value>Show paired devices</value></data>
+<data name="action_speech" xml:space="preserve"><value>Raspoznavanje glasa</value></data>
+<data name="send" xml:space="preserve"><value>Send</value></data>
+<data name="bluetooth_not_supported" xml:space="preserve"><value>Bluetooth is not supported on this device</value></data>
+<data name="bluetooth_register" xml:space="preserve"><value>Connect a bluetooth device</value></data>
+<data name="bluetooth_found" xml:space="preserve"><value>New bluetooth device found</value></data>
+<data name="bluetooth_edit" xml:space="preserve"><value>Edit bluetooth device</value></data>
+<data name="bluetooth_name" xml:space="preserve"><value>Give this bluetooth device a proper name. </value></data>
+<data name="bluetooth_desc" xml:space="preserve"><value>Check the list of paired bluetooth devices. </value></data>
+<data name="bluetooth_exists" xml:space="preserve"><value>Bluetooth already configured on Domoticz. </value></data>
+<data name="bluetooth_turned_off" xml:space="preserve"><value>Bluetooth needs to be turned on in your device settings. </value></data>
+<data name="bluetooth_saved" xml:space="preserve"><value>Saved a new bluetooth device connection. </value></data>
+<data name="bluetooth" xml:space="preserve"><value>Bluetooth</value></data>
+<data name="bluetooth_disabled" xml:space="preserve"><value>Bluetooth automation disabled, please setup via settings.</value></data>
+<data name="noSwitchSelected_explanation_bluetooth" xml:space="preserve"><value>For a bluetooth device to automate something in Domoticz, a switch should be linked to an bluetooth</value></data>
+<data name="title_cameras" xml:space="preserve"><value>Kamere</value></data>
+<data name="title_dashboard" xml:space="preserve"><value>Kontrolna tabla</value></data>
+<data name="usage" xml:space="preserve"><value>Upotreba</value></data>
+<data name="today" xml:space="preserve"><value>Danas</value></data>
+<data name="total" xml:space="preserve"><value>Ukupno</value></data>
+<data name="favorite_added" xml:space="preserve"><value>dodano na nadzornu ploču.</value></data>
+<data name="favorite_removed" xml:space="preserve"><value>uklonjeno sa nadzorne ploče.</value></data>
+<data name="error_authentication" xml:space="preserve"><value>Pogrešni akreditivi</value></data>
+<data name="error_timeout" xml:space="preserve"><value>Zaustavljeno ili nema konekcije</value></data>
+<data name="error_server" xml:space="preserve"><value>Serverska greška</value></data>
+<data name="error_network" xml:space="preserve"><value>Mrežna greška, kod statusa %1$d</value></data>
+<data name="error_parse" xml:space="preserve"><value>Greška analize</value></data>
+<data name="error_notConnected" xml:space="preserve"><value>Greška: niste povezani ni na jednu mrežu</value></data>
+<data name="title_events" xml:space="preserve"><value>Događaji</value></data>
+<data name="action_not_supported_yet" xml:space="preserve"><value>Ovo još nije podržano!</value></data>
+<data name="title_add_location" xml:space="preserve"><value>Dodaj lokaciju</value></data>
+<data name="title_edit_location" xml:space="preserve"><value>Uredi lokaciju</value></data>
+<data name="longitude" xml:space="preserve"><value>Geografska dužina</value></data>
+<data name="latitude" xml:space="preserve"><value>Geografska širina</value></data>
+<data name="radius" xml:space="preserve"><value>Radijus (metara)</value></data>
+<data name="connectedSwitch" xml:space="preserve"><value>Povezani prekidači</value></data>
+<data name="unable_to_get_switches" xml:space="preserve"><value>Ne dobivam sve prekidače, kasnije pokušajte nanovo</value></data>
+<data name="delete_short" xml:space="preserve"><value>DEL</value></data>
+<data name="delete" xml:space="preserve"><value>Brisati</value></data>
+<data name="Location_name" xml:space="preserve"><value>Naziv lokacije</value></data>
+<data name="currentLocation" xml:space="preserve"><value>Trenutna lokacija</value></data>
+<data name="manual" xml:space="preserve"><value>Ručno</value></data>
+<data name="getLocation" xml:space="preserve"><value>GET</value></data>
+<data name="locationAddress" xml:space="preserve"><value>Adresa</value></data>
+<data name="unknown" xml:space="preserve"><value>Nepoznato</value></data>
+<data name="not_available" xml:space="preserve"><value>N/A</value></data>
+<data name="no_valid_latLong" xml:space="preserve"><value>Geografska širina i dužina nisu validne</value></data>
+<data name="starting_geofence_service" xml:space="preserve"><value>Pokreni Geofence servis</value></data>
+<data name="could_not_find_location" xml:space="preserve"><value>Ne mogu naći lokaciju, probajte ponovo.</value></data>
+<data name="google_play_services_unavailable" xml:space="preserve"><value>Google Play usluga je nedostupna.</value></data>
+<data name="location_not_found" xml:space="preserve"><value>Lokacija nije nađena.</value></data>
+<data name="geofence" xml:space="preserve"><value>Geofencing</value></data>
+<data name="title_geofence" xml:space="preserve"><value>Omogući Geofencing</value></data>
+<data name="description_geofence" xml:space="preserve"><value>Omogući i konfiguriši Geofencing</value></data>
+<data name="title_geofence_notifications" xml:space="preserve"><value>Omogući obavijesti</value></data>
+<data name="description_geofence_notifications" xml:space="preserve"><value>Omogući obavijesti za pokretanje događaja</value></data>
+<data name="geofence_place" xml:space="preserve"><value>Pozicija: %s</value></data>
+<data name="geofence_location_entering" xml:space="preserve"><value>"Ulaz %1$s"</value></data>
+<data name="geofence_location_leaving" xml:space="preserve"><value>Izlaz  %1$s</value></data>
+<data name="geofence_location_entering_text" xml:space="preserve"><value>Ulaz u jedno od lokacija</value></data>
+<data name="geofence_location_leaving_text" xml:space="preserve"><value>Napuštanje jedne od lokacija</value></data>
+<data name="geofence_error_recreateLocations" xml:space="preserve"><value>Zbog promjena na Geofencingu, ponovo stvorite svoje lokacije</value></data>
+<data name="noSwitchSelected_title" xml:space="preserve"><value>Nije odabran prekidač</value></data>
+<data name="noSwitchSelected_explanation" xml:space="preserve"><value>Da bi GeoFencing imao učinak, prekidač bi trebao biti povezan s GeoFencingom</value></data>
+<data name="noSwitchSelected_connectOneNow" xml:space="preserve"><value>Poveži jedan sada?</value></data>
+<data name="geofencing_disabled_no_enabled_fences" xml:space="preserve"><value>Geofencing je onemogućen jer nisu omogućene Geofencije</value></data>
+<data name="geofence_not_available" xml:space="preserve"><value>Geofence servis je trenutno nedostupan</value></data>
+<data name="geofence_too_many_geofences" xml:space="preserve"><value>Aplikacija je registrovala previše Geofenci</value></data>
+<data name="geofence_too_many_pending_intents" xml:space="preserve"><value>Dato je previše PendingIntentsa</value></data>
+<data name="unknown_geofence_error" xml:space="preserve"><value>Nepoznata greška</value></data>
+<data name="title_logs" xml:space="preserve"><value>Log</value></data>
+<data name="nfc_not_supported" xml:space="preserve"><value>NFC nije podržan na ovom uređaju</value></data>
+<data name="nfc_register" xml:space="preserve"><value>Registruj NFC tag</value></data>
+<data name="nfc_tag_found" xml:space="preserve"><value>Novi NFC tag je pronađen</value></data>
+<data name="nfc_tag_edit" xml:space="preserve"><value>Uredi NFC tag</value></data>
+<data name="nfc_tag_name" xml:space="preserve"><value>Daj ovom NFC-u odgovarajući naziv. </value></data>
+<data name="nfc_exists" xml:space="preserve"><value>Ovaj NFC tag je već registrovan. </value></data>
+<data name="nfc_saved" xml:space="preserve"><value>Pohrani novi NFC tag. </value></data>
+<data name="nfc" xml:space="preserve"><value>NFC</value></data>
+<data name="noSwitchSelected_explanation_nfc" xml:space="preserve"><value>Da bi NFC imao efekta, prekidač mora biti povezan sa NFC tagom</value></data>
+<data name="priority" xml:space="preserve"><value>Prioritet</value></data>
+<data name="emergency" xml:space="preserve"><value>Hitno</value></data>
+<data name="high" xml:space="preserve"><value>Visoko</value></data>
+<data name="low" xml:space="preserve"><value>Nisko</value></data>
+<data name="verylow" xml:space="preserve"><value>Vrlo nisko</value></data>
+<data name="allsystems" xml:space="preserve"><value>Svi sistemi</value></data>
+<data name="systems" xml:space="preserve"><value>Sistemi</value></data>
+<data name="send_notification" xml:space="preserve"><value>Send notification</value></data>
+<data name="notification_subject" xml:space="preserve"><value>Subject</value></data>
+<data name="notification_message" xml:space="preserve"><value>Message</value></data>
+<data name="notification_error_system" xml:space="preserve"><value>Please choose a system to send the notification to</value></data>
+<data name="notification_error_message" xml:space="preserve"><value>Please fill in a message</value></data>
+<data name="notification_error_subject" xml:space="preserve"><value>Please fill in a subject</value></data>
+<data name="notification_error_send" xml:space="preserve"><value>Could not send the notification to Domoticz</value></data>
+<data name="notification_send" xml:space="preserve"><value>Notification send to Domoticz</value></data>
+<data name="permission_title" xml:space="preserve"><value>Pristup zabranjen</value></data>
+<data name="permission_prefs_title" xml:space="preserve"><value>Dozvole</value></data>
+<data name="permission_config" xml:space="preserve"><value>Konfiguriranje dozvola za ovu aplikaciju</value></data>
+<data name="permission_desc_storage" xml:space="preserve"><value>Pohrana dozvola je potrebna za spremanje datoteke predmemorije, postavke i spremanje snimki iz fotoaparata.</value></data>
+<data name="permission_desc_location" xml:space="preserve"><value>Lokacije dozvole su potrebne za Geofencing i da dohvatite Wifi SSID u vašoj blizini!</value></data>
+<data name="permission_desc_phone" xml:space="preserve"><value>Dozvole stanja telefona su potrebne za omogućavanje obavijesti!</value></data>
+<data name="permission_desc_camera" xml:space="preserve"><value>Dozvole za kamere su potrebne za skeniranje QR kodova!</value></data>
+<data name="permission_desc_audio" xml:space="preserve"><value>Dozvole za audio su potrebne za prepoznavanje glasa!</value></data>
+<data name="permission_desc_finger" xml:space="preserve"><value>Dozvole za otisak su potrebne za omogućavanje sigurnosti putem otisaka prstiju!</value></data>
+<data name="title_plans" xml:space="preserve"><value>Planovi</value></data>
+<data name="qrcode_not_supported" xml:space="preserve"><value>QR kod nije podržana na ovom uređaju</value></data>
+<data name="qrcode_register" xml:space="preserve"><value>Registruj QR kod </value></data>
+<data name="qrcode_found" xml:space="preserve"><value>Pronađen je novi QR kod</value></data>
+<data name="qrcode_edit" xml:space="preserve"><value>Uredi QR kod</value></data>
+<data name="qrcode_name" xml:space="preserve"><value>Daj ovom QR kodu odgovarajući naziv. </value></data>
+<data name="qrcode_desc" xml:space="preserve"><value>Skeniraj QR kod. </value></data>
+<data name="qrcode_exists" xml:space="preserve"><value>QR kod je već registrovan. </value></data>
+<data name="qrcode_saved" xml:space="preserve"><value>Spasi novi QR kod. </value></data>
+<data name="qrcode" xml:space="preserve"><value>QR kod</value></data>
+<data name="qrcode_new_found" xml:space="preserve"><value>Otkriven je novi QR kod, postavite putem postavki.</value></data>
+<data name="qr_code_disabled" xml:space="preserve"><value>QR kod onemogućen, molimo postavite putem postavki.</value></data>
+<data name="noSwitchSelected_explanation_qrcode" xml:space="preserve"><value>Da bi QR kod imao efekta, prekidač mora biti povezan sa QR kodom</value></data>
+<data name="permission_camera_rationale" xml:space="preserve"><value>Pristup kameri je potrebno za otkrivanje</value></data>
+<data name="low_storage_error" xml:space="preserve"><value>QR kod ovisnosti nije moguće preuzeti zbog premalo mjesta za pohranu</value></data>
+<data name="no_camera_permission" xml:space="preserve"><value>Ovaj program se ne može pokrenuti jer nema dozvolu za kamera.  Aplikacija će se sada zatvoriti.</value></data>
+<data name="title_scenes" xml:space="preserve"><value>Scene</value></data>
+<data name="title_security_panel" xml:space="preserve"><value>Sigurnosni panel</value></data>
+<data name="security_pin" xml:space="preserve"><value>Pin kod</value></data>
+<data name="security_disarm" xml:space="preserve"><value>Razoružaj</value></data>
+<data name="security_arm_home" xml:space="preserve"><value>Naoružaj</value></data>
+<data name="security_arm_away" xml:space="preserve"><value>Naoružaj odlazak</value></data>
+<data name="security_wrong_code" xml:space="preserve"><value>Unesen je pogrešan kod!</value></data>
+<data name="security_no_rights" xml:space="preserve"><value>You do not have the rights for this action!</value></data>
+<data name="security_generic_error" xml:space="preserve"><value>Nije moguće promijeniti sigurnosni status</value></data>
+<data name="security_wrong_password_fingerprint" xml:space="preserve"><value>Unesena je pogrešna lozinka, lozinka računa Domoticz je failover za vaš otisak prsta...!</value></data>
+<data name="show_password" xml:space="preserve"><value>Prikaži lozinku</value></data>
+<data name="fingerprint_make_sure" xml:space="preserve"><value>We need to make sure its you</value></data>
+<data name="fingerprint_dialog_description" xml:space="preserve"><value>Touch your finger on the fingerprint sensor to authorise your account.</value></data>
+<data name="choose_server" xml:space="preserve"><value>Odaberite server</value></data>
+<data name="dont_save_new_server" xml:space="preserve"><value>Nemoj spremiti novi server?</value></data>
+<data name="server_must_be_unique" xml:space="preserve"><value>Naziv servera mora biti jedinstven</value></data>
+<data name="switch_to_server" xml:space="preserve"><value>"Prebacivanje servera na %1$s"</value></data>
+<data name="cant_disable_default_server" xml:space="preserve"><value>Ne možete onemogućiti zadani server</value></data>
+<data name="settingsActivity_name" xml:space="preserve"><value>Postavke</value></data>
+<data name="cameraActivity_name" xml:space="preserve"><value>Kamere</value></data>
+<data name="category_generic" xml:space="preserve"><value>Opće</value></data>
+<data name="category_wear" xml:space="preserve"><value>Android Wear</value></data>
+<data name="category_auto" xml:space="preserve"><value>Android Auto</value></data>
+<data name="category_server" xml:space="preserve"><value>Server</value></data>
+<data name="category_geofencing" xml:space="preserve"><value>Geofencing</value></data>
+<data name="category_info" xml:space="preserve"><value>Informacije</value></data>
+<data name="category_advanced" xml:space="preserve"><value>Napredno</value></data>
+<data name="category_language" xml:space="preserve"><value>Jezik</value></data>
+<data name="category_talk_back" xml:space="preserve"><value>Talk Back</value></data>
+<data name="category_notification" xml:space="preserve"><value>Obavještenja</value></data>
+<data name="category_debug" xml:space="preserve"><value>Otklanjanje grešaka</value></data>
+<data name="category_export" xml:space="preserve"><value>Postavke izvoza/uvoza</value></data>
+<data name="category_theme" xml:space="preserve"><value>Tema</value></data>
+<data name="category_clock" xml:space="preserve"><value>Clock</value></data>
+<data name="category_nfc" xml:space="preserve"><value>NFC povezivanja</value></data>
+<data name="category_startup_security" xml:space="preserve"><value>Sigurnost</value></data>
+<data name="category_account" xml:space="preserve"><value>Računi</value></data>
+<data name="category_QRCode" xml:space="preserve"><value>QR kod</value></data>
+<data name="category_bluetooth" xml:space="preserve"><value>Bluetooth</value></data>
+<data name="category_Speech" xml:space="preserve"><value>Govor</value></data>
+<data name="category_Reset" xml:space="preserve"><value>Resetuj</value></data>
+<data name="category_help" xml:space="preserve"><value>Contribute</value></data>
+<data name="startup_screen" xml:space="preserve"><value>Početni zaslon</value></data>
+<data name="enable_items" xml:space="preserve"><value>Omogućite/onemogućite stavke</value></data>
+<data name="sort_server_title" xml:space="preserve"><value>Sorting</value></data>
+<data name="sort_server_on" xml:space="preserve"><value>Sort devices like sorted on the server</value></data>
+<data name="sort_custom_on" xml:space="preserve"><value>Custom sorting, drag and drop devices to sort them</value></data>
+<data name="sort_lock_server_title" xml:space="preserve"><value>Lock</value></data>
+<data name="sort_lock_custom_on" xml:space="preserve"><value>Lock the current custom sorting (disable drag/drop)</value></data>
+<data name="sort_dashboardLikeServer_off" xml:space="preserve"><value>Sortiraj ploče abecedno</value></data>
+<data name="extra_data_title" xml:space="preserve"><value>Dodatni podaci na ploči</value></data>
+<data name="show_extra_data_on" xml:space="preserve"><value>Pokaži dodatne podatke na ploči</value></data>
+<data name="show_extra_data_off" xml:space="preserve"><value>Sakrij dodatne podatke sa ploče</value></data>
+<data name="always_on_title" xml:space="preserve"><value>Zaključaj buđenje</value></data>
+<data name="always_on_on" xml:space="preserve"><value>Zaključavanje zaslona na uvijek Uključeno</value></data>
+<data name="always_on_off" xml:space="preserve"><value>Nemoj zaključati zaslon na uvijek uključeno</value></data>
+<data name="always_auto_refresh" xml:space="preserve"><value>Automatsko osvježavanje</value></data>
+<data name="always_auto_refresh_on" xml:space="preserve"><value>Refresh the device state every couple of seconds</value></data>
+<data name="always_auto_refresh_off" xml:space="preserve"><value>Don\'t refresh the device state every couple of seconds</value></data>
+<data name="switch_buttons_title" xml:space="preserve"><value>Prekidači</value></data>
+<data name="switch_buttons_on" xml:space="preserve"><value>Prikaži prekidače sa uključi/isključi prekidačima</value></data>
+<data name="switch_buttons_off" xml:space="preserve"><value>Prikaži prekidače sa uključi/isključi dugmadima</value></data>
+<data name="dashboard_list_title" xml:space="preserve"><value>Mreža ploča</value></data>
+<data name="show_dashboard_list_on" xml:space="preserve"><value>Prikaži ploče u listi</value></data>
+<data name="show_dashboard_list_off" xml:space="preserve"><value>Prikaži ploče u mreži</value></data>
+<data name="dashboard_clock" xml:space="preserve"><value>Clock</value></data>
+<data name="show_dashboard_clock" xml:space="preserve"><value>Show a clock on the dashboard</value></data>
+<data name="enable_wear_select" xml:space="preserve"><value>Android Wear prilagođene stavke</value></data>
+<data name="custom_wear_select" xml:space="preserve"><value>Odaberite Wear prekidače</value></data>
+<data name="custom_wear_select_desc" xml:space="preserve"><value>Odaberite koje prekidače želite vidjeti na uređaju Android Wear</value></data>
+<data name="wear_custom_on" xml:space="preserve"><value>Android Wear prilagođene stavke</value></data>
+<data name="wear_custom_off" xml:space="preserve"><value>Onemogućiti Android Wear prilagođene stavke</value></data>
+<data name="auto_custom_on" xml:space="preserve"><value>Omogući automatske Android obavijesti</value></data>
+<data name="auto_custom_off" xml:space="preserve"><value>Onemogući automatske Android obavijesti</value></data>
+<data name="geofencing_configure" xml:space="preserve"><value>Konfigurisanje Geofencing-a</value></data>
+<data name="config_theme" xml:space="preserve"><value>Postaviti temu</value></data>
+<data name="set_dark_theme" xml:space="preserve"><value>Prebaci na temu Dark</value></data>
+<data name="set_light_theme" xml:space="preserve"><value>Prebaci na temu Light</value></data>
+<data name="set_talk_back_on" xml:space="preserve"><value>Let Domoticz talk back to you</value></data>
+<data name="set_talk_back_off" xml:space="preserve"><value>Turn talk back off</value></data>
+<data name="settings_imported" xml:space="preserve"><value>Postavke su učitane, restartujte Domoticz</value></data>
+<data name="settings_import_failed" xml:space="preserve"><value>Greška kod uvoza postavki</value></data>
+<data name="settings_exported" xml:space="preserve"><value>Postavke su izvezene, restartujte Domoticz</value></data>
+<data name="settings_export_failed" xml:space="preserve"><value>Greška kod izvoza postavki</value></data>
+<data name="server_settings" xml:space="preserve"><value>Postavke povezivanja servera</value></data>
+<data name="server_force_fetch_config" xml:space="preserve"><value>Fetch server configuration</value></data>
+<data name="nfc_settings" xml:space="preserve"><value>Postavke NFC povezivanja</value></data>
+<data name="speech_settings" xml:space="preserve"><value>Postavke govorne komande</value></data>
+<data name="title_activity_server_settings" xml:space="preserve"><value>Postavke servera</value></data>
+<data name="multi_server" xml:space="preserve"><value>Multi Server</value></data>
+<data name="enable_nfc" xml:space="preserve"><value>Omogućiti NFC</value></data>
+<data name="enable_speech" xml:space="preserve"><value>Omogući prepoznavanja govora</value></data>
+<data name="export_settings" xml:space="preserve"><value>Postavke izvoza</value></data>
+<data name="reset_settings" xml:space="preserve"><value>Vraćanje svih postavki aplikacija (UPOZORENJE!)</value></data>
+<data name="import_settings" xml:space="preserve"><value>Postavke uvoza</value></data>
+<data name="multi_server_settings" xml:space="preserve"><value>Omogući podršku za više servera</value></data>
+<data name="nfc_enable_settings" xml:space="preserve"><value>Uključi NFC povezivanje</value></data>
+<data name="speech_enable_settings" xml:space="preserve"><value>Omogući prepoznavanja govora</value></data>
+<data name="server" xml:space="preserve"><value>Server</value></data>
+<data name="qrcode_settings" xml:space="preserve"><value>Postavke QR koda</value></data>
+<data name="enable_qrcode" xml:space="preserve"><value>Omogući QR kodove</value></data>
+<data name="qrcode_enable_settings" xml:space="preserve"><value>Omogući funkcionalnost QR kodova</value></data>
+<data name="bluetooth_settings" xml:space="preserve"><value>Setup Bluetooth devices</value></data>
+<data name="enable_bluetooth" xml:space="preserve"><value>Enable Bluetooth functionality</value></data>
+<data name="translate_description" xml:space="preserve"><value>You can help make our translations better, and even add new languages to this app via our Crowdin project</value></data>
+<data name="translate_title" xml:space="preserve"><value>Translations</value></data>
+<data name="security_settings" xml:space="preserve"><value>Postavke sigurnosti</value></data>
+<data name="enable_security" xml:space="preserve"><value>Omogući zaštitu otiskom prsta na početku</value></data>
+<data name="disable_security" xml:space="preserve"><value>Onemogućiti zaštitu otiskom prsta na početak</value></data>
+<data name="setup_fingerprints" xml:space="preserve"><value>Postavi otisak prsta kroz Androidove postavke ekrana</value></data>
+<data name="fingerprint_not_supported" xml:space="preserve"><value>Sigurnost otiskom prsta nije podržana na ovom uređaju</value></data>
+<data name="fingerprint_not_setup_in_android" xml:space="preserve"><value>Prvo konfigurišite/povežite otisak prsta sa ovim uređajem</value></data>
+<data name="fingerprint_sure" xml:space="preserve"><value>Are you sure? The failover password is the password of your Domoticz account.</value></data>
+<data name="category_widgets" xml:space="preserve"><value>Dodaci (BETA)</value></data>
+<data name="widget_description" xml:space="preserve"><value>Omogući ili onemogući dodatak na ovom uređaju</value></data>
+<data name="widget_disabled" xml:space="preserve"><value>Dodaci nisu omogućeni na ovom uređaju, molimo provjerite postavke Domoticz-a</value></data>
+<data name="widget_warning" xml:space="preserve"><value>Koristite dodatke na vlastitu odgovornost!! Dodaci su trenutno u Beta verziji ii vjerojatno sadrže neke greške. Mogu uzrokovati i veliko korištenje podataka / trošenje baterija...</value></data>
+<data name="notification_settings_id" xml:space="preserve"><value>Google Cloud ID poruke</value></data>
+<data name="notification_settings_push" xml:space="preserve"><value>Push your registration id to Domoticz</value></data>
+<data name="notification_settings_pushed" xml:space="preserve"><value>Vaš ID registracije je sada spremljen na Domoticz</value></data>
+<data name="notification_settings_push_failed" xml:space="preserve"><value>Vaš ID registracije se nije mogao pohraniti na Domoticz, Pokušajte ponovo kasnije.</value></data>
+<data name="notification_show_title" xml:space="preserve"><value>Posljednje obavijesti</value></data>
+<data name="notification_show_nothing" xml:space="preserve"><value>Obavijesti nisu pronađene</value></data>
+<data name="notification_show" xml:space="preserve"><value>Pokaži par posljednjih obavijesti</value></data>
+<data name="overwrite_notifications_title" xml:space="preserve"><value>Overwrite Notifications</value></data>
+<data name="overwrite_notifications" xml:space="preserve"><value>Overwrite previous notifications on this device</value></data>
+<data name="enable_notifications_title" xml:space="preserve"><value>Omogući obavijesti</value></data>
+<data name="enable_notifications" xml:space="preserve"><value>Omogući obavijesti na ovom uređaju</value></data>
+<data name="notification_screen_title" xml:space="preserve"><value>Postavke obavijesti</value></data>
+<data name="notification_history" xml:space="preserve"><value>Notification history</value></data>
+<data name="notification_vibrate_title" xml:space="preserve"><value>Vibriraj</value></data>
+<data name="notification_vibrate_on" xml:space="preserve"><value>Vibriraj kada primiš obavijest</value></data>
+<data name="notification_vibrate_off" xml:space="preserve"><value>Ne vibriraj</value></data>
+<data name="notification_sound_title" xml:space="preserve"><value>Zvuk</value></data>
+<data name="notification_sound_summary" xml:space="preserve"><value>Koristi zvuk za obavijesti kad stigne obavijest</value></data>
+<data name="suppress_notifications_select" xml:space="preserve"><value>Odaberite obavijesti za suzbijanje</value></data>
+<data name="suppress_notifications" xml:space="preserve"><value>Suzbijanju određenih obavijesti na ovom uređaju</value></data>
+<data name="suppress_notifications_title" xml:space="preserve"><value>Potisnute obavijesti</value></data>
+<data name="alarm_notifications_select" xml:space="preserve"><value>Odaberite obavijesti za alarm</value></data>
+<data name="alarm_notifications" xml:space="preserve"><value>Zvuk alarma za određene obavijesti</value></data>
+<data name="clear_notifications" xml:space="preserve"><value>Očisti log obavijesti</value></data>
+<data name="alarm_notifications_title" xml:space="preserve"><value>Obavijesti o alarmima</value></data>
+<data name="alarm" xml:space="preserve"><value>Alarm</value></data>
+<data name="alarmtimer_title" xml:space="preserve"><value>Alarmni tajmer</value></data>
+<data name="alarmtimer" xml:space="preserve"><value>Broj sekundi do vremena alarma</value></data>
+<data name="theme_default" xml:space="preserve"><value>Default</value></data>
+<data name="theme_daynight" xml:space="preserve"><value>Day/Night</value></data>
+<data name="theme_orange" xml:space="preserve"><value>Orange</value></data>
+<data name="theme_pink" xml:space="preserve"><value>Pink</value></data>
+<data name="theme_blue" xml:space="preserve"><value>Blue</value></data>
+<data name="default_values" xml:space="preserve"><value>Zadane vrijednosti</value></data>
+<data name="default_values_min_error" xml:space="preserve"><value>Max vrijednost treba biti veća od minimalne vrijednosti</value></data>
+<data name="default_values_max_error" xml:space="preserve"><value>Max vrijednost treba biti veća od minimalne vrijednosti</value></data>
+<data name="info_version" xml:space="preserve"><value>Verzija</value></data>
+<data name="info_domoticz_version" xml:space="preserve"><value>Domoticz verzija</value></data>
+<data name="info_about" xml:space="preserve"><value>O Domoticz-u</value></data>
+<data name="info_credits" xml:space="preserve"><value>Zahvale</value></data>
+<data name="info_credits_text" xml:space="preserve"><value>Domoticz for Android is made possible with several open source libraries</value></data>
+<data name="debug_switch_title" xml:space="preserve"><value>Otklanjanje grešaka</value></data>
+<data name="debug_switch_summary_on" xml:space="preserve"><value>Omogući otklanjanje grešaka</value></data>
+<data name="debug_switch_summary_off" xml:space="preserve"><value>Onemogući otklanjanje grešaka</value></data>
+<data name="error_atLeastOneItemInDrawer" xml:space="preserve"><value>You need at least one item in the drawer</value></data>
+<data name="title_activity_update" xml:space="preserve"><value>Ažuriranje servera</value></data>
+<data name="error_couldNotCheckForVersion" xml:space="preserve"><value>"Could not check for version: %1$s"</value></data>
+<data name="error_couldNotCheckForUpdates" xml:space="preserve"><value>"Could not check for updates: %1$s"</value></data>
+<data name="error_couldNotCheckForConfig" xml:space="preserve"><value>"Ne mogu dobiti konfiguraciju Domoticz servera: %1$s"</value></data>
+<data name="update_available_enhanced" xml:space="preserve"><value>Dostupno je ažuriranje servera: %1$s na verziju: %2$s</value></data>
+<data name="check_for_update_title" xml:space="preserve"><value>Provjeri ima li ažuriranja</value></data>
+<data name="check_for_update" xml:space="preserve"><value>Would you like us to check for Domoticz system updates?</value></data>
+<data name="update_server_warning" xml:space="preserve"><value>Dok se vaš server ažurira ova aplikacija neće raditi ispravno.</value></data>
+<data name="update_server_downloadNotReady1" xml:space="preserve"><value>Ažuriranje nije još (potpuno) preuzeto.</value></data>
+<data name="update_server_downloadNotReady2" xml:space="preserve"><value>Pokušajte ponovo kasnije.</value></data>
+<data name="server_update_available" xml:space="preserve"><value>Ažuriranje servera je dostupno</value></data>
+<data name="update_server" xml:space="preserve"><value>Ažuriraj server</value></data>
+<data name="server_update_revision" xml:space="preserve"><value>Server update revision</value></data>
+<data name="server_version" xml:space="preserve"><value>Verzija servera</value></data>
+<data name="server_update" xml:space="preserve"><value>Ažuriranje servera</value></data>
+<data name="please_wait_while_we_check" xml:space="preserve"><value>Pričekajte dok ne provjerimo jeli vaš server spreman za ažuriranje</value></data>
+<data name="server_update_not_ready" xml:space="preserve"><value>Ažuriranje servera nije preuzeto</value></data>
+<data name="please_wait_while_server_updated" xml:space="preserve"><value>Pričekajte dok server ne započne ažuriranje.</value></data>
+<data name="server_update_done" xml:space="preserve"><value>Ažuriranje servera završeno</value></data>
+<data name="update_not_started" xml:space="preserve"><value>Ažuriranje nije pokrenuto</value></data>
+<data name="update_not_started_unknown_error" xml:space="preserve"><value>Ažuriranje nije pokrenuto zbog nepoznate greške</value></data>
+<data name="server_update_not_available" xml:space="preserve"><value>Ažuriranje servera nije dostupno</value></data>
+<data name="click_to_update_server" xml:space="preserve"><value>Kliknite ovdje da biste ažurirali svoj server</value></data>
+<data name="debug_test_text" xml:space="preserve"><value>Test ispravljanja grešaka</value></data>
+<data name="restart_required_title" xml:space="preserve"><value>Potrebno ponovno pokretanje</value></data>
+<data name="restart_now" xml:space="preserve"><value>Sada ponovno pokreni?</value></data>
+<data name="check_settings" xml:space="preserve"><value>Check your settings</value></data>
+<data name="Speech_not_supported" xml:space="preserve"><value>Prepoznavanje govora nije podržano na ovom uređaju</value></data>
+<data name="Speech_register" xml:space="preserve"><value>Registruj govornu klomandu</value></data>
+<data name="Speech_found" xml:space="preserve"><value>Pronađena nova govorna komanda</value></data>
+<data name="Speech_edit" xml:space="preserve"><value>Uredi govornu komandu</value></data>
+<data name="Speech_name" xml:space="preserve"><value>Dodijeli ovoj govornoj komandi odgovarajući naziv. </value></data>
+<data name="Speech_exists" xml:space="preserve"><value>Govorna komanda je već registrovana. </value></data>
+<data name="Speech_saved" xml:space="preserve"><value>Spasi novu govornu komandu. </value></data>
+<data name="Speech_desc" xml:space="preserve"><value>Izvrši novu govornu komandu. </value></data>
+<data name="Speech" xml:space="preserve"><value>Govor</value></data>
+<data name="Speech_disabled" xml:space="preserve"><value>Glasovne komande onemogućene, postavite putem postavki.</value></data>
+<data name="noSwitchSelected_explanation_Speech" xml:space="preserve"><value>Govorna komanda nema efekta, prekidač treba biti povezan</value></data>
+<data name="title_switches" xml:space="preserve"><value>Prekidači</value></data>
+<data name="txt_notAvailable" xml:space="preserve"><value>N/A</value></data>
+<data name="idx" xml:space="preserve"><value>IDX</value></data>
+<data name="placeholder_value" xml:space="preserve"><value>255</value></data>
+<data name="color_set" xml:space="preserve"><value>Odabrana boja za</value></data>
+<data name="state_set" xml:space="preserve"><value>Odabrano stanje za</value></data>
+<data name="error_favorite" xml:space="preserve"><value>Nije moguće postaviti omiljene</value></data>
+<data name="error_logs" xml:space="preserve"><value>Nije moguće log za prikaz</value></data>
+<data name="error_color" xml:space="preserve"><value>Nije moguće promijeniti boju</value></data>
+<data name="error_state" xml:space="preserve"><value>Nije moguće promjeniti status</value></data>
+<data name="error_timer" xml:space="preserve"><value>Ne mogu pokazati tajmer</value></data>
+<data name="error_notifications" xml:space="preserve"><value>Ne mogu prikazati obavijesti</value></data>
+<data name="set_level_switch" xml:space="preserve"><value>"Postavke nivoa za prekidač: %1$s do %2$d"</value></data>
+<data name="title_temperature" xml:space="preserve"><value>Temperatura</value></data>
+<data name="cancel_override" xml:space="preserve"><value>Cancel override</value></data>
+<data name="wind" xml:space="preserve"><value>Vjetar</value></data>
+<data name="error_log" xml:space="preserve"><value>Nemoguće dohvatiti log za</value></data>
+<data name="follow_schedule" xml:space="preserve"><value>Slijedite raspored</value></data>
+<data name="command" xml:space="preserve"><value>Komanda</value></data>
+<data name="type" xml:space="preserve"><value>Tip</value></data>
+<data name="notapplicable" xml:space="preserve"><value>N/A</value></data>
+<data name="timer_before_sunset" xml:space="preserve"><value>Prije zalaska sunca</value></data>
+<data name="timer_after_sunset" xml:space="preserve"><value>Nakon zalaska sunca</value></data>
+<data name="timer_ontime" xml:space="preserve"><value>U vrijeme</value></data>
+<data name="timer_before_sunrise" xml:space="preserve"><value>Prije izlaska sunca</value></data>
+<data name="timer_after_sunrise" xml:space="preserve"><value>Nakon izlaska sunca</value></data>
+<data name="timer_fixed" xml:space="preserve"><value>Fiksni datum/vrijeme</value></data>
+<data name="odd_day_numbers" xml:space="preserve"><value>Odd Day Numbers</value></data>
+<data name="even_day_numbers" xml:space="preserve"><value>Even Day Numbers</value></data>
+<data name="odd_week_numbers" xml:space="preserve"><value>Odd Week Numbers</value></data>
+<data name="even_week_numbers" xml:space="preserve"><value>Even Week Numbers</value></data>
+<data name="monthly" xml:space="preserve"><value>Mjesečno</value></data>
+<data name="monthly_weekday" xml:space="preserve"><value>Mjesečno (radni dan)</value></data>
+<data name="yearly" xml:space="preserve"><value>Godišnje</value></data>
+<data name="yearly_weekday" xml:space="preserve"><value>Godišnje (radni dan)</value></data>
+<data name="before_sun_at_south" xml:space="preserve"><value>Before Sun at South</value></data>
+<data name="after_sun_at_south" xml:space="preserve"><value>After Sun at South</value></data>
+<data name="before_civil_twilight_start" xml:space="preserve"><value>Before Civil Twilight Start</value></data>
+<data name="after_civil_twilight_start" xml:space="preserve"><value>After Civil Twilight Start</value></data>
+<data name="before_civil_twilight_end" xml:space="preserve"><value>Before Civil Twilight End</value></data>
+<data name="after_civil_twilight_end" xml:space="preserve"><value>After Civil Twilight End</value></data>
+<data name="before_nautical_twilight_start" xml:space="preserve"><value>Before Nautical Twilight Start</value></data>
+<data name="after_nautical_twilight_start" xml:space="preserve"><value>After Nautical Twilight Start</value></data>
+<data name="before_nautical_twilight_end" xml:space="preserve"><value>Before Nautical Twilight End</value></data>
+<data name="after_nautical_twilight_end" xml:space="preserve"><value>After Nautical Twilight End</value></data>
+<data name="before_austronomical_twilight_start" xml:space="preserve"><value>Before Austronomical Twilight Start</value></data>
+<data name="after_austronomical_twilight_start" xml:space="preserve"><value>After Austronomical Twilight Start</value></data>
+<data name="before_austronomical_twilight_end" xml:space="preserve"><value>Before Austronomical Twilight End</value></data>
+<data name="after_austronomical_twilight_end" xml:space="preserve"><value>After Austronomical Twilight End</value></data>
+<data name="timer_every_days" xml:space="preserve"><value>Svaki dan</value></data>
+<data name="timer_working_days" xml:space="preserve"><value>Radni dani</value></data>
+<data name="timer_weekend" xml:space="preserve"><value>Vikend</value></data>
+<data name="timer_other" xml:space="preserve"><value>Drugi</value></data>
+<data name="timers" xml:space="preserve"><value>Tajmeri</value></data>
+<data name="first" xml:space="preserve"><value>First</value></data>
+<data name="second" xml:space="preserve"><value>Second</value></data>
+<data name="third" xml:space="preserve"><value>Third</value></data>
+<data name="fourth" xml:space="preserve"><value>Fourth</value></data>
+<data name="last" xml:space="preserve"><value>Last</value></data>
+<data name="title_utilities" xml:space="preserve"><value>Alati</value></data>
+<data name="settemperature" xml:space="preserve"><value>Postavi</value></data>
+<data name="title_vars" xml:space="preserve"><value>Korisničke varijable</value></data>
+<data name="var_input" xml:space="preserve"><value>Unesena vrijednost nije valjana</value></data>
+<data name="var_input_error" xml:space="preserve"><value>Nije uspjelo ažuriranje varijable korisnika</value></data>
+<data name="title_weather" xml:space="preserve"><value>Vremenska prognoza</value></data>
+<data name="dewPoint" xml:space="preserve"><value>Tačka rosišta</value></data>
+<data name="temp" xml:space="preserve"><value>Temp</value></data>
+<data name="pressure" xml:space="preserve"><value>Pritisak</value></data>
+<data name="chill" xml:space="preserve"><value>Hladno</value></data>
+<data name="direction" xml:space="preserve"><value>Smjer</value></data>
+<data name="humidity" xml:space="preserve"><value>Hum</value></data>
+<data name="speed" xml:space="preserve"><value>Brzina</value></data>
+<data name="forecast" xml:space="preserve"><value>Prognoza</value></data>
+<data name="rain" xml:space="preserve"><value>Kiša</value></data>
+<data name="rainrate" xml:space="preserve"><value>Količina kiše</value></data>
+<data name="co2" xml:space="preserve"><value>CO2</value></data>
+<data name="co2min" xml:space="preserve"><value>Min CO2</value></data>
+<data name="co2max" xml:space="preserve"><value>Max CO2</value></data>
+<data name="welcome_title_activity_welcome" xml:space="preserve"><value>Dobro došli</value></data>
+<data name="welcome_info_domoticz" xml:space="preserve"><value>Domoticz je kućni sistem za automatizaciju koji vam omogućuje praćenje i konfigurisanje raznih uređaje kao što su: svjetla, prekidače, raznih senzora/mjerača temperatura, pritiska, kiše, vjetra, UV, struje, plina, vode i još mnogo toga. Obavijesti/upozorenja mogu biti poslani na bilo koji mobilni uređaj.</value></data>
+<data name="welcome_info_swipe" xml:space="preserve"><value>Pređite prstom udesno ili koristiti navigacijsku dugmad na dnu da biste nastavili</value></data>
+<data name="welcome_info_settings1" xml:space="preserve"><value>Sljedeća stranica je za vaše Domoticz postavke.</value></data>
+<data name="welcome_info_settings2" xml:space="preserve"><value>Možete odrediti postavke lokalnog ili udaljenog servera. Lokalne postavke su kad ste spojeni na kućnu wifi mrežu. Udaljene postavke se koriste kada niste povezani na kućnu wifi mrežu ili kada ste povezani mobilnom podatkovnom mrežom (2G, 3G, 4G itd).</value></data>
+<data name="welcome_info_checkingConnection" xml:space="preserve"><value>Potvrdite vaše postavke za povezivanje</value></data>
+<data name="welcome_msg_connectionDataIncomplete" xml:space="preserve"><value>Podaci o postavkama povezivanja nekompletni ili ne postoje</value></data>
+<data name="welcome_msg_connectionDataInvalid" xml:space="preserve"><value>URL ne bi trebao početi sa http</value></data>
+<data name="welcome_msg_correctOnPreviousPage" xml:space="preserve"><value>Ispravite podatke na prethodnoj stranici</value></data>
+<data name="welcome_msg_serverVersion" xml:space="preserve"><value>Verzija Domoticz-a</value></data>
+<data name="welcome_msg_numberOfDevices" xml:space="preserve"><value>%1$d uređaj pronađen</value></data>
+<data name="welcome_msg_no_ssid_found" xml:space="preserve"><value>SSID WiFi-ja nije pronađen</value></data>
+<data name="welcome_ssid_spinner_prompt" xml:space="preserve"><value>Odaberite kućni SSID</value></data>
+<data name="welcome_ssid_button_prompt" xml:space="preserve"><value>Dodajte kućni SSID</value></data>
+<data name="welcome_server_settings_title" xml:space="preserve"><value>Postavke servera</value></data>
+<data name="welcome_server_startScreen" xml:space="preserve"><value>Početni zaslon</value></data>
+<data name="welcome_button_next" xml:space="preserve"><value>sljedeće</value></data>
+<data name="welcome_button_previous" xml:space="preserve"><value>prethodno</value></data>
+<data name="welcome_button_finish" xml:space="preserve"><value>završi</value></data>
+<data name="welcome_remote_server_address" xml:space="preserve"><value>Adresa servera</value></data>
+<data name="welcome_remote_server_protocol" xml:space="preserve"><value>Protokol</value></data>
+<data name="welcome_remote_server_port" xml:space="preserve"><value>Port</value></data>
+<data name="welcome_remote_server_username" xml:space="preserve"><value>Korisničko Ime</value></data>
+<data name="welcome_remote_server_password" xml:space="preserve"><value>Lozinka</value></data>
+<data name="welcome_remote_server_directory" xml:space="preserve"><value>Direktorij</value></data>
+<data name="remote" xml:space="preserve"><value>Udaljeni</value></data>
+<data name="local" xml:space="preserve"><value>Lokalni</value></data>
+<data name="servername" xml:space="preserve"><value>Naziv servera</value></data>
+<data name="welcome_local_server_used_switch_title" xml:space="preserve"><value>Adresa drugog servera</value></data>
+<data name="welcome_local_server_used_switch_summary" xml:space="preserve"><value>Koristite drugu adresu za lokalne veze</value></data>
+<data name="welcome_advancedSettings" xml:space="preserve"><value>Napredna podešavanja servera</value></data>
+<data name="welcome_advancedSettings_summary" xml:space="preserve"><value>Koristiti samo za ne standardne Domoticz servere</value></data>
+<data name="welcome_local_server_ssid" xml:space="preserve"><value>Lokalni Wi-Fi SSID je</value></data>
+<data name="welcome_local_server_address" xml:space="preserve"><value>Lokalna adresa servera</value></data>
+<data name="welcome_local_server_protocol" xml:space="preserve"><value>Lokalni protokol</value></data>
+<data name="welcome_local_server_port" xml:space="preserve"><value>Lokalni port</value></data>
+<data name="welcome_local_server_directory" xml:space="preserve"><value>Lokalni direktorij (ostaviti prazno ako se ne koristi)</value></data>
+<data name="welcome_local_server_username" xml:space="preserve"><value>Lokalno korisničko ime (ostaviti prazno ako se ne koristi)</value></data>
+<data name="welcome_local_server_password" xml:space="preserve"><value>Lokalna lozinka (ostaviti prazno ako se ne koristi)</value></data>
+<data name="pick_device_title" xml:space="preserve"><value>Odaberite uređaj</value></data>
+<data name="choose_switch" xml:space="preserve"><value>Odaberite uređaj</value></data>
+<data name="failed_to_get_securitypanel" xml:space="preserve"><value>Unutar prekidača nije pronađena sigurnosna ploča</value></data>
+<data name="failed_to_get_switches" xml:space="preserve"><value>Dobivanje uređaja nije uspjelo</value></data>
+<data name="failed_toggle_switch" xml:space="preserve"><value>Prebacivanje uređaja nije uspjelo</value></data>
+<data name="switch_toggled" xml:space="preserve"><value>"Prekidači"</value></data>
+<data name="text_loading" xml:space="preserve"><value>Učitavanje...</value></data>
+<data name="text_go" xml:space="preserve"><value>IDI</value></data>
+<data name="widget_background" xml:space="preserve"><value>Pozadina</value></data>
+<data name="widget_dark" xml:space="preserve"><value>Tamno</value></data>
+<data name="widget_light" xml:space="preserve"><value>Svijetlo</value></data>
+<data name="widget_transparent_dark" xml:space="preserve"><value>Transparentno tamno</value></data>
+<data name="widget_transparent_light" xml:space="preserve"><value>Transparentno svijetlo</value></data>
+<data name="title_wizard" xml:space="preserve"><value>Čarobnjak dobrodošlice</value></data>
+<data name="wizard_welcome" xml:space="preserve"><value>Dobro došli</value></data>
+<data name="wizard_welcome_description" xml:space="preserve"><value>Domoticz je vrlo lagani sistem za kućnu automatizaciju koji vam omogućava nadzor i konfigurisanje raznih uređaja.</value></data>
+<data name="wizard_favorites" xml:space="preserve"><value>Favoriti</value></data>
+<data name="wizard_favorites_description" xml:space="preserve"><value>Uređaje možete dodati na ploču tako da ih spremite u favorite. Kliknite stavku dugim klikom da je spremite u favorite!</value></data>
+<data name="wizard_startup" xml:space="preserve"><value>Početni ekran</value></data>
+<data name="wizard_startup_description" xml:space="preserve"><value>Početni ekran možete podesiti u postavkama!</value></data>
+<data name="wizard_notifications" xml:space="preserve"><value>Postavke obavijesti</value></data>
+<data name="wizard_notifications_description" xml:space="preserve"><value>Sada možete primati obavijesti na svoj Android uređaj! U vašim postavkama promijenite način ponašanja obavijesti</value></data>
+<data name="wizard_multiserver" xml:space="preserve"><value>Korištenje višestrukih servera</value></data>
+<data name="wizard_multiserver_description" xml:space="preserve"><value>U postavkama možete konfigurisati više Domoticz servera.</value></data>
+<data name="wizard_geo" xml:space="preserve"><value>Geofencing</value></data>
+<data name="wizard_geo_description" xml:space="preserve"><value>Početni ekran možete podesiti u postavkama!</value></data>
+<data name="wizard_wear" xml:space="preserve"><value>Android Wear</value></data>
+<data name="wizard_wear_description" xml:space="preserve"><value>Možete odrediti koje biste prekidače željeli kontrolisati Android Wear uređajem!</value></data>
+<data name="wizard_auto" xml:space="preserve"><value>Android auto</value></data>
+<data name="wizard_auto_description" xml:space="preserve"><value>Primajte Domoticz obavijesti direktno na Android Auto uređaj!</value></data>
+<data name="wizard_graph" xml:space="preserve"><value>Dijagrami</value></data>
+<data name="wizard_graph_description" xml:space="preserve"><value>Možete vidjeti dijagram korištenja uslužnih uređaja, vremenskih prilika ili temperature!</value></data>
+<data name="wizard_filter" xml:space="preserve"><value>Filteri</value></data>
+<data name="wizard_filter_description" xml:space="preserve"><value>Uređaje možete filtrirati po statusu (uključen/isključen). U desnom gornjem meniju je ikona za filtriranje!</value></data>
+<data name="wizard_widgets" xml:space="preserve"><value>Dodaci!!</value></data>
+<data name="wizard_widgets_description" xml:space="preserve"><value>Na početni ekran možete postaviti i dodatke!</value></data>
+<data name="wizard_menuitem" xml:space="preserve"><value>Onemogućite čarobnjaka</value></data>
+<data name="wizard_menuitem_description" xml:space="preserve"><value>Sada možete ukloniti ovog čarobnjak iz navigacijskog menija!</value></data>
+<data name="wizard_nfc" xml:space="preserve"><value>NFC</value></data>
+<data name="wizard_nfc_description" xml:space="preserve"><value>U mogućnosti ste prebaciti prekidače putem NFC!</value></data>
+<data name="wizard_qrcode" xml:space="preserve"><value>QR kod</value></data>
+<data name="wizard_qrcode_description" xml:space="preserve"><value>Prebaci prekidače skeniranjem QR ili bakoda!</value></data>
+<data name="wizard_speech" xml:space="preserve"><value>Govorne komande</value></data>
+<data name="wizard_speech_description" xml:space="preserve"><value>Upravljajte prekidačima svojim glasom! Konfigurišite govorne komande postavki ekrana i povežite prekidače.</value></data>
+<data name="wizard_button_nice" xml:space="preserve"><value>Lijepo</value></data>
+<data name="wizard_button_switches" xml:space="preserve"><value>Prekidači</value></data>
+<data name="wizard_button_settings" xml:space="preserve"><value>Postavke</value></data>
+<data name="wizard_button_wizard" xml:space="preserve"><value>Ukloni</value></data>
+<data name="wizard_button_utilities" xml:space="preserve"><value>Alati</value></data>
+<data name="wizard_button_done" xml:space="preserve"><value>Učini</value></data>
+</root>

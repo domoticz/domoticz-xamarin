@@ -113,13 +113,13 @@
                                         <Label
                                             HorizontalOptions="Start"
                                             Style="{StaticResource SettingsDetailType}"
-                                            Text="{resources:Translate sort_dashboardLikeServer_title}"
+                                            Text="{resources:Translate sort_server_title}"
                                             VerticalOptions="CenterAndExpand" />
                                         <Label
                                             x:Name="lblSort"
                                             HorizontalOptions="Start"
                                             Style="{StaticResource DetailSmallType}"
-                                            Text="{resources:Translate sort_dashboardLikeServer_on}"
+                                            Text="{resources:Translate sort_server_on}"
                                             VerticalOptions="CenterAndExpand" />
                                     </StackLayout>
                                     <Switch
@@ -466,6 +466,38 @@
                                 </StackLayout>
                             </ViewCell>
 
+                            <ViewCell Tapped="btnBluetoothSettings_Clicked">
+                                <StackLayout
+                                    HorizontalOptions="FillAndExpand"
+                                    Orientation="Horizontal"
+                                    Style="{StaticResource SettingsRowStackLayout}"
+                                    VerticalOptions="StartAndExpand">
+                                    <StackLayout
+                                        HorizontalOptions="StartAndExpand"
+                                        Orientation="Vertical"
+                                        VerticalOptions="Center">
+                                        <Label
+                                            HorizontalOptions="Start"
+                                            Style="{StaticResource SettingsDetailType}"
+                                            Text="{resources:Translate bluetooth}"
+                                            VerticalOptions="CenterAndExpand" />
+                                        <Label
+                                            HorizontalOptions="Start"
+                                            Style="{StaticResource DetailSmallType}"
+                                            Text="{resources:Translate bluetooth_desc}"
+                                            VerticalOptions="CenterAndExpand" />
+                                    </StackLayout>
+                                    <custcontrol:TintedCachedImage
+                                        HorizontalOptions="EndAndExpand"
+                                        Source="baseline_arrow_right_black_24.png"
+                                        Style="{DynamicResource expendIcon}"
+                                        VerticalOptions="CenterAndExpand" />
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="btnBluetoothSettings_Clicked" />
+                                    </StackLayout.GestureRecognizers>
+                                </StackLayout>
+                            </ViewCell>
+
                             <ViewCell Tapped="btnBeaconSettings_Clicked">
                                 <StackLayout
                                     HorizontalOptions="FillAndExpand"
@@ -479,7 +511,7 @@
                                         <Label
                                             HorizontalOptions="Start"
                                             Style="{StaticResource SettingsDetailType}"
-                                            Text="{resources:Translate title_beacon}"
+                                            Text="{resources:Translate beacon}"
                                             VerticalOptions="CenterAndExpand" />
                                         <Label
                                             HorizontalOptions="Start"

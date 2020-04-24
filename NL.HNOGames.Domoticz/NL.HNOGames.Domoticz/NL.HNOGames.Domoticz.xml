@@ -2411,7 +2411,7 @@
               Looks up a localized string similar to Sort dashboard like server.
             </summary>
         </member>
-        <member name="P:NL.HNOGames.Domoticz.Resources.AppResources.sort_dashboardLikeServer_title">
+        <member name="P:NL.HNOGames.Domoticz.Resources.AppResources.sort_server_title">
             <summary>
               Looks up a localized string similar to Dashboard sorting.
             </summary>
@@ -4997,7 +4997,7 @@
               Looks up a localized string similar to 仪表盘按服务器顺序排序.
             </summary>
         </member>
-        <member name="P:NL.HNOGames.Domoticz.Resources.AppResources_zhrCN.sort_dashboardLikeServer_title">
+        <member name="P:NL.HNOGames.Domoticz.Resources.AppResources_zhrCN.sort_server_title">
             <summary>
               Looks up a localized string similar to 仪表盘排序.
             </summary>

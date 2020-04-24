@@ -2202,6 +2202,9 @@
     <PackageReference Include="Shiny.Beacons">
       <Version>1.1.0.1473-beta</Version>
     </PackageReference>
+    <PackageReference Include="Shiny.BluetoothLE">
+      <Version>1.1.0.1473-beta</Version>
+    </PackageReference>
     <PackageReference Include="Shiny.Core">
       <Version>1.1.0.1473</Version>
     </PackageReference>

@@ -30,8 +30,8 @@
 	<array>
 		<string>location</string>
 		<string>remote-notification</string>
-    <string>bluetooth-central</string>
-    <string>bluetooth-peripheral</string>
+		<string>bluetooth-central</string>
+		<string>bluetooth-peripheral</string>
 	</array>
 	<key>UIRequiresFullScreen</key>
 	<string>YES</string>
@@ -63,10 +63,10 @@
 	<string>We need the microphone for speech recognition</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string>Need your face to unlock Domoticz.</string>
-  <key>NSBluetoothPeripheralUsageDescription</key>
-  <string>You can set switches automaticly on Bluetooth connections</string>
-  <key>NSBluetoothAlwaysUsageDescription</key>
-  <string>You can set switches automaticly on Bluetooth connections</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>You can set switches automaticly on Bluetooth connections</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>You can set switches automaticly on Bluetooth connections</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -87,8 +87,8 @@
 	<key>MinimumOSVersion</key>
 	<string>11.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.1.18</string>
+	<string>0.1.19</string>
 	<key>CFBundleVersion</key>
-	<string>130</string>
+	<string>131</string>
 </dict>
 </plist>

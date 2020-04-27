@@ -466,7 +466,7 @@
                                 </StackLayout>
                             </ViewCell>
 
-                            <ViewCell Tapped="btnBluetoothSettings_Clicked">
+                            <!--<ViewCell Tapped="btnBluetoothSettings_Clicked">
                                 <StackLayout
                                     HorizontalOptions="FillAndExpand"
                                     Orientation="Horizontal"
@@ -496,7 +496,7 @@
                                         <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="btnBluetoothSettings_Clicked" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
-                            </ViewCell>
+                            </ViewCell>-->
 
                             <ViewCell Tapped="btnBeaconSettings_Clicked">
                                 <StackLayout

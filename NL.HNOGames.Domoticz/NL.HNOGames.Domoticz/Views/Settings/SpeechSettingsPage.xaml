@@ -68,7 +68,7 @@
                     </ViewCell>
                 </TableSection>
 
-                <TableSection Title="{resources:Translate category_QRCode}">
+                <TableSection Title="{resources:Translate category_Speech}">
                     <ViewCell>
                         <ListView
                             x:Name="listView"

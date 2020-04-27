@@ -1,7 +1,7 @@
 ﻿using Acr.UserDialogs;
 using NL.HNOGames.Domoticz.Resources;
-using Rg.Plugins.Popup.Services;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -13,6 +13,12 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
     /// </summary>
     public partial class SwitchPopup
     {
+        #region Variables
+
+        private List<Models.Device> switchList;
+
+        #endregion
+
         #region Constructor & Destructor
 
         /// <summary>
@@ -21,6 +27,10 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
         public SwitchPopup()
         {
             InitializeComponent();
+
+            searchIcon.GestureRecognizers.Add(new TapGestureRecognizer { Command = new Command(OnSearchIconTapped) });
+            searchBar.TextChanged += searchBar_TextChanged;
+            searchBar.Cancelled += (s, e) => OnCancelled();
         }
 
         #endregion
@@ -47,6 +57,34 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
         #endregion
 
         #region Private
+
+        /// <summary>
+        /// Filter changed
+        /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="TextChangedEventArgs"/></param>
+        private void searchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                var filterText = e.NewTextValue.ToLower().Trim();
+                if (filterText == string.Empty)
+                {
+                    listView.ItemsSource = null;
+                    listView.ItemsSource = switchList;
+                }
+                else
+                {
+                    listView.ItemsSource = null;
+                    listView.ItemsSource = switchList.Where(i => i.Name.ToLower().Trim().Contains(filterText));
+                }
+            }
+            catch (Exception)
+            {
+                listView.ItemsSource = null;
+                listView.ItemsSource = switchList;
+            }
+        }
 
         /// <summary>
         /// The OnItemSelected
@@ -100,7 +138,7 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
             if (result == null)
                 return;
 
-            var switchList = result.result.Where(Data.ConstantValues.CanHandleAutomatedToggle);
+            switchList = result?.result?.Where(Data.ConstantValues.CanHandleAutomatedToggle)?.ToList();
             listView.ItemsSource = switchList;
             listView.IsRefreshing = false;
         }
@@ -113,6 +151,46 @@ namespace NL.HNOGames.Domoticz.Views.Dialog
         private void btnCancel_Clicked(object sender, EventArgs e)
         {
             Navigation.PopAsync();
+        }
+
+        /// <summary>
+        /// The OnSearchIconTapped
+        /// </summary>
+        private void OnSearchIconTapped()
+        {
+            BatchBegin();
+            try
+            {
+                NavigationPage.SetHasBackButton(this, false);
+                titleLayout.IsVisible = false;
+                searchIcon.IsVisible = false;
+                searchBar.IsVisible = true;
+                searchBar.Focus();
+            }
+            finally
+            {
+                BatchCommit();
+            }
+        }
+
+        /// <summary>
+        /// The OnCancelled
+        /// </summary>
+        private void OnCancelled()
+        {
+            BatchBegin();
+            try
+            {
+                NavigationPage.SetHasBackButton(this, true);
+                searchBar.IsVisible = false;
+                searchBar.Text = string.Empty;
+                titleLayout.IsVisible = true;
+                searchIcon.IsVisible = true;
+            }
+            finally
+            {
+                BatchCommit();
+            }
         }
 
         #endregion

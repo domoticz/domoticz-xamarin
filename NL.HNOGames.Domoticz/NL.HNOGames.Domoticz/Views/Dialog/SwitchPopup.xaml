@@ -5,11 +5,21 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:custcontrol="clr-namespace:NL.HNOGames.Domoticz.Controls;assembly=NL.HNOGames.Domoticz"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:resources="clr-namespace:NL.HNOGames.Domoticz.Resources;assembly=NL.HNOGames.Domoticz"
     ios:Page.UseSafeArea="true"
     Style="{StaticResource ContentPageType}"
     Visual="Material">
+
     <NavigationPage.TitleView>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <custcontrol:TitleViewSearchBar
+                x:Name="searchBar"
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                CancelButtonColor="White "
+                IsVisible="false"
+                PlaceholderColor="White"
+                TextColor="White" />
             <StackLayout
                 x:Name="titleLayout"
                 AbsoluteLayout.LayoutBounds="0,0,1,1"
@@ -21,12 +31,19 @@
                     x:Name="title"
                     HorizontalTextAlignment="Start"
                     Style="{DynamicResource TitleStyle}"
-                    Text="Connect Switch"
+                    Text="{resources:Translate choose_switch}"
                     VerticalOptions="Center"
                     VerticalTextAlignment="Center" />
             </StackLayout>
+            <Image
+                x:Name="searchIcon"
+                Margin="0,0,16,0"
+                AbsoluteLayout.LayoutBounds="1,0.5,AutoSize,AutoSize"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Source="baseline_search_white_24.png" />
         </AbsoluteLayout>
     </NavigationPage.TitleView>
+
 
     <ContentPage.Content>
         <ListView

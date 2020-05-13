@@ -261,6 +261,7 @@ namespace NL.HNOGames.Domoticz.Models
                     if (!string.IsNullOrEmpty(this.Counter) &&
                         string.Compare(this.Counter, this.Data, StringComparison.OrdinalIgnoreCase) != 0)
                         dataText += " " + AppResources.total + ": " + this.Counter;
+                    
                     if (!string.IsNullOrEmpty(this.Type) && string.Compare(this.Type, ConstantValues.Device.Type.Name.WIND, StringComparison.OrdinalIgnoreCase) == 0)
                         dataText = AppResources.direction + ": " + this.Direction + " " + this.DirectionStr;
                     if (!string.IsNullOrEmpty(this.ForecastStr))
@@ -639,6 +640,11 @@ namespace NL.HNOGames.Domoticz.Models
         public string Counter { get; set; }
 
         /// <summary>
+        /// Gets or sets the Counter
+        /// </summary>
+        public string CounterDeliv { get; set; }
+
+        /// <summary>
         /// Gets or sets the Color
         /// </summary>
         public string Color { get; set; }
@@ -649,6 +655,11 @@ namespace NL.HNOGames.Domoticz.Models
         public string CounterToday { get; set; }
 
         /// <summary>
+        /// Gets or sets the CounterToday
+        /// </summary>
+        public string CounterDelivToday { get; set; }
+
+        /// <summary>
         /// Gets or sets the Options
         /// </summary>
         public string Options { get; set; }
@@ -657,6 +668,11 @@ namespace NL.HNOGames.Domoticz.Models
         /// Gets or sets the Usage
         /// </summary>
         public string Usage { get; set; }
+
+        /// <summary>
+        /// Gets or sets the UsageDeliv
+        /// </summary>
+        public string UsageDeliv { get; set; }
 
         /// <summary>
         /// Gets or sets the SetPoint

@@ -21,7 +21,10 @@ namespace NL.HNOGames.Domoticz.Droid.Helpers
         /// <returns>The <see cref="HttpClientHandler"/></returns>
         public HttpClientHandler GetInsecureHandler()
         {
-            return new IgnoreSSLClientHandler();
+            return new IgnoreSSLClientHandler()
+            {
+                UseCookies = true
+            };
         }
 
         #endregion

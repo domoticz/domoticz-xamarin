@@ -35,7 +35,14 @@ You can download Domoticz from the Google Play Store. There is a premium and fre
 <img src="https://user-images.githubusercontent.com/14561640/29310106-ca32251c-81ac-11e7-8477-f3524ab81b2a.jpg" width="400">  
 <img src="https://user-images.githubusercontent.com/14561640/29310105-ca309e22-81ac-11e7-924a-171d65912367.jpg" width="400  
 <img src="https://user-images.githubusercontent.com/14561640/29310109-ca33f8ba-81ac-11e7-81bc-b55716aaa1b4.jpg" width="400">  
-<img src="https://user-images.githubusercontent.com/14561640/29310107-ca324394-81ac-11e7-9b7f-092a44681602.jpg" width="400">  
+<img src="https://user-images.githubusercontent.com/14561640/29310107-ca324394-81ac-11e7-9b7f-092a44681602.jpg" width="400">
+
+
+# Donation
+
+If you like to support the Domoticz apps, you could always buy me a cup of coffee!   
+(Thanks!)  
+[![PayPal donate button](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.me/markheinis)  
 
 
 # Credits

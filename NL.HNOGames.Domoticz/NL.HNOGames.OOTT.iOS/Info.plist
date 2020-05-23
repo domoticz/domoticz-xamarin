@@ -8,8 +8,6 @@
 	<string>NL.HNOGames.OOTT.iOS</string>
 	<key>CFBundleIdentifier</key>
 	<string>nl.hnogames.oott</string>
-	<key>MinimumOSVersion</key>
-	<string>11.0</string>
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
@@ -28,14 +26,13 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>location</string>
 		<string>remote-notification</string>
+		<string>bluetooth-central</string>
+		<string>bluetooth-peripheral</string>
 	</array>
-	<key>XSAppIconAssets</key>
-	<string>Resources/Media.xcassets/AppIcons.appiconset</string>
 	<key>UIRequiresFullScreen</key>
 	<string>YES</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
@@ -44,34 +41,54 @@
 	<true/>
 	<key>FIREBASE_ANALYTICS_COLLECTION_ENABLED</key>
 	<false/>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>This app needs access to photo library for storing attachments</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This app needs access to location to default the country and dialing code during sign up.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Can we use your camera</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Can we use your calendar</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Can we use your location for geofences</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Can we use your location for geofences</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Can we use your calendar</string>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
-	<key>CFBundleShortVersionString</key>
-	<string>0.0.90</string>
-	<key>ITSAppUsesNonExemptEncryption</key>
-	<false/>
-	<key>CFBundleVersion</key>
-	<string>90</string>
+	<key>NFCReaderUsageDescription</key>
+	<string>Toggle switches via NFC.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>Enable speech recognition in the app</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>We need the microphone for speech recognition</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string>Need your face to unlock OOTT.</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Can we use your location for geofences</string>
-	<key>NSLocationWhenInUseUsageDescrtion</key>
-	<string>Can we use your location for geofences</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>You can set switches automaticly on Bluetooth connections</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>You can set switches automaticly on Bluetooth connections</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>XSAppIconAssets</key>
+	<string>Resources/Media.xcassets/AppIcons.appiconset</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 	<key>XSLaunchImageAssets</key>
 	<string>Resources/Media.xcassets/LaunchImages.launchimage</string>
-  <key>UIUserInterfaceStyle</key>
-  <string>Light</string>
+	<key>UILaunchStoryboardName</key>
+	<string>Launch</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Launch</string>
+	<key>MinimumOSVersion</key>
+	<string>11.0</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.1.26</string>
+	<key>CFBundleVersion</key>
+	<string>136</string>
 </dict>
 </plist>

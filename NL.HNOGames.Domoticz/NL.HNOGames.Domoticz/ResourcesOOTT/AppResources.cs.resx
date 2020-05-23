@@ -1,1 +1,608 @@
-<?xml version="1.0" encoding="utf-8"?> <root> <resheader name="resmimetype">		<value>text/microsoft-resx</value>	</resheader>	<resheader name="version">		<value>2.0</value>	</resheader>	<resheader name="reader">		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>	<resheader name="writer">		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader><data name="premium_category" xml:space="preserve"><value>Koupit prémiovou verzi!</value></data><data name="premium_title" xml:space="preserve"><value>Získat prémiovou verzi!</value></data><data name="premium_feature" xml:space="preserve"><value>Toto je prémiová funkce, kupte si placenou verzi aplikace a podpořte tak vývojáře!</value></data><data name="drawer_open" xml:space="preserve"><value>Otevřít navigační panel</value></data><data name="drawer_close" xml:space="preserve"><value>Zavřít navigační panel</value></data><data name="msg_please_wait" xml:space="preserve"><value>Počkejte prosím&#8230;</value></data><data name="changelog" xml:space="preserve"><value>Historie změn</value></data><data name="button_state_on" xml:space="preserve"><value>Zapnnuto</value></data><data name="button_state_off" xml:space="preserve"><value>Vypnuto</value></data><data name="button_state_closed" xml:space="preserve"><value>Zavřít</value></data><data name="button_state_open" xml:space="preserve"><value>Otevřít</value></data><data name="button_status_log" xml:space="preserve"><value>Záznam</value></data><data name="button_status_day" xml:space="preserve"><value>Den</value></data><data name="button_status_week" xml:space="preserve"><value>Týden</value></data><data name="button_status_month" xml:space="preserve"><value>Měsíc</value></data><data name="button_status_year" xml:space="preserve"><value>Rok</value></data><data name="button_status_timer" xml:space="preserve"><value>Časovač</value></data><data name="button_status_notifications" xml:space="preserve"><value>Notifikace</value></data><data name="button_color" xml:space="preserve"><value>Barva</value></data><data name="button_arm" xml:space="preserve"><value>Zastřežit</value></data><data name="button_disarm" xml:space="preserve"><value>Odstřežit</value></data><data name="last_update" xml:space="preserve"><value>Naposledy viděný</value></data><data name="signal_level" xml:space="preserve"><value>Úroveň signálu</value></data><data name="battery_level" xml:space="preserve"><value>Stav baterie</value></data><data name="data" xml:space="preserve"><value>Data</value></data><data name="hardware" xml:space="preserve"><value>Hardware</value></data><data name="temperature" xml:space="preserve"><value>Teplota</value></data><data name="status" xml:space="preserve"><value>Stav</value></data><data name="set_point" xml:space="preserve"><value>Nastavit bod</value></data><data name="set_point_min" xml:space="preserve"><value>Set point min value</value></data><data name="set_point_min_description" xml:space="preserve"><value>Min temperature that you can set for your thermostat</value></data><data name="set_point_max" xml:space="preserve"><value>Set point max value</value></data><data name="set_point_max_description" xml:space="preserve"><value>Max temperature that you can set for your thermostat</value></data><data name="action_success" xml:space="preserve"><value>Akce ukončena úspěšně</value></data><data name="action_failed" xml:space="preserve"><value>Akce neúspěšná</value></data><data name="action_unknown" xml:space="preserve"><value>Neznámý výsledek akce</value></data><data name="choose_status" xml:space="preserve"><value>Vybrat stav</value></data><data name="normal" xml:space="preserve"><value>Normální</value></data><data name="economy" xml:space="preserve"><value>Ekonomický</value></data><data name="away" xml:space="preserve"><value>Mimo domov</value></data><data name="day_off" xml:space="preserve"><value>Den volna</value></data><data name="custom" xml:space="preserve"><value>Vlastní</value></data><data name="heating_off" xml:space="preserve"><value>Vytápění vypnuté</value></data><data name="selector_value" xml:space="preserve"><value>Výběr hodnoty</value></data><data name="debug_textview_title" xml:space="preserve"><value>Informace o ladění</value></data><data name="msg_copiedToClipboard" xml:space="preserve"><value>Text byl zkopírován do schránky</value></data><data name="favorite" xml:space="preserve"><value>Oblíbené</value></data><data name="yes" xml:space="preserve"><value>Ano</value></data><data name="no" xml:space="preserve"><value>Ne</value></data><data name="are_you_sure" xml:space="preserve"><value>Opravdu?</value></data><data name="are_you_sure_clear_settings" xml:space="preserve"><value>Are you sure?? This also clears all homescreen widget settings, so you should re-add them afterwards..</value></data><data name="add" xml:space="preserve"><value>Přidat</value></data><data name="cancel" xml:space="preserve"><value>Zrušit</value></data><data name="ok" xml:space="preserve"><value>Ok</value></data><data name="request_again" xml:space="preserve"><value>Požádat znova</value></data><data name="upgrade" xml:space="preserve"><value>Aktualizace</value></data><data name="something_went_wrong" xml:space="preserve"><value>Něco se pokazilo</value></data><data name="no_network_available" xml:space="preserve"><value>Chyba: Žádné síťové připojení není dispozici</value></data><data name="oops" xml:space="preserve"><value>ALE NE!</value></data><data name="to" xml:space="preserve"><value>"na"</value></data><data name="retry" xml:space="preserve"><value>Zkusit znovu</value></data><data name="undo" xml:space="preserve"><value>Zpět</value></data><data name="something_deleted" xml:space="preserve"><value>%1$s odstraněné</value></data><data name="switch_on" xml:space="preserve"><value>Zapnout přepínač</value></data><data name="switch_off" xml:space="preserve"><value>Vypnout přepínač</value></data><data name="blind_up" xml:space="preserve"><value>Vytáhnout žaluzie</value></data><data name="blind_down" xml:space="preserve"><value>Stáhnout žaluzie</value></data><data name="blind_stop" xml:space="preserve"><value>Zastavit žaluzie</value></data><data name="filter_on" xml:space="preserve"><value>Filtrovat podle</value></data><data name="filterOn_on" xml:space="preserve"><value>Stav zap</value></data><data name="filterOn_off" xml:space="preserve"><value>Stav vyp</value></data><data name="filterOn_static" xml:space="preserve"><value>Statické zařízení</value></data><data name="filterOn_all" xml:space="preserve"><value>Všechny zařízení</value></data><data name="filter" xml:space="preserve"><value>Filter</value></data><data name="filter_devices" xml:space="preserve"><value>Filtrovat zařízení</value></data><data name="filter_graph_empty" xml:space="preserve"><value>Prosím upřesněte filtr</value></data><data name="choose_color" xml:space="preserve"><value>Vybrat barvu</value></data><data name="no_data_on_domoticz" xml:space="preserve"><value>Žádná data na serveru OOTT</value></data><data name="row_icon_description" xml:space="preserve"><value>ikona řádku</value></data><data name="error_image_description" xml:space="preserve"><value>Obrázek chyby</value></data><data name="device_image_description" xml:space="preserve"><value>Obrázek zařízení</value></data><data name="white" xml:space="preserve"><value>Bílá</value></data><data name="refresh" xml:space="preserve"><value>Aktualizovat</value></data><data name="domoticz_logo" xml:space="preserve"><value>OOTT logo</value></data><data name="this_take_minutes" xml:space="preserve"><value>Toto může trvat několik minut.</value></data><data name="continue_question" xml:space="preserve"><value>Pokračovat?</value></data><data name="cant_remove_default_server" xml:space="preserve"><value>Nelze odstranit výchozí server</value></data><data name="restart_required_msg" xml:space="preserve"><value>Po nastavení jazyka je vyžadováno restartování aplikace</value></data><data name="action_switch_server" xml:space="preserve"><value>Přepnout server</value></data><data name="action_settings" xml:space="preserve"><value>Nastavení</value></data><data name="action_filter" xml:space="preserve"><value>Filtr</value></data><data name="action_camera_play" xml:space="preserve"><value>Spustit</value></data><data name="action_camera_pause" xml:space="preserve"><value>Pozastavit</value></data><data name="action_qrcode_scan" xml:space="preserve"><value>Načíst QR kód</value></data><data name="action_speech" xml:space="preserve"><value>Rozpoznávání řeči</value></data><data name="title_cameras" xml:space="preserve"><value>Kamery</value></data><data name="title_dashboard" xml:space="preserve"><value>Panel</value></data><data name="usage" xml:space="preserve"><value>Využití</value></data><data name="today" xml:space="preserve"><value>Dnes</value></data><data name="total" xml:space="preserve"><value>Celkem</value></data><data name="favorite_added" xml:space="preserve"><value>přidáno do panelu.</value></data><data name="favorite_removed" xml:space="preserve"><value>odstraněno z panelu.</value></data><data name="error_authentication" xml:space="preserve"><value>Neplatná pověření</value></data><data name="error_timeout" xml:space="preserve"><value>Časový limit vypršel nebo není žádné připojení</value></data><data name="error_server" xml:space="preserve"><value>Chyba serveru</value></data><data name="error_network" xml:space="preserve"><value>Chyba sítě, kódu chyby %1$d</value></data><data name="error_parse" xml:space="preserve"><value>Chyba parsování</value></data><data name="error_notConnected" xml:space="preserve"><value>Chyba: chybí funkční připojení k nějaké síti</value></data><data name="title_events" xml:space="preserve"><value>Události</value></data><data name="action_not_supported_yet" xml:space="preserve"><value>Tato akce není zatím podporována!</value></data><data name="title_add_location" xml:space="preserve"><value>Přidat místo</value></data><data name="title_edit_location" xml:space="preserve"><value>Upravit místo</value></data><data name="longitude" xml:space="preserve"><value>Zeměpisná délka</value></data><data name="latitude" xml:space="preserve"><value>Zeměpisná šířka</value></data><data name="radius" xml:space="preserve"><value>Poloměr (metry)</value></data><data name="connectedSwitch" xml:space="preserve"><value>Propojený přepínač</value></data><data name="unable_to_get_switches" xml:space="preserve"><value>Nepodařilo se získat všechny přepínače, zkuste to prosím znovu</value></data><data name="delete_short" xml:space="preserve"><value>DEL</value></data><data name="delete" xml:space="preserve"><value>Smazat</value></data><data name="Location_name" xml:space="preserve"><value>Název místa</value></data><data name="currentLocation" xml:space="preserve"><value>Současná poloha</value></data><data name="manual" xml:space="preserve"><value>Ručně</value></data><data name="getLocation" xml:space="preserve"><value>GET</value></data><data name="locationAddress" xml:space="preserve"><value>Adresa</value></data><data name="unknown" xml:space="preserve"><value>Neznámý</value></data><data name="not_available" xml:space="preserve"><value>Není k dispozici</value></data><data name="no_valid_latLong" xml:space="preserve"><value>Neplatná zem. šířka nebo délka</value></data><data name="starting_geofence_service" xml:space="preserve"><value>Spouštění služby Geofence</value></data><data name="could_not_find_location" xml:space="preserve"><value>Nelze najít místo, zkuste prosím znovu.</value></data><data name="google_play_services_unavailable" xml:space="preserve"><value>Google Play services není k dispozici.</value></data><data name="location_not_found" xml:space="preserve"><value>Žádné místo nebylo nalezeno.</value></data><data name="geofence" xml:space="preserve"><value>Geofencing</value></data><data name="title_geofence" xml:space="preserve"><value>Povolit Geofencing</value></data><data name="description_geofence" xml:space="preserve"><value>Povolit a konfigurovat Geofence</value></data><data name="title_geofence_notifications" xml:space="preserve"><value>Povolit oznámení</value></data><data name="description_geofence_notifications" xml:space="preserve"><value>Povolit oznámení pro spouštění událostí</value></data><data name="geofence_place" xml:space="preserve"><value>Místo: %s</value></data><data name="geofence_location_entering" xml:space="preserve"><value>"Vstupuji %1$s"</value></data><data name="geofence_location_leaving" xml:space="preserve"><value>Opuštím %1$s</value></data><data name="geofence_location_entering_text" xml:space="preserve"><value>Vstupuji do jednoho z míst</value></data><data name="geofence_location_leaving_text" xml:space="preserve"><value>Opouštím jedno z míst</value></data><data name="geofence_error_recreateLocations" xml:space="preserve"><value>Kvůli změnám v Geofencingu je nutné znovu vytvořit místa</value></data><data name="noSwitchSelected_title" xml:space="preserve"><value>Žádný přepínač není vybrán</value></data><data name="noSwitchSelected_explanation" xml:space="preserve"><value>Aby GeoFencing fungoval, měl by být přepínač propojen s GeoFence</value></data><data name="noSwitchSelected_connectOneNow" xml:space="preserve"><value>Propojit ho teď?</value></data><data name="geofencing_disabled_no_enabled_fences" xml:space="preserve"><value>Geofencing je deaktivován, protože nejsou povoleny žádné geofence</value></data><data name="geofence_not_available" xml:space="preserve"><value>Geofence service is not available now</value></data><data name="geofence_too_many_geofences" xml:space="preserve"><value>App registered too many geofences</value></data><data name="geofence_too_many_pending_intents" xml:space="preserve"><value>Too many PendingIntents provided</value></data><data name="unknown_geofence_error" xml:space="preserve"><value>Unknown error</value></data><data name="title_logs" xml:space="preserve"><value>Protokoly</value></data><data name="nfc_not_supported" xml:space="preserve"><value>NFC není v tomto zařízení podporován</value></data><data name="nfc_register" xml:space="preserve"><value>Zaregistrovat NFC tag</value></data><data name="nfc_tag_found" xml:space="preserve"><value>Byl nalezen nový NFC tag</value></data><data name="nfc_tag_edit" xml:space="preserve"><value>Upravit NFC tag</value></data><data name="nfc_tag_name" xml:space="preserve"><value>Dejte tomuto NFC tagu vhodný název. </value></data><data name="nfc_exists" xml:space="preserve"><value>NFC tag je již registrován. </value></data><data name="nfc_saved" xml:space="preserve"><value>Uložit nový NFC tag. </value></data><data name="nfc" xml:space="preserve"><value>NFC</value></data><data name="noSwitchSelected_explanation_nfc" xml:space="preserve"><value>Aby NFC tag funguval, musí být nalinkován na přepínač</value></data><data name="priority" xml:space="preserve"><value>Priorita</value></data><data name="emergency" xml:space="preserve"><value>Kritická</value></data><data name="high" xml:space="preserve"><value>Vysoká</value></data><data name="low" xml:space="preserve"><value>Nízká</value></data><data name="verylow" xml:space="preserve"><value>Velmi nízká</value></data><data name="allsystems" xml:space="preserve"><value>Všechny systémy</value></data><data name="systems" xml:space="preserve"><value>Systémy</value></data><data name="permission_title" xml:space="preserve"><value>Permissions Denied</value></data><data name="permission_prefs_title" xml:space="preserve"><value>Permissions</value></data><data name="permission_config" xml:space="preserve"><value>Configure the Permissions for this app</value></data><data name="permission_desc_storage" xml:space="preserve"><value>These storage permissions are needed for saving cache file, settings and save snapshots from the camera.</value></data><data name="permission_desc_location" xml:space="preserve"><value>These location permissions are needed for Geofencing and to get the Wifi SSID\'s around you!</value></data><data name="permission_desc_phone" xml:space="preserve"><value>These phone state permissions are needed for enabling notifications!</value></data><data name="permission_desc_camera" xml:space="preserve"><value>These camera permissions are needed for scanning QR Codes!</value></data><data name="permission_desc_audio" xml:space="preserve"><value>These audio permissions are needed for Voice Recognition!</value></data><data name="permission_desc_finger" xml:space="preserve"><value>These fingerprint permissions are needed for enabling Fingerprint Security!</value></data><data name="title_plans" xml:space="preserve"><value>Plány</value></data><data name="qrcode_not_supported" xml:space="preserve"><value>QR kód není v tomto zařízení podporován</value></data><data name="qrcode_register" xml:space="preserve"><value>Registrovat QR kód </value></data><data name="qrcode_found" xml:space="preserve"><value>Nalezen nový QR kód</value></data><data name="qrcode_edit" xml:space="preserve"><value>Upravit QR kód</value></data><data name="qrcode_name" xml:space="preserve"><value>Dejte tomuto QR kódu vhodný název.</value></data><data name="qrcode_desc" xml:space="preserve"><value>Skenování QR kódu.</value></data><data name="qrcode_exists" xml:space="preserve"><value>QR kód je již registrován.</value></data><data name="qrcode_saved" xml:space="preserve"><value>Uložit nový QR kód.</value></data><data name="qrcode" xml:space="preserve"><value>QR kód</value></data><data name="qrcode_new_found" xml:space="preserve"><value>Zjištěn nový QR kód, nastavte ho pomocí nastavení.</value></data><data name="qr_code_disabled" xml:space="preserve"><value>QR kód zakázán, prosím nastavte ho pomocí nastavení.</value></data><data name="noSwitchSelected_explanation_qrcode" xml:space="preserve"><value>Pro QR kód skenování účinku přepínač by měla souviset s QR kódu</value></data><data name="permission_camera_rationale" xml:space="preserve"><value>Pro detekci je zapotřebí přístup k fotoaparátu</value></data><data name="low_storage_error" xml:space="preserve"><value>QR kód závislost nelze stáhnou kvůli nedostatku místa v zařízení</value></data><data name="no_camera_permission" xml:space="preserve"><value>Tuto aplikaci nelze spustit, protože nemá oprávnění k fotoaparátu.  Aplikace bude nyní ukončena.</value></data><data name="title_scenes" xml:space="preserve"><value>Scény</value></data><data name="title_security_panel" xml:space="preserve"><value>Bezpečnostní Panel</value></data><data name="security_pin" xml:space="preserve"><value>PIN kód</value></data><data name="security_disarm" xml:space="preserve"><value>Odstřežit</value></data><data name="security_arm_home" xml:space="preserve"><value>Zastřežit doma</value></data><data name="security_arm_away" xml:space="preserve"><value>Zastřežit pryč z domu</value></data><data name="security_wrong_code" xml:space="preserve"><value>Byl zadán nesprávný kód!</value></data><data name="security_generic_error" xml:space="preserve"><value>Nelze změnit stav zabezpečení</value></data><data name="security_wrong_password_fingerprint" xml:space="preserve"><value>Wrong password entered, your OOTT account password is the failover for your fingerprint...!</value></data><data name="show_password" xml:space="preserve"><value>Zobrazit heslo</value></data><data name="choose_server" xml:space="preserve"><value>Vyberte server</value></data><data name="dont_save_new_server" xml:space="preserve"><value>Neukládat nový server?</value></data><data name="server_must_be_unique" xml:space="preserve"><value>Název serveru musí být jedinečný</value></data><data name="switch_to_server" xml:space="preserve"><value>"Přepnout server na %1$s"</value></data><data name="cant_disable_default_server" xml:space="preserve"><value>Nelze zakázat výchozí server</value></data><data name="settingsActivity_name" xml:space="preserve"><value>Nastavení</value></data><data name="cameraActivity_name" xml:space="preserve"><value>Kamera</value></data><data name="category_generic" xml:space="preserve"><value>Obecné</value></data><data name="category_wear" xml:space="preserve"><value>Android Wear</value></data><data name="category_auto" xml:space="preserve"><value>Android Auto</value></data><data name="category_server" xml:space="preserve"><value>Server</value></data><data name="category_geofencing" xml:space="preserve"><value>Geofencing</value></data><data name="category_info" xml:space="preserve"><value>Informace</value></data><data name="category_advanced" xml:space="preserve"><value>Pokročilá nastavení</value></data><data name="category_language" xml:space="preserve"><value>Jazyk</value></data><data name="category_talk_back" xml:space="preserve"><value>Talk Back</value></data><data name="category_notification" xml:space="preserve"><value>Oznámení</value></data><data name="category_debug" xml:space="preserve"><value>Ladění</value></data><data name="category_export" xml:space="preserve"><value>Export/Import nastavení</value></data><data name="category_theme" xml:space="preserve"><value>Téma</value></data><data name="category_nfc" xml:space="preserve"><value>NFC připojení</value></data><data name="category_startup_security" xml:space="preserve"><value>Zabezpečení</value></data><data name="category_account" xml:space="preserve"><value>Účty</value></data><data name="category_QRCode" xml:space="preserve"><value>QR kód</value></data><data name="category_Speech" xml:space="preserve"><value>Řeč</value></data><data name="category_Reset" xml:space="preserve"><value>Obnovit</value></data><data name="startup_screen" xml:space="preserve"><value>Úvodní obrazovka</value></data><data name="enable_items" xml:space="preserve"><value>Povolit/zakázat položky</value></data><data name="sort_dashboardLikeServer_title" xml:space="preserve"><value>Třídění panelu</value></data><data name="sort_dashboardLikeServer_on" xml:space="preserve"><value>Třídit panel jako server</value></data><data name="sort_dashboardLikeServer_off" xml:space="preserve"><value>Třídit panel podle abecedy</value></data><data name="extra_data_title" xml:space="preserve"><value>Extra data na panelu</value></data><data name="show_extra_data_on" xml:space="preserve"><value>Zobrazit extra data na panelu</value></data><data name="show_extra_data_off" xml:space="preserve"><value>Skrýt extra data na panelu</value></data><data name="always_on_title" xml:space="preserve"><value>Neusínat</value></data><data name="always_on_on" xml:space="preserve"><value>Vždy uzamknout obrazovku</value></data><data name="always_on_off" xml:space="preserve"><value>Nikdy nezamykat obrazovku</value></data><data name="switch_buttons_title" xml:space="preserve"><value>Přepínače</value></data><data name="switch_buttons_on" xml:space="preserve"><value>Zobrazit přepínače s zap/vyp přepínačem</value></data><data name="switch_buttons_off" xml:space="preserve"><value>Zobrazit přepínače se zap/vyp tlačítkem</value></data><data name="dashboard_list_title" xml:space="preserve"><value>Mřížka řídícího panelu</value></data><data name="show_dashboard_list_on" xml:space="preserve"><value>Zobrazit řídící panel jako seznam</value></data><data name="show_dashboard_list_off" xml:space="preserve"><value>Zobrazit řídící panel jako mřížku</value></data><data name="enable_wear_select" xml:space="preserve"><value>Vlastní položky Android Wear</value></data><data name="custom_wear_select" xml:space="preserve"><value>Zvolte Wear přepínače</value></data><data name="custom_wear_select_desc" xml:space="preserve"><value>Vyberte přepínače, které chcete vidět na vašem Android Wear zařízení</value></data><data name="wear_custom_on" xml:space="preserve"><value>Zapnout vlastní položky Android Wear</value></data><data name="wear_custom_off" xml:space="preserve"><value>Zakázat vlastní položky Android Wear</value></data><data name="auto_custom_on" xml:space="preserve"><value>Enable Android Auto Notifications</value></data><data name="auto_custom_off" xml:space="preserve"><value>Disable Android Auto Notifications</value></data><data name="geofencing_configure" xml:space="preserve"><value>Konfigurovat Geofencing</value></data><data name="config_theme" xml:space="preserve"><value>Nastavit téma</value></data><data name="set_dark_theme" xml:space="preserve"><value>Přepnout téma aplikace na tmavé</value></data><data name="set_light_theme" xml:space="preserve"><value>Přepnout téma aplikace na světlé</value></data><data name="set_talk_back_on" xml:space="preserve"><value>Let OOTT talk back to you</value></data><data name="set_talk_back_off" xml:space="preserve"><value>Turn talk back off</value></data><data name="settings_imported" xml:space="preserve"><value>Nastavení bylo importováno, prosím restartujte OOTT</value></data><data name="settings_import_failed" xml:space="preserve"><value>Import nastavení se nezdařil</value></data><data name="settings_exported" xml:space="preserve"><value>Nastavení bylo exportováno, prosím restartujte OOTT</value></data><data name="settings_export_failed" xml:space="preserve"><value>Export nastavení se nezdařil</value></data><data name="server_settings" xml:space="preserve"><value>Nastavení připojení k serveru</value></data><data name="server_force_fetch_config" xml:space="preserve"><value>Načtení konfigurace serveru</value></data><data name="nfc_settings" xml:space="preserve"><value>Nastavení NFC spojení</value></data><data name="speech_settings" xml:space="preserve"><value>Nastavení hlasových příkazů</value></data><data name="title_activity_server_settings" xml:space="preserve"><value>Nastavení serveru</value></data><data name="multi_server" xml:space="preserve"><value>Multi Server</value></data><data name="enable_nfc" xml:space="preserve"><value>Povolit NFC</value></data><data name="enable_speech" xml:space="preserve"><value>Povolit rozpoznávání řeči</value></data><data name="export_settings" xml:space="preserve"><value>Nastavení exportu</value></data><data name="reset_settings" xml:space="preserve"><value>Obnovit všechna nastavení aplikace (pozor!!)</value></data><data name="import_settings" xml:space="preserve"><value>Nastavení importu</value></data><data name="multi_server_settings" xml:space="preserve"><value>Povolit podporu více serverů</value></data><data name="nfc_enable_settings" xml:space="preserve"><value>Povolit NFC spojení</value></data><data name="speech_enable_settings" xml:space="preserve"><value>Povolit rozpoznávání řeči</value></data><data name="server" xml:space="preserve"><value>Server</value></data><data name="qrcode_settings" xml:space="preserve"><value>Nastavení QR kódů</value></data><data name="enable_qrcode" xml:space="preserve"><value>Povolit QR kódy</value></data><data name="qrcode_enable_settings" xml:space="preserve"><value>Povolit funkce QR kódů</value></data><data name="security_settings" xml:space="preserve"><value>Setup Security</value></data><data name="enable_security" xml:space="preserve"><value>Povolit ochranu otisk při startu</value></data><data name="disable_security" xml:space="preserve"><value>Disable fingerprint protection on startup</value></data><data name="setup_fingerprints" xml:space="preserve"><value>Setup fingerprints via Android Settings screens</value></data><data name="fingerprint_not_supported" xml:space="preserve"><value>Fingerprint Security is not supported on this device</value></data><data name="fingerprint_not_setup_in_android" xml:space="preserve"><value>First configure/connect a Fingerprint to this device</value></data><data name="fingerprint_sure" xml:space="preserve"><value>Are you sure? The failover password is the password of your OOTT account.</value></data><data name="category_widgets" xml:space="preserve"><value>Widgets (BETA)</value></data><data name="widget_description" xml:space="preserve"><value>Enable or Disable Widget on this device</value></data><data name="widget_disabled" xml:space="preserve"><value>Widgets are not enabled on this device, please check your settings of OOTT</value></data><data name="widget_warning" xml:space="preserve"><value>Please use widgets on your own risk!! Widgets are currently in Beta stage and probably contain certain bugs. It can cause large data / battery usage...</value></data><data name="notification_settings_id" xml:space="preserve"><value>Google Cloud Messaging ID</value></data><data name="notification_settings_push" xml:space="preserve"><value>Poslat vaše registrační ID do OOTT</value></data><data name="notification_settings_pushed" xml:space="preserve"><value>Vaše registrační id je nyní uloženo v OOTT</value></data><data name="notification_settings_push_failed" xml:space="preserve"><value>Nelze uložit registrační id do OOTT, opakujte akci později.</value></data><data name="notification_show_title" xml:space="preserve"><value>Nedávná upozornění</value></data><data name="notification_show_nothing" xml:space="preserve"><value>Nebyla nalezena žádná oznámení</value></data><data name="notification_show" xml:space="preserve"><value>Show last couple of Notifications</value></data><data name="overwrite_notifications_title" xml:space="preserve"><value>Přepsat oznámení</value></data><data name="overwrite_notifications" xml:space="preserve"><value>Přepsat předchozí oznámení na tomto zařízení</value></data><data name="enable_notifications_title" xml:space="preserve"><value>Povolit oznámení</value></data><data name="enable_notifications" xml:space="preserve"><value>Povolit oznámení na tomto zařízení</value></data><data name="notification_screen_title" xml:space="preserve"><value>Nastavení oznámení</value></data><data name="notification_vibrate_title" xml:space="preserve"><value>Vibrovat</value></data><data name="notification_vibrate_on" xml:space="preserve"><value>Vibrovat při doručení oznámení</value></data><data name="notification_vibrate_off" xml:space="preserve"><value>Nevibrovat</value></data><data name="notification_sound_title" xml:space="preserve"><value>Zvuk</value></data><data name="notification_sound_summary" xml:space="preserve"><value>Použít zvukové upozornění, když přijde oznámení</value></data><data name="suppress_notifications_select" xml:space="preserve"><value>Vyberte oznámení k potlačení</value></data><data name="suppress_notifications" xml:space="preserve"><value>Potlačit konkrétní upozornění na tomto zařízení</value></data><data name="suppress_notifications_title" xml:space="preserve"><value>Potlačit upozornění</value></data><data name="alarm_notifications_select" xml:space="preserve"><value>Select Notifications to Alarm</value></data><data name="alarm_notifications" xml:space="preserve"><value>Sound an Alarm for specific Notifications</value></data><data name="clear_notifications" xml:space="preserve"><value>Clean notification logs</value></data><data name="alarm_notifications_title" xml:space="preserve"><value>Alarm Notifications</value></data><data name="alarm" xml:space="preserve"><value>Alarm</value></data><data name="alarmtimer_title" xml:space="preserve"><value>Alarm Timer</value></data><data name="alarmtimer" xml:space="preserve"><value>Number of seconds to time the alarm</value></data><data name="default_values" xml:space="preserve"><value>Default values</value></data><data name="default_values_min_error" xml:space="preserve"><value>Max value should be higher than Min value</value></data><data name="default_values_max_error" xml:space="preserve"><value>Max value should be higher than Min value</value></data><data name="info_version" xml:space="preserve"><value>Verze</value></data><data name="info_domoticz_version" xml:space="preserve"><value>verze OOTT</value></data><data name="info_about" xml:space="preserve"><value>O OOTT</value></data><data name="info_credits" xml:space="preserve"><value>Poděkování</value></data><data name="info_credits_text" xml:space="preserve"><value>OOTT pro Android je možné použít s několika open source knihovnami</value></data><data name="debug_switch_title" xml:space="preserve"><value>Ladění</value></data><data name="debug_switch_summary_on" xml:space="preserve"><value>Ladění povoleno</value></data><data name="debug_switch_summary_off" xml:space="preserve"><value>Ladění zakázáno</value></data><data name="error_atLeastOneItemInDrawer" xml:space="preserve"><value>Musíte mít alespoň jednu položku</value></data><data name="title_activity_update" xml:space="preserve"><value>Aktualizace serveru</value></data><data name="error_couldNotCheckForUpdates" xml:space="preserve"><value>"Nepodařilo se zkontrolovat aktualizace: %1$s"</value></data><data name="error_couldNotCheckForConfig" xml:space="preserve"><value>"Nepodařilo se získat konfiguraci ze serveru OOTT: %1$s"</value></data><data name="update_available_enhanced" xml:space="preserve"><value>Aktualizace serveru je k dispozici: %1$s na verzi: %2$s</value></data><data name="check_for_update_title" xml:space="preserve"><value>Zkontrolovat aktualizace</value></data><data name="check_for_update" xml:space="preserve"><value>Chcete zkontrolovat aktualizace systému OOTT?</value></data><data name="update_server_warning" xml:space="preserve"><value>Zatímco váš server aktualizuje tato app nebude fungovat správně.</value></data><data name="update_server_downloadNotReady1" xml:space="preserve"><value>Tato aktualizace není stažen (zcela).</value></data><data name="update_server_downloadNotReady2" xml:space="preserve"><value>Zkuste to prosím později.</value></data><data name="server_update_available" xml:space="preserve"><value>Aktualizace serveru k dispozici</value></data><data name="update_server" xml:space="preserve"><value>Aktualizace serveru</value></data><data name="server_update_revision" xml:space="preserve"><value>Revize aktualizace serveru</value></data><data name="server_version" xml:space="preserve"><value>Verze serveru</value></data><data name="server_update" xml:space="preserve"><value>Aktualizace serveru</value></data><data name="please_wait_while_we_check" xml:space="preserve"><value>Počkejte prosím, než zkontrolujeme, zda je váš server připraven k aktualizaci</value></data><data name="server_update_not_ready" xml:space="preserve"><value>Aktualizace serveru není stažena</value></data><data name="please_wait_while_server_updated" xml:space="preserve"><value>Počkejte prosím, probíhá aktualizace serveru.</value></data><data name="server_update_done" xml:space="preserve"><value>Aktualizace serveru dokončena</value></data><data name="update_not_started" xml:space="preserve"><value>Aktualizace není spuštěna</value></data><data name="update_not_started_unknown_error" xml:space="preserve"><value>Aktualizace nebyla spuštěna z důvodu neznámé chyby</value></data><data name="server_update_not_available" xml:space="preserve"><value>Aktualizace serveru není k dispozici</value></data><data name="click_to_update_server" xml:space="preserve"><value>Klikněte zde pro aktualizaci vašeho serveru</value></data><data name="debug_test_text" xml:space="preserve"><value>Zkouška ladění</value></data><data name="restart_required_title" xml:space="preserve"><value>Je vyžadován restart</value></data><data name="restart_now" xml:space="preserve"><value>Chcete nyní restartovat?</value></data><data name="Speech_not_supported" xml:space="preserve"><value>Rozpoznávání řeči není v tomto zařízení podporováno</value></data><data name="Speech_register" xml:space="preserve"><value>Zaznamenat příkaz rozpoznávání</value></data><data name="Speech_found" xml:space="preserve"><value>Nalezen nový příkaz rozpoznávání</value></data><data name="Speech_edit" xml:space="preserve"><value>Upravit příkaz rozpoznávání</value></data><data name="Speech_name" xml:space="preserve"><value>Dejte příkazu rozpoznávání vlastní název.</value></data><data name="Speech_exists" xml:space="preserve"><value>Příkaz rozpoznávání je již zaznamenán.</value></data><data name="Speech_saved" xml:space="preserve"><value>Uložit nový příkaz rozpoznávání.</value></data><data name="Speech_desc" xml:space="preserve"><value>Proveďte nový hlasový příkaz.</value></data><data name="Speech" xml:space="preserve"><value>Rozpoznávání řeči</value></data><data name="Speech_disabled" xml:space="preserve"><value>Příkaz rozpoznávání je zakázán, konfigurujte ho prosím v nastavení.</value></data><data name="noSwitchSelected_explanation_Speech" xml:space="preserve"><value>Pro správnou funkci rozpoznávání příkazů by měl být propojený přepínač</value></data><data name="title_switches" xml:space="preserve"><value>Přepínače</value></data><data name="txt_notAvailable" xml:space="preserve"><value>Není k dispozici</value></data><data name="idx" xml:space="preserve"><value>IDX</value></data><data name="placeholder_value" xml:space="preserve"><value>255</value></data><data name="color_set" xml:space="preserve"><value>Nastavení barvy</value></data><data name="state_set" xml:space="preserve"><value>Nastavení stavu</value></data><data name="error_favorite" xml:space="preserve"><value>Nemohu nastavit oblíbené</value></data><data name="error_logs" xml:space="preserve"><value>Nelze najít žádné protokoly pro zobrazení</value></data><data name="error_color" xml:space="preserve"><value>Nelze změnit barvu</value></data><data name="error_state" xml:space="preserve"><value>Stav nelze změnit</value></data><data name="error_timer" xml:space="preserve"><value>Nelze zobrazit časovače</value></data><data name="error_notifications" xml:space="preserve"><value>Nelze zobrazit oznámení</value></data><data name="set_level_switch" xml:space="preserve"><value>"Nastavení úrovně pro přepínač: %1$s na %2$d"</value></data><data name="title_temperature" xml:space="preserve"><value>Teplota</value></data><data name="cancel_override" xml:space="preserve"><value>Zrušit přepisování</value></data><data name="wind" xml:space="preserve"><value>Vítr</value></data><data name="error_log" xml:space="preserve"><value>Nelze získat údaje z logu pro</value></data><data name="follow_schedule" xml:space="preserve"><value>Sledovat plán</value></data><data name="command" xml:space="preserve"><value>Příkaz</value></data><data name="type" xml:space="preserve"><value>Typ</value></data><data name="notapplicable" xml:space="preserve"><value>Není k dispozici</value></data><data name="timer_before_sunset" xml:space="preserve"><value>Před západem slunce</value></data><data name="timer_after_sunset" xml:space="preserve"><value>Po západu slunce</value></data><data name="timer_ontime" xml:space="preserve"><value>V čase</value></data><data name="timer_before_sunrise" xml:space="preserve"><value>Před východem slunce</value></data><data name="timer_after_sunrise" xml:space="preserve"><value>Po východu slunce</value></data><data name="timer_fixed" xml:space="preserve"><value>Pevný datum a čas</value></data><data name="odd_day_numbers" xml:space="preserve"><value>Lichý den</value></data><data name="even_day_numbers" xml:space="preserve"><value>Sudý den</value></data><data name="odd_week_numbers" xml:space="preserve"><value>Lichý týden</value></data><data name="even_week_numbers" xml:space="preserve"><value>Sudý týden</value></data><data name="monthly" xml:space="preserve"><value>Měsíčně</value></data><data name="monthly_weekday" xml:space="preserve"><value>Měsíčně (pracovní dny)</value></data><data name="yearly" xml:space="preserve"><value>Ročně</value></data><data name="yearly_weekday" xml:space="preserve"><value>Ročně (pracovní dny)</value></data><data name="timer_every_days" xml:space="preserve"><value>Každý den</value></data><data name="timer_working_days" xml:space="preserve"><value>V pracovní dny</value></data><data name="timer_weekend" xml:space="preserve"><value>Víkend</value></data><data name="timer_other" xml:space="preserve"><value>Jiné</value></data><data name="timers" xml:space="preserve"><value>Časovače</value></data><data name="title_utilities" xml:space="preserve"><value>Utility</value></data><data name="settemperature" xml:space="preserve"><value>Nastavit</value></data><data name="title_vars" xml:space="preserve"><value>Uživatelské proměnné</value></data><data name="var_input" xml:space="preserve"><value>Vstupní hodnota je neplatná</value></data><data name="var_input_error" xml:space="preserve"><value>Nepodařilo se aktualizovat uživatelskou proměnnou</value></data><data name="title_weather" xml:space="preserve"><value>Počasí</value></data><data name="dewPoint" xml:space="preserve"><value>Rosný bod</value></data><data name="temp" xml:space="preserve"><value>Teplota</value></data><data name="pressure" xml:space="preserve"><value>Tlak</value></data><data name="chill" xml:space="preserve"><value>Chlad</value></data><data name="direction" xml:space="preserve"><value>Směr</value></data><data name="humidity" xml:space="preserve"><value>Vlhkost</value></data><data name="speed" xml:space="preserve"><value>Rychlost</value></data><data name="forecast" xml:space="preserve"><value>Předpověď</value></data><data name="rain" xml:space="preserve"><value>Déšť</value></data><data name="rainrate" xml:space="preserve"><value>Vydatnost deště</value></data><data name="co2" xml:space="preserve"><value>CO2</value></data><data name="co2min" xml:space="preserve"><value>CO2 Min</value></data><data name="co2max" xml:space="preserve"><value>CO2 Max</value></data><data name="welcome_title_activity_welcome" xml:space="preserve"><value>Vítejte</value></data><data name="welcome_info_domoticz" xml:space="preserve"><value>OOTT je domácí automatizační systém, který umožňuje sledovat a konfigurovat různá zařízení, jako jsou: světla, přepínače, různé senzory/měřiče jako je teplota, déšť, vítr, UV, elektřina, plyn, voda a mnoho dalšího. Oznámení/poplachy lze zaslat na jakékoliv mobilní zařízení.</value></data><data name="welcome_info_swipe" xml:space="preserve"><value>Přejeďte vpravo nebo pokračujte pomocí navigačních tlačítek v dolní části</value></data><data name="welcome_info_settings1" xml:space="preserve"><value>Na další stránce je nastavení OOTT.</value></data><data name="welcome_info_settings2" xml:space="preserve"><value> Můžete zadat místní a vzdálený server nastavení. Místní nastavení jsou ta když jste připojeni k domácí wifi síti. Vzdálené nastavení se používají, když nejste připojeni k domácí wifi síti nebo při připojení k mobilním datům (2G, 3G, 4G atd.).</value></data><data name="welcome_info_checkingConnection" xml:space="preserve"><value>Ověření nastavení připojení</value></data><data name="welcome_msg_connectionDataIncomplete" xml:space="preserve"><value>Data připojení jsou neúplná nebo prázdná</value></data><data name="welcome_msg_connectionDataInvalid" xml:space="preserve"><value>Adresa URL by neměla začínat http</value></data><data name="welcome_msg_correctOnPreviousPage" xml:space="preserve"><value>Prosím opravte data na předchozí stránce</value></data><data name="welcome_msg_serverVersion" xml:space="preserve"><value>Verze OOTT</value></data><data name="welcome_msg_numberOfDevices" xml:space="preserve"><value>%1$d nalezených zařízení</value></data><data name="welcome_msg_no_ssid_found" xml:space="preserve"><value>Nenalezeno žádné wifi SSID</value></data><data name="welcome_ssid_spinner_prompt" xml:space="preserve"><value>Výběr domácího SSID</value></data><data name="welcome_ssid_button_prompt" xml:space="preserve"><value>Přidání domácího SSID</value></data><data name="welcome_server_settings_title" xml:space="preserve"><value>Nastavení serveru</value></data><data name="welcome_server_startScreen" xml:space="preserve"><value>Úvodní obrazovka</value></data><data name="welcome_button_next" xml:space="preserve"><value>další</value></data><data name="welcome_button_previous" xml:space="preserve"><value>předchozí</value></data><data name="welcome_button_finish" xml:space="preserve"><value>dokončit</value></data><data name="welcome_remote_server_address" xml:space="preserve"><value>Adresa serveru</value></data><data name="welcome_remote_server_protocol" xml:space="preserve"><value>Protokol</value></data><data name="welcome_remote_server_port" xml:space="preserve"><value>Port</value></data><data name="welcome_remote_server_username" xml:space="preserve"><value>Uživatelské jméno</value></data><data name="welcome_remote_server_password" xml:space="preserve"><value>Heslo</value></data><data name="welcome_remote_server_directory" xml:space="preserve"><value>Složka</value></data><data name="remote" xml:space="preserve"><value>Vzdálený</value></data><data name="local" xml:space="preserve"><value>Lokální</value></data><data name="servername" xml:space="preserve"><value>Název serveru</value></data><data name="welcome_local_server_used_switch_title" xml:space="preserve"><value>Jiná adresa serveru</value></data><data name="welcome_local_server_used_switch_summary" xml:space="preserve"><value>Použít jinou adresu pro místní připojení</value></data><data name="welcome_advancedSettings" xml:space="preserve"><value>Rozšířené nastavení serveru</value></data><data name="welcome_advancedSettings_summary" xml:space="preserve"><value>Používá se pouze pro nestandardní OOTT servery</value></data><data name="welcome_local_server_ssid" xml:space="preserve"><value>Místní wifi SSID</value></data><data name="welcome_local_server_address" xml:space="preserve"><value>Adresa místního serveru</value></data><data name="welcome_local_server_protocol" xml:space="preserve"><value>Místní protokol</value></data><data name="welcome_local_server_port" xml:space="preserve"><value>Místní port</value></data><data name="welcome_local_server_directory" xml:space="preserve"><value>Místní adresář (ponechte prázdné, pokud se nepoužívá)</value></data><data name="welcome_local_server_username" xml:space="preserve"><value>Lokální uživatelské jméno (ponechte prázdné, pokud se nepoužívá)</value></data><data name="welcome_local_server_password" xml:space="preserve"><value>Lokální heslo (ponechte prázdné, pokud se nepoužívá)</value></data><data name="pick_device_title" xml:space="preserve"><value>Vyberte zařízení</value></data><data name="choose_switch" xml:space="preserve"><value>Zvolte zařízení</value></data><data name="failed_to_get_securitypanel" xml:space="preserve"><value>No security panel found under your switches</value></data><data name="failed_to_get_switches" xml:space="preserve"><value>Nepodařilo se získat zařízení</value></data><data name="failed_toggle_switch" xml:space="preserve"><value>Přepnutí zařízení se nezdařilo</value></data><data name="switch_toggled" xml:space="preserve"><value>"Přepnout zařízení"</value></data><data name="text_loading" xml:space="preserve"><value>Nahrávám...</value></data><data name="text_go" xml:space="preserve"><value>PROVEĎ</value></data><data name="widget_background" xml:space="preserve"><value>Pozadí</value></data><data name="widget_dark" xml:space="preserve"><value>Tmavý</value></data><data name="widget_light" xml:space="preserve"><value>Světlý</value></data><data name="widget_transparent_dark" xml:space="preserve"><value>Průhledný tmavý</value></data><data name="widget_transparent_light" xml:space="preserve"><value>Průhledný světlý</value></data><data name="title_wizard" xml:space="preserve"><value>Vítá vás Průvodce</value></data><data name="wizard_welcome" xml:space="preserve"><value>Vítejte</value></data><data name="wizard_welcome_description" xml:space="preserve"><value>OOTT je odlehčený systém domácí automatizace, který vám umožní sledovat a konfigurovat různá zařízení.</value></data><data name="wizard_favorites" xml:space="preserve"><value>Oblíbené položky</value></data><data name="wizard_favorites_description" xml:space="preserve"><value>Zařízení můžete přidat do Řídícího panelu tím, že ho uložíte jako oblíbené. Dlouhým stiskem položky ji uložíte do oblíbených!</value></data><data name="wizard_startup" xml:space="preserve"><value>Úvodní obrazovka</value></data><data name="wizard_startup_description" xml:space="preserve"><value>V nastavení si můžete nastavit svou spouštěcí obrazovku!</value></data><data name="wizard_notifications" xml:space="preserve"><value>Nastavení upozornění</value></data><data name="wizard_notifications_description" xml:space="preserve"><value>Nyní můžete dostávat oznámení na vašem zařízení Android. Chování oznámení si změňte v nastavení</value></data><data name="wizard_multiserver" xml:space="preserve"><value>Použití více serverů</value></data><data name="wizard_multiserver_description" xml:space="preserve"><value>V nastavení můžete nakonfigurovat více serverů OOTT.</value></data><data name="wizard_geo" xml:space="preserve"><value>Geofencing</value></data><data name="wizard_geo_description" xml:space="preserve"><value>V nastavení si můžete nastavit svou spouštěcí obrazovku!</value></data><data name="wizard_wear" xml:space="preserve"><value>Android Wear</value></data><data name="wizard_wear_description" xml:space="preserve"><value>Můžete si vybrat, které přepínače chcete ovládat z vašeho Android Wear zařízení!</value></data><data name="wizard_auto" xml:space="preserve"><value>Android Auto</value></data><data name="wizard_auto_description" xml:space="preserve"><value>Přijímat oznámení OOTT přímo ve vašem zařízení Android Auto!</value></data><data name="wizard_graph" xml:space="preserve"><value>Grafy</value></data><data name="wizard_graph_description" xml:space="preserve"><value>Můžete si zobrazit graf počasí nebo teplot!</value></data><data name="wizard_filter" xml:space="preserve"><value>Filtry</value></data><data name="wizard_filter_description" xml:space="preserve"><value>Můžete filtrovat zařízení podle stavu (zap/vyp). Pro filtrování využijte ikonku v pravém horním menu!</value></data><data name="wizard_widgets" xml:space="preserve"><value>Widgety!!</value></data><data name="wizard_widgets_description" xml:space="preserve"><value>Můžete si dát některé widgety na domovskou obrazovku!</value></data><data name="wizard_menuitem" xml:space="preserve"><value>Zakázat průvodce</value></data><data name="wizard_menuitem_description" xml:space="preserve"><value>Tohoto průvodce můžete nyní odebrat z navigačního menu!</value></data><data name="wizard_nfc" xml:space="preserve"><value>NFC</value></data><data name="wizard_nfc_description" xml:space="preserve"><value>Jste schopni přepínat pomocí NFC!</value></data><data name="wizard_qrcode" xml:space="preserve"><value>QR kód</value></data><data name="wizard_qrcode_description" xml:space="preserve"><value>Páčkové spínače skenování QR kód (nebo čárového kódu)!</value></data><data name="wizard_speech" xml:space="preserve"><value>Hlasové příkazy</value></data><data name="wizard_speech_description" xml:space="preserve"><value>Přepínače s vaším hlasem! Konfigurace hlasové příkazy prostřednictvím nastavení obrazovky a připojení přepínače.</value></data><data name="wizard_button_nice" xml:space="preserve"><value>Hezké</value></data><data name="wizard_button_switches" xml:space="preserve"><value>Přepínače</value></data><data name="wizard_button_settings" xml:space="preserve"><value>Nastavení</value></data><data name="wizard_button_wizard" xml:space="preserve"><value>Odebrat</value></data><data name="wizard_button_utilities" xml:space="preserve"><value>Funkce</value></data><data name="wizard_button_done" xml:space="preserve"><value>Hotovo</value></data></root>
+<?xml version="1.0" encoding="utf-8"?>  <root> <resheader name="resmimetype">		<value>text/microsoft-resx</value>	</resheader>	<resheader name="version">		<value>2.0</value>	</resheader>	<resheader name="reader">		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>	<resheader name="writer">		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>
+<data name="premium_category" xml:space="preserve"><value>Koupit premium!</value></data>
+<data name="premium_title" xml:space="preserve"><value>Získejte verzi premium!</value></data>
+<data name="premium_feature" xml:space="preserve"><value>Toto je prémiová funkce, kupte si placenou verzi aplikace a podpořte tak vývojáře!</value></data>
+<data name="drawer_open" xml:space="preserve"><value>Otevřít navigační panel</value></data>
+<data name="drawer_close" xml:space="preserve"><value>Zavřít navigační panel</value></data>
+<data name="msg_please_wait" xml:space="preserve"><value>Čekejte prosím&#8230;</value></data>
+<data name="changelog" xml:space="preserve"><value>Historie změn</value></data>
+<data name="button_state_on" xml:space="preserve"><value>ZAP</value></data>
+<data name="button_state_off" xml:space="preserve"><value>VYP</value></data>
+<data name="button_state_closed" xml:space="preserve"><value>Zavřeno</value></data>
+<data name="button_state_open" xml:space="preserve"><value>Otevřít</value></data>
+<data name="button_state_lock" xml:space="preserve"><value>Zamknout</value></data>
+<data name="button_state_unlock" xml:space="preserve"><value>Odemknout</value></data>
+<data name="button_status_log" xml:space="preserve"><value>Záznam</value></data>
+<data name="button_status_day" xml:space="preserve"><value>Den</value></data>
+<data name="button_status_week" xml:space="preserve"><value>Týden</value></data>
+<data name="button_status_month" xml:space="preserve"><value>Měsíc</value></data>
+<data name="button_status_year" xml:space="preserve"><value>Rok</value></data>
+<data name="button_status_timer" xml:space="preserve"><value>Časovač</value></data>
+<data name="button_status_notifications" xml:space="preserve"><value>Notifikace</value></data>
+<data name="button_color" xml:space="preserve"><value>Barva</value></data>
+<data name="button_arm" xml:space="preserve"><value>Zastřežit</value></data>
+<data name="button_disarm" xml:space="preserve"><value>Odstřežit</value></data>
+<data name="button_state_full_light" xml:space="preserve"><value>Plné světlo</value></data>
+<data name="button_state_night" xml:space="preserve"><value>Noční světlo</value></data>
+<data name="sunrise" xml:space="preserve"><value>Východ slunce</value></data>
+<data name="sunset" xml:space="preserve"><value>Západ slunce</value></data>
+<data name="now" xml:space="preserve"><value>Nyní</value></data>
+<data name="astrTwilightStart" xml:space="preserve"><value>Počátek astronomického soumraku</value></data>
+<data name="astrTwilightEnd" xml:space="preserve"><value>Konec astronomického soumraku</value></data>
+<data name="civTwilightStart" xml:space="preserve"><value>Počátek občanského soumraku</value></data>
+<data name="civTwilightEnd" xml:space="preserve"><value>Konec občanského soumraku</value></data>
+<data name="nautTwilightStart" xml:space="preserve"><value>Počátek námořního soumraku</value></data>
+<data name="nautTwilightEnd" xml:space="preserve"><value>Konec námořního soumraku</value></data>
+<data name="last_update" xml:space="preserve"><value>Naposledy viděný</value></data>
+<data name="signal_level" xml:space="preserve"><value>Úroveň signálu</value></data>
+<data name="battery_level" xml:space="preserve"><value>Stav baterie</value></data>
+<data name="data" xml:space="preserve"><value>Data</value></data>
+<data name="hardware" xml:space="preserve"><value>Hardware</value></data>
+<data name="temperature" xml:space="preserve"><value>Teplota</value></data>
+<data name="status" xml:space="preserve"><value>Stav</value></data>
+<data name="switch_rgb_wwcolor" xml:space="preserve"><value>Barvy RGB nebo teplá bílá</value></data>
+<data name="set_point" xml:space="preserve"><value>Nastavit bod</value></data>
+<data name="set_point_min" xml:space="preserve"><value>Nastavit minimální hodnotu</value></data>
+<data name="set_point_min_description" xml:space="preserve"><value>Minimální teplota, kterou můžete nastavit na vašem termostatu</value></data>
+<data name="set_point_max" xml:space="preserve"><value>Nastavit maximální hodnotu</value></data>
+<data name="set_point_max_description" xml:space="preserve"><value>Maximální teplota, kterou můžete nastavit na vašem termostatu</value></data>
+<data name="action_success" xml:space="preserve"><value>Akce ukončena úspěšně</value></data>
+<data name="action_failed" xml:space="preserve"><value>Akce neúspěšná</value></data>
+<data name="action_unknown" xml:space="preserve"><value>Neznámý výsledek akce</value></data>
+<data name="choose_status" xml:space="preserve"><value>Vybrat stav</value></data>
+<data name="normal" xml:space="preserve"><value>Normální</value></data>
+<data name="economy" xml:space="preserve"><value>Ekonomický</value></data>
+<data name="away" xml:space="preserve"><value>Mimo domov</value></data>
+<data name="day_off" xml:space="preserve"><value>Den volna</value></data>
+<data name="custom" xml:space="preserve"><value>Vlastní</value></data>
+<data name="heating_off" xml:space="preserve"><value>Vytápění vypnuté</value></data>
+<data name="selector_value" xml:space="preserve"><value>Výběr hodnoty</value></data>
+<data name="debug_textview_title" xml:space="preserve"><value>Informace o ladění</value></data>
+<data name="msg_copiedToClipboard" xml:space="preserve"><value>Text byl zkopírován do schránky</value></data>
+<data name="favorite" xml:space="preserve"><value>Oblíbené</value></data>
+<data name="yes" xml:space="preserve"><value>Ano</value></data>
+<data name="no" xml:space="preserve"><value>Ne</value></data>
+<data name="are_you_sure" xml:space="preserve"><value>Opravdu?</value></data>
+<data name="are_you_sure_clear_settings" xml:space="preserve"><value>Opravdu to chcete provést? Odstraníte tím všechny widgety z homescreenu, takže je pak budete muset znovu přidat.</value></data>
+<data name="add" xml:space="preserve"><value>Přidat</value></data>
+<data name="cancel" xml:space="preserve"><value>Zrušit</value></data>
+<data name="ok" xml:space="preserve"><value>Ok</value></data>
+<data name="request_again" xml:space="preserve"><value>Požádat znova</value></data>
+<data name="upgrade" xml:space="preserve"><value>Aktualizace</value></data>
+<data name="something_went_wrong" xml:space="preserve"><value>Něco se pokazilo</value></data>
+<data name="no_network_available" xml:space="preserve"><value>Chyba: Žádné síťové připojení není dispozici</value></data>
+<data name="oops" xml:space="preserve"><value>ALE NE!</value></data>
+<data name="to" xml:space="preserve"><value>"na"</value></data>
+<data name="retry" xml:space="preserve"><value>Zkusit znovu</value></data>
+<data name="undo" xml:space="preserve"><value>Zpět</value></data>
+<data name="something_deleted" xml:space="preserve"><value>%1$s odstraněné</value></data>
+<data name="switch_on" xml:space="preserve"><value>Zapnout přepínač</value></data>
+<data name="switch_off" xml:space="preserve"><value>Vypnout přepínač</value></data>
+<data name="switch_night" xml:space="preserve"><value>Otáčením přepínače na noční světlo</value></data>
+<data name="switch_full" xml:space="preserve"><value>Otáčením přepínače do plného světla</value></data>
+<data name="blind_up" xml:space="preserve"><value>Vytáhnout žaluzie</value></data>
+<data name="blind_down" xml:space="preserve"><value>Stáhnout žaluzie</value></data>
+<data name="blind_stop" xml:space="preserve"><value>Zastavit žaluzie</value></data>
+<data name="filter_on" xml:space="preserve"><value>Filtrovat podle</value></data>
+<data name="filterOn_on" xml:space="preserve"><value>Stav zap</value></data>
+<data name="filterOn_off" xml:space="preserve"><value>Stav vyp</value></data>
+<data name="filterOn_static" xml:space="preserve"><value>Statické zařízení</value></data>
+<data name="filterOn_all" xml:space="preserve"><value>Všechna zařízení</value></data>
+<data name="filter" xml:space="preserve"><value>Filter</value></data>
+<data name="filter_devices" xml:space="preserve"><value>Filtrovat zařízení</value></data>
+<data name="filter_graph_empty" xml:space="preserve"><value>Prosím upřesněte filtr</value></data>
+<data name="choose_color" xml:space="preserve"><value>Vybrat barvu</value></data>
+<data name="no_data_on_domoticz" xml:space="preserve"><value>Žádná data na serveru OOTT</value></data>
+<data name="row_icon_description" xml:space="preserve"><value>ikona řádku</value></data>
+<data name="error_image_description" xml:space="preserve"><value>Obrázek chyby</value></data>
+<data name="device_image_description" xml:space="preserve"><value>Obrázek zařízení</value></data>
+<data name="white" xml:space="preserve"><value>Bílá</value></data>
+<data name="refresh" xml:space="preserve"><value>Aktualizovat</value></data>
+<data name="domoticz_logo" xml:space="preserve"><value>OOTT logo</value></data>
+<data name="this_take_minutes" xml:space="preserve"><value>Toto může trvat několik minut.</value></data>
+<data name="continue_question" xml:space="preserve"><value>Pokračovat?</value></data>
+<data name="cant_remove_default_server" xml:space="preserve"><value>Nelze odstranit výchozí server</value></data>
+<data name="restart_required_msg" xml:space="preserve"><value>Po nastavení jazyka je vyžadováno restartování aplikace</value></data>
+<data name="filter_all" xml:space="preserve"><value>Vše</value></data>
+<data name="filter_normal" xml:space="preserve"><value>Normální</value></data>
+<data name="filter_status" xml:space="preserve"><value>Stav</value></data>
+<data name="filter_error" xml:space="preserve"><value>Chyba</value></data>
+<data name="use_demo_setup" xml:space="preserve"><value>Použít ukázkové nastavení</value></data>
+<data name="auto_refresh_time" xml:space="preserve"><value>Obnovit časovač</value></data>
+<data name="setautorefreshtime" xml:space="preserve"><value>Nastavit specifický časovač pro automatickou obnovu v sekundách.</value></data>
+<data name="action_switch_server" xml:space="preserve"><value>Přepnout server</value></data>
+<data name="action_settings" xml:space="preserve"><value>Nastavení</value></data>
+<data name="action_filter" xml:space="preserve"><value>Filtr</value></data>
+<data name="action_camera_play" xml:space="preserve"><value>Spustit</value></data>
+<data name="action_camera_pause" xml:space="preserve"><value>Pozastavit</value></data>
+<data name="action_qrcode_scan" xml:space="preserve"><value>Načíst QR kód</value></data>
+<data name="action_bluetooth_show" xml:space="preserve"><value>Zobrazit spárovaná zařízení</value></data>
+<data name="action_speech" xml:space="preserve"><value>Rozpoznávání řeči</value></data>
+<data name="send" xml:space="preserve"><value>Send</value></data>
+<data name="bluetooth_not_supported" xml:space="preserve"><value>Bluetooth není na tomto zařízení podporováno</value></data>
+<data name="bluetooth_register" xml:space="preserve"><value>Připojit zařízení bluetooth</value></data>
+<data name="bluetooth_found" xml:space="preserve"><value>Nalezeno nové zařízení bluetooth</value></data>
+<data name="bluetooth_edit" xml:space="preserve"><value>Upravit zařízení bluetooth</value></data>
+<data name="bluetooth_name" xml:space="preserve"><value>Dejte tomuto bluetooth zařízení vhodný název. </value></data>
+<data name="bluetooth_desc" xml:space="preserve"><value>Zkontrolovat seznam spárovaných bluetooth zařízení. </value></data>
+<data name="bluetooth_exists" xml:space="preserve"><value>Bluetooth je již v OOTT nakonfigurováno. </value></data>
+<data name="bluetooth_turned_off" xml:space="preserve"><value>Bluetooth musí být zapnuto v nastavení vašeho zařízení. </value></data>
+<data name="bluetooth_saved" xml:space="preserve"><value>Uloženo nové připojení zařízení bluetooth. </value></data>
+<data name="bluetooth" xml:space="preserve"><value>Bluetooth</value></data>
+<data name="bluetooth_disabled" xml:space="preserve"><value>Bluetooth automatizace zakázána, prosím nastavte ji pomocí nastavení.</value></data>
+<data name="noSwitchSelected_explanation_bluetooth" xml:space="preserve"><value>Pro automatizaci něčeho v OOTT pomocí bluetooth zařízení by měl být přepínač propojen s bluetooth</value></data>
+<data name="title_cameras" xml:space="preserve"><value>Kamery</value></data>
+<data name="title_dashboard" xml:space="preserve"><value>Panel</value></data>
+<data name="usage" xml:space="preserve"><value>Využití</value></data>
+<data name="today" xml:space="preserve"><value>Dnes</value></data>
+<data name="total" xml:space="preserve"><value>Celkem</value></data>
+<data name="favorite_added" xml:space="preserve"><value>přidáno do panelu.</value></data>
+<data name="favorite_removed" xml:space="preserve"><value>odstraněno z panelu.</value></data>
+<data name="error_authentication" xml:space="preserve"><value>Neplatná pověření</value></data>
+<data name="error_timeout" xml:space="preserve"><value>Časový limit vypršel nebo není žádné připojení</value></data>
+<data name="error_server" xml:space="preserve"><value>Chyba serveru</value></data>
+<data name="error_network" xml:space="preserve"><value>Chyba sítě, kódu chyby %1$d</value></data>
+<data name="error_parse" xml:space="preserve"><value>Chyba parsování</value></data>
+<data name="error_notConnected" xml:space="preserve"><value>Chyba: chybí funkční připojení k síti</value></data>
+<data name="title_events" xml:space="preserve"><value>Události</value></data>
+<data name="action_not_supported_yet" xml:space="preserve"><value>Tato akce není zatím podporována!</value></data>
+<data name="title_add_location" xml:space="preserve"><value>Přidat místo</value></data>
+<data name="title_edit_location" xml:space="preserve"><value>Upravit místo</value></data>
+<data name="longitude" xml:space="preserve"><value>Zeměpisná délka</value></data>
+<data name="latitude" xml:space="preserve"><value>Zeměpisná šířka</value></data>
+<data name="radius" xml:space="preserve"><value>Poloměr (metry)</value></data>
+<data name="connectedSwitch" xml:space="preserve"><value>Propojený přepínač</value></data>
+<data name="unable_to_get_switches" xml:space="preserve"><value>Nepodařilo se načíst všechny přepínače, zkuste to prosím znovu</value></data>
+<data name="delete_short" xml:space="preserve"><value>DEL</value></data>
+<data name="delete" xml:space="preserve"><value>Smazat</value></data>
+<data name="Location_name" xml:space="preserve"><value>Název místa</value></data>
+<data name="currentLocation" xml:space="preserve"><value>Současná poloha</value></data>
+<data name="manual" xml:space="preserve"><value>Ručně</value></data>
+<data name="getLocation" xml:space="preserve"><value>GET</value></data>
+<data name="locationAddress" xml:space="preserve"><value>Adresa</value></data>
+<data name="unknown" xml:space="preserve"><value>Neznámý</value></data>
+<data name="not_available" xml:space="preserve"><value>Není k dispozici</value></data>
+<data name="no_valid_latLong" xml:space="preserve"><value>Neplatná zem. šířka nebo délka</value></data>
+<data name="starting_geofence_service" xml:space="preserve"><value>Spouštění služby Geofence</value></data>
+<data name="could_not_find_location" xml:space="preserve"><value>Nelze najít místo, zkuste prosím znovu.</value></data>
+<data name="google_play_services_unavailable" xml:space="preserve"><value>Google Play services není k dispozici.</value></data>
+<data name="location_not_found" xml:space="preserve"><value>Žádné místo nebylo nalezeno.</value></data>
+<data name="geofence" xml:space="preserve"><value>Geofencing</value></data>
+<data name="title_geofence" xml:space="preserve"><value>Povolit Geofencing</value></data>
+<data name="description_geofence" xml:space="preserve"><value>Povolit a konfigurovat Geofence</value></data>
+<data name="title_geofence_notifications" xml:space="preserve"><value>Povolit oznámení</value></data>
+<data name="description_geofence_notifications" xml:space="preserve"><value>Povolit oznámení pro spouštění událostí</value></data>
+<data name="geofence_place" xml:space="preserve"><value>Místo: %s</value></data>
+<data name="geofence_location_entering" xml:space="preserve"><value>"Vstupuji %1$s"</value></data>
+<data name="geofence_location_leaving" xml:space="preserve"><value>Opouštím %1$s</value></data>
+<data name="geofence_location_entering_text" xml:space="preserve"><value>Vstupuji do jednoho z míst</value></data>
+<data name="geofence_location_leaving_text" xml:space="preserve"><value>Opouštím jedno z míst</value></data>
+<data name="geofence_error_recreateLocations" xml:space="preserve"><value>Kvůli změnám v Geofencingu je nutné znovu vytvořit místa</value></data>
+<data name="noSwitchSelected_title" xml:space="preserve"><value>Žádný přepínač není vybrán</value></data>
+<data name="noSwitchSelected_explanation" xml:space="preserve"><value>Aby GeoFencing fungoval, měl by být přepínač propojen s GeoFence</value></data>
+<data name="noSwitchSelected_connectOneNow" xml:space="preserve"><value>Propojit ho teď?</value></data>
+<data name="geofencing_disabled_no_enabled_fences" xml:space="preserve"><value>Geofencing je deaktivován, protože nejsou povoleny žádné geofence</value></data>
+<data name="geofence_not_available" xml:space="preserve"><value>Služba Geofence není nyní k dispozici</value></data>
+<data name="geofence_too_many_geofences" xml:space="preserve"><value>V aplikaci je registrováno příliš mnoho oblastí (geofence)</value></data>
+<data name="geofence_too_many_pending_intents" xml:space="preserve"><value>Příliš mnoho PendingIntents</value></data>
+<data name="unknown_geofence_error" xml:space="preserve"><value>Neznámá chyba</value></data>
+<data name="title_logs" xml:space="preserve"><value>Protokoly</value></data>
+<data name="nfc_not_supported" xml:space="preserve"><value>NFC není v tomto zařízení podporován</value></data>
+<data name="nfc_register" xml:space="preserve"><value>Zaregistrovat NFC tag</value></data>
+<data name="nfc_tag_found" xml:space="preserve"><value>Byl nalezen nový NFC tag</value></data>
+<data name="nfc_tag_edit" xml:space="preserve"><value>Upravit NFC tag</value></data>
+<data name="nfc_tag_name" xml:space="preserve"><value>Dejte tomuto NFC tagu vhodný název. </value></data>
+<data name="nfc_exists" xml:space="preserve"><value>NFC tag je již registrován. </value></data>
+<data name="nfc_saved" xml:space="preserve"><value>Uložen nový NFC tag. </value></data>
+<data name="nfc" xml:space="preserve"><value>NFC</value></data>
+<data name="noSwitchSelected_explanation_nfc" xml:space="preserve"><value>Aby NFC tag fungoval, měl by být přepínač propojen s NFC tagem</value></data>
+<data name="priority" xml:space="preserve"><value>Priorita</value></data>
+<data name="emergency" xml:space="preserve"><value>Kritická</value></data>
+<data name="high" xml:space="preserve"><value>Vysoká</value></data>
+<data name="low" xml:space="preserve"><value>Nízká</value></data>
+<data name="verylow" xml:space="preserve"><value>Velmi nízká</value></data>
+<data name="allsystems" xml:space="preserve"><value>Všechny systémy</value></data>
+<data name="systems" xml:space="preserve"><value>Systémy</value></data>
+<data name="send_notification" xml:space="preserve"><value>Send notification</value></data>
+<data name="notification_subject" xml:space="preserve"><value>Subject</value></data>
+<data name="notification_message" xml:space="preserve"><value>Message</value></data>
+<data name="notification_error_system" xml:space="preserve"><value>Please choose a system to send the notification to</value></data>
+<data name="notification_error_message" xml:space="preserve"><value>Please fill in a message</value></data>
+<data name="notification_error_subject" xml:space="preserve"><value>Please fill in a subject</value></data>
+<data name="notification_error_send" xml:space="preserve"><value>Could not send the notification to OOTT</value></data>
+<data name="notification_send" xml:space="preserve"><value>Notification send to OOTT</value></data>
+<data name="permission_title" xml:space="preserve"><value>Oprávnění zamítnuta</value></data>
+<data name="permission_prefs_title" xml:space="preserve"><value>Oprávnění</value></data>
+<data name="permission_config" xml:space="preserve"><value>Nastavit oprávnění pro tuto aplikaci</value></data>
+<data name="permission_desc_storage" xml:space="preserve"><value>Toto oprávnění přístupu k úložišti je potřebné pro ukládání cache souborů, nastavení a ukládání snímků z kamery.</value></data>
+<data name="permission_desc_location" xml:space="preserve"><value>Toto oprávnění přístupu k poloze je potřebné pro Geofencing a získání SSID okolních Wifi sítí!</value></data>
+<data name="permission_desc_phone" xml:space="preserve"><value>Toto oprávnění přístupu k stavu telefonu je potřebné pro povolení notifikací!</value></data>
+<data name="permission_desc_camera" xml:space="preserve"><value>Toto oprávnění přístupu ke kameře je potřebné pro snímání QR kódů!</value></data>
+<data name="permission_desc_audio" xml:space="preserve"><value>Toto oprávnění přístupu k hlasovým záznamům je potřebné pro rozpoznávání hlasu!</value></data>
+<data name="permission_desc_finger" xml:space="preserve"><value>Toto oprávnění přístupu k čtečce otisků prstů je potřebné pro zapnutí zabezpečení pomocí otisků prstů!</value></data>
+<data name="title_plans" xml:space="preserve"><value>Plány</value></data>
+<data name="qrcode_not_supported" xml:space="preserve"><value>QR kód není v tomto zařízení podporován</value></data>
+<data name="qrcode_register" xml:space="preserve"><value>Registrovat QR kód </value></data>
+<data name="qrcode_found" xml:space="preserve"><value>Nalezen nový QR kód</value></data>
+<data name="qrcode_edit" xml:space="preserve"><value>Upravit QR kód</value></data>
+<data name="qrcode_name" xml:space="preserve"><value>Dejte tomuto QR kódu vhodný název. </value></data>
+<data name="qrcode_desc" xml:space="preserve"><value>Skenování QR kódu.</value></data>
+<data name="qrcode_exists" xml:space="preserve"><value>QR kód je již registrován.</value></data>
+<data name="qrcode_saved" xml:space="preserve"><value>Uložen nový QR kód. </value></data>
+<data name="qrcode" xml:space="preserve"><value>QR kód</value></data>
+<data name="qrcode_new_found" xml:space="preserve"><value>Zjištěn nový QR kód, nastavte ho pomocí nastavení.</value></data>
+<data name="qr_code_disabled" xml:space="preserve"><value>QR kód zakázán, prosím nastavte ho pomocí nastavení.</value></data>
+<data name="noSwitchSelected_explanation_qrcode" xml:space="preserve"><value>Aby skenování QR kódu fungovalo, měl by být přepínač propojen s QR kódem</value></data>
+<data name="permission_camera_rationale" xml:space="preserve"><value>Pro detekci je zapotřebí přístup k fotoaparátu</value></data>
+<data name="low_storage_error" xml:space="preserve"><value>QR kód závislost nelze stáhnou kvůli nedostatku místa v zařízení</value></data>
+<data name="no_camera_permission" xml:space="preserve"><value>Tuto aplikaci nelze spustit, protože nemá oprávnění k fotoaparátu.  Aplikace bude nyní ukončena.</value></data>
+<data name="title_scenes" xml:space="preserve"><value>Scény</value></data>
+<data name="title_security_panel" xml:space="preserve"><value>Bezpečnostní Panel</value></data>
+<data name="security_pin" xml:space="preserve"><value>PIN kód</value></data>
+<data name="security_disarm" xml:space="preserve"><value>Odstřežit</value></data>
+<data name="security_arm_home" xml:space="preserve"><value>Zastřežit doma</value></data>
+<data name="security_arm_away" xml:space="preserve"><value>Zastřežit pryč z domu</value></data>
+<data name="security_wrong_code" xml:space="preserve"><value>Byl zadán nesprávný kód!</value></data>
+<data name="security_no_rights" xml:space="preserve"><value>Nemáte oprávnění pro tuto akci!</value></data>
+<data name="security_generic_error" xml:space="preserve"><value>Nelze změnit stav zabezpečení</value></data>
+<data name="security_wrong_password_fingerprint" xml:space="preserve"><value>Bylo zadáno špatné heslo, při selhání ověření pomocí otisku prstu použijte vaše heslo domoticz účtu!</value></data>
+<data name="show_password" xml:space="preserve"><value>Zobrazit heslo</value></data>
+<data name="fingerprint_make_sure" xml:space="preserve"><value>Musíme si ověřit že jste to vy</value></data>
+<data name="fingerprint_dialog_description" xml:space="preserve"><value>Přiložte prst na čtečku otisků prstů pro ověření svého účtu.</value></data>
+<data name="choose_server" xml:space="preserve"><value>Vyberte server</value></data>
+<data name="dont_save_new_server" xml:space="preserve"><value>Neukládat nový server?</value></data>
+<data name="server_must_be_unique" xml:space="preserve"><value>Název serveru musí být jedinečný</value></data>
+<data name="switch_to_server" xml:space="preserve"><value>"Přepínám server na %1$s"</value></data>
+<data name="cant_disable_default_server" xml:space="preserve"><value>Nelze zakázat výchozí server</value></data>
+<data name="settingsActivity_name" xml:space="preserve"><value>Nastavení</value></data>
+<data name="cameraActivity_name" xml:space="preserve"><value>Kamera</value></data>
+<data name="category_generic" xml:space="preserve"><value>Obecné</value></data>
+<data name="category_wear" xml:space="preserve"><value>Android Wear</value></data>
+<data name="category_auto" xml:space="preserve"><value>Android Auto</value></data>
+<data name="category_server" xml:space="preserve"><value>Server</value></data>
+<data name="category_geofencing" xml:space="preserve"><value>Geofencing</value></data>
+<data name="category_info" xml:space="preserve"><value>Informace</value></data>
+<data name="category_advanced" xml:space="preserve"><value>Pokročilá nastavení</value></data>
+<data name="category_language" xml:space="preserve"><value>Jazyk</value></data>
+<data name="category_talk_back" xml:space="preserve"><value>Hlasová odezva</value></data>
+<data name="category_notification" xml:space="preserve"><value>Oznámení</value></data>
+<data name="category_debug" xml:space="preserve"><value>Ladění</value></data>
+<data name="category_export" xml:space="preserve"><value>Export/Import nastavení</value></data>
+<data name="category_theme" xml:space="preserve"><value>Téma</value></data>
+<data name="category_clock" xml:space="preserve"><value>Hodiny</value></data>
+<data name="category_nfc" xml:space="preserve"><value>NFC připojení</value></data>
+<data name="category_startup_security" xml:space="preserve"><value>Zabezpečení</value></data>
+<data name="category_account" xml:space="preserve"><value>Účty</value></data>
+<data name="category_QRCode" xml:space="preserve"><value>QR kód</value></data>
+<data name="category_bluetooth" xml:space="preserve"><value>Bluetooth</value></data>
+<data name="category_Speech" xml:space="preserve"><value>Řeč</value></data>
+<data name="category_Reset" xml:space="preserve"><value>Obnovit</value></data>
+<data name="category_help" xml:space="preserve"><value>Zapojte se</value></data>
+<data name="startup_screen" xml:space="preserve"><value>Úvodní obrazovka</value></data>
+<data name="enable_items" xml:space="preserve"><value>Povolit/zakázat položky</value></data>
+<data name="sort_server_title" xml:space="preserve"><value>Řazení</value></data>
+<data name="sort_server_on" xml:space="preserve"><value>Řadit zařízení, jako jsou seřazeny na serveru</value></data>
+<data name="sort_custom_on" xml:space="preserve"><value>Vlastní řazení, přetáhněte zařízení pro jejich seřazení</value></data>
+<data name="sort_lock_server_title" xml:space="preserve"><value>Zamknout</value></data>
+<data name="sort_lock_custom_on" xml:space="preserve"><value>Uzamknout současné vlastní řazení (zakázat přetažení)</value></data>
+<data name="sort_dashboardLikeServer_off" xml:space="preserve"><value>Seřadit panel podle abecedy</value></data>
+<data name="extra_data_title" xml:space="preserve"><value>Extra data na panelu</value></data>
+<data name="show_extra_data_on" xml:space="preserve"><value>Zobrazit extra data na panelu</value></data>
+<data name="show_extra_data_off" xml:space="preserve"><value>Skrýt extra data na panelu</value></data>
+<data name="always_on_title" xml:space="preserve"><value>Neusínat</value></data>
+<data name="always_on_on" xml:space="preserve"><value>Vždy uzamknout obrazovku</value></data>
+<data name="always_on_off" xml:space="preserve"><value>Nikdy nezamykat obrazovku</value></data>
+<data name="always_auto_refresh" xml:space="preserve"><value>Obnovovat automaticky</value></data>
+<data name="always_auto_refresh_on" xml:space="preserve"><value>Obnovovat stav zařízení každých několik vteřin</value></data>
+<data name="always_auto_refresh_off" xml:space="preserve"><value>Neobnovovat stav zařízení každých několik vteřin</value></data>
+<data name="switch_buttons_title" xml:space="preserve"><value>Přepínače</value></data>
+<data name="switch_buttons_on" xml:space="preserve"><value>Zobrazit přepínače se zap/vyp přepínačem</value></data>
+<data name="switch_buttons_off" xml:space="preserve"><value>Zobrazit přepínače se zap/vyp tlačítky</value></data>
+<data name="dashboard_list_title" xml:space="preserve"><value>Mřížka řídícího panelu</value></data>
+<data name="show_dashboard_list_on" xml:space="preserve"><value>Zobrazit řídící panel jako seznam</value></data>
+<data name="show_dashboard_list_off" xml:space="preserve"><value>Zobrazit řídící panel jako mřížku</value></data>
+<data name="dashboard_clock" xml:space="preserve"><value>Hodiny</value></data>
+<data name="show_dashboard_clock" xml:space="preserve"><value>Zobrazit hodiny na panelu</value></data>
+<data name="enable_wear_select" xml:space="preserve"><value>Vlastní položky Android Wear</value></data>
+<data name="custom_wear_select" xml:space="preserve"><value>Zvolte Wear přepínače</value></data>
+<data name="custom_wear_select_desc" xml:space="preserve"><value>Vyberte přepínače, které chcete zobrazit na svém Android Wear zařízení</value></data>
+<data name="wear_custom_on" xml:space="preserve"><value>Zapnout vlastní položky Android Wear</value></data>
+<data name="wear_custom_off" xml:space="preserve"><value>Zakázat vlastní položky Android Wear</value></data>
+<data name="auto_custom_on" xml:space="preserve"><value>Povolit notifikace na Android Auto</value></data>
+<data name="auto_custom_off" xml:space="preserve"><value>Zakázat notifikace na Android Auto</value></data>
+<data name="geofencing_configure" xml:space="preserve"><value>Konfigurovat Geofencing</value></data>
+<data name="config_theme" xml:space="preserve"><value>Nastavit téma</value></data>
+<data name="set_dark_theme" xml:space="preserve"><value>Přepnout téma aplikace na tmavé</value></data>
+<data name="set_light_theme" xml:space="preserve"><value>Přepnout téma aplikace na světlé</value></data>
+<data name="set_talk_back_on" xml:space="preserve"><value>Dovolte OOTT, aby na vás mluvil</value></data>
+<data name="set_talk_back_off" xml:space="preserve"><value>Hlasová odezva je vypnuta</value></data>
+<data name="settings_imported" xml:space="preserve"><value>Nastavení bylo importováno, prosím restartujte OOTT</value></data>
+<data name="settings_import_failed" xml:space="preserve"><value>Import nastavení se nezdařil</value></data>
+<data name="settings_exported" xml:space="preserve"><value>Nastavení bylo exportováno, prosím restartujte OOTT</value></data>
+<data name="settings_export_failed" xml:space="preserve"><value>Export nastavení se nezdařil</value></data>
+<data name="server_settings" xml:space="preserve"><value>Nastavení připojení k serveru</value></data>
+<data name="server_force_fetch_config" xml:space="preserve"><value>Načtení konfigurace serveru</value></data>
+<data name="nfc_settings" xml:space="preserve"><value>Nastavení NFC spojení</value></data>
+<data name="speech_settings" xml:space="preserve"><value>Nastavení hlasových příkazů</value></data>
+<data name="title_activity_server_settings" xml:space="preserve"><value>Nastavení serveru</value></data>
+<data name="multi_server" xml:space="preserve"><value>Multi Server</value></data>
+<data name="enable_nfc" xml:space="preserve"><value>Povolit NFC</value></data>
+<data name="enable_speech" xml:space="preserve"><value>Povolit rozpoznávání řeči</value></data>
+<data name="export_settings" xml:space="preserve"><value>Nastavení exportu</value></data>
+<data name="reset_settings" xml:space="preserve"><value>Obnovit všechna nastavení aplikace (pozor!!)</value></data>
+<data name="import_settings" xml:space="preserve"><value>Nastavení importu</value></data>
+<data name="multi_server_settings" xml:space="preserve"><value>Povolit podporu více serverů</value></data>
+<data name="nfc_enable_settings" xml:space="preserve"><value>Povolit NFC spojení</value></data>
+<data name="speech_enable_settings" xml:space="preserve"><value>Povolit rozpoznávání řeči</value></data>
+<data name="server" xml:space="preserve"><value>Server</value></data>
+<data name="qrcode_settings" xml:space="preserve"><value>Nastavení QR kódů</value></data>
+<data name="enable_qrcode" xml:space="preserve"><value>Povolit QR kódy</value></data>
+<data name="qrcode_enable_settings" xml:space="preserve"><value>Povolit funkce QR kódů</value></data>
+<data name="bluetooth_settings" xml:space="preserve"><value>Nastavit Bluetooth zařízení</value></data>
+<data name="enable_bluetooth" xml:space="preserve"><value>Povolit funkce Bluetooth</value></data>
+<data name="translate_description" xml:space="preserve"><value>Můžete pomoci zdokonalit naše překlady a také přidávat nové jazykové mutace prostřednictvím našeho projektu na Crowdin</value></data>
+<data name="translate_title" xml:space="preserve"><value>Překlady</value></data>
+<data name="security_settings" xml:space="preserve"><value>Nastavení zabezpečení</value></data>
+<data name="enable_security" xml:space="preserve"><value>Povolit ochranu otisk při startu</value></data>
+<data name="disable_security" xml:space="preserve"><value>Zakázat ochranu otiskem prstu po startu</value></data>
+<data name="setup_fingerprints" xml:space="preserve"><value>Nastavit otisky prstů přes Nastavení Androidu</value></data>
+<data name="fingerprint_not_supported" xml:space="preserve"><value>Zabezpečení otiskem prstu není na tomto zařízení podporováno</value></data>
+<data name="fingerprint_not_setup_in_android" xml:space="preserve"><value>První nastavení/propojení otisku prstu k tomuto zařízení</value></data>
+<data name="fingerprint_sure" xml:space="preserve"><value>Opravdu? Failover heslo je heslo vašeho OOTT účtu.</value></data>
+<data name="category_widgets" xml:space="preserve"><value>Widgety (BETA)</value></data>
+<data name="widget_description" xml:space="preserve"><value>Povolit nebo zakázat Widget na tomto zařízení</value></data>
+<data name="widget_disabled" xml:space="preserve"><value>Widgety nejsou na tomto zařízení povoleny, prosím, zkontrolujte nastavení aplikace OOTT</value></data>
+<data name="widget_warning" xml:space="preserve"><value>Používání widgetů je na vlastní riziko! Widgety jsou aktuálně v Beta fázi a pravděpodobně obsahují nějaké chyby. Mohou způsobovat vetší datovou zátěž / zvýšit spotřebu baterie...</value></data>
+<data name="notification_settings_id" xml:space="preserve"><value>Google Cloud Messaging ID</value></data>
+<data name="notification_settings_push" xml:space="preserve"><value>Poslat vaše registrační ID do OOTT</value></data>
+<data name="notification_settings_pushed" xml:space="preserve"><value>Vaše registrační id je nyní uloženo v OOTT</value></data>
+<data name="notification_settings_push_failed" xml:space="preserve"><value>Nelze uložit registrační id do OOTT, opakujte akci později.</value></data>
+<data name="notification_show_title" xml:space="preserve"><value>Nedávná upozornění</value></data>
+<data name="notification_show_nothing" xml:space="preserve"><value>Nebyla nalezena žádná oznámení</value></data>
+<data name="notification_show" xml:space="preserve"><value>Zobrazit posledních pár notifikací</value></data>
+<data name="overwrite_notifications_title" xml:space="preserve"><value>Přepsat oznámení</value></data>
+<data name="overwrite_notifications" xml:space="preserve"><value>Přepsat předchozí oznámení na tomto zařízení</value></data>
+<data name="enable_notifications_title" xml:space="preserve"><value>Povolit oznámení</value></data>
+<data name="enable_notifications" xml:space="preserve"><value>Povolit oznámení na tomto zařízení</value></data>
+<data name="notification_screen_title" xml:space="preserve"><value>Nastavení oznámení</value></data>
+<data name="notification_history" xml:space="preserve"><value>Notification history</value></data>
+<data name="notification_vibrate_title" xml:space="preserve"><value>Vibrovat</value></data>
+<data name="notification_vibrate_on" xml:space="preserve"><value>Vibrovat při doručení oznámení</value></data>
+<data name="notification_vibrate_off" xml:space="preserve"><value>Nevibrovat</value></data>
+<data name="notification_sound_title" xml:space="preserve"><value>Zvuk</value></data>
+<data name="notification_sound_summary" xml:space="preserve"><value>Použít zvukové upozornění, když přijde oznámení</value></data>
+<data name="suppress_notifications_select" xml:space="preserve"><value>Vyberte oznámení k potlačení</value></data>
+<data name="suppress_notifications" xml:space="preserve"><value>Potlačit konkrétní upozornění na tomto zařízení</value></data>
+<data name="suppress_notifications_title" xml:space="preserve"><value>Potlačit upozornění</value></data>
+<data name="alarm_notifications_select" xml:space="preserve"><value>Vyberte notifikace pro alarm</value></data>
+<data name="alarm_notifications" xml:space="preserve"><value>Spustit alarm pro specifické notifikace</value></data>
+<data name="clear_notifications" xml:space="preserve"><value>Vymazat logy notifikací</value></data>
+<data name="alarm_notifications_title" xml:space="preserve"><value>Notifikace Alarmu</value></data>
+<data name="alarm" xml:space="preserve"><value>Alarm</value></data>
+<data name="alarmtimer_title" xml:space="preserve"><value>Časovač alarmu</value></data>
+<data name="alarmtimer" xml:space="preserve"><value>Počet sekund do alarmu</value></data>
+<data name="theme_default" xml:space="preserve"><value>Default</value></data>
+<data name="theme_daynight" xml:space="preserve"><value>Day/Night</value></data>
+<data name="theme_orange" xml:space="preserve"><value>Orange</value></data>
+<data name="theme_pink" xml:space="preserve"><value>Pink</value></data>
+<data name="theme_blue" xml:space="preserve"><value>Blue</value></data>
+<data name="default_values" xml:space="preserve"><value>Výchozí hodnoty</value></data>
+<data name="default_values_min_error" xml:space="preserve"><value>Maximální hodnota by měla být vyšší než minimální hodnota</value></data>
+<data name="default_values_max_error" xml:space="preserve"><value>Maximální hodnota by měla být vyšší než minimální hodnota</value></data>
+<data name="info_version" xml:space="preserve"><value>Verze</value></data>
+<data name="info_domoticz_version" xml:space="preserve"><value>verze OOTT</value></data>
+<data name="info_about" xml:space="preserve"><value>O OOTT</value></data>
+<data name="info_credits" xml:space="preserve"><value>Poděkování</value></data>
+<data name="info_credits_text" xml:space="preserve"><value>OOTT pro Android je možné použít s několika open source knihovnami</value></data>
+<data name="debug_switch_title" xml:space="preserve"><value>Ladění</value></data>
+<data name="debug_switch_summary_on" xml:space="preserve"><value>Ladění povoleno</value></data>
+<data name="debug_switch_summary_off" xml:space="preserve"><value>Ladění zakázáno</value></data>
+<data name="error_atLeastOneItemInDrawer" xml:space="preserve"><value>Musíte mít alespoň jednu položku</value></data>
+<data name="title_activity_update" xml:space="preserve"><value>Aktualizace serveru</value></data>
+<data name="error_couldNotCheckForVersion" xml:space="preserve"><value>"Nepodařilo se zkontrolovat verzi: %1$s"</value></data>
+<data name="error_couldNotCheckForUpdates" xml:space="preserve"><value>"Nepodařilo se zkontrolovat aktualizace: %1$s"</value></data>
+<data name="error_couldNotCheckForConfig" xml:space="preserve"><value>"Nepodařilo se získat konfiguraci ze serveru OOTT: %1$s"</value></data>
+<data name="update_available_enhanced" xml:space="preserve"><value>Aktualizace serveru je k dispozici: %1$s na verzi: %2$s</value></data>
+<data name="check_for_update_title" xml:space="preserve"><value>Zkontrolovat aktualizace</value></data>
+<data name="check_for_update" xml:space="preserve"><value>Chcete zkontrolovat aktualizace systému OOTT?</value></data>
+<data name="update_server_warning" xml:space="preserve"><value>Zatímco váš server aktualizuje tato app nebude fungovat správně.</value></data>
+<data name="update_server_downloadNotReady1" xml:space="preserve"><value>Tato aktualizace není stažen (zcela).</value></data>
+<data name="update_server_downloadNotReady2" xml:space="preserve"><value>Zkuste to prosím později.</value></data>
+<data name="server_update_available" xml:space="preserve"><value>Aktualizace serveru k dispozici</value></data>
+<data name="update_server" xml:space="preserve"><value>Aktualizace serveru</value></data>
+<data name="server_update_revision" xml:space="preserve"><value>Revize aktualizace serveru</value></data>
+<data name="server_version" xml:space="preserve"><value>Verze serveru</value></data>
+<data name="server_update" xml:space="preserve"><value>Aktualizace serveru</value></data>
+<data name="please_wait_while_we_check" xml:space="preserve"><value>Počkejte prosím, než zkontrolujeme, zda je váš server připraven k aktualizaci</value></data>
+<data name="server_update_not_ready" xml:space="preserve"><value>Aktualizace serveru není stažena</value></data>
+<data name="please_wait_while_server_updated" xml:space="preserve"><value>Počkejte prosím, probíhá aktualizace serveru.</value></data>
+<data name="server_update_done" xml:space="preserve"><value>Aktualizace serveru dokončena</value></data>
+<data name="update_not_started" xml:space="preserve"><value>Aktualizace není spuštěna</value></data>
+<data name="update_not_started_unknown_error" xml:space="preserve"><value>Aktualizace nebyla spuštěna z důvodu neznámé chyby</value></data>
+<data name="server_update_not_available" xml:space="preserve"><value>Aktualizace serveru není k dispozici</value></data>
+<data name="click_to_update_server" xml:space="preserve"><value>Klikněte zde pro aktualizaci vašeho serveru</value></data>
+<data name="debug_test_text" xml:space="preserve"><value>Zkouška ladění</value></data>
+<data name="restart_required_title" xml:space="preserve"><value>Je vyžadován restart</value></data>
+<data name="restart_now" xml:space="preserve"><value>Chcete nyní restartovat?</value></data>
+<data name="check_settings" xml:space="preserve"><value>Check your settings</value></data>
+<data name="Speech_not_supported" xml:space="preserve"><value>Rozpoznávání řeči není v tomto zařízení podporováno</value></data>
+<data name="Speech_register" xml:space="preserve"><value>Zaznamenat hlasový příkaz</value></data>
+<data name="Speech_found" xml:space="preserve"><value>Nalezen nový hlasový příkaz</value></data>
+<data name="Speech_edit" xml:space="preserve"><value>Upravit hlasový příkaz</value></data>
+<data name="Speech_name" xml:space="preserve"><value>Dejte tomuto hlasovému příkazu vhodný název. </value></data>
+<data name="Speech_exists" xml:space="preserve"><value>Hlasový příkaz je již zaznamenán. </value></data>
+<data name="Speech_saved" xml:space="preserve"><value>Uložen nový hlasový příkaz. </value></data>
+<data name="Speech_desc" xml:space="preserve"><value>Proveďte nový hlasový příkaz.</value></data>
+<data name="Speech" xml:space="preserve"><value>Rozpoznávání řeči</value></data>
+<data name="Speech_disabled" xml:space="preserve"><value>Hlasový příkaz zakázán, prosím povolte jej v nastavení.</value></data>
+<data name="noSwitchSelected_explanation_Speech" xml:space="preserve"><value>Pro správnou funkci hlasových příkazů by měl být propojený přepínač</value></data>
+<data name="title_switches" xml:space="preserve"><value>Přepínače</value></data>
+<data name="txt_notAvailable" xml:space="preserve"><value>Není k dispozici</value></data>
+<data name="idx" xml:space="preserve"><value>IDX</value></data>
+<data name="placeholder_value" xml:space="preserve"><value>255</value></data>
+<data name="color_set" xml:space="preserve"><value>Nastavení barvy</value></data>
+<data name="state_set" xml:space="preserve"><value>Nastavení stavu</value></data>
+<data name="error_favorite" xml:space="preserve"><value>Nemohu nastavit oblíbené</value></data>
+<data name="error_logs" xml:space="preserve"><value>Nelze najít žádné protokoly pro zobrazení</value></data>
+<data name="error_color" xml:space="preserve"><value>Nelze změnit barvu</value></data>
+<data name="error_state" xml:space="preserve"><value>Stav nelze změnit</value></data>
+<data name="error_timer" xml:space="preserve"><value>Nelze zobrazit časovače</value></data>
+<data name="error_notifications" xml:space="preserve"><value>Nelze zobrazit oznámení</value></data>
+<data name="set_level_switch" xml:space="preserve"><value>"Nastavení úrovně pro přepínač: %1$s na %2$d"</value></data>
+<data name="title_temperature" xml:space="preserve"><value>Teplota</value></data>
+<data name="cancel_override" xml:space="preserve"><value>Zrušit přepisování</value></data>
+<data name="wind" xml:space="preserve"><value>Vítr</value></data>
+<data name="error_log" xml:space="preserve"><value>Nelze získat údaje z logu pro</value></data>
+<data name="follow_schedule" xml:space="preserve"><value>Sledovat plán</value></data>
+<data name="command" xml:space="preserve"><value>Příkaz</value></data>
+<data name="type" xml:space="preserve"><value>Typ</value></data>
+<data name="notapplicable" xml:space="preserve"><value>Není k dispozici</value></data>
+<data name="timer_before_sunset" xml:space="preserve"><value>Před západem slunce</value></data>
+<data name="timer_after_sunset" xml:space="preserve"><value>Po západu slunce</value></data>
+<data name="timer_ontime" xml:space="preserve"><value>V čase</value></data>
+<data name="timer_before_sunrise" xml:space="preserve"><value>Před východem slunce</value></data>
+<data name="timer_after_sunrise" xml:space="preserve"><value>Po východu slunce</value></data>
+<data name="timer_fixed" xml:space="preserve"><value>Pevný datum a čas</value></data>
+<data name="odd_day_numbers" xml:space="preserve"><value>Lichý den</value></data>
+<data name="even_day_numbers" xml:space="preserve"><value>Sudý den</value></data>
+<data name="odd_week_numbers" xml:space="preserve"><value>Lichý týden</value></data>
+<data name="even_week_numbers" xml:space="preserve"><value>Sudý týden</value></data>
+<data name="monthly" xml:space="preserve"><value>Měsíčně</value></data>
+<data name="monthly_weekday" xml:space="preserve"><value>Měsíčně (pracovní dny)</value></data>
+<data name="yearly" xml:space="preserve"><value>Ročně</value></data>
+<data name="yearly_weekday" xml:space="preserve"><value>Ročně (pracovní dny)</value></data>
+<data name="before_sun_at_south" xml:space="preserve"><value>Před sluncem na jihu</value></data>
+<data name="after_sun_at_south" xml:space="preserve"><value>Po slunci na jihu</value></data>
+<data name="before_civil_twilight_start" xml:space="preserve"><value>Před počátkem občanského soumraku</value></data>
+<data name="after_civil_twilight_start" xml:space="preserve"><value>Po počátku občanského soumraku</value></data>
+<data name="before_civil_twilight_end" xml:space="preserve"><value>Před koncem občanského soumraku</value></data>
+<data name="after_civil_twilight_end" xml:space="preserve"><value>Po skončení občanského soumraku</value></data>
+<data name="before_nautical_twilight_start" xml:space="preserve"><value>Před počátkem námořního soumraku</value></data>
+<data name="after_nautical_twilight_start" xml:space="preserve"><value>Po počátku námořního soumraku</value></data>
+<data name="before_nautical_twilight_end" xml:space="preserve"><value>Před koncem námořního soumraku</value></data>
+<data name="after_nautical_twilight_end" xml:space="preserve"><value>Po skončení námořního soumraku</value></data>
+<data name="before_austronomical_twilight_start" xml:space="preserve"><value>Před počátkem astronomického soumraku</value></data>
+<data name="after_austronomical_twilight_start" xml:space="preserve"><value>Po počátku astronomického soumraku</value></data>
+<data name="before_austronomical_twilight_end" xml:space="preserve"><value>Před koncem astronomického soumraku</value></data>
+<data name="after_austronomical_twilight_end" xml:space="preserve"><value>Po skončení astronomického soumraku</value></data>
+<data name="timer_every_days" xml:space="preserve"><value>Každý den</value></data>
+<data name="timer_working_days" xml:space="preserve"><value>V pracovní dny</value></data>
+<data name="timer_weekend" xml:space="preserve"><value>Víkend</value></data>
+<data name="timer_other" xml:space="preserve"><value>Jiné</value></data>
+<data name="timers" xml:space="preserve"><value>Časovače</value></data>
+<data name="first" xml:space="preserve"><value>První</value></data>
+<data name="second" xml:space="preserve"><value>Druhý</value></data>
+<data name="third" xml:space="preserve"><value>Třetí</value></data>
+<data name="fourth" xml:space="preserve"><value>Čtvrtý</value></data>
+<data name="last" xml:space="preserve"><value>Poslední</value></data>
+<data name="title_utilities" xml:space="preserve"><value>Utility</value></data>
+<data name="settemperature" xml:space="preserve"><value>Nastavit</value></data>
+<data name="title_vars" xml:space="preserve"><value>Uživatelské proměnné</value></data>
+<data name="var_input" xml:space="preserve"><value>Vstupní hodnota je neplatná</value></data>
+<data name="var_input_error" xml:space="preserve"><value>Nepodařilo se aktualizovat uživatelskou proměnnou</value></data>
+<data name="title_weather" xml:space="preserve"><value>Počasí</value></data>
+<data name="dewPoint" xml:space="preserve"><value>Rosný bod</value></data>
+<data name="temp" xml:space="preserve"><value>Teplota</value></data>
+<data name="pressure" xml:space="preserve"><value>Tlak</value></data>
+<data name="chill" xml:space="preserve"><value>Chlad</value></data>
+<data name="direction" xml:space="preserve"><value>Směr</value></data>
+<data name="humidity" xml:space="preserve"><value>Vlhkost</value></data>
+<data name="speed" xml:space="preserve"><value>Rychlost</value></data>
+<data name="forecast" xml:space="preserve"><value>Předpověď</value></data>
+<data name="rain" xml:space="preserve"><value>Déšť</value></data>
+<data name="rainrate" xml:space="preserve"><value>Vydatnost deště</value></data>
+<data name="co2" xml:space="preserve"><value>CO2</value></data>
+<data name="co2min" xml:space="preserve"><value>CO2 Min</value></data>
+<data name="co2max" xml:space="preserve"><value>CO2 Max</value></data>
+<data name="welcome_title_activity_welcome" xml:space="preserve"><value>Vítejte</value></data>
+<data name="welcome_info_domoticz" xml:space="preserve"><value>OOTT je domácí automatizační systém, který umožňuje sledovat a konfigurovat různá zařízení, jako jsou: světla, přepínače, různé senzory/měřiče jako je teplota, déšť, vítr, UV, elektřina, plyn, voda a mnoho dalšího. Oznámení/poplachy lze zaslat na jakékoliv mobilní zařízení.</value></data>
+<data name="welcome_info_swipe" xml:space="preserve"><value>Přejeďte vpravo nebo pokračujte pomocí navigačních tlačítek v dolní části</value></data>
+<data name="welcome_info_settings1" xml:space="preserve"><value>Na další stránce je nastavení OOTT.</value></data>
+<data name="welcome_info_settings2" xml:space="preserve"><value>Můžete zadat místní a vzdálený server nastavení.
+Místní nastavení jsou ta když jste připojeni k domácí wifi síti.
+Vzdálené nastavení se používají, když nejste připojeni k domácí wifi síti nebo při připojení k mobilním datům (2G, 3G, 4G atd.).</value></data>
+<data name="welcome_info_checkingConnection" xml:space="preserve"><value>Ověření nastavení připojení</value></data>
+<data name="welcome_msg_connectionDataIncomplete" xml:space="preserve"><value>Data připojení jsou neúplná nebo prázdná</value></data>
+<data name="welcome_msg_connectionDataInvalid" xml:space="preserve"><value>Adresa URL by neměla začínat http</value></data>
+<data name="welcome_msg_correctOnPreviousPage" xml:space="preserve"><value>Prosím opravte data na předchozí stránce</value></data>
+<data name="welcome_msg_serverVersion" xml:space="preserve"><value>Verze OOTT</value></data>
+<data name="welcome_msg_numberOfDevices" xml:space="preserve"><value>%1$d nalezených zařízení</value></data>
+<data name="welcome_msg_no_ssid_found" xml:space="preserve"><value>Nenalezeno žádné wifi SSID</value></data>
+<data name="welcome_ssid_spinner_prompt" xml:space="preserve"><value>Výběr domácího SSID</value></data>
+<data name="welcome_ssid_button_prompt" xml:space="preserve"><value>Přidání domácího SSID</value></data>
+<data name="welcome_server_settings_title" xml:space="preserve"><value>Nastavení serveru</value></data>
+<data name="welcome_server_startScreen" xml:space="preserve"><value>Úvodní obrazovka</value></data>
+<data name="welcome_button_next" xml:space="preserve"><value>další</value></data>
+<data name="welcome_button_previous" xml:space="preserve"><value>předchozí</value></data>
+<data name="welcome_button_finish" xml:space="preserve"><value>dokončit</value></data>
+<data name="welcome_remote_server_address" xml:space="preserve"><value>Adresa serveru</value></data>
+<data name="welcome_remote_server_protocol" xml:space="preserve"><value>Protokol</value></data>
+<data name="welcome_remote_server_port" xml:space="preserve"><value>Port</value></data>
+<data name="welcome_remote_server_username" xml:space="preserve"><value>Uživatelské jméno</value></data>
+<data name="welcome_remote_server_password" xml:space="preserve"><value>Heslo</value></data>
+<data name="welcome_remote_server_directory" xml:space="preserve"><value>Složka</value></data>
+<data name="remote" xml:space="preserve"><value>Vzdálený</value></data>
+<data name="local" xml:space="preserve"><value>Lokální</value></data>
+<data name="servername" xml:space="preserve"><value>Název serveru</value></data>
+<data name="welcome_local_server_used_switch_title" xml:space="preserve"><value>Jiná adresa serveru</value></data>
+<data name="welcome_local_server_used_switch_summary" xml:space="preserve"><value>Použít jinou adresu pro místní připojení</value></data>
+<data name="welcome_advancedSettings" xml:space="preserve"><value>Rozšířené nastavení serveru</value></data>
+<data name="welcome_advancedSettings_summary" xml:space="preserve"><value>Používá se pouze pro nestandardní OOTT servery</value></data>
+<data name="welcome_local_server_ssid" xml:space="preserve"><value>Místní wifi SSID</value></data>
+<data name="welcome_local_server_address" xml:space="preserve"><value>Adresa místního serveru</value></data>
+<data name="welcome_local_server_protocol" xml:space="preserve"><value>Místní protokol</value></data>
+<data name="welcome_local_server_port" xml:space="preserve"><value>Místní port</value></data>
+<data name="welcome_local_server_directory" xml:space="preserve"><value>Místní adresář (ponechte prázdné, pokud se nepoužívá)</value></data>
+<data name="welcome_local_server_username" xml:space="preserve"><value>Lokální uživatelské jméno (ponechte prázdné, pokud se nepoužívá)</value></data>
+<data name="welcome_local_server_password" xml:space="preserve"><value>Lokální heslo (ponechte prázdné, pokud se nepoužívá)</value></data>
+<data name="pick_device_title" xml:space="preserve"><value>Vyberte zařízení</value></data>
+<data name="choose_switch" xml:space="preserve"><value>Zvolte zařízení</value></data>
+<data name="failed_to_get_securitypanel" xml:space="preserve"><value>Ve vašich přepínačích nebyl nalezen žádný bezpečnostní panel</value></data>
+<data name="failed_to_get_switches" xml:space="preserve"><value>Nepodařilo se získat zařízení</value></data>
+<data name="failed_toggle_switch" xml:space="preserve"><value>Přepnutí zařízení se nezdařilo</value></data>
+<data name="switch_toggled" xml:space="preserve"><value>"Přepnout zařízení"</value></data>
+<data name="text_loading" xml:space="preserve"><value>Nahrávám...</value></data>
+<data name="text_go" xml:space="preserve"><value>PROVEĎ</value></data>
+<data name="widget_background" xml:space="preserve"><value>Pozadí</value></data>
+<data name="widget_dark" xml:space="preserve"><value>Tmavý</value></data>
+<data name="widget_light" xml:space="preserve"><value>Světlý</value></data>
+<data name="widget_transparent_dark" xml:space="preserve"><value>Průhledný tmavý</value></data>
+<data name="widget_transparent_light" xml:space="preserve"><value>Průhledný světlý</value></data>
+<data name="title_wizard" xml:space="preserve"><value>Vítá vás Průvodce</value></data>
+<data name="wizard_welcome" xml:space="preserve"><value>Vítejte</value></data>
+<data name="wizard_welcome_description" xml:space="preserve"><value>OOTT je odlehčený systém domácí automatizace, který vám umožní sledovat a konfigurovat různá zařízení.</value></data>
+<data name="wizard_favorites" xml:space="preserve"><value>Oblíbené položky</value></data>
+<data name="wizard_favorites_description" xml:space="preserve"><value>Zařízení můžete přidat do Řídícího panelu tím, že ho uložíte jako oblíbené. Dlouhým stiskem položky ji uložíte do oblíbených!</value></data>
+<data name="wizard_startup" xml:space="preserve"><value>Úvodní obrazovka</value></data>
+<data name="wizard_startup_description" xml:space="preserve"><value>V nastavení si můžete nastavit svou spouštěcí obrazovku!</value></data>
+<data name="wizard_notifications" xml:space="preserve"><value>Nastavení upozornění</value></data>
+<data name="wizard_notifications_description" xml:space="preserve"><value>Nyní můžete dostávat oznámení na vašem zařízení Android. Chování oznámení si změňte v nastavení</value></data>
+<data name="wizard_multiserver" xml:space="preserve"><value>Použití více serverů</value></data>
+<data name="wizard_multiserver_description" xml:space="preserve"><value>V nastavení můžete nakonfigurovat více serverů OOTT.</value></data>
+<data name="wizard_geo" xml:space="preserve"><value>Geofencing</value></data>
+<data name="wizard_geo_description" xml:space="preserve"><value>V nastavení si můžete nastavit svou spouštěcí obrazovku!</value></data>
+<data name="wizard_wear" xml:space="preserve"><value>Android Wear</value></data>
+<data name="wizard_wear_description" xml:space="preserve"><value>Můžete si vybrat, které přepínače chcete ovládat ze svého Android Wear zařízení!</value></data>
+<data name="wizard_auto" xml:space="preserve"><value>Android Auto</value></data>
+<data name="wizard_auto_description" xml:space="preserve"><value>Přijímat oznámení OOTT přímo ve vašem zařízení Android Auto!</value></data>
+<data name="wizard_graph" xml:space="preserve"><value>Grafy</value></data>
+<data name="wizard_graph_description" xml:space="preserve"><value>Můžete si zobrazit graf počasí nebo teplot!</value></data>
+<data name="wizard_filter" xml:space="preserve"><value>Filtry</value></data>
+<data name="wizard_filter_description" xml:space="preserve"><value>Můžete filtrovat zařízení podle stavu (zap/vyp). Pro filtrování využijte ikonku v pravém horním menu!</value></data>
+<data name="wizard_widgets" xml:space="preserve"><value>Widgety!!</value></data>
+<data name="wizard_widgets_description" xml:space="preserve"><value>Můžete si dát některé widgety na domovskou obrazovku!</value></data>
+<data name="wizard_menuitem" xml:space="preserve"><value>Zakázat průvodce</value></data>
+<data name="wizard_menuitem_description" xml:space="preserve"><value>Tohoto průvodce můžete nyní odebrat z navigačního menu!</value></data>
+<data name="wizard_nfc" xml:space="preserve"><value>NFC</value></data>
+<data name="wizard_nfc_description" xml:space="preserve"><value>Můžete přepínat přepínače pomocí NFC!</value></data>
+<data name="wizard_qrcode" xml:space="preserve"><value>QR kód</value></data>
+<data name="wizard_qrcode_description" xml:space="preserve"><value>Přepínejte přepínače naskenováním QR kód (nebo čárového kódu)!</value></data>
+<data name="wizard_speech" xml:space="preserve"><value>Hlasové příkazy</value></data>
+<data name="wizard_speech_description" xml:space="preserve"><value>Přepínejte přepínače svým hlasem! Nadefinujte hlasové příkazy v nastavení a připojte přepínače.</value></data>
+<data name="wizard_button_nice" xml:space="preserve"><value>Hezké</value></data>
+<data name="wizard_button_switches" xml:space="preserve"><value>Přepínače</value></data>
+<data name="wizard_button_settings" xml:space="preserve"><value>Nastavení</value></data>
+<data name="wizard_button_wizard" xml:space="preserve"><value>Odebrat</value></data>
+<data name="wizard_button_utilities" xml:space="preserve"><value>Funkce</value></data>
+<data name="wizard_button_done" xml:space="preserve"><value>Hotovo</value></data>
+</root>

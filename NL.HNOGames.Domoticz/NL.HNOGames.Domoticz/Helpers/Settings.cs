@@ -117,6 +117,21 @@ namespace NL.HNOGames.Domoticz.Helpers
         private const string SpeechSettingsKey = "speech_settings_key2";
 
         /// <summary>
+        /// Defines the BluetoothSettingsKey
+        /// </summary>
+        private const string BluetoothSettingsKey = "bluetooth_settings_key";
+
+        /// <summary>
+        /// Defines the EnableBluetoothSettingsKey
+        /// </summary>
+        private const string EnableBluetoothNotificationsSettingsKey = "enable_bluetooth_notifications_settings_key";
+
+        /// <summary>
+        /// Defines the EnableBluetoothSettingsKey
+        /// </summary>
+        private const string EnableBluetoothSettingsKey = "enable_bluetooth_settings_key";
+
+        /// <summary>
         /// Defines the BeaconSettingsKey
         /// </summary>
         private const string BeaconSettingsKey = "beacon_settings_key";
@@ -505,6 +520,68 @@ namespace NL.HNOGames.Domoticz.Helpers
             set
             {
                 AppSettings.AddOrUpdateValue(EnableGeofenceSettingsKey, value);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether BluetoothEnabled
+        /// Enable the Bluetooth feature
+        /// </summary>
+        public bool BluetoothEnabled
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(EnableBluetoothSettingsKey, false);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(EnableBluetoothSettingsKey, value);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether BluetoothEnabled
+        /// Enable the Bluetooth feature
+        /// </summary>
+        public bool BluetoothNotificationsEnabled
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(EnableBluetoothNotificationsSettingsKey, false);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(EnableBluetoothNotificationsSettingsKey, value);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the Bluetooths
+        /// Specify Bluetooth models
+        /// </summary>
+        public List<BluetoothModel> Bluetooths
+        {
+            get
+            {
+                try
+                {
+                    String resultCache = AppSettings.GetValueOrDefault(BluetoothSettingsKey, string.Empty);
+                    if (!string.IsNullOrEmpty(resultCache))
+                    {
+                        var value = JsonConvert.DeserializeObject<List<BluetoothModel>>(resultCache);
+                        return value;
+                    }
+                    else
+                        return new List<BluetoothModel>();
+                }
+                catch (Exception) { }
+                return new List<BluetoothModel>();
+            }
+            set
+            {
+                if (value == null)
+                    return;
+                AppSettings.AddOrUpdateValue(BluetoothSettingsKey, JsonConvert.SerializeObject(value));
             }
         }
 

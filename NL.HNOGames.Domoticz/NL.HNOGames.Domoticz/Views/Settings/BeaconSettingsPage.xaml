@@ -23,7 +23,7 @@
                     x:Name="title"
                     HorizontalTextAlignment="Start"
                     Style="{DynamicResource TitleStyle}"
-                    Text="{resources:Translate title_beacon}"
+                    Text="{resources:Translate beacon}"
                     VerticalOptions="Center"
                     VerticalTextAlignment="Center" />
             </StackLayout>
@@ -78,7 +78,7 @@
                                 <Label
                                     HorizontalOptions="Start"
                                     Style="{StaticResource SettingsDetailType}"
-                                    Text="{resources:Translate description_beacon_notifications}"
+                                    Text="{resources:Translate beacon_desc_notifications}"
                                     VerticalOptions="CenterAndExpand" />
                             </StackLayout>
                             <Switch

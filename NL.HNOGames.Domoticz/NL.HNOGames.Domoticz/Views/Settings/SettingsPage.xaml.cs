@@ -111,15 +111,10 @@ namespace NL.HNOGames.Domoticz.Views.Settings
 
             //Dashboard sort
             swNoSort.IsToggled = App.AppSettings.NoSort;
-            lblSort.Text = App.AppSettings.NoSort
-                ? AppResources.sort_dashboardLikeServer_on
-                : AppResources.sort_dashboardLikeServer_off;
+            lblSort.Text = AppResources.sort_dashboardLikeServer_off;
             swNoSort.Toggled += (sender, args) =>
             {
                 App.AppSettings.NoSort = swNoSort.IsToggled;
-                lblSort.Text = App.AppSettings.NoSort
-                    ? AppResources.sort_dashboardLikeServer_on
-                    : AppResources.sort_dashboardLikeServer_off;
             };
 
             ////Multi Server Settings
@@ -440,6 +435,19 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                 await Navigation.PushAsync(new GeofenceSettingsPage());
             else
                 App.ShowToast(AppResources.geofence + " " + AppResources.premium_feature);
+        }
+
+        /// <summary>
+        /// The btnBluetoothSettings_Clicked
+        /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="EventArgs"/></param>
+        private async void btnBluetoothSettings_Clicked(object sender, EventArgs e)
+        {
+            if (App.AppSettings.PremiumBought)
+                await Navigation.PushAsync(new BluetoothSettingsPage());
+            else
+                App.ShowToast(AppResources.bluetooth + " " + AppResources.premium_feature);
         }
 
         /// <summary>

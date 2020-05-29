@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?> <root> <resheader name="resmimetype">		<value>text/microsoft-resx</value>	</resheader>	<resheader name="version">		<value>2.0</value>	</resheader>	<resheader name="reader">		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>	<resheader name="writer">		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>
+<?xml version="1.0" encoding="utf-8"?>  <root> <resheader name="resmimetype">		<value>text/microsoft-resx</value>	</resheader>	<resheader name="version">		<value>2.0</value>	</resheader>	<resheader name="reader">		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>	<resheader name="writer">		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>
 <data name="premium_category" xml:space="preserve"><value>购买高级版！</value></data>
 <data name="premium_title" xml:space="preserve"><value>获取高级版本 ！</value></data>
 <data name="premium_feature" xml:space="preserve"><value>这是一项高级功能，请购买高级版以支持开发者！</value></data>
@@ -10,6 +10,8 @@
 <data name="button_state_off" xml:space="preserve"><value>关</value></data>
 <data name="button_state_closed" xml:space="preserve"><value>已关闭</value></data>
 <data name="button_state_open" xml:space="preserve"><value>已开启</value></data>
+<data name="button_state_lock" xml:space="preserve"><value>Lock</value></data>
+<data name="button_state_unlock" xml:space="preserve"><value>Unlock</value></data>
 <data name="button_status_log" xml:space="preserve"><value>日志</value></data>
 <data name="button_status_day" xml:space="preserve"><value>日</value></data>
 <data name="button_status_week" xml:space="preserve"><value>周</value></data>
@@ -20,6 +22,17 @@
 <data name="button_color" xml:space="preserve"><value>颜色</value></data>
 <data name="button_arm" xml:space="preserve"><value>激活</value></data>
 <data name="button_disarm" xml:space="preserve"><value>解除</value></data>
+<data name="button_state_full_light" xml:space="preserve"><value>Full light</value></data>
+<data name="button_state_night" xml:space="preserve"><value>Night light</value></data>
+<data name="sunrise" xml:space="preserve"><value>Sunrise</value></data>
+<data name="sunset" xml:space="preserve"><value>Sunset</value></data>
+<data name="now" xml:space="preserve"><value>Now</value></data>
+<data name="astrTwilightStart" xml:space="preserve"><value>Astronomical twilight start</value></data>
+<data name="astrTwilightEnd" xml:space="preserve"><value>Astronomical twilight end</value></data>
+<data name="civTwilightStart" xml:space="preserve"><value>Civil twilight start</value></data>
+<data name="civTwilightEnd" xml:space="preserve"><value>Civil twilight end</value></data>
+<data name="nautTwilightStart" xml:space="preserve"><value>Nautical twilight start</value></data>
+<data name="nautTwilightEnd" xml:space="preserve"><value>Nautical twilight end</value></data>
 <data name="last_update" xml:space="preserve"><value>更新于</value></data>
 <data name="signal_level" xml:space="preserve"><value>信号程度</value></data>
 <data name="battery_level" xml:space="preserve"><value>电池电量</value></data>
@@ -27,6 +40,7 @@
 <data name="hardware" xml:space="preserve"><value>硬件</value></data>
 <data name="temperature" xml:space="preserve"><value>温度</value></data>
 <data name="status" xml:space="preserve"><value>状态</value></data>
+<data name="switch_rgb_wwcolor" xml:space="preserve"><value>RGB color or warm white</value></data>
 <data name="set_point" xml:space="preserve"><value>设置点</value></data>
 <data name="set_point_min" xml:space="preserve"><value>设置点的最小值</value></data>
 <data name="set_point_min_description" xml:space="preserve"><value>你可以为你的温控器设置的最小温度</value></data>
@@ -64,6 +78,8 @@
 <data name="something_deleted" xml:space="preserve"><value>%1$s 已刪除</value></data>
 <data name="switch_on" xml:space="preserve"><value>打开开关</value></data>
 <data name="switch_off" xml:space="preserve"><value>关闭开关</value></data>
+<data name="switch_night" xml:space="preserve"><value>Turning switch to night light</value></data>
+<data name="switch_full" xml:space="preserve"><value>Turning switch to full light</value></data>
 <data name="blind_up" xml:space="preserve"><value>打开百叶窗</value></data>
 <data name="blind_down" xml:space="preserve"><value>关闭百叶窗</value></data>
 <data name="blind_stop" xml:space="preserve"><value>停止百叶窗</value></data>
@@ -87,14 +103,35 @@
 <data name="continue_question" xml:space="preserve"><value>继续？</value></data>
 <data name="cant_remove_default_server" xml:space="preserve"><value>不能删除默认服务器</value></data>
 <data name="restart_required_msg" xml:space="preserve"><value>更改语言后需要重新启动程序以生效</value></data>
+<data name="filter_all" xml:space="preserve"><value>All</value></data>
+<data name="filter_normal" xml:space="preserve"><value>Normal</value></data>
+<data name="filter_status" xml:space="preserve"><value>Status</value></data>
+<data name="filter_error" xml:space="preserve"><value>Error</value></data>
+<data name="use_demo_setup" xml:space="preserve"><value>Use demo setup</value></data>
+<data name="auto_refresh_time" xml:space="preserve"><value>Refresh timer</value></data>
+<data name="setautorefreshtime" xml:space="preserve"><value>Set a specific timer for the auto refresh in seconds.</value></data>
 <data name="action_switch_server" xml:space="preserve"><value>切换服务器</value></data>
 <data name="action_settings" xml:space="preserve"><value>设置</value></data>
 <data name="action_filter" xml:space="preserve"><value>筛选</value></data>
 <data name="action_camera_play" xml:space="preserve"><value>播放</value></data>
 <data name="action_camera_pause" xml:space="preserve"><value>暂停</value></data>
 <data name="action_qrcode_scan" xml:space="preserve"><value>扫描二维码</value></data>
+<data name="action_bluetooth_show" xml:space="preserve"><value>Show paired devices</value></data>
 <data name="action_speech" xml:space="preserve"><value>语音识别</value></data>
-<data name="title_cameras" xml:space="preserve"><value>相机</value></data>
+<data name="send" xml:space="preserve"><value>Send</value></data>
+<data name="bluetooth_not_supported" xml:space="preserve"><value>Bluetooth is not supported on this device</value></data>
+<data name="bluetooth_register" xml:space="preserve"><value>Connect a bluetooth device</value></data>
+<data name="bluetooth_found" xml:space="preserve"><value>New bluetooth device found</value></data>
+<data name="bluetooth_edit" xml:space="preserve"><value>Edit bluetooth device</value></data>
+<data name="bluetooth_name" xml:space="preserve"><value>Give this bluetooth device a proper name. </value></data>
+<data name="bluetooth_desc" xml:space="preserve"><value>Check the list of paired bluetooth devices. </value></data>
+<data name="bluetooth_exists" xml:space="preserve"><value>Bluetooth already configured on OOTT. </value></data>
+<data name="bluetooth_turned_off" xml:space="preserve"><value>Bluetooth needs to be turned on in your device settings. </value></data>
+<data name="bluetooth_saved" xml:space="preserve"><value>Saved a new bluetooth device connection. </value></data>
+<data name="bluetooth" xml:space="preserve"><value>Bluetooth</value></data>
+<data name="bluetooth_disabled" xml:space="preserve"><value>Bluetooth automation disabled, please setup via settings.</value></data>
+<data name="noSwitchSelected_explanation_bluetooth" xml:space="preserve"><value>For a bluetooth device to automate something in OOTT, a switch should be linked to an bluetooth</value></data>
+<data name="title_cameras" xml:space="preserve"><value>摄像头</value></data>
 <data name="title_dashboard" xml:space="preserve"><value>仪表盘</value></data>
 <data name="usage" xml:space="preserve"><value>统计</value></data>
 <data name="today" xml:space="preserve"><value>今天</value></data>
@@ -166,6 +203,14 @@
 <data name="verylow" xml:space="preserve"><value>非常低</value></data>
 <data name="allsystems" xml:space="preserve"><value>所有系统</value></data>
 <data name="systems" xml:space="preserve"><value>系统</value></data>
+<data name="send_notification" xml:space="preserve"><value>Send notification</value></data>
+<data name="notification_subject" xml:space="preserve"><value>Subject</value></data>
+<data name="notification_message" xml:space="preserve"><value>Message</value></data>
+<data name="notification_error_system" xml:space="preserve"><value>Please choose a system to send the notification to</value></data>
+<data name="notification_error_message" xml:space="preserve"><value>Please fill in a message</value></data>
+<data name="notification_error_subject" xml:space="preserve"><value>Please fill in a subject</value></data>
+<data name="notification_error_send" xml:space="preserve"><value>Could not send the notification to OOTT</value></data>
+<data name="notification_send" xml:space="preserve"><value>Notification send to OOTT</value></data>
 <data name="permission_title" xml:space="preserve"><value>权限不足</value></data>
 <data name="permission_prefs_title" xml:space="preserve"><value>权限</value></data>
 <data name="permission_config" xml:space="preserve"><value>为应用程序设置权限</value></data>
@@ -198,9 +243,12 @@
 <data name="security_arm_home" xml:space="preserve"><value>到家</value></data>
 <data name="security_arm_away" xml:space="preserve"><value>离家</value></data>
 <data name="security_wrong_code" xml:space="preserve"><value>输入错误！</value></data>
+<data name="security_no_rights" xml:space="preserve"><value>You do not have the rights for this action!</value></data>
 <data name="security_generic_error" xml:space="preserve"><value>无法更改安全状态</value></data>
 <data name="security_wrong_password_fingerprint" xml:space="preserve"><value>密码错误，你的OOTT账户密码是指纹识别失败时的备用验证！</value></data>
 <data name="show_password" xml:space="preserve"><value>显示密码</value></data>
+<data name="fingerprint_make_sure" xml:space="preserve"><value>We need to make sure its you</value></data>
+<data name="fingerprint_dialog_description" xml:space="preserve"><value>Touch your finger on the fingerprint sensor to authorise your account.</value></data>
 <data name="choose_server" xml:space="preserve"><value>选择服务器</value></data>
 <data name="dont_save_new_server" xml:space="preserve"><value>不保存新的服务器？</value></data>
 <data name="server_must_be_unique" xml:space="preserve"><value>服务器名称必须是唯一的</value></data>
@@ -221,16 +269,22 @@
 <data name="category_debug" xml:space="preserve"><value>调试</value></data>
 <data name="category_export" xml:space="preserve"><value>导入/导出设置</value></data>
 <data name="category_theme" xml:space="preserve"><value>主题</value></data>
+<data name="category_clock" xml:space="preserve"><value>Clock</value></data>
 <data name="category_nfc" xml:space="preserve"><value>NFC连接</value></data>
 <data name="category_startup_security" xml:space="preserve"><value>安全</value></data>
 <data name="category_account" xml:space="preserve"><value>账户</value></data>
 <data name="category_QRCode" xml:space="preserve"><value>二维码</value></data>
+<data name="category_bluetooth" xml:space="preserve"><value>Bluetooth</value></data>
 <data name="category_Speech" xml:space="preserve"><value>语音</value></data>
 <data name="category_Reset" xml:space="preserve"><value>重置</value></data>
+<data name="category_help" xml:space="preserve"><value>Contribute</value></data>
 <data name="startup_screen" xml:space="preserve"><value>开始界面</value></data>
 <data name="enable_items" xml:space="preserve"><value>启用/禁用项目</value></data>
-<data name="sort_dashboardLikeServer_title" xml:space="preserve"><value>仪表盘排序</value></data>
-<data name="sort_dashboardLikeServer_on" xml:space="preserve"><value>仪表盘按服务器顺序排序</value></data>
+<data name="sort_server_title" xml:space="preserve"><value>Sorting</value></data>
+<data name="sort_server_on" xml:space="preserve"><value>Sort devices like sorted on the server</value></data>
+<data name="sort_custom_on" xml:space="preserve"><value>Custom sorting, drag and drop devices to sort them</value></data>
+<data name="sort_lock_server_title" xml:space="preserve"><value>Lock</value></data>
+<data name="sort_lock_custom_on" xml:space="preserve"><value>Lock the current custom sorting (disable drag/drop)</value></data>
 <data name="sort_dashboardLikeServer_off" xml:space="preserve"><value>仪表板按字母顺序排序</value></data>
 <data name="extra_data_title" xml:space="preserve"><value>仪表盘上的额外数据</value></data>
 <data name="show_extra_data_on" xml:space="preserve"><value>在仪表盘中显示额外数据</value></data>
@@ -238,12 +292,17 @@
 <data name="always_on_title" xml:space="preserve"><value>屏幕锁定</value></data>
 <data name="always_on_on" xml:space="preserve"><value>保持屏幕开启</value></data>
 <data name="always_on_off" xml:space="preserve"><value>不保持屏幕开启</value></data>
+<data name="always_auto_refresh" xml:space="preserve"><value>自动刷新</value></data>
+<data name="always_auto_refresh_on" xml:space="preserve"><value>Refresh the device state every couple of seconds</value></data>
+<data name="always_auto_refresh_off" xml:space="preserve"><value>Don\'t refresh the device state every couple of seconds</value></data>
 <data name="switch_buttons_title" xml:space="preserve"><value>开关</value></data>
 <data name="switch_buttons_on" xml:space="preserve"><value>在开关上显示开/关文字</value></data>
 <data name="switch_buttons_off" xml:space="preserve"><value>在开关上显示开/关按钮</value></data>
 <data name="dashboard_list_title" xml:space="preserve"><value>仪表盘网格</value></data>
 <data name="show_dashboard_list_on" xml:space="preserve"><value>仪表盘按列表显示</value></data>
 <data name="show_dashboard_list_off" xml:space="preserve"><value>仪表盘按网格显示</value></data>
+<data name="dashboard_clock" xml:space="preserve"><value>Clock</value></data>
+<data name="show_dashboard_clock" xml:space="preserve"><value>Show a clock on the dashboard</value></data>
 <data name="enable_wear_select" xml:space="preserve"><value>Android Wear手表自定义项目</value></data>
 <data name="custom_wear_select" xml:space="preserve"><value>选择手表开关</value></data>
 <data name="custom_wear_select_desc" xml:space="preserve"><value>选择你想在Android Wear设备上看到的开关</value></data>
@@ -279,6 +338,10 @@
 <data name="qrcode_settings" xml:space="preserve"><value>设置二维码</value></data>
 <data name="enable_qrcode" xml:space="preserve"><value>启用二维码</value></data>
 <data name="qrcode_enable_settings" xml:space="preserve"><value>启用二维码功能</value></data>
+<data name="bluetooth_settings" xml:space="preserve"><value>Setup Bluetooth devices</value></data>
+<data name="enable_bluetooth" xml:space="preserve"><value>Enable Bluetooth functionality</value></data>
+<data name="translate_description" xml:space="preserve"><value>You can help make our translations better, and even add new languages to this app via our Crowdin project</value></data>
+<data name="translate_title" xml:space="preserve"><value>Translations</value></data>
 <data name="security_settings" xml:space="preserve"><value>设置安全性</value></data>
 <data name="enable_security" xml:space="preserve"><value>启动时启用指纹保护</value></data>
 <data name="disable_security" xml:space="preserve"><value>启动时禁用指纹保护</value></data>
@@ -302,6 +365,7 @@
 <data name="enable_notifications_title" xml:space="preserve"><value>启用通知</value></data>
 <data name="enable_notifications" xml:space="preserve"><value>在此设备上启用通知</value></data>
 <data name="notification_screen_title" xml:space="preserve"><value>通知设置</value></data>
+<data name="notification_history" xml:space="preserve"><value>Notification history</value></data>
 <data name="notification_vibrate_title" xml:space="preserve"><value>振动</value></data>
 <data name="notification_vibrate_on" xml:space="preserve"><value>收到通知时振动</value></data>
 <data name="notification_vibrate_off" xml:space="preserve"><value>不振动</value></data>
@@ -317,6 +381,11 @@
 <data name="alarm" xml:space="preserve"><value>警报</value></data>
 <data name="alarmtimer_title" xml:space="preserve"><value>定时警报</value></data>
 <data name="alarmtimer" xml:space="preserve"><value>警报的时间的秒数</value></data>
+<data name="theme_default" xml:space="preserve"><value>Default</value></data>
+<data name="theme_daynight" xml:space="preserve"><value>Day/Night</value></data>
+<data name="theme_orange" xml:space="preserve"><value>Orange</value></data>
+<data name="theme_pink" xml:space="preserve"><value>Pink</value></data>
+<data name="theme_blue" xml:space="preserve"><value>Blue</value></data>
 <data name="default_values" xml:space="preserve"><value>默认值</value></data>
 <data name="default_values_min_error" xml:space="preserve"><value>最大值应大于最小值</value></data>
 <data name="default_values_max_error" xml:space="preserve"><value>最大值应大于最小值</value></data>
@@ -330,6 +399,7 @@
 <data name="debug_switch_summary_off" xml:space="preserve"><value>调试已禁用</value></data>
 <data name="error_atLeastOneItemInDrawer" xml:space="preserve"><value>你需要开启至少一个项目</value></data>
 <data name="title_activity_update" xml:space="preserve"><value>更新服务器</value></data>
+<data name="error_couldNotCheckForVersion" xml:space="preserve"><value>"Could not check for version: %1$s"</value></data>
 <data name="error_couldNotCheckForUpdates" xml:space="preserve"><value>"无法检查更新︰ %1$s"</value></data>
 <data name="error_couldNotCheckForConfig" xml:space="preserve"><value>"无法获取OOTT服务器配置︰%1$s"</value></data>
 <data name="update_available_enhanced" xml:space="preserve"><value>可用的服务器更新︰ %1$s -> %2$s</value></data>
@@ -354,6 +424,7 @@
 <data name="debug_test_text" xml:space="preserve"><value>调试测试</value></data>
 <data name="restart_required_title" xml:space="preserve"><value>需要重启</value></data>
 <data name="restart_now" xml:space="preserve"><value>现在重新启动吗？</value></data>
+<data name="check_settings" xml:space="preserve"><value>Check your settings</value></data>
 <data name="Speech_not_supported" xml:space="preserve"><value>此设备上不支持语音</value></data>
 <data name="Speech_register" xml:space="preserve"><value>注册语音指令</value></data>
 <data name="Speech_found" xml:space="preserve"><value>发现新的语音指令</value></data>
@@ -400,12 +471,31 @@
 <data name="monthly_weekday" xml:space="preserve"><value>每月(工作日)</value></data>
 <data name="yearly" xml:space="preserve"><value>每年</value></data>
 <data name="yearly_weekday" xml:space="preserve"><value>每年(工作日)</value></data>
+<data name="before_sun_at_south" xml:space="preserve"><value>Before Sun at South</value></data>
+<data name="after_sun_at_south" xml:space="preserve"><value>After Sun at South</value></data>
+<data name="before_civil_twilight_start" xml:space="preserve"><value>Before Civil Twilight Start</value></data>
+<data name="after_civil_twilight_start" xml:space="preserve"><value>After Civil Twilight Start</value></data>
+<data name="before_civil_twilight_end" xml:space="preserve"><value>Before Civil Twilight End</value></data>
+<data name="after_civil_twilight_end" xml:space="preserve"><value>After Civil Twilight End</value></data>
+<data name="before_nautical_twilight_start" xml:space="preserve"><value>Before Nautical Twilight Start</value></data>
+<data name="after_nautical_twilight_start" xml:space="preserve"><value>After Nautical Twilight Start</value></data>
+<data name="before_nautical_twilight_end" xml:space="preserve"><value>Before Nautical Twilight End</value></data>
+<data name="after_nautical_twilight_end" xml:space="preserve"><value>After Nautical Twilight End</value></data>
+<data name="before_austronomical_twilight_start" xml:space="preserve"><value>Before Austronomical Twilight Start</value></data>
+<data name="after_austronomical_twilight_start" xml:space="preserve"><value>After Austronomical Twilight Start</value></data>
+<data name="before_austronomical_twilight_end" xml:space="preserve"><value>Before Austronomical Twilight End</value></data>
+<data name="after_austronomical_twilight_end" xml:space="preserve"><value>After Austronomical Twilight End</value></data>
 <data name="timer_every_days" xml:space="preserve"><value>每天</value></data>
 <data name="timer_working_days" xml:space="preserve"><value>工作天数</value></data>
 <data name="timer_weekend" xml:space="preserve"><value>周末</value></data>
 <data name="timer_other" xml:space="preserve"><value>其它</value></data>
 <data name="timers" xml:space="preserve"><value>计时器</value></data>
-<data name="title_utilities" xml:space="preserve"><value>实用程序</value></data>
+<data name="first" xml:space="preserve"><value>First</value></data>
+<data name="second" xml:space="preserve"><value>Second</value></data>
+<data name="third" xml:space="preserve"><value>Third</value></data>
+<data name="fourth" xml:space="preserve"><value>Fourth</value></data>
+<data name="last" xml:space="preserve"><value>Last</value></data>
+<data name="title_utilities" xml:space="preserve"><value>附加</value></data>
 <data name="settemperature" xml:space="preserve"><value>设置</value></data>
 <data name="title_vars" xml:space="preserve"><value>用户变量</value></data>
 <data name="var_input" xml:space="preserve"><value>输入值无效</value></data>
@@ -428,9 +518,9 @@
 <data name="welcome_info_domoticz" xml:space="preserve"><value>OOTT是一个开源的智能家居系统，通过它你可以监测和控制各种设备比如：灯、开关 ，各种传感器、仪表比如：温度、雨、风、紫外线、电、气体、水 等等。 还可以向任一移动设备发送通知或警告。</value></data>
 <data name="welcome_info_swipe" xml:space="preserve"><value>向右滑动或使用底部的导航按钮来继续</value></data>
 <data name="welcome_info_settings1" xml:space="preserve"><value>下一个页面设置你的OOTT。</value></data>
-<data name="welcome_info_settings2" xml:space="preserve"><value>        你可以指定一个本地或远程服务器设置。
-        本地设置用于当你连接到家里的无线网时。
-        远程设置用于当你离开家里使用手机数据网络或其它无线网络时。</value></data>
+<data name="welcome_info_settings2" xml:space="preserve"><value>你可以指定一个本地或远程服务器设置。
+本地设置用于当你连接到家里的无线网时。
+远程设置用于当你离开家里使用手机数据网络或其它无线网络时。</value></data>
 <data name="welcome_info_checkingConnection" xml:space="preserve"><value>验证你的连接设置</value></data>
 <data name="welcome_msg_connectionDataIncomplete" xml:space="preserve"><value>连接数据不完整或为空</value></data>
 <data name="welcome_msg_connectionDataInvalid" xml:space="preserve"><value>URL不应以http开头</value></data>

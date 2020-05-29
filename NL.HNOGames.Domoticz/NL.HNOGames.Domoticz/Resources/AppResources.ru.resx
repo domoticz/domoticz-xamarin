@@ -1,1 +1,608 @@
-<?xml version="1.0" encoding="utf-8"?> <root> <resheader name="resmimetype">		<value>text/microsoft-resx</value>	</resheader>	<resheader name="version">		<value>2.0</value>	</resheader>	<resheader name="reader">		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>	<resheader name="writer">		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader><data name="premium_category" xml:space="preserve"><value>Купить премиум!</value></data><data name="premium_title" xml:space="preserve"><value>Получите премиум-версию!</value></data><data name="premium_feature" xml:space="preserve"><value>Это Премиум-функция, пожалуйста купите платную версию для поддержки разработчиков!</value></data><data name="drawer_open" xml:space="preserve"><value>Открыть панель управления</value></data><data name="drawer_close" xml:space="preserve"><value>Закрыть панель управления</value></data><data name="msg_please_wait" xml:space="preserve"><value>Пожалуйста подождите&#8230;</value></data><data name="changelog" xml:space="preserve"><value>История Изменений</value></data><data name="button_state_on" xml:space="preserve"><value>ВКЛ</value></data><data name="button_state_off" xml:space="preserve"><value>Выключен</value></data><data name="button_state_closed" xml:space="preserve"><value>Закрыто</value></data><data name="button_state_open" xml:space="preserve"><value>Открыто</value></data><data name="button_status_log" xml:space="preserve"><value>Журнал</value></data><data name="button_status_day" xml:space="preserve"><value>День</value></data><data name="button_status_week" xml:space="preserve"><value>Неделя</value></data><data name="button_status_month" xml:space="preserve"><value>Месяц</value></data><data name="button_status_year" xml:space="preserve"><value>Год</value></data><data name="button_status_timer" xml:space="preserve"><value>Таймер</value></data><data name="button_status_notifications" xml:space="preserve"><value>Уведомления</value></data><data name="button_color" xml:space="preserve"><value>Цвет</value></data><data name="button_arm" xml:space="preserve"><value>Включить</value></data><data name="button_disarm" xml:space="preserve"><value>Выключить</value></data><data name="last_update" xml:space="preserve"><value>Последнее посещение</value></data><data name="signal_level" xml:space="preserve"><value>Уровень сигнала</value></data><data name="battery_level" xml:space="preserve"><value>Уровень батареи</value></data><data name="data" xml:space="preserve"><value>Данные</value></data><data name="hardware" xml:space="preserve"><value>Аппаратное обеспечение</value></data><data name="temperature" xml:space="preserve"><value>Температура</value></data><data name="status" xml:space="preserve"><value>Статус</value></data><data name="set_point" xml:space="preserve"><value>Уставка</value></data><data name="set_point_min" xml:space="preserve"><value>Установка минимального значения</value></data><data name="set_point_min_description" xml:space="preserve"><value>Минимальная температура, которую можно задать для термостата</value></data><data name="set_point_max" xml:space="preserve"><value>Установка максимального значения</value></data><data name="set_point_max_description" xml:space="preserve"><value>Максимальная температура, которую можно задать для термостата</value></data><data name="action_success" xml:space="preserve"><value>Операция выполнена</value></data><data name="action_failed" xml:space="preserve"><value>Операция не выполнена</value></data><data name="action_unknown" xml:space="preserve"><value>Результат действия неизвестен</value></data><data name="choose_status" xml:space="preserve"><value>Выберите состояние</value></data><data name="normal" xml:space="preserve"><value>Стандарт</value></data><data name="economy" xml:space="preserve"><value>Эконом</value></data><data name="away" xml:space="preserve"><value>Отсутствие</value></data><data name="day_off" xml:space="preserve"><value>Выходной день</value></data><data name="custom" xml:space="preserve"><value>Пользовательский</value></data><data name="heating_off" xml:space="preserve"><value>Выкл отопление</value></data><data name="selector_value" xml:space="preserve"><value>Значения селектора</value></data><data name="debug_textview_title" xml:space="preserve"><value>Отладочная информация</value></data><data name="msg_copiedToClipboard" xml:space="preserve"><value>Текст скопирован в буфер обмена</value></data><data name="favorite" xml:space="preserve"><value>Избранное</value></data><data name="yes" xml:space="preserve"><value>Да</value></data><data name="no" xml:space="preserve"><value>Heт</value></data><data name="are_you_sure" xml:space="preserve"><value>Вы уверены?</value></data><data name="are_you_sure_clear_settings" xml:space="preserve"><value>Вы уверены? Это действие очистит все установки главного экрана, Вам придется снова их задать позже..</value></data><data name="add" xml:space="preserve"><value>Добавить</value></data><data name="cancel" xml:space="preserve"><value>Отмена</value></data><data name="ok" xml:space="preserve"><value>Ok</value></data><data name="request_again" xml:space="preserve"><value>Новый запрос</value></data><data name="upgrade" xml:space="preserve"><value>ПРЕМИУМ-ПОДПИСКА</value></data><data name="something_went_wrong" xml:space="preserve"><value>Произошла ошибка</value></data><data name="no_network_available" xml:space="preserve"><value>Ошибка: Сетевое соединение не доступно</value></data><data name="oops" xml:space="preserve"><value>ОЙ!</value></data><data name="to" xml:space="preserve"><value>"к"</value></data><data name="retry" xml:space="preserve"><value>Повторить</value></data><data name="undo" xml:space="preserve"><value>Отменить последнее действие</value></data><data name="something_deleted" xml:space="preserve"><value>%1$s удалено</value></data><data name="switch_on" xml:space="preserve"><value>Включение переключателя</value></data><data name="switch_off" xml:space="preserve"><value>Выключение переключателя</value></data><data name="blind_up" xml:space="preserve"><value>Поднять занавески</value></data><data name="blind_down" xml:space="preserve"><value>Опустить занавески</value></data><data name="blind_stop" xml:space="preserve"><value>Остановить занавески</value></data><data name="filter_on" xml:space="preserve"><value>Фильтр по</value></data><data name="filterOn_on" xml:space="preserve"><value>Статус включен</value></data><data name="filterOn_off" xml:space="preserve"><value>Статус выключен</value></data><data name="filterOn_static" xml:space="preserve"><value>Статические устройства</value></data><data name="filterOn_all" xml:space="preserve"><value>Все устройства</value></data><data name="filter" xml:space="preserve"><value>Фильтр</value></data><data name="filter_devices" xml:space="preserve"><value>Фильтр устройств</value></data><data name="filter_graph_empty" xml:space="preserve"><value>Пожалуйста, укажите фильтр</value></data><data name="choose_color" xml:space="preserve"><value>Выберите цвет</value></data><data name="no_data_on_domoticz" xml:space="preserve"><value>Нет данных на сервере Domoticz</value></data><data name="row_icon_description" xml:space="preserve"><value>значок строки</value></data><data name="error_image_description" xml:space="preserve"><value>Изображение ошибки</value></data><data name="device_image_description" xml:space="preserve"><value>Изображение устройства</value></data><data name="white" xml:space="preserve"><value>Белый</value></data><data name="refresh" xml:space="preserve"><value>Обновить</value></data><data name="domoticz_logo" xml:space="preserve"><value>Domoticz лого</value></data><data name="this_take_minutes" xml:space="preserve"><value>Это может занять несколько минут.</value></data><data name="continue_question" xml:space="preserve"><value>Продолжить?</value></data><data name="cant_remove_default_server" xml:space="preserve"><value>Не удается удалить сервер по умолчанию</value></data><data name="restart_required_msg" xml:space="preserve"><value>Перезагрузите устройство для вступления в силу языковых параметров</value></data><data name="action_switch_server" xml:space="preserve"><value>Переключить сервер</value></data><data name="action_settings" xml:space="preserve"><value>Настройки</value></data><data name="action_filter" xml:space="preserve"><value>Фильтр</value></data><data name="action_camera_play" xml:space="preserve"><value>Старт</value></data><data name="action_camera_pause" xml:space="preserve"><value>Пауза</value></data><data name="action_qrcode_scan" xml:space="preserve"><value>Отсканировать QR-код</value></data><data name="action_speech" xml:space="preserve"><value>Распознавание речи</value></data><data name="title_cameras" xml:space="preserve"><value>Камеры</value></data><data name="title_dashboard" xml:space="preserve"><value>Панель управления</value></data><data name="usage" xml:space="preserve"><value>Использование</value></data><data name="today" xml:space="preserve"><value>Сегодня</value></data><data name="total" xml:space="preserve"><value>Всего</value></data><data name="favorite_added" xml:space="preserve"><value>Добавлено в панель инструментов.</value></data><data name="favorite_removed" xml:space="preserve"><value>удалено из панели инструментов.</value></data><data name="error_authentication" xml:space="preserve"><value>Неверные учетные данные</value></data><data name="error_timeout" xml:space="preserve"><value>Превышено время ожидания или нет соединения</value></data><data name="error_server" xml:space="preserve"><value>Ошибка сервера</value></data><data name="error_network" xml:space="preserve"><value>Ошибка сети, код статуса %1$d</value></data><data name="error_parse" xml:space="preserve"><value>Ошибка анализа</value></data><data name="error_notConnected" xml:space="preserve"><value>Ошибка: не подключен к сети</value></data><data name="title_events" xml:space="preserve"><value>События</value></data><data name="action_not_supported_yet" xml:space="preserve"><value>Это действие пока не поддерживается!</value></data><data name="title_add_location" xml:space="preserve"><value>Добавить местоположение</value></data><data name="title_edit_location" xml:space="preserve"><value>Изменить местоположение</value></data><data name="longitude" xml:space="preserve"><value>Долгота</value></data><data name="latitude" xml:space="preserve"><value>Широта</value></data><data name="radius" xml:space="preserve"><value>Радиус (в метрах)</value></data><data name="connectedSwitch" xml:space="preserve"><value>Подключенный переключатель</value></data><data name="unable_to_get_switches" xml:space="preserve"><value>Не удалось получить все переключатели, пожалуйста, попробуйте снова</value></data><data name="delete_short" xml:space="preserve"><value>DEL</value></data><data name="delete" xml:space="preserve"><value>Удалить</value></data><data name="Location_name" xml:space="preserve"><value>Имя местоположения</value></data><data name="currentLocation" xml:space="preserve"><value>Текущее местоположение</value></data><data name="manual" xml:space="preserve"><value>Вручную</value></data><data name="getLocation" xml:space="preserve"><value>GET</value></data><data name="locationAddress" xml:space="preserve"><value>Адрес</value></data><data name="unknown" xml:space="preserve"><value>Неизвестно</value></data><data name="not_available" xml:space="preserve"><value>Недоступно</value></data><data name="no_valid_latLong" xml:space="preserve"><value>Недопустимые широта и долгота</value></data><data name="starting_geofence_service" xml:space="preserve"><value>Запуск службы Geofence</value></data><data name="could_not_find_location" xml:space="preserve"><value>Местоположение не найдено, пожалуйста, попробуйте снова.</value></data><data name="google_play_services_unavailable" xml:space="preserve"><value>Услуги Google Play недоступны.</value></data><data name="location_not_found" xml:space="preserve"><value>Местоположение не найдено.</value></data><data name="geofence" xml:space="preserve"><value>Geofencing</value></data><data name="title_geofence" xml:space="preserve"><value>Включить Geofencing</value></data><data name="description_geofence" xml:space="preserve"><value>Включить и настроить Geofencing</value></data><data name="title_geofence_notifications" xml:space="preserve"><value>Включить уведомления</value></data><data name="description_geofence_notifications" xml:space="preserve"><value>Включить уведомления для инициирования событий</value></data><data name="geofence_place" xml:space="preserve"><value>Место: %s</value></data><data name="geofence_location_entering" xml:space="preserve"><value>"Ввод %1$s"</value></data><data name="geofence_location_leaving" xml:space="preserve"><value>Оставляя %1$s</value></data><data name="geofence_location_entering_text" xml:space="preserve"><value>Ввод одного из мест</value></data><data name="geofence_location_leaving_text" xml:space="preserve"><value>Оставляя одно место</value></data><data name="geofence_error_recreateLocations" xml:space="preserve"><value>Из-за изменений на Geofencing пожалуйста восстановите ваши места</value></data><data name="noSwitchSelected_title" xml:space="preserve"><value>Переключатель не выбран</value></data><data name="noSwitchSelected_explanation" xml:space="preserve"><value>Чтобы GeoFencing функционировал необходимо подключение к GeoFence</value></data><data name="noSwitchSelected_connectOneNow" xml:space="preserve"><value>Подключить?</value></data><data name="geofencing_disabled_no_enabled_fences" xml:space="preserve"><value>Geofencing отключено</value></data><data name="geofence_not_available" xml:space="preserve"><value>Услуга геозонирования сейчас не доступна</value></data><data name="geofence_too_many_geofences" xml:space="preserve"><value>Приложение зарегистрировало слишком много геозон</value></data><data name="geofence_too_many_pending_intents" xml:space="preserve"><value>Получено слишком много PendingIntents</value></data><data name="unknown_geofence_error" xml:space="preserve"><value>Неизвестная ошибка</value></data><data name="title_logs" xml:space="preserve"><value>Журналы</value></data><data name="nfc_not_supported" xml:space="preserve"><value>NFC не поддерживается на этом устройстве</value></data><data name="nfc_register" xml:space="preserve"><value>Зарегистрируйте тег NFC</value></data><data name="nfc_tag_found" xml:space="preserve"><value>Найден новый тег NFC</value></data><data name="nfc_tag_edit" xml:space="preserve"><value>Редактирование тега NFC</value></data><data name="nfc_tag_name" xml:space="preserve"><value>Присвойте имя NFC. </value></data><data name="nfc_exists" xml:space="preserve"><value>NFC тег уже зарегистрирован. </value></data><data name="nfc_saved" xml:space="preserve"><value>Новый тег NFC сохранен. </value></data><data name="nfc" xml:space="preserve"><value>NFC</value></data><data name="noSwitchSelected_explanation_nfc" xml:space="preserve"><value>Для принятия NFC необходимо увязать переключатель с NFC тегом</value></data><data name="priority" xml:space="preserve"><value>Приоритет</value></data><data name="emergency" xml:space="preserve"><value>Аварийный режим</value></data><data name="high" xml:space="preserve"><value>Высокий</value></data><data name="low" xml:space="preserve"><value>Низкий</value></data><data name="verylow" xml:space="preserve"><value>Очень низкий</value></data><data name="allsystems" xml:space="preserve"><value>Все системы</value></data><data name="systems" xml:space="preserve"><value>Системы</value></data><data name="permission_title" xml:space="preserve"><value>Доступ запрещен</value></data><data name="permission_prefs_title" xml:space="preserve"><value>Права доступа</value></data><data name="permission_config" xml:space="preserve"><value>Настройте установки доступа для этого приложения</value></data><data name="permission_desc_storage" xml:space="preserve"><value>Эти установки доступа к хранению нужны для сохранения файла кэша, параметров и хранения снимков с камеры.</value></data><data name="permission_desc_location" xml:space="preserve"><value>Эти разрешения на позиционирование необходимы для геозонирования и для доступа к Wifi SSID вокруг вас!</value></data><data name="permission_desc_phone" xml:space="preserve"><value>Для включения уведомлений необходим доступ к состоянию телефона!</value></data><data name="permission_desc_camera" xml:space="preserve"><value>Для сканирования QR-кодов необходим доступ к камере!</value></data><data name="permission_desc_audio" xml:space="preserve"><value>Для распознавания голоса необходим доступ к аудио устройствам!</value></data><data name="permission_desc_finger" xml:space="preserve"><value>Доступ к распознаванию отпечатков пальцев необходим для обеспечения безопасности входа в приложение!</value></data><data name="title_plans" xml:space="preserve"><value>Планы</value></data><data name="qrcode_not_supported" xml:space="preserve"><value>QR-код не поддерживается на этом устройстве</value></data><data name="qrcode_register" xml:space="preserve"><value>Зарегистрировать QR-код </value></data><data name="qrcode_found" xml:space="preserve"><value>Найден новый QR-код</value></data><data name="qrcode_edit" xml:space="preserve"><value>Редактировать QR код</value></data><data name="qrcode_name" xml:space="preserve"><value>Дайте имя этому QR коду. </value></data><data name="qrcode_desc" xml:space="preserve"><value>Сканировать QR-код. </value></data><data name="qrcode_exists" xml:space="preserve"><value>QR-код, уже зарегистрирован. </value></data><data name="qrcode_saved" xml:space="preserve"><value>Новый QR-код сохранен. </value></data><data name="qrcode" xml:space="preserve"><value>QR-код</value></data><data name="qrcode_new_found" xml:space="preserve"><value>Обнаружен новый QR-код, пожалуйста настройте его.</value></data><data name="qr_code_disabled" xml:space="preserve"><value>QR-код отключен, пожалуйста настройте его.</value></data><data name="noSwitchSelected_explanation_qrcode" xml:space="preserve"><value>Для применения QR Code Scan переключатель должен быть увязан с QR-кодом</value></data><data name="permission_camera_rationale" xml:space="preserve"><value>Необходим доступ к камере для считывания штрих-кода</value></data><data name="low_storage_error" xml:space="preserve"><value>QR-код зависимости не могут быть загружены из-за нехватки памяти</value></data><data name="no_camera_permission" xml:space="preserve"><value>Это приложение невозможно запустить, поскольку оно не имеет доступа к камере.  Приложение завершит работу.</value></data><data name="title_scenes" xml:space="preserve"><value>Заставки</value></data><data name="title_security_panel" xml:space="preserve"><value>Панель безопасности</value></data><data name="security_pin" xml:space="preserve"><value>Пин код</value></data><data name="security_disarm" xml:space="preserve"><value>Отключить</value></data><data name="security_arm_home" xml:space="preserve"><value>Вкл дома</value></data><data name="security_arm_away" xml:space="preserve"><value>Вкл не дома</value></data><data name="security_wrong_code" xml:space="preserve"><value>Введен неверный код!</value></data><data name="security_generic_error" xml:space="preserve"><value>Не удалось изменить статус панели безопасности</value></data><data name="security_wrong_password_fingerprint" xml:space="preserve"><value>Неправильно введен пароль, пароль учетной записи domoticz является дублирующей системой при отказе распознавания ваших отпечатков пальцев...!</value></data><data name="show_password" xml:space="preserve"><value>Показать пароль</value></data><data name="choose_server" xml:space="preserve"><value>Выбрать сервер</value></data><data name="dont_save_new_server" xml:space="preserve"><value>Не сохранять новый сервер?</value></data><data name="server_must_be_unique" xml:space="preserve"><value>Имя сервера должно быть уникальным</value></data><data name="switch_to_server" xml:space="preserve"><value>"Переключение сервера на %1$s"</value></data><data name="cant_disable_default_server" xml:space="preserve"><value>Не удается отключить сервер по умолчанию</value></data><data name="settingsActivity_name" xml:space="preserve"><value>Настройки</value></data><data name="cameraActivity_name" xml:space="preserve"><value>Камера</value></data><data name="category_generic" xml:space="preserve"><value>Общие</value></data><data name="category_wear" xml:space="preserve"><value>Android Wear</value></data><data name="category_auto" xml:space="preserve"><value>Android Auto</value></data><data name="category_server" xml:space="preserve"><value>Сервер</value></data><data name="category_geofencing" xml:space="preserve"><value>Geofencing</value></data><data name="category_info" xml:space="preserve"><value>Инофрмация</value></data><data name="category_advanced" xml:space="preserve"><value>Дополнительные опции</value></data><data name="category_language" xml:space="preserve"><value>Язык</value></data><data name="category_talk_back" xml:space="preserve"><value>Talk Back</value></data><data name="category_notification" xml:space="preserve"><value>Уведомления</value></data><data name="category_debug" xml:space="preserve"><value>Отладка</value></data><data name="category_export" xml:space="preserve"><value>Экспорт/импорт параметров</value></data><data name="category_theme" xml:space="preserve"><value>Оформление</value></data><data name="category_nfc" xml:space="preserve"><value>NFC соединения</value></data><data name="category_startup_security" xml:space="preserve"><value>Безопастность</value></data><data name="category_account" xml:space="preserve"><value>Учётные записи</value></data><data name="category_QRCode" xml:space="preserve"><value>QR-код</value></data><data name="category_Speech" xml:space="preserve"><value>Голосовое управление</value></data><data name="category_Reset" xml:space="preserve"><value>Сброс</value></data><data name="startup_screen" xml:space="preserve"><value>Экран запуска</value></data><data name="enable_items" xml:space="preserve"><value>Включить/отключить элементы</value></data><data name="sort_dashboardLikeServer_title" xml:space="preserve"><value>Сортировка панели</value></data><data name="sort_dashboardLikeServer_on" xml:space="preserve"><value>Сортировать панель как сервер</value></data><data name="sort_dashboardLikeServer_off" xml:space="preserve"><value>Сортировать панель в алфавитном порядке</value></data><data name="extra_data_title" xml:space="preserve"><value>Дополнительные данные на панели мониторинга</value></data><data name="show_extra_data_on" xml:space="preserve"><value>Показать дополнительные данные на панели мониторинга</value></data><data name="show_extra_data_off" xml:space="preserve"><value>Скрыть дополнительные данные на панели мониторинга</value></data><data name="always_on_title" xml:space="preserve"><value>Блокировка</value></data><data name="always_on_on" xml:space="preserve"><value>Блокировка экрана всегда ВКЛ</value></data><data name="always_on_off" xml:space="preserve"><value>Не блокировать экран всегда ВКЛ</value></data><data name="switch_buttons_title" xml:space="preserve"><value>Переключатели</value></data><data name="switch_buttons_on" xml:space="preserve"><value>Показать выключатели с вкл/выкл переключателем</value></data><data name="switch_buttons_off" xml:space="preserve"><value>Показать выключатели с Вкл/Выкл кнопкой</value></data><data name="dashboard_list_title" xml:space="preserve"><value>Сетка панели</value></data><data name="show_dashboard_list_on" xml:space="preserve"><value>Показать панель как список</value></data><data name="show_dashboard_list_off" xml:space="preserve"><value>Показать панель как сетку</value></data><data name="enable_wear_select" xml:space="preserve"><value>Android Wear элементы</value></data><data name="custom_wear_select" xml:space="preserve"><value>Выбрать Wear переключатель</value></data><data name="custom_wear_select_desc" xml:space="preserve"><value>Выберите какие переключатели Вы хотите видеть на Вашем устройстве Android Wear</value></data><data name="wear_custom_on" xml:space="preserve"><value>Включение пользовательских элементов Android Wear </value></data><data name="wear_custom_off" xml:space="preserve"><value>Выключение пользовательских элементов Android Wear</value></data><data name="auto_custom_on" xml:space="preserve"><value>Включить автоматические уведомления Android</value></data><data name="auto_custom_off" xml:space="preserve"><value>Включить автоматические уведомления Android</value></data><data name="geofencing_configure" xml:space="preserve"><value>Настройки Geofencing</value></data><data name="config_theme" xml:space="preserve"><value>Установить тему</value></data><data name="set_dark_theme" xml:space="preserve"><value>Переключить тему в темный режим</value></data><data name="set_light_theme" xml:space="preserve"><value>Переключить тему в светлый режим</value></data><data name="set_talk_back_on" xml:space="preserve"><value>Разрешить Domoticz отвечать вам</value></data><data name="set_talk_back_off" xml:space="preserve"><value>Отключить функцию Talk back</value></data><data name="settings_imported" xml:space="preserve"><value>Параметры загружены, пожалуйста перезапустите Domoticz</value></data><data name="settings_import_failed" xml:space="preserve"><value>Не удалось импортировать настройки</value></data><data name="settings_exported" xml:space="preserve"><value>Параметры экспортированы, пожалуйста перезапустите Domoticz</value></data><data name="settings_export_failed" xml:space="preserve"><value>Не удалось экспортировать настройки</value></data><data name="server_settings" xml:space="preserve"><value>Настройки подключения к серверу</value></data><data name="server_force_fetch_config" xml:space="preserve"><value>Получить конфигурацию сервера</value></data><data name="nfc_settings" xml:space="preserve"><value>Настройка соединения NFC</value></data><data name="speech_settings" xml:space="preserve"><value>Настройка голосовых команд</value></data><data name="title_activity_server_settings" xml:space="preserve"><value>Параметры сервера</value></data><data name="multi_server" xml:space="preserve"><value>Multi-сервер</value></data><data name="enable_nfc" xml:space="preserve"><value>Включить NFC</value></data><data name="enable_speech" xml:space="preserve"><value>Включение распознавания речи</value></data><data name="export_settings" xml:space="preserve"><value>Экспортировать настройки</value></data><data name="reset_settings" xml:space="preserve"><value>Сброс всех параметров приложения (Осторожно!)</value></data><data name="import_settings" xml:space="preserve"><value>Импортировать настройки</value></data><data name="multi_server_settings" xml:space="preserve"><value>Включить поддержку нескольких серверов</value></data><data name="nfc_enable_settings" xml:space="preserve"><value>Включение подключений NFC</value></data><data name="speech_enable_settings" xml:space="preserve"><value>Включение распознавания речи</value></data><data name="server" xml:space="preserve"><value>Сервер</value></data><data name="qrcode_settings" xml:space="preserve"><value>Настройка кодов QR</value></data><data name="enable_qrcode" xml:space="preserve"><value>Включить QR коды</value></data><data name="qrcode_enable_settings" xml:space="preserve"><value>Включение функции QR-кодов</value></data><data name="security_settings" xml:space="preserve"><value>Настройка безопасности</value></data><data name="enable_security" xml:space="preserve"><value>Ввод отпечатков пальцев на старте</value></data><data name="disable_security" xml:space="preserve"><value>Отключить ввод отпечатков пальцев на старте</value></data><data name="setup_fingerprints" xml:space="preserve"><value>Установка распознавания отпечатков пальцев через экраны настройки Android</value></data><data name="fingerprint_not_supported" xml:space="preserve"><value>Ввод отпечатков пальцев не поддерживается на этом устройстве</value></data><data name="fingerprint_not_setup_in_android" xml:space="preserve"><value>Сначала настройте/подключите распознавание отпечатков пальцев для этого устройства</value></data><data name="fingerprint_sure" xml:space="preserve"><value>Вы уверены? Пароль вашей учетной записи Domoticz это пароль отказа.</value></data><data name="category_widgets" xml:space="preserve"><value>Виджеты не включены на этом предмете, пожалуйста, проверьте свои настройки Domoticz</value></data><data name="widget_description" xml:space="preserve"><value>Включить или отключить виджет на этом устройстве</value></data><data name="widget_disabled" xml:space="preserve"><value>Виджеты не включены на этом предмете, пожалуйста, проверьте свои настройки Domoticz6</value></data><data name="widget_warning" xml:space="preserve"><value>Please use widgets on your own risk!! Widgets are currently in Beta stage and probably contain certain bugs. It can cause large data / battery usage...</value></data><data name="notification_settings_id" xml:space="preserve"><value>ID сообщений Google Cloud</value></data><data name="notification_settings_push" xml:space="preserve"><value>Использовать Ваш регистрационный идентификатор для Domoticz</value></data><data name="notification_settings_pushed" xml:space="preserve"><value>Ваш регистрационный идентификатор сохранен в Domoticz</value></data><data name="notification_settings_push_failed" xml:space="preserve"><value>Невозможно сохранить Ваш регистрационный код в Domoticz, повторите попытку позже.</value></data><data name="notification_show_title" xml:space="preserve"><value>Последние уведомления</value></data><data name="notification_show_nothing" xml:space="preserve"><value>Уведомления не найдены</value></data><data name="notification_show" xml:space="preserve"><value>Показать последние несколько уведомлений</value></data><data name="overwrite_notifications_title" xml:space="preserve"><value>Перезаписать уведомления</value></data><data name="overwrite_notifications" xml:space="preserve"><value>Перезаписать предыдущие уведомления на этом устройстве</value></data><data name="enable_notifications_title" xml:space="preserve"><value>Включить уведомления</value></data><data name="enable_notifications" xml:space="preserve"><value>Включить уведомления на этом устройстве</value></data><data name="notification_screen_title" xml:space="preserve"><value>Настройки уведомлений</value></data><data name="notification_vibrate_title" xml:space="preserve"><value>Вибросигнал</value></data><data name="notification_vibrate_on" xml:space="preserve"><value>Вибросигнал при получении уведомления</value></data><data name="notification_vibrate_off" xml:space="preserve"><value>Выкл вибросигнала</value></data><data name="notification_sound_title" xml:space="preserve"><value>Звук</value></data><data name="notification_sound_summary" xml:space="preserve"><value>Вкл звуковой сигнал при поступлении уведомления</value></data><data name="suppress_notifications_select" xml:space="preserve"><value>Выберите уведомления для подавления</value></data><data name="suppress_notifications" xml:space="preserve"><value>Подавлять определенные уведомления на этом устройстве</value></data><data name="suppress_notifications_title" xml:space="preserve"><value>Подавлять уведомления</value></data><data name="alarm_notifications_select" xml:space="preserve"><value>Выберите уведомления для оповещений</value></data><data name="alarm_notifications" xml:space="preserve"><value>Звуковой сигнал для конкретных уведомлений</value></data><data name="clear_notifications" xml:space="preserve"><value>Очистить журнал уведомлений</value></data><data name="alarm_notifications_title" xml:space="preserve"><value>Специальные уведомления</value></data><data name="alarm" xml:space="preserve"><value>Будильник</value></data><data name="alarmtimer_title" xml:space="preserve"><value>Таймер будильника</value></data><data name="alarmtimer" xml:space="preserve"><value>Количество секунд действия будильника</value></data><data name="default_values" xml:space="preserve"><value>Значения по умолчанию</value></data><data name="default_values_min_error" xml:space="preserve"><value>Макс значение должно быть больше, чем минимальное значение</value></data><data name="default_values_max_error" xml:space="preserve"><value>Макс значение должно быть больше, чем минимальное значение</value></data><data name="info_version" xml:space="preserve"><value>Версия</value></data><data name="info_domoticz_version" xml:space="preserve"><value>Версия Domoticz</value></data><data name="info_about" xml:space="preserve"><value>О Domoticz</value></data><data name="info_credits" xml:space="preserve"><value>Создатели</value></data><data name="info_credits_text" xml:space="preserve"><value>Domoticz для Android создано с использованием нескольких библиотек с открытым исходным кодом</value></data><data name="debug_switch_title" xml:space="preserve"><value>Отладка</value></data><data name="debug_switch_summary_on" xml:space="preserve"><value>Включена отладка</value></data><data name="debug_switch_summary_off" xml:space="preserve"><value>Отладки отключена</value></data><data name="error_atLeastOneItemInDrawer" xml:space="preserve"><value>Необходимо выбрать хотя бы один элемент</value></data><data name="title_activity_update" xml:space="preserve"><value>Обновить сервер</value></data><data name="error_couldNotCheckForUpdates" xml:space="preserve"><value>"Невозможно проверить наличие обновлений: %1$s"</value></data><data name="error_couldNotCheckForConfig" xml:space="preserve"><value>"Не удалось получить конфигурацию сервера Domoticz: %1$s"</value></data><data name="update_available_enhanced" xml:space="preserve"><value>Доступно обновление сервера: %1$s до версии: %2$s</value></data><data name="check_for_update_title" xml:space="preserve"><value>Проверить обновления</value></data><data name="check_for_update" xml:space="preserve"><value>Вы хотели бы проверить наличие обновлений системы Domoticz?</value></data><data name="update_server_warning" xml:space="preserve"><value>Во время обновления сервера приложение не будет работать оптимально.</value></data><data name="update_server_downloadNotReady1" xml:space="preserve"><value>Обновление не загружено (полностью).</value></data><data name="update_server_downloadNotReady2" xml:space="preserve"><value>Повторите попытку позднее.</value></data><data name="server_update_available" xml:space="preserve"><value>Доступно обновление сервера</value></data><data name="update_server" xml:space="preserve"><value>Обновить сервер</value></data><data name="server_update_revision" xml:space="preserve"><value>Проверка обновления сервера</value></data><data name="server_version" xml:space="preserve"><value>Версия сервера</value></data><data name="server_update" xml:space="preserve"><value>Обновление сервера</value></data><data name="please_wait_while_we_check" xml:space="preserve"><value>Пожалуйста, подождите, пока мы проверяем, готов ли сервер к обновлению</value></data><data name="server_update_not_ready" xml:space="preserve"><value>Обновление сервера не загружено</value></data><data name="please_wait_while_server_updated" xml:space="preserve"><value>Пожалуйста, подождите, пока выполняется обновление сервера.</value></data><data name="server_update_done" xml:space="preserve"><value>Обновление сервера завершено</value></data><data name="update_not_started" xml:space="preserve"><value>Обновление не начато</value></data><data name="update_not_started_unknown_error" xml:space="preserve"><value>Обновление не запущено из-за неизвестной ошибки</value></data><data name="server_update_not_available" xml:space="preserve"><value>Обновление сервера недоступно</value></data><data name="click_to_update_server" xml:space="preserve"><value>Нажмите здесь, чтобы обновить Ваш сервер</value></data><data name="debug_test_text" xml:space="preserve"><value>Отладочный тест</value></data><data name="restart_required_title" xml:space="preserve"><value>Требуется перезапуск</value></data><data name="restart_now" xml:space="preserve"><value>Перезапустить?</value></data><data name="Speech_not_supported" xml:space="preserve"><value>Голосовые команды не поддерживаются на этом устройстве</value></data><data name="Speech_register" xml:space="preserve"><value>Зарегистрировать речевую команду</value></data><data name="Speech_found" xml:space="preserve"><value>Найдена новая команда речи</value></data><data name="Speech_edit" xml:space="preserve"><value>Редактирование команды речи</value></data><data name="Speech_name" xml:space="preserve"><value>Дайте этой речевой команде подходящее имя. </value></data><data name="Speech_exists" xml:space="preserve"><value>Голосовая команда уже зарегистрирована. </value></data><data name="Speech_saved" xml:space="preserve"><value>Новая речевая команда записана. </value></data><data name="Speech_desc" xml:space="preserve"><value>Создать новую голосовую команду. </value></data><data name="Speech" xml:space="preserve"><value>Голосовое управление</value></data><data name="Speech_disabled" xml:space="preserve"><value>Голосовые команды отключены, пожалуйста настройте через меню установок.</value></data><data name="noSwitchSelected_explanation_Speech" xml:space="preserve"><value>Чтобы речевая команда сработала должен быть привязан переключатель</value></data><data name="title_switches" xml:space="preserve"><value>Переключатели</value></data><data name="txt_notAvailable" xml:space="preserve"><value>Недоступно</value></data><data name="idx" xml:space="preserve"><value>IDX</value></data><data name="placeholder_value" xml:space="preserve"><value>255</value></data><data name="color_set" xml:space="preserve"><value>Цвета для</value></data><data name="state_set" xml:space="preserve"><value>Состояние включено для</value></data><data name="error_favorite" xml:space="preserve"><value>Не удалось установить любимые</value></data><data name="error_logs" xml:space="preserve"><value>Не удалось найти какие-либо журналы</value></data><data name="error_color" xml:space="preserve"><value>Не удалось изменить цвет</value></data><data name="error_state" xml:space="preserve"><value>Не удалось изменить состояние</value></data><data name="error_timer" xml:space="preserve"><value>Не удалось показать таймеры</value></data><data name="error_notifications" xml:space="preserve"><value>Не удаётся показать уведомления</value></data><data name="set_level_switch" xml:space="preserve"><value>"Установка уровня переключателя: %1$s для %2$d"</value></data><data name="title_temperature" xml:space="preserve"><value>Температура</value></data><data name="cancel_override" xml:space="preserve"><value>Отменить перезапись</value></data><data name="wind" xml:space="preserve"><value>Ветер</value></data><data name="error_log" xml:space="preserve"><value>Не удалось получить данные журнала для</value></data><data name="follow_schedule" xml:space="preserve"><value>Следовать расписанию</value></data><data name="command" xml:space="preserve"><value>Команда</value></data><data name="type" xml:space="preserve"><value>Тип</value></data><data name="notapplicable" xml:space="preserve"><value>Недоступно</value></data><data name="timer_before_sunset" xml:space="preserve"><value>Перед закатом</value></data><data name="timer_after_sunset" xml:space="preserve"><value>После захода солнца</value></data><data name="timer_ontime" xml:space="preserve"><value>Вовремя</value></data><data name="timer_before_sunrise" xml:space="preserve"><value>Перед восходом солнца</value></data><data name="timer_after_sunrise" xml:space="preserve"><value>После восхода солнца</value></data><data name="timer_fixed" xml:space="preserve"><value>Фиксированная дата/время</value></data><data name="odd_day_numbers" xml:space="preserve"><value>Нечетные числа</value></data><data name="even_day_numbers" xml:space="preserve"><value>Четные числа</value></data><data name="odd_week_numbers" xml:space="preserve"><value>Нечетные недели</value></data><data name="even_week_numbers" xml:space="preserve"><value>Четные недели</value></data><data name="monthly" xml:space="preserve"><value>Ежемесячно</value></data><data name="monthly_weekday" xml:space="preserve"><value>Ежемесячно (по будням)</value></data><data name="yearly" xml:space="preserve"><value>Ежегодно</value></data><data name="yearly_weekday" xml:space="preserve"><value>Ежегодно (по будням)</value></data><data name="timer_every_days" xml:space="preserve"><value>Ежедневно</value></data><data name="timer_working_days" xml:space="preserve"><value>Рабочие дни</value></data><data name="timer_weekend" xml:space="preserve"><value>Выходные</value></data><data name="timer_other" xml:space="preserve"><value>Иное</value></data><data name="timers" xml:space="preserve"><value>Таймеры</value></data><data name="title_utilities" xml:space="preserve"><value>Утилиты</value></data><data name="settemperature" xml:space="preserve"><value>Установить</value></data><data name="title_vars" xml:space="preserve"><value>Пользовательские переменные</value></data><data name="var_input" xml:space="preserve"><value>Введено недопустимое значение</value></data><data name="var_input_error" xml:space="preserve"><value>Не удалось обновить пользовательскую переменную</value></data><data name="title_weather" xml:space="preserve"><value>Погода</value></data><data name="dewPoint" xml:space="preserve"><value>Точка росы</value></data><data name="temp" xml:space="preserve"><value>Температура</value></data><data name="pressure" xml:space="preserve"><value>Давление</value></data><data name="chill" xml:space="preserve"><value>Холод</value></data><data name="direction" xml:space="preserve"><value>Направление</value></data><data name="humidity" xml:space="preserve"><value>Влажность</value></data><data name="speed" xml:space="preserve"><value>Скорость</value></data><data name="forecast" xml:space="preserve"><value>Прогноз</value></data><data name="rain" xml:space="preserve"><value>Дождь</value></data><data name="rainrate" xml:space="preserve"><value>Сила дождя</value></data><data name="co2" xml:space="preserve"><value>CO2</value></data><data name="co2min" xml:space="preserve"><value>CO2 мин</value></data><data name="co2max" xml:space="preserve"><value>CO2 макс</value></data><data name="welcome_title_activity_welcome" xml:space="preserve"><value>Добро пожаловать</value></data><data name="welcome_info_domoticz" xml:space="preserve"><value>Domoticz это домашняя система автоматизации, которая позволяет контролировать и настраивать различные устройства, такие как: свет, переключатели, различные датчики такие как температуры, дождя, ветера, электричества, газа, воды и многое другое. Предупреждения/уведомления могут быть отправлены на любое мобильное устройство.</value></data><data name="welcome_info_swipe" xml:space="preserve"><value>Проведите пальцем вправо или используйте кнопки перехода внизу для продолжения</value></data><data name="welcome_info_settings1" xml:space="preserve"><value>Следующая страница предназначена для настройки Domoticz.</value></data><data name="welcome_info_settings2" xml:space="preserve"><value> Вы можете указать установки для локального и удаленного сервера. Локальные параметры предназначены для подключения через домашней wifi сеть. Параметры удаленного сервера используются, когда нет подключения через Вашу домашнюю wifi сеть или при подключении к сотовой сети (2G, 3G, 4G и т.д.).</value></data><data name="welcome_info_checkingConnection" xml:space="preserve"><value>Проверка настроек подключения</value></data><data name="welcome_msg_connectionDataIncomplete" xml:space="preserve"><value>Данные подключения, неполные или пустые</value></data><data name="welcome_msg_connectionDataInvalid" xml:space="preserve"><value>URL-адрес не должен начинаться с http</value></data><data name="welcome_msg_correctOnPreviousPage" xml:space="preserve"><value>Пожалуйста, исправьте данные на предыдущей странице</value></data><data name="welcome_msg_serverVersion" xml:space="preserve"><value>Версия Domoticz</value></data><data name="welcome_msg_numberOfDevices" xml:space="preserve"><value>Устройство %1$d не найдено</value></data><data name="welcome_msg_no_ssid_found" xml:space="preserve"><value>Не нейдено SSID wifi</value></data><data name="welcome_ssid_spinner_prompt" xml:space="preserve"><value>Выберите домашний SSID</value></data><data name="welcome_ssid_button_prompt" xml:space="preserve"><value>Добавьте домашние SSID</value></data><data name="welcome_server_settings_title" xml:space="preserve"><value>Параметры сервера</value></data><data name="welcome_server_startScreen" xml:space="preserve"><value>Начальный экран</value></data><data name="welcome_button_next" xml:space="preserve"><value>следующий</value></data><data name="welcome_button_previous" xml:space="preserve"><value>предыдущий</value></data><data name="welcome_button_finish" xml:space="preserve"><value>Готово</value></data><data name="welcome_remote_server_address" xml:space="preserve"><value>Адрес сервера</value></data><data name="welcome_remote_server_protocol" xml:space="preserve"><value>Протокол</value></data><data name="welcome_remote_server_port" xml:space="preserve"><value>Порт</value></data><data name="welcome_remote_server_username" xml:space="preserve"><value>Имя пользователя</value></data><data name="welcome_remote_server_password" xml:space="preserve"><value>Пароль</value></data><data name="welcome_remote_server_directory" xml:space="preserve"><value>Каталог</value></data><data name="remote" xml:space="preserve"><value>Удаленный</value></data><data name="local" xml:space="preserve"><value>Локальный</value></data><data name="servername" xml:space="preserve"><value>Имя сервера</value></data><data name="welcome_local_server_used_switch_title" xml:space="preserve"><value>Адрес другого сервера</value></data><data name="welcome_local_server_used_switch_summary" xml:space="preserve"><value>Используйте другой адрес для локального подключения</value></data><data name="welcome_advancedSettings" xml:space="preserve"><value>Дополнительные установки сервера</value></data><data name="welcome_advancedSettings_summary" xml:space="preserve"><value>Используется только для нестандартных серверов Domoticz</value></data><data name="welcome_local_server_ssid" xml:space="preserve"><value>Местные SSID wifi</value></data><data name="welcome_local_server_address" xml:space="preserve"><value>Адрес локального сервера</value></data><data name="welcome_local_server_protocol" xml:space="preserve"><value>Локальный протокол</value></data><data name="welcome_local_server_port" xml:space="preserve"><value>Локальный порт</value></data><data name="welcome_local_server_directory" xml:space="preserve"><value>Локальный каталог (оставить пустым, если не используется)</value></data><data name="welcome_local_server_username" xml:space="preserve"><value>Локальное имя пользователя (оставьте пустым если не используется)</value></data><data name="welcome_local_server_password" xml:space="preserve"><value>Локальный пароль (оставить пустым если не используется)</value></data><data name="pick_device_title" xml:space="preserve"><value>Выбрать устройство</value></data><data name="choose_switch" xml:space="preserve"><value>Выбрать устройство</value></data><data name="failed_to_get_securitypanel" xml:space="preserve"><value>Не найдена панель безопасности</value></data><data name="failed_to_get_switches" xml:space="preserve"><value>Не удалось получить устройства</value></data><data name="failed_toggle_switch" xml:space="preserve"><value>Не удалось переключить устройство</value></data><data name="switch_toggled" xml:space="preserve"><value>"Переключить устройство"</value></data><data name="text_loading" xml:space="preserve"><value>Загрузка...</value></data><data name="text_go" xml:space="preserve"><value>ПЕРЕЙТИ</value></data><data name="widget_background" xml:space="preserve"><value>Фон</value></data><data name="widget_dark" xml:space="preserve"><value>Темно</value></data><data name="widget_light" xml:space="preserve"><value>Светло</value></data><data name="widget_transparent_dark" xml:space="preserve"><value>Темный прозрачный</value></data><data name="widget_transparent_light" xml:space="preserve"><value>Светлый прозрачный</value></data><data name="title_wizard" xml:space="preserve"><value>Установщик приветствия</value></data><data name="wizard_welcome" xml:space="preserve"><value>Добро пожаловать</value></data><data name="wizard_welcome_description" xml:space="preserve"><value>Domoticz является легковесной системой домашней автоматизации, которая позволяет контролировать и настраивать различные устройства.</value></data><data name="wizard_favorites" xml:space="preserve"><value>Избранные</value></data><data name="wizard_favorites_description" xml:space="preserve"><value>Устройства можно добавить на панель мониторинга, сохранив их как избранные. Долго нажмите на элемент, чтобы сохранить его как любимый!</value></data><data name="wizard_startup" xml:space="preserve"><value>Начальный экран</value></data><data name="wizard_startup_description" xml:space="preserve"><value>Вы можете установить начальный экран в настройках!</value></data><data name="wizard_notifications" xml:space="preserve"><value>Настройка уведомлений</value></data><data name="wizard_notifications_description" xml:space="preserve"><value>Теперь вы можете получать уведомления на Вашем устройстве! Изменить настройки уведомлений</value></data><data name="wizard_multiserver" xml:space="preserve"><value>Использование нескольких серверов</value></data><data name="wizard_multiserver_description" xml:space="preserve"><value>В настройках можно настроить несколько серверов Domoticz.</value></data><data name="wizard_geo" xml:space="preserve"><value>Geofencing</value></data><data name="wizard_geo_description" xml:space="preserve"><value>Вы можете установить начальный экран в настройках!</value></data><data name="wizard_wear" xml:space="preserve"><value>Android Wear</value></data><data name="wizard_wear_description" xml:space="preserve"><value>Вы можете указать, какие переключатели Вы хотите контроллировать через Android wear!</value></data><data name="wizard_auto" xml:space="preserve"><value>Android Auto</value></data><data name="wizard_auto_description" xml:space="preserve"><value>Получаете уведомления от Domoticz прямо на вашем устройстве Android авто!</value></data><data name="wizard_graph" xml:space="preserve"><value>Графики</value></data><data name="wizard_graph_description" xml:space="preserve"><value>Доступен график истории Утилит. Погоды или температуры!</value></data><data name="wizard_filter" xml:space="preserve"><value>Фильтры</value></data><data name="wizard_filter_description" xml:space="preserve"><value>Вы можете фильтровать устройства по состоянию (вкл. / выкл.). Для этого есть специальный значок в правом верхнем меню!</value></data><data name="wizard_widgets" xml:space="preserve"><value>Виджеты!!</value></data><data name="wizard_widgets_description" xml:space="preserve"><value>Вы можете поместить некоторые виджеты на Ваш стартовый экран!</value></data><data name="wizard_menuitem" xml:space="preserve"><value>Отключить мастер</value></data><data name="wizard_menuitem_description" xml:space="preserve"><value>Теперь вы можете удалить этот Мастер из меню навигации!</value></data><data name="wizard_nfc" xml:space="preserve"><value>NFC</value></data><data name="wizard_nfc_description" xml:space="preserve"><value>Вы можете изменить переключения через NFC!</value></data><data name="wizard_qrcode" xml:space="preserve"><value>QR-код</value></data><data name="wizard_qrcode_description" xml:space="preserve"><value>Переключите тумблеры сканируя QR-код (или штрихкод)!</value></data><data name="wizard_speech" xml:space="preserve"><value>Голосовые команды</value></data><data name="wizard_speech_description" xml:space="preserve"><value>Активируйте переключатели вашим голосом! Сконфигурируйте речевые команды через экраны настройки и подключите переключатели.</value></data><data name="wizard_button_nice" xml:space="preserve"><value>Отлично!</value></data><data name="wizard_button_switches" xml:space="preserve"><value>Переключатели</value></data><data name="wizard_button_settings" xml:space="preserve"><value>Настройки</value></data><data name="wizard_button_wizard" xml:space="preserve"><value>Удалить</value></data><data name="wizard_button_utilities" xml:space="preserve"><value>Утилиты</value></data><data name="wizard_button_done" xml:space="preserve"><value>Готово</value></data></root>
+<?xml version="1.0" encoding="utf-8"?>  <root> <resheader name="resmimetype">		<value>text/microsoft-resx</value>	</resheader>	<resheader name="version">		<value>2.0</value>	</resheader>	<resheader name="reader">		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>	<resheader name="writer">		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>
+<data name="premium_category" xml:space="preserve"><value>Купить премиум!</value></data>
+<data name="premium_title" xml:space="preserve"><value>Получите премиум-версию!</value></data>
+<data name="premium_feature" xml:space="preserve"><value>Это Премиум-функция, пожалуйста купите платную версию для поддержки разработчиков!</value></data>
+<data name="drawer_open" xml:space="preserve"><value>Открыть панель управления</value></data>
+<data name="drawer_close" xml:space="preserve"><value>Закрыть панель управления</value></data>
+<data name="msg_please_wait" xml:space="preserve"><value>Пожалуйста подождите&#8230;</value></data>
+<data name="changelog" xml:space="preserve"><value>История Изменений</value></data>
+<data name="button_state_on" xml:space="preserve"><value>ВКЛ</value></data>
+<data name="button_state_off" xml:space="preserve"><value>Выключен</value></data>
+<data name="button_state_closed" xml:space="preserve"><value>Закрыто</value></data>
+<data name="button_state_open" xml:space="preserve"><value>Открыто</value></data>
+<data name="button_state_lock" xml:space="preserve"><value>Заблокировано</value></data>
+<data name="button_state_unlock" xml:space="preserve"><value>Разблокировано</value></data>
+<data name="button_status_log" xml:space="preserve"><value>Журнал</value></data>
+<data name="button_status_day" xml:space="preserve"><value>День</value></data>
+<data name="button_status_week" xml:space="preserve"><value>Неделя</value></data>
+<data name="button_status_month" xml:space="preserve"><value>Месяц</value></data>
+<data name="button_status_year" xml:space="preserve"><value>Год</value></data>
+<data name="button_status_timer" xml:space="preserve"><value>Таймер</value></data>
+<data name="button_status_notifications" xml:space="preserve"><value>Уведомления</value></data>
+<data name="button_color" xml:space="preserve"><value>Цвет</value></data>
+<data name="button_arm" xml:space="preserve"><value>Включить</value></data>
+<data name="button_disarm" xml:space="preserve"><value>Выключить</value></data>
+<data name="button_state_full_light" xml:space="preserve"><value>Полный свет</value></data>
+<data name="button_state_night" xml:space="preserve"><value>Ночной свет</value></data>
+<data name="sunrise" xml:space="preserve"><value>Рассвет</value></data>
+<data name="sunset" xml:space="preserve"><value>Закат</value></data>
+<data name="now" xml:space="preserve"><value>Сейчас</value></data>
+<data name="astrTwilightStart" xml:space="preserve"><value>Начало астрономических сумерек</value></data>
+<data name="astrTwilightEnd" xml:space="preserve"><value>Окончание астрономических сумерек</value></data>
+<data name="civTwilightStart" xml:space="preserve"><value>Начало сумерек</value></data>
+<data name="civTwilightEnd" xml:space="preserve"><value>Окончание сумерек</value></data>
+<data name="nautTwilightStart" xml:space="preserve"><value>Начало морских сумерек</value></data>
+<data name="nautTwilightEnd" xml:space="preserve"><value>Окончание морских сумерек</value></data>
+<data name="last_update" xml:space="preserve"><value>Последнее посещение</value></data>
+<data name="signal_level" xml:space="preserve"><value>Уровень сигнала</value></data>
+<data name="battery_level" xml:space="preserve"><value>Уровень батареи</value></data>
+<data name="data" xml:space="preserve"><value>Данные</value></data>
+<data name="hardware" xml:space="preserve"><value>Аппаратное обеспечение</value></data>
+<data name="temperature" xml:space="preserve"><value>Температура</value></data>
+<data name="status" xml:space="preserve"><value>Статус</value></data>
+<data name="switch_rgb_wwcolor" xml:space="preserve"><value>RGB цвет или теплый белый</value></data>
+<data name="set_point" xml:space="preserve"><value>Уставка</value></data>
+<data name="set_point_min" xml:space="preserve"><value>Установка минимального значения</value></data>
+<data name="set_point_min_description" xml:space="preserve"><value>Минимальная температура, которую можно задать для термостата</value></data>
+<data name="set_point_max" xml:space="preserve"><value>Установка максимального значения</value></data>
+<data name="set_point_max_description" xml:space="preserve"><value>Максимальная температура, которую можно задать для термостата</value></data>
+<data name="action_success" xml:space="preserve"><value>Операция выполнена</value></data>
+<data name="action_failed" xml:space="preserve"><value>Операция не выполнена</value></data>
+<data name="action_unknown" xml:space="preserve"><value>Результат действия неизвестен</value></data>
+<data name="choose_status" xml:space="preserve"><value>Выберите состояние</value></data>
+<data name="normal" xml:space="preserve"><value>Стандарт</value></data>
+<data name="economy" xml:space="preserve"><value>Эконом</value></data>
+<data name="away" xml:space="preserve"><value>Отсутствие</value></data>
+<data name="day_off" xml:space="preserve"><value>Выходной день</value></data>
+<data name="custom" xml:space="preserve"><value>Пользовательский</value></data>
+<data name="heating_off" xml:space="preserve"><value>Выкл отопление</value></data>
+<data name="selector_value" xml:space="preserve"><value>Значения селектора</value></data>
+<data name="debug_textview_title" xml:space="preserve"><value>Отладочная информация</value></data>
+<data name="msg_copiedToClipboard" xml:space="preserve"><value>Текст скопирован в буфер обмена</value></data>
+<data name="favorite" xml:space="preserve"><value>Избранное</value></data>
+<data name="yes" xml:space="preserve"><value>Да</value></data>
+<data name="no" xml:space="preserve"><value>Heт</value></data>
+<data name="are_you_sure" xml:space="preserve"><value>Вы уверены?</value></data>
+<data name="are_you_sure_clear_settings" xml:space="preserve"><value>Вы уверены? Это действие очистит все установки главного экрана, Вам придется снова их задать позже..</value></data>
+<data name="add" xml:space="preserve"><value>Добавить</value></data>
+<data name="cancel" xml:space="preserve"><value>Отмена</value></data>
+<data name="ok" xml:space="preserve"><value>Ok</value></data>
+<data name="request_again" xml:space="preserve"><value>Новый запрос</value></data>
+<data name="upgrade" xml:space="preserve"><value>ПРЕМИУМ-ПОДПИСКА</value></data>
+<data name="something_went_wrong" xml:space="preserve"><value>Произошла ошибка</value></data>
+<data name="no_network_available" xml:space="preserve"><value>Ошибка: Сетевое соединение не доступно</value></data>
+<data name="oops" xml:space="preserve"><value>ОЙ!</value></data>
+<data name="to" xml:space="preserve"><value>"к"</value></data>
+<data name="retry" xml:space="preserve"><value>Повторить</value></data>
+<data name="undo" xml:space="preserve"><value>Отменить последнее действие</value></data>
+<data name="something_deleted" xml:space="preserve"><value>%1$s удалено</value></data>
+<data name="switch_on" xml:space="preserve"><value>Включение переключателя</value></data>
+<data name="switch_off" xml:space="preserve"><value>Выключение переключателя</value></data>
+<data name="switch_night" xml:space="preserve"><value>Переключить в ночной свет</value></data>
+<data name="switch_full" xml:space="preserve"><value>Переключить в полный свет</value></data>
+<data name="blind_up" xml:space="preserve"><value>Поднять занавески</value></data>
+<data name="blind_down" xml:space="preserve"><value>Опустить занавески</value></data>
+<data name="blind_stop" xml:space="preserve"><value>Остановить занавески</value></data>
+<data name="filter_on" xml:space="preserve"><value>Фильтр по</value></data>
+<data name="filterOn_on" xml:space="preserve"><value>Статус включен</value></data>
+<data name="filterOn_off" xml:space="preserve"><value>Статус выключен</value></data>
+<data name="filterOn_static" xml:space="preserve"><value>Статические устройства</value></data>
+<data name="filterOn_all" xml:space="preserve"><value>Все устройства</value></data>
+<data name="filter" xml:space="preserve"><value>Фильтр</value></data>
+<data name="filter_devices" xml:space="preserve"><value>Фильтр устройств</value></data>
+<data name="filter_graph_empty" xml:space="preserve"><value>Пожалуйста, укажите фильтр</value></data>
+<data name="choose_color" xml:space="preserve"><value>Выберите цвет</value></data>
+<data name="no_data_on_domoticz" xml:space="preserve"><value>Нет данных на сервере Domoticz</value></data>
+<data name="row_icon_description" xml:space="preserve"><value>значок строки</value></data>
+<data name="error_image_description" xml:space="preserve"><value>Изображение ошибки</value></data>
+<data name="device_image_description" xml:space="preserve"><value>Изображение устройства</value></data>
+<data name="white" xml:space="preserve"><value>Белый</value></data>
+<data name="refresh" xml:space="preserve"><value>Обновить</value></data>
+<data name="domoticz_logo" xml:space="preserve"><value>Domoticz лого</value></data>
+<data name="this_take_minutes" xml:space="preserve"><value>Это может занять несколько минут.</value></data>
+<data name="continue_question" xml:space="preserve"><value>Продолжить?</value></data>
+<data name="cant_remove_default_server" xml:space="preserve"><value>Не удается удалить сервер по умолчанию</value></data>
+<data name="restart_required_msg" xml:space="preserve"><value>Перезагрузите устройство для вступления в силу языковых параметров</value></data>
+<data name="filter_all" xml:space="preserve"><value>Все</value></data>
+<data name="filter_normal" xml:space="preserve"><value>Нормальный</value></data>
+<data name="filter_status" xml:space="preserve"><value>Статус</value></data>
+<data name="filter_error" xml:space="preserve"><value>Ошибка</value></data>
+<data name="use_demo_setup" xml:space="preserve"><value>Use demo setup</value></data>
+<data name="auto_refresh_time" xml:space="preserve"><value>Refresh timer</value></data>
+<data name="setautorefreshtime" xml:space="preserve"><value>Set a specific timer for the auto refresh in seconds.</value></data>
+<data name="action_switch_server" xml:space="preserve"><value>Переключить сервер</value></data>
+<data name="action_settings" xml:space="preserve"><value>Настройки</value></data>
+<data name="action_filter" xml:space="preserve"><value>Фильтр</value></data>
+<data name="action_camera_play" xml:space="preserve"><value>Старт</value></data>
+<data name="action_camera_pause" xml:space="preserve"><value>Пауза</value></data>
+<data name="action_qrcode_scan" xml:space="preserve"><value>Отсканировать QR-код</value></data>
+<data name="action_bluetooth_show" xml:space="preserve"><value>Показать подключенные устройства</value></data>
+<data name="action_speech" xml:space="preserve"><value>Распознавание речи</value></data>
+<data name="send" xml:space="preserve"><value>Send</value></data>
+<data name="bluetooth_not_supported" xml:space="preserve"><value>Bluetooth не поддерживается на этом устройстве</value></data>
+<data name="bluetooth_register" xml:space="preserve"><value>Подключить Bluetooth устройство</value></data>
+<data name="bluetooth_found" xml:space="preserve"><value>Новое Bluetooth устройство найдено</value></data>
+<data name="bluetooth_edit" xml:space="preserve"><value>Редактировать Bluetooth устройство</value></data>
+<data name="bluetooth_name" xml:space="preserve"><value>Присвойте правильное имя Bluetooth устройству. </value></data>
+<data name="bluetooth_desc" xml:space="preserve"><value>Проверьте список подключенных Bluetooth устройств. </value></data>
+<data name="bluetooth_exists" xml:space="preserve"><value>Bluetooth устройство уже настроено в Domoticz. </value></data>
+<data name="bluetooth_turned_off" xml:space="preserve"><value>Включите Bluetooth в настройках вашего устройства. </value></data>
+<data name="bluetooth_saved" xml:space="preserve"><value>Bluetooth соединение сохранено. </value></data>
+<data name="bluetooth" xml:space="preserve"><value>Bluetooth</value></data>
+<data name="bluetooth_disabled" xml:space="preserve"><value>Bluetooth автоматизация отключена, пожалуйста включите в настройках.</value></data>
+<data name="noSwitchSelected_explanation_bluetooth" xml:space="preserve"><value>Для автоматизации Bluetooth устройств в Domoticz, переключатель должен привязан к Bluetooth</value></data>
+<data name="title_cameras" xml:space="preserve"><value>Камеры</value></data>
+<data name="title_dashboard" xml:space="preserve"><value>Панель управления</value></data>
+<data name="usage" xml:space="preserve"><value>Использование</value></data>
+<data name="today" xml:space="preserve"><value>Сегодня</value></data>
+<data name="total" xml:space="preserve"><value>Всего</value></data>
+<data name="favorite_added" xml:space="preserve"><value>Добавлено в панель инструментов.</value></data>
+<data name="favorite_removed" xml:space="preserve"><value>удалено из панели инструментов.</value></data>
+<data name="error_authentication" xml:space="preserve"><value>Неверные учетные данные</value></data>
+<data name="error_timeout" xml:space="preserve"><value>Превышено время ожидания или нет соединения</value></data>
+<data name="error_server" xml:space="preserve"><value>Ошибка сервера</value></data>
+<data name="error_network" xml:space="preserve"><value>Ошибка сети, код статуса %1$d</value></data>
+<data name="error_parse" xml:space="preserve"><value>Ошибка анализа</value></data>
+<data name="error_notConnected" xml:space="preserve"><value>Ошибка: не подключен к сети</value></data>
+<data name="title_events" xml:space="preserve"><value>События</value></data>
+<data name="action_not_supported_yet" xml:space="preserve"><value>Это действие пока не поддерживается!</value></data>
+<data name="title_add_location" xml:space="preserve"><value>Добавить местоположение</value></data>
+<data name="title_edit_location" xml:space="preserve"><value>Изменить местоположение</value></data>
+<data name="longitude" xml:space="preserve"><value>Долгота</value></data>
+<data name="latitude" xml:space="preserve"><value>Широта</value></data>
+<data name="radius" xml:space="preserve"><value>Радиус (в метрах)</value></data>
+<data name="connectedSwitch" xml:space="preserve"><value>Подключенный переключатель</value></data>
+<data name="unable_to_get_switches" xml:space="preserve"><value>Не удалось получить все переключатели, пожалуйста, попробуйте снова</value></data>
+<data name="delete_short" xml:space="preserve"><value>DEL</value></data>
+<data name="delete" xml:space="preserve"><value>Удалить</value></data>
+<data name="Location_name" xml:space="preserve"><value>Имя местоположения</value></data>
+<data name="currentLocation" xml:space="preserve"><value>Текущее местоположение</value></data>
+<data name="manual" xml:space="preserve"><value>Вручную</value></data>
+<data name="getLocation" xml:space="preserve"><value>GET</value></data>
+<data name="locationAddress" xml:space="preserve"><value>Адрес</value></data>
+<data name="unknown" xml:space="preserve"><value>Неизвестно</value></data>
+<data name="not_available" xml:space="preserve"><value>Недоступно</value></data>
+<data name="no_valid_latLong" xml:space="preserve"><value>Недопустимые широта и долгота</value></data>
+<data name="starting_geofence_service" xml:space="preserve"><value>Запуск службы Geofence</value></data>
+<data name="could_not_find_location" xml:space="preserve"><value>Местоположение не найдено, пожалуйста, попробуйте снова.</value></data>
+<data name="google_play_services_unavailable" xml:space="preserve"><value>Услуги Google Play недоступны.</value></data>
+<data name="location_not_found" xml:space="preserve"><value>Местоположение не найдено.</value></data>
+<data name="geofence" xml:space="preserve"><value>Geofencing</value></data>
+<data name="title_geofence" xml:space="preserve"><value>Включить Geofencing</value></data>
+<data name="description_geofence" xml:space="preserve"><value>Включить и настроить Geofencing</value></data>
+<data name="title_geofence_notifications" xml:space="preserve"><value>Включить уведомления</value></data>
+<data name="description_geofence_notifications" xml:space="preserve"><value>Включить уведомления для инициирования событий</value></data>
+<data name="geofence_place" xml:space="preserve"><value>Место: %s</value></data>
+<data name="geofence_location_entering" xml:space="preserve"><value>"Ввод %1$s"</value></data>
+<data name="geofence_location_leaving" xml:space="preserve"><value>Оставляя %1$s</value></data>
+<data name="geofence_location_entering_text" xml:space="preserve"><value>Ввод одного из мест</value></data>
+<data name="geofence_location_leaving_text" xml:space="preserve"><value>Оставляя одно место</value></data>
+<data name="geofence_error_recreateLocations" xml:space="preserve"><value>Из-за изменений на Geofencing пожалуйста восстановите ваши места</value></data>
+<data name="noSwitchSelected_title" xml:space="preserve"><value>Переключатель не выбран</value></data>
+<data name="noSwitchSelected_explanation" xml:space="preserve"><value>Чтобы GeoFencing функционировал необходимо подключение к GeoFence</value></data>
+<data name="noSwitchSelected_connectOneNow" xml:space="preserve"><value>Подключить?</value></data>
+<data name="geofencing_disabled_no_enabled_fences" xml:space="preserve"><value>Geofencing отключено</value></data>
+<data name="geofence_not_available" xml:space="preserve"><value>Услуга геозонирования сейчас не доступна</value></data>
+<data name="geofence_too_many_geofences" xml:space="preserve"><value>Приложение зарегистрировало слишком много геозон</value></data>
+<data name="geofence_too_many_pending_intents" xml:space="preserve"><value>Получено слишком много PendingIntents</value></data>
+<data name="unknown_geofence_error" xml:space="preserve"><value>Неизвестная ошибка</value></data>
+<data name="title_logs" xml:space="preserve"><value>Журналы</value></data>
+<data name="nfc_not_supported" xml:space="preserve"><value>NFC не поддерживается на этом устройстве</value></data>
+<data name="nfc_register" xml:space="preserve"><value>Зарегистрируйте тег NFC</value></data>
+<data name="nfc_tag_found" xml:space="preserve"><value>Найден новый тег NFC</value></data>
+<data name="nfc_tag_edit" xml:space="preserve"><value>Редактирование тега NFC</value></data>
+<data name="nfc_tag_name" xml:space="preserve"><value>Присвойте имя NFC. </value></data>
+<data name="nfc_exists" xml:space="preserve"><value>NFC тег уже зарегистрирован. </value></data>
+<data name="nfc_saved" xml:space="preserve"><value>Новый тег NFC сохранен. </value></data>
+<data name="nfc" xml:space="preserve"><value>NFC</value></data>
+<data name="noSwitchSelected_explanation_nfc" xml:space="preserve"><value>Для принятия NFC необходимо увязать переключатель с NFC тегом</value></data>
+<data name="priority" xml:space="preserve"><value>Приоритет</value></data>
+<data name="emergency" xml:space="preserve"><value>Аварийный режим</value></data>
+<data name="high" xml:space="preserve"><value>Высокий</value></data>
+<data name="low" xml:space="preserve"><value>Низкий</value></data>
+<data name="verylow" xml:space="preserve"><value>Очень низкий</value></data>
+<data name="allsystems" xml:space="preserve"><value>Все системы</value></data>
+<data name="systems" xml:space="preserve"><value>Системы</value></data>
+<data name="send_notification" xml:space="preserve"><value>Send notification</value></data>
+<data name="notification_subject" xml:space="preserve"><value>Subject</value></data>
+<data name="notification_message" xml:space="preserve"><value>Message</value></data>
+<data name="notification_error_system" xml:space="preserve"><value>Please choose a system to send the notification to</value></data>
+<data name="notification_error_message" xml:space="preserve"><value>Please fill in a message</value></data>
+<data name="notification_error_subject" xml:space="preserve"><value>Please fill in a subject</value></data>
+<data name="notification_error_send" xml:space="preserve"><value>Could not send the notification to Domoticz</value></data>
+<data name="notification_send" xml:space="preserve"><value>Notification send to Domoticz</value></data>
+<data name="permission_title" xml:space="preserve"><value>Доступ запрещен</value></data>
+<data name="permission_prefs_title" xml:space="preserve"><value>Права доступа</value></data>
+<data name="permission_config" xml:space="preserve"><value>Настройте установки доступа для этого приложения</value></data>
+<data name="permission_desc_storage" xml:space="preserve"><value>Эти установки доступа к хранению нужны для сохранения файла кэша, параметров и хранения снимков с камеры.</value></data>
+<data name="permission_desc_location" xml:space="preserve"><value>Эти разрешения на позиционирование необходимы для геозонирования и для доступа к Wifi SSID вокруг вас!</value></data>
+<data name="permission_desc_phone" xml:space="preserve"><value>Для включения уведомлений необходим доступ к состоянию телефона!</value></data>
+<data name="permission_desc_camera" xml:space="preserve"><value>Для сканирования QR-кодов необходим доступ к камере!</value></data>
+<data name="permission_desc_audio" xml:space="preserve"><value>Для распознавания голоса необходим доступ к аудио устройствам!</value></data>
+<data name="permission_desc_finger" xml:space="preserve"><value>Доступ к распознаванию отпечатков пальцев необходим для обеспечения безопасности входа в приложение!</value></data>
+<data name="title_plans" xml:space="preserve"><value>Планы</value></data>
+<data name="qrcode_not_supported" xml:space="preserve"><value>QR-код не поддерживается на этом устройстве</value></data>
+<data name="qrcode_register" xml:space="preserve"><value>Зарегистрировать QR-код </value></data>
+<data name="qrcode_found" xml:space="preserve"><value>Найден новый QR-код</value></data>
+<data name="qrcode_edit" xml:space="preserve"><value>Редактировать QR код</value></data>
+<data name="qrcode_name" xml:space="preserve"><value>Дайте имя этому QR коду. </value></data>
+<data name="qrcode_desc" xml:space="preserve"><value>Сканировать QR-код. </value></data>
+<data name="qrcode_exists" xml:space="preserve"><value>QR-код, уже зарегистрирован. </value></data>
+<data name="qrcode_saved" xml:space="preserve"><value>Новый QR-код сохранен. </value></data>
+<data name="qrcode" xml:space="preserve"><value>QR-код</value></data>
+<data name="qrcode_new_found" xml:space="preserve"><value>Обнаружен новый QR-код, пожалуйста настройте его.</value></data>
+<data name="qr_code_disabled" xml:space="preserve"><value>QR-код отключен, пожалуйста настройте его.</value></data>
+<data name="noSwitchSelected_explanation_qrcode" xml:space="preserve"><value>Для применения QR Code Scan переключатель должен быть увязан с QR-кодом</value></data>
+<data name="permission_camera_rationale" xml:space="preserve"><value>Необходим доступ к камере для считывания штрих-кода</value></data>
+<data name="low_storage_error" xml:space="preserve"><value>QR-код зависимости не могут быть загружены из-за нехватки памяти</value></data>
+<data name="no_camera_permission" xml:space="preserve"><value>Это приложение невозможно запустить, поскольку оно не имеет доступа к камере.  Приложение завершит работу.</value></data>
+<data name="title_scenes" xml:space="preserve"><value>Заставки</value></data>
+<data name="title_security_panel" xml:space="preserve"><value>Панель безопасности</value></data>
+<data name="security_pin" xml:space="preserve"><value>Пин код</value></data>
+<data name="security_disarm" xml:space="preserve"><value>Отключить</value></data>
+<data name="security_arm_home" xml:space="preserve"><value>Вкл дома</value></data>
+<data name="security_arm_away" xml:space="preserve"><value>Вкл не дома</value></data>
+<data name="security_wrong_code" xml:space="preserve"><value>Введен неверный код!</value></data>
+<data name="security_no_rights" xml:space="preserve"><value>У вас нет прав для данного действия!</value></data>
+<data name="security_generic_error" xml:space="preserve"><value>Не удалось изменить статус панели безопасности</value></data>
+<data name="security_wrong_password_fingerprint" xml:space="preserve"><value>Неправильно введен пароль, пароль учетной записи domoticz является дублирующей системой при отказе распознавания ваших отпечатков пальцев...!</value></data>
+<data name="show_password" xml:space="preserve"><value>Показать пароль</value></data>
+<data name="fingerprint_make_sure" xml:space="preserve"><value>Нам необходимо убедиться, что это Вы</value></data>
+<data name="fingerprint_dialog_description" xml:space="preserve"><value>Прикоснитесь к сканеру отпечатка пальца, для входа в аккаунт.</value></data>
+<data name="choose_server" xml:space="preserve"><value>Выбрать сервер</value></data>
+<data name="dont_save_new_server" xml:space="preserve"><value>Не сохранять новый сервер?</value></data>
+<data name="server_must_be_unique" xml:space="preserve"><value>Имя сервера должно быть уникальным</value></data>
+<data name="switch_to_server" xml:space="preserve"><value>"Переключение сервера на %1$s"</value></data>
+<data name="cant_disable_default_server" xml:space="preserve"><value>Не удается отключить сервер по умолчанию</value></data>
+<data name="settingsActivity_name" xml:space="preserve"><value>Настройки</value></data>
+<data name="cameraActivity_name" xml:space="preserve"><value>Камера</value></data>
+<data name="category_generic" xml:space="preserve"><value>Общие</value></data>
+<data name="category_wear" xml:space="preserve"><value>Android Wear</value></data>
+<data name="category_auto" xml:space="preserve"><value>Android Auto</value></data>
+<data name="category_server" xml:space="preserve"><value>Сервер</value></data>
+<data name="category_geofencing" xml:space="preserve"><value>Местоположение</value></data>
+<data name="category_info" xml:space="preserve"><value>Информация</value></data>
+<data name="category_advanced" xml:space="preserve"><value>Дополнительные опции</value></data>
+<data name="category_language" xml:space="preserve"><value>Язык</value></data>
+<data name="category_talk_back" xml:space="preserve"><value>Talk Back</value></data>
+<data name="category_notification" xml:space="preserve"><value>Уведомления</value></data>
+<data name="category_debug" xml:space="preserve"><value>Отладка</value></data>
+<data name="category_export" xml:space="preserve"><value>Экспорт/импорт параметров</value></data>
+<data name="category_theme" xml:space="preserve"><value>Оформление</value></data>
+<data name="category_clock" xml:space="preserve"><value>Часы</value></data>
+<data name="category_nfc" xml:space="preserve"><value>NFC соединения</value></data>
+<data name="category_startup_security" xml:space="preserve"><value>Безопасность</value></data>
+<data name="category_account" xml:space="preserve"><value>Учётные записи</value></data>
+<data name="category_QRCode" xml:space="preserve"><value>QR-код</value></data>
+<data name="category_bluetooth" xml:space="preserve"><value>Bluetooth</value></data>
+<data name="category_Speech" xml:space="preserve"><value>Голосовое управление</value></data>
+<data name="category_Reset" xml:space="preserve"><value>Сброс</value></data>
+<data name="category_help" xml:space="preserve"><value>Сотрудничество</value></data>
+<data name="startup_screen" xml:space="preserve"><value>Экран запуска</value></data>
+<data name="enable_items" xml:space="preserve"><value>Включить/отключить элементы</value></data>
+<data name="sort_server_title" xml:space="preserve"><value>Сортировка</value></data>
+<data name="sort_server_on" xml:space="preserve"><value>Сортировка устройств как на сервере</value></data>
+<data name="sort_custom_on" xml:space="preserve"><value>Ручная сортировка, перемещайте для построения собственного списка</value></data>
+<data name="sort_lock_server_title" xml:space="preserve"><value>Заблокировать</value></data>
+<data name="sort_lock_custom_on" xml:space="preserve"><value>Заблокировать ручную сортировку (выключить перемещение)</value></data>
+<data name="sort_dashboardLikeServer_off" xml:space="preserve"><value>Сортировать панель в алфавитном порядке</value></data>
+<data name="extra_data_title" xml:space="preserve"><value>Дополнительные данные на панели мониторинга</value></data>
+<data name="show_extra_data_on" xml:space="preserve"><value>Показать дополнительные данные на панели мониторинга</value></data>
+<data name="show_extra_data_off" xml:space="preserve"><value>Скрыть дополнительные данные на панели мониторинга</value></data>
+<data name="always_on_title" xml:space="preserve"><value>Блокировка</value></data>
+<data name="always_on_on" xml:space="preserve"><value>Блокировка экрана всегда ВКЛ</value></data>
+<data name="always_on_off" xml:space="preserve"><value>Не блокировать экран всегда ВКЛ</value></data>
+<data name="always_auto_refresh" xml:space="preserve"><value>Авто-обновление</value></data>
+<data name="always_auto_refresh_on" xml:space="preserve"><value>Refresh the device state every couple of seconds</value></data>
+<data name="always_auto_refresh_off" xml:space="preserve"><value>Don\'t refresh the device state every couple of seconds</value></data>
+<data name="switch_buttons_title" xml:space="preserve"><value>Переключатели</value></data>
+<data name="switch_buttons_on" xml:space="preserve"><value>Показать выключатели с вкл/выкл переключателем</value></data>
+<data name="switch_buttons_off" xml:space="preserve"><value>Показать выключатели с Вкл/Выкл кнопкой</value></data>
+<data name="dashboard_list_title" xml:space="preserve"><value>Сетка панели</value></data>
+<data name="show_dashboard_list_on" xml:space="preserve"><value>Показать панель как список</value></data>
+<data name="show_dashboard_list_off" xml:space="preserve"><value>Показать панель как сетку</value></data>
+<data name="dashboard_clock" xml:space="preserve"><value>Часы</value></data>
+<data name="show_dashboard_clock" xml:space="preserve"><value>Показывать часы на панели устройств</value></data>
+<data name="enable_wear_select" xml:space="preserve"><value>Android Wear элементы</value></data>
+<data name="custom_wear_select" xml:space="preserve"><value>Выбрать Wear переключатель</value></data>
+<data name="custom_wear_select_desc" xml:space="preserve"><value>Выберите какие переключатели Вы хотите видеть на Вашем устройстве Android Wear</value></data>
+<data name="wear_custom_on" xml:space="preserve"><value>Включение пользовательских элементов Android Wear </value></data>
+<data name="wear_custom_off" xml:space="preserve"><value>Выключение пользовательских элементов Android Wear</value></data>
+<data name="auto_custom_on" xml:space="preserve"><value>Включить автоматические уведомления Android</value></data>
+<data name="auto_custom_off" xml:space="preserve"><value>Включить автоматические уведомления Android</value></data>
+<data name="geofencing_configure" xml:space="preserve"><value>Настройки Geofencing</value></data>
+<data name="config_theme" xml:space="preserve"><value>Установить тему</value></data>
+<data name="set_dark_theme" xml:space="preserve"><value>Переключить тему в темный режим</value></data>
+<data name="set_light_theme" xml:space="preserve"><value>Переключить тему в светлый режим</value></data>
+<data name="set_talk_back_on" xml:space="preserve"><value>Разрешить Domoticz отвечать вам</value></data>
+<data name="set_talk_back_off" xml:space="preserve"><value>Отключить функцию Talk back</value></data>
+<data name="settings_imported" xml:space="preserve"><value>Параметры загружены, пожалуйста перезапустите Domoticz</value></data>
+<data name="settings_import_failed" xml:space="preserve"><value>Не удалось импортировать настройки</value></data>
+<data name="settings_exported" xml:space="preserve"><value>Параметры экспортированы, пожалуйста перезапустите Domoticz</value></data>
+<data name="settings_export_failed" xml:space="preserve"><value>Не удалось экспортировать настройки</value></data>
+<data name="server_settings" xml:space="preserve"><value>Настройки подключения к серверу</value></data>
+<data name="server_force_fetch_config" xml:space="preserve"><value>Получить конфигурацию сервера</value></data>
+<data name="nfc_settings" xml:space="preserve"><value>Настройка соединения NFC</value></data>
+<data name="speech_settings" xml:space="preserve"><value>Настройка голосовых команд</value></data>
+<data name="title_activity_server_settings" xml:space="preserve"><value>Параметры сервера</value></data>
+<data name="multi_server" xml:space="preserve"><value>Multi-сервер</value></data>
+<data name="enable_nfc" xml:space="preserve"><value>Включить NFC</value></data>
+<data name="enable_speech" xml:space="preserve"><value>Включение распознавания речи</value></data>
+<data name="export_settings" xml:space="preserve"><value>Экспортировать настройки</value></data>
+<data name="reset_settings" xml:space="preserve"><value>Сброс всех параметров приложения (Осторожно!)</value></data>
+<data name="import_settings" xml:space="preserve"><value>Импортировать настройки</value></data>
+<data name="multi_server_settings" xml:space="preserve"><value>Включить поддержку нескольких серверов</value></data>
+<data name="nfc_enable_settings" xml:space="preserve"><value>Включение подключений NFC</value></data>
+<data name="speech_enable_settings" xml:space="preserve"><value>Включение распознавания речи</value></data>
+<data name="server" xml:space="preserve"><value>Сервер</value></data>
+<data name="qrcode_settings" xml:space="preserve"><value>Настройка кодов QR</value></data>
+<data name="enable_qrcode" xml:space="preserve"><value>Включить QR коды</value></data>
+<data name="qrcode_enable_settings" xml:space="preserve"><value>Включение функции QR-кодов</value></data>
+<data name="bluetooth_settings" xml:space="preserve"><value>Настройка Bluetooth устройств</value></data>
+<data name="enable_bluetooth" xml:space="preserve"><value>Enable Bluetooth functionality</value></data>
+<data name="translate_description" xml:space="preserve"><value>Вы можете помочь улучшить перевод и добавить новые Языки в приложение с помощью Crowdin project</value></data>
+<data name="translate_title" xml:space="preserve"><value>Переводы</value></data>
+<data name="security_settings" xml:space="preserve"><value>Настройка безопасности</value></data>
+<data name="enable_security" xml:space="preserve"><value>Ввод отпечатков пальцев на старте</value></data>
+<data name="disable_security" xml:space="preserve"><value>Отключить ввод отпечатков пальцев на старте</value></data>
+<data name="setup_fingerprints" xml:space="preserve"><value>Установка распознавания отпечатков пальцев через экраны настройки Android</value></data>
+<data name="fingerprint_not_supported" xml:space="preserve"><value>Ввод отпечатков пальцев не поддерживается на этом устройстве</value></data>
+<data name="fingerprint_not_setup_in_android" xml:space="preserve"><value>Сначала настройте/подключите распознавание отпечатков пальцев для этого устройства</value></data>
+<data name="fingerprint_sure" xml:space="preserve"><value>Вы уверены? Пароль вашей учетной записи Domoticz это пароль отказа.</value></data>
+<data name="category_widgets" xml:space="preserve"><value>Виджеты не включены на этом предмете, пожалуйста, проверьте свои настройки Domoticz</value></data>
+<data name="widget_description" xml:space="preserve"><value>Включить или отключить виджет на этом устройстве</value></data>
+<data name="widget_disabled" xml:space="preserve"><value>Виджеты не включены на этом предмете, пожалуйста, проверьте свои настройки Domoticz6</value></data>
+<data name="widget_warning" xml:space="preserve"><value>Использование виджетов только на свой страх и риск! В настоящее время виджеты находятся в стадии бета-тестирования и могут содержать ошибки. Это может привести к чрезмерному использованию данных и быстрому разряду батареи...</value></data>
+<data name="notification_settings_id" xml:space="preserve"><value>ID сообщений Google Cloud</value></data>
+<data name="notification_settings_push" xml:space="preserve"><value>Использовать Ваш регистрационный идентификатор для Domoticz</value></data>
+<data name="notification_settings_pushed" xml:space="preserve"><value>Ваш регистрационный идентификатор сохранен в Domoticz</value></data>
+<data name="notification_settings_push_failed" xml:space="preserve"><value>Невозможно сохранить Ваш регистрационный код в Domoticz, повторите попытку позже.</value></data>
+<data name="notification_show_title" xml:space="preserve"><value>Последние уведомления</value></data>
+<data name="notification_show_nothing" xml:space="preserve"><value>Уведомления не найдены</value></data>
+<data name="notification_show" xml:space="preserve"><value>Показать последние несколько уведомлений</value></data>
+<data name="overwrite_notifications_title" xml:space="preserve"><value>Перезаписать уведомления</value></data>
+<data name="overwrite_notifications" xml:space="preserve"><value>Перезаписать предыдущие уведомления на этом устройстве</value></data>
+<data name="enable_notifications_title" xml:space="preserve"><value>Включить уведомления</value></data>
+<data name="enable_notifications" xml:space="preserve"><value>Включить уведомления на этом устройстве</value></data>
+<data name="notification_screen_title" xml:space="preserve"><value>Настройки уведомлений</value></data>
+<data name="notification_history" xml:space="preserve"><value>Notification history</value></data>
+<data name="notification_vibrate_title" xml:space="preserve"><value>Вибросигнал</value></data>
+<data name="notification_vibrate_on" xml:space="preserve"><value>Вибросигнал при получении уведомления</value></data>
+<data name="notification_vibrate_off" xml:space="preserve"><value>Выкл вибросигнала</value></data>
+<data name="notification_sound_title" xml:space="preserve"><value>Звук</value></data>
+<data name="notification_sound_summary" xml:space="preserve"><value>Вкл звуковой сигнал при поступлении уведомления</value></data>
+<data name="suppress_notifications_select" xml:space="preserve"><value>Выберите уведомления для подавления</value></data>
+<data name="suppress_notifications" xml:space="preserve"><value>Подавлять определенные уведомления на этом устройстве</value></data>
+<data name="suppress_notifications_title" xml:space="preserve"><value>Подавлять уведомления</value></data>
+<data name="alarm_notifications_select" xml:space="preserve"><value>Выберите уведомления для оповещений</value></data>
+<data name="alarm_notifications" xml:space="preserve"><value>Звуковой сигнал для конкретных уведомлений</value></data>
+<data name="clear_notifications" xml:space="preserve"><value>Очистить журнал уведомлений</value></data>
+<data name="alarm_notifications_title" xml:space="preserve"><value>Специальные уведомления</value></data>
+<data name="alarm" xml:space="preserve"><value>Будильник</value></data>
+<data name="alarmtimer_title" xml:space="preserve"><value>Таймер будильника</value></data>
+<data name="alarmtimer" xml:space="preserve"><value>Количество секунд действия будильника</value></data>
+<data name="theme_default" xml:space="preserve"><value>Default</value></data>
+<data name="theme_daynight" xml:space="preserve"><value>Day/Night</value></data>
+<data name="theme_orange" xml:space="preserve"><value>Orange</value></data>
+<data name="theme_pink" xml:space="preserve"><value>Pink</value></data>
+<data name="theme_blue" xml:space="preserve"><value>Blue</value></data>
+<data name="default_values" xml:space="preserve"><value>Значения по умолчанию</value></data>
+<data name="default_values_min_error" xml:space="preserve"><value>Макс значение должно быть больше, чем минимальное значение</value></data>
+<data name="default_values_max_error" xml:space="preserve"><value>Макс значение должно быть больше, чем минимальное значение</value></data>
+<data name="info_version" xml:space="preserve"><value>Версия</value></data>
+<data name="info_domoticz_version" xml:space="preserve"><value>Версия Domoticz</value></data>
+<data name="info_about" xml:space="preserve"><value>О Domoticz</value></data>
+<data name="info_credits" xml:space="preserve"><value>Создатели</value></data>
+<data name="info_credits_text" xml:space="preserve"><value>Domoticz для Android создано с использованием нескольких библиотек с открытым исходным кодом</value></data>
+<data name="debug_switch_title" xml:space="preserve"><value>Отладка</value></data>
+<data name="debug_switch_summary_on" xml:space="preserve"><value>Включена отладка</value></data>
+<data name="debug_switch_summary_off" xml:space="preserve"><value>Отладки отключена</value></data>
+<data name="error_atLeastOneItemInDrawer" xml:space="preserve"><value>Необходимо выбрать хотя бы один элемент</value></data>
+<data name="title_activity_update" xml:space="preserve"><value>Обновить сервер</value></data>
+<data name="error_couldNotCheckForVersion" xml:space="preserve"><value>"Невозможно проверить версию: %1$s"</value></data>
+<data name="error_couldNotCheckForUpdates" xml:space="preserve"><value>"Невозможно проверить наличие обновлений: %1$s"</value></data>
+<data name="error_couldNotCheckForConfig" xml:space="preserve"><value>"Не удалось получить конфигурацию сервера Domoticz: %1$s"</value></data>
+<data name="update_available_enhanced" xml:space="preserve"><value>Доступно обновление сервера: %1$s до версии: %2$s</value></data>
+<data name="check_for_update_title" xml:space="preserve"><value>Проверить обновления</value></data>
+<data name="check_for_update" xml:space="preserve"><value>Вы хотели бы проверить наличие обновлений системы Domoticz?</value></data>
+<data name="update_server_warning" xml:space="preserve"><value>Во время обновления сервера приложение не будет работать оптимально.</value></data>
+<data name="update_server_downloadNotReady1" xml:space="preserve"><value>Обновление не загружено (полностью).</value></data>
+<data name="update_server_downloadNotReady2" xml:space="preserve"><value>Повторите попытку позднее.</value></data>
+<data name="server_update_available" xml:space="preserve"><value>Доступно обновление сервера</value></data>
+<data name="update_server" xml:space="preserve"><value>Обновить сервер</value></data>
+<data name="server_update_revision" xml:space="preserve"><value>Проверка обновления сервера</value></data>
+<data name="server_version" xml:space="preserve"><value>Версия сервера</value></data>
+<data name="server_update" xml:space="preserve"><value>Обновление сервера</value></data>
+<data name="please_wait_while_we_check" xml:space="preserve"><value>Пожалуйста, подождите, пока мы проверяем, готов ли сервер к обновлению</value></data>
+<data name="server_update_not_ready" xml:space="preserve"><value>Обновление сервера не загружено</value></data>
+<data name="please_wait_while_server_updated" xml:space="preserve"><value>Пожалуйста, подождите, пока выполняется обновление сервера.</value></data>
+<data name="server_update_done" xml:space="preserve"><value>Обновление сервера завершено</value></data>
+<data name="update_not_started" xml:space="preserve"><value>Обновление не начато</value></data>
+<data name="update_not_started_unknown_error" xml:space="preserve"><value>Обновление не запущено из-за неизвестной ошибки</value></data>
+<data name="server_update_not_available" xml:space="preserve"><value>Обновление сервера недоступно</value></data>
+<data name="click_to_update_server" xml:space="preserve"><value>Нажмите здесь, чтобы обновить Ваш сервер</value></data>
+<data name="debug_test_text" xml:space="preserve"><value>Отладочный тест</value></data>
+<data name="restart_required_title" xml:space="preserve"><value>Требуется перезапуск</value></data>
+<data name="restart_now" xml:space="preserve"><value>Перезапустить?</value></data>
+<data name="check_settings" xml:space="preserve"><value>Check your settings</value></data>
+<data name="Speech_not_supported" xml:space="preserve"><value>Голосовые команды не поддерживаются на этом устройстве</value></data>
+<data name="Speech_register" xml:space="preserve"><value>Зарегистрировать голосовую команду</value></data>
+<data name="Speech_found" xml:space="preserve"><value>Найдена новая голосовая команда</value></data>
+<data name="Speech_edit" xml:space="preserve"><value>Редактирование голосовой команды</value></data>
+<data name="Speech_name" xml:space="preserve"><value>Присвойте голосовой команде соответствующее название. </value></data>
+<data name="Speech_exists" xml:space="preserve"><value>Голосовая команда уже зарегистрирована. </value></data>
+<data name="Speech_saved" xml:space="preserve"><value>Новая голосовая команда записана. </value></data>
+<data name="Speech_desc" xml:space="preserve"><value>Создать новую голосовую команду. </value></data>
+<data name="Speech" xml:space="preserve"><value>Голосовое управление</value></data>
+<data name="Speech_disabled" xml:space="preserve"><value>Голосовые команды отключены, пожалуйста настройте через меню установок.</value></data>
+<data name="noSwitchSelected_explanation_Speech" xml:space="preserve"><value>Чтобы речевая команда сработала должен быть привязан переключатель</value></data>
+<data name="title_switches" xml:space="preserve"><value>Переключатели</value></data>
+<data name="txt_notAvailable" xml:space="preserve"><value>Недоступно</value></data>
+<data name="idx" xml:space="preserve"><value>IDX</value></data>
+<data name="placeholder_value" xml:space="preserve"><value>255</value></data>
+<data name="color_set" xml:space="preserve"><value>Цвета для</value></data>
+<data name="state_set" xml:space="preserve"><value>Состояние включено для</value></data>
+<data name="error_favorite" xml:space="preserve"><value>Не удалось установить любимые</value></data>
+<data name="error_logs" xml:space="preserve"><value>Не удалось найти какие-либо журналы</value></data>
+<data name="error_color" xml:space="preserve"><value>Не удалось изменить цвет</value></data>
+<data name="error_state" xml:space="preserve"><value>Не удалось изменить состояние</value></data>
+<data name="error_timer" xml:space="preserve"><value>Не удалось показать таймеры</value></data>
+<data name="error_notifications" xml:space="preserve"><value>Не удаётся показать уведомления</value></data>
+<data name="set_level_switch" xml:space="preserve"><value>"Установка уровня переключателя: %1$s для %2$d"</value></data>
+<data name="title_temperature" xml:space="preserve"><value>Температура</value></data>
+<data name="cancel_override" xml:space="preserve"><value>Отменить перезапись</value></data>
+<data name="wind" xml:space="preserve"><value>Ветер</value></data>
+<data name="error_log" xml:space="preserve"><value>Не удалось получить данные журнала для</value></data>
+<data name="follow_schedule" xml:space="preserve"><value>Следовать расписанию</value></data>
+<data name="command" xml:space="preserve"><value>Команда</value></data>
+<data name="type" xml:space="preserve"><value>Тип</value></data>
+<data name="notapplicable" xml:space="preserve"><value>Недоступно</value></data>
+<data name="timer_before_sunset" xml:space="preserve"><value>Перед закатом</value></data>
+<data name="timer_after_sunset" xml:space="preserve"><value>После заката</value></data>
+<data name="timer_ontime" xml:space="preserve"><value>Вовремя</value></data>
+<data name="timer_before_sunrise" xml:space="preserve"><value>Перед восходом</value></data>
+<data name="timer_after_sunrise" xml:space="preserve"><value>После восхода</value></data>
+<data name="timer_fixed" xml:space="preserve"><value>Фиксированная дата/время</value></data>
+<data name="odd_day_numbers" xml:space="preserve"><value>Нечетные числа</value></data>
+<data name="even_day_numbers" xml:space="preserve"><value>Четные числа</value></data>
+<data name="odd_week_numbers" xml:space="preserve"><value>Нечетные недели</value></data>
+<data name="even_week_numbers" xml:space="preserve"><value>Четные недели</value></data>
+<data name="monthly" xml:space="preserve"><value>Ежемесячно</value></data>
+<data name="monthly_weekday" xml:space="preserve"><value>Ежемесячно (по будням)</value></data>
+<data name="yearly" xml:space="preserve"><value>Ежегодно</value></data>
+<data name="yearly_weekday" xml:space="preserve"><value>Ежегодно (по будням)</value></data>
+<data name="before_sun_at_south" xml:space="preserve"><value>До солнца на Юге</value></data>
+<data name="after_sun_at_south" xml:space="preserve"><value>После солнца на Юге</value></data>
+<data name="before_civil_twilight_start" xml:space="preserve"><value>До начала сумерек</value></data>
+<data name="after_civil_twilight_start" xml:space="preserve"><value>После начала сумерек</value></data>
+<data name="before_civil_twilight_end" xml:space="preserve"><value>До окончания сумерек</value></data>
+<data name="after_civil_twilight_end" xml:space="preserve"><value>После окончания сумерек</value></data>
+<data name="before_nautical_twilight_start" xml:space="preserve"><value>До начала морских сумерек</value></data>
+<data name="after_nautical_twilight_start" xml:space="preserve"><value>После начала морских сумерек</value></data>
+<data name="before_nautical_twilight_end" xml:space="preserve"><value>До окончания морских сумерек</value></data>
+<data name="after_nautical_twilight_end" xml:space="preserve"><value>После окончания морских сумерек</value></data>
+<data name="before_austronomical_twilight_start" xml:space="preserve"><value>До начала астрономических сумерек</value></data>
+<data name="after_austronomical_twilight_start" xml:space="preserve"><value>После начала астрономических сумерек</value></data>
+<data name="before_austronomical_twilight_end" xml:space="preserve"><value>До окончания астрономических сумерек</value></data>
+<data name="after_austronomical_twilight_end" xml:space="preserve"><value>После окончания астрономических сумерек</value></data>
+<data name="timer_every_days" xml:space="preserve"><value>Ежедневно</value></data>
+<data name="timer_working_days" xml:space="preserve"><value>Рабочие дни</value></data>
+<data name="timer_weekend" xml:space="preserve"><value>Выходные</value></data>
+<data name="timer_other" xml:space="preserve"><value>Другое</value></data>
+<data name="timers" xml:space="preserve"><value>Таймеры</value></data>
+<data name="first" xml:space="preserve"><value>Первый</value></data>
+<data name="second" xml:space="preserve"><value>Второй</value></data>
+<data name="third" xml:space="preserve"><value>Третий</value></data>
+<data name="fourth" xml:space="preserve"><value>Четвертый</value></data>
+<data name="last" xml:space="preserve"><value>Последний</value></data>
+<data name="title_utilities" xml:space="preserve"><value>Утилиты</value></data>
+<data name="settemperature" xml:space="preserve"><value>Установить</value></data>
+<data name="title_vars" xml:space="preserve"><value>Пользовательские переменные</value></data>
+<data name="var_input" xml:space="preserve"><value>Введено недопустимое значение</value></data>
+<data name="var_input_error" xml:space="preserve"><value>Не удалось обновить пользовательскую переменную</value></data>
+<data name="title_weather" xml:space="preserve"><value>Погода</value></data>
+<data name="dewPoint" xml:space="preserve"><value>Точка росы</value></data>
+<data name="temp" xml:space="preserve"><value>Температура</value></data>
+<data name="pressure" xml:space="preserve"><value>Давление</value></data>
+<data name="chill" xml:space="preserve"><value>Холод</value></data>
+<data name="direction" xml:space="preserve"><value>Направление</value></data>
+<data name="humidity" xml:space="preserve"><value>Влажность</value></data>
+<data name="speed" xml:space="preserve"><value>Скорость</value></data>
+<data name="forecast" xml:space="preserve"><value>Прогноз</value></data>
+<data name="rain" xml:space="preserve"><value>Дождь</value></data>
+<data name="rainrate" xml:space="preserve"><value>Сила дождя</value></data>
+<data name="co2" xml:space="preserve"><value>CO2</value></data>
+<data name="co2min" xml:space="preserve"><value>CO2 мин</value></data>
+<data name="co2max" xml:space="preserve"><value>CO2 макс</value></data>
+<data name="welcome_title_activity_welcome" xml:space="preserve"><value>Добро пожаловать</value></data>
+<data name="welcome_info_domoticz" xml:space="preserve"><value>Domoticz это домашняя система автоматизации, которая позволяет контролировать и настраивать различные устройства, такие как: свет, переключатели, различные датчики такие как температуры, дождя, ветера, электричества, газа, воды и многое другое. Предупреждения/уведомления могут быть отправлены на любое мобильное устройство.</value></data>
+<data name="welcome_info_swipe" xml:space="preserve"><value>Проведите пальцем вправо или используйте кнопки перехода внизу для продолжения</value></data>
+<data name="welcome_info_settings1" xml:space="preserve"><value>Следующая страница предназначена для настройки Domoticz.</value></data>
+<data name="welcome_info_settings2" xml:space="preserve"><value>Вы можете указать установки для локального и удаленного сервера.
+Локальные параметры предназначены для подключения через домашней wifi сеть.
+Параметры удаленного сервера используются, когда нет подключения через Вашу домашнюю wifi сеть или при подключении к сотовой сети (2G, 3G, 4G и т.д.).</value></data>
+<data name="welcome_info_checkingConnection" xml:space="preserve"><value>Проверка настроек подключения</value></data>
+<data name="welcome_msg_connectionDataIncomplete" xml:space="preserve"><value>Данные подключения, неполные или пустые</value></data>
+<data name="welcome_msg_connectionDataInvalid" xml:space="preserve"><value>URL-адрес не должен начинаться с http</value></data>
+<data name="welcome_msg_correctOnPreviousPage" xml:space="preserve"><value>Пожалуйста, исправьте данные на предыдущей странице</value></data>
+<data name="welcome_msg_serverVersion" xml:space="preserve"><value>Версия Domoticz</value></data>
+<data name="welcome_msg_numberOfDevices" xml:space="preserve"><value>Устройство %1$d не найдено</value></data>
+<data name="welcome_msg_no_ssid_found" xml:space="preserve"><value>Не нейдено SSID wifi</value></data>
+<data name="welcome_ssid_spinner_prompt" xml:space="preserve"><value>Выберите домашний SSID</value></data>
+<data name="welcome_ssid_button_prompt" xml:space="preserve"><value>Добавьте домашние SSID</value></data>
+<data name="welcome_server_settings_title" xml:space="preserve"><value>Параметры сервера</value></data>
+<data name="welcome_server_startScreen" xml:space="preserve"><value>Начальный экран</value></data>
+<data name="welcome_button_next" xml:space="preserve"><value>следующий</value></data>
+<data name="welcome_button_previous" xml:space="preserve"><value>предыдущий</value></data>
+<data name="welcome_button_finish" xml:space="preserve"><value>Готово</value></data>
+<data name="welcome_remote_server_address" xml:space="preserve"><value>Адрес сервера</value></data>
+<data name="welcome_remote_server_protocol" xml:space="preserve"><value>Протокол</value></data>
+<data name="welcome_remote_server_port" xml:space="preserve"><value>Порт</value></data>
+<data name="welcome_remote_server_username" xml:space="preserve"><value>Имя пользователя</value></data>
+<data name="welcome_remote_server_password" xml:space="preserve"><value>Пароль</value></data>
+<data name="welcome_remote_server_directory" xml:space="preserve"><value>Каталог</value></data>
+<data name="remote" xml:space="preserve"><value>Удаленный</value></data>
+<data name="local" xml:space="preserve"><value>Локальный</value></data>
+<data name="servername" xml:space="preserve"><value>Имя сервера</value></data>
+<data name="welcome_local_server_used_switch_title" xml:space="preserve"><value>Адрес другого сервера</value></data>
+<data name="welcome_local_server_used_switch_summary" xml:space="preserve"><value>Используйте другой адрес для локального подключения</value></data>
+<data name="welcome_advancedSettings" xml:space="preserve"><value>Дополнительные установки сервера</value></data>
+<data name="welcome_advancedSettings_summary" xml:space="preserve"><value>Используется только для нестандартных серверов Domoticz</value></data>
+<data name="welcome_local_server_ssid" xml:space="preserve"><value>Местные SSID wifi</value></data>
+<data name="welcome_local_server_address" xml:space="preserve"><value>Адрес локального сервера</value></data>
+<data name="welcome_local_server_protocol" xml:space="preserve"><value>Локальный протокол</value></data>
+<data name="welcome_local_server_port" xml:space="preserve"><value>Локальный порт</value></data>
+<data name="welcome_local_server_directory" xml:space="preserve"><value>Локальный каталог (оставить пустым, если не используется)</value></data>
+<data name="welcome_local_server_username" xml:space="preserve"><value>Локальное имя пользователя (оставьте пустым если не используется)</value></data>
+<data name="welcome_local_server_password" xml:space="preserve"><value>Локальный пароль (оставить пустым если не используется)</value></data>
+<data name="pick_device_title" xml:space="preserve"><value>Выбрать устройство</value></data>
+<data name="choose_switch" xml:space="preserve"><value>Выбрать устройство</value></data>
+<data name="failed_to_get_securitypanel" xml:space="preserve"><value>Не найдена панель безопасности</value></data>
+<data name="failed_to_get_switches" xml:space="preserve"><value>Не удалось получить устройства</value></data>
+<data name="failed_toggle_switch" xml:space="preserve"><value>Не удалось переключить устройство</value></data>
+<data name="switch_toggled" xml:space="preserve"><value>"Переключить устройство"</value></data>
+<data name="text_loading" xml:space="preserve"><value>Загрузка...</value></data>
+<data name="text_go" xml:space="preserve"><value>ПЕРЕЙТИ</value></data>
+<data name="widget_background" xml:space="preserve"><value>Фон</value></data>
+<data name="widget_dark" xml:space="preserve"><value>Темно</value></data>
+<data name="widget_light" xml:space="preserve"><value>Светло</value></data>
+<data name="widget_transparent_dark" xml:space="preserve"><value>Темный прозрачный</value></data>
+<data name="widget_transparent_light" xml:space="preserve"><value>Светлый прозрачный</value></data>
+<data name="title_wizard" xml:space="preserve"><value>Установщик приветствия</value></data>
+<data name="wizard_welcome" xml:space="preserve"><value>Добро пожаловать</value></data>
+<data name="wizard_welcome_description" xml:space="preserve"><value>Domoticz является легковесной системой домашней автоматизации, которая позволяет контролировать и настраивать различные устройства.</value></data>
+<data name="wizard_favorites" xml:space="preserve"><value>Избранные</value></data>
+<data name="wizard_favorites_description" xml:space="preserve"><value>Устройства можно добавить на панель мониторинга, сохранив их как избранные. Долго нажмите на элемент, чтобы сохранить его как любимый!</value></data>
+<data name="wizard_startup" xml:space="preserve"><value>Начальный экран</value></data>
+<data name="wizard_startup_description" xml:space="preserve"><value>Вы можете установить начальный экран в настройках!</value></data>
+<data name="wizard_notifications" xml:space="preserve"><value>Настройка уведомлений</value></data>
+<data name="wizard_notifications_description" xml:space="preserve"><value>Теперь вы можете получать уведомления на Вашем устройстве! Изменить настройки уведомлений</value></data>
+<data name="wizard_multiserver" xml:space="preserve"><value>Использование нескольких серверов</value></data>
+<data name="wizard_multiserver_description" xml:space="preserve"><value>В настройках можно настроить несколько серверов Domoticz.</value></data>
+<data name="wizard_geo" xml:space="preserve"><value>Geofencing</value></data>
+<data name="wizard_geo_description" xml:space="preserve"><value>Вы можете установить начальный экран в настройках!</value></data>
+<data name="wizard_wear" xml:space="preserve"><value>Android Wear</value></data>
+<data name="wizard_wear_description" xml:space="preserve"><value>Вы можете указать, какие переключатели Вы хотите контроллировать через Android wear!</value></data>
+<data name="wizard_auto" xml:space="preserve"><value>Android Auto</value></data>
+<data name="wizard_auto_description" xml:space="preserve"><value>Получаете уведомления от Domoticz прямо на вашем устройстве Android авто!</value></data>
+<data name="wizard_graph" xml:space="preserve"><value>Графики</value></data>
+<data name="wizard_graph_description" xml:space="preserve"><value>Доступен график истории Утилит. Погоды или температуры!</value></data>
+<data name="wizard_filter" xml:space="preserve"><value>Фильтры</value></data>
+<data name="wizard_filter_description" xml:space="preserve"><value>Вы можете фильтровать устройства по состоянию (вкл. / выкл.). Для этого есть специальный значок в правом верхнем меню!</value></data>
+<data name="wizard_widgets" xml:space="preserve"><value>Виджеты!!</value></data>
+<data name="wizard_widgets_description" xml:space="preserve"><value>Вы можете поместить некоторые виджеты на Ваш стартовый экран!</value></data>
+<data name="wizard_menuitem" xml:space="preserve"><value>Отключить мастер</value></data>
+<data name="wizard_menuitem_description" xml:space="preserve"><value>Теперь вы можете удалить этот Мастер из меню навигации!</value></data>
+<data name="wizard_nfc" xml:space="preserve"><value>NFC</value></data>
+<data name="wizard_nfc_description" xml:space="preserve"><value>Вы можете изменить переключения через NFC!</value></data>
+<data name="wizard_qrcode" xml:space="preserve"><value>QR-код</value></data>
+<data name="wizard_qrcode_description" xml:space="preserve"><value>Переключите тумблеры сканируя QR-код (или штрихкод)!</value></data>
+<data name="wizard_speech" xml:space="preserve"><value>Голосовые команды</value></data>
+<data name="wizard_speech_description" xml:space="preserve"><value>Активируйте переключатели вашим голосом! Сконфигурируйте речевые команды через экраны настройки и подключите переключатели.</value></data>
+<data name="wizard_button_nice" xml:space="preserve"><value>Отлично!</value></data>
+<data name="wizard_button_switches" xml:space="preserve"><value>Переключатели</value></data>
+<data name="wizard_button_settings" xml:space="preserve"><value>Настройки</value></data>
+<data name="wizard_button_wizard" xml:space="preserve"><value>Удалить</value></data>
+<data name="wizard_button_utilities" xml:space="preserve"><value>Утилиты</value></data>
+<data name="wizard_button_done" xml:space="preserve"><value>Готово</value></data>
+</root>

@@ -61,6 +61,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show paired devices.
+        /// </summary>
+        public static string action_bluetooth_show {
+            get {
+                return ResourceManager.GetString("action_bluetooth_show", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pause.
         /// </summary>
         public static string action_camera_pause {
@@ -169,6 +178,69 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to After Austronomical Twilight End.
+        /// </summary>
+        public static string after_austronomical_twilight_end {
+            get {
+                return ResourceManager.GetString("after_austronomical_twilight_end", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to After Austronomical Twilight Start.
+        /// </summary>
+        public static string after_austronomical_twilight_start {
+            get {
+                return ResourceManager.GetString("after_austronomical_twilight_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to After Civil Twilight End.
+        /// </summary>
+        public static string after_civil_twilight_end {
+            get {
+                return ResourceManager.GetString("after_civil_twilight_end", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to After Civil Twilight Start.
+        /// </summary>
+        public static string after_civil_twilight_start {
+            get {
+                return ResourceManager.GetString("after_civil_twilight_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to After Nautical Twilight End.
+        /// </summary>
+        public static string after_nautical_twilight_end {
+            get {
+                return ResourceManager.GetString("after_nautical_twilight_end", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to After Nautical Twilight Start.
+        /// </summary>
+        public static string after_nautical_twilight_start {
+            get {
+                return ResourceManager.GetString("after_nautical_twilight_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to After Sun at South.
+        /// </summary>
+        public static string after_sun_at_south {
+            get {
+                return ResourceManager.GetString("after_sun_at_south", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Alarm.
         /// </summary>
         public static string alarm {
@@ -232,6 +304,33 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Auto Refresh.
+        /// </summary>
+        public static string always_auto_refresh {
+            get {
+                return ResourceManager.GetString("always_auto_refresh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Don\&apos;t refresh the device state every couple of seconds.
+        /// </summary>
+        public static string always_auto_refresh_off {
+            get {
+                return ResourceManager.GetString("always_auto_refresh_off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Refresh the device state every couple of seconds.
+        /// </summary>
+        public static string always_auto_refresh_on {
+            get {
+                return ResourceManager.GetString("always_auto_refresh_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Don\&apos;t lock the screen to always On.
         /// </summary>
         public static string always_on_off {
@@ -286,6 +385,24 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Astronomical twilight end.
+        /// </summary>
+        public static string astrTwilightEnd {
+            get {
+                return ResourceManager.GetString("astrTwilightEnd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Astronomical twilight start.
+        /// </summary>
+        public static string astrTwilightStart {
+            get {
+                return ResourceManager.GetString("astrTwilightStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Disable Android Auto Notifications.
         /// </summary>
         public static string auto_custom_off {
@@ -300,6 +417,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static string auto_custom_on {
             get {
                 return ResourceManager.GetString("auto_custom_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Refresh timer.
+        /// </summary>
+        public static string auto_refresh_time {
+            get {
+                return ResourceManager.GetString("auto_refresh_time", resourceCulture);
             }
         }
         
@@ -322,7 +448,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to iBeacons.
+        ///   Looks up a localized string similar to iBeacon.
         /// </summary>
         public static string beacon {
             get {
@@ -331,11 +457,83 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Region monitoring is limited to 20 regions and can function in the background.
+        ///   Looks up a localized string similar to Show a notification when an iBeacon is detected or disappeared.
+        /// </summary>
+        public static string beacon_desc_notifications {
+            get {
+                return ResourceManager.GetString("beacon_desc_notifications", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Only max 20 iBeacons are allowed.
         /// </summary>
         public static string beacon_max_error {
             get {
                 return ResourceManager.GetString("beacon_max_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Before Austronomical Twilight End.
+        /// </summary>
+        public static string before_austronomical_twilight_end {
+            get {
+                return ResourceManager.GetString("before_austronomical_twilight_end", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Before Austronomical Twilight Start.
+        /// </summary>
+        public static string before_austronomical_twilight_start {
+            get {
+                return ResourceManager.GetString("before_austronomical_twilight_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Before Civil Twilight End.
+        /// </summary>
+        public static string before_civil_twilight_end {
+            get {
+                return ResourceManager.GetString("before_civil_twilight_end", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Before Civil Twilight Start.
+        /// </summary>
+        public static string before_civil_twilight_start {
+            get {
+                return ResourceManager.GetString("before_civil_twilight_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Before Nautical Twilight End.
+        /// </summary>
+        public static string before_nautical_twilight_end {
+            get {
+                return ResourceManager.GetString("before_nautical_twilight_end", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Before Nautical Twilight Start.
+        /// </summary>
+        public static string before_nautical_twilight_start {
+            get {
+                return ResourceManager.GetString("before_nautical_twilight_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Before Sun at South.
+        /// </summary>
+        public static string before_sun_at_south {
+            get {
+                return ResourceManager.GetString("before_sun_at_south", resourceCulture);
             }
         }
         
@@ -363,6 +561,123 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static string blind_up {
             get {
                 return ResourceManager.GetString("blind_up", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bluetooth.
+        /// </summary>
+        public static string bluetooth {
+            get {
+                return ResourceManager.GetString("bluetooth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check the list of paired bluetooth devices. .
+        /// </summary>
+        public static string bluetooth_desc {
+            get {
+                return ResourceManager.GetString("bluetooth_desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show a notification when a bluetooth device is connected or disconnected..
+        /// </summary>
+        public static string bluetooth_desc_notifications {
+            get {
+                return ResourceManager.GetString("bluetooth_desc_notifications", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bluetooth automation disabled, please setup via settings..
+        /// </summary>
+        public static string bluetooth_disabled {
+            get {
+                return ResourceManager.GetString("bluetooth_disabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit bluetooth device.
+        /// </summary>
+        public static string bluetooth_edit {
+            get {
+                return ResourceManager.GetString("bluetooth_edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bluetooth already configured on Domoticz. .
+        /// </summary>
+        public static string bluetooth_exists {
+            get {
+                return ResourceManager.GetString("bluetooth_exists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New bluetooth device found.
+        /// </summary>
+        public static string bluetooth_found {
+            get {
+                return ResourceManager.GetString("bluetooth_found", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Give this bluetooth device a proper name. .
+        /// </summary>
+        public static string bluetooth_name {
+            get {
+                return ResourceManager.GetString("bluetooth_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bluetooth is not supported on this device.
+        /// </summary>
+        public static string bluetooth_not_supported {
+            get {
+                return ResourceManager.GetString("bluetooth_not_supported", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Connect a bluetooth device.
+        /// </summary>
+        public static string bluetooth_register {
+            get {
+                return ResourceManager.GetString("bluetooth_register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saved a new bluetooth device connection. .
+        /// </summary>
+        public static string bluetooth_saved {
+            get {
+                return ResourceManager.GetString("bluetooth_saved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Setup Bluetooth devices.
+        /// </summary>
+        public static string bluetooth_settings {
+            get {
+                return ResourceManager.GetString("bluetooth_settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bluetooth needs to be turned on in your device settings. .
+        /// </summary>
+        public static string bluetooth_turned_off {
+            get {
+                return ResourceManager.GetString("bluetooth_turned_off", resourceCulture);
             }
         }
         
@@ -403,6 +718,33 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Full light.
+        /// </summary>
+        public static string button_state_full_light {
+            get {
+                return ResourceManager.GetString("button_state_full_light", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lock.
+        /// </summary>
+        public static string button_state_lock {
+            get {
+                return ResourceManager.GetString("button_state_lock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Night light.
+        /// </summary>
+        public static string button_state_night {
+            get {
+                return ResourceManager.GetString("button_state_night", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Off.
         /// </summary>
         public static string button_state_off {
@@ -426,6 +768,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static string button_state_open {
             get {
                 return ResourceManager.GetString("button_state_open", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unlock.
+        /// </summary>
+        public static string button_state_unlock {
+            get {
+                return ResourceManager.GetString("button_state_unlock", resourceCulture);
             }
         }
         
@@ -574,6 +925,24 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bluetooth.
+        /// </summary>
+        public static string category_bluetooth {
+            get {
+                return ResourceManager.GetString("category_bluetooth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clock.
+        /// </summary>
+        public static string category_clock {
+            get {
+                return ResourceManager.GetString("category_clock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Debugging.
         /// </summary>
         public static string category_debug {
@@ -606,6 +975,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static string category_geofencing {
             get {
                 return ResourceManager.GetString("category_geofencing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contribute.
+        /// </summary>
+        public static string category_help {
+            get {
+                return ResourceManager.GetString("category_help", resourceCulture);
             }
         }
         
@@ -718,6 +1096,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Widgets (BETA).
+        /// </summary>
+        public static string category_widgets {
+            get {
+                return ResourceManager.GetString("category_widgets", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Changelog.
         /// </summary>
         public static string changelog {
@@ -741,6 +1128,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static string check_for_update_title {
             get {
                 return ResourceManager.GetString("check_for_update_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check your settings.
+        /// </summary>
+        public static string check_settings {
+            get {
+                return ResourceManager.GetString("check_settings", resourceCulture);
             }
         }
         
@@ -786,6 +1182,24 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static string choose_switch {
             get {
                 return ResourceManager.GetString("choose_switch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Civil twilight end.
+        /// </summary>
+        public static string civTwilightEnd {
+            get {
+                return ResourceManager.GetString("civTwilightEnd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Civil twilight start.
+        /// </summary>
+        public static string civTwilightStart {
+            get {
+                return ResourceManager.GetString("civTwilightStart", resourceCulture);
             }
         }
         
@@ -925,6 +1339,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Clock.
+        /// </summary>
+        public static string dashboard_clock {
+            get {
+                return ResourceManager.GetString("dashboard_clock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dashboard Grid.
         /// </summary>
         public static string dashboard_list_title {
@@ -1042,20 +1465,11 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable and config iBeacons.
+        ///   Looks up a localized string similar to Use iBeacons to toggle switches.
         /// </summary>
         public static string description_beacon {
             get {
                 return ResourceManager.GetString("description_beacon", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Enable notifications for when a iBeacon event happens.
-        /// </summary>
-        public static string description_beacon_notifications {
-            get {
-                return ResourceManager.GetString("description_beacon_notifications", resourceCulture);
             }
         }
         
@@ -1074,6 +1488,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static string description_geofence_notifications {
             get {
                 return ResourceManager.GetString("description_geofence_notifications", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show notifications when you enter and leave a location..
+        /// </summary>
+        public static string description_notification_geofence {
+            get {
+                return ResourceManager.GetString("description_notification_geofence", resourceCulture);
             }
         }
         
@@ -1173,6 +1596,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static string emergency {
             get {
                 return ResourceManager.GetString("emergency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable Bluetooth functionality.
+        /// </summary>
+        public static string enable_bluetooth {
+            get {
+                return ResourceManager.GetString("enable_bluetooth", resourceCulture);
             }
         }
         
@@ -1290,6 +1722,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static string error_couldNotCheckForUpdates {
             get {
                 return ResourceManager.GetString("error_couldNotCheckForUpdates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;Could not check for version: %1$s&quot;.
+        /// </summary>
+        public static string error_couldNotCheckForVersion {
+            get {
+                return ResourceManager.GetString("error_couldNotCheckForVersion", resourceCulture);
             }
         }
         
@@ -1519,11 +1960,29 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All.
+        /// </summary>
+        public static string filter_all {
+            get {
+                return ResourceManager.GetString("filter_all", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Filter devices.
         /// </summary>
         public static string filter_devices {
             get {
                 return ResourceManager.GetString("filter_devices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        public static string filter_error {
+            get {
+                return ResourceManager.GetString("filter_error", resourceCulture);
             }
         }
         
@@ -1537,11 +1996,29 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Normal.
+        /// </summary>
+        public static string filter_normal {
+            get {
+                return ResourceManager.GetString("filter_normal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Filter on.
         /// </summary>
         public static string filter_on {
             get {
                 return ResourceManager.GetString("filter_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string filter_status {
+            get {
+                return ResourceManager.GetString("filter_status", resourceCulture);
             }
         }
         
@@ -1582,6 +2059,24 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Touch your finger on the fingerprint sensor to authorise your account..
+        /// </summary>
+        public static string fingerprint_dialog_description {
+            get {
+                return ResourceManager.GetString("fingerprint_dialog_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We need to make sure its you.
+        /// </summary>
+        public static string fingerprint_make_sure {
+            get {
+                return ResourceManager.GetString("fingerprint_make_sure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to First configure/connect a Fingerprint to this device.
         /// </summary>
         public static string fingerprint_not_setup_in_android {
@@ -1609,6 +2104,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to First.
+        /// </summary>
+        public static string first {
+            get {
+                return ResourceManager.GetString("first", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Follow schedule.
         /// </summary>
         public static string follow_schedule {
@@ -1623,6 +2127,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static string forecast {
             get {
                 return ResourceManager.GetString("forecast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fourth.
+        /// </summary>
+        public static string fourth {
+            get {
+                return ResourceManager.GetString("fourth", resourceCulture);
             }
         }
         
@@ -1780,7 +2293,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please check if your HTTP certificate is still valid.
+        ///   Looks up a localized string similar to Please check your https certificate.
         /// </summary>
         public static string http_certificate {
             get {
@@ -1870,6 +2383,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Last.
+        /// </summary>
+        public static string last {
+            get {
+                return ResourceManager.GetString("last", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Last seen.
         /// </summary>
         public static string last_update {
@@ -1951,6 +2473,42 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lux.
+        /// </summary>
+        public static string Lux {
+            get {
+                return ResourceManager.GetString("Lux", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lux Avg.
+        /// </summary>
+        public static string LuxAvg {
+            get {
+                return ResourceManager.GetString("LuxAvg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lux Max.
+        /// </summary>
+        public static string Luxmax {
+            get {
+                return ResourceManager.GetString("Luxmax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lux Min.
+        /// </summary>
+        public static string Luxmin {
+            get {
+                return ResourceManager.GetString("Luxmin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Manual.
         /// </summary>
         public static string manual {
@@ -2014,6 +2572,24 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nautical twilight end.
+        /// </summary>
+        public static string nautTwilightEnd {
+            get {
+                return ResourceManager.GetString("nautTwilightEnd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nautical twilight start.
+        /// </summary>
+        public static string nautTwilightStart {
+            get {
+                return ResourceManager.GetString("nautTwilightStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to NFC.
         /// </summary>
         public static string nfc {
@@ -2037,6 +2613,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static string nfc_exists {
             get {
                 return ResourceManager.GetString("nfc_exists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use a NFC tool to write the next URL to the NFC tag: app://domoticz. Then connect the NFC tag to a switch in via this settings screen..
+        /// </summary>
+        public static string nfc_howto {
+            get {
+                return ResourceManager.GetString("nfc_howto", resourceCulture);
             }
         }
         
@@ -2176,7 +2761,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For this iBeacons to have effect, a switch should be linked.
+        ///   Looks up a localized string similar to Connect the new iBeacon to a switch to make it active.
         /// </summary>
         public static string noswitchselected_explanation_beacons {
             get {
@@ -2185,11 +2770,11 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For this geofence to have effect, a switch should be linked.
+        ///   Looks up a localized string similar to For a bluetooth device to automate something in Domoticz, a switch should be linked to an bluetooth.
         /// </summary>
-        public static string noSwitchSelected_explanation_Geofences {
+        public static string noSwitchSelected_explanation_bluetooth {
             get {
-                return ResourceManager.GetString("noSwitchSelected_explanation_Geofences", resourceCulture);
+                return ResourceManager.GetString("noSwitchSelected_explanation_bluetooth", resourceCulture);
             }
         }
         
@@ -2248,11 +2833,83 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please fill in a message.
+        /// </summary>
+        public static string notification_error_message {
+            get {
+                return ResourceManager.GetString("notification_error_message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not send the notification to Domoticz.
+        /// </summary>
+        public static string notification_error_send {
+            get {
+                return ResourceManager.GetString("notification_error_send", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please fill in a subject.
+        /// </summary>
+        public static string notification_error_subject {
+            get {
+                return ResourceManager.GetString("notification_error_subject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please choose a system to send the notification to.
+        /// </summary>
+        public static string notification_error_system {
+            get {
+                return ResourceManager.GetString("notification_error_system", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notification history.
+        /// </summary>
+        public static string notification_history {
+            get {
+                return ResourceManager.GetString("notification_history", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inbox.
+        /// </summary>
+        public static string notification_inbox {
+            get {
+                return ResourceManager.GetString("notification_inbox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Message.
+        /// </summary>
+        public static string notification_message {
+            get {
+                return ResourceManager.GetString("notification_message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Notification settings.
         /// </summary>
         public static string notification_screen_title {
             get {
                 return ResourceManager.GetString("notification_screen_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notification send to Domoticz.
+        /// </summary>
+        public static string notification_send {
+            get {
+                return ResourceManager.GetString("notification_send", resourceCulture);
             }
         }
         
@@ -2338,6 +2995,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Subject.
+        /// </summary>
+        public static string notification_subject {
+            get {
+                return ResourceManager.GetString("notification_subject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do not vibrate.
         /// </summary>
         public static string notification_vibrate_off {
@@ -2361,6 +3027,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static string notification_vibrate_title {
             get {
                 return ResourceManager.GetString("notification_vibrate_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Now.
+        /// </summary>
+        public static string now {
+            get {
+                return ResourceManager.GetString("now", resourceCulture);
             }
         }
         
@@ -2815,6 +3490,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Second.
+        /// </summary>
+        public static string second {
+            get {
+                return ResourceManager.GetString("second", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Arm away.
         /// </summary>
         public static string security_arm_away {
@@ -2847,6 +3531,24 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static string security_generic_error {
             get {
                 return ResourceManager.GetString("security_generic_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You do not have the rights for this action!.
+        /// </summary>
+        public static string security_no_rights {
+            get {
+                return ResourceManager.GetString("security_no_rights", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fallback.
+        /// </summary>
+        public static string security_password_fallback {
+            get {
+                return ResourceManager.GetString("security_password_fallback", resourceCulture);
             }
         }
         
@@ -2892,6 +3594,24 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static string selector_value {
             get {
                 return ResourceManager.GetString("selector_value", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send.
+        /// </summary>
+        public static string send {
+            get {
+                return ResourceManager.GetString("send", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send notification.
+        /// </summary>
+        public static string send_notification {
+            get {
+                return ResourceManager.GetString("send_notification", resourceCulture);
             }
         }
         
@@ -3094,6 +3814,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Set a specific timer for the auto refresh in seconds..
+        /// </summary>
+        public static string setautorefreshtime {
+            get {
+                return ResourceManager.GetString("setautorefreshtime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Set.
         /// </summary>
         public static string settemperature {
@@ -3157,7 +3886,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Scan a NFC tag.
+        ///   Looks up a localized string similar to NFC.
         /// </summary>
         public static string shortcut_nfc {
             get {
@@ -3166,7 +3895,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Scan a QR code.
+        ///   Looks up a localized string similar to QR Code.
         /// </summary>
         public static string shortcut_qrcode {
             get {
@@ -3175,11 +3904,20 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Listen for a speech command.
+        ///   Looks up a localized string similar to Speech.
         /// </summary>
         public static string shortcut_speech {
             get {
                 return ResourceManager.GetString("shortcut_speech", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show a clock on the dashboard.
+        /// </summary>
+        public static string show_dashboard_clock {
+            get {
+                return ResourceManager.GetString("show_dashboard_clock", resourceCulture);
             }
         }
         
@@ -3256,6 +3994,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Custom sorting, drag and drop devices to sort them.
+        /// </summary>
+        public static string sort_custom_on {
+            get {
+                return ResourceManager.GetString("sort_custom_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sort dashboard alphabetically.
         /// </summary>
         public static string sort_dashboardLikeServer_off {
@@ -3265,20 +4012,38 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sort dashboard like server.
+        ///   Looks up a localized string similar to Lock the current custom sorting (disable drag/drop).
         /// </summary>
-        public static string sort_dashboardLikeServer_on {
+        public static string sort_lock_custom_on {
             get {
-                return ResourceManager.GetString("sort_dashboardLikeServer_on", resourceCulture);
+                return ResourceManager.GetString("sort_lock_custom_on", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dashboard sorting.
+        ///   Looks up a localized string similar to Lock.
         /// </summary>
-        public static string sort_dashboardLikeServer_title {
+        public static string sort_lock_server_title {
             get {
-                return ResourceManager.GetString("sort_dashboardLikeServer_title", resourceCulture);
+                return ResourceManager.GetString("sort_lock_server_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sort devices like sorted on the server.
+        /// </summary>
+        public static string sort_server_on {
+            get {
+                return ResourceManager.GetString("sort_server_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sorting.
+        /// </summary>
+        public static string sort_server_title {
+            get {
+                return ResourceManager.GetString("sort_server_title", resourceCulture);
             }
         }
         
@@ -3436,6 +4201,24 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sunrise.
+        /// </summary>
+        public static string sunrise {
+            get {
+                return ResourceManager.GetString("sunrise", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sunset.
+        /// </summary>
+        public static string sunset {
+            get {
+                return ResourceManager.GetString("sunset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Suppress specific Notifications on this device.
         /// </summary>
         public static string suppress_notifications {
@@ -3490,6 +4273,24 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Turning switch to full light.
+        /// </summary>
+        public static string switch_full {
+            get {
+                return ResourceManager.GetString("switch_full", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turning switch to night light.
+        /// </summary>
+        public static string switch_night {
+            get {
+                return ResourceManager.GetString("switch_night", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Turning switch off.
         /// </summary>
         public static string switch_off {
@@ -3504,6 +4305,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static string switch_on {
             get {
                 return ResourceManager.GetString("switch_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RGB color or warm white.
+        /// </summary>
+        public static string switch_rgb_wwcolor {
+            get {
+                return ResourceManager.GetString("switch_rgb_wwcolor", resourceCulture);
             }
         }
         
@@ -3544,6 +4354,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Temperature.
+        /// </summary>
+        public static string temperature {
+            get {
+                return ResourceManager.GetString("temperature", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to GO.
         /// </summary>
         public static string text_go {
@@ -3558,6 +4377,60 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static string text_loading {
             get {
                 return ResourceManager.GetString("text_loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blue.
+        /// </summary>
+        public static string theme_blue {
+            get {
+                return ResourceManager.GetString("theme_blue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Day/Night.
+        /// </summary>
+        public static string theme_daynight {
+            get {
+                return ResourceManager.GetString("theme_daynight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Default.
+        /// </summary>
+        public static string theme_default {
+            get {
+                return ResourceManager.GetString("theme_default", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Orange.
+        /// </summary>
+        public static string theme_orange {
+            get {
+                return ResourceManager.GetString("theme_orange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pink.
+        /// </summary>
+        public static string theme_pink {
+            get {
+                return ResourceManager.GetString("theme_pink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Third.
+        /// </summary>
+        public static string third {
+            get {
+                return ResourceManager.GetString("third", resourceCulture);
             }
         }
         
@@ -3688,7 +4561,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add new iBeacons.
+        ///   Looks up a localized string similar to Add a new iBeacon.
         /// </summary>
         public static string title_add_beacon {
             get {
@@ -3702,15 +4575,6 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static string title_add_location {
             get {
                 return ResourceManager.GetString("title_add_location", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to iBeacons.
-        /// </summary>
-        public static string title_beacon {
-            get {
-                return ResourceManager.GetString("title_beacon", resourceCulture);
             }
         }
         
@@ -3774,6 +4638,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static string title_logs {
             get {
                 return ResourceManager.GetString("title_logs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable Notifications for Geofences.
+        /// </summary>
+        public static string title_notification_geofence {
+            get {
+                return ResourceManager.GetString("title_notification_geofence", resourceCulture);
             }
         }
         
@@ -3886,6 +4759,24 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You can help make our translations better, and even add new languages to this app via our Crowdin project.
+        /// </summary>
+        public static string translate_description {
+            get {
+                return ResourceManager.GetString("translate_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Translations.
+        /// </summary>
+        public static string translate_title {
+            get {
+                return ResourceManager.GetString("translate_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Marjor Id (optional).
         /// </summary>
         public static string txt_beacon_MajorId {
@@ -3895,7 +4786,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Minor ID (optional).
+        ///   Looks up a localized string similar to Minor Id (optional).
         /// </summary>
         public static string txt_beacon_MinorId {
             get {
@@ -3904,7 +4795,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to UUID (example: e97a80e9-4b90-45af-acfa-a5c98cdba511).
+        ///   Looks up a localized string similar to UUID (for example 3699EFBC-64AD-4CAA-9987-FA6D70C3C425).
         /// </summary>
         public static string txt_beacon_UUID {
             get {
@@ -3913,7 +4804,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please fill in a device UUID (mandatory).
+        ///   Looks up a localized string similar to Please fill in the UUID from the iBeacon.
         /// </summary>
         public static string txt_beacon_UUID_error {
             get {
@@ -3922,7 +4813,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The UUID should be in the next format: 00000000-0000-0000-0000-000000000000.
+        ///   Looks up a localized string similar to The UUID should be a guid, for example 00000000-0000-0000-0000-000000000000.
         /// </summary>
         public static string txt_beacon_UUID_error2 {
             get {
@@ -4066,6 +4957,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use demo setup.
+        /// </summary>
+        public static string use_demo_setup {
+            get {
+                return ResourceManager.GetString("use_demo_setup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Admin.
         /// </summary>
         public static string user_admin {
@@ -4201,7 +5101,10 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Domoticz is a Home Automation System that lets you monitor and configure various devices like: Lights, Switches, various sensors/meters like Temperature, Rain, Wind, UV, Electra, Gas, Water and much more. Notifications/Alerts can be sent to any mobile device..
+        ///   Looks up a localized string similar to Domoticz is a Home Automation System that lets you monitor
+        ///and configure various devices like: Lights, Switches, various sensors/meters like
+        ///Temperature, Rain, Wind, UV, Electra, Gas, Water and much more. Notifications/Alerts can
+        ///be sent to any mobile device..
         /// </summary>
         public static string welcome_info_domoticz {
             get {
@@ -4219,7 +5122,11 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can specify a local and a remote server setting. The local settings are for when you are connected to your home wifi network.  Remote settings are used when not connected to your home wifi network or when connected to cellular data (2G, 3G, 4G etc)..
+        ///   Looks up a localized string similar to 
+        ///You can specify a local and a remote server setting.
+        ///The local settings are for when you are connected to your home wifi network.
+        ///Remote settings are used when not connected to your home wifi network or when connected
+        ///to cellular data (2G, 3G, 4G etc)..
         /// </summary>
         public static string welcome_info_settings2 {
             get {
@@ -4498,6 +5405,24 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enable or Disable Widget on this device.
+        /// </summary>
+        public static string widget_description {
+            get {
+                return ResourceManager.GetString("widget_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Widgets are not enabled on this device, please check your settings of Domoticz.
+        /// </summary>
+        public static string widget_disabled {
+            get {
+                return ResourceManager.GetString("widget_disabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Light.
         /// </summary>
         public static string widget_light {
@@ -4525,6 +5450,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please use widgets on your own risk!! Widgets are currently in Beta stage and probably contain certain bugs. It can cause large data / battery usage....
+        /// </summary>
+        public static string widget_warning {
+            get {
+                return ResourceManager.GetString("widget_warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Wind.
         /// </summary>
         public static string wind {
@@ -4548,6 +5482,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static string wizard_auto_description {
             get {
                 return ResourceManager.GetString("wizard_auto_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You are able to toggle switches via Bluetooth connections!.
+        /// </summary>
+        public static string wizard_bluetooth_description {
+            get {
+                return ResourceManager.GetString("wizard_bluetooth_description", resourceCulture);
             }
         }
         
@@ -4840,7 +5783,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Widgets!!.
+        ///   Looks up a localized string similar to Widgets (Beta).
         /// </summary>
         public static string wizard_widgets {
             get {

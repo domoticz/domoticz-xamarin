@@ -1,1 +1,608 @@
-<?xml version="1.0" encoding="utf-8"?> <root> <resheader name="resmimetype">		<value>text/microsoft-resx</value>	</resheader>	<resheader name="version">		<value>2.0</value>	</resheader>	<resheader name="reader">		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>	<resheader name="writer">		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader><data name="premium_category" xml:space="preserve"><value>Compre a versão premium!</value></data><data name="premium_title" xml:space="preserve"><value>Obter a versão premium!</value></data><data name="premium_feature" xml:space="preserve"><value>é uma característica premium, por favor, compre a versão paga para apoiar os desenvolvedores!</value></data><data name="drawer_open" xml:space="preserve"><value>Abra o painel de navegação</value></data><data name="drawer_close" xml:space="preserve"><value>Feche o painel de navegação</value></data><data name="msg_please_wait" xml:space="preserve"><value>Aguarde, por favor&#8230;</value></data><data name="changelog" xml:space="preserve"><value>Histórico de alterações</value></data><data name="button_state_on" xml:space="preserve"><value>Ligar</value></data><data name="button_state_off" xml:space="preserve"><value>Desligar</value></data><data name="button_state_closed" xml:space="preserve"><value>Fechado</value></data><data name="button_state_open" xml:space="preserve"><value>Aberto</value></data><data name="button_status_log" xml:space="preserve"><value>Log</value></data><data name="button_status_day" xml:space="preserve"><value>Dia</value></data><data name="button_status_week" xml:space="preserve"><value>Semana</value></data><data name="button_status_month" xml:space="preserve"><value>Mês</value></data><data name="button_status_year" xml:space="preserve"><value>Ano</value></data><data name="button_status_timer" xml:space="preserve"><value>Temporizador</value></data><data name="button_status_notifications" xml:space="preserve"><value>Notificações</value></data><data name="button_color" xml:space="preserve"><value>Cor</value></data><data name="button_arm" xml:space="preserve"><value>Armar</value></data><data name="button_disarm" xml:space="preserve"><value>Desarmar</value></data><data name="last_update" xml:space="preserve"><value>Visto pela última vez</value></data><data name="signal_level" xml:space="preserve"><value>Nível de sinal</value></data><data name="battery_level" xml:space="preserve"><value>Nível de bateria</value></data><data name="data" xml:space="preserve"><value>Dados</value></data><data name="hardware" xml:space="preserve"><value>Hardware</value></data><data name="temperature" xml:space="preserve"><value>Temperatura</value></data><data name="status" xml:space="preserve"><value>Estado</value></data><data name="set_point" xml:space="preserve"><value>Ponto de ajuste</value></data><data name="set_point_min" xml:space="preserve"><value>Set point min value</value></data><data name="set_point_min_description" xml:space="preserve"><value>Min temperature that you can set for your thermostat</value></data><data name="set_point_max" xml:space="preserve"><value>Set point max value</value></data><data name="set_point_max_description" xml:space="preserve"><value>Max temperature that you can set for your thermostat</value></data><data name="action_success" xml:space="preserve"><value>Acção bem sucedida</value></data><data name="action_failed" xml:space="preserve"><value>Ação falhada</value></data><data name="action_unknown" xml:space="preserve"><value>Resultado da ação desconhecido</value></data><data name="choose_status" xml:space="preserve"><value>Escolher estado</value></data><data name="normal" xml:space="preserve"><value>Normal</value></data><data name="economy" xml:space="preserve"><value>Economia</value></data><data name="away" xml:space="preserve"><value>Ausente</value></data><data name="day_off" xml:space="preserve"><value>Dia de folga</value></data><data name="custom" xml:space="preserve"><value>Personalizar</value></data><data name="heating_off" xml:space="preserve"><value>Aquecimento desligado</value></data><data name="selector_value" xml:space="preserve"><value>Valores do seletor</value></data><data name="debug_textview_title" xml:space="preserve"><value>Informação de depuração</value></data><data name="msg_copiedToClipboard" xml:space="preserve"><value>Texto copiado para a área de transferência</value></data><data name="favorite" xml:space="preserve"><value>Favorito</value></data><data name="yes" xml:space="preserve"><value>Sim</value></data><data name="no" xml:space="preserve"><value>Não</value></data><data name="are_you_sure" xml:space="preserve"><value>Tem certeza?</value></data><data name="are_you_sure_clear_settings" xml:space="preserve"><value>Are you sure?? This also clears all homescreen widget settings, so you should re-add them afterwards..</value></data><data name="add" xml:space="preserve"><value>Adicionar</value></data><data name="cancel" xml:space="preserve"><value>Cancelar</value></data><data name="ok" xml:space="preserve"><value>Aceitar</value></data><data name="request_again" xml:space="preserve"><value>Solicitar novamente</value></data><data name="upgrade" xml:space="preserve"><value>ATUALIZAÇÃO</value></data><data name="something_went_wrong" xml:space="preserve"><value>Ocorreu algo de errado</value></data><data name="no_network_available" xml:space="preserve"><value>Erro: Nenhuma rede conexão disponível</value></data><data name="oops" xml:space="preserve"><value>UPSS!</value></data><data name="to" xml:space="preserve"><value>"para"</value></data><data name="retry" xml:space="preserve"><value>Re-entrar</value></data><data name="undo" xml:space="preserve"><value>Desfazer</value></data><data name="something_deleted" xml:space="preserve"><value>%1$s excluído</value></data><data name="switch_on" xml:space="preserve"><value>Ligando o interruptor</value></data><data name="switch_off" xml:space="preserve"><value>Desligando o interruptor</value></data><data name="blind_up" xml:space="preserve"><value>Abrindo persiana</value></data><data name="blind_down" xml:space="preserve"><value>Fechando persiana</value></data><data name="blind_stop" xml:space="preserve"><value>Parar persiana</value></data><data name="filter_on" xml:space="preserve"><value>Filtro ligado</value></data><data name="filterOn_on" xml:space="preserve"><value>Ligados</value></data><data name="filterOn_off" xml:space="preserve"><value>Desligados</value></data><data name="filterOn_static" xml:space="preserve"><value>Dispositivos estáticos</value></data><data name="filterOn_all" xml:space="preserve"><value>Todos os dispositivos</value></data><data name="filter" xml:space="preserve"><value>Filtro</value></data><data name="filter_devices" xml:space="preserve"><value>Filtro de dispositivos</value></data><data name="filter_graph_empty" xml:space="preserve"><value>Por favor, especifique um filtro</value></data><data name="choose_color" xml:space="preserve"><value>Escolher a cor</value></data><data name="no_data_on_domoticz" xml:space="preserve"><value>Não há dados no servidor Domoticz</value></data><data name="row_icon_description" xml:space="preserve"><value>linha do icon</value></data><data name="error_image_description" xml:space="preserve"><value>Imagem de erro</value></data><data name="device_image_description" xml:space="preserve"><value>Imagem de dispositivo</value></data><data name="white" xml:space="preserve"><value>Branco</value></data><data name="refresh" xml:space="preserve"><value>Atualizar</value></data><data name="domoticz_logo" xml:space="preserve"><value>Logotipo Domoticz</value></data><data name="this_take_minutes" xml:space="preserve"><value>Isto pode levar vários minutos.</value></data><data name="continue_question" xml:space="preserve"><value>Continuar?</value></data><data name="cant_remove_default_server" xml:space="preserve"><value>Não é possível remover o servidor padrão</value></data><data name="restart_required_msg" xml:space="preserve"><value>Configurações da linguagem alteradas apenas após reinicio da aplicação</value></data><data name="action_switch_server" xml:space="preserve"><value>Mudar servidor</value></data><data name="action_settings" xml:space="preserve"><value>Definições</value></data><data name="action_filter" xml:space="preserve"><value>Filtro</value></data><data name="action_camera_play" xml:space="preserve"><value>Reproduzir</value></data><data name="action_camera_pause" xml:space="preserve"><value>Pausa</value></data><data name="action_qrcode_scan" xml:space="preserve"><value>Ler código QR</value></data><data name="action_speech" xml:space="preserve"><value>Reconhecimento de voz</value></data><data name="title_cameras" xml:space="preserve"><value>Câmaras</value></data><data name="title_dashboard" xml:space="preserve"><value>Painel de entrada</value></data><data name="usage" xml:space="preserve"><value>Consumo</value></data><data name="today" xml:space="preserve"><value>Hoje</value></data><data name="total" xml:space="preserve"><value>Total</value></data><data name="favorite_added" xml:space="preserve"><value>Adicionado ao painel de entrada.</value></data><data name="favorite_removed" xml:space="preserve"><value>Removido do painel de entrada.</value></data><data name="error_authentication" xml:space="preserve"><value>Credenciais inválidas</value></data><data name="error_timeout" xml:space="preserve"><value>Acabou o tempo ou sem conexão</value></data><data name="error_server" xml:space="preserve"><value>Erro do servidor</value></data><data name="error_network" xml:space="preserve"><value>Erro de rede, código %1$d</value></data><data name="error_parse" xml:space="preserve"><value>Erro de análise</value></data><data name="error_notConnected" xml:space="preserve"><value>Erro: não ligada a qualquer rede</value></data><data name="title_events" xml:space="preserve"><value>Eventos</value></data><data name="action_not_supported_yet" xml:space="preserve"><value>Esta ação não é suportada ainda!</value></data><data name="title_add_location" xml:space="preserve"><value>Adicionar Localização</value></data><data name="title_edit_location" xml:space="preserve"><value>Editar Localização</value></data><data name="longitude" xml:space="preserve"><value>Longitude</value></data><data name="latitude" xml:space="preserve"><value>Latitude</value></data><data name="radius" xml:space="preserve"><value>Raio (medidor)</value></data><data name="connectedSwitch" xml:space="preserve"><value>Interruptor ligado</value></data><data name="unable_to_get_switches" xml:space="preserve"><value>Não é possível obter todos os interruptores, por favor, tente novamente</value></data><data name="delete_short" xml:space="preserve"><value>DEL</value></data><data name="delete" xml:space="preserve"><value>Excluir</value></data><data name="Location_name" xml:space="preserve"><value>Nome da localização</value></data><data name="currentLocation" xml:space="preserve"><value>Localização atual</value></data><data name="manual" xml:space="preserve"><value>Manual</value></data><data name="getLocation" xml:space="preserve"><value>Obter</value></data><data name="locationAddress" xml:space="preserve"><value>Endereço</value></data><data name="unknown" xml:space="preserve"><value>Desconhecido</value></data><data name="not_available" xml:space="preserve"><value>N/D</value></data><data name="no_valid_latLong" xml:space="preserve"><value>Latitude ou longitude inválida</value></data><data name="starting_geofence_service" xml:space="preserve"><value>Iniciar serviço de localização</value></data><data name="could_not_find_location" xml:space="preserve"><value>Não foi possível encontrar localização, tente novamente.</value></data><data name="google_play_services_unavailable" xml:space="preserve"><value>Google  Play indisponível</value></data><data name="location_not_found" xml:space="preserve"><value>Nenhum local encontrado.</value></data><data name="geofence" xml:space="preserve"><value>Localização</value></data><data name="title_geofence" xml:space="preserve"><value>Ativar localização</value></data><data name="description_geofence" xml:space="preserve"><value>Ativar e configurar localização</value></data><data name="title_geofence_notifications" xml:space="preserve"><value>Ativar notificações</value></data><data name="description_geofence_notifications" xml:space="preserve"><value>Ativar notificações para desencadear eventos</value></data><data name="geofence_place" xml:space="preserve"><value>Lugar: %s</value></data><data name="geofence_location_entering" xml:space="preserve"><value>"Entrar em %1$s"</value></data><data name="geofence_location_leaving" xml:space="preserve"><value>Saindo de %1$s</value></data><data name="geofence_location_entering_text" xml:space="preserve"><value>Entrar em um dos locais</value></data><data name="geofence_location_leaving_text" xml:space="preserve"><value>Saindo um dos locais</value></data><data name="geofence_error_recreateLocations" xml:space="preserve"><value>Devido a alterações na delimitação geográfica, por favor, recriar as suas localizações</value></data><data name="noSwitchSelected_title" xml:space="preserve"><value>Nenhum interruptor selecionado</value></data><data name="noSwitchSelected_explanation" xml:space="preserve"><value>Para a localização ter efeito, um interruptor deve ser ligado a uma área demarcada</value></data><data name="noSwitchSelected_connectOneNow" xml:space="preserve"><value>Ligue um agora?</value></data><data name="geofencing_disabled_no_enabled_fences" xml:space="preserve"><value>Localização desabilitada uma vez que não existem áreas habilitadas</value></data><data name="geofence_not_available" xml:space="preserve"><value>Geofence service is not available now</value></data><data name="geofence_too_many_geofences" xml:space="preserve"><value>App registered too many geofences</value></data><data name="geofence_too_many_pending_intents" xml:space="preserve"><value>Too many PendingIntents provided</value></data><data name="unknown_geofence_error" xml:space="preserve"><value>Unknown error</value></data><data name="title_logs" xml:space="preserve"><value>Logs</value></data><data name="nfc_not_supported" xml:space="preserve"><value>NFC não é suportado neste dispositivo</value></data><data name="nfc_register" xml:space="preserve"><value>Registar um tag de NFC</value></data><data name="nfc_tag_found" xml:space="preserve"><value>Novo tag de NFC encontrada</value></data><data name="nfc_tag_edit" xml:space="preserve"><value>Editar a Tag NFC</value></data><data name="nfc_tag_name" xml:space="preserve"><value>Dê a este NFC um nome. </value></data><data name="nfc_exists" xml:space="preserve"><value>Tag de NFC já registado. </value></data><data name="nfc_saved" xml:space="preserve"><value>Gravado um novo tag de NFC. </value></data><data name="nfc" xml:space="preserve"><value>NFC</value></data><data name="noSwitchSelected_explanation_nfc" xml:space="preserve"><value>Para NFC ter efeito, um interruptor deve ser vinculado a um Tag de NFC</value></data><data name="priority" xml:space="preserve"><value>Prioridade</value></data><data name="emergency" xml:space="preserve"><value>Emergência</value></data><data name="high" xml:space="preserve"><value>Alta</value></data><data name="low" xml:space="preserve"><value>Baixa</value></data><data name="verylow" xml:space="preserve"><value>Muito baixa</value></data><data name="allsystems" xml:space="preserve"><value>Todos os sistemas</value></data><data name="systems" xml:space="preserve"><value>Sistemas</value></data><data name="permission_title" xml:space="preserve"><value>Permissões negadas</value></data><data name="permission_prefs_title" xml:space="preserve"><value>Permissões</value></data><data name="permission_config" xml:space="preserve"><value>Configurar as permissões para esta aplicação</value></data><data name="permission_desc_storage" xml:space="preserve"><value>Essas permissões de armazenamento são necessários para salvar o arquivo de cache, configurações e fotografias a partir da câmera.</value></data><data name="permission_desc_location" xml:space="preserve"><value>Essas permissões de localização são necessários para delimitação geográfica e para obter o Wifi SSID próximo de si!</value></data><data name="permission_desc_phone" xml:space="preserve"><value>Essas permissões sobre o estado do telefone são necessários para habilitar notificações!</value></data><data name="permission_desc_camera" xml:space="preserve"><value>Essas permissões de câmera são necessários para a digitalização de códigos QR!</value></data><data name="permission_desc_audio" xml:space="preserve"><value>Essas permissões de áudio são necessárias para o reconhecimento de voz!</value></data><data name="permission_desc_finger" xml:space="preserve"><value>Essas permissões de impressão digital são necessários para habilitar a segurança por impressão digital!</value></data><data name="title_plans" xml:space="preserve"><value>Plantas</value></data><data name="qrcode_not_supported" xml:space="preserve"><value>Código QR não é suportado neste dispositivo</value></data><data name="qrcode_register" xml:space="preserve"><value>Registar um código QR </value></data><data name="qrcode_found" xml:space="preserve"><value>Novo código QR encontrado</value></data><data name="qrcode_edit" xml:space="preserve"><value>Editar o código QR</value></data><data name="qrcode_name" xml:space="preserve"><value>Dê a este código QR um nome próprio. </value></data><data name="qrcode_desc" xml:space="preserve"><value>Digitalizar um QR Code. </value></data><data name="qrcode_exists" xml:space="preserve"><value>Código QR já registrado. </value></data><data name="qrcode_saved" xml:space="preserve"><value>Gravado novo código QR. </value></data><data name="qrcode" xml:space="preserve"><value>Código QR</value></data><data name="qrcode_new_found" xml:space="preserve"><value>Novo código QR detetado, por favor, configurar através de configurações.</value></data><data name="qr_code_disabled" xml:space="preserve"><value>Código QR desabilitado, por favor configurar através de definições</value></data><data name="noSwitchSelected_explanation_qrcode" xml:space="preserve"><value>Para  a verificação de código QR ter efeito, um interruptor deve ser vinculado a um código QR</value></data><data name="permission_camera_rationale" xml:space="preserve"><value>Acesso à câmara é necessário para deteção</value></data><data name="low_storage_error" xml:space="preserve"><value>Dependências do codigo QR não podem ser descarregadas devido ao pouco espaço de armazenamento</value></data><data name="no_camera_permission" xml:space="preserve"><value>Este aplicativo não pode executar porque não tem a permissão de câmera.  O aplicativo vai sair agora.</value></data><data name="title_scenes" xml:space="preserve"><value>Cenários</value></data><data name="title_security_panel" xml:space="preserve"><value>Painel de Segurança</value></data><data name="security_pin" xml:space="preserve"><value>Código PIN</value></data><data name="security_disarm" xml:space="preserve"><value>Desarmar</value></data><data name="security_arm_home" xml:space="preserve"><value>Armar Casa</value></data><data name="security_arm_away" xml:space="preserve"><value>Arm Away</value></data><data name="security_wrong_code" xml:space="preserve"><value>Codigo errado!</value></data><data name="security_generic_error" xml:space="preserve"><value>Não foi possível alterar o estado de segurança</value></data><data name="security_wrong_password_fingerprint" xml:space="preserve"><value>Palavra passe errada, a Palavra passe da sua conta domoticz é a alternativa á sua impressão digital no caso de algum problema...!</value></data><data name="show_password" xml:space="preserve"><value>Mostrar password</value></data><data name="choose_server" xml:space="preserve"><value>Escolher servidor</value></data><data name="dont_save_new_server" xml:space="preserve"><value>Não gravar novo servidor?</value></data><data name="server_must_be_unique" xml:space="preserve"><value>Nome do servidor deve ser único</value></data><data name="switch_to_server" xml:space="preserve"><value>"Alternar o servidor para %1$s"</value></data><data name="cant_disable_default_server" xml:space="preserve"><value>Não é possível desativar o servidor padrão</value></data><data name="settingsActivity_name" xml:space="preserve"><value>Definições</value></data><data name="cameraActivity_name" xml:space="preserve"><value>Câmera</value></data><data name="category_generic" xml:space="preserve"><value>Genérico</value></data><data name="category_wear" xml:space="preserve"><value>Android Wear</value></data><data name="category_auto" xml:space="preserve"><value>Android Auto</value></data><data name="category_server" xml:space="preserve"><value>Servidor</value></data><data name="category_geofencing" xml:space="preserve"><value>Localização</value></data><data name="category_info" xml:space="preserve"><value>Informação</value></data><data name="category_advanced" xml:space="preserve"><value>Avançadas</value></data><data name="category_language" xml:space="preserve"><value>Linguagem</value></data><data name="category_talk_back" xml:space="preserve"><value>Talk Back</value></data><data name="category_notification" xml:space="preserve"><value>Notificações</value></data><data name="category_debug" xml:space="preserve"><value>Depuração</value></data><data name="category_export" xml:space="preserve"><value>Configurações de importação/exportação</value></data><data name="category_theme" xml:space="preserve"><value>Aparência</value></data><data name="category_nfc" xml:space="preserve"><value>Conexões de NFC</value></data><data name="category_startup_security" xml:space="preserve"><value>Segurança</value></data><data name="category_account" xml:space="preserve"><value>Contas</value></data><data name="category_QRCode" xml:space="preserve"><value>Código QR</value></data><data name="category_Speech" xml:space="preserve"><value>Comando de voz</value></data><data name="category_Reset" xml:space="preserve"><value>Reset</value></data><data name="startup_screen" xml:space="preserve"><value>Ecrã Inicial</value></data><data name="enable_items" xml:space="preserve"><value>Habilitar/Desabilitar itens</value></data><data name="sort_dashboardLikeServer_title" xml:space="preserve"><value>Ordenar painel</value></data><data name="sort_dashboardLikeServer_on" xml:space="preserve"><value>Ordenar painel como servidor</value></data><data name="sort_dashboardLikeServer_off" xml:space="preserve"><value>Ordenar por nome</value></data><data name="extra_data_title" xml:space="preserve"><value>Dados extras no painel de entrada</value></data><data name="show_extra_data_on" xml:space="preserve"><value>Mostrar dados adicionais no painel de entrada</value></data><data name="show_extra_data_off" xml:space="preserve"><value>Ocultar dados extras no painel de entrada</value></data><data name="always_on_title" xml:space="preserve"><value>Bloqueio de Ecrã</value></data><data name="always_on_on" xml:space="preserve"><value>Suspensão de ecrã desativada</value></data><data name="always_on_off" xml:space="preserve"><value>Suspensão de ecrã ativada</value></data><data name="switch_buttons_title" xml:space="preserve"><value>Interruptor</value></data><data name="switch_buttons_on" xml:space="preserve"><value>Mostrar interruptor com Botão alternado ligar/desligar</value></data><data name="switch_buttons_off" xml:space="preserve"><value>Mostrar interruptores com botões de ligar/desligar</value></data><data name="dashboard_list_title" xml:space="preserve"><value>Grelha do painel de entrada</value></data><data name="show_dashboard_list_on" xml:space="preserve"><value>Mostrar painel de entrada como lista</value></data><data name="show_dashboard_list_off" xml:space="preserve"><value>Mostrar painel de entrada com grelha</value></data><data name="enable_wear_select" xml:space="preserve"><value>Itens personalizados no android Wear</value></data><data name="custom_wear_select" xml:space="preserve"><value>Selecionar Interruptores</value></data><data name="custom_wear_select_desc" xml:space="preserve"><value>Selecione quais interruptores que gostaria de ver no Android Wear</value></data><data name="wear_custom_on" xml:space="preserve"><value>Ativar os itens personalizados no Android Wear</value></data><data name="wear_custom_off" xml:space="preserve"><value>Desativar itens personalizados no Android Wear</value></data><data name="auto_custom_on" xml:space="preserve"><value>Activar notificações Android Auto</value></data><data name="auto_custom_off" xml:space="preserve"><value>Desactivar notificações Android Auto</value></data><data name="geofencing_configure" xml:space="preserve"><value>Configurar localização</value></data><data name="config_theme" xml:space="preserve"><value>Definir aparência</value></data><data name="set_dark_theme" xml:space="preserve"><value>Mudar aparência para escuro</value></data><data name="set_light_theme" xml:space="preserve"><value>Mudar aparência para claro</value></data><data name="set_talk_back_on" xml:space="preserve"><value>Deixe o Domoticz falar consigo</value></data><data name="set_talk_back_off" xml:space="preserve"><value>Desligue Talk back</value></data><data name="settings_imported" xml:space="preserve"><value>Configurações importadas, por favor reinicie Domoticz</value></data><data name="settings_import_failed" xml:space="preserve"><value>Falha ao importar configurações</value></data><data name="settings_exported" xml:space="preserve"><value>Configurações exportadas, por favor reinicie Domoticz</value></data><data name="settings_export_failed" xml:space="preserve"><value>Falha ao exportar configurações</value></data><data name="server_settings" xml:space="preserve"><value>Configurações de conexão do servidor</value></data><data name="server_force_fetch_config" xml:space="preserve"><value>Configuração de servidor de busca</value></data><data name="nfc_settings" xml:space="preserve"><value>Configurar conexões NFC</value></data><data name="speech_settings" xml:space="preserve"><value>Configurar comando de voz</value></data><data name="title_activity_server_settings" xml:space="preserve"><value>Definições do servidor</value></data><data name="multi_server" xml:space="preserve"><value>Multi-servidor</value></data><data name="enable_nfc" xml:space="preserve"><value>Habilitar NFC</value></data><data name="enable_speech" xml:space="preserve"><value>Ativar reconhecimento de voz</value></data><data name="export_settings" xml:space="preserve"><value>Exportar Definições</value></data><data name="reset_settings" xml:space="preserve"><value>Reset todas as configurações da aplicação (AVISO)</value></data><data name="import_settings" xml:space="preserve"><value>Importar Definições</value></data><data name="multi_server_settings" xml:space="preserve"><value>Habilitar o suporte a múltiplos servidores</value></data><data name="nfc_enable_settings" xml:space="preserve"><value>Habilitar conexões NFC</value></data><data name="speech_enable_settings" xml:space="preserve"><value>Ativar reconhecimento de voz</value></data><data name="server" xml:space="preserve"><value>Servidor</value></data><data name="qrcode_settings" xml:space="preserve"><value>Configurar códigos QR</value></data><data name="enable_qrcode" xml:space="preserve"><value>Habilitar os códigos QR</value></data><data name="qrcode_enable_settings" xml:space="preserve"><value>Habilitar a funcionalidade de códigos QR</value></data><data name="security_settings" xml:space="preserve"><value>Configuração de segurança</value></data><data name="enable_security" xml:space="preserve"><value>Ativar a proteção de impressão digital ao iniciar</value></data><data name="disable_security" xml:space="preserve"><value>Desativar a proteção de impressão digital ao iniciar</value></data><data name="setup_fingerprints" xml:space="preserve"><value>Configuração de impressões digitais através de configurações Android</value></data><data name="fingerprint_not_supported" xml:space="preserve"><value>Segurança por impressão digital não é suportada neste dispositivo</value></data><data name="fingerprint_not_setup_in_android" xml:space="preserve"><value>Primeiro configure/conectar uma impressão digital para este dispositivo</value></data><data name="fingerprint_sure" xml:space="preserve"><value>Tem certeza? A failover de senha é a senha da conta do Domoticz.</value></data><data name="category_widgets" xml:space="preserve"><value>Widgets (BETA)</value></data><data name="widget_description" xml:space="preserve"><value>Enable or Disable Widget on this device</value></data><data name="widget_disabled" xml:space="preserve"><value>Widgets are not enabled on this device, please check your settings of Domoticz</value></data><data name="widget_warning" xml:space="preserve"><value>Please use widgets on your own risk!! Widgets are currently in Beta stage and probably contain certain bugs. It can cause large data / battery usage...</value></data><data name="notification_settings_id" xml:space="preserve"><value>ID de mensagens do Google Cloud</value></data><data name="notification_settings_push" xml:space="preserve"><value>Coloque o seu id de registo no Domoticz</value></data><data name="notification_settings_pushed" xml:space="preserve"><value>Seu registo id está salvo em Domoticz</value></data><data name="notification_settings_push_failed" xml:space="preserve"><value>Não foi possivel gravar registo id em Domoticz, por favor, tente novamente mais tarde.</value></data><data name="notification_show_title" xml:space="preserve"><value>Últimas notificações</value></data><data name="notification_show_nothing" xml:space="preserve"><value>Nenhuma notificação encontrada</value></data><data name="notification_show" xml:space="preserve"><value>Mostrar as últimas notificações</value></data><data name="overwrite_notifications_title" xml:space="preserve"><value>Substituir as notificações</value></data><data name="overwrite_notifications" xml:space="preserve"><value>Substituir anteriores notificações neste dispositivo</value></data><data name="enable_notifications_title" xml:space="preserve"><value>Habilitar Notificações</value></data><data name="enable_notifications" xml:space="preserve"><value>Habilitar notificações neste dispositivo</value></data><data name="notification_screen_title" xml:space="preserve"><value>Definições de notificação</value></data><data name="notification_vibrate_title" xml:space="preserve"><value>Vibrar</value></data><data name="notification_vibrate_on" xml:space="preserve"><value>Vibrar quando uma notificação é recebida</value></data><data name="notification_vibrate_off" xml:space="preserve"><value>Não vibrar</value></data><data name="notification_sound_title" xml:space="preserve"><value>Som</value></data><data name="notification_sound_summary" xml:space="preserve"><value>Usar o som de notificação quando chega notificação</value></data><data name="suppress_notifications_select" xml:space="preserve"><value>Selecione as notificações para suprimir</value></data><data name="suppress_notifications" xml:space="preserve"><value>Suprimir notificações específicas neste dispositivo</value></data><data name="suppress_notifications_title" xml:space="preserve"><value>Suprimir as notificações</value></data><data name="alarm_notifications_select" xml:space="preserve"><value>Selecione as notificações para alarme</value></data><data name="alarm_notifications" xml:space="preserve"><value>Soar um alarme para notificações específicas</value></data><data name="clear_notifications" xml:space="preserve"><value>Clean notification logs</value></data><data name="alarm_notifications_title" xml:space="preserve"><value>Notificações de alarme</value></data><data name="alarm" xml:space="preserve"><value>Alarme</value></data><data name="alarmtimer_title" xml:space="preserve"><value>Temporizador de alarme</value></data><data name="alarmtimer" xml:space="preserve"><value>Número de segundos até a hora do alarme</value></data><data name="default_values" xml:space="preserve"><value>Default values</value></data><data name="default_values_min_error" xml:space="preserve"><value>Max value should be higher than Min value</value></data><data name="default_values_max_error" xml:space="preserve"><value>Max value should be higher than Min value</value></data><data name="info_version" xml:space="preserve"><value>Versão</value></data><data name="info_domoticz_version" xml:space="preserve"><value>Versão Domoticz</value></data><data name="info_about" xml:space="preserve"><value>Sobre Domoticz</value></data><data name="info_credits" xml:space="preserve"><value>Créditos</value></data><data name="info_credits_text" xml:space="preserve"><value>Domoticz para o Android é possível devido a várias bibliotecas de código aberto</value></data><data name="debug_switch_title" xml:space="preserve"><value>Depuração</value></data><data name="debug_switch_summary_on" xml:space="preserve"><value>Depuração ativada</value></data><data name="debug_switch_summary_off" xml:space="preserve"><value>Depuração desativada</value></data><data name="error_atLeastOneItemInDrawer" xml:space="preserve"><value>Você precisa de pelo menos um item na lista</value></data><data name="title_activity_update" xml:space="preserve"><value>Servidor de atualização</value></data><data name="error_couldNotCheckForUpdates" xml:space="preserve"><value>"Poderá não verificar se há atualizações: %1$s"</value></data><data name="error_couldNotCheckForConfig" xml:space="preserve"><value>"Poderá não conseguir a configuração do servidor Domoticz: %1$s"</value></data><data name="update_available_enhanced" xml:space="preserve"><value>Atualização de servidor disponível: %1$s para versão: %2$s</value></data><data name="check_for_update_title" xml:space="preserve"><value>Verificar actualizações</value></data><data name="check_for_update" xml:space="preserve"><value>Gostaria de confirmar se há atualizações do sistema Domoticz?</value></data><data name="update_server_warning" xml:space="preserve"><value>Enquanto o servidor está atualizando este aplicativo não funcionará corretamente.</value></data><data name="update_server_downloadNotReady1" xml:space="preserve"><value>Download de atualização não está (totalmente) feito.</value></data><data name="update_server_downloadNotReady2" xml:space="preserve"><value>Volte a tentar mais tarde.</value></data><data name="server_update_available" xml:space="preserve"><value>Atualização do servidor disponível</value></data><data name="update_server" xml:space="preserve"><value>Atualizar servidor</value></data><data name="server_update_revision" xml:space="preserve"><value>Revisão de atualização do servidor</value></data><data name="server_version" xml:space="preserve"><value>Versão do Servidor</value></data><data name="server_update" xml:space="preserve"><value>Atualização de servidor</value></data><data name="please_wait_while_we_check" xml:space="preserve"><value>Por favor aguarde enquanto verificamos se seu servidor está pronto para atualizar</value></data><data name="server_update_not_ready" xml:space="preserve"><value>Download atualização de servidor não realizado</value></data><data name="please_wait_while_server_updated" xml:space="preserve"><value>Por favor aguarde enquanto o servidor está sendo atualizado.</value></data><data name="server_update_done" xml:space="preserve"><value>Atualização de servidor realizado</value></data><data name="update_not_started" xml:space="preserve"><value>Atualização não iniciada</value></data><data name="update_not_started_unknown_error" xml:space="preserve"><value>Atualização não foi iniciada devido a um erro desconhecido</value></data><data name="server_update_not_available" xml:space="preserve"><value>Atualização de servidor não disponível</value></data><data name="click_to_update_server" xml:space="preserve"><value>Clique aqui para atualizar seu servidor</value></data><data name="debug_test_text" xml:space="preserve"><value>Teste de depuração</value></data><data name="restart_required_title" xml:space="preserve"><value>Reinicialização necessária</value></data><data name="restart_now" xml:space="preserve"><value>Reiniciar agora?</value></data><data name="Speech_not_supported" xml:space="preserve"><value>Comando de voz não é suportado neste dispositivo</value></data><data name="Speech_register" xml:space="preserve"><value>Inserir um comando de voz</value></data><data name="Speech_found" xml:space="preserve"><value>Novo comando de voz encontrado</value></data><data name="Speech_edit" xml:space="preserve"><value>Editar o comando de voz</value></data><data name="Speech_name" xml:space="preserve"><value>Atribua um nome próprio ao comando de voz. </value></data><data name="Speech_exists" xml:space="preserve"><value>Comando de voz já registado. </value></data><data name="Speech_saved" xml:space="preserve"><value>Novo comando de voz gravado. </value></data><data name="Speech_desc" xml:space="preserve"><value>Fazer um novo comando de voz. </value></data><data name="Speech" xml:space="preserve"><value>Comando de voz</value></data><data name="Speech_disabled" xml:space="preserve"><value>Comando de voz desligado, por favor ative nas definições.</value></data><data name="noSwitchSelected_explanation_Speech" xml:space="preserve"><value>Para comando de voz ter efeito, deve ser conectado a um interruptor</value></data><data name="title_switches" xml:space="preserve"><value>Interruptores</value></data><data name="txt_notAvailable" xml:space="preserve"><value>N/D</value></data><data name="idx" xml:space="preserve"><value>IDX</value></data><data name="placeholder_value" xml:space="preserve"><value>255</value></data><data name="color_set" xml:space="preserve"><value>Cor definida para</value></data><data name="state_set" xml:space="preserve"><value>Estado definido para</value></data><data name="error_favorite" xml:space="preserve"><value>Não foi possível definir favoritos</value></data><data name="error_logs" xml:space="preserve"><value>Não foi possível encontrar qualquer logs para mostrar</value></data><data name="error_color" xml:space="preserve"><value>Não é possível alterar a cor</value></data><data name="error_state" xml:space="preserve"><value>Não é possivel alterar o estado</value></data><data name="error_timer" xml:space="preserve"><value>Não é possível mostrar os temporizadores</value></data><data name="error_notifications" xml:space="preserve"><value>Pode não mostrar as notificações</value></data><data name="set_level_switch" xml:space="preserve"><value>"Definição de nivel para interruptor: %1$s to %2$d"</value></data><data name="title_temperature" xml:space="preserve"><value>Temperatura</value></data><data name="cancel_override" xml:space="preserve"><value>Cancelar a substituição</value></data><data name="wind" xml:space="preserve"><value>Vento</value></data><data name="error_log" xml:space="preserve"><value>Não foi possível obter dados de log para</value></data><data name="follow_schedule" xml:space="preserve"><value>Siga a agenda</value></data><data name="command" xml:space="preserve"><value>Comando</value></data><data name="type" xml:space="preserve"><value>Tipo</value></data><data name="notapplicable" xml:space="preserve"><value>N/D</value></data><data name="timer_before_sunset" xml:space="preserve"><value>Antes do pôr do sol</value></data><data name="timer_after_sunset" xml:space="preserve"><value>Após o pôr do sol</value></data><data name="timer_ontime" xml:space="preserve"><value>Na hora</value></data><data name="timer_before_sunrise" xml:space="preserve"><value>Antes do amanhecer</value></data><data name="timer_after_sunrise" xml:space="preserve"><value>Depois do amanhecer</value></data><data name="timer_fixed" xml:space="preserve"><value>Data/hora fixa</value></data><data name="odd_day_numbers" xml:space="preserve"><value>Números de dia unicos</value></data><data name="even_day_numbers" xml:space="preserve"><value>Até dia</value></data><data name="odd_week_numbers" xml:space="preserve"><value>Números de semana único</value></data><data name="even_week_numbers" xml:space="preserve"><value>Até números de semana</value></data><data name="monthly" xml:space="preserve"><value>Mensal</value></data><data name="monthly_weekday" xml:space="preserve"><value>Mensal (Dias da semana)</value></data><data name="yearly" xml:space="preserve"><value>Anual</value></data><data name="yearly_weekday" xml:space="preserve"><value>Anual (Dias da semana)</value></data><data name="timer_every_days" xml:space="preserve"><value>Todos os dias</value></data><data name="timer_working_days" xml:space="preserve"><value>Dias úteis</value></data><data name="timer_weekend" xml:space="preserve"><value>Fim de semana</value></data><data name="timer_other" xml:space="preserve"><value>Outro</value></data><data name="timers" xml:space="preserve"><value>Temporizadores</value></data><data name="title_utilities" xml:space="preserve"><value>Utilitários</value></data><data name="settemperature" xml:space="preserve"><value>Definir</value></data><data name="title_vars" xml:space="preserve"><value>Variáveis de usuário</value></data><data name="var_input" xml:space="preserve"><value>Valor inserido não é válido</value></data><data name="var_input_error" xml:space="preserve"><value>Falha ao atualizar a variável de usuário</value></data><data name="title_weather" xml:space="preserve"><value>Meteorologia</value></data><data name="dewPoint" xml:space="preserve"><value>Ponto de orvalho</value></data><data name="temp" xml:space="preserve"><value>Temp</value></data><data name="pressure" xml:space="preserve"><value>Pressão</value></data><data name="chill" xml:space="preserve"><value>Frio</value></data><data name="direction" xml:space="preserve"><value>Direção</value></data><data name="humidity" xml:space="preserve"><value>Hum</value></data><data name="speed" xml:space="preserve"><value>Velocidade</value></data><data name="forecast" xml:space="preserve"><value>Forecast</value></data><data name="rain" xml:space="preserve"><value>Precipitação</value></data><data name="rainrate" xml:space="preserve"><value>Quantidade de chuva</value></data><data name="co2" xml:space="preserve"><value>CO2</value></data><data name="co2min" xml:space="preserve"><value>CO2 Min</value></data><data name="co2max" xml:space="preserve"><value>CO2 Max</value></data><data name="welcome_title_activity_welcome" xml:space="preserve"><value>Bem-vindo</value></data><data name="welcome_info_domoticz" xml:space="preserve"><value>Domoticz é um sistema de automação para casa que permite monitorar e configurar vários dispositivos como: luzes, interruptores, vários sensores/medidores como a temperatura, chuva, vento, UV, Electra, gás, água e muito mais. Alertas/notificações podem ser enviadas para qualquer dispositivo móvel.</value></data><data name="welcome_info_swipe" xml:space="preserve"><value>Deslize para a direita, ou use os botões de navegação na parte inferior para continuar</value></data><data name="welcome_info_settings1" xml:space="preserve"><value>A próxima página é para suas definições de Domoticz.</value></data><data name="welcome_info_settings2" xml:space="preserve"><value> Pode especificar um local e uma configuração de servidor remoto. As configurações locais são para quando está conectado à sua rede wifi em casa. Configurações remotas são usadas quando não estiver conectado à sua rede wifi em casa ou quando conectado a dados celular (2G, 3G, 4G etc).</value></data><data name="welcome_info_checkingConnection" xml:space="preserve"><value>Verificar suas definições de conexão</value></data><data name="welcome_msg_connectionDataIncomplete" xml:space="preserve"><value>Dados de Conexão incompletos ou vazios</value></data><data name="welcome_msg_connectionDataInvalid" xml:space="preserve"><value>URL não deve começar com http</value></data><data name="welcome_msg_correctOnPreviousPage" xml:space="preserve"><value>Por favor, corrija os dados da página anterior</value></data><data name="welcome_msg_serverVersion" xml:space="preserve"><value>Versão Domoticz</value></data><data name="welcome_msg_numberOfDevices" xml:space="preserve"><value>%1$d dispositivos encontrados</value></data><data name="welcome_msg_no_ssid_found" xml:space="preserve"><value>Nenhum wifi SSID encontrado</value></data><data name="welcome_ssid_spinner_prompt" xml:space="preserve"><value>Selecione do SSID da conexão local</value></data><data name="welcome_ssid_button_prompt" xml:space="preserve"><value>Adicionar SSID\'s para casa</value></data><data name="welcome_server_settings_title" xml:space="preserve"><value>Definições do servidor</value></data><data name="welcome_server_startScreen" xml:space="preserve"><value>Ecrã inicial</value></data><data name="welcome_button_next" xml:space="preserve"><value>seguinte</value></data><data name="welcome_button_previous" xml:space="preserve"><value>anterior</value></data><data name="welcome_button_finish" xml:space="preserve"><value>terminou</value></data><data name="welcome_remote_server_address" xml:space="preserve"><value>Endereço do servidor</value></data><data name="welcome_remote_server_protocol" xml:space="preserve"><value>Protocolo</value></data><data name="welcome_remote_server_port" xml:space="preserve"><value>Porta</value></data><data name="welcome_remote_server_username" xml:space="preserve"><value>Nome de Usuário</value></data><data name="welcome_remote_server_password" xml:space="preserve"><value>Palavra-passe</value></data><data name="welcome_remote_server_directory" xml:space="preserve"><value>Diretório</value></data><data name="remote" xml:space="preserve"><value>Remoto</value></data><data name="local" xml:space="preserve"><value>Local</value></data><data name="servername" xml:space="preserve"><value>Nome do servidor</value></data><data name="welcome_local_server_used_switch_title" xml:space="preserve"><value>Endereço de servidor diferente</value></data><data name="welcome_local_server_used_switch_summary" xml:space="preserve"><value>Use diferentes endereços para conexão local</value></data><data name="welcome_advancedSettings" xml:space="preserve"><value>Configurações avançadas de servidor</value></data><data name="welcome_advancedSettings_summary" xml:space="preserve"><value>Usado apenas para servidores Domoticz não-padrão</value></data><data name="welcome_local_server_ssid" xml:space="preserve"><value>Local wifi SSID</value></data><data name="welcome_local_server_address" xml:space="preserve"><value>Endereço do servidor local</value></data><data name="welcome_local_server_protocol" xml:space="preserve"><value>Protocolo local</value></data><data name="welcome_local_server_port" xml:space="preserve"><value>Porta local</value></data><data name="welcome_local_server_directory" xml:space="preserve"><value>Diretório local (deixar em branco se não usado)</value></data><data name="welcome_local_server_username" xml:space="preserve"><value>Nome de usuário local (deixar em branco se não usado)</value></data><data name="welcome_local_server_password" xml:space="preserve"><value>Palavra-passe local (deixar em branco se não usado)</value></data><data name="pick_device_title" xml:space="preserve"><value>Escolha um dispositivo</value></data><data name="choose_switch" xml:space="preserve"><value>Escolha um dispositivo</value></data><data name="failed_to_get_securitypanel" xml:space="preserve"><value>Painel de segurança não encontrado nos seus interruptores</value></data><data name="failed_to_get_switches" xml:space="preserve"><value>Falha ao obter dispositivos</value></data><data name="failed_toggle_switch" xml:space="preserve"><value>Falha ao despoletar dispositivo</value></data><data name="switch_toggled" xml:space="preserve"><value>"Alterar Dispositivo"</value></data><data name="text_loading" xml:space="preserve"><value>A carregar...</value></data><data name="text_go" xml:space="preserve"><value>IR</value></data><data name="widget_background" xml:space="preserve"><value>Segundo plano</value></data><data name="widget_dark" xml:space="preserve"><value>Escuro</value></data><data name="widget_light" xml:space="preserve"><value>Claro</value></data><data name="widget_transparent_dark" xml:space="preserve"><value>Escuro transparente</value></data><data name="widget_transparent_light" xml:space="preserve"><value>Claro transparente</value></data><data name="title_wizard" xml:space="preserve"><value>Assistente de boas-vindas</value></data><data name="wizard_welcome" xml:space="preserve"><value>Bem-vindo</value></data><data name="wizard_welcome_description" xml:space="preserve"><value>Domoticz é um sistema de automação residencial muito leve que permite monitorar e configurar vários dispositivos.</value></data><data name="wizard_favorites" xml:space="preserve"><value>Favoritos</value></data><data name="wizard_favorites_description" xml:space="preserve"><value>Pode adicionar dispositivos ao painel de entrada guardando como favoritos. Longo clique no item para guarda-lo como favorito!</value></data><data name="wizard_startup" xml:space="preserve"><value>Ecrã Inicial</value></data><data name="wizard_startup_description" xml:space="preserve"><value>Pode definir o ecrã inicial nas definições!</value></data><data name="wizard_notifications" xml:space="preserve"><value>Configurar notificações</value></data><data name="wizard_notifications_description" xml:space="preserve"><value>Agora, pode receber notificações no seu dispositivo Android! Alterar o comportamento das notificações nas definições</value></data><data name="wizard_multiserver" xml:space="preserve"><value>Usando vários servidores</value></data><data name="wizard_multiserver_description" xml:space="preserve"><value>Você pode configurar vários servidores de Domoticz nas configurações.</value></data><data name="wizard_geo" xml:space="preserve"><value>Localização</value></data><data name="wizard_geo_description" xml:space="preserve"><value>Pode definir o ecrã inicial nas definições!</value></data><data name="wizard_wear" xml:space="preserve"><value>Android Wear</value></data><data name="wizard_wear_description" xml:space="preserve"><value>Pode especificar quais interruptores que gostaria controlar no seu Android wear!</value></data><data name="wizard_auto" xml:space="preserve"><value>Android Auto</value></data><data name="wizard_auto_description" xml:space="preserve"><value>Receba as notificações do Domoticz no seu dispositivo Android Auto!</value></data><data name="wizard_graph" xml:space="preserve"><value>Gráficos</value></data><data name="wizard_graph_description" xml:space="preserve"><value>Pode ver o gráfico de histórico de um utilitário, meteorologia ou temperatura!</value></data><data name="wizard_filter" xml:space="preserve"><value>Filtros</value></data><data name="wizard_filter_description" xml:space="preserve"><value>Pode filtrar dispositivos por Estado (ligado/desligado). Verifique o ícone do menu superior direito para filtragem!</value></data><data name="wizard_widgets" xml:space="preserve"><value>Widgets!!</value></data><data name="wizard_widgets_description" xml:space="preserve"><value>Pode colocar alguns widgets no home!</value></data><data name="wizard_menuitem" xml:space="preserve"><value>Desativar o assistente</value></data><data name="wizard_menuitem_description" xml:space="preserve"><value>Agora, pode remover este assistente no menu de navegação!</value></data><data name="wizard_nfc" xml:space="preserve"><value>NFC</value></data><data name="wizard_nfc_description" xml:space="preserve"><value>Poderá alterar estado do interruptor vis NFC!</value></data><data name="wizard_qrcode" xml:space="preserve"><value>Código QR</value></data><data name="wizard_qrcode_description" xml:space="preserve"><value>Alterar interruptor escaneando um código QR (ou código de barras)!</value></data><data name="wizard_speech" xml:space="preserve"><value>Comandos de voz</value></data><data name="wizard_speech_description" xml:space="preserve"><value>Usar Interruptores com sua voz! Configure os comandos de voz através das definições e conectar interruptores.</value></data><data name="wizard_button_nice" xml:space="preserve"><value>Porreiro</value></data><data name="wizard_button_switches" xml:space="preserve"><value>Interruptores</value></data><data name="wizard_button_settings" xml:space="preserve"><value>Definições</value></data><data name="wizard_button_wizard" xml:space="preserve"><value>Remover</value></data><data name="wizard_button_utilities" xml:space="preserve"><value>Utilitários</value></data><data name="wizard_button_done" xml:space="preserve"><value>Concluído</value></data></root>
+<?xml version="1.0" encoding="utf-8"?>  <root> <resheader name="resmimetype">		<value>text/microsoft-resx</value>	</resheader>	<resheader name="version">		<value>2.0</value>	</resheader>	<resheader name="reader">		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>	<resheader name="writer">		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>
+<data name="premium_category" xml:space="preserve"><value>Compre a versão premium!</value></data>
+<data name="premium_title" xml:space="preserve"><value>Obter a versão premium!</value></data>
+<data name="premium_feature" xml:space="preserve"><value>é uma característica premium, por favor, compre a versão paga para apoiar os desenvolvedores!</value></data>
+<data name="drawer_open" xml:space="preserve"><value>Abra o painel de navegação</value></data>
+<data name="drawer_close" xml:space="preserve"><value>Feche o painel de navegação</value></data>
+<data name="msg_please_wait" xml:space="preserve"><value>Aguarde, por favor&#8230;</value></data>
+<data name="changelog" xml:space="preserve"><value>Histórico de alterações</value></data>
+<data name="button_state_on" xml:space="preserve"><value>Ligar</value></data>
+<data name="button_state_off" xml:space="preserve"><value>Desligar</value></data>
+<data name="button_state_closed" xml:space="preserve"><value>Fechado</value></data>
+<data name="button_state_open" xml:space="preserve"><value>Aberto</value></data>
+<data name="button_state_lock" xml:space="preserve"><value>Bloqueado</value></data>
+<data name="button_state_unlock" xml:space="preserve"><value>Desbloqueado</value></data>
+<data name="button_status_log" xml:space="preserve"><value>Log</value></data>
+<data name="button_status_day" xml:space="preserve"><value>Dia</value></data>
+<data name="button_status_week" xml:space="preserve"><value>Semana</value></data>
+<data name="button_status_month" xml:space="preserve"><value>Mês</value></data>
+<data name="button_status_year" xml:space="preserve"><value>Ano</value></data>
+<data name="button_status_timer" xml:space="preserve"><value>Temporizador</value></data>
+<data name="button_status_notifications" xml:space="preserve"><value>Notificações</value></data>
+<data name="button_color" xml:space="preserve"><value>Cor</value></data>
+<data name="button_arm" xml:space="preserve"><value>Armar</value></data>
+<data name="button_disarm" xml:space="preserve"><value>Desarmar</value></data>
+<data name="button_state_full_light" xml:space="preserve"><value>Full light</value></data>
+<data name="button_state_night" xml:space="preserve"><value>Night light</value></data>
+<data name="sunrise" xml:space="preserve"><value>Amanhecer</value></data>
+<data name="sunset" xml:space="preserve"><value>Pôr do sol</value></data>
+<data name="now" xml:space="preserve"><value>Agora</value></data>
+<data name="astrTwilightStart" xml:space="preserve"><value>Início do crepúsculo astronômico</value></data>
+<data name="astrTwilightEnd" xml:space="preserve"><value>Fim do crepúsculo astronômico</value></data>
+<data name="civTwilightStart" xml:space="preserve"><value>Início do crepúsculo civil</value></data>
+<data name="civTwilightEnd" xml:space="preserve"><value>Fim do crepúsculo civil</value></data>
+<data name="nautTwilightStart" xml:space="preserve"><value>Início do crepúsculo náutico</value></data>
+<data name="nautTwilightEnd" xml:space="preserve"><value>Fim do Crepúsculo Náutico</value></data>
+<data name="last_update" xml:space="preserve"><value>Visto pela última vez</value></data>
+<data name="signal_level" xml:space="preserve"><value>Nível de sinal</value></data>
+<data name="battery_level" xml:space="preserve"><value>Nível de bateria</value></data>
+<data name="data" xml:space="preserve"><value>Dados</value></data>
+<data name="hardware" xml:space="preserve"><value>Hardware</value></data>
+<data name="temperature" xml:space="preserve"><value>Temperatura</value></data>
+<data name="status" xml:space="preserve"><value>Estado</value></data>
+<data name="switch_rgb_wwcolor" xml:space="preserve"><value>Cor RGB ou branco quente</value></data>
+<data name="set_point" xml:space="preserve"><value>Ponto de ajuste</value></data>
+<data name="set_point_min" xml:space="preserve"><value>Temperatura minima de ajuste</value></data>
+<data name="set_point_min_description" xml:space="preserve"><value>Temperatura minima que pode ser dfinida em seu termostato</value></data>
+<data name="set_point_max" xml:space="preserve"><value>Temperatura Maxima de ajuste</value></data>
+<data name="set_point_max_description" xml:space="preserve"><value>Temperatura maxima que pode ser dfinida em seu termostato</value></data>
+<data name="action_success" xml:space="preserve"><value>Acção bem sucedida</value></data>
+<data name="action_failed" xml:space="preserve"><value>Ação falhada</value></data>
+<data name="action_unknown" xml:space="preserve"><value>Resultado da ação desconhecido</value></data>
+<data name="choose_status" xml:space="preserve"><value>Escolher estado</value></data>
+<data name="normal" xml:space="preserve"><value>Normal</value></data>
+<data name="economy" xml:space="preserve"><value>Economia</value></data>
+<data name="away" xml:space="preserve"><value>Ausente</value></data>
+<data name="day_off" xml:space="preserve"><value>Dia de folga</value></data>
+<data name="custom" xml:space="preserve"><value>Personalizar</value></data>
+<data name="heating_off" xml:space="preserve"><value>Aquecimento desligado</value></data>
+<data name="selector_value" xml:space="preserve"><value>Valores do seletor</value></data>
+<data name="debug_textview_title" xml:space="preserve"><value>Informação de depuração</value></data>
+<data name="msg_copiedToClipboard" xml:space="preserve"><value>Texto copiado para a área de transferência</value></data>
+<data name="favorite" xml:space="preserve"><value>Favorito</value></data>
+<data name="yes" xml:space="preserve"><value>Sim</value></data>
+<data name="no" xml:space="preserve"><value>Não</value></data>
+<data name="are_you_sure" xml:space="preserve"><value>Tem certeza?</value></data>
+<data name="are_you_sure_clear_settings" xml:space="preserve"><value>Tem certeza?? Isto também limpa todas as configurações de widget homescreen, então você deve re-adicioná-los mais tarde..</value></data>
+<data name="add" xml:space="preserve"><value>Adicionar</value></data>
+<data name="cancel" xml:space="preserve"><value>Cancelar</value></data>
+<data name="ok" xml:space="preserve"><value>Aceitar</value></data>
+<data name="request_again" xml:space="preserve"><value>Solicitar novamente</value></data>
+<data name="upgrade" xml:space="preserve"><value>ATUALIZAÇÃO</value></data>
+<data name="something_went_wrong" xml:space="preserve"><value>Ocorreu algo de errado</value></data>
+<data name="no_network_available" xml:space="preserve"><value>Erro: Nenhuma rede conexão disponível</value></data>
+<data name="oops" xml:space="preserve"><value>UPSS!</value></data>
+<data name="to" xml:space="preserve"><value>"para"</value></data>
+<data name="retry" xml:space="preserve"><value>Re-entrar</value></data>
+<data name="undo" xml:space="preserve"><value>Desfazer</value></data>
+<data name="something_deleted" xml:space="preserve"><value>%1$s excluído</value></data>
+<data name="switch_on" xml:space="preserve"><value>Ligando o interruptor</value></data>
+<data name="switch_off" xml:space="preserve"><value>Desligando o interruptor</value></data>
+<data name="switch_night" xml:space="preserve"><value>Turning switch to night light</value></data>
+<data name="switch_full" xml:space="preserve"><value>Turning switch to full light</value></data>
+<data name="blind_up" xml:space="preserve"><value>Abrindo persiana</value></data>
+<data name="blind_down" xml:space="preserve"><value>Fechando persiana</value></data>
+<data name="blind_stop" xml:space="preserve"><value>Parar persiana</value></data>
+<data name="filter_on" xml:space="preserve"><value>Filtro ligado</value></data>
+<data name="filterOn_on" xml:space="preserve"><value>Ligados</value></data>
+<data name="filterOn_off" xml:space="preserve"><value>Desligados</value></data>
+<data name="filterOn_static" xml:space="preserve"><value>Dispositivos estáticos</value></data>
+<data name="filterOn_all" xml:space="preserve"><value>Todos os dispositivos</value></data>
+<data name="filter" xml:space="preserve"><value>Filtro</value></data>
+<data name="filter_devices" xml:space="preserve"><value>Filtro de dispositivos</value></data>
+<data name="filter_graph_empty" xml:space="preserve"><value>Por favor, especifique um filtro</value></data>
+<data name="choose_color" xml:space="preserve"><value>Escolher a cor</value></data>
+<data name="no_data_on_domoticz" xml:space="preserve"><value>Não há dados no servidor Domoticz</value></data>
+<data name="row_icon_description" xml:space="preserve"><value>linha do icon</value></data>
+<data name="error_image_description" xml:space="preserve"><value>Imagem de erro</value></data>
+<data name="device_image_description" xml:space="preserve"><value>Imagem de dispositivo</value></data>
+<data name="white" xml:space="preserve"><value>Branco</value></data>
+<data name="refresh" xml:space="preserve"><value>Atualizar</value></data>
+<data name="domoticz_logo" xml:space="preserve"><value>Logotipo Domoticz</value></data>
+<data name="this_take_minutes" xml:space="preserve"><value>Isto pode levar vários minutos.</value></data>
+<data name="continue_question" xml:space="preserve"><value>Continuar?</value></data>
+<data name="cant_remove_default_server" xml:space="preserve"><value>Não é possível remover o servidor padrão</value></data>
+<data name="restart_required_msg" xml:space="preserve"><value>Configurações da linguagem alteradas apenas após reinicio da aplicação</value></data>
+<data name="filter_all" xml:space="preserve"><value>Todos</value></data>
+<data name="filter_normal" xml:space="preserve"><value>Normal</value></data>
+<data name="filter_status" xml:space="preserve"><value>Estado</value></data>
+<data name="filter_error" xml:space="preserve"><value>Erro</value></data>
+<data name="use_demo_setup" xml:space="preserve"><value>Utilizar dados de demonstração</value></data>
+<data name="auto_refresh_time" xml:space="preserve"><value>Atualizar temporizador</value></data>
+<data name="setautorefreshtime" xml:space="preserve"><value>Defina um temporizador específico em segundos para a atualização automática.</value></data>
+<data name="action_switch_server" xml:space="preserve"><value>Mudar servidor</value></data>
+<data name="action_settings" xml:space="preserve"><value>Definições</value></data>
+<data name="action_filter" xml:space="preserve"><value>Filtro</value></data>
+<data name="action_camera_play" xml:space="preserve"><value>Reproduzir</value></data>
+<data name="action_camera_pause" xml:space="preserve"><value>Pausa</value></data>
+<data name="action_qrcode_scan" xml:space="preserve"><value>Ler código QR</value></data>
+<data name="action_bluetooth_show" xml:space="preserve"><value>Mostrar dispositivos emparelhados</value></data>
+<data name="action_speech" xml:space="preserve"><value>Reconhecimento de voz</value></data>
+<data name="send" xml:space="preserve"><value>Enviar</value></data>
+<data name="bluetooth_not_supported" xml:space="preserve"><value>O Bluetooth não é suportado neste dispositivo</value></data>
+<data name="bluetooth_register" xml:space="preserve"><value>Conecta ao dispositivo Bluetooth</value></data>
+<data name="bluetooth_found" xml:space="preserve"><value>Novo dispositivo bluetooth encontrado</value></data>
+<data name="bluetooth_edit" xml:space="preserve"><value>Editar dispositivo Bluetooth</value></data>
+<data name="bluetooth_name" xml:space="preserve"><value>Dê um nome apropriado a este dispositivo bluetooth. </value></data>
+<data name="bluetooth_desc" xml:space="preserve"><value>Verifique a lista de dispositivos bluetooth emparelhados. </value></data>
+<data name="bluetooth_exists" xml:space="preserve"><value>Bluetooth já configurado no Domoticz. </value></data>
+<data name="bluetooth_turned_off" xml:space="preserve"><value>O Bluetooth precisa ser ativado nas configurações do seu dispositivo. </value></data>
+<data name="bluetooth_saved" xml:space="preserve"><value>Uma nova conexão de dispositivo bluetooth foi salva. </value></data>
+<data name="bluetooth" xml:space="preserve"><value>Bluetooth</value></data>
+<data name="bluetooth_disabled" xml:space="preserve"><value>Automação Bluetooth desativada, por favor configure através das configurações.</value></data>
+<data name="noSwitchSelected_explanation_bluetooth" xml:space="preserve"><value>Para um dispositivo bluetooth automatizar algo no Domoticz, um interruptor deve ser conectada ao bluetooth</value></data>
+<data name="title_cameras" xml:space="preserve"><value>Câmaras</value></data>
+<data name="title_dashboard" xml:space="preserve"><value>Painel de entrada</value></data>
+<data name="usage" xml:space="preserve"><value>Consumo</value></data>
+<data name="today" xml:space="preserve"><value>Hoje</value></data>
+<data name="total" xml:space="preserve"><value>Total</value></data>
+<data name="favorite_added" xml:space="preserve"><value>Adicionado ao painel de entrada.</value></data>
+<data name="favorite_removed" xml:space="preserve"><value>Removido do painel de entrada.</value></data>
+<data name="error_authentication" xml:space="preserve"><value>Credenciais inválidas</value></data>
+<data name="error_timeout" xml:space="preserve"><value>Acabou o tempo ou sem conexão</value></data>
+<data name="error_server" xml:space="preserve"><value>Erro do servidor</value></data>
+<data name="error_network" xml:space="preserve"><value>Erro de rede, código %1$d</value></data>
+<data name="error_parse" xml:space="preserve"><value>Erro de análise</value></data>
+<data name="error_notConnected" xml:space="preserve"><value>Erro: não ligada a qualquer rede</value></data>
+<data name="title_events" xml:space="preserve"><value>Eventos</value></data>
+<data name="action_not_supported_yet" xml:space="preserve"><value>Esta ação não é suportada ainda!</value></data>
+<data name="title_add_location" xml:space="preserve"><value>Adicionar localização</value></data>
+<data name="title_edit_location" xml:space="preserve"><value>Editar Local</value></data>
+<data name="longitude" xml:space="preserve"><value>Longitude</value></data>
+<data name="latitude" xml:space="preserve"><value>Latitude</value></data>
+<data name="radius" xml:space="preserve"><value>Raio (medidor)</value></data>
+<data name="connectedSwitch" xml:space="preserve"><value>Interruptor ligado</value></data>
+<data name="unable_to_get_switches" xml:space="preserve"><value>Não é possível obter todos os interruptores, por favor, tente novamente</value></data>
+<data name="delete_short" xml:space="preserve"><value>DEL</value></data>
+<data name="delete" xml:space="preserve"><value>Excluir</value></data>
+<data name="Location_name" xml:space="preserve"><value>Nome da localização</value></data>
+<data name="currentLocation" xml:space="preserve"><value>Localização atual</value></data>
+<data name="manual" xml:space="preserve"><value>Manual</value></data>
+<data name="getLocation" xml:space="preserve"><value>Obter</value></data>
+<data name="locationAddress" xml:space="preserve"><value>Endereço</value></data>
+<data name="unknown" xml:space="preserve"><value>Desconhecido</value></data>
+<data name="not_available" xml:space="preserve"><value>N/D</value></data>
+<data name="no_valid_latLong" xml:space="preserve"><value>Latitude ou longitude inválida</value></data>
+<data name="starting_geofence_service" xml:space="preserve"><value>Iniciar serviço de localização</value></data>
+<data name="could_not_find_location" xml:space="preserve"><value>Não foi possível encontrar localização, tente novamente.</value></data>
+<data name="google_play_services_unavailable" xml:space="preserve"><value>Google  Play indisponível</value></data>
+<data name="location_not_found" xml:space="preserve"><value>Nenhum local encontrado.</value></data>
+<data name="geofence" xml:space="preserve"><value>Localização</value></data>
+<data name="title_geofence" xml:space="preserve"><value>Ativar localização</value></data>
+<data name="description_geofence" xml:space="preserve"><value>Ativar e configurar localização</value></data>
+<data name="title_geofence_notifications" xml:space="preserve"><value>Ativar notificações</value></data>
+<data name="description_geofence_notifications" xml:space="preserve"><value>Ativar notificações para desencadear eventos</value></data>
+<data name="geofence_place" xml:space="preserve"><value>Lugar: %s</value></data>
+<data name="geofence_location_entering" xml:space="preserve"><value>"Entrar em %1$s"</value></data>
+<data name="geofence_location_leaving" xml:space="preserve"><value>Saindo de %1$s</value></data>
+<data name="geofence_location_entering_text" xml:space="preserve"><value>Entrar em um dos locais</value></data>
+<data name="geofence_location_leaving_text" xml:space="preserve"><value>Saindo um dos locais</value></data>
+<data name="geofence_error_recreateLocations" xml:space="preserve"><value>Devido a alterações na delimitação geográfica, por favor, recriar as suas localizações</value></data>
+<data name="noSwitchSelected_title" xml:space="preserve"><value>Nenhum interruptor selecionado</value></data>
+<data name="noSwitchSelected_explanation" xml:space="preserve"><value>Para a localização ter efeito, um interruptor deve ser ligado a uma área demarcada</value></data>
+<data name="noSwitchSelected_connectOneNow" xml:space="preserve"><value>Ligue um agora?</value></data>
+<data name="geofencing_disabled_no_enabled_fences" xml:space="preserve"><value>Localização desabilitada uma vez que não existem áreas habilitadas</value></data>
+<data name="geofence_not_available" xml:space="preserve"><value>Serviço de geolocalização não está disponível agora</value></data>
+<data name="geofence_too_many_geofences" xml:space="preserve"><value>Aplicativo registrado para muitas localidades</value></data>
+<data name="geofence_too_many_pending_intents" xml:space="preserve"><value>Muitos PendingIntents fornecidos</value></data>
+<data name="unknown_geofence_error" xml:space="preserve"><value>Erro desconhecido</value></data>
+<data name="title_logs" xml:space="preserve"><value>Logs</value></data>
+<data name="nfc_not_supported" xml:space="preserve"><value>NFC não é suportado neste dispositivo</value></data>
+<data name="nfc_register" xml:space="preserve"><value>Registar um tag de NFC</value></data>
+<data name="nfc_tag_found" xml:space="preserve"><value>Novo tag de NFC encontrada</value></data>
+<data name="nfc_tag_edit" xml:space="preserve"><value>Editar a Tag NFC</value></data>
+<data name="nfc_tag_name" xml:space="preserve"><value>Dê a este NFC um nome. </value></data>
+<data name="nfc_exists" xml:space="preserve"><value>Tag de NFC já registado. </value></data>
+<data name="nfc_saved" xml:space="preserve"><value>Gravado um novo tag de NFC. </value></data>
+<data name="nfc" xml:space="preserve"><value>NFC</value></data>
+<data name="noSwitchSelected_explanation_nfc" xml:space="preserve"><value>Para NFC ter efeito, um interruptor deve ser vinculado a um Tag de NFC</value></data>
+<data name="priority" xml:space="preserve"><value>Prioridade</value></data>
+<data name="emergency" xml:space="preserve"><value>Emergência</value></data>
+<data name="high" xml:space="preserve"><value>Alta</value></data>
+<data name="low" xml:space="preserve"><value>Baixa</value></data>
+<data name="verylow" xml:space="preserve"><value>Muito baixa</value></data>
+<data name="allsystems" xml:space="preserve"><value>Todos os sistemas</value></data>
+<data name="systems" xml:space="preserve"><value>Sistemas</value></data>
+<data name="send_notification" xml:space="preserve"><value>Enviar notificação</value></data>
+<data name="notification_subject" xml:space="preserve"><value>Assunto</value></data>
+<data name="notification_message" xml:space="preserve"><value>Mensagem</value></data>
+<data name="notification_error_system" xml:space="preserve"><value>Por favor, escolha um sistema para enviar a notificação para</value></data>
+<data name="notification_error_message" xml:space="preserve"><value>Por favor, preencha uma mensagem</value></data>
+<data name="notification_error_subject" xml:space="preserve"><value>Por favor, preencha um assunto</value></data>
+<data name="notification_error_send" xml:space="preserve"><value>Não foi possível enviar a notificação para Domoticz</value></data>
+<data name="notification_send" xml:space="preserve"><value>Notificação enviada para Domoticz</value></data>
+<data name="permission_title" xml:space="preserve"><value>Permissões negadas</value></data>
+<data name="permission_prefs_title" xml:space="preserve"><value>Permissões</value></data>
+<data name="permission_config" xml:space="preserve"><value>Configurar as permissões para esta aplicação</value></data>
+<data name="permission_desc_storage" xml:space="preserve"><value>Essas permissões de armazenamento são necessários para salvar o arquivo de cache, configurações e fotografias a partir da câmera.</value></data>
+<data name="permission_desc_location" xml:space="preserve"><value>Essas permissões de localização são necessários para delimitação geográfica e para obter o Wifi SSID próximo de si!</value></data>
+<data name="permission_desc_phone" xml:space="preserve"><value>Essas permissões sobre o estado do telefone são necessários para habilitar notificações!</value></data>
+<data name="permission_desc_camera" xml:space="preserve"><value>Essas permissões de câmera são necessários para a digitalização de códigos QR!</value></data>
+<data name="permission_desc_audio" xml:space="preserve"><value>Essas permissões de áudio são necessárias para o reconhecimento de voz!</value></data>
+<data name="permission_desc_finger" xml:space="preserve"><value>Essas permissões de impressão digital são necessários para habilitar a segurança por impressão digital!</value></data>
+<data name="title_plans" xml:space="preserve"><value>Plantas</value></data>
+<data name="qrcode_not_supported" xml:space="preserve"><value>Código QR não é suportado neste dispositivo</value></data>
+<data name="qrcode_register" xml:space="preserve"><value>Registar um código QR </value></data>
+<data name="qrcode_found" xml:space="preserve"><value>Novo código QR encontrado</value></data>
+<data name="qrcode_edit" xml:space="preserve"><value>Editar o código QR</value></data>
+<data name="qrcode_name" xml:space="preserve"><value>Dê a este código QR um nome próprio. </value></data>
+<data name="qrcode_desc" xml:space="preserve"><value>Digitalizar um QR Code. </value></data>
+<data name="qrcode_exists" xml:space="preserve"><value>Código QR já registrado. </value></data>
+<data name="qrcode_saved" xml:space="preserve"><value>Gravado novo código QR. </value></data>
+<data name="qrcode" xml:space="preserve"><value>Código QR</value></data>
+<data name="qrcode_new_found" xml:space="preserve"><value>Novo código QR detetado, por favor, configurar através de configurações.</value></data>
+<data name="qr_code_disabled" xml:space="preserve"><value>Código QR desabilitado, por favor configurar através de definições</value></data>
+<data name="noSwitchSelected_explanation_qrcode" xml:space="preserve"><value>Para  a verificação de código QR ter efeito, um interruptor deve ser vinculado a um código QR</value></data>
+<data name="permission_camera_rationale" xml:space="preserve"><value>Acesso à câmara é necessário para deteção</value></data>
+<data name="low_storage_error" xml:space="preserve"><value>Dependências do codigo QR não podem ser descarregadas devido ao pouco espaço de armazenamento</value></data>
+<data name="no_camera_permission" xml:space="preserve"><value>Este aplicativo não pode executar porque não tem a permissão de câmera.  O aplicativo vai sair agora.</value></data>
+<data name="title_scenes" xml:space="preserve"><value>Cenários</value></data>
+<data name="title_security_panel" xml:space="preserve"><value>Painel de Segurança</value></data>
+<data name="security_pin" xml:space="preserve"><value>Código PIN</value></data>
+<data name="security_disarm" xml:space="preserve"><value>Desarmar</value></data>
+<data name="security_arm_home" xml:space="preserve"><value>Armar Casa</value></data>
+<data name="security_arm_away" xml:space="preserve"><value>Arm Away</value></data>
+<data name="security_wrong_code" xml:space="preserve"><value>Codigo errado!</value></data>
+<data name="security_no_rights" xml:space="preserve"><value>Não tem permissões para efectuar esta acção!</value></data>
+<data name="security_generic_error" xml:space="preserve"><value>Não foi possível alterar o estado de segurança</value></data>
+<data name="security_wrong_password_fingerprint" xml:space="preserve"><value>Palavra passe errada, a Palavra passe da sua conta domoticz é a alternativa á sua impressão digital no caso de algum problema...!</value></data>
+<data name="show_password" xml:space="preserve"><value>Mostrar password</value></data>
+<data name="fingerprint_make_sure" xml:space="preserve"><value>Precisamos ter certeza de que é você</value></data>
+<data name="fingerprint_dialog_description" xml:space="preserve"><value>Toque no dedo no sensor de impressão digital para autorizar a sua conta.</value></data>
+<data name="choose_server" xml:space="preserve"><value>Escolher servidor</value></data>
+<data name="dont_save_new_server" xml:space="preserve"><value>Não gravar novo servidor?</value></data>
+<data name="server_must_be_unique" xml:space="preserve"><value>Nome do servidor deve ser único</value></data>
+<data name="switch_to_server" xml:space="preserve"><value>"Alternar o servidor para %1$s"</value></data>
+<data name="cant_disable_default_server" xml:space="preserve"><value>Não é possível desativar o servidor padrão</value></data>
+<data name="settingsActivity_name" xml:space="preserve"><value>Definições</value></data>
+<data name="cameraActivity_name" xml:space="preserve"><value>Câmera</value></data>
+<data name="category_generic" xml:space="preserve"><value>Genérico</value></data>
+<data name="category_wear" xml:space="preserve"><value>Android Wear</value></data>
+<data name="category_auto" xml:space="preserve"><value>Android Auto</value></data>
+<data name="category_server" xml:space="preserve"><value>Servidor</value></data>
+<data name="category_geofencing" xml:space="preserve"><value>Localização</value></data>
+<data name="category_info" xml:space="preserve"><value>Informação</value></data>
+<data name="category_advanced" xml:space="preserve"><value>Avançadas</value></data>
+<data name="category_language" xml:space="preserve"><value>Linguagem</value></data>
+<data name="category_talk_back" xml:space="preserve"><value>Talk Back</value></data>
+<data name="category_notification" xml:space="preserve"><value>Notificações</value></data>
+<data name="category_debug" xml:space="preserve"><value>Depuração</value></data>
+<data name="category_export" xml:space="preserve"><value>Configurações de importação/exportação</value></data>
+<data name="category_theme" xml:space="preserve"><value>Aparência</value></data>
+<data name="category_clock" xml:space="preserve"><value>Relógio</value></data>
+<data name="category_nfc" xml:space="preserve"><value>Conexões de NFC</value></data>
+<data name="category_startup_security" xml:space="preserve"><value>Segurança</value></data>
+<data name="category_account" xml:space="preserve"><value>Contas</value></data>
+<data name="category_QRCode" xml:space="preserve"><value>Código QR</value></data>
+<data name="category_bluetooth" xml:space="preserve"><value>Bluetooth</value></data>
+<data name="category_Speech" xml:space="preserve"><value>Comando de voz</value></data>
+<data name="category_Reset" xml:space="preserve"><value>Reset</value></data>
+<data name="category_help" xml:space="preserve"><value>Contribuir</value></data>
+<data name="startup_screen" xml:space="preserve"><value>Ecrã Inicial</value></data>
+<data name="enable_items" xml:space="preserve"><value>Habilitar/Desabilitar itens</value></data>
+<data name="sort_server_title" xml:space="preserve"><value>Ordenação</value></data>
+<data name="sort_server_on" xml:space="preserve"><value>Ordena dispositivos como no servidor</value></data>
+<data name="sort_custom_on" xml:space="preserve"><value>Ordenação personalizada, arraste e solte dispositivos para ordená-los</value></data>
+<data name="sort_lock_server_title" xml:space="preserve"><value>Bloqueado</value></data>
+<data name="sort_lock_custom_on" xml:space="preserve"><value>Bloquear a ordenação personalizada atual (desativar arrastar/soltar)</value></data>
+<data name="sort_dashboardLikeServer_off" xml:space="preserve"><value>Ordenar por nome</value></data>
+<data name="extra_data_title" xml:space="preserve"><value>Dados extras no painel de entrada</value></data>
+<data name="show_extra_data_on" xml:space="preserve"><value>Mostrar dados adicionais no painel de entrada</value></data>
+<data name="show_extra_data_off" xml:space="preserve"><value>Ocultar dados extras no painel de entrada</value></data>
+<data name="always_on_title" xml:space="preserve"><value>Bloqueio de Ecrã</value></data>
+<data name="always_on_on" xml:space="preserve"><value>Suspensão de ecrã desativada</value></data>
+<data name="always_on_off" xml:space="preserve"><value>Suspensão de ecrã ativada</value></data>
+<data name="always_auto_refresh" xml:space="preserve"><value>Actualizar automaticamente</value></data>
+<data name="always_auto_refresh_on" xml:space="preserve"><value>Atualize o estado do dispositivo a cada alguns segundos</value></data>
+<data name="always_auto_refresh_off" xml:space="preserve"><value>Não atualize o estado do dispositivo a cada segundos</value></data>
+<data name="switch_buttons_title" xml:space="preserve"><value>Interruptor</value></data>
+<data name="switch_buttons_on" xml:space="preserve"><value>Mostrar interruptor com Botão alternado ligar/desligar</value></data>
+<data name="switch_buttons_off" xml:space="preserve"><value>Mostrar interruptores com botões de ligar/desligar</value></data>
+<data name="dashboard_list_title" xml:space="preserve"><value>Grelha do painel de entrada</value></data>
+<data name="show_dashboard_list_on" xml:space="preserve"><value>Mostrar painel de entrada como lista</value></data>
+<data name="show_dashboard_list_off" xml:space="preserve"><value>Mostrar painel de entrada com grelha</value></data>
+<data name="dashboard_clock" xml:space="preserve"><value>Relógio</value></data>
+<data name="show_dashboard_clock" xml:space="preserve"><value>Mostrar um relógio no cabeçalho</value></data>
+<data name="enable_wear_select" xml:space="preserve"><value>Itens personalizados no android Wear</value></data>
+<data name="custom_wear_select" xml:space="preserve"><value>Selecionar Interruptores</value></data>
+<data name="custom_wear_select_desc" xml:space="preserve"><value>Selecione quais interruptores que gostaria de ver no Android Wear</value></data>
+<data name="wear_custom_on" xml:space="preserve"><value>Ativar os itens personalizados no Android Wear</value></data>
+<data name="wear_custom_off" xml:space="preserve"><value>Desativar itens personalizados no Android Wear</value></data>
+<data name="auto_custom_on" xml:space="preserve"><value>Activar notificações Android Auto</value></data>
+<data name="auto_custom_off" xml:space="preserve"><value>Desactivar notificações Android Auto</value></data>
+<data name="geofencing_configure" xml:space="preserve"><value>Configurar localização</value></data>
+<data name="config_theme" xml:space="preserve"><value>Definir aparência</value></data>
+<data name="set_dark_theme" xml:space="preserve"><value>Mudar aparência para escuro</value></data>
+<data name="set_light_theme" xml:space="preserve"><value>Mudar aparência para claro</value></data>
+<data name="set_talk_back_on" xml:space="preserve"><value>Deixe o Domoticz falar consigo</value></data>
+<data name="set_talk_back_off" xml:space="preserve"><value>Desligue Talk back</value></data>
+<data name="settings_imported" xml:space="preserve"><value>Configurações importadas, por favor reinicie Domoticz</value></data>
+<data name="settings_import_failed" xml:space="preserve"><value>Falha ao importar configurações</value></data>
+<data name="settings_exported" xml:space="preserve"><value>Configurações exportadas, por favor reinicie Domoticz</value></data>
+<data name="settings_export_failed" xml:space="preserve"><value>Falha ao exportar configurações</value></data>
+<data name="server_settings" xml:space="preserve"><value>Configurações de conexão do servidor</value></data>
+<data name="server_force_fetch_config" xml:space="preserve"><value>Configuração de servidor de busca</value></data>
+<data name="nfc_settings" xml:space="preserve"><value>Configurar conexões NFC</value></data>
+<data name="speech_settings" xml:space="preserve"><value>Configurar comando de voz</value></data>
+<data name="title_activity_server_settings" xml:space="preserve"><value>Definições do servidor</value></data>
+<data name="multi_server" xml:space="preserve"><value>Multi-servidor</value></data>
+<data name="enable_nfc" xml:space="preserve"><value>Habilitar NFC</value></data>
+<data name="enable_speech" xml:space="preserve"><value>Ativar reconhecimento de voz</value></data>
+<data name="export_settings" xml:space="preserve"><value>Exportar Definições</value></data>
+<data name="reset_settings" xml:space="preserve"><value>Reset todas as configurações da aplicação (AVISO)</value></data>
+<data name="import_settings" xml:space="preserve"><value>Importar Definições</value></data>
+<data name="multi_server_settings" xml:space="preserve"><value>Habilitar o suporte a múltiplos servidores</value></data>
+<data name="nfc_enable_settings" xml:space="preserve"><value>Habilitar conexões NFC</value></data>
+<data name="speech_enable_settings" xml:space="preserve"><value>Ativar reconhecimento de voz</value></data>
+<data name="server" xml:space="preserve"><value>Servidor</value></data>
+<data name="qrcode_settings" xml:space="preserve"><value>Configurar códigos QR</value></data>
+<data name="enable_qrcode" xml:space="preserve"><value>Habilitar os códigos QR</value></data>
+<data name="qrcode_enable_settings" xml:space="preserve"><value>Habilitar a funcionalidade de códigos QR</value></data>
+<data name="bluetooth_settings" xml:space="preserve"><value>Configurar dispositivos Bluetooth</value></data>
+<data name="enable_bluetooth" xml:space="preserve"><value>Ativar funcionalidade Bluetooth</value></data>
+<data name="translate_description" xml:space="preserve"><value>Você pode ajudar a melhorar as nossas traduções e até adicionar novas línguas a este aplicativo através do nosso projeto Crowdin</value></data>
+<data name="translate_title" xml:space="preserve"><value>Traduções</value></data>
+<data name="security_settings" xml:space="preserve"><value>Configuração de segurança</value></data>
+<data name="enable_security" xml:space="preserve"><value>Ativar a proteção de impressão digital ao iniciar</value></data>
+<data name="disable_security" xml:space="preserve"><value>Desativar a proteção de impressão digital ao iniciar</value></data>
+<data name="setup_fingerprints" xml:space="preserve"><value>Configuração de impressões digitais através de configurações Android</value></data>
+<data name="fingerprint_not_supported" xml:space="preserve"><value>Segurança por impressão digital não é suportada neste dispositivo</value></data>
+<data name="fingerprint_not_setup_in_android" xml:space="preserve"><value>Primeiro configure/conectar uma impressão digital para este dispositivo</value></data>
+<data name="fingerprint_sure" xml:space="preserve"><value>Tem certeza? A failover de senha é a senha da conta do Domoticz.</value></data>
+<data name="category_widgets" xml:space="preserve"><value>Widgets (BETA)</value></data>
+<data name="widget_description" xml:space="preserve"><value>Habilitar ou desabilitar o Widget neste dispositivo</value></data>
+<data name="widget_disabled" xml:space="preserve"><value>Widgets não estão habilitados neste dispositivo, verifique as configurações do Domoticz</value></data>
+<data name="widget_warning" xml:space="preserve"><value>Por favor, use widgets por sua conta e risco!!!! Widgets estão atualmente em fase Beta e provavelmente contêm certos erros. Isso pode consumir grandes dados / uso da bateria...</value></data>
+<data name="notification_settings_id" xml:space="preserve"><value>ID de mensagens do Google Cloud</value></data>
+<data name="notification_settings_push" xml:space="preserve"><value>Coloque o seu id de registo no Domoticz</value></data>
+<data name="notification_settings_pushed" xml:space="preserve"><value>Seu registo id está salvo em Domoticz</value></data>
+<data name="notification_settings_push_failed" xml:space="preserve"><value>Não foi possivel gravar registo id em Domoticz, por favor, tente novamente mais tarde.</value></data>
+<data name="notification_show_title" xml:space="preserve"><value>Últimas notificações</value></data>
+<data name="notification_show_nothing" xml:space="preserve"><value>Nenhuma notificação encontrada</value></data>
+<data name="notification_show" xml:space="preserve"><value>Mostrar as últimas notificações</value></data>
+<data name="overwrite_notifications_title" xml:space="preserve"><value>Substituir as notificações</value></data>
+<data name="overwrite_notifications" xml:space="preserve"><value>Substituir anteriores notificações neste dispositivo</value></data>
+<data name="enable_notifications_title" xml:space="preserve"><value>Habilitar Notificações</value></data>
+<data name="enable_notifications" xml:space="preserve"><value>Habilitar notificações neste dispositivo</value></data>
+<data name="notification_screen_title" xml:space="preserve"><value>Definições de notificação</value></data>
+<data name="notification_history" xml:space="preserve"><value>Histórico de notificações</value></data>
+<data name="notification_vibrate_title" xml:space="preserve"><value>Vibrar</value></data>
+<data name="notification_vibrate_on" xml:space="preserve"><value>Vibrar quando uma notificação é recebida</value></data>
+<data name="notification_vibrate_off" xml:space="preserve"><value>Não vibrar</value></data>
+<data name="notification_sound_title" xml:space="preserve"><value>Som</value></data>
+<data name="notification_sound_summary" xml:space="preserve"><value>Usar o som de notificação quando chega notificação</value></data>
+<data name="suppress_notifications_select" xml:space="preserve"><value>Selecione as notificações para suprimir</value></data>
+<data name="suppress_notifications" xml:space="preserve"><value>Suprimir notificações específicas neste dispositivo</value></data>
+<data name="suppress_notifications_title" xml:space="preserve"><value>Suprimir as notificações</value></data>
+<data name="alarm_notifications_select" xml:space="preserve"><value>Selecione as notificações para alarme</value></data>
+<data name="alarm_notifications" xml:space="preserve"><value>Soar um alarme para notificações específicas</value></data>
+<data name="clear_notifications" xml:space="preserve"><value>Logs de notificação limpos</value></data>
+<data name="alarm_notifications_title" xml:space="preserve"><value>Notificações de alarme</value></data>
+<data name="alarm" xml:space="preserve"><value>Alarme</value></data>
+<data name="alarmtimer_title" xml:space="preserve"><value>Temporizador de alarme</value></data>
+<data name="alarmtimer" xml:space="preserve"><value>Número de segundos até a hora do alarme</value></data>
+<data name="theme_default" xml:space="preserve"><value>Predefinição</value></data>
+<data name="theme_daynight" xml:space="preserve"><value>Dia/Noite</value></data>
+<data name="theme_orange" xml:space="preserve"><value>Laranja</value></data>
+<data name="theme_pink" xml:space="preserve"><value>Rosa</value></data>
+<data name="theme_blue" xml:space="preserve"><value>Azul</value></data>
+<data name="default_values" xml:space="preserve"><value>Valores padrão</value></data>
+<data name="default_values_min_error" xml:space="preserve"><value>O valor maximo deve ser maior que o minimo</value></data>
+<data name="default_values_max_error" xml:space="preserve"><value>Max value should be higher than Min value</value></data>
+<data name="info_version" xml:space="preserve"><value>Versão</value></data>
+<data name="info_domoticz_version" xml:space="preserve"><value>Versão Domoticz</value></data>
+<data name="info_about" xml:space="preserve"><value>Sobre Domoticz</value></data>
+<data name="info_credits" xml:space="preserve"><value>Créditos</value></data>
+<data name="info_credits_text" xml:space="preserve"><value>Domoticz para o Android é possível devido a várias bibliotecas de código aberto</value></data>
+<data name="debug_switch_title" xml:space="preserve"><value>Depuração</value></data>
+<data name="debug_switch_summary_on" xml:space="preserve"><value>Depuração ativada</value></data>
+<data name="debug_switch_summary_off" xml:space="preserve"><value>Depuração desativada</value></data>
+<data name="error_atLeastOneItemInDrawer" xml:space="preserve"><value>Você precisa de pelo menos um item na lista</value></data>
+<data name="title_activity_update" xml:space="preserve"><value>Servidor de atualização</value></data>
+<data name="error_couldNotCheckForVersion" xml:space="preserve"><value>"Não foi possível verificar a versão: %1$s"</value></data>
+<data name="error_couldNotCheckForUpdates" xml:space="preserve"><value>"Poderá não verificar se há atualizações: %1$s"</value></data>
+<data name="error_couldNotCheckForConfig" xml:space="preserve"><value>"Poderá não conseguir a configuração do servidor Domoticz: %1$s"</value></data>
+<data name="update_available_enhanced" xml:space="preserve"><value>Atualização de servidor disponível: %1$s para versão: %2$s</value></data>
+<data name="check_for_update_title" xml:space="preserve"><value>Verificar actualizações</value></data>
+<data name="check_for_update" xml:space="preserve"><value>Gostaria de confirmar se há atualizações do sistema Domoticz?</value></data>
+<data name="update_server_warning" xml:space="preserve"><value>Enquanto o servidor está atualizando este aplicativo não funcionará corretamente.</value></data>
+<data name="update_server_downloadNotReady1" xml:space="preserve"><value>Download de atualização não está (totalmente) feito.</value></data>
+<data name="update_server_downloadNotReady2" xml:space="preserve"><value>Volte a tentar mais tarde.</value></data>
+<data name="server_update_available" xml:space="preserve"><value>Atualização do servidor disponível</value></data>
+<data name="update_server" xml:space="preserve"><value>Atualizar servidor</value></data>
+<data name="server_update_revision" xml:space="preserve"><value>Revisão de atualização do servidor</value></data>
+<data name="server_version" xml:space="preserve"><value>Versão do Servidor</value></data>
+<data name="server_update" xml:space="preserve"><value>Atualização de servidor</value></data>
+<data name="please_wait_while_we_check" xml:space="preserve"><value>Por favor aguarde enquanto verificamos se seu servidor está pronto para atualizar</value></data>
+<data name="server_update_not_ready" xml:space="preserve"><value>Download atualização de servidor não realizado</value></data>
+<data name="please_wait_while_server_updated" xml:space="preserve"><value>Por favor aguarde enquanto o servidor está sendo atualizado.</value></data>
+<data name="server_update_done" xml:space="preserve"><value>Atualização de servidor realizado</value></data>
+<data name="update_not_started" xml:space="preserve"><value>Atualização não iniciada</value></data>
+<data name="update_not_started_unknown_error" xml:space="preserve"><value>Atualização não foi iniciada devido a um erro desconhecido</value></data>
+<data name="server_update_not_available" xml:space="preserve"><value>Atualização de servidor não disponível</value></data>
+<data name="click_to_update_server" xml:space="preserve"><value>Clique aqui para atualizar seu servidor</value></data>
+<data name="debug_test_text" xml:space="preserve"><value>Teste de depuração</value></data>
+<data name="restart_required_title" xml:space="preserve"><value>Reinicialização necessária</value></data>
+<data name="restart_now" xml:space="preserve"><value>Reiniciar agora?</value></data>
+<data name="check_settings" xml:space="preserve"><value>Verifique suas configurações</value></data>
+<data name="Speech_not_supported" xml:space="preserve"><value>Comando de voz não é suportado neste dispositivo</value></data>
+<data name="Speech_register" xml:space="preserve"><value>Inserir um comando de voz</value></data>
+<data name="Speech_found" xml:space="preserve"><value>Novo comando de voz encontrado</value></data>
+<data name="Speech_edit" xml:space="preserve"><value>Editar o comando de voz</value></data>
+<data name="Speech_name" xml:space="preserve"><value>Atribua um nome próprio ao comando de voz. </value></data>
+<data name="Speech_exists" xml:space="preserve"><value>Comando de voz já registado. </value></data>
+<data name="Speech_saved" xml:space="preserve"><value>Novo comando de voz gravado. </value></data>
+<data name="Speech_desc" xml:space="preserve"><value>Fazer um novo comando de voz. </value></data>
+<data name="Speech" xml:space="preserve"><value>Comando de voz</value></data>
+<data name="Speech_disabled" xml:space="preserve"><value>Comando de voz desligado, por favor ative nas definições.</value></data>
+<data name="noSwitchSelected_explanation_Speech" xml:space="preserve"><value>Para comando de voz ter efeito, deve ser conectado a um interruptor</value></data>
+<data name="title_switches" xml:space="preserve"><value>Interruptores</value></data>
+<data name="txt_notAvailable" xml:space="preserve"><value>N/D</value></data>
+<data name="idx" xml:space="preserve"><value>IDX</value></data>
+<data name="placeholder_value" xml:space="preserve"><value>255</value></data>
+<data name="color_set" xml:space="preserve"><value>Cor definida para</value></data>
+<data name="state_set" xml:space="preserve"><value>Estado definido para</value></data>
+<data name="error_favorite" xml:space="preserve"><value>Não foi possível definir favoritos</value></data>
+<data name="error_logs" xml:space="preserve"><value>Não foi possível encontrar qualquer logs para mostrar</value></data>
+<data name="error_color" xml:space="preserve"><value>Não é possível alterar a cor</value></data>
+<data name="error_state" xml:space="preserve"><value>Não é possivel alterar o estado</value></data>
+<data name="error_timer" xml:space="preserve"><value>Não é possível mostrar os temporizadores</value></data>
+<data name="error_notifications" xml:space="preserve"><value>Pode não mostrar as notificações</value></data>
+<data name="set_level_switch" xml:space="preserve"><value>"Definição de nivel para interruptor: %1$s to %2$d"</value></data>
+<data name="title_temperature" xml:space="preserve"><value>Temperatura</value></data>
+<data name="cancel_override" xml:space="preserve"><value>Cancelar a substituição</value></data>
+<data name="wind" xml:space="preserve"><value>Vento</value></data>
+<data name="error_log" xml:space="preserve"><value>Não foi possível obter dados de log para</value></data>
+<data name="follow_schedule" xml:space="preserve"><value>Siga a agenda</value></data>
+<data name="command" xml:space="preserve"><value>Comando</value></data>
+<data name="type" xml:space="preserve"><value>Tipo</value></data>
+<data name="notapplicable" xml:space="preserve"><value>N/D</value></data>
+<data name="timer_before_sunset" xml:space="preserve"><value>Antes do pôr do sol</value></data>
+<data name="timer_after_sunset" xml:space="preserve"><value>Após o pôr do sol</value></data>
+<data name="timer_ontime" xml:space="preserve"><value>Na hora</value></data>
+<data name="timer_before_sunrise" xml:space="preserve"><value>Antes do amanhecer</value></data>
+<data name="timer_after_sunrise" xml:space="preserve"><value>Depois do amanhecer</value></data>
+<data name="timer_fixed" xml:space="preserve"><value>Data/hora fixa</value></data>
+<data name="odd_day_numbers" xml:space="preserve"><value>Números de dia unicos</value></data>
+<data name="even_day_numbers" xml:space="preserve"><value>Até dia</value></data>
+<data name="odd_week_numbers" xml:space="preserve"><value>Números de semana único</value></data>
+<data name="even_week_numbers" xml:space="preserve"><value>Até números de semana</value></data>
+<data name="monthly" xml:space="preserve"><value>Mensal</value></data>
+<data name="monthly_weekday" xml:space="preserve"><value>Mensal (Dias da semana)</value></data>
+<data name="yearly" xml:space="preserve"><value>Anual</value></data>
+<data name="yearly_weekday" xml:space="preserve"><value>Anual (Dias da semana)</value></data>
+<data name="before_sun_at_south" xml:space="preserve"><value>Antes do Sol ao Sul</value></data>
+<data name="after_sun_at_south" xml:space="preserve"><value>Depois do Sol ao Sul</value></data>
+<data name="before_civil_twilight_start" xml:space="preserve"><value>Antes do Crepúsculo Civil iniciar</value></data>
+<data name="after_civil_twilight_start" xml:space="preserve"><value>Após início do Crepúsculo Civil</value></data>
+<data name="before_civil_twilight_end" xml:space="preserve"><value>Antes do final do Crepúsculo Civil</value></data>
+<data name="after_civil_twilight_end" xml:space="preserve"><value>After Civil Twilight End</value></data>
+<data name="before_nautical_twilight_start" xml:space="preserve"><value>Before Nautical Twilight Start</value></data>
+<data name="after_nautical_twilight_start" xml:space="preserve"><value>After Nautical Twilight Start</value></data>
+<data name="before_nautical_twilight_end" xml:space="preserve"><value>Before Nautical Twilight End</value></data>
+<data name="after_nautical_twilight_end" xml:space="preserve"><value>After Nautical Twilight End</value></data>
+<data name="before_austronomical_twilight_start" xml:space="preserve"><value>Before Austronomical Twilight Start</value></data>
+<data name="after_austronomical_twilight_start" xml:space="preserve"><value>After Austronomical Twilight Start</value></data>
+<data name="before_austronomical_twilight_end" xml:space="preserve"><value>Before Austronomical Twilight End</value></data>
+<data name="after_austronomical_twilight_end" xml:space="preserve"><value>After Austronomical Twilight End</value></data>
+<data name="timer_every_days" xml:space="preserve"><value>Todos os dias</value></data>
+<data name="timer_working_days" xml:space="preserve"><value>Dias úteis</value></data>
+<data name="timer_weekend" xml:space="preserve"><value>Fim de semana</value></data>
+<data name="timer_other" xml:space="preserve"><value>Outro</value></data>
+<data name="timers" xml:space="preserve"><value>Temporizadores</value></data>
+<data name="first" xml:space="preserve"><value>Primeiro</value></data>
+<data name="second" xml:space="preserve"><value>Segundo</value></data>
+<data name="third" xml:space="preserve"><value>Terceiro</value></data>
+<data name="fourth" xml:space="preserve"><value>Quarto</value></data>
+<data name="last" xml:space="preserve"><value>Último</value></data>
+<data name="title_utilities" xml:space="preserve"><value>Utilitários</value></data>
+<data name="settemperature" xml:space="preserve"><value>Definir</value></data>
+<data name="title_vars" xml:space="preserve"><value>Variáveis de usuário</value></data>
+<data name="var_input" xml:space="preserve"><value>Valor inserido não é válido</value></data>
+<data name="var_input_error" xml:space="preserve"><value>Falha ao atualizar a variável de usuário</value></data>
+<data name="title_weather" xml:space="preserve"><value>Meteorologia</value></data>
+<data name="dewPoint" xml:space="preserve"><value>Ponto de orvalho</value></data>
+<data name="temp" xml:space="preserve"><value>Temp</value></data>
+<data name="pressure" xml:space="preserve"><value>Pressão</value></data>
+<data name="chill" xml:space="preserve"><value>Frio</value></data>
+<data name="direction" xml:space="preserve"><value>Direção</value></data>
+<data name="humidity" xml:space="preserve"><value>Hum</value></data>
+<data name="speed" xml:space="preserve"><value>Velocidade</value></data>
+<data name="forecast" xml:space="preserve"><value>Forecast</value></data>
+<data name="rain" xml:space="preserve"><value>Precipitação</value></data>
+<data name="rainrate" xml:space="preserve"><value>Quantidade de chuva</value></data>
+<data name="co2" xml:space="preserve"><value>CO2</value></data>
+<data name="co2min" xml:space="preserve"><value>CO2 Min</value></data>
+<data name="co2max" xml:space="preserve"><value>CO2 Max</value></data>
+<data name="welcome_title_activity_welcome" xml:space="preserve"><value>Bem-vindo</value></data>
+<data name="welcome_info_domoticz" xml:space="preserve"><value>Domoticz é um sistema de automação para casa que permite monitorar e configurar vários dispositivos como: luzes, interruptores, vários sensores/medidores como a temperatura, chuva, vento, UV, Electra, gás, água e muito mais. Alertas/notificações podem ser enviadas para qualquer dispositivo móvel.</value></data>
+<data name="welcome_info_swipe" xml:space="preserve"><value>Deslize para a direita, ou use os botões de navegação na parte inferior para continuar</value></data>
+<data name="welcome_info_settings1" xml:space="preserve"><value>A próxima página é para suas definições de Domoticz.</value></data>
+<data name="welcome_info_settings2" xml:space="preserve"><value>Pode especificar um local e uma configuração de servidor remoto.
+As configurações locais são para quando está conectado à sua rede wifi em casa.
+Configurações remotas são usadas quando não estiver conectado à sua rede wifi em casa ou quando conectado a dados celular (2G, 3G, 4G etc).</value></data>
+<data name="welcome_info_checkingConnection" xml:space="preserve"><value>Verificar suas definições de conexão</value></data>
+<data name="welcome_msg_connectionDataIncomplete" xml:space="preserve"><value>Dados de Conexão incompletos ou vazios</value></data>
+<data name="welcome_msg_connectionDataInvalid" xml:space="preserve"><value>URL não deve começar com http</value></data>
+<data name="welcome_msg_correctOnPreviousPage" xml:space="preserve"><value>Por favor, corrija os dados da página anterior</value></data>
+<data name="welcome_msg_serverVersion" xml:space="preserve"><value>Versão Domoticz</value></data>
+<data name="welcome_msg_numberOfDevices" xml:space="preserve"><value>%1$d dispositivos encontrados</value></data>
+<data name="welcome_msg_no_ssid_found" xml:space="preserve"><value>Nenhum wifi SSID encontrado</value></data>
+<data name="welcome_ssid_spinner_prompt" xml:space="preserve"><value>Selecione do SSID da conexão local</value></data>
+<data name="welcome_ssid_button_prompt" xml:space="preserve"><value>Adicionar SSID\'s para casa</value></data>
+<data name="welcome_server_settings_title" xml:space="preserve"><value>Definições do servidor</value></data>
+<data name="welcome_server_startScreen" xml:space="preserve"><value>Ecrã inicial</value></data>
+<data name="welcome_button_next" xml:space="preserve"><value>seguinte</value></data>
+<data name="welcome_button_previous" xml:space="preserve"><value>anterior</value></data>
+<data name="welcome_button_finish" xml:space="preserve"><value>terminou</value></data>
+<data name="welcome_remote_server_address" xml:space="preserve"><value>Endereço do servidor</value></data>
+<data name="welcome_remote_server_protocol" xml:space="preserve"><value>Protocolo</value></data>
+<data name="welcome_remote_server_port" xml:space="preserve"><value>Porta</value></data>
+<data name="welcome_remote_server_username" xml:space="preserve"><value>Nome de Usuário</value></data>
+<data name="welcome_remote_server_password" xml:space="preserve"><value>Palavra-passe</value></data>
+<data name="welcome_remote_server_directory" xml:space="preserve"><value>Diretório</value></data>
+<data name="remote" xml:space="preserve"><value>Remoto</value></data>
+<data name="local" xml:space="preserve"><value>Local</value></data>
+<data name="servername" xml:space="preserve"><value>Nome do servidor</value></data>
+<data name="welcome_local_server_used_switch_title" xml:space="preserve"><value>Endereço de servidor diferente</value></data>
+<data name="welcome_local_server_used_switch_summary" xml:space="preserve"><value>Use diferentes endereços para conexão local</value></data>
+<data name="welcome_advancedSettings" xml:space="preserve"><value>Configurações avançadas de servidor</value></data>
+<data name="welcome_advancedSettings_summary" xml:space="preserve"><value>Usado apenas para servidores Domoticz não-padrão</value></data>
+<data name="welcome_local_server_ssid" xml:space="preserve"><value>Local wifi SSID</value></data>
+<data name="welcome_local_server_address" xml:space="preserve"><value>Endereço do servidor local</value></data>
+<data name="welcome_local_server_protocol" xml:space="preserve"><value>Protocolo local</value></data>
+<data name="welcome_local_server_port" xml:space="preserve"><value>Porta local</value></data>
+<data name="welcome_local_server_directory" xml:space="preserve"><value>Diretório local (deixar em branco se não usado)</value></data>
+<data name="welcome_local_server_username" xml:space="preserve"><value>Nome de usuário local (deixar em branco se não usado)</value></data>
+<data name="welcome_local_server_password" xml:space="preserve"><value>Palavra-passe local (deixar em branco se não usado)</value></data>
+<data name="pick_device_title" xml:space="preserve"><value>Escolha um dispositivo</value></data>
+<data name="choose_switch" xml:space="preserve"><value>Escolha um dispositivo</value></data>
+<data name="failed_to_get_securitypanel" xml:space="preserve"><value>Painel de segurança não encontrado nos seus interruptores</value></data>
+<data name="failed_to_get_switches" xml:space="preserve"><value>Falha ao obter dispositivos</value></data>
+<data name="failed_toggle_switch" xml:space="preserve"><value>Falha ao despoletar dispositivo</value></data>
+<data name="switch_toggled" xml:space="preserve"><value>"Alterar Dispositivo"</value></data>
+<data name="text_loading" xml:space="preserve"><value>A carregar...</value></data>
+<data name="text_go" xml:space="preserve"><value>IR</value></data>
+<data name="widget_background" xml:space="preserve"><value>Segundo plano</value></data>
+<data name="widget_dark" xml:space="preserve"><value>Escuro</value></data>
+<data name="widget_light" xml:space="preserve"><value>Claro</value></data>
+<data name="widget_transparent_dark" xml:space="preserve"><value>Escuro transparente</value></data>
+<data name="widget_transparent_light" xml:space="preserve"><value>Claro transparente</value></data>
+<data name="title_wizard" xml:space="preserve"><value>Assistente de boas-vindas</value></data>
+<data name="wizard_welcome" xml:space="preserve"><value>Bem-vindo</value></data>
+<data name="wizard_welcome_description" xml:space="preserve"><value>Domoticz é um sistema de automação residencial muito leve que permite monitorar e configurar vários dispositivos.</value></data>
+<data name="wizard_favorites" xml:space="preserve"><value>Favoritos</value></data>
+<data name="wizard_favorites_description" xml:space="preserve"><value>Pode adicionar dispositivos ao painel de entrada guardando como favoritos. Longo clique no item para guarda-lo como favorito!</value></data>
+<data name="wizard_startup" xml:space="preserve"><value>Ecrã Inicial</value></data>
+<data name="wizard_startup_description" xml:space="preserve"><value>Pode definir o ecrã inicial nas definições!</value></data>
+<data name="wizard_notifications" xml:space="preserve"><value>Configurar notificações</value></data>
+<data name="wizard_notifications_description" xml:space="preserve"><value>Agora, pode receber notificações no seu dispositivo Android! Alterar o comportamento das notificações nas definições</value></data>
+<data name="wizard_multiserver" xml:space="preserve"><value>Usando vários servidores</value></data>
+<data name="wizard_multiserver_description" xml:space="preserve"><value>Você pode configurar vários servidores de Domoticz nas configurações.</value></data>
+<data name="wizard_geo" xml:space="preserve"><value>Localização</value></data>
+<data name="wizard_geo_description" xml:space="preserve"><value>Pode definir o ecrã inicial nas definições!</value></data>
+<data name="wizard_wear" xml:space="preserve"><value>Android Wear</value></data>
+<data name="wizard_wear_description" xml:space="preserve"><value>Pode especificar quais interruptores que gostaria controlar no seu Android wear!</value></data>
+<data name="wizard_auto" xml:space="preserve"><value>Android Auto</value></data>
+<data name="wizard_auto_description" xml:space="preserve"><value>Receba as notificações do Domoticz no seu dispositivo Android Auto!</value></data>
+<data name="wizard_graph" xml:space="preserve"><value>Gráficos</value></data>
+<data name="wizard_graph_description" xml:space="preserve"><value>Pode ver o gráfico de histórico de um utilitário, meteorologia ou temperatura!</value></data>
+<data name="wizard_filter" xml:space="preserve"><value>Filtros</value></data>
+<data name="wizard_filter_description" xml:space="preserve"><value>Pode filtrar dispositivos por Estado (ligado/desligado). Verifique o ícone do menu superior direito para filtragem!</value></data>
+<data name="wizard_widgets" xml:space="preserve"><value>Widgets!!</value></data>
+<data name="wizard_widgets_description" xml:space="preserve"><value>Pode colocar alguns widgets no home!</value></data>
+<data name="wizard_menuitem" xml:space="preserve"><value>Desativar o assistente</value></data>
+<data name="wizard_menuitem_description" xml:space="preserve"><value>Agora, pode remover este assistente no menu de navegação!</value></data>
+<data name="wizard_nfc" xml:space="preserve"><value>NFC</value></data>
+<data name="wizard_nfc_description" xml:space="preserve"><value>Poderá alterar estado do interruptor vis NFC!</value></data>
+<data name="wizard_qrcode" xml:space="preserve"><value>Código QR</value></data>
+<data name="wizard_qrcode_description" xml:space="preserve"><value>Alterar interruptor escaneando um código QR (ou código de barras)!</value></data>
+<data name="wizard_speech" xml:space="preserve"><value>Comandos de voz</value></data>
+<data name="wizard_speech_description" xml:space="preserve"><value>Usar Interruptores com sua voz! Configure os comandos de voz através das definições e conectar interruptores.</value></data>
+<data name="wizard_button_nice" xml:space="preserve"><value>Porreiro</value></data>
+<data name="wizard_button_switches" xml:space="preserve"><value>Interruptores</value></data>
+<data name="wizard_button_settings" xml:space="preserve"><value>Definições</value></data>
+<data name="wizard_button_wizard" xml:space="preserve"><value>Remover</value></data>
+<data name="wizard_button_utilities" xml:space="preserve"><value>Utilitários</value></data>
+<data name="wizard_button_done" xml:space="preserve"><value>Concluído</value></data>
+</root>

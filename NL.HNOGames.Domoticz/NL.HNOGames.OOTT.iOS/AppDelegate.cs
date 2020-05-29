@@ -1,12 +1,11 @@
 ﻿using Foundation;
 using UIKit;
 using System;
-using MTiRate;
-using NL.HNOGames.Domoticz.Helpers;
 using UserNotifications;
-using System.Net;
+using CoreNFC;
 using Plugin.FirebasePushNotification;
-using System.Collections.Generic;
+using NL.HNOGames.Domoticz.Service;
+using Plugin.NFC;
 using NL.HNOGames.Domoticz;
 
 namespace NL.HNOGames.OOTT.iOS
@@ -14,44 +13,111 @@ namespace NL.HNOGames.OOTT.iOS
     [Register("AppDelegate")]
     public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate, IUNUserNotificationCenterDelegate
     {
-        public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+        #region Variables
+
+        /// <summary>
+        /// Object reference to the application that we loaded
+        /// </summary>
+        private App application;
+
+        #endregion
+
+        /// <summary>
+        /// This method is invoked when the application has loaded and is ready to run. In this
+        /// method you should instantiate the window, load the UI into it and then make the window
+        /// visible.
+        /// </summary>
+        /// <param name="uiApplication"></param>
+        /// <param name="launchOptions"></param>
+        /// <returns></returns>
+        /// <remarks>You have 17 seconds to return from this method, or iOS will terminate your application.</remarks>
+        public override bool FinishedLaunching(UIApplication uiApplication, NSDictionary launchOptions)
         {
-            ServicePointManager.ServerCertificateValidationCallback +=
-                (sender, cert, chain, sslPolicyErrors) =>
-                {
-                    System.Diagnostics.Debug.WriteLine(cert.GetSerialNumberString());
-                    System.Diagnostics.Debug.WriteLine(cert.Issuer);
-                    System.Diagnostics.Debug.WriteLine(cert.Subject);
-                    return true;
-                };
 
-            UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, false);
-            UIApplication.SharedApplication.SetStatusBarHidden(false, false);
-
-            UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes()
+#if DEBUG
+            System.AppDomain.CurrentDomain.UnhandledException += (s, e) =>
             {
-                Font = UIFont.FromName("HelveticaNeue-Light", (nfloat)20f),
-                TextColor = UIColor.White
-            });
+                // Set a breakpoint here to catch the unhandled exceptions
+                if (e.ExceptionObject is System.Exception ex)
+                {
+                    System.Console.WriteLine($"UNHANDLEDEXCEPTION: {ex.Message}");
+                    System.Console.WriteLine($"UNHANDLEDEXCEPTION: {ex.StackTrace}");
+                }
+            };
+            System.Threading.Tasks.TaskScheduler.UnobservedTaskException += (s, e) =>
+            {
+                // Set a breakpoint here to catch the unhandled exceptions
+                System.Console.WriteLine($"UNHANDLEDEXCEPTION: {e.Exception.Message}");
+                System.Console.WriteLine($"UNHANDLEDEXCEPTION: {e.Exception.StackTrace}");
+            };
+#endif
+
+            SetStatusBar();
+            System.Net.ServicePointManager.ServerCertificateValidationCallback += (o, certificate, chain, errors) => true;
 
             global::Xamarin.Forms.Forms.Init();
-            global::Xamarin.Forms.FormsMaterial.Init();
 
-            iRate.SharedInstance.DaysUntilPrompt = 10;
-            iRate.SharedInstance.UsesUntilPrompt = 20;
             ZXing.Net.Mobile.Forms.iOS.Platform.Init();
             Plugin.InputKit.Platforms.iOS.Config.Init();
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
-
+            Google.MobileAds.MobileAds.Configure("ca-app-pub-2210179934394995~1038717065");
             SlideOverKit.iOS.SlideOverKit.Init();
             Plugin.InputKit.Platforms.iOS.Config.Init();
             Rg.Plugins.Popup.Popup.Init();
             OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();
             XamEffects.iOS.Effects.Init();
-            FirebasePushNotificationManager.Initialize(options, true);
+            Shiny.iOSShinyHost.Init(new MyShinyStartup());
+            Xamarin.FormsMaps.Init();
 
-            LoadApplication(new App());
-            return base.FinishedLaunching(app, options);
+            FirebasePushNotificationManager.Initialize(launchOptions, true);
+
+            if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
+            {
+                // Ask the user for permission to get notifications on iOS 10.0+
+                UNUserNotificationCenter.Current.RequestAuthorization(
+                    UNAuthorizationOptions.Alert | UNAuthorizationOptions.Badge | UNAuthorizationOptions.Sound,
+                    (approved, error) => { });
+
+                // Watch for notifications while app is active
+                UNUserNotificationCenter.Current.Delegate = new UserNotificationCenterDelegate();
+            }
+            else if (UIDevice.CurrentDevice.CheckSystemVersion(8, 0))
+            {
+                // Ask the user for permission to get notifications on iOS 8.0+
+                var settings = UIUserNotificationSettings.GetSettingsForTypes(
+                    UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound,
+                    new NSSet());
+
+                UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
+            }
+
+            application = new App();
+            LoadApplication(application);
+            return base.FinishedLaunching(uiApplication, launchOptions);
+        }
+
+        /// <summary>
+        /// Perform action for shortcut item
+        /// </summary>
+        public override void PerformActionForShortcutItem(UIApplication application, UIApplicationShortcutItem shortcutItem, UIOperationHandler completionHandler)
+        {
+            var uri = Plugin.AppShortcuts.iOS.ArgumentsHelper.GetUriFromApplicationShortcutItem(shortcutItem);
+            if (uri != null)
+                Xamarin.Forms.Application.Current.SendOnAppLinkRequestReceived(uri);
+        }
+
+        /// <summary>
+        /// Set status bar
+        /// </summary>
+        private static void SetStatusBar()
+        {
+            UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, false);
+            UIApplication.SharedApplication.SetStatusBarHidden(false, false);
+            UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes()
+            {
+                Font = UIFont.FromName("HelveticaNeue-Light", (nfloat)20f),
+                TextColor = UIColor.White
+            });
         }
 
         public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)

@@ -153,6 +153,12 @@
   <data name="button_state_open" xml:space="preserve">
     <value>Open</value>
   </data>
+  <data name="button_state_lock" xml:space="preserve">
+    <value>Lock</value>
+  </data>
+  <data name="button_state_unlock" xml:space="preserve">
+    <value>Unlock</value>
+  </data>
   <data name="button_status_log" xml:space="preserve">
     <value>Log</value>
   </data>
@@ -183,6 +189,39 @@
   <data name="button_disarm" xml:space="preserve">
     <value>Disarm</value>
   </data>
+  <data name="button_state_full_light" xml:space="preserve">
+    <value>Full light</value>
+  </data>
+  <data name="button_state_night" xml:space="preserve">
+    <value>Night light</value>
+  </data>
+  <data name="sunrise" xml:space="preserve">
+    <value>Sunrise</value>
+  </data>
+  <data name="sunset" xml:space="preserve">
+    <value>Sunset</value>
+  </data>
+  <data name="now" xml:space="preserve">
+    <value>Now</value>
+  </data>
+  <data name="astrTwilightStart" xml:space="preserve">
+    <value>Astronomical twilight start</value>
+  </data>
+  <data name="astrTwilightEnd" xml:space="preserve">
+    <value>Astronomical twilight end</value>
+  </data>
+  <data name="civTwilightStart" xml:space="preserve">
+    <value>Civil twilight start</value>
+  </data>
+  <data name="civTwilightEnd" xml:space="preserve">
+    <value>Civil twilight end</value>
+  </data>
+  <data name="nautTwilightStart" xml:space="preserve">
+    <value>Nautical twilight start</value>
+  </data>
+  <data name="nautTwilightEnd" xml:space="preserve">
+    <value>Nautical twilight end</value>
+  </data>
   <data name="last_update" xml:space="preserve">
     <value>Last seen</value>
   </data>
@@ -198,8 +237,14 @@
   <data name="hardware" xml:space="preserve">
     <value>Hardware</value>
   </data>
+  <data name="temperature" xml:space="preserve">
+    <value>Temperature</value>
+  </data>
   <data name="status" xml:space="preserve">
     <value>Status</value>
+  </data>
+  <data name="switch_rgb_wwcolor" xml:space="preserve">
+    <value>RGB color or warm white</value>
   </data>
   <data name="set_point" xml:space="preserve">
     <value>Set point</value>
@@ -312,6 +357,12 @@
   <data name="switch_off" xml:space="preserve">
     <value>Turning switch off</value>
   </data>
+  <data name="switch_night" xml:space="preserve">
+    <value>Turning switch to night light</value>
+  </data>
+  <data name="switch_full" xml:space="preserve">
+    <value>Turning switch to full light</value>
+  </data>
   <data name="blind_up" xml:space="preserve">
     <value>Turning blind up</value>
   </data>
@@ -381,6 +432,27 @@
   <data name="restart_required_msg" xml:space="preserve">
     <value>For the language settings to become to effect an application restart is required</value>
   </data>
+  <data name="filter_all" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="filter_normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="filter_status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="filter_error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="use_demo_setup" xml:space="preserve">
+    <value>Use demo setup</value>
+  </data>
+  <data name="auto_refresh_time" xml:space="preserve">
+    <value>Refresh timer</value>
+  </data>
+  <data name="setautorefreshtime" xml:space="preserve">
+    <value>Set a specific timer for the auto refresh in seconds.</value>
+  </data>
   <data name="action_switch_server" xml:space="preserve">
     <value>Switch Server</value>
   </data>
@@ -395,13 +467,54 @@
   </data>
   <data name="action_camera_pause" xml:space="preserve">
     <value>Pause</value>
-    <comment>Pause </comment>
   </data>
   <data name="action_qrcode_scan" xml:space="preserve">
     <value>Scan QR Code</value>
   </data>
+  <data name="action_bluetooth_show" xml:space="preserve">
+    <value>Show paired devices</value>
+  </data>
   <data name="action_speech" xml:space="preserve">
     <value>Speech Recognition</value>
+  </data>
+  <data name="send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="bluetooth_not_supported" xml:space="preserve">
+    <value>Bluetooth is not supported on this device</value>
+  </data>
+  <data name="bluetooth_register" xml:space="preserve">
+    <value>Connect a bluetooth device</value>
+  </data>
+  <data name="bluetooth_found" xml:space="preserve">
+    <value>New bluetooth device found</value>
+  </data>
+  <data name="bluetooth_edit" xml:space="preserve">
+    <value>Edit bluetooth device</value>
+  </data>
+  <data name="bluetooth_name" xml:space="preserve">
+    <value>Give this bluetooth device a proper name. </value>
+  </data>
+  <data name="bluetooth_desc" xml:space="preserve">
+    <value>Check the list of paired bluetooth devices. </value>
+  </data>
+  <data name="bluetooth_exists" xml:space="preserve">
+    <value>Bluetooth already configured on OOTT. </value>
+  </data>
+  <data name="bluetooth_turned_off" xml:space="preserve">
+    <value>Bluetooth needs to be turned on in your device settings. </value>
+  </data>
+  <data name="bluetooth_saved" xml:space="preserve">
+    <value>Saved a new bluetooth device connection. </value>
+  </data>
+  <data name="bluetooth" xml:space="preserve">
+    <value>Bluetooth</value>
+  </data>
+  <data name="bluetooth_disabled" xml:space="preserve">
+    <value>Bluetooth automation disabled, please setup via settings.</value>
+  </data>
+  <data name="noSwitchSelected_explanation_bluetooth" xml:space="preserve">
+    <value>For a bluetooth device to automate something in OOTT, a switch should be linked to an bluetooth</value>
   </data>
   <data name="title_cameras" xml:space="preserve">
     <value>Cameras</value>
@@ -526,6 +639,12 @@
   <data name="description_geofence_notifications" xml:space="preserve">
     <value>Enable notifications for triggering events</value>
   </data>
+  <data name="title_notification_geofence" xml:space="preserve">
+    <value>Enable Notifications for Geofences</value>
+  </data>
+  <data name="description_notification_geofence" xml:space="preserve">
+    <value>Show notifications when you enter and leave a location.</value>
+  </data>
   <data name="geofence_place" xml:space="preserve">
     <value>Place: %s</value>
   </data>
@@ -595,6 +714,9 @@
   <data name="nfc" xml:space="preserve">
     <value>NFC</value>
   </data>
+  <data name="nfc_howto" xml:space="preserve">
+    <value>Use a NFC tool to write the next URL to the NFC tag: app://domoticz. Then connect the NFC tag to a switch in via this settings screen.</value>
+  </data>
   <data name="noSwitchSelected_explanation_nfc" xml:space="preserve">
     <value>For NFC to have effect, a switch should be linked to an NFC Tag</value>
   </data>
@@ -618,6 +740,30 @@
   </data>
   <data name="systems" xml:space="preserve">
     <value>Systems</value>
+  </data>
+  <data name="send_notification" xml:space="preserve">
+    <value>Send notification</value>
+  </data>
+  <data name="notification_subject" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="notification_message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="notification_error_system" xml:space="preserve">
+    <value>Please choose a system to send the notification to</value>
+  </data>
+  <data name="notification_error_message" xml:space="preserve">
+    <value>Please fill in a message</value>
+  </data>
+  <data name="notification_error_subject" xml:space="preserve">
+    <value>Please fill in a subject</value>
+  </data>
+  <data name="notification_error_send" xml:space="preserve">
+    <value>Could not send the notification to OOTT</value>
+  </data>
+  <data name="notification_send" xml:space="preserve">
+    <value>Notification send to OOTT</value>
   </data>
   <data name="permission_title" xml:space="preserve">
     <value>Permissions Denied</value>
@@ -715,14 +861,26 @@
   <data name="security_wrong_code" xml:space="preserve">
     <value>Wrong code entered!</value>
   </data>
+  <data name="security_no_rights" xml:space="preserve">
+    <value>You do not have the rights for this action!</value>
+  </data>
   <data name="security_generic_error" xml:space="preserve">
     <value>Could not change security status</value>
   </data>
   <data name="security_wrong_password_fingerprint" xml:space="preserve">
-    <value>Wrong password entered, your OOTT account password is the failover for your fingerprint...!</value>
+    <value>Wrong password entered, your domoticz account password is the failover for your fingerprint...!</value>
   </data>
   <data name="show_password" xml:space="preserve">
     <value>Show password</value>
+  </data>
+  <data name="fingerprint_make_sure" xml:space="preserve">
+    <value>We need to make sure its you</value>
+  </data>
+  <data name="fingerprint_dialog_description" xml:space="preserve">
+    <value>Touch your finger on the fingerprint sensor to authorise your account.</value>
+  </data>
+  <data name="security_password_fallback" xml:space="preserve">
+    <value>Fallback</value>
   </data>
   <data name="choose_server" xml:space="preserve">
     <value>Choose server</value>
@@ -790,6 +948,9 @@
   <data name="category_theme" xml:space="preserve">
     <value>Theme</value>
   </data>
+  <data name="category_clock" xml:space="preserve">
+    <value>Clock</value>
+  </data>
   <data name="category_nfc" xml:space="preserve">
     <value>NFC Connections</value>
   </data>
@@ -802,11 +963,17 @@
   <data name="category_QRCode" xml:space="preserve">
     <value>QR Code</value>
   </data>
+  <data name="category_bluetooth" xml:space="preserve">
+    <value>Bluetooth</value>
+  </data>
   <data name="category_Speech" xml:space="preserve">
     <value>Speech</value>
   </data>
   <data name="category_Reset" xml:space="preserve">
     <value>Reset</value>
+  </data>
+  <data name="category_help" xml:space="preserve">
+    <value>Contribute</value>
   </data>
   <data name="startup_screen" xml:space="preserve">
     <value>Startup screen</value>
@@ -814,11 +981,20 @@
   <data name="enable_items" xml:space="preserve">
     <value>Enable/Disable Items</value>
   </data>
-  <data name="sort_dashboardLikeServer_title" xml:space="preserve">
-    <value>Dashboard sorting</value>
+  <data name="sort_server_title" xml:space="preserve">
+    <value>Sorting</value>
   </data>
-  <data name="sort_dashboardLikeServer_on" xml:space="preserve">
-    <value>Sort dashboard like server</value>
+  <data name="sort_server_on" xml:space="preserve">
+    <value>Sort devices like sorted on the server</value>
+  </data>
+  <data name="sort_custom_on" xml:space="preserve">
+    <value>Custom sorting, drag and drop devices to sort them</value>
+  </data>
+  <data name="sort_lock_server_title" xml:space="preserve">
+    <value>Lock</value>
+  </data>
+  <data name="sort_lock_custom_on" xml:space="preserve">
+    <value>Lock the current custom sorting (disable drag/drop)</value>
   </data>
   <data name="sort_dashboardLikeServer_off" xml:space="preserve">
     <value>Sort dashboard alphabetically</value>
@@ -841,6 +1017,15 @@
   <data name="always_on_off" xml:space="preserve">
     <value>Don\'t lock the screen to always On</value>
   </data>
+  <data name="always_auto_refresh" xml:space="preserve">
+    <value>Auto Refresh</value>
+  </data>
+  <data name="always_auto_refresh_on" xml:space="preserve">
+    <value>Refresh the device state every couple of seconds</value>
+  </data>
+  <data name="always_auto_refresh_off" xml:space="preserve">
+    <value>Don\'t refresh the device state every couple of seconds</value>
+  </data>
   <data name="switch_buttons_title" xml:space="preserve">
     <value>Switches</value>
   </data>
@@ -858,6 +1043,12 @@
   </data>
   <data name="show_dashboard_list_off" xml:space="preserve">
     <value>Show dashboard as grid</value>
+  </data>
+  <data name="dashboard_clock" xml:space="preserve">
+    <value>Clock</value>
+  </data>
+  <data name="show_dashboard_clock" xml:space="preserve">
+    <value>Show a clock on the dashboard</value>
   </data>
   <data name="enable_wear_select" xml:space="preserve">
     <value>Android Wear custom items</value>
@@ -964,6 +1155,18 @@
   <data name="qrcode_enable_settings" xml:space="preserve">
     <value>Enable QR Codes functionality</value>
   </data>
+  <data name="bluetooth_settings" xml:space="preserve">
+    <value>Setup Bluetooth devices</value>
+  </data>
+  <data name="enable_bluetooth" xml:space="preserve">
+    <value>Enable Bluetooth functionality</value>
+  </data>
+  <data name="translate_description" xml:space="preserve">
+    <value>You can help make our translations better, and even add new languages to this app via our Crowdin project</value>
+  </data>
+  <data name="translate_title" xml:space="preserve">
+    <value>Translations</value>
+  </data>
   <data name="security_settings" xml:space="preserve">
     <value>Setup Security</value>
   </data>
@@ -984,6 +1187,18 @@
   </data>
   <data name="fingerprint_sure" xml:space="preserve">
     <value>Are you sure? The failover password is the password of your OOTT account.</value>
+  </data>
+  <data name="category_widgets" xml:space="preserve">
+    <value>Widgets (BETA)</value>
+  </data>
+  <data name="widget_description" xml:space="preserve">
+    <value>Enable or Disable Widget on this device</value>
+  </data>
+  <data name="widget_disabled" xml:space="preserve">
+    <value>Widgets are not enabled on this device, please check your settings of OOTT</value>
+  </data>
+  <data name="widget_warning" xml:space="preserve">
+    <value>Please use widgets on your own risk!! Widgets are currently in Beta stage and probably contain certain bugs. It can cause large data / battery usage...</value>
   </data>
   <data name="notification_settings_id" xml:space="preserve">
     <value>Google Cloud Messaging ID</value>
@@ -1020,6 +1235,12 @@
   </data>
   <data name="notification_screen_title" xml:space="preserve">
     <value>Notification settings</value>
+  </data>
+  <data name="notification_history" xml:space="preserve">
+    <value>Notification history</value>
+  </data>
+  <data name="notification_inbox" xml:space="preserve">
+    <value>Inbox</value>
   </data>
   <data name="notification_vibrate_title" xml:space="preserve">
     <value>Vibrate</value>
@@ -1066,6 +1287,21 @@
   <data name="alarmtimer" xml:space="preserve">
     <value>Number of seconds to time the alarm</value>
   </data>
+  <data name="theme_default" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="theme_daynight" xml:space="preserve">
+    <value>Day/Night</value>
+  </data>
+  <data name="theme_orange" xml:space="preserve">
+    <value>Orange</value>
+  </data>
+  <data name="theme_pink" xml:space="preserve">
+    <value>Pink</value>
+  </data>
+  <data name="theme_blue" xml:space="preserve">
+    <value>Blue</value>
+  </data>
   <data name="default_values" xml:space="preserve">
     <value>Default values</value>
   </data>
@@ -1091,7 +1327,7 @@
     <value>OOTT for Android is made possible with several open source libraries</value>
   </data>
   <data name="info_credits_text_urls" xml:space="preserve">
-    <value>OOTT\nhttp://www.OOTT.com\n\nDomoticz\nhttp://www.domoticz.com\n\nHelloCharts\nhttps://github.com/lecho/hellocharts-android\n\nCircleImageView\nhttps://github.com/hdodenhof/CircleImageView\n\nPicasso\nhttps://github.com/square/picasso\n\nViewPagerIndicator\nhttps://github.com/JakeWharton/ViewPagerIndicator\n\nFloating Label Widgets\nhttps://github.com/marvinlabs/android-floatinglabel-widgets\n\nMaterial Dialogs\nhttps://github.com/afollestad/material-dialogs\n\nLobsterpicker\nhttps://github.com/LarsWerkman/Lobsterpicker\n\nMaterialList\nhttps://github.com/dexafree/MaterialList\n\nMemorizingTrustManager\nhttps://github.com/ge0rg/MemorizingTrustManager\n\nSpinnerLoader\nhttps://github.com/fenjuly/SpinnerLoader\n\nSeekArc\nhttps://github.com/Triggertrap/SeekArc</value>
+    <value>OOTT\nhttp://www.domoticz.com\n\nHelloCharts\nhttps://github.com/lecho/hellocharts-android\n\nCircleImageView\nhttps://github.com/hdodenhof/CircleImageView\n\nPicasso\nhttps://github.com/square/picasso\n\nViewPagerIndicator\nhttps://github.com/JakeWharton/ViewPagerIndicator\n\nFloating Label Widgets\nhttps://github.com/marvinlabs/android-floatinglabel-widgets\n\nMaterial Dialogs\nhttps://github.com/afollestad/material-dialogs\n\nLobsterpicker\nhttps://github.com/LarsWerkman/Lobsterpicker\n\nMaterialList\nhttps://github.com/dexafree/MaterialList\n\nMemorizingTrustManager\nhttps://github.com/ge0rg/MemorizingTrustManager\n\nSpinnerLoader\nhttps://github.com/fenjuly/SpinnerLoader\n\nSeekArc\nhttps://github.com/Triggertrap/SeekArc</value>
   </data>
   <data name="debug_switch_title" xml:space="preserve">
     <value>Debugging</value>
@@ -1107,6 +1343,9 @@
   </data>
   <data name="title_activity_update" xml:space="preserve">
     <value>Update server</value>
+  </data>
+  <data name="error_couldNotCheckForVersion" xml:space="preserve">
+    <value>"Could not check for version: %1$s"</value>
   </data>
   <data name="error_couldNotCheckForUpdates" xml:space="preserve">
     <value>"Could not check for updates: %1$s"</value>
@@ -1179,6 +1418,9 @@
   </data>
   <data name="restart_now" xml:space="preserve">
     <value>Restart now?</value>
+  </data>
+  <data name="check_settings" xml:space="preserve">
+    <value>Check your settings</value>
   </data>
   <data name="Speech_not_supported" xml:space="preserve">
     <value>Speech is not supported on this device</value>
@@ -1318,6 +1560,48 @@
   <data name="yearly_weekday" xml:space="preserve">
     <value>Yearly (Weekday)</value>
   </data>
+  <data name="before_sun_at_south" xml:space="preserve">
+    <value>Before Sun at South</value>
+  </data>
+  <data name="after_sun_at_south" xml:space="preserve">
+    <value>After Sun at South</value>
+  </data>
+  <data name="before_civil_twilight_start" xml:space="preserve">
+    <value>Before Civil Twilight Start</value>
+  </data>
+  <data name="after_civil_twilight_start" xml:space="preserve">
+    <value>After Civil Twilight Start</value>
+  </data>
+  <data name="before_civil_twilight_end" xml:space="preserve">
+    <value>Before Civil Twilight End</value>
+  </data>
+  <data name="after_civil_twilight_end" xml:space="preserve">
+    <value>After Civil Twilight End</value>
+  </data>
+  <data name="before_nautical_twilight_start" xml:space="preserve">
+    <value>Before Nautical Twilight Start</value>
+  </data>
+  <data name="after_nautical_twilight_start" xml:space="preserve">
+    <value>After Nautical Twilight Start</value>
+  </data>
+  <data name="before_nautical_twilight_end" xml:space="preserve">
+    <value>Before Nautical Twilight End</value>
+  </data>
+  <data name="after_nautical_twilight_end" xml:space="preserve">
+    <value>After Nautical Twilight End</value>
+  </data>
+  <data name="before_austronomical_twilight_start" xml:space="preserve">
+    <value>Before Austronomical Twilight Start</value>
+  </data>
+  <data name="after_austronomical_twilight_start" xml:space="preserve">
+    <value>After Austronomical Twilight Start</value>
+  </data>
+  <data name="before_austronomical_twilight_end" xml:space="preserve">
+    <value>Before Austronomical Twilight End</value>
+  </data>
+  <data name="after_austronomical_twilight_end" xml:space="preserve">
+    <value>After Austronomical Twilight End</value>
+  </data>
   <data name="timer_every_days" xml:space="preserve">
     <value>Every day</value>
   </data>
@@ -1332,6 +1616,21 @@
   </data>
   <data name="timers" xml:space="preserve">
     <value>Timers</value>
+  </data>
+  <data name="first" xml:space="preserve">
+    <value>First</value>
+  </data>
+  <data name="second" xml:space="preserve">
+    <value>Second</value>
+  </data>
+  <data name="third" xml:space="preserve">
+    <value>Third</value>
+  </data>
+  <data name="fourth" xml:space="preserve">
+    <value>Fourth</value>
+  </data>
+  <data name="last" xml:space="preserve">
+    <value>Last</value>
   </data>
   <data name="user_switch" xml:space="preserve">
     <value>Switched from User</value>
@@ -1402,11 +1701,26 @@
   <data name="co2max" xml:space="preserve">
     <value>CO2 Max</value>
   </data>
+  <data name="Lux" xml:space="preserve">
+    <value>Lux</value>
+  </data>
+  <data name="Luxmin" xml:space="preserve">
+    <value>Lux Min</value>
+  </data>
+  <data name="Luxmax" xml:space="preserve">
+    <value>Lux Max</value>
+  </data>
+  <data name="LuxAvg" xml:space="preserve">
+    <value>Lux Avg</value>
+  </data>
   <data name="welcome_title_activity_welcome" xml:space="preserve">
     <value>Welcome</value>
   </data>
   <data name="welcome_info_domoticz" xml:space="preserve">
-    <value>OOTT is a Home Automation System that lets you monitor and configure various devices like: Lights, Switches, various sensors/meters like Temperature, Rain, Wind, UV, Electra, Gas, Water and much more. Notifications/Alerts can be sent to any mobile device.</value>
+    <value>OOTT is a Home Automation System that lets you monitor
+and configure various devices like: Lights, Switches, various sensors/meters like
+Temperature, Rain, Wind, UV, Electra, Gas, Water and much more. Notifications/Alerts can
+be sent to any mobile device.</value>
   </data>
   <data name="welcome_info_swipe" xml:space="preserve">
     <value>Swipe to the right or use the navigation buttons at the bottom to continue</value>
@@ -1415,7 +1729,11 @@
     <value>The next page is for your OOTT settings.</value>
   </data>
   <data name="welcome_info_settings2" xml:space="preserve">
-    <value>You can specify a local and a remote server setting. The local settings are for when you are connected to your home wifi network.  Remote settings are used when not connected to your home wifi network or when connected to cellular data (2G, 3G, 4G etc).</value>
+    <value>
+You can specify a local and a remote server setting.
+The local settings are for when you are connected to your home wifi network.
+Remote settings are used when not connected to your home wifi network or when connected
+to cellular data (2G, 3G, 4G etc).</value>
   </data>
   <data name="welcome_info_checkingConnection" xml:space="preserve">
     <value>Verifying your connection settings</value>
@@ -1622,7 +1940,7 @@
     <value>You can filter devices per status (on/off). Check the right upper menu icon for filtering!</value>
   </data>
   <data name="wizard_widgets" xml:space="preserve">
-    <value>Widgets!!</value>
+    <value>Widgets (Beta)</value>
   </data>
   <data name="wizard_widgets_description" xml:space="preserve">
     <value>You can put some widgets on your home screen!</value>
@@ -1638,6 +1956,9 @@
   </data>
   <data name="wizard_nfc_description" xml:space="preserve">
     <value>You are able to toggle switches via NFC!</value>
+  </data>
+  <data name="wizard_bluetooth_description" xml:space="preserve">
+    <value>You are able to toggle switches via Bluetooth connections!</value>
   </data>
   <data name="wizard_qrcode" xml:space="preserve">
     <value>QR Code</value>
@@ -1669,10 +1990,58 @@
   <data name="wizard_button_done" xml:space="preserve">
     <value>Done</value>
   </data>
+  <data name="beacon" xml:space="preserve">
+    <value>iBeacon</value>
+  </data>
+  <data name="beacon_max_error" xml:space="preserve">
+    <value>Only max 20 iBeacons are allowed</value>
+  </data>
   <data name="http_certificate" xml:space="preserve">
-    <value>Please check if your HTTP certificate is still valid</value>
+    <value>Please check your https certificate</value>
+  </data>
+  <data name="noswitchselected_explanation_beacons" xml:space="preserve">
+    <value>Connect the new iBeacon to a switch to make it active</value>
+  </data>
+  <data name="shortcut_nfc" xml:space="preserve">
+    <value>NFC</value>
+  </data>
+  <data name="shortcut_qrcode" xml:space="preserve">
+    <value>QR Code</value>
+  </data>
+  <data name="shortcut_speech" xml:space="preserve">
+    <value>Speech</value>
+  </data>
+  <data name="title_add_beacon" xml:space="preserve">
+    <value>Add a new iBeacon</value>
+  </data>
+  <data name="txt_beacon_UUID_error" xml:space="preserve">
+    <value>Please fill in the UUID from the iBeacon</value>
+  </data>
+  <data name="txt_beacon_UUID_error2" xml:space="preserve">
+    <value>The UUID should be a guid, for example 00000000-0000-0000-0000-000000000000</value>
   </data>
   <data name="app_name" xml:space="preserve">
     <value>OOTT</value>
+  </data>
+  <data name="beacon_desc_notifications" xml:space="preserve">
+    <value>Show a notification when an iBeacon is detected or disappeared</value>
+  </data>
+  <data name="bluetooth_desc_notifications" xml:space="preserve">
+    <value>Show a notification when a bluetooth device is connected or disconnected.</value>
+  </data>
+  <data name="category_beacon" xml:space="preserve">
+    <value>Registed iBeacons</value>
+  </data>
+  <data name="description_beacon" xml:space="preserve">
+    <value>Use iBeacons to toggle switches</value>
+  </data>
+  <data name="txt_beacon_MajorId" xml:space="preserve">
+    <value>Marjor Id (optional)</value>
+  </data>
+  <data name="txt_beacon_MinorId" xml:space="preserve">
+    <value>Minor Id (optional)</value>
+  </data>
+  <data name="txt_beacon_UUID" xml:space="preserve">
+    <value>UUID (for example 3699EFBC-64AD-4CAA-9987-FA6D70C3C425)</value>
   </data>
 </root>

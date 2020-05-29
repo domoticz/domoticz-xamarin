@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NL.HNOGames.Domoticz.Androi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NL.HNOGames.Domoticz.iOS", "NL.HNOGames.Domoticz\NL.HNOGames.Domoticz.iOS\NL.HNOGames.Domoticz.iOS.csproj", "{1406A3F3-481E-45B3-AA2B-70F664F145F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NL.HNOGames.OOTT.iOS", "NL.HNOGames.Domoticz\NL.HNOGames.OOTT.iOS\NL.HNOGames.OOTT.iOS.csproj", "{F7207160-EA66-4B72-9F6A-46FAED160C4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -146,6 +148,30 @@ Global
 		{1406A3F3-481E-45B3-AA2B-70F664F145F8}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{1406A3F3-481E-45B3-AA2B-70F664F145F8}.Release|x64.ActiveCfg = Release|iPhone
 		{1406A3F3-481E-45B3-AA2B-70F664F145F8}.Release|x86.ActiveCfg = Release|iPhone
+		{F7207160-EA66-4B72-9F6A-46FAED160C4F}.Debug|Any CPU.ActiveCfg = Debug|iPhone
+		{F7207160-EA66-4B72-9F6A-46FAED160C4F}.Debug|ARM.ActiveCfg = Debug|iPhone
+		{F7207160-EA66-4B72-9F6A-46FAED160C4F}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{F7207160-EA66-4B72-9F6A-46FAED160C4F}.Debug|iPhone.Build.0 = Debug|iPhone
+		{F7207160-EA66-4B72-9F6A-46FAED160C4F}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{F7207160-EA66-4B72-9F6A-46FAED160C4F}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{F7207160-EA66-4B72-9F6A-46FAED160C4F}.Debug|x64.ActiveCfg = Debug|iPhone
+		{F7207160-EA66-4B72-9F6A-46FAED160C4F}.Debug|x86.ActiveCfg = Debug|iPhone
+		{F7207160-EA66-4B72-9F6A-46FAED160C4F}.OOTT|Any CPU.ActiveCfg = OOTT|iPhone
+		{F7207160-EA66-4B72-9F6A-46FAED160C4F}.OOTT|ARM.ActiveCfg = OOTT|iPhone
+		{F7207160-EA66-4B72-9F6A-46FAED160C4F}.OOTT|iPhone.ActiveCfg = OOTT|iPhone
+		{F7207160-EA66-4B72-9F6A-46FAED160C4F}.OOTT|iPhone.Build.0 = OOTT|iPhone
+		{F7207160-EA66-4B72-9F6A-46FAED160C4F}.OOTT|iPhoneSimulator.ActiveCfg = OOTT|iPhoneSimulator
+		{F7207160-EA66-4B72-9F6A-46FAED160C4F}.OOTT|iPhoneSimulator.Build.0 = OOTT|iPhoneSimulator
+		{F7207160-EA66-4B72-9F6A-46FAED160C4F}.OOTT|x64.ActiveCfg = OOTT|iPhone
+		{F7207160-EA66-4B72-9F6A-46FAED160C4F}.OOTT|x86.ActiveCfg = OOTT|iPhone
+		{F7207160-EA66-4B72-9F6A-46FAED160C4F}.Release|Any CPU.ActiveCfg = Release|iPhone
+		{F7207160-EA66-4B72-9F6A-46FAED160C4F}.Release|ARM.ActiveCfg = Release|iPhone
+		{F7207160-EA66-4B72-9F6A-46FAED160C4F}.Release|iPhone.ActiveCfg = Release|iPhone
+		{F7207160-EA66-4B72-9F6A-46FAED160C4F}.Release|iPhone.Build.0 = Release|iPhone
+		{F7207160-EA66-4B72-9F6A-46FAED160C4F}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{F7207160-EA66-4B72-9F6A-46FAED160C4F}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{F7207160-EA66-4B72-9F6A-46FAED160C4F}.Release|x64.ActiveCfg = Release|iPhone
+		{F7207160-EA66-4B72-9F6A-46FAED160C4F}.Release|x86.ActiveCfg = Release|iPhone
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

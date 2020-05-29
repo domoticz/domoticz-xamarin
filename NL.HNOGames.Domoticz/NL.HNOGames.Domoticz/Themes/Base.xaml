@@ -134,7 +134,7 @@
     <Style x:Key="SettingsDetailType" TargetType="Label">
         <Setter Property="TextColor" Value="{DynamicResource GreyTextColor}" />
         <Setter Property="FontSize" Value="16" />
-        <Setter Property="LineBreakMode" Value="NoWrap" />
+        <Setter Property="LineBreakMode" Value="WordWrap" />
     </Style>
     <Style x:Key="expendIcon" TargetType="custcontrol:TintedCachedImage">
         <Setter Property="WidthRequest" Value="20" />

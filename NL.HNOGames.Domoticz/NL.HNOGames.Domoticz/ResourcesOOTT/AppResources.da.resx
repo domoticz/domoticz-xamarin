@@ -1,1 +1,608 @@
-<?xml version="1.0" encoding="utf-8"?> <root> <resheader name="resmimetype">		<value>text/microsoft-resx</value>	</resheader>	<resheader name="version">		<value>2.0</value>	</resheader>	<resheader name="reader">		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>	<resheader name="writer">		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader><data name="premium_category" xml:space="preserve"><value>Køb premium!</value></data><data name="premium_title" xml:space="preserve"><value>Køb premium udgaven!</value></data><data name="premium_feature" xml:space="preserve"><value>er en premium funktion, venligst køb den betalte version for at støtte udviklerne!</value></data><data name="drawer_open" xml:space="preserve"><value>Åbn navigationsliste</value></data><data name="drawer_close" xml:space="preserve"><value>Luk navigationsliste</value></data><data name="msg_please_wait" xml:space="preserve"><value>Vent venligst&#8230;</value></data><data name="changelog" xml:space="preserve"><value>Changelog</value></data><data name="button_state_on" xml:space="preserve"><value>Tændt</value></data><data name="button_state_off" xml:space="preserve"><value>Slukket</value></data><data name="button_state_closed" xml:space="preserve"><value>Lukket</value></data><data name="button_state_open" xml:space="preserve"><value>Åben</value></data><data name="button_status_log" xml:space="preserve"><value>Log</value></data><data name="button_status_day" xml:space="preserve"><value>Dag</value></data><data name="button_status_week" xml:space="preserve"><value>Uge</value></data><data name="button_status_month" xml:space="preserve"><value>Måned</value></data><data name="button_status_year" xml:space="preserve"><value>År</value></data><data name="button_status_timer" xml:space="preserve"><value>Timer</value></data><data name="button_status_notifications" xml:space="preserve"><value>Notifikationer</value></data><data name="button_color" xml:space="preserve"><value>Farve</value></data><data name="button_arm" xml:space="preserve"><value>Armere</value></data><data name="button_disarm" xml:space="preserve"><value>Disarmere</value></data><data name="last_update" xml:space="preserve"><value>Sidst set</value></data><data name="signal_level" xml:space="preserve"><value>Signal styrke</value></data><data name="battery_level" xml:space="preserve"><value>Batteri niveau</value></data><data name="data" xml:space="preserve"><value>Data</value></data><data name="hardware" xml:space="preserve"><value>Hardware</value></data><data name="temperature" xml:space="preserve"><value>Temperatur</value></data><data name="status" xml:space="preserve"><value>Status</value></data><data name="set_point" xml:space="preserve"><value>Setpunkt</value></data><data name="set_point_min" xml:space="preserve"><value>Set point min value</value></data><data name="set_point_min_description" xml:space="preserve"><value>Min temperature that you can set for your thermostat</value></data><data name="set_point_max" xml:space="preserve"><value>Set point max value</value></data><data name="set_point_max_description" xml:space="preserve"><value>Max temperature that you can set for your thermostat</value></data><data name="action_success" xml:space="preserve"><value>Handling udført</value></data><data name="action_failed" xml:space="preserve"><value>Handling fejlet</value></data><data name="action_unknown" xml:space="preserve"><value>Handlings resultat ukendt</value></data><data name="choose_status" xml:space="preserve"><value>Vælg tilstand</value></data><data name="normal" xml:space="preserve"><value>Normal</value></data><data name="economy" xml:space="preserve"><value>Økonomi</value></data><data name="away" xml:space="preserve"><value>Væk</value></data><data name="day_off" xml:space="preserve"><value>Fridag</value></data><data name="custom" xml:space="preserve"><value>Brugerdefineret</value></data><data name="heating_off" xml:space="preserve"><value>Varme fra</value></data><data name="selector_value" xml:space="preserve"><value>Selector values</value></data><data name="debug_textview_title" xml:space="preserve"><value>Debugging info</value></data><data name="msg_copiedToClipboard" xml:space="preserve"><value>Tekst kopieret til udklipsholder</value></data><data name="favorite" xml:space="preserve"><value>Favorit</value></data><data name="yes" xml:space="preserve"><value>Ja</value></data><data name="no" xml:space="preserve"><value>Nej</value></data><data name="are_you_sure" xml:space="preserve"><value>Er du sikker?</value></data><data name="are_you_sure_clear_settings" xml:space="preserve"><value>Are you sure?? This also clears all homescreen widget settings, so you should re-add them afterwards..</value></data><data name="add" xml:space="preserve"><value>Tilføj</value></data><data name="cancel" xml:space="preserve"><value>Annuller</value></data><data name="ok" xml:space="preserve"><value>Ok</value></data><data name="request_again" xml:space="preserve"><value>Request Again</value></data><data name="upgrade" xml:space="preserve"><value>UPGRADE</value></data><data name="something_went_wrong" xml:space="preserve"><value>Noget gik galt</value></data><data name="no_network_available" xml:space="preserve"><value>Fejl: Ingen netværksforbindelse tilgængelig</value></data><data name="oops" xml:space="preserve"><value>OOPS!</value></data><data name="to" xml:space="preserve"><value>"til"</value></data><data name="retry" xml:space="preserve"><value>Prøv igen</value></data><data name="undo" xml:space="preserve"><value>Fortryd</value></data><data name="something_deleted" xml:space="preserve"><value>%1$s slettet</value></data><data name="switch_on" xml:space="preserve"><value>Tænder switch</value></data><data name="switch_off" xml:space="preserve"><value>Slukker switch</value></data><data name="blind_up" xml:space="preserve"><value>Ruller persienner op</value></data><data name="blind_down" xml:space="preserve"><value>Ruller persienner ned</value></data><data name="blind_stop" xml:space="preserve"><value>Stop persienner</value></data><data name="filter_on" xml:space="preserve"><value>Filter til</value></data><data name="filterOn_on" xml:space="preserve"><value>Status tændt</value></data><data name="filterOn_off" xml:space="preserve"><value>Status slukket</value></data><data name="filterOn_static" xml:space="preserve"><value>Statiske enheder</value></data><data name="filterOn_all" xml:space="preserve"><value>Alle enheder</value></data><data name="filter" xml:space="preserve"><value>Filter</value></data><data name="filter_devices" xml:space="preserve"><value>Filtrer enheder</value></data><data name="filter_graph_empty" xml:space="preserve"><value>Angiv et filter</value></data><data name="choose_color" xml:space="preserve"><value>Vælg farve</value></data><data name="no_data_on_domoticz" xml:space="preserve"><value>Ingen data på OOTT server</value></data><data name="row_icon_description" xml:space="preserve"><value>linje ikon</value></data><data name="error_image_description" xml:space="preserve"><value>Fejl billede</value></data><data name="device_image_description" xml:space="preserve"><value>Enheds billede</value></data><data name="white" xml:space="preserve"><value>Hvid</value></data><data name="refresh" xml:space="preserve"><value>Opdater</value></data><data name="domoticz_logo" xml:space="preserve"><value>OOTT logo</value></data><data name="this_take_minutes" xml:space="preserve"><value>Dette kan tage flere minutter.</value></data><data name="continue_question" xml:space="preserve"><value>Fortsæt?</value></data><data name="cant_remove_default_server" xml:space="preserve"><value>Kan ikke fjerne standardserveren</value></data><data name="restart_required_msg" xml:space="preserve"><value>For at skifte sprog indstillinger skal programmet genstartes</value></data><data name="action_switch_server" xml:space="preserve"><value>Skift server</value></data><data name="action_settings" xml:space="preserve"><value>Indstillinger</value></data><data name="action_filter" xml:space="preserve"><value>Filter</value></data><data name="action_camera_play" xml:space="preserve"><value>Afspil</value></data><data name="action_camera_pause" xml:space="preserve"><value>Pause</value></data><data name="action_qrcode_scan" xml:space="preserve"><value>Scan QR Code</value></data><data name="action_speech" xml:space="preserve"><value>Speech Recognition</value></data><data name="title_cameras" xml:space="preserve"><value>Kameraer</value></data><data name="title_dashboard" xml:space="preserve"><value>Betjeningspanel</value></data><data name="usage" xml:space="preserve"><value>Anvendelse</value></data><data name="today" xml:space="preserve"><value>I dag</value></data><data name="total" xml:space="preserve"><value>Total</value></data><data name="favorite_added" xml:space="preserve"><value>tilføjet til betjeningspanel.</value></data><data name="favorite_removed" xml:space="preserve"><value>fjernet fra betjeningspanel.</value></data><data name="error_authentication" xml:space="preserve"><value>Ugyldige legitimationsoplysninger</value></data><data name="error_timeout" xml:space="preserve"><value>Timeout eller ingen forbindelse</value></data><data name="error_server" xml:space="preserve"><value>Serverfejl</value></data><data name="error_network" xml:space="preserve"><value>Netværksfejl, status kode %1$d</value></data><data name="error_parse" xml:space="preserve"><value>Parsefejl</value></data><data name="error_notConnected" xml:space="preserve"><value>Fejl: ikke forbindelse til nogen netværk</value></data><data name="title_events" xml:space="preserve"><value>Begivenheder</value></data><data name="action_not_supported_yet" xml:space="preserve"><value>Denne handling understøttes ikke endnu!</value></data><data name="title_add_location" xml:space="preserve"><value>Tilføj placering</value></data><data name="title_edit_location" xml:space="preserve"><value>Rediger placering</value></data><data name="longitude" xml:space="preserve"><value>Længdegrad</value></data><data name="latitude" xml:space="preserve"><value>Breddegrad</value></data><data name="radius" xml:space="preserve"><value>Radius (meter)</value></data><data name="connectedSwitch" xml:space="preserve"><value>Tilsluttet switch</value></data><data name="unable_to_get_switches" xml:space="preserve"><value>Kunne ikke få alle switches, prøv igen</value></data><data name="delete_short" xml:space="preserve"><value>DEL</value></data><data name="delete" xml:space="preserve"><value>Slet</value></data><data name="Location_name" xml:space="preserve"><value>Placerings navn</value></data><data name="currentLocation" xml:space="preserve"><value>Nuværrende placering</value></data><data name="manual" xml:space="preserve"><value>Manuelt</value></data><data name="getLocation" xml:space="preserve"><value>GET</value></data><data name="locationAddress" xml:space="preserve"><value>Adresse</value></data><data name="unknown" xml:space="preserve"><value>Ukendt</value></data><data name="not_available" xml:space="preserve"><value>Ikke tilgængelig</value></data><data name="no_valid_latLong" xml:space="preserve"><value>Ikke en gyldig breddegrad eller længdegrad</value></data><data name="starting_geofence_service" xml:space="preserve"><value>Start Geofence servicen</value></data><data name="could_not_find_location" xml:space="preserve"><value>Kunne ikke finde placeringen, prøv igen.</value></data><data name="google_play_services_unavailable" xml:space="preserve"><value>Google Play services utilgængelig.</value></data><data name="location_not_found" xml:space="preserve"><value>Ingen placering fundet.</value></data><data name="geofence" xml:space="preserve"><value>GeoFencing</value></data><data name="title_geofence" xml:space="preserve"><value>Aktivere Geofencing</value></data><data name="description_geofence" xml:space="preserve"><value>Aktiver og konfigurer geofences</value></data><data name="title_geofence_notifications" xml:space="preserve"><value>Aktivere notifikationer</value></data><data name="description_geofence_notifications" xml:space="preserve"><value>Aktiver notifikationer for udløsende begivenheder</value></data><data name="geofence_place" xml:space="preserve"><value>Sted: %s</value></data><data name="geofence_location_entering" xml:space="preserve"><value>"Ind i %1$s"</value></data><data name="geofence_location_leaving" xml:space="preserve"><value>Forlader %1$s</value></data><data name="geofence_location_entering_text" xml:space="preserve"><value>Går ind i en af placeringerne</value></data><data name="geofence_location_leaving_text" xml:space="preserve"><value>Forlader en af placeringerne</value></data><data name="geofence_error_recreateLocations" xml:space="preserve"><value>På grund af ændringer på Geofencing, skal du genskabe dine placeringer</value></data><data name="noSwitchSelected_title" xml:space="preserve"><value>Ingen switch valgt</value></data><data name="noSwitchSelected_explanation" xml:space="preserve"><value>For at GeoFencing skal fungere, skal en switch tilsluttes en GeoFence</value></data><data name="noSwitchSelected_connectOneNow" xml:space="preserve"><value>Tilslut en nu?</value></data><data name="geofencing_disabled_no_enabled_fences" xml:space="preserve"><value>GeoFencing deaktiveret da ingen geofences er aktiveret</value></data><data name="geofence_not_available" xml:space="preserve"><value>Geofence service is not available now</value></data><data name="geofence_too_many_geofences" xml:space="preserve"><value>App registered too many geofences</value></data><data name="geofence_too_many_pending_intents" xml:space="preserve"><value>Too many PendingIntents provided</value></data><data name="unknown_geofence_error" xml:space="preserve"><value>Unknown error</value></data><data name="title_logs" xml:space="preserve"><value>Logfiler</value></data><data name="nfc_not_supported" xml:space="preserve"><value>NFC understøttes ikke på denne enhed</value></data><data name="nfc_register" xml:space="preserve"><value>Registrere et NFC-Tag</value></data><data name="nfc_tag_found" xml:space="preserve"><value>Fundet ny NFC Tag</value></data><data name="nfc_tag_edit" xml:space="preserve"><value>Edit NFC Tag</value></data><data name="nfc_tag_name" xml:space="preserve"><value>Give denne NFC et brugbart navn. </value></data><data name="nfc_exists" xml:space="preserve"><value>NFC Tag allerede registreret. </value></data><data name="nfc_saved" xml:space="preserve"><value>Gem et nyt NFC Tag. </value></data><data name="nfc" xml:space="preserve"><value>NFC</value></data><data name="noSwitchSelected_explanation_nfc" xml:space="preserve"><value>For at NFC kan fungere, bør en switch være knyttet til en NFC-Tag</value></data><data name="priority" xml:space="preserve"><value>Prioritet</value></data><data name="emergency" xml:space="preserve"><value>Nødsituation</value></data><data name="high" xml:space="preserve"><value>Høj</value></data><data name="low" xml:space="preserve"><value>Lav</value></data><data name="verylow" xml:space="preserve"><value>Meget lav</value></data><data name="allsystems" xml:space="preserve"><value>Alle systemer</value></data><data name="systems" xml:space="preserve"><value>Systemer</value></data><data name="permission_title" xml:space="preserve"><value>Permissions Denied</value></data><data name="permission_prefs_title" xml:space="preserve"><value>Permissions</value></data><data name="permission_config" xml:space="preserve"><value>Configure the Permissions for this app</value></data><data name="permission_desc_storage" xml:space="preserve"><value>These storage permissions are needed for saving cache file, settings and save snapshots from the camera.</value></data><data name="permission_desc_location" xml:space="preserve"><value>These location permissions are needed for Geofencing and to get the Wifi SSID\'s around you!</value></data><data name="permission_desc_phone" xml:space="preserve"><value>These phone state permissions are needed for enabling notifications!</value></data><data name="permission_desc_camera" xml:space="preserve"><value>These camera permissions are needed for scanning QR Codes!</value></data><data name="permission_desc_audio" xml:space="preserve"><value>These audio permissions are needed for Voice Recognition!</value></data><data name="permission_desc_finger" xml:space="preserve"><value>These fingerprint permissions are needed for enabling Fingerprint Security!</value></data><data name="title_plans" xml:space="preserve"><value>Planer</value></data><data name="qrcode_not_supported" xml:space="preserve"><value>QR kode understøttes ikke på denne enhed</value></data><data name="qrcode_register" xml:space="preserve"><value>Registrer en QR-kode </value></data><data name="qrcode_found" xml:space="preserve"><value>Nye QR kode fundet</value></data><data name="qrcode_edit" xml:space="preserve"><value>Edit QR Code</value></data><data name="qrcode_name" xml:space="preserve"><value>Give denne QR kode et brugbart navn. </value></data><data name="qrcode_desc" xml:space="preserve"><value>Scan a QR Code. </value></data><data name="qrcode_exists" xml:space="preserve"><value>QR koden er allerede registreret. </value></data><data name="qrcode_saved" xml:space="preserve"><value>Gemte en ny QR kode. </value></data><data name="qrcode" xml:space="preserve"><value>QR kode</value></data><data name="qrcode_new_found" xml:space="preserve"><value>Ny QR kode fundet, venligst tilpas via indstillinger.</value></data><data name="qr_code_disabled" xml:space="preserve"><value>QR kode deaktiveret, venligst tilpas via indstillinger.</value></data><data name="noSwitchSelected_explanation_qrcode" xml:space="preserve"><value>For QR kode scanneren kan fungere, bør en switch være knyttet til en QR kode</value></data><data name="permission_camera_rationale" xml:space="preserve"><value>Adgang til kameraet er nødvendig for registrering</value></data><data name="low_storage_error" xml:space="preserve"><value>QR kode afhængigheder kan ikke hentes på grund af lav enheds plads</value></data><data name="no_camera_permission" xml:space="preserve"><value>Dette program kan ikke køre, fordi det ikke har tilladelser til kameraet.  Programmet vil nu afslutte.</value></data><data name="title_scenes" xml:space="preserve"><value>Scener</value></data><data name="title_security_panel" xml:space="preserve"><value>Sikkerheds Panel</value></data><data name="security_pin" xml:space="preserve"><value>Pin-kode</value></data><data name="security_disarm" xml:space="preserve"><value>Disarmere</value></data><data name="security_arm_home" xml:space="preserve"><value>Armere hjem</value></data><data name="security_arm_away" xml:space="preserve"><value>Armere væk</value></data><data name="security_wrong_code" xml:space="preserve"><value>Forkert kode indtastet!</value></data><data name="security_generic_error" xml:space="preserve"><value>Kunne ikke ændre sikkerhedsstatus</value></data><data name="security_wrong_password_fingerprint" xml:space="preserve"><value>Wrong password entered, your OOTT account password is the failover for your fingerprint...!</value></data><data name="show_password" xml:space="preserve"><value>Vis adgangskode</value></data><data name="choose_server" xml:space="preserve"><value>Vælg server</value></data><data name="dont_save_new_server" xml:space="preserve"><value>Gem ikke ny server?</value></data><data name="server_must_be_unique" xml:space="preserve"><value>Servernavn skal være unikt</value></data><data name="switch_to_server" xml:space="preserve"><value>"Skifter server til %1$s"</value></data><data name="cant_disable_default_server" xml:space="preserve"><value>Kan ikke deaktivere standard serveren</value></data><data name="settingsActivity_name" xml:space="preserve"><value>Indstillinger</value></data><data name="cameraActivity_name" xml:space="preserve"><value>Kamera</value></data><data name="category_generic" xml:space="preserve"><value>Generisk</value></data><data name="category_wear" xml:space="preserve"><value>Android wear</value></data><data name="category_auto" xml:space="preserve"><value>Android Auto</value></data><data name="category_server" xml:space="preserve"><value>Server</value></data><data name="category_geofencing" xml:space="preserve"><value>GeoFencing</value></data><data name="category_info" xml:space="preserve"><value>Information</value></data><data name="category_advanced" xml:space="preserve"><value>Advanced</value></data><data name="category_language" xml:space="preserve"><value>Sprog</value></data><data name="category_talk_back" xml:space="preserve"><value>Talk Back</value></data><data name="category_notification" xml:space="preserve"><value>Notifikationer</value></data><data name="category_debug" xml:space="preserve"><value>Fejlfinding</value></data><data name="category_export" xml:space="preserve"><value>Eksporter/Importer indstillinger</value></data><data name="category_theme" xml:space="preserve"><value>Tema</value></data><data name="category_nfc" xml:space="preserve"><value>NFC forbindelser</value></data><data name="category_startup_security" xml:space="preserve"><value>Security</value></data><data name="category_account" xml:space="preserve"><value>Accounts</value></data><data name="category_QRCode" xml:space="preserve"><value>QR kode</value></data><data name="category_Speech" xml:space="preserve"><value>Speech</value></data><data name="category_Reset" xml:space="preserve"><value>Reset</value></data><data name="startup_screen" xml:space="preserve"><value>Opstarts Skærm</value></data><data name="enable_items" xml:space="preserve"><value>Aktiver/Deaktiver enheder</value></data><data name="sort_dashboardLikeServer_title" xml:space="preserve"><value>Betjeningspanel sortering</value></data><data name="sort_dashboardLikeServer_on" xml:space="preserve"><value>Sorter betjeningspanel som server</value></data><data name="sort_dashboardLikeServer_off" xml:space="preserve"><value>Sorter betjeningspanel alfabetisk</value></data><data name="extra_data_title" xml:space="preserve"><value>Ekstra data på betjeningspanel</value></data><data name="show_extra_data_on" xml:space="preserve"><value>Vis ekstra data på betjeningspanel</value></data><data name="show_extra_data_off" xml:space="preserve"><value>Skjul ekstra data på betjeningspanel</value></data><data name="always_on_title" xml:space="preserve"><value>Hold enheden tændt</value></data><data name="always_on_on" xml:space="preserve"><value>Hold skærmen tændt</value></data><data name="always_on_off" xml:space="preserve"><value>Hold ikke skærmen tændt</value></data><data name="switch_buttons_title" xml:space="preserve"><value>Switche</value></data><data name="switch_buttons_on" xml:space="preserve"><value>Vis switche med tænd/sluk-knap</value></data><data name="switch_buttons_off" xml:space="preserve"><value>Vis switche med tænd/sluk-knapper</value></data><data name="dashboard_list_title" xml:space="preserve"><value>Betjeningspanels gitter</value></data><data name="show_dashboard_list_on" xml:space="preserve"><value>Vis betjeningspanel som liste</value></data><data name="show_dashboard_list_off" xml:space="preserve"><value>Vis betjeningspanel som gitter</value></data><data name="enable_wear_select" xml:space="preserve"><value>Android wear brugerdefinerede elementer</value></data><data name="custom_wear_select" xml:space="preserve"><value>Vælg wear switche</value></data><data name="custom_wear_select_desc" xml:space="preserve"><value>Vælg hvilke switche du gerne se på enheden Android wear enheden</value></data><data name="wear_custom_on" xml:space="preserve"><value>Aktivere Android wear brugerdefinerede elementer</value></data><data name="wear_custom_off" xml:space="preserve"><value>Deaktivere Android wear brugerdefinerede elementer</value></data><data name="auto_custom_on" xml:space="preserve"><value>Enable Android Auto Notifications</value></data><data name="auto_custom_off" xml:space="preserve"><value>Disable Android Auto Notifications</value></data><data name="geofencing_configure" xml:space="preserve"><value>Konfigurere Geofencing</value></data><data name="config_theme" xml:space="preserve"><value>Vælg tema</value></data><data name="set_dark_theme" xml:space="preserve"><value>Skift til mørkt tema</value></data><data name="set_light_theme" xml:space="preserve"><value>Skift til lyst tema</value></data><data name="set_talk_back_on" xml:space="preserve"><value>Let OOTT talk back to you</value></data><data name="set_talk_back_off" xml:space="preserve"><value>Turn talk back off</value></data><data name="settings_imported" xml:space="preserve"><value>Indstillinger importeret, genstart venligst OOTT</value></data><data name="settings_import_failed" xml:space="preserve"><value>Det lykkedes ikke at importere indstillinger</value></data><data name="settings_exported" xml:space="preserve"><value>Indstillinger eksporteret, genstart venligst OOTT</value></data><data name="settings_export_failed" xml:space="preserve"><value>Eksport af indstillinger fejlede</value></data><data name="server_settings" xml:space="preserve"><value>Server forbindelsesindstillinger</value></data><data name="server_force_fetch_config" xml:space="preserve"><value>Hent server konfiguration</value></data><data name="nfc_settings" xml:space="preserve"><value>Opsætning af NFC forbindelser</value></data><data name="speech_settings" xml:space="preserve"><value>Setup Speech Commands</value></data><data name="title_activity_server_settings" xml:space="preserve"><value>Serverindstillinger</value></data><data name="multi_server" xml:space="preserve"><value>Multi Server</value></data><data name="enable_nfc" xml:space="preserve"><value>Aktivere NFC</value></data><data name="enable_speech" xml:space="preserve"><value>Enable Speech Recognition</value></data><data name="export_settings" xml:space="preserve"><value>Eksporter indstillinger</value></data><data name="reset_settings" xml:space="preserve"><value>Reset all app settings (WARNING!!)</value></data><data name="import_settings" xml:space="preserve"><value>Importer indstillinger</value></data><data name="multi_server_settings" xml:space="preserve"><value>Aktivere understøttelse af flere servere</value></data><data name="nfc_enable_settings" xml:space="preserve"><value>Aktivere NFC forbindelser</value></data><data name="speech_enable_settings" xml:space="preserve"><value>Enable Speech Recognition</value></data><data name="server" xml:space="preserve"><value>Server</value></data><data name="qrcode_settings" xml:space="preserve"><value>Opsætning af QR-koder</value></data><data name="enable_qrcode" xml:space="preserve"><value>Aktivere QR-koder</value></data><data name="qrcode_enable_settings" xml:space="preserve"><value>Aktivere QR koders funktionalitet</value></data><data name="security_settings" xml:space="preserve"><value>Setup Security</value></data><data name="enable_security" xml:space="preserve"><value>Enable fingerprint protection on startup</value></data><data name="disable_security" xml:space="preserve"><value>Disable fingerprint protection on startup</value></data><data name="setup_fingerprints" xml:space="preserve"><value>Setup fingerprints via Android Settings screens</value></data><data name="fingerprint_not_supported" xml:space="preserve"><value>Fingerprint Security is not supported on this device</value></data><data name="fingerprint_not_setup_in_android" xml:space="preserve"><value>First configure/connect a Fingerprint to this device</value></data><data name="fingerprint_sure" xml:space="preserve"><value>Are you sure? The failover password is the password of your OOTT account.</value></data><data name="category_widgets" xml:space="preserve"><value>Widgets (BETA)</value></data><data name="widget_description" xml:space="preserve"><value>Enable or Disable Widget on this device</value></data><data name="widget_disabled" xml:space="preserve"><value>Widgets are not enabled on this device, please check your settings of OOTT</value></data><data name="widget_warning" xml:space="preserve"><value>Please use widgets on your own risk!! Widgets are currently in Beta stage and probably contain certain bugs. It can cause large data / battery usage...</value></data><data name="notification_settings_id" xml:space="preserve"><value>Google Cloud meddelelses-ID</value></data><data name="notification_settings_push" xml:space="preserve"><value>Tilføj dit registrations id til OOTT</value></data><data name="notification_settings_pushed" xml:space="preserve"><value>Dit registrerings-id er nu gemt i OOTT</value></data><data name="notification_settings_push_failed" xml:space="preserve"><value>Kunne ikke gemme dit registrerings-id i OOTT, prøv igen senere.</value></data><data name="notification_show_title" xml:space="preserve"><value>Last Notifications</value></data><data name="notification_show_nothing" xml:space="preserve"><value>No notifications found</value></data><data name="notification_show" xml:space="preserve"><value>Show last couple of Notifications</value></data><data name="overwrite_notifications_title" xml:space="preserve"><value>Overskriv notifikationer</value></data><data name="overwrite_notifications" xml:space="preserve"><value>Overskriv tidligere notifikationer på denne enhed</value></data><data name="enable_notifications_title" xml:space="preserve"><value>Aktivere notifikationer</value></data><data name="enable_notifications" xml:space="preserve"><value>Aktivere notifikationer på denne enhed</value></data><data name="notification_screen_title" xml:space="preserve"><value>Notifikationsindstillinger</value></data><data name="notification_vibrate_title" xml:space="preserve"><value>Vibrer</value></data><data name="notification_vibrate_on" xml:space="preserve"><value>Vibrer når en meddelelse er modtaget</value></data><data name="notification_vibrate_off" xml:space="preserve"><value>Vibrer ikke</value></data><data name="notification_sound_title" xml:space="preserve"><value>Lyd</value></data><data name="notification_sound_summary" xml:space="preserve"><value>Bruge notifikations lyd, når notifikationen kommer</value></data><data name="suppress_notifications_select" xml:space="preserve"><value>Vælg hvilke notifikationer der skal undertrykkes</value></data><data name="suppress_notifications" xml:space="preserve"><value>Undertryk bestemte notifikationer på denne enhed</value></data><data name="suppress_notifications_title" xml:space="preserve"><value>Undertryk notifikationer</value></data><data name="alarm_notifications_select" xml:space="preserve"><value>Select Notifications to Alarm</value></data><data name="alarm_notifications" xml:space="preserve"><value>Sound an Alarm for specific Notifications</value></data><data name="clear_notifications" xml:space="preserve"><value>Clean notification logs</value></data><data name="alarm_notifications_title" xml:space="preserve"><value>Alarm Notifications</value></data><data name="alarm" xml:space="preserve"><value>Alarm</value></data><data name="alarmtimer_title" xml:space="preserve"><value>Alarm Timer</value></data><data name="alarmtimer" xml:space="preserve"><value>Number of seconds to time the alarm</value></data><data name="default_values" xml:space="preserve"><value>Default values</value></data><data name="default_values_min_error" xml:space="preserve"><value>Max value should be higher than Min value</value></data><data name="default_values_max_error" xml:space="preserve"><value>Max value should be higher than Min value</value></data><data name="info_version" xml:space="preserve"><value>Version</value></data><data name="info_domoticz_version" xml:space="preserve"><value>OOTT version</value></data><data name="info_about" xml:space="preserve"><value>Om OOTT</value></data><data name="info_credits" xml:space="preserve"><value>Tak til</value></data><data name="info_credits_text" xml:space="preserve"><value>OOTT til Android er gjort mulig med flere open source-biblioteker</value></data><data name="debug_switch_title" xml:space="preserve"><value>Fejlfinding</value></data><data name="debug_switch_summary_on" xml:space="preserve"><value>Fejlfinding aktiveret</value></data><data name="debug_switch_summary_off" xml:space="preserve"><value>Fejlfinding deaktiveret</value></data><data name="error_atLeastOneItemInDrawer" xml:space="preserve"><value>Der skal være mindst en enhed i listen</value></data><data name="title_activity_update" xml:space="preserve"><value>Opdater serveren</value></data><data name="error_couldNotCheckForUpdates" xml:space="preserve"><value>"Kunne ikke tjekke for opdateringer: %1$s"</value></data><data name="error_couldNotCheckForConfig" xml:space="preserve"><value>"Kunne ikke få OOTT serverkonfiguration: %1$s"</value></data><data name="update_available_enhanced" xml:space="preserve"><value>Server opdatering tilgængelig: %1$s version: %2$s</value></data><data name="check_for_update_title" xml:space="preserve"><value>Søg efter Opdateringer</value></data><data name="check_for_update" xml:space="preserve"><value>Ønsker du vi undersøger for OOTT systemopdateringer?</value></data><data name="update_server_warning" xml:space="preserve"><value>Mens din server opdaterer vil denne app ikke fungere korrekt.</value></data><data name="update_server_downloadNotReady1" xml:space="preserve"><value>Opdateringen er ikke (helt) hentet endnu.</value></data><data name="update_server_downloadNotReady2" xml:space="preserve"><value>Prøv venligst igen senere.</value></data><data name="server_update_available" xml:space="preserve"><value>Server opdatering tilgængelig</value></data><data name="update_server" xml:space="preserve"><value>Opdater serveren</value></data><data name="server_update_revision" xml:space="preserve"><value>Server update gennemgang</value></data><data name="server_version" xml:space="preserve"><value>Serverversion</value></data><data name="server_update" xml:space="preserve"><value>Server opdatering</value></data><data name="please_wait_while_we_check" xml:space="preserve"><value>Vent venligst mens vi kontrollere, om din server er klar til at opdatere</value></data><data name="server_update_not_ready" xml:space="preserve"><value>Server opdatering er ikke downloadet</value></data><data name="please_wait_while_server_updated" xml:space="preserve"><value>Vent venligst mens serveren opdateres.</value></data><data name="server_update_done" xml:space="preserve"><value>Server opdatering færdig</value></data><data name="update_not_started" xml:space="preserve"><value>Opdatering ikke startet</value></data><data name="update_not_started_unknown_error" xml:space="preserve"><value>Opdatering ikke startet på grund af en ukendt fejl</value></data><data name="server_update_not_available" xml:space="preserve"><value>Server opdatering er ikke tilgængelig</value></data><data name="click_to_update_server" xml:space="preserve"><value>Klik her for at opdatere din server</value></data><data name="debug_test_text" xml:space="preserve"><value>Fejlfindings test</value></data><data name="restart_required_title" xml:space="preserve"><value>Genstart påkrævet</value></data><data name="restart_now" xml:space="preserve"><value>Genstart nu?</value></data><data name="Speech_not_supported" xml:space="preserve"><value>Speech is not supported on this device</value></data><data name="Speech_register" xml:space="preserve"><value>Register a Speech Command</value></data><data name="Speech_found" xml:space="preserve"><value>New Speech Command found</value></data><data name="Speech_edit" xml:space="preserve"><value>Edit Speech Command</value></data><data name="Speech_name" xml:space="preserve"><value>Give this Speech Command a proper name. </value></data><data name="Speech_exists" xml:space="preserve"><value>Speech Command already registered. </value></data><data name="Speech_saved" xml:space="preserve"><value>Saved a New Speech Command. </value></data><data name="Speech_desc" xml:space="preserve"><value>Do a new voice command. </value></data><data name="Speech" xml:space="preserve"><value>Speech</value></data><data name="Speech_disabled" xml:space="preserve"><value>Speech Command disabled, please setup via settings.</value></data><data name="noSwitchSelected_explanation_Speech" xml:space="preserve"><value>For Speech Command to have effect, a switch should be linked</value></data><data name="title_switches" xml:space="preserve"><value>Switche</value></data><data name="txt_notAvailable" xml:space="preserve"><value>Ikke tilgængelig</value></data><data name="idx" xml:space="preserve"><value>IDX</value></data><data name="placeholder_value" xml:space="preserve"><value>255</value></data><data name="color_set" xml:space="preserve"><value>Sæt farve til</value></data><data name="state_set" xml:space="preserve"><value>Sæt status for</value></data><data name="error_favorite" xml:space="preserve"><value>Kunne ikke indstille foretrukne</value></data><data name="error_logs" xml:space="preserve"><value>Kunne ikke finde nogen logfiler til at vise</value></data><data name="error_color" xml:space="preserve"><value>Kunne ikke ændre farven</value></data><data name="error_state" xml:space="preserve"><value>Kunne ikke ændre tilstanden</value></data><data name="error_timer" xml:space="preserve"><value>Kunne ikke vise timerne</value></data><data name="error_notifications" xml:space="preserve"><value>Could not show the notifications</value></data><data name="set_level_switch" xml:space="preserve"><value>"Indstil niveauet for switch: %1$s til %2$d"</value></data><data name="title_temperature" xml:space="preserve"><value>Temperatur</value></data><data name="cancel_override" xml:space="preserve"><value>Annuller tilsidesættelse</value></data><data name="wind" xml:space="preserve"><value>Vind</value></data><data name="error_log" xml:space="preserve"><value>Kunne ikke få logdata for</value></data><data name="follow_schedule" xml:space="preserve"><value>Følg tidsplan</value></data><data name="command" xml:space="preserve"><value>Kommando</value></data><data name="type" xml:space="preserve"><value>Type</value></data><data name="notapplicable" xml:space="preserve"><value>Ikke tilgængelig</value></data><data name="timer_before_sunset" xml:space="preserve"><value>Før solnedgang</value></data><data name="timer_after_sunset" xml:space="preserve"><value>Efter solnedgang</value></data><data name="timer_ontime" xml:space="preserve"><value>På tid</value></data><data name="timer_before_sunrise" xml:space="preserve"><value>Før solopgang</value></data><data name="timer_after_sunrise" xml:space="preserve"><value>Efter solopgang</value></data><data name="timer_fixed" xml:space="preserve"><value>Fast dato/klokkeslæt</value></data><data name="odd_day_numbers" xml:space="preserve"><value>Ulige dag numre</value></data><data name="even_day_numbers" xml:space="preserve"><value>Lige dages numre</value></data><data name="odd_week_numbers" xml:space="preserve"><value>Ulige ugenumre</value></data><data name="even_week_numbers" xml:space="preserve"><value>Lige ugenumre</value></data><data name="monthly" xml:space="preserve"><value>Månedlig</value></data><data name="monthly_weekday" xml:space="preserve"><value>Månedlig (hverdage)</value></data><data name="yearly" xml:space="preserve"><value>Årligt</value></data><data name="yearly_weekday" xml:space="preserve"><value>Årligt (hverdage)</value></data><data name="timer_every_days" xml:space="preserve"><value>Hver dag</value></data><data name="timer_working_days" xml:space="preserve"><value>Arbejdsdage</value></data><data name="timer_weekend" xml:space="preserve"><value>Weekend</value></data><data name="timer_other" xml:space="preserve"><value>Andre</value></data><data name="timers" xml:space="preserve"><value>Timere</value></data><data name="title_utilities" xml:space="preserve"><value>Værktøjer</value></data><data name="settemperature" xml:space="preserve"><value>Definer</value></data><data name="title_vars" xml:space="preserve"><value>Bruger variabler</value></data><data name="var_input" xml:space="preserve"><value>Input value is not valid</value></data><data name="var_input_error" xml:space="preserve"><value>Failed to update user variable</value></data><data name="title_weather" xml:space="preserve"><value>Vejr</value></data><data name="dewPoint" xml:space="preserve"><value>Dugpunkt</value></data><data name="temp" xml:space="preserve"><value>Temp</value></data><data name="pressure" xml:space="preserve"><value>Lufttryk</value></data><data name="chill" xml:space="preserve"><value>Chill</value></data><data name="direction" xml:space="preserve"><value>Retning</value></data><data name="humidity" xml:space="preserve"><value>Fugt</value></data><data name="speed" xml:space="preserve"><value>Hastighed</value></data><data name="forecast" xml:space="preserve"><value>Vejrudsigt</value></data><data name="rain" xml:space="preserve"><value>Regn</value></data><data name="rainrate" xml:space="preserve"><value>Regn sats</value></data><data name="co2" xml:space="preserve"><value>CO2</value></data><data name="co2min" xml:space="preserve"><value>CO2 Min</value></data><data name="co2max" xml:space="preserve"><value>CO2 Max</value></data><data name="welcome_title_activity_welcome" xml:space="preserve"><value>Velkommen</value></data><data name="welcome_info_domoticz" xml:space="preserve"><value>OOTT er et Home Automation System, der lader dig overvåge og konfigurere forskellige enheder som: lys, switche, forskellige sensorer/målere som temperatur, regn, vind, UV, Electra, Gas, vand og meget mere. Meddelelser/beskeder kan sendes til alle mobile enheder.</value></data><data name="welcome_info_swipe" xml:space="preserve"><value>Swipe til højre eller Brug navigationsknapperne nederst til at fortsætte</value></data><data name="welcome_info_settings1" xml:space="preserve"><value>Næste side er for dine indstillinger for OOTT.</value></data><data name="welcome_info_settings2" xml:space="preserve"><value> Du kan angive en lokal og en ekstern server indstilling. De lokale indstillinger er til når du har forbindelse til dit hjemme wifi-netværk. Remote indstillinger bruges, når der ikke er forbindelse til dit hjemme wifi netværk, eller når tilsluttet mobilt data (2G, 3G, 4G osv).</value></data><data name="welcome_info_checkingConnection" xml:space="preserve"><value>Kontrollere dine forbindelsesindstillinger</value></data><data name="welcome_msg_connectionDataIncomplete" xml:space="preserve"><value>Forbindelsesdata ufuldstændige eller tomme</value></data><data name="welcome_msg_connectionDataInvalid" xml:space="preserve"><value>URL-adressen skal ikke begynde med http</value></data><data name="welcome_msg_correctOnPreviousPage" xml:space="preserve"><value>Ret venligst data på den foregående side</value></data><data name="welcome_msg_serverVersion" xml:space="preserve"><value>OOTT version</value></data><data name="welcome_msg_numberOfDevices" xml:space="preserve"><value>%1$d enheder fundet</value></data><data name="welcome_msg_no_ssid_found" xml:space="preserve"><value>Ingen wifi SSID er fundet</value></data><data name="welcome_ssid_spinner_prompt" xml:space="preserve"><value>Vælg hjem SSID</value></data><data name="welcome_ssid_button_prompt" xml:space="preserve"><value>Add home SSID\'s</value></data><data name="welcome_server_settings_title" xml:space="preserve"><value>Serverindstillinger</value></data><data name="welcome_server_startScreen" xml:space="preserve"><value>Startskærmen</value></data><data name="welcome_button_next" xml:space="preserve"><value>næste</value></data><data name="welcome_button_previous" xml:space="preserve"><value>forrige</value></data><data name="welcome_button_finish" xml:space="preserve"><value>færdig</value></data><data name="welcome_remote_server_address" xml:space="preserve"><value>Serveradresse</value></data><data name="welcome_remote_server_protocol" xml:space="preserve"><value>Protokol</value></data><data name="welcome_remote_server_port" xml:space="preserve"><value>Port</value></data><data name="welcome_remote_server_username" xml:space="preserve"><value>Brugernavn</value></data><data name="welcome_remote_server_password" xml:space="preserve"><value>Kodeord</value></data><data name="welcome_remote_server_directory" xml:space="preserve"><value>Mappe</value></data><data name="remote" xml:space="preserve"><value>Fjern adgang</value></data><data name="local" xml:space="preserve"><value>Lokal</value></data><data name="servername" xml:space="preserve"><value>Server Navn</value></data><data name="welcome_local_server_used_switch_title" xml:space="preserve"><value>Forskellige serveradresser</value></data><data name="welcome_local_server_used_switch_summary" xml:space="preserve"><value>Brug forskellig adresse for lokale forbindelser</value></data><data name="welcome_advancedSettings" xml:space="preserve"><value>Avancerede serverindstillinger</value></data><data name="welcome_advancedSettings_summary" xml:space="preserve"><value>Aanvendes kun til ikke-standard OOTT servere</value></data><data name="welcome_local_server_ssid" xml:space="preserve"><value>Lokalt wifi SSID</value></data><data name="welcome_local_server_address" xml:space="preserve"><value>Lokal serveradresse</value></data><data name="welcome_local_server_protocol" xml:space="preserve"><value>Lokal protokol</value></data><data name="welcome_local_server_port" xml:space="preserve"><value>Lokal port</value></data><data name="welcome_local_server_directory" xml:space="preserve"><value>Lokalt bibliotek (Efterlad Tom hvis ikke bruges)</value></data><data name="welcome_local_server_username" xml:space="preserve"><value>Lokalt username (Efterlad Tom hvis ikke bruges)</value></data><data name="welcome_local_server_password" xml:space="preserve"><value>Lokalt adgangskode (Efterlad Tom hvis ikke bruges)</value></data><data name="pick_device_title" xml:space="preserve"><value>Pick a device</value></data><data name="choose_switch" xml:space="preserve"><value>Choose device</value></data><data name="failed_to_get_securitypanel" xml:space="preserve"><value>No security panel found under your switches</value></data><data name="failed_to_get_switches" xml:space="preserve"><value>Failed to get devices</value></data><data name="failed_toggle_switch" xml:space="preserve"><value>Failed to toggle device</value></data><data name="switch_toggled" xml:space="preserve"><value>"Switch device"</value></data><data name="text_loading" xml:space="preserve"><value>Loading...</value></data><data name="text_go" xml:space="preserve"><value>GO</value></data><data name="widget_background" xml:space="preserve"><value>Background</value></data><data name="widget_dark" xml:space="preserve"><value>Dark</value></data><data name="widget_light" xml:space="preserve"><value>Light</value></data><data name="widget_transparent_dark" xml:space="preserve"><value>Dark Transparent</value></data><data name="widget_transparent_light" xml:space="preserve"><value>Light Transparent</value></data><data name="title_wizard" xml:space="preserve"><value>Velkomst guiden</value></data><data name="wizard_welcome" xml:space="preserve"><value>Velkommen</value></data><data name="wizard_welcome_description" xml:space="preserve"><value>OOTT er et meget letvægts hjemmeautomatiseringssystem, der lader dig overvåge og konfigurere forskellige enheder.</value></data><data name="wizard_favorites" xml:space="preserve"><value>Favoritter</value></data><data name="wizard_favorites_description" xml:space="preserve"><value>Du kan tilføje enheder til betjeningspanela ved at gemme dem som favoritter. Langt Klik på et element for at gemme dem som favorit!</value></data><data name="wizard_startup" xml:space="preserve"><value>Opstarts Skærm</value></data><data name="wizard_startup_description" xml:space="preserve"><value>Du kan vælge din startskærm i indstillingerne!</value></data><data name="wizard_notifications" xml:space="preserve"><value>Opsætning af notifikationer</value></data><data name="wizard_notifications_description" xml:space="preserve"><value>Du kan nu modtage notifikationer på din Android enhed! Ændre den måde, hvorpå notifikationerne opfører sig i indstillingerne</value></data><data name="wizard_multiserver" xml:space="preserve"><value>Benytter flere servere</value></data><data name="wizard_multiserver_description" xml:space="preserve"><value>Du kan konfigurere flere OOTT servere i indstillingerne.</value></data><data name="wizard_geo" xml:space="preserve"><value>GeoFencing</value></data><data name="wizard_geo_description" xml:space="preserve"><value>Du kan vælge din startskærm i indstillingerne!</value></data><data name="wizard_wear" xml:space="preserve"><value>Android Wear</value></data><data name="wizard_wear_description" xml:space="preserve"><value>Du kan angive, hvilke parametre du vil styre fra din Android Wear enhed!</value></data><data name="wizard_auto" xml:space="preserve"><value>Android Auto</value></data><data name="wizard_auto_description" xml:space="preserve"><value>Receive the OOTT notifications right on your Android Auto device!</value></data><data name="wizard_graph" xml:space="preserve"><value>Grafer</value></data><data name="wizard_graph_description" xml:space="preserve"><value>Du kan se den historiske graf for en forsyning, vejr eller temperatur!</value></data><data name="wizard_filter" xml:space="preserve"><value>Filtre</value></data><data name="wizard_filter_description" xml:space="preserve"><value>Du kan filtrere enheder pr. status (tænd/sluk). Vælg det øverste højre menuikon for filtrering!</value></data><data name="wizard_widgets" xml:space="preserve"><value>Widgets!!</value></data><data name="wizard_widgets_description" xml:space="preserve"><value>Du kan sætte nogle widgets på hjemmeskærmen!</value></data><data name="wizard_menuitem" xml:space="preserve"><value>Deaktivere guiden</value></data><data name="wizard_menuitem_description" xml:space="preserve"><value>Du kan nu fjerne denne guide fra navigationsmenuen!</value></data><data name="wizard_nfc" xml:space="preserve"><value>NFC</value></data><data name="wizard_nfc_description" xml:space="preserve"><value>Du er i stand til skifte switche via NFC!</value></data><data name="wizard_qrcode" xml:space="preserve"><value>QR kode</value></data><data name="wizard_qrcode_description" xml:space="preserve"><value>Skift switches ved at scanne en QR kode (eller stregkode)!</value></data><data name="wizard_speech" xml:space="preserve"><value>Speech Commands</value></data><data name="wizard_speech_description" xml:space="preserve"><value>Toggle switches with your voice! Configure speech commands via the settings screens and connect switches.</value></data><data name="wizard_button_nice" xml:space="preserve"><value>Rart</value></data><data name="wizard_button_switches" xml:space="preserve"><value>Switches</value></data><data name="wizard_button_settings" xml:space="preserve"><value>Indstillinger</value></data><data name="wizard_button_wizard" xml:space="preserve"><value>Fjern</value></data><data name="wizard_button_utilities" xml:space="preserve"><value>Værktøjer</value></data><data name="wizard_button_done" xml:space="preserve"><value>Færdig</value></data></root>
+<?xml version="1.0" encoding="utf-8"?>  <root> <resheader name="resmimetype">		<value>text/microsoft-resx</value>	</resheader>	<resheader name="version">		<value>2.0</value>	</resheader>	<resheader name="reader">		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>	<resheader name="writer">		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>
+<data name="premium_category" xml:space="preserve"><value>Køb premium!</value></data>
+<data name="premium_title" xml:space="preserve"><value>Køb premium udgaven!</value></data>
+<data name="premium_feature" xml:space="preserve"><value>er en premium funktion, venligst køb den betalte version for at støtte udviklerne!</value></data>
+<data name="drawer_open" xml:space="preserve"><value>Åbn navigationsliste</value></data>
+<data name="drawer_close" xml:space="preserve"><value>Luk navigationsliste</value></data>
+<data name="msg_please_wait" xml:space="preserve"><value>Vent venligst&#8230;</value></data>
+<data name="changelog" xml:space="preserve"><value>Changelog</value></data>
+<data name="button_state_on" xml:space="preserve"><value>Tændt</value></data>
+<data name="button_state_off" xml:space="preserve"><value>Slukket</value></data>
+<data name="button_state_closed" xml:space="preserve"><value>Lukket</value></data>
+<data name="button_state_open" xml:space="preserve"><value>Åben</value></data>
+<data name="button_state_lock" xml:space="preserve"><value>Lock</value></data>
+<data name="button_state_unlock" xml:space="preserve"><value>Unlock</value></data>
+<data name="button_status_log" xml:space="preserve"><value>Log</value></data>
+<data name="button_status_day" xml:space="preserve"><value>Dag</value></data>
+<data name="button_status_week" xml:space="preserve"><value>Uge</value></data>
+<data name="button_status_month" xml:space="preserve"><value>Måned</value></data>
+<data name="button_status_year" xml:space="preserve"><value>År</value></data>
+<data name="button_status_timer" xml:space="preserve"><value>Timer</value></data>
+<data name="button_status_notifications" xml:space="preserve"><value>Notifikationer</value></data>
+<data name="button_color" xml:space="preserve"><value>Farve</value></data>
+<data name="button_arm" xml:space="preserve"><value>Armere</value></data>
+<data name="button_disarm" xml:space="preserve"><value>Disarmere</value></data>
+<data name="button_state_full_light" xml:space="preserve"><value>Full light</value></data>
+<data name="button_state_night" xml:space="preserve"><value>Night light</value></data>
+<data name="sunrise" xml:space="preserve"><value>Sunrise</value></data>
+<data name="sunset" xml:space="preserve"><value>Sunset</value></data>
+<data name="now" xml:space="preserve"><value>Now</value></data>
+<data name="astrTwilightStart" xml:space="preserve"><value>Astronomical twilight start</value></data>
+<data name="astrTwilightEnd" xml:space="preserve"><value>Astronomical twilight end</value></data>
+<data name="civTwilightStart" xml:space="preserve"><value>Civil twilight start</value></data>
+<data name="civTwilightEnd" xml:space="preserve"><value>Civil twilight end</value></data>
+<data name="nautTwilightStart" xml:space="preserve"><value>Nautical twilight start</value></data>
+<data name="nautTwilightEnd" xml:space="preserve"><value>Nautical twilight end</value></data>
+<data name="last_update" xml:space="preserve"><value>Sidst set</value></data>
+<data name="signal_level" xml:space="preserve"><value>Signal styrke</value></data>
+<data name="battery_level" xml:space="preserve"><value>Batteri niveau</value></data>
+<data name="data" xml:space="preserve"><value>Data</value></data>
+<data name="hardware" xml:space="preserve"><value>Hardware</value></data>
+<data name="temperature" xml:space="preserve"><value>Temperatur</value></data>
+<data name="status" xml:space="preserve"><value>Status</value></data>
+<data name="switch_rgb_wwcolor" xml:space="preserve"><value>RGB color or warm white</value></data>
+<data name="set_point" xml:space="preserve"><value>Setpunkt</value></data>
+<data name="set_point_min" xml:space="preserve"><value>Set point min value</value></data>
+<data name="set_point_min_description" xml:space="preserve"><value>Min temperature that you can set for your thermostat</value></data>
+<data name="set_point_max" xml:space="preserve"><value>Set point max value</value></data>
+<data name="set_point_max_description" xml:space="preserve"><value>Max temperature that you can set for your thermostat</value></data>
+<data name="action_success" xml:space="preserve"><value>Handling udført</value></data>
+<data name="action_failed" xml:space="preserve"><value>Handling fejlet</value></data>
+<data name="action_unknown" xml:space="preserve"><value>Handlings resultat ukendt</value></data>
+<data name="choose_status" xml:space="preserve"><value>Vælg tilstand</value></data>
+<data name="normal" xml:space="preserve"><value>Normal</value></data>
+<data name="economy" xml:space="preserve"><value>Økonomi</value></data>
+<data name="away" xml:space="preserve"><value>Væk</value></data>
+<data name="day_off" xml:space="preserve"><value>Fridag</value></data>
+<data name="custom" xml:space="preserve"><value>Brugerdefineret</value></data>
+<data name="heating_off" xml:space="preserve"><value>Varme fra</value></data>
+<data name="selector_value" xml:space="preserve"><value>Selector values</value></data>
+<data name="debug_textview_title" xml:space="preserve"><value>Debugging info</value></data>
+<data name="msg_copiedToClipboard" xml:space="preserve"><value>Tekst kopieret til udklipsholder</value></data>
+<data name="favorite" xml:space="preserve"><value>Favorit</value></data>
+<data name="yes" xml:space="preserve"><value>Ja</value></data>
+<data name="no" xml:space="preserve"><value>Nej</value></data>
+<data name="are_you_sure" xml:space="preserve"><value>Er du sikker?</value></data>
+<data name="are_you_sure_clear_settings" xml:space="preserve"><value>Are you sure?? This also clears all homescreen widget settings, so you should re-add them afterwards..</value></data>
+<data name="add" xml:space="preserve"><value>Tilføj</value></data>
+<data name="cancel" xml:space="preserve"><value>Annuller</value></data>
+<data name="ok" xml:space="preserve"><value>Ok</value></data>
+<data name="request_again" xml:space="preserve"><value>Request Again</value></data>
+<data name="upgrade" xml:space="preserve"><value>UPGRADE</value></data>
+<data name="something_went_wrong" xml:space="preserve"><value>Noget gik galt</value></data>
+<data name="no_network_available" xml:space="preserve"><value>Fejl: Ingen netværksforbindelse tilgængelig</value></data>
+<data name="oops" xml:space="preserve"><value>OOPS!</value></data>
+<data name="to" xml:space="preserve"><value>"til"</value></data>
+<data name="retry" xml:space="preserve"><value>Prøv igen</value></data>
+<data name="undo" xml:space="preserve"><value>Fortryd</value></data>
+<data name="something_deleted" xml:space="preserve"><value>%1$s slettet</value></data>
+<data name="switch_on" xml:space="preserve"><value>Tænder switch</value></data>
+<data name="switch_off" xml:space="preserve"><value>Slukker switch</value></data>
+<data name="switch_night" xml:space="preserve"><value>Turning switch to night light</value></data>
+<data name="switch_full" xml:space="preserve"><value>Turning switch to full light</value></data>
+<data name="blind_up" xml:space="preserve"><value>Ruller persienner op</value></data>
+<data name="blind_down" xml:space="preserve"><value>Ruller persienner ned</value></data>
+<data name="blind_stop" xml:space="preserve"><value>Stop persienner</value></data>
+<data name="filter_on" xml:space="preserve"><value>Filter til</value></data>
+<data name="filterOn_on" xml:space="preserve"><value>Status tændt</value></data>
+<data name="filterOn_off" xml:space="preserve"><value>Status slukket</value></data>
+<data name="filterOn_static" xml:space="preserve"><value>Statiske enheder</value></data>
+<data name="filterOn_all" xml:space="preserve"><value>Alle enheder</value></data>
+<data name="filter" xml:space="preserve"><value>Filter</value></data>
+<data name="filter_devices" xml:space="preserve"><value>Filtrer enheder</value></data>
+<data name="filter_graph_empty" xml:space="preserve"><value>Angiv et filter</value></data>
+<data name="choose_color" xml:space="preserve"><value>Vælg farve</value></data>
+<data name="no_data_on_domoticz" xml:space="preserve"><value>Ingen data på OOTT server</value></data>
+<data name="row_icon_description" xml:space="preserve"><value>linje ikon</value></data>
+<data name="error_image_description" xml:space="preserve"><value>Fejl billede</value></data>
+<data name="device_image_description" xml:space="preserve"><value>Enheds billede</value></data>
+<data name="white" xml:space="preserve"><value>Hvid</value></data>
+<data name="refresh" xml:space="preserve"><value>Opdater</value></data>
+<data name="domoticz_logo" xml:space="preserve"><value>OOTT logo</value></data>
+<data name="this_take_minutes" xml:space="preserve"><value>Dette kan tage flere minutter.</value></data>
+<data name="continue_question" xml:space="preserve"><value>Fortsæt?</value></data>
+<data name="cant_remove_default_server" xml:space="preserve"><value>Kan ikke fjerne standardserveren</value></data>
+<data name="restart_required_msg" xml:space="preserve"><value>For at skifte sprog indstillinger skal programmet genstartes</value></data>
+<data name="filter_all" xml:space="preserve"><value>All</value></data>
+<data name="filter_normal" xml:space="preserve"><value>Normal</value></data>
+<data name="filter_status" xml:space="preserve"><value>Status</value></data>
+<data name="filter_error" xml:space="preserve"><value>Error</value></data>
+<data name="use_demo_setup" xml:space="preserve"><value>Use demo setup</value></data>
+<data name="auto_refresh_time" xml:space="preserve"><value>Refresh timer</value></data>
+<data name="setautorefreshtime" xml:space="preserve"><value>Set a specific timer for the auto refresh in seconds.</value></data>
+<data name="action_switch_server" xml:space="preserve"><value>Skift server</value></data>
+<data name="action_settings" xml:space="preserve"><value>Indstillinger</value></data>
+<data name="action_filter" xml:space="preserve"><value>Filter</value></data>
+<data name="action_camera_play" xml:space="preserve"><value>Afspil</value></data>
+<data name="action_camera_pause" xml:space="preserve"><value>Pause</value></data>
+<data name="action_qrcode_scan" xml:space="preserve"><value>Scan QR Code</value></data>
+<data name="action_bluetooth_show" xml:space="preserve"><value>Show paired devices</value></data>
+<data name="action_speech" xml:space="preserve"><value>Speech Recognition</value></data>
+<data name="send" xml:space="preserve"><value>Send</value></data>
+<data name="bluetooth_not_supported" xml:space="preserve"><value>Bluetooth is not supported on this device</value></data>
+<data name="bluetooth_register" xml:space="preserve"><value>Connect a bluetooth device</value></data>
+<data name="bluetooth_found" xml:space="preserve"><value>New bluetooth device found</value></data>
+<data name="bluetooth_edit" xml:space="preserve"><value>Edit bluetooth device</value></data>
+<data name="bluetooth_name" xml:space="preserve"><value>Give this bluetooth device a proper name. </value></data>
+<data name="bluetooth_desc" xml:space="preserve"><value>Check the list of paired bluetooth devices. </value></data>
+<data name="bluetooth_exists" xml:space="preserve"><value>Bluetooth already configured on OOTT. </value></data>
+<data name="bluetooth_turned_off" xml:space="preserve"><value>Bluetooth needs to be turned on in your device settings. </value></data>
+<data name="bluetooth_saved" xml:space="preserve"><value>Saved a new bluetooth device connection. </value></data>
+<data name="bluetooth" xml:space="preserve"><value>Bluetooth</value></data>
+<data name="bluetooth_disabled" xml:space="preserve"><value>Bluetooth automation disabled, please setup via settings.</value></data>
+<data name="noSwitchSelected_explanation_bluetooth" xml:space="preserve"><value>For a bluetooth device to automate something in OOTT, a switch should be linked to an bluetooth</value></data>
+<data name="title_cameras" xml:space="preserve"><value>Kameraer</value></data>
+<data name="title_dashboard" xml:space="preserve"><value>Betjeningspanel</value></data>
+<data name="usage" xml:space="preserve"><value>Anvendelse</value></data>
+<data name="today" xml:space="preserve"><value>I dag</value></data>
+<data name="total" xml:space="preserve"><value>Total</value></data>
+<data name="favorite_added" xml:space="preserve"><value>tilføjet til betjeningspanel.</value></data>
+<data name="favorite_removed" xml:space="preserve"><value>fjernet fra betjeningspanel.</value></data>
+<data name="error_authentication" xml:space="preserve"><value>Ugyldige legitimationsoplysninger</value></data>
+<data name="error_timeout" xml:space="preserve"><value>Timeout eller ingen forbindelse</value></data>
+<data name="error_server" xml:space="preserve"><value>Serverfejl</value></data>
+<data name="error_network" xml:space="preserve"><value>Netværksfejl, status kode %1$d</value></data>
+<data name="error_parse" xml:space="preserve"><value>Parsefejl</value></data>
+<data name="error_notConnected" xml:space="preserve"><value>Fejl: ikke forbindelse til nogen netværk</value></data>
+<data name="title_events" xml:space="preserve"><value>Begivenheder</value></data>
+<data name="action_not_supported_yet" xml:space="preserve"><value>Denne handling understøttes ikke endnu!</value></data>
+<data name="title_add_location" xml:space="preserve"><value>Tilføj placering</value></data>
+<data name="title_edit_location" xml:space="preserve"><value>Rediger placering</value></data>
+<data name="longitude" xml:space="preserve"><value>Længdegrad</value></data>
+<data name="latitude" xml:space="preserve"><value>Breddegrad</value></data>
+<data name="radius" xml:space="preserve"><value>Radius (meter)</value></data>
+<data name="connectedSwitch" xml:space="preserve"><value>Tilsluttet switch</value></data>
+<data name="unable_to_get_switches" xml:space="preserve"><value>Kunne ikke få alle switches, prøv igen</value></data>
+<data name="delete_short" xml:space="preserve"><value>DEL</value></data>
+<data name="delete" xml:space="preserve"><value>Slet</value></data>
+<data name="Location_name" xml:space="preserve"><value>Placerings navn</value></data>
+<data name="currentLocation" xml:space="preserve"><value>Nuværrende placering</value></data>
+<data name="manual" xml:space="preserve"><value>Manuelt</value></data>
+<data name="getLocation" xml:space="preserve"><value>GET</value></data>
+<data name="locationAddress" xml:space="preserve"><value>Adresse</value></data>
+<data name="unknown" xml:space="preserve"><value>Ukendt</value></data>
+<data name="not_available" xml:space="preserve"><value>Ikke tilgængelig</value></data>
+<data name="no_valid_latLong" xml:space="preserve"><value>Ikke en gyldig breddegrad eller længdegrad</value></data>
+<data name="starting_geofence_service" xml:space="preserve"><value>Start Geofence servicen</value></data>
+<data name="could_not_find_location" xml:space="preserve"><value>Kunne ikke finde placeringen, prøv igen.</value></data>
+<data name="google_play_services_unavailable" xml:space="preserve"><value>Google Play services utilgængelig.</value></data>
+<data name="location_not_found" xml:space="preserve"><value>Ingen placering fundet.</value></data>
+<data name="geofence" xml:space="preserve"><value>GeoFencing</value></data>
+<data name="title_geofence" xml:space="preserve"><value>Aktivere Geofencing</value></data>
+<data name="description_geofence" xml:space="preserve"><value>Aktiver og konfigurer geofences</value></data>
+<data name="title_geofence_notifications" xml:space="preserve"><value>Aktivere notifikationer</value></data>
+<data name="description_geofence_notifications" xml:space="preserve"><value>Aktiver notifikationer for udløsende begivenheder</value></data>
+<data name="geofence_place" xml:space="preserve"><value>Sted: %s</value></data>
+<data name="geofence_location_entering" xml:space="preserve"><value>"Ind i %1$s"</value></data>
+<data name="geofence_location_leaving" xml:space="preserve"><value>Forlader %1$s</value></data>
+<data name="geofence_location_entering_text" xml:space="preserve"><value>Går ind i en af placeringerne</value></data>
+<data name="geofence_location_leaving_text" xml:space="preserve"><value>Forlader en af placeringerne</value></data>
+<data name="geofence_error_recreateLocations" xml:space="preserve"><value>På grund af ændringer på Geofencing, skal du genskabe dine placeringer</value></data>
+<data name="noSwitchSelected_title" xml:space="preserve"><value>Ingen switch valgt</value></data>
+<data name="noSwitchSelected_explanation" xml:space="preserve"><value>For at GeoFencing skal fungere, skal en switch tilsluttes en GeoFence</value></data>
+<data name="noSwitchSelected_connectOneNow" xml:space="preserve"><value>Tilslut en nu?</value></data>
+<data name="geofencing_disabled_no_enabled_fences" xml:space="preserve"><value>GeoFencing deaktiveret da ingen geofences er aktiveret</value></data>
+<data name="geofence_not_available" xml:space="preserve"><value>Geofence service is not available now</value></data>
+<data name="geofence_too_many_geofences" xml:space="preserve"><value>App registered too many geofences</value></data>
+<data name="geofence_too_many_pending_intents" xml:space="preserve"><value>Too many PendingIntents provided</value></data>
+<data name="unknown_geofence_error" xml:space="preserve"><value>Unknown error</value></data>
+<data name="title_logs" xml:space="preserve"><value>Logfiler</value></data>
+<data name="nfc_not_supported" xml:space="preserve"><value>NFC understøttes ikke på denne enhed</value></data>
+<data name="nfc_register" xml:space="preserve"><value>Registrere et NFC-Tag</value></data>
+<data name="nfc_tag_found" xml:space="preserve"><value>Fundet ny NFC Tag</value></data>
+<data name="nfc_tag_edit" xml:space="preserve"><value>Edit NFC Tag</value></data>
+<data name="nfc_tag_name" xml:space="preserve"><value>Give denne NFC et brugbart navn. </value></data>
+<data name="nfc_exists" xml:space="preserve"><value>NFC Tag allerede registreret. </value></data>
+<data name="nfc_saved" xml:space="preserve"><value>Gem et nyt NFC Tag. </value></data>
+<data name="nfc" xml:space="preserve"><value>NFC</value></data>
+<data name="noSwitchSelected_explanation_nfc" xml:space="preserve"><value>For at NFC kan fungere, bør en switch være knyttet til en NFC-Tag</value></data>
+<data name="priority" xml:space="preserve"><value>Prioritet</value></data>
+<data name="emergency" xml:space="preserve"><value>Nødsituation</value></data>
+<data name="high" xml:space="preserve"><value>Høj</value></data>
+<data name="low" xml:space="preserve"><value>Lav</value></data>
+<data name="verylow" xml:space="preserve"><value>Meget lav</value></data>
+<data name="allsystems" xml:space="preserve"><value>Alle systemer</value></data>
+<data name="systems" xml:space="preserve"><value>Systemer</value></data>
+<data name="send_notification" xml:space="preserve"><value>Send notification</value></data>
+<data name="notification_subject" xml:space="preserve"><value>Subject</value></data>
+<data name="notification_message" xml:space="preserve"><value>Message</value></data>
+<data name="notification_error_system" xml:space="preserve"><value>Please choose a system to send the notification to</value></data>
+<data name="notification_error_message" xml:space="preserve"><value>Please fill in a message</value></data>
+<data name="notification_error_subject" xml:space="preserve"><value>Please fill in a subject</value></data>
+<data name="notification_error_send" xml:space="preserve"><value>Could not send the notification to OOTT</value></data>
+<data name="notification_send" xml:space="preserve"><value>Notification send to OOTT</value></data>
+<data name="permission_title" xml:space="preserve"><value>Permissions Denied</value></data>
+<data name="permission_prefs_title" xml:space="preserve"><value>Permissions</value></data>
+<data name="permission_config" xml:space="preserve"><value>Configure the Permissions for this app</value></data>
+<data name="permission_desc_storage" xml:space="preserve"><value>These storage permissions are needed for saving cache file, settings and save snapshots from the camera.</value></data>
+<data name="permission_desc_location" xml:space="preserve"><value>These location permissions are needed for Geofencing and to get the Wifi SSID\'s around you!</value></data>
+<data name="permission_desc_phone" xml:space="preserve"><value>These phone state permissions are needed for enabling notifications!</value></data>
+<data name="permission_desc_camera" xml:space="preserve"><value>These camera permissions are needed for scanning QR Codes!</value></data>
+<data name="permission_desc_audio" xml:space="preserve"><value>These audio permissions are needed for Voice Recognition!</value></data>
+<data name="permission_desc_finger" xml:space="preserve"><value>These fingerprint permissions are needed for enabling Fingerprint Security!</value></data>
+<data name="title_plans" xml:space="preserve"><value>Planer</value></data>
+<data name="qrcode_not_supported" xml:space="preserve"><value>QR kode understøttes ikke på denne enhed</value></data>
+<data name="qrcode_register" xml:space="preserve"><value>Registrer en QR-kode </value></data>
+<data name="qrcode_found" xml:space="preserve"><value>Nye QR kode fundet</value></data>
+<data name="qrcode_edit" xml:space="preserve"><value>Edit QR Code</value></data>
+<data name="qrcode_name" xml:space="preserve"><value>Give denne QR kode et brugbart navn. </value></data>
+<data name="qrcode_desc" xml:space="preserve"><value>Scan a QR Code. </value></data>
+<data name="qrcode_exists" xml:space="preserve"><value>QR koden er allerede registreret. </value></data>
+<data name="qrcode_saved" xml:space="preserve"><value>Gemte en ny QR kode. </value></data>
+<data name="qrcode" xml:space="preserve"><value>QR kode</value></data>
+<data name="qrcode_new_found" xml:space="preserve"><value>Ny QR kode fundet, venligst tilpas via indstillinger.</value></data>
+<data name="qr_code_disabled" xml:space="preserve"><value>QR kode deaktiveret, venligst tilpas via indstillinger.</value></data>
+<data name="noSwitchSelected_explanation_qrcode" xml:space="preserve"><value>For QR kode scanneren kan fungere, bør en switch være knyttet til en QR kode</value></data>
+<data name="permission_camera_rationale" xml:space="preserve"><value>Adgang til kameraet er nødvendig for registrering</value></data>
+<data name="low_storage_error" xml:space="preserve"><value>QR kode afhængigheder kan ikke hentes på grund af lav enheds plads</value></data>
+<data name="no_camera_permission" xml:space="preserve"><value>Dette program kan ikke køre, fordi det ikke har tilladelser til kameraet.  Programmet vil nu afslutte.</value></data>
+<data name="title_scenes" xml:space="preserve"><value>Scener</value></data>
+<data name="title_security_panel" xml:space="preserve"><value>Sikkerheds Panel</value></data>
+<data name="security_pin" xml:space="preserve"><value>Pin-kode</value></data>
+<data name="security_disarm" xml:space="preserve"><value>Disarmere</value></data>
+<data name="security_arm_home" xml:space="preserve"><value>Armere hjem</value></data>
+<data name="security_arm_away" xml:space="preserve"><value>Armere væk</value></data>
+<data name="security_wrong_code" xml:space="preserve"><value>Forkert kode indtastet!</value></data>
+<data name="security_no_rights" xml:space="preserve"><value>You do not have the rights for this action!</value></data>
+<data name="security_generic_error" xml:space="preserve"><value>Kunne ikke ændre sikkerhedsstatus</value></data>
+<data name="security_wrong_password_fingerprint" xml:space="preserve"><value>Wrong password entered, your domoticz account password is the failover for your fingerprint...!</value></data>
+<data name="show_password" xml:space="preserve"><value>Vis adgangskode</value></data>
+<data name="fingerprint_make_sure" xml:space="preserve"><value>We need to make sure its you</value></data>
+<data name="fingerprint_dialog_description" xml:space="preserve"><value>Touch your finger on the fingerprint sensor to authorise your account.</value></data>
+<data name="choose_server" xml:space="preserve"><value>Vælg server</value></data>
+<data name="dont_save_new_server" xml:space="preserve"><value>Gem ikke ny server?</value></data>
+<data name="server_must_be_unique" xml:space="preserve"><value>Servernavn skal være unikt</value></data>
+<data name="switch_to_server" xml:space="preserve"><value>"Skifter server til %1$s"</value></data>
+<data name="cant_disable_default_server" xml:space="preserve"><value>Kan ikke deaktivere standard serveren</value></data>
+<data name="settingsActivity_name" xml:space="preserve"><value>Indstillinger</value></data>
+<data name="cameraActivity_name" xml:space="preserve"><value>Kamera</value></data>
+<data name="category_generic" xml:space="preserve"><value>Generisk</value></data>
+<data name="category_wear" xml:space="preserve"><value>Android wear</value></data>
+<data name="category_auto" xml:space="preserve"><value>Android Auto</value></data>
+<data name="category_server" xml:space="preserve"><value>Server</value></data>
+<data name="category_geofencing" xml:space="preserve"><value>GeoFencing</value></data>
+<data name="category_info" xml:space="preserve"><value>Information</value></data>
+<data name="category_advanced" xml:space="preserve"><value>Advanced</value></data>
+<data name="category_language" xml:space="preserve"><value>Sprog</value></data>
+<data name="category_talk_back" xml:space="preserve"><value>Talk Back</value></data>
+<data name="category_notification" xml:space="preserve"><value>Notifikationer</value></data>
+<data name="category_debug" xml:space="preserve"><value>Fejlfinding</value></data>
+<data name="category_export" xml:space="preserve"><value>Eksporter/Importer indstillinger</value></data>
+<data name="category_theme" xml:space="preserve"><value>Tema</value></data>
+<data name="category_clock" xml:space="preserve"><value>Clock</value></data>
+<data name="category_nfc" xml:space="preserve"><value>NFC forbindelser</value></data>
+<data name="category_startup_security" xml:space="preserve"><value>Security</value></data>
+<data name="category_account" xml:space="preserve"><value>Accounts</value></data>
+<data name="category_QRCode" xml:space="preserve"><value>QR kode</value></data>
+<data name="category_bluetooth" xml:space="preserve"><value>Bluetooth</value></data>
+<data name="category_Speech" xml:space="preserve"><value>Speech</value></data>
+<data name="category_Reset" xml:space="preserve"><value>Reset</value></data>
+<data name="category_help" xml:space="preserve"><value>Contribute</value></data>
+<data name="startup_screen" xml:space="preserve"><value>Opstarts Skærm</value></data>
+<data name="enable_items" xml:space="preserve"><value>Aktiver/Deaktiver enheder</value></data>
+<data name="sort_server_title" xml:space="preserve"><value>Sorting</value></data>
+<data name="sort_server_on" xml:space="preserve"><value>Sort devices like sorted on the server</value></data>
+<data name="sort_custom_on" xml:space="preserve"><value>Custom sorting, drag and drop devices to sort them</value></data>
+<data name="sort_lock_server_title" xml:space="preserve"><value>Lock</value></data>
+<data name="sort_lock_custom_on" xml:space="preserve"><value>Lock the current custom sorting (disable drag/drop)</value></data>
+<data name="sort_dashboardLikeServer_off" xml:space="preserve"><value>Sorter betjeningspanel alfabetisk</value></data>
+<data name="extra_data_title" xml:space="preserve"><value>Ekstra data på betjeningspanel</value></data>
+<data name="show_extra_data_on" xml:space="preserve"><value>Vis ekstra data på betjeningspanel</value></data>
+<data name="show_extra_data_off" xml:space="preserve"><value>Skjul ekstra data på betjeningspanel</value></data>
+<data name="always_on_title" xml:space="preserve"><value>Hold enheden tændt</value></data>
+<data name="always_on_on" xml:space="preserve"><value>Hold skærmen tændt</value></data>
+<data name="always_on_off" xml:space="preserve"><value>Hold ikke skærmen tændt</value></data>
+<data name="always_auto_refresh" xml:space="preserve"><value>Auto Refresh</value></data>
+<data name="always_auto_refresh_on" xml:space="preserve"><value>Refresh the device state every couple of seconds</value></data>
+<data name="always_auto_refresh_off" xml:space="preserve"><value>Don\'t refresh the device state every couple of seconds</value></data>
+<data name="switch_buttons_title" xml:space="preserve"><value>Switche</value></data>
+<data name="switch_buttons_on" xml:space="preserve"><value>Vis switche med tænd/sluk-knap</value></data>
+<data name="switch_buttons_off" xml:space="preserve"><value>Vis switche med tænd/sluk-knapper</value></data>
+<data name="dashboard_list_title" xml:space="preserve"><value>Betjeningspanels gitter</value></data>
+<data name="show_dashboard_list_on" xml:space="preserve"><value>Vis betjeningspanel som liste</value></data>
+<data name="show_dashboard_list_off" xml:space="preserve"><value>Vis betjeningspanel som gitter</value></data>
+<data name="dashboard_clock" xml:space="preserve"><value>Clock</value></data>
+<data name="show_dashboard_clock" xml:space="preserve"><value>Show a clock on the dashboard</value></data>
+<data name="enable_wear_select" xml:space="preserve"><value>Android wear brugerdefinerede elementer</value></data>
+<data name="custom_wear_select" xml:space="preserve"><value>Vælg wear switche</value></data>
+<data name="custom_wear_select_desc" xml:space="preserve"><value>Vælg hvilke switche du gerne se på enheden Android wear enheden</value></data>
+<data name="wear_custom_on" xml:space="preserve"><value>Aktivere Android wear brugerdefinerede elementer</value></data>
+<data name="wear_custom_off" xml:space="preserve"><value>Deaktivere Android wear brugerdefinerede elementer</value></data>
+<data name="auto_custom_on" xml:space="preserve"><value>Enable Android Auto Notifications</value></data>
+<data name="auto_custom_off" xml:space="preserve"><value>Disable Android Auto Notifications</value></data>
+<data name="geofencing_configure" xml:space="preserve"><value>Konfigurere Geofencing</value></data>
+<data name="config_theme" xml:space="preserve"><value>Vælg tema</value></data>
+<data name="set_dark_theme" xml:space="preserve"><value>Skift til mørkt tema</value></data>
+<data name="set_light_theme" xml:space="preserve"><value>Skift til lyst tema</value></data>
+<data name="set_talk_back_on" xml:space="preserve"><value>Let OOTT talk back to you</value></data>
+<data name="set_talk_back_off" xml:space="preserve"><value>Turn talk back off</value></data>
+<data name="settings_imported" xml:space="preserve"><value>Indstillinger importeret, genstart venligst OOTT</value></data>
+<data name="settings_import_failed" xml:space="preserve"><value>Det lykkedes ikke at importere indstillinger</value></data>
+<data name="settings_exported" xml:space="preserve"><value>Indstillinger eksporteret, genstart venligst OOTT</value></data>
+<data name="settings_export_failed" xml:space="preserve"><value>Eksport af indstillinger fejlede</value></data>
+<data name="server_settings" xml:space="preserve"><value>Server forbindelsesindstillinger</value></data>
+<data name="server_force_fetch_config" xml:space="preserve"><value>Hent server konfiguration</value></data>
+<data name="nfc_settings" xml:space="preserve"><value>Opsætning af NFC forbindelser</value></data>
+<data name="speech_settings" xml:space="preserve"><value>Setup Speech Commands</value></data>
+<data name="title_activity_server_settings" xml:space="preserve"><value>Serverindstillinger</value></data>
+<data name="multi_server" xml:space="preserve"><value>Multi Server</value></data>
+<data name="enable_nfc" xml:space="preserve"><value>Aktivere NFC</value></data>
+<data name="enable_speech" xml:space="preserve"><value>Enable Speech Recognition</value></data>
+<data name="export_settings" xml:space="preserve"><value>Eksporter indstillinger</value></data>
+<data name="reset_settings" xml:space="preserve"><value>Reset all app settings (WARNING!!)</value></data>
+<data name="import_settings" xml:space="preserve"><value>Importer indstillinger</value></data>
+<data name="multi_server_settings" xml:space="preserve"><value>Aktivere understøttelse af flere servere</value></data>
+<data name="nfc_enable_settings" xml:space="preserve"><value>Aktivere NFC forbindelser</value></data>
+<data name="speech_enable_settings" xml:space="preserve"><value>Enable Speech Recognition</value></data>
+<data name="server" xml:space="preserve"><value>Server</value></data>
+<data name="qrcode_settings" xml:space="preserve"><value>Opsætning af QR-koder</value></data>
+<data name="enable_qrcode" xml:space="preserve"><value>Aktivere QR-koder</value></data>
+<data name="qrcode_enable_settings" xml:space="preserve"><value>Aktivere QR koders funktionalitet</value></data>
+<data name="bluetooth_settings" xml:space="preserve"><value>Setup Bluetooth devices</value></data>
+<data name="enable_bluetooth" xml:space="preserve"><value>Enable Bluetooth functionality</value></data>
+<data name="translate_description" xml:space="preserve"><value>You can help make our translations better, and even add new languages to this app via our Crowdin project</value></data>
+<data name="translate_title" xml:space="preserve"><value>Translations</value></data>
+<data name="security_settings" xml:space="preserve"><value>Setup Security</value></data>
+<data name="enable_security" xml:space="preserve"><value>Enable fingerprint protection on startup</value></data>
+<data name="disable_security" xml:space="preserve"><value>Disable fingerprint protection on startup</value></data>
+<data name="setup_fingerprints" xml:space="preserve"><value>Setup fingerprints via Android Settings screens</value></data>
+<data name="fingerprint_not_supported" xml:space="preserve"><value>Fingerprint Security is not supported on this device</value></data>
+<data name="fingerprint_not_setup_in_android" xml:space="preserve"><value>First configure/connect a Fingerprint to this device</value></data>
+<data name="fingerprint_sure" xml:space="preserve"><value>Are you sure? The failover password is the password of your OOTT account.</value></data>
+<data name="category_widgets" xml:space="preserve"><value>Widgets (BETA)</value></data>
+<data name="widget_description" xml:space="preserve"><value>Enable or Disable Widget on this device</value></data>
+<data name="widget_disabled" xml:space="preserve"><value>Widgets are not enabled on this device, please check your settings of OOTT</value></data>
+<data name="widget_warning" xml:space="preserve"><value>Please use widgets on your own risk!! Widgets are currently in Beta stage and probably contain certain bugs. It can cause large data / battery usage...</value></data>
+<data name="notification_settings_id" xml:space="preserve"><value>Google Cloud meddelelses-ID</value></data>
+<data name="notification_settings_push" xml:space="preserve"><value>Tilføj dit registrations id til OOTT</value></data>
+<data name="notification_settings_pushed" xml:space="preserve"><value>Dit registrerings-id er nu gemt i OOTT</value></data>
+<data name="notification_settings_push_failed" xml:space="preserve"><value>Kunne ikke gemme dit registrerings-id i OOTT, prøv igen senere.</value></data>
+<data name="notification_show_title" xml:space="preserve"><value>Last Notifications</value></data>
+<data name="notification_show_nothing" xml:space="preserve"><value>No notifications found</value></data>
+<data name="notification_show" xml:space="preserve"><value>Show last couple of Notifications</value></data>
+<data name="overwrite_notifications_title" xml:space="preserve"><value>Overskriv notifikationer</value></data>
+<data name="overwrite_notifications" xml:space="preserve"><value>Overskriv tidligere notifikationer på denne enhed</value></data>
+<data name="enable_notifications_title" xml:space="preserve"><value>Aktivere notifikationer</value></data>
+<data name="enable_notifications" xml:space="preserve"><value>Aktivere notifikationer på denne enhed</value></data>
+<data name="notification_screen_title" xml:space="preserve"><value>Notifikationsindstillinger</value></data>
+<data name="notification_history" xml:space="preserve"><value>Notification history</value></data>
+<data name="notification_vibrate_title" xml:space="preserve"><value>Vibrer</value></data>
+<data name="notification_vibrate_on" xml:space="preserve"><value>Vibrer når en meddelelse er modtaget</value></data>
+<data name="notification_vibrate_off" xml:space="preserve"><value>Vibrer ikke</value></data>
+<data name="notification_sound_title" xml:space="preserve"><value>Lyd</value></data>
+<data name="notification_sound_summary" xml:space="preserve"><value>Bruge notifikations lyd, når notifikationen kommer</value></data>
+<data name="suppress_notifications_select" xml:space="preserve"><value>Vælg hvilke notifikationer der skal undertrykkes</value></data>
+<data name="suppress_notifications" xml:space="preserve"><value>Undertryk bestemte notifikationer på denne enhed</value></data>
+<data name="suppress_notifications_title" xml:space="preserve"><value>Undertryk notifikationer</value></data>
+<data name="alarm_notifications_select" xml:space="preserve"><value>Select Notifications to Alarm</value></data>
+<data name="alarm_notifications" xml:space="preserve"><value>Sound an Alarm for specific Notifications</value></data>
+<data name="clear_notifications" xml:space="preserve"><value>Clean notification logs</value></data>
+<data name="alarm_notifications_title" xml:space="preserve"><value>Alarm Notifications</value></data>
+<data name="alarm" xml:space="preserve"><value>Alarm</value></data>
+<data name="alarmtimer_title" xml:space="preserve"><value>Alarm Timer</value></data>
+<data name="alarmtimer" xml:space="preserve"><value>Number of seconds to time the alarm</value></data>
+<data name="theme_default" xml:space="preserve"><value>Default</value></data>
+<data name="theme_daynight" xml:space="preserve"><value>Day/Night</value></data>
+<data name="theme_orange" xml:space="preserve"><value>Orange</value></data>
+<data name="theme_pink" xml:space="preserve"><value>Pink</value></data>
+<data name="theme_blue" xml:space="preserve"><value>Blue</value></data>
+<data name="default_values" xml:space="preserve"><value>Default values</value></data>
+<data name="default_values_min_error" xml:space="preserve"><value>Max value should be higher than Min value</value></data>
+<data name="default_values_max_error" xml:space="preserve"><value>Max value should be higher than Min value</value></data>
+<data name="info_version" xml:space="preserve"><value>Version</value></data>
+<data name="info_domoticz_version" xml:space="preserve"><value>OOTT version</value></data>
+<data name="info_about" xml:space="preserve"><value>Om OOTT</value></data>
+<data name="info_credits" xml:space="preserve"><value>Tak til</value></data>
+<data name="info_credits_text" xml:space="preserve"><value>OOTT til Android er gjort mulig med flere open source-biblioteker</value></data>
+<data name="debug_switch_title" xml:space="preserve"><value>Fejlfinding</value></data>
+<data name="debug_switch_summary_on" xml:space="preserve"><value>Fejlfinding aktiveret</value></data>
+<data name="debug_switch_summary_off" xml:space="preserve"><value>Fejlfinding deaktiveret</value></data>
+<data name="error_atLeastOneItemInDrawer" xml:space="preserve"><value>Der skal være mindst en enhed i listen</value></data>
+<data name="title_activity_update" xml:space="preserve"><value>Opdater serveren</value></data>
+<data name="error_couldNotCheckForVersion" xml:space="preserve"><value>"Could not check for version: %1$s"</value></data>
+<data name="error_couldNotCheckForUpdates" xml:space="preserve"><value>"Kunne ikke tjekke for opdateringer: %1$s"</value></data>
+<data name="error_couldNotCheckForConfig" xml:space="preserve"><value>"Kunne ikke få OOTT serverkonfiguration: %1$s"</value></data>
+<data name="update_available_enhanced" xml:space="preserve"><value>Server opdatering tilgængelig: %1$s version: %2$s</value></data>
+<data name="check_for_update_title" xml:space="preserve"><value>Søg efter Opdateringer</value></data>
+<data name="check_for_update" xml:space="preserve"><value>Ønsker du vi undersøger for OOTT systemopdateringer?</value></data>
+<data name="update_server_warning" xml:space="preserve"><value>Mens din server opdaterer vil denne app ikke fungere korrekt.</value></data>
+<data name="update_server_downloadNotReady1" xml:space="preserve"><value>Opdateringen er ikke (helt) hentet endnu.</value></data>
+<data name="update_server_downloadNotReady2" xml:space="preserve"><value>Prøv venligst igen senere.</value></data>
+<data name="server_update_available" xml:space="preserve"><value>Server opdatering tilgængelig</value></data>
+<data name="update_server" xml:space="preserve"><value>Opdater serveren</value></data>
+<data name="server_update_revision" xml:space="preserve"><value>Server update gennemgang</value></data>
+<data name="server_version" xml:space="preserve"><value>Serverversion</value></data>
+<data name="server_update" xml:space="preserve"><value>Server opdatering</value></data>
+<data name="please_wait_while_we_check" xml:space="preserve"><value>Vent venligst mens vi kontrollere, om din server er klar til at opdatere</value></data>
+<data name="server_update_not_ready" xml:space="preserve"><value>Server opdatering er ikke downloadet</value></data>
+<data name="please_wait_while_server_updated" xml:space="preserve"><value>Vent venligst mens serveren opdateres.</value></data>
+<data name="server_update_done" xml:space="preserve"><value>Server opdatering færdig</value></data>
+<data name="update_not_started" xml:space="preserve"><value>Opdatering ikke startet</value></data>
+<data name="update_not_started_unknown_error" xml:space="preserve"><value>Opdatering ikke startet på grund af en ukendt fejl</value></data>
+<data name="server_update_not_available" xml:space="preserve"><value>Server opdatering er ikke tilgængelig</value></data>
+<data name="click_to_update_server" xml:space="preserve"><value>Klik her for at opdatere din server</value></data>
+<data name="debug_test_text" xml:space="preserve"><value>Fejlfindings test</value></data>
+<data name="restart_required_title" xml:space="preserve"><value>Genstart påkrævet</value></data>
+<data name="restart_now" xml:space="preserve"><value>Genstart nu?</value></data>
+<data name="check_settings" xml:space="preserve"><value>Check your settings</value></data>
+<data name="Speech_not_supported" xml:space="preserve"><value>Speech is not supported on this device</value></data>
+<data name="Speech_register" xml:space="preserve"><value>Register a Speech Command</value></data>
+<data name="Speech_found" xml:space="preserve"><value>New Speech Command found</value></data>
+<data name="Speech_edit" xml:space="preserve"><value>Edit Speech Command</value></data>
+<data name="Speech_name" xml:space="preserve"><value>Give this Speech Command a proper name. </value></data>
+<data name="Speech_exists" xml:space="preserve"><value>Speech Command already registered. </value></data>
+<data name="Speech_saved" xml:space="preserve"><value>Saved a New Speech Command. </value></data>
+<data name="Speech_desc" xml:space="preserve"><value>Do a new voice command. </value></data>
+<data name="Speech" xml:space="preserve"><value>Speech</value></data>
+<data name="Speech_disabled" xml:space="preserve"><value>Speech Command disabled, please setup via settings.</value></data>
+<data name="noSwitchSelected_explanation_Speech" xml:space="preserve"><value>For Speech Command to have effect, a switch should be linked</value></data>
+<data name="title_switches" xml:space="preserve"><value>Switche</value></data>
+<data name="txt_notAvailable" xml:space="preserve"><value>Ikke tilgængelig</value></data>
+<data name="idx" xml:space="preserve"><value>IDX</value></data>
+<data name="placeholder_value" xml:space="preserve"><value>255</value></data>
+<data name="color_set" xml:space="preserve"><value>Sæt farve til</value></data>
+<data name="state_set" xml:space="preserve"><value>Sæt status for</value></data>
+<data name="error_favorite" xml:space="preserve"><value>Kunne ikke indstille foretrukne</value></data>
+<data name="error_logs" xml:space="preserve"><value>Kunne ikke finde nogen logfiler til at vise</value></data>
+<data name="error_color" xml:space="preserve"><value>Kunne ikke ændre farven</value></data>
+<data name="error_state" xml:space="preserve"><value>Kunne ikke ændre tilstanden</value></data>
+<data name="error_timer" xml:space="preserve"><value>Kunne ikke vise timerne</value></data>
+<data name="error_notifications" xml:space="preserve"><value>Could not show the notifications</value></data>
+<data name="set_level_switch" xml:space="preserve"><value>"Indstil niveauet for switch: %1$s til %2$d"</value></data>
+<data name="title_temperature" xml:space="preserve"><value>Temperatur</value></data>
+<data name="cancel_override" xml:space="preserve"><value>Annuller tilsidesættelse</value></data>
+<data name="wind" xml:space="preserve"><value>Vind</value></data>
+<data name="error_log" xml:space="preserve"><value>Kunne ikke få logdata for</value></data>
+<data name="follow_schedule" xml:space="preserve"><value>Følg tidsplan</value></data>
+<data name="command" xml:space="preserve"><value>Kommando</value></data>
+<data name="type" xml:space="preserve"><value>Type</value></data>
+<data name="notapplicable" xml:space="preserve"><value>Ikke tilgængelig</value></data>
+<data name="timer_before_sunset" xml:space="preserve"><value>Før solnedgang</value></data>
+<data name="timer_after_sunset" xml:space="preserve"><value>Efter solnedgang</value></data>
+<data name="timer_ontime" xml:space="preserve"><value>På tid</value></data>
+<data name="timer_before_sunrise" xml:space="preserve"><value>Før solopgang</value></data>
+<data name="timer_after_sunrise" xml:space="preserve"><value>Efter solopgang</value></data>
+<data name="timer_fixed" xml:space="preserve"><value>Fast dato/klokkeslæt</value></data>
+<data name="odd_day_numbers" xml:space="preserve"><value>Ulige dag numre</value></data>
+<data name="even_day_numbers" xml:space="preserve"><value>Lige dages numre</value></data>
+<data name="odd_week_numbers" xml:space="preserve"><value>Ulige ugenumre</value></data>
+<data name="even_week_numbers" xml:space="preserve"><value>Lige ugenumre</value></data>
+<data name="monthly" xml:space="preserve"><value>Månedlig</value></data>
+<data name="monthly_weekday" xml:space="preserve"><value>Månedlig (hverdage)</value></data>
+<data name="yearly" xml:space="preserve"><value>Årligt</value></data>
+<data name="yearly_weekday" xml:space="preserve"><value>Årligt (hverdage)</value></data>
+<data name="before_sun_at_south" xml:space="preserve"><value>Before Sun at South</value></data>
+<data name="after_sun_at_south" xml:space="preserve"><value>After Sun at South</value></data>
+<data name="before_civil_twilight_start" xml:space="preserve"><value>Before Civil Twilight Start</value></data>
+<data name="after_civil_twilight_start" xml:space="preserve"><value>After Civil Twilight Start</value></data>
+<data name="before_civil_twilight_end" xml:space="preserve"><value>Before Civil Twilight End</value></data>
+<data name="after_civil_twilight_end" xml:space="preserve"><value>After Civil Twilight End</value></data>
+<data name="before_nautical_twilight_start" xml:space="preserve"><value>Before Nautical Twilight Start</value></data>
+<data name="after_nautical_twilight_start" xml:space="preserve"><value>After Nautical Twilight Start</value></data>
+<data name="before_nautical_twilight_end" xml:space="preserve"><value>Before Nautical Twilight End</value></data>
+<data name="after_nautical_twilight_end" xml:space="preserve"><value>After Nautical Twilight End</value></data>
+<data name="before_austronomical_twilight_start" xml:space="preserve"><value>Before Austronomical Twilight Start</value></data>
+<data name="after_austronomical_twilight_start" xml:space="preserve"><value>After Austronomical Twilight Start</value></data>
+<data name="before_austronomical_twilight_end" xml:space="preserve"><value>Before Austronomical Twilight End</value></data>
+<data name="after_austronomical_twilight_end" xml:space="preserve"><value>After Austronomical Twilight End</value></data>
+<data name="timer_every_days" xml:space="preserve"><value>Hver dag</value></data>
+<data name="timer_working_days" xml:space="preserve"><value>Arbejdsdage</value></data>
+<data name="timer_weekend" xml:space="preserve"><value>Weekend</value></data>
+<data name="timer_other" xml:space="preserve"><value>Andre</value></data>
+<data name="timers" xml:space="preserve"><value>Timere</value></data>
+<data name="first" xml:space="preserve"><value>First</value></data>
+<data name="second" xml:space="preserve"><value>Second</value></data>
+<data name="third" xml:space="preserve"><value>Third</value></data>
+<data name="fourth" xml:space="preserve"><value>Fourth</value></data>
+<data name="last" xml:space="preserve"><value>Last</value></data>
+<data name="title_utilities" xml:space="preserve"><value>Værktøjer</value></data>
+<data name="settemperature" xml:space="preserve"><value>Definer</value></data>
+<data name="title_vars" xml:space="preserve"><value>Bruger variabler</value></data>
+<data name="var_input" xml:space="preserve"><value>Input value is not valid</value></data>
+<data name="var_input_error" xml:space="preserve"><value>Failed to update user variable</value></data>
+<data name="title_weather" xml:space="preserve"><value>Vejr</value></data>
+<data name="dewPoint" xml:space="preserve"><value>Dugpunkt</value></data>
+<data name="temp" xml:space="preserve"><value>Temp</value></data>
+<data name="pressure" xml:space="preserve"><value>Lufttryk</value></data>
+<data name="chill" xml:space="preserve"><value>Chill</value></data>
+<data name="direction" xml:space="preserve"><value>Retning</value></data>
+<data name="humidity" xml:space="preserve"><value>Fugt</value></data>
+<data name="speed" xml:space="preserve"><value>Hastighed</value></data>
+<data name="forecast" xml:space="preserve"><value>Vejrudsigt</value></data>
+<data name="rain" xml:space="preserve"><value>Regn</value></data>
+<data name="rainrate" xml:space="preserve"><value>Regn sats</value></data>
+<data name="co2" xml:space="preserve"><value>CO2</value></data>
+<data name="co2min" xml:space="preserve"><value>CO2 Min</value></data>
+<data name="co2max" xml:space="preserve"><value>CO2 Max</value></data>
+<data name="welcome_title_activity_welcome" xml:space="preserve"><value>Velkommen</value></data>
+<data name="welcome_info_domoticz" xml:space="preserve"><value>OOTT er et Home Automation System, der lader dig overvåge og konfigurere forskellige enheder som: lys, switche, forskellige sensorer/målere som temperatur, regn, vind, UV, Electra, Gas, vand og meget mere. Meddelelser/beskeder kan sendes til alle mobile enheder.</value></data>
+<data name="welcome_info_swipe" xml:space="preserve"><value>Swipe til højre eller Brug navigationsknapperne nederst til at fortsætte</value></data>
+<data name="welcome_info_settings1" xml:space="preserve"><value>Næste side er for dine indstillinger for OOTT.</value></data>
+<data name="welcome_info_settings2" xml:space="preserve"><value>Du kan angive en lokal og en ekstern server indstilling.
+De lokale indstillinger er til når du har forbindelse til dit hjemme wifi-netværk.
+Remote indstillinger bruges, når der ikke er forbindelse til dit hjemme wifi netværk, eller når tilsluttet mobilt data (2G, 3G, 4G osv).</value></data>
+<data name="welcome_info_checkingConnection" xml:space="preserve"><value>Kontrollere dine forbindelsesindstillinger</value></data>
+<data name="welcome_msg_connectionDataIncomplete" xml:space="preserve"><value>Forbindelsesdata ufuldstændige eller tomme</value></data>
+<data name="welcome_msg_connectionDataInvalid" xml:space="preserve"><value>URL-adressen skal ikke begynde med http</value></data>
+<data name="welcome_msg_correctOnPreviousPage" xml:space="preserve"><value>Ret venligst data på den foregående side</value></data>
+<data name="welcome_msg_serverVersion" xml:space="preserve"><value>OOTT version</value></data>
+<data name="welcome_msg_numberOfDevices" xml:space="preserve"><value>%1$d enheder fundet</value></data>
+<data name="welcome_msg_no_ssid_found" xml:space="preserve"><value>Ingen wifi SSID er fundet</value></data>
+<data name="welcome_ssid_spinner_prompt" xml:space="preserve"><value>Vælg hjem SSID</value></data>
+<data name="welcome_ssid_button_prompt" xml:space="preserve"><value>Add home SSID\'s</value></data>
+<data name="welcome_server_settings_title" xml:space="preserve"><value>Serverindstillinger</value></data>
+<data name="welcome_server_startScreen" xml:space="preserve"><value>Startskærmen</value></data>
+<data name="welcome_button_next" xml:space="preserve"><value>næste</value></data>
+<data name="welcome_button_previous" xml:space="preserve"><value>forrige</value></data>
+<data name="welcome_button_finish" xml:space="preserve"><value>færdig</value></data>
+<data name="welcome_remote_server_address" xml:space="preserve"><value>Serveradresse</value></data>
+<data name="welcome_remote_server_protocol" xml:space="preserve"><value>Protokol</value></data>
+<data name="welcome_remote_server_port" xml:space="preserve"><value>Port</value></data>
+<data name="welcome_remote_server_username" xml:space="preserve"><value>Brugernavn</value></data>
+<data name="welcome_remote_server_password" xml:space="preserve"><value>Kodeord</value></data>
+<data name="welcome_remote_server_directory" xml:space="preserve"><value>Mappe</value></data>
+<data name="remote" xml:space="preserve"><value>Fjern adgang</value></data>
+<data name="local" xml:space="preserve"><value>Lokal</value></data>
+<data name="servername" xml:space="preserve"><value>Server Navn</value></data>
+<data name="welcome_local_server_used_switch_title" xml:space="preserve"><value>Forskellige serveradresser</value></data>
+<data name="welcome_local_server_used_switch_summary" xml:space="preserve"><value>Brug forskellig adresse for lokale forbindelser</value></data>
+<data name="welcome_advancedSettings" xml:space="preserve"><value>Avancerede serverindstillinger</value></data>
+<data name="welcome_advancedSettings_summary" xml:space="preserve"><value>Aanvendes kun til ikke-standard OOTT servere</value></data>
+<data name="welcome_local_server_ssid" xml:space="preserve"><value>Lokalt wifi SSID</value></data>
+<data name="welcome_local_server_address" xml:space="preserve"><value>Lokal serveradresse</value></data>
+<data name="welcome_local_server_protocol" xml:space="preserve"><value>Lokal protokol</value></data>
+<data name="welcome_local_server_port" xml:space="preserve"><value>Lokal port</value></data>
+<data name="welcome_local_server_directory" xml:space="preserve"><value>Lokalt bibliotek (Efterlad Tom hvis ikke bruges)</value></data>
+<data name="welcome_local_server_username" xml:space="preserve"><value>Lokalt username (Efterlad Tom hvis ikke bruges)</value></data>
+<data name="welcome_local_server_password" xml:space="preserve"><value>Lokalt adgangskode (Efterlad Tom hvis ikke bruges)</value></data>
+<data name="pick_device_title" xml:space="preserve"><value>Pick a device</value></data>
+<data name="choose_switch" xml:space="preserve"><value>Choose device</value></data>
+<data name="failed_to_get_securitypanel" xml:space="preserve"><value>No security panel found under your switches</value></data>
+<data name="failed_to_get_switches" xml:space="preserve"><value>Failed to get devices</value></data>
+<data name="failed_toggle_switch" xml:space="preserve"><value>Failed to toggle device</value></data>
+<data name="switch_toggled" xml:space="preserve"><value>"Switch device"</value></data>
+<data name="text_loading" xml:space="preserve"><value>Loading...</value></data>
+<data name="text_go" xml:space="preserve"><value>GO</value></data>
+<data name="widget_background" xml:space="preserve"><value>Background</value></data>
+<data name="widget_dark" xml:space="preserve"><value>Dark</value></data>
+<data name="widget_light" xml:space="preserve"><value>Light</value></data>
+<data name="widget_transparent_dark" xml:space="preserve"><value>Dark Transparent</value></data>
+<data name="widget_transparent_light" xml:space="preserve"><value>Light Transparent</value></data>
+<data name="title_wizard" xml:space="preserve"><value>Velkomst guiden</value></data>
+<data name="wizard_welcome" xml:space="preserve"><value>Velkommen</value></data>
+<data name="wizard_welcome_description" xml:space="preserve"><value>OOTT er et meget letvægts hjemmeautomatiseringssystem, der lader dig overvåge og konfigurere forskellige enheder.</value></data>
+<data name="wizard_favorites" xml:space="preserve"><value>Favoritter</value></data>
+<data name="wizard_favorites_description" xml:space="preserve"><value>Du kan tilføje enheder til betjeningspanela ved at gemme dem som favoritter. Langt Klik på et element for at gemme dem som favorit!</value></data>
+<data name="wizard_startup" xml:space="preserve"><value>Opstarts Skærm</value></data>
+<data name="wizard_startup_description" xml:space="preserve"><value>Du kan vælge din startskærm i indstillingerne!</value></data>
+<data name="wizard_notifications" xml:space="preserve"><value>Opsætning af notifikationer</value></data>
+<data name="wizard_notifications_description" xml:space="preserve"><value>Du kan nu modtage notifikationer på din Android enhed! Ændre den måde, hvorpå notifikationerne opfører sig i indstillingerne</value></data>
+<data name="wizard_multiserver" xml:space="preserve"><value>Benytter flere servere</value></data>
+<data name="wizard_multiserver_description" xml:space="preserve"><value>Du kan konfigurere flere OOTT servere i indstillingerne.</value></data>
+<data name="wizard_geo" xml:space="preserve"><value>GeoFencing</value></data>
+<data name="wizard_geo_description" xml:space="preserve"><value>Du kan vælge din startskærm i indstillingerne!</value></data>
+<data name="wizard_wear" xml:space="preserve"><value>Android Wear</value></data>
+<data name="wizard_wear_description" xml:space="preserve"><value>Du kan angive, hvilke parametre du vil styre fra din Android Wear enhed!</value></data>
+<data name="wizard_auto" xml:space="preserve"><value>Android Auto</value></data>
+<data name="wizard_auto_description" xml:space="preserve"><value>Receive the OOTT notifications right on your Android Auto device!</value></data>
+<data name="wizard_graph" xml:space="preserve"><value>Grafer</value></data>
+<data name="wizard_graph_description" xml:space="preserve"><value>Du kan se den historiske graf for en forsyning, vejr eller temperatur!</value></data>
+<data name="wizard_filter" xml:space="preserve"><value>Filtre</value></data>
+<data name="wizard_filter_description" xml:space="preserve"><value>Du kan filtrere enheder pr. status (tænd/sluk). Vælg det øverste højre menuikon for filtrering!</value></data>
+<data name="wizard_widgets" xml:space="preserve"><value>Widgets!!</value></data>
+<data name="wizard_widgets_description" xml:space="preserve"><value>Du kan sætte nogle widgets på hjemmeskærmen!</value></data>
+<data name="wizard_menuitem" xml:space="preserve"><value>Deaktivere guiden</value></data>
+<data name="wizard_menuitem_description" xml:space="preserve"><value>Du kan nu fjerne denne guide fra navigationsmenuen!</value></data>
+<data name="wizard_nfc" xml:space="preserve"><value>NFC</value></data>
+<data name="wizard_nfc_description" xml:space="preserve"><value>Du er i stand til skifte switche via NFC!</value></data>
+<data name="wizard_qrcode" xml:space="preserve"><value>QR kode</value></data>
+<data name="wizard_qrcode_description" xml:space="preserve"><value>Skift switches ved at scanne en QR kode (eller stregkode)!</value></data>
+<data name="wizard_speech" xml:space="preserve"><value>Speech Commands</value></data>
+<data name="wizard_speech_description" xml:space="preserve"><value>Toggle switches with your voice! Configure speech commands via the settings screens and connect switches.</value></data>
+<data name="wizard_button_nice" xml:space="preserve"><value>Rart</value></data>
+<data name="wizard_button_switches" xml:space="preserve"><value>Switches</value></data>
+<data name="wizard_button_settings" xml:space="preserve"><value>Indstillinger</value></data>
+<data name="wizard_button_wizard" xml:space="preserve"><value>Fjern</value></data>
+<data name="wizard_button_utilities" xml:space="preserve"><value>Værktøjer</value></data>
+<data name="wizard_button_done" xml:space="preserve"><value>Færdig</value></data>
+</root>

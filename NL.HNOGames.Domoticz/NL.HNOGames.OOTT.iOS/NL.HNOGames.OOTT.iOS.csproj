@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-     <ProjectGuid>{F7207160-EA66-4B72-9F6A-46FAED160C4F}</ProjectGuid>
+    <ProjectGuid>{F7207160-EA66-4B72-9F6A-46FAED160C4F}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
     <RootNamespace>NL.HNOGames.OOTT.iOS</RootNamespace>
@@ -134,7 +134,14 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <MtouchArch>ARM64</MtouchArch>
+    <MtouchSdkVersion>
+    </MtouchSdkVersion>
+    <CodesignProvision>OOTT Distribution App Store</CodesignProvision>
+    <BuildIpa>true</BuildIpa>
+    <IpaIncludeArtwork>false</IpaIncludeArtwork>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'OOTT|iPhoneSimulator'">
     <OutputPath>bin\iPhoneSimulator\OOTT\</OutputPath>

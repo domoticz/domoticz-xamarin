@@ -62,7 +62,7 @@
 	<key>NSMicrophoneUsageDescription</key>
 	<string>We need the microphone for speech recognition</string>
 	<key>NSFaceIDUsageDescription</key>
-	<string>Need your face to unlock OOTT.</string>
+	<string>Need your face to unlock Domoticz.</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>You can set switches automaticly on Bluetooth connections</string>
 	<key>NSBluetoothAlwaysUsageDescription</key>
@@ -85,10 +85,10 @@
 	<key>UIMainStoryboardFile</key>
 	<string>Launch</string>
 	<key>MinimumOSVersion</key>
-	<string>11.0</string>
+	<string>10.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.1.26</string>
+	<string>0.1.30</string>
 	<key>CFBundleVersion</key>
-	<string>136</string>
+	<string>140</string>
 </dict>
 </plist>

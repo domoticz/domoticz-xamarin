@@ -134,11 +134,11 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
-    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignKey>Apple Distribution: Mark Heinis (S644AUC27Z)</CodesignKey>
     <MtouchArch>ARM64</MtouchArch>
     <MtouchSdkVersion>
     </MtouchSdkVersion>
-    <CodesignProvision>OOTT Distribution App Store</CodesignProvision>
+    <CodesignProvision>OOTT App Store</CodesignProvision>
     <BuildIpa>true</BuildIpa>
     <IpaIncludeArtwork>false</IpaIncludeArtwork>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
@@ -906,7 +906,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadWrongLinkerErrorInfoBarNLHNOGamesDomoticziOSHideInfoBar="True" />
+      <UserProperties XamarinHotReloadWrongLinkerErrorInfoBarNLHNOGamesDomoticziOSHideInfoBar="True" XamarinHotReloadWrongLinkerErrorInfoBarNLHNOGamesOOTTiOSHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

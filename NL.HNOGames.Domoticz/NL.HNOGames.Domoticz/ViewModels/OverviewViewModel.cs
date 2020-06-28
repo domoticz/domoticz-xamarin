@@ -19,7 +19,7 @@ namespace NL.HNOGames.Domoticz.ViewModels
         /// </summary>
         public OverviewViewModel()
         {
-            Title = "Domoticz";
+            Title = AppResources.app_name;
             Plans = new ObservableRangeCollection<Models.Plan>();
 
             LoadPlansCommand = new Command(async () => await ExecuteLoadPlansCommand(false));

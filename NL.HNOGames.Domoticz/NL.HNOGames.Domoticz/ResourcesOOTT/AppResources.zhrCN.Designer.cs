@@ -39,7 +39,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NL.HNOGames.Domoticz.ResourcesOOTT.AppResources.zhrCN", typeof(AppResources_zhrCN).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NL.HNOGames.OOTT.ResourcesOOTT.AppResources.zhrCN", typeof(AppResources_zhrCN).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

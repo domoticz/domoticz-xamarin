@@ -8,6 +8,7 @@ using Plugin.Multilingual;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -292,6 +293,22 @@ namespace NL.HNOGames.Domoticz.Views.Settings
                     Title = AppResources.enable_items
                 };
             await Navigation.PushAsync(_oEnableScreenPage);
+        }
+
+        /// <summary>
+        /// The btnReportError_Clicked
+        /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="EventArgs"/></param>
+        private async void btnReportError_Clicked(object sender, EventArgs e)
+        {
+#if OOTT
+            await Browser.OpenAsync("http://www.oott.hu/ereport", BrowserLaunchMode.SystemPreferred);
+#elif RELEASE
+            await Browser.OpenAsync("https://www.domoticz.com/forum", BrowserLaunchMode.SystemPreferred);
+#elif DEBUG
+            await Browser.OpenAsync("https://www.domoticz.com/forum", BrowserLaunchMode.SystemPreferred);
+#endif
         }
 
         /// <summary>

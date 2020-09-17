@@ -2044,4 +2044,7 @@ to cellular data (2G, 3G, 4G etc).</value>
   <data name="txt_beacon_UUID" xml:space="preserve">
     <value>UUID (for example 3699EFBC-64AD-4CAA-9987-FA6D70C3C425)</value>
   </data>
+  <data name="button_support" xml:space="preserve">
+    <value>Report an error</value>
+  </data>
 </root>

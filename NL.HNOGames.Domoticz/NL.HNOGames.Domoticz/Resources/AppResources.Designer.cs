@@ -844,6 +844,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Report an error.
+        /// </summary>
+        public static string button_support {
+            get {
+                return ResourceManager.GetString("button_support", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Camera.
         /// </summary>
         public static string cameraActivity_name {

@@ -3247,6 +3247,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to There are several features in the OOTT app that are locked until you buy the premium version\r\n- no ads!!\r\n-notification support\r\n- theming\r\n- talkback\r\n- qrcode scanning\r\n\r\n- and more features in the future.
+        /// </summary>
+        public static string premium_message {
+            get {
+                return ResourceManager.GetString("premium_message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Get the premium version!.
         /// </summary>
         public static string premium_title {
@@ -3270,6 +3279,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static string priority {
             get {
                 return ResourceManager.GetString("priority", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 122842.
+        /// </summary>
+        public static string productId {
+            get {
+                return ResourceManager.GetString("productId", resourceCulture);
             }
         }
         
@@ -4224,6 +4242,15 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static string sunset {
             get {
                 return ResourceManager.GetString("sunset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to http://www.oott.hu/ereport.
+        /// </summary>
+        public static string support_url {
+            get {
+                return ResourceManager.GetString("support_url", resourceCulture);
             }
         }
         

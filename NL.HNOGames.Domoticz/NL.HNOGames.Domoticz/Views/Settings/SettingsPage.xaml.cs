@@ -302,13 +302,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// <param name="e">The e<see cref="EventArgs"/></param>
         private async void btnReportError_Clicked(object sender, EventArgs e)
         {
-#if OOTT
-            await Browser.OpenAsync("http://www.oott.hu/ereport", BrowserLaunchMode.SystemPreferred);
-#elif RELEASE
-            await Browser.OpenAsync("https://www.domoticz.com/forum", BrowserLaunchMode.SystemPreferred);
-#elif DEBUG
-            await Browser.OpenAsync("https://www.domoticz.com/forum", BrowserLaunchMode.SystemPreferred);
-#endif
+            await Browser.OpenAsync(AppResources.support_url, BrowserLaunchMode.SystemPreferred);
         }
 
         /// <summary>
@@ -394,17 +388,9 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// <param name="e">The e<see cref="EventArgs"/></param>
         private async void btnBuyPremium_Clicked(object sender, EventArgs e)
         {
-            var sMessage =
-                    "There are several features in the domoticz app that are locked until you buy the premium version\r\n- no ads!!\r\n-notification support\r\n- theming\r\n- talkback\r\n- qrcode scanning\r\n\r\n- and more features in the future";
-
-#if OOTT
-         sMessage =
-                 "There are several features in the OOTT app that are locked until you buy the premium version\r\n- no ads!!\r\n-notification support\r\n- theming\r\n- talkback\r\n- qrcode scanning\r\n\r\n- and more features in the future";
-#endif
-
             var result = await UserDialogs.Instance.ConfirmAsync(new ConfirmConfig
             {
-                Message = sMessage,
+                Message = AppResources.premium_message,
                 OkText = "Buy",
                 CancelText = "Cancel"
             });
@@ -422,7 +408,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         /// <param name="e">The e<see cref="EventArgs"/></param>
         private async void BtnRestore_OnClicked(object sender, EventArgs e)
         {
-            if (await InAppPurchaseHelper.PremiumAccountPurchased())
+            if (await InAppPurchaseHelper.PremiumAccountPurchased(AppResources.productId))
             {
                 App.ShowToast("Thanks for buying premium!!");
                 PremiumScreenSetup();

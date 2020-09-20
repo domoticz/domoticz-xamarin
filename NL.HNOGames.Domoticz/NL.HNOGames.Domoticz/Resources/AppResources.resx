@@ -2047,4 +2047,13 @@ to cellular data (2G, 3G, 4G etc).</value>
   <data name="button_support" xml:space="preserve">
     <value>Report an error</value>
   </data>
+  <data name="support_url" xml:space="preserve">
+    <value>https://www.domoticz.com/forum/</value>
+  </data>
+  <data name="premium_message" xml:space="preserve">
+    <value>There are several features in the domoticz app that are locked until you buy the premium version\r\n- no ads!!\r\n-notification support\r\n- theming\r\n- talkback\r\n- qrcode scanning\r\n\r\n- and more features in the future</value>
+  </data>
+  <data name="productId" xml:space="preserve">
+    <value>134845</value>
+  </data>
 </root>

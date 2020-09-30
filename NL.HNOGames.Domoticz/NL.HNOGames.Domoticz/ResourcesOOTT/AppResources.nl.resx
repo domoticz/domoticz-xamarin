@@ -76,10 +76,12 @@
 <data name="retry" xml:space="preserve"><value>Opnieuw proberen</value></data>
 <data name="undo" xml:space="preserve"><value>Ongedaan maken</value></data>
 <data name="something_deleted" xml:space="preserve"><value>%1$s is verwijderd</value></data>
+<data name="remove_last_server" xml:space="preserve"><value>U kunt de laatste server in de lijst niet verwijderen.</value></data>
 <data name="switch_on" xml:space="preserve"><value>Zet schakelaar aan</value></data>
 <data name="switch_off" xml:space="preserve"><value>Zet schakelaar uit</value></data>
 <data name="switch_night" xml:space="preserve"><value>Verander schakelaar naar nachtverlichting</value></data>
 <data name="switch_full" xml:space="preserve"><value>Verander schakelaar naar vol aan</value></data>
+<data name="switch_connection_removed" xml:space="preserve"><value>Apparaat verbinding verwijderd.</value></data>
 <data name="blind_up" xml:space="preserve"><value>Draai rolluik omhoog</value></data>
 <data name="blind_down" xml:space="preserve"><value>Draai rolluik naar beneden</value></data>
 <data name="blind_stop" xml:space="preserve"><value>Stop rolluik</value></data>
@@ -92,13 +94,13 @@
 <data name="filter_devices" xml:space="preserve"><value>Filter apparaten</value></data>
 <data name="filter_graph_empty" xml:space="preserve"><value>Kies een filter</value></data>
 <data name="choose_color" xml:space="preserve"><value>Kleur kiezen</value></data>
-<data name="no_data_on_domoticz" xml:space="preserve"><value>Geen gegevens beschikbaar op de OOTT server</value></data>
+<data name="no_data_on_domoticz" xml:space="preserve"><value>Geen gegevens beschikbaar op de Domoticz server</value></data>
 <data name="row_icon_description" xml:space="preserve"><value>rij icoon</value></data>
 <data name="error_image_description" xml:space="preserve"><value>Fout afbeelding</value></data>
 <data name="device_image_description" xml:space="preserve"><value>Afbeelding van het apparaat</value></data>
 <data name="white" xml:space="preserve"><value>Wit</value></data>
 <data name="refresh" xml:space="preserve"><value>Vernieuwen</value></data>
-<data name="domoticz_logo" xml:space="preserve"><value>OOTT logo</value></data>
+<data name="domoticz_logo" xml:space="preserve"><value>Domoticz logo</value></data>
 <data name="this_take_minutes" xml:space="preserve"><value>Dit kan enkele minuten duren.</value></data>
 <data name="continue_question" xml:space="preserve"><value>Doorgaan?</value></data>
 <data name="cant_remove_default_server" xml:space="preserve"><value>We kunnen de standaard server instellingen niet verwijderen</value></data>
@@ -109,7 +111,12 @@
 <data name="filter_error" xml:space="preserve"><value>Error</value></data>
 <data name="use_demo_setup" xml:space="preserve"><value>Gebruik demo-instellingen</value></data>
 <data name="auto_refresh_time" xml:space="preserve"><value>Timer</value></data>
-<data name="setautorefreshtime" xml:space="preserve"><value>Stel een specifieke timer in voor het automatisch verversen van je scherm (in seconden).</value></data>
+<data name="set_auto_refresh_time" xml:space="preserve"><value>Stel een specifieke timer in voor het automatisch verversen van je scherm (in seconden).</value></data>
+<data name="error_authentication_basicauth" xml:space="preserve"><value>BELANGRIJK: Controleer of uw Domoticz systeem de  \'Login Pagina\' als authenticatiemethode gebruikt. De \'Basis Auth\' zal worden verwijderd van Domoticz uit de volgende update!</value></data>
+<data name="category_other" xml:space="preserve"><value>Overige</value></data>
+<data name="tasker_title" xml:space="preserve"><value>Automatiseringsregels instellen met Tasker voor Domoticz</value></data>
+<data name="category_tasker" xml:space="preserve"><value>Tasker</value></data>
+<data name="wizard_widgets_tasker" xml:space="preserve"><value>Automatiseringsregels instellen binnen Tasker voor Domoticz!</value></data>
 <data name="action_switch_server" xml:space="preserve"><value>Verander Server</value></data>
 <data name="action_settings" xml:space="preserve"><value>Instellingen</value></data>
 <data name="action_filter" xml:space="preserve"><value>Filter</value></data>
@@ -119,13 +126,36 @@
 <data name="action_bluetooth_show" xml:space="preserve"><value>Toon gekoppelde apparaten</value></data>
 <data name="action_speech" xml:space="preserve"><value>Spraakherkenning</value></data>
 <data name="send" xml:space="preserve"><value>Verstuur</value></data>
+<data name="beacon_not_supported" xml:space="preserve"><value>Beacons worden niet ondersteund op dit apparaat</value></data>
+<data name="beacon_register" xml:space="preserve"><value>Verbinding maken met een beacon</value></data>
+<data name="beacon_found" xml:space="preserve"><value>Nieuwe beacon gevonden</value></data>
+<data name="beacon_edit" xml:space="preserve"><value>Beacon aanpassen</value></data>
+<data name="beacon_name" xml:space="preserve"><value>Geef deze beacon een juiste naam</value></data>
+<data name="beacon_desc" xml:space="preserve"><value>Controleer de lijst van gekoppelde beacons. </value></data>
+<data name="beacon_exists" xml:space="preserve"><value>Deze beacon is al geconfigureerd op Domoticz. </value></data>
+<data name="beacon_turned_off" xml:space="preserve"><value>Bluetooth moet worden ingeschakeld in uw telefoon instellingen. </value></data>
+<data name="beacon_saved" xml:space="preserve"><value>Er is een nieuwe beacon opgeslagen</value></data>
+<data name="action_beacon_show" xml:space="preserve"><value>Voeg nieuwe beacon toe</value></data>
+<data name="beacon" xml:space="preserve"><value>Beacon</value></data>
+<data name="beacon_disabled" xml:space="preserve"><value>Beacon automatisering uitgeschakeld, controleer uw instellingen.</value></data>
+<data name="noSwitchSelected_explanation_beacon" xml:space="preserve"><value>Er moet eerst een schakelaar worden gekoppeld aan deze beacon</value></data>
+<data name="beacon_UUID" xml:space="preserve"><value>UUID</value></data>
+<data name="beacon_major" xml:space="preserve"><value>Major (optioneel)</value></data>
+<data name="beacon_minor" xml:space="preserve"><value>Minor (optioneel)</value></data>
+<data name="beacon_scan" xml:space="preserve"><value>Beacon</value></data>
+<data name="beacon_scan_desc" xml:space="preserve"><value>Scannen naar beacons.</value></data>
+<data name="beacon_notifications" xml:space="preserve"><value>Meldingen inschakelen voor het binnenkomen en verlaten van een beacon regio</value></data>
+<data name="beacon_entering" xml:space="preserve"><value>"Betreed %1$s"</value></data>
+<data name="beacon_leaving" xml:space="preserve"><value>Verlaat %1$s</value></data>
+<data name="beacon_entering_text" xml:space="preserve"><value>Betreedt een van de beacon regios</value></data>
+<data name="beacon_leaving_text" xml:space="preserve"><value>Verlaat een van de beacon regios</value></data>
 <data name="bluetooth_not_supported" xml:space="preserve"><value>Bluetooth wordt niet ondersteund door dit apparaat</value></data>
 <data name="bluetooth_register" xml:space="preserve"><value>Verbinding maken met bluetooth apparaat</value></data>
 <data name="bluetooth_found" xml:space="preserve"><value>Nieuw bluetooth apparaat gevonden</value></data>
 <data name="bluetooth_edit" xml:space="preserve"><value>Bewerk bluetooth apparaat</value></data>
 <data name="bluetooth_name" xml:space="preserve"><value>Geef dit bluetooth apparaat een juiste naam. </value></data>
 <data name="bluetooth_desc" xml:space="preserve"><value>Controleer de lijst van gekoppelde bluetooth apparaten. </value></data>
-<data name="bluetooth_exists" xml:space="preserve"><value>Dit bluetooth apparaat is al geconfigureerd op OOTT. </value></data>
+<data name="bluetooth_exists" xml:space="preserve"><value>Dit bluetooth apparaat is al geconfigureerd op Domoticz. </value></data>
 <data name="bluetooth_turned_off" xml:space="preserve"><value>Bluetooth moet worden ingeschakeld in uw telefoon instellingen. </value></data>
 <data name="bluetooth_saved" xml:space="preserve"><value>Een nieuw bluetooth apparaat opgeslagen. </value></data>
 <data name="bluetooth" xml:space="preserve"><value>Bluetooth</value></data>
@@ -133,6 +163,7 @@
 <data name="noSwitchSelected_explanation_bluetooth" xml:space="preserve"><value>Er moet eerst een schakelaar worden gekoppeld aan dit bluetooth apparaat</value></data>
 <data name="title_cameras" xml:space="preserve"><value>Camera\'s</value></data>
 <data name="title_dashboard" xml:space="preserve"><value>Dashboard</value></data>
+<data name="delivery" xml:space="preserve"><value>Levering</value></data>
 <data name="usage" xml:space="preserve"><value>Verbruik</value></data>
 <data name="today" xml:space="preserve"><value>Vandaag</value></data>
 <data name="total" xml:space="preserve"><value>Totaal</value></data>
@@ -209,8 +240,8 @@
 <data name="notification_error_system" xml:space="preserve"><value>Kies een systeem om de notificatie naar te sturen</value></data>
 <data name="notification_error_message" xml:space="preserve"><value>Vul een bericht in</value></data>
 <data name="notification_error_subject" xml:space="preserve"><value>Vul de titel in</value></data>
-<data name="notification_error_send" xml:space="preserve"><value>De notificatie kon niet naar OOTT verzonden worden</value></data>
-<data name="notification_send" xml:space="preserve"><value>Notificatie verstuurd naar OOTT</value></data>
+<data name="notification_error_send" xml:space="preserve"><value>De notificatie kon niet naar Domoticz verzonden worden</value></data>
+<data name="notification_send" xml:space="preserve"><value>Notificatie verstuurd naar Domoticz</value></data>
 <data name="permission_title" xml:space="preserve"><value>Permissie geweigerd</value></data>
 <data name="permission_prefs_title" xml:space="preserve"><value>Machtigingen</value></data>
 <data name="permission_config" xml:space="preserve"><value>Bekijk de machtigingen van deze toepassing.</value></data>
@@ -303,6 +334,8 @@
 <data name="show_dashboard_list_off" xml:space="preserve"><value>Dashboard weergeven als raster</value></data>
 <data name="dashboard_clock" xml:space="preserve"><value>Klok</value></data>
 <data name="show_dashboard_clock" xml:space="preserve"><value>Een klok weergeven op het dashboard</value></data>
+<data name="dashboard_camera" xml:space="preserve"><value>Camera</value></data>
+<data name="show_dashboard_camera" xml:space="preserve"><value>Laad de camera achter verbonden schakelaars</value></data>
 <data name="enable_wear_select" xml:space="preserve"><value>Aangepaste lijst</value></data>
 <data name="custom_wear_select" xml:space="preserve"><value>Selecteer schakelaars</value></data>
 <data name="custom_wear_select_desc" xml:space="preserve"><value>Selecteer welke schakelaars u graag wilt zien op uw apparaat</value></data>
@@ -314,11 +347,11 @@
 <data name="config_theme" xml:space="preserve"><value>Thema gebruiken</value></data>
 <data name="set_dark_theme" xml:space="preserve"><value>Donker thema gebruiken</value></data>
 <data name="set_light_theme" xml:space="preserve"><value>Licht thema gebruiken</value></data>
-<data name="set_talk_back_on" xml:space="preserve"><value>Laat OOTT tegen u praten</value></data>
+<data name="set_talk_back_on" xml:space="preserve"><value>Laat Domoticz tegen u praten</value></data>
 <data name="set_talk_back_off" xml:space="preserve"><value>Terug praten uitzetten</value></data>
-<data name="settings_imported" xml:space="preserve"><value>Instellingen zijn geïmporteerd. Herstart van OOTT is benodigd.</value></data>
+<data name="settings_imported" xml:space="preserve"><value>Instellingen zijn geïmporteerd. Herstart van Domoticz is benodigd.</value></data>
 <data name="settings_import_failed" xml:space="preserve"><value>Kan de instellingen niet importeren, probeer het opnieuw.</value></data>
-<data name="settings_exported" xml:space="preserve"><value>Instellingen zijn geëxporteerd. Herstart van OOTT is benodigd.</value></data>
+<data name="settings_exported" xml:space="preserve"><value>Instellingen zijn geëxporteerd. Herstart van Domoticz is benodigd.</value></data>
 <data name="settings_export_failed" xml:space="preserve"><value>Kan de instellingen niet exporteren, probeer het opnieuw</value></data>
 <data name="server_settings" xml:space="preserve"><value>Verbindingsinstellingen</value></data>
 <data name="server_force_fetch_config" xml:space="preserve"><value>Serverconfiguratie ophalen</value></data>
@@ -340,6 +373,8 @@
 <data name="qrcode_enable_settings" xml:space="preserve"><value>QR-Code scanner inschakelen</value></data>
 <data name="bluetooth_settings" xml:space="preserve"><value>Stel bluetooth apparaten in</value></data>
 <data name="enable_bluetooth" xml:space="preserve"><value>Inschakelen van de bluetooth functionaliteit</value></data>
+<data name="beacon_settings" xml:space="preserve"><value>Beacons configureren</value></data>
+<data name="enable_beacon" xml:space="preserve"><value>Beacon scanner/functionaliteit inschakelen</value></data>
 <data name="translate_description" xml:space="preserve"><value>U kunt onze vertalingen beter maken, of zelfs nieuwe talen toe voegen aan deze applicatie via ons Crowdin project</value></data>
 <data name="translate_title" xml:space="preserve"><value>Vertalingen</value></data>
 <data name="security_settings" xml:space="preserve"><value>Beveiligingsinstellingen</value></data>
@@ -348,15 +383,15 @@
 <data name="setup_fingerprints" xml:space="preserve"><value>Vingerafdrukken instellen via Android systeem instellingen</value></data>
 <data name="fingerprint_not_supported" xml:space="preserve"><value>Beveiliging met vingerafdruk is niet mogelijk op dit toestel</value></data>
 <data name="fingerprint_not_setup_in_android" xml:space="preserve"><value>Eerst een vingerafdruk instellen via systeem instellingen menu</value></data>
-<data name="fingerprint_sure" xml:space="preserve"><value>Weet u dit zeker? Mocht uw vingerafdruk niet worden herkend dan kunt u altijd nog inloggen met het wachtwoord van uw OOTT account.</value></data>
+<data name="fingerprint_sure" xml:space="preserve"><value>Weet u dit zeker? Mocht uw vingerafdruk niet worden herkend dan kunt u altijd nog inloggen met het wachtwoord van uw Domoticz account.</value></data>
 <data name="category_widgets" xml:space="preserve"><value>Widgets (BETA)</value></data>
 <data name="widget_description" xml:space="preserve"><value>Zet de widget functionaliteit aan of uit op dit toestel</value></data>
-<data name="widget_disabled" xml:space="preserve"><value>Widgets zijn qua functionaliteit nog niet aangezet op dit toestel, bekijk de settings in de OOTT app</value></data>
+<data name="widget_disabled" xml:space="preserve"><value>Widgets zijn qua functionaliteit nog niet aangezet op dit toestel, bekijk de settings in de Domoticz app</value></data>
 <data name="widget_warning" xml:space="preserve"><value>De Widgets zijn op dit moment nog niet 100% werkend en kunnen leiden tot ongewenst gedrag. Denk aan mogelijk meer data of batterij gebruik!!</value></data>
 <data name="notification_settings_id" xml:space="preserve"><value>Google Cloud Messaging-ID</value></data>
-<data name="notification_settings_push" xml:space="preserve"><value>Uw registratienummer naar OOTT versturen</value></data>
-<data name="notification_settings_pushed" xml:space="preserve"><value>Uw registratie id is nu opgeslagen in OOTT</value></data>
-<data name="notification_settings_push_failed" xml:space="preserve"><value>Kan uw registratienummer niet opslaan in OOTT, probeer het later opnieuw.</value></data>
+<data name="notification_settings_push" xml:space="preserve"><value>Uw registratienummer naar Domoticz versturen</value></data>
+<data name="notification_settings_pushed" xml:space="preserve"><value>Uw registratie id is nu opgeslagen in Domoticz</value></data>
+<data name="notification_settings_push_failed" xml:space="preserve"><value>Kan uw registratienummer niet opslaan in Domoticz, probeer het later opnieuw.</value></data>
 <data name="notification_show_title" xml:space="preserve"><value>Recente notificaties</value></data>
 <data name="notification_show_nothing" xml:space="preserve"><value>Geen notificaties gevonden</value></data>
 <data name="notification_show" xml:space="preserve"><value>De laatste ontvangen notificaties weergeven</value></data>
@@ -366,6 +401,7 @@
 <data name="enable_notifications" xml:space="preserve"><value>Notificaties op dit apparaat inschakelen</value></data>
 <data name="notification_screen_title" xml:space="preserve"><value>Notificatie instellingen</value></data>
 <data name="notification_history" xml:space="preserve"><value>Notificatie geschiedenis</value></data>
+<data name="notification_inbox" xml:space="preserve"><value>Inbox</value></data>
 <data name="notification_vibrate_title" xml:space="preserve"><value>Trillen</value></data>
 <data name="notification_vibrate_on" xml:space="preserve"><value>Trillen bij het ontvangen van een notificatie</value></data>
 <data name="notification_vibrate_off" xml:space="preserve"><value>Niet trillen bij het ontvangen van een notificatie</value></data>
@@ -386,14 +422,16 @@
 <data name="theme_orange" xml:space="preserve"><value>Oranje</value></data>
 <data name="theme_pink" xml:space="preserve"><value>Roze</value></data>
 <data name="theme_blue" xml:space="preserve"><value>Blauw</value></data>
+<data name="theme_green" xml:space="preserve"><value>Groen</value></data>
+<data name="theme_dark_blue" xml:space="preserve"><value>Donkerblauw</value></data>
 <data name="default_values" xml:space="preserve"><value>Standaardwaarden</value></data>
 <data name="default_values_min_error" xml:space="preserve"><value>Maximale waarde moet hoger zijn dan minimale waarde</value></data>
 <data name="default_values_max_error" xml:space="preserve"><value>Minimale waarde moet lager zijn dan maximale waarde</value></data>
 <data name="info_version" xml:space="preserve"><value>Versie</value></data>
-<data name="info_domoticz_version" xml:space="preserve"><value>OOTT versie</value></data>
-<data name="info_about" xml:space="preserve"><value>Over OOTT</value></data>
+<data name="info_domoticz_version" xml:space="preserve"><value>Domoticz versie</value></data>
+<data name="info_about" xml:space="preserve"><value>Over Domoticz</value></data>
 <data name="info_credits" xml:space="preserve"><value>Credits</value></data>
-<data name="info_credits_text" xml:space="preserve"><value>OOTT voor Android is mogelijk gemaakt met behulp van verschillende open source libraries</value></data>
+<data name="info_credits_text" xml:space="preserve"><value>Domoticz voor Android is mogelijk gemaakt met behulp van verschillende open source libraries</value></data>
 <data name="debug_switch_title" xml:space="preserve"><value>Debugmodus</value></data>
 <data name="debug_switch_summary_on" xml:space="preserve"><value>Foutopsporing ingeschakeld</value></data>
 <data name="debug_switch_summary_off" xml:space="preserve"><value>Foutopsporing uitgeschakeld</value></data>
@@ -401,10 +439,10 @@
 <data name="title_activity_update" xml:space="preserve"><value>Server updaten</value></data>
 <data name="error_couldNotCheckForVersion" xml:space="preserve"><value>"Kan versie niet controleren: %1$s"</value></data>
 <data name="error_couldNotCheckForUpdates" xml:space="preserve"><value>"Kan niet controleren op updates: %1$s"</value></data>
-<data name="error_couldNotCheckForConfig" xml:space="preserve"><value>"De OOTT server configuratie kan niet worden opgehaald: %1$s"</value></data>
+<data name="error_couldNotCheckForConfig" xml:space="preserve"><value>"De Domoticz server configuratie kan niet worden opgehaald: %1$s"</value></data>
 <data name="update_available_enhanced" xml:space="preserve"><value>Server update beschikbaar: %1$s naar versie: %2$s</value></data>
 <data name="check_for_update_title" xml:space="preserve"><value>Controleren op Updates</value></data>
-<data name="check_for_update" xml:space="preserve"><value>Wilt u dat uw OOTT systeem wordt gecontroleerd op updates?</value></data>
+<data name="check_for_update" xml:space="preserve"><value>Wilt u dat uw Domoticz systeem wordt gecontroleerd op updates?</value></data>
 <data name="update_server_warning" xml:space="preserve"><value>Tijdens het updaten van uw server werkt de app mogelijk niet correct.</value></data>
 <data name="update_server_downloadNotReady1" xml:space="preserve"><value>De update is nog niet (volledig) gedownload.</value></data>
 <data name="update_server_downloadNotReady2" xml:space="preserve"><value>Probeer het later nog eens.</value></data>
@@ -425,6 +463,8 @@
 <data name="restart_required_title" xml:space="preserve"><value>Opnieuw opstarten vereist</value></data>
 <data name="restart_now" xml:space="preserve"><value>Nu opnieuw opstarten?</value></data>
 <data name="check_settings" xml:space="preserve"><value>Controleer je instellingen</value></data>
+<data name="report_error" xml:space="preserve"><value>Fout rapporteren</value></data>
+<data name="support" xml:space="preserve"><value>Ondersteuning</value></data>
 <data name="Speech_not_supported" xml:space="preserve"><value>Spraakherkenning wordt niet ondersteund op dit apparaat</value></data>
 <data name="Speech_register" xml:space="preserve"><value>Registreer een spraak opdracht</value></data>
 <data name="Speech_found" xml:space="preserve"><value>Nieuwe spraak opdracht gevonden</value></data>
@@ -496,7 +536,7 @@
 <data name="fourth" xml:space="preserve"><value>Vierde</value></data>
 <data name="last" xml:space="preserve"><value>Laatste</value></data>
 <data name="title_utilities" xml:space="preserve"><value>Overige</value></data>
-<data name="settemperature" xml:space="preserve"><value>Zet</value></data>
+<data name="set_temperature" xml:space="preserve"><value>Zet</value></data>
 <data name="title_vars" xml:space="preserve"><value>Gebruikersvariabelen</value></data>
 <data name="var_input" xml:space="preserve"><value>Input waarde is niet geldig</value></data>
 <data name="var_input_error" xml:space="preserve"><value>Bijwerken van de gebruikersvariabele mislukt</value></data>
@@ -515,17 +555,17 @@
 <data name="co2min" xml:space="preserve"><value>CO2 Min</value></data>
 <data name="co2max" xml:space="preserve"><value>CO2 Max</value></data>
 <data name="welcome_title_activity_welcome" xml:space="preserve"><value>Welkom</value></data>
-<data name="welcome_info_domoticz" xml:space="preserve"><value>OOTT is een huisautomatisering systeem welke tal van apparaten centraal beheert. Denk hier bij aan Verlichting, Schakelaars en Sensoren. Maar ook meters voor bijvoorbeeld temperatuur, neerslag, wind, UV, stroom, gas, water en nog veel meer. Notificaties en andere meldingen kunnen naar elk mobiel apparaat gestuurd worden.</value></data>
+<data name="welcome_info_domoticz" xml:space="preserve"><value>Domoticz is een huisautomatisering systeem welke tal van apparaten centraal beheert. Denk hier bij aan Verlichting, Schakelaars en Sensoren. Maar ook meters voor bijvoorbeeld temperatuur, neerslag, wind, UV, stroom, gas, water en nog veel meer. Notificaties en andere meldingen kunnen naar elk mobiel apparaat gestuurd worden.</value></data>
 <data name="welcome_info_swipe" xml:space="preserve"><value>Veeg naar rechts of gebruik de knoppen onderaan om verder te gaan</value></data>
-<data name="welcome_info_settings1" xml:space="preserve"><value>De volgende pagina is voor uw OOTT instellingen</value></data>
-<data name="welcome_info_settings2" xml:space="preserve"><value>U kunt lokale en externe verbindingsgegevens instellen.
-De lokale instellingen zijn voor wanneer u met uw thuisnetwerk verbonden bent.
-Instellingen voor externe verbindingen worden gebruikt wanneer niet verbonden met uw thuisnetwerk. Via 4G bijvoorbeeld.</value></data>
+<data name="welcome_info_settings1" xml:space="preserve"><value>De volgende pagina is voor uw Domoticz instellingen</value></data>
+<data name="welcome_info_settings2" xml:space="preserve"><value>        U kunt lokale en externe verbindingsgegevens instellen.
+        De lokale instellingen zijn voor wanneer u met uw thuisnetwerk verbonden bent.
+        Instellingen voor externe verbindingen worden gebruikt wanneer niet verbonden met uw thuisnetwerk. Via 4G bijvoorbeeld.</value></data>
 <data name="welcome_info_checkingConnection" xml:space="preserve"><value>Verbindingsgegevens controleren</value></data>
 <data name="welcome_msg_connectionDataIncomplete" xml:space="preserve"><value>Verbindingsgegevens niet volledig ingevuld</value></data>
 <data name="welcome_msg_connectionDataInvalid" xml:space="preserve"><value>De URL mag niet beginnen met http</value></data>
 <data name="welcome_msg_correctOnPreviousPage" xml:space="preserve"><value>Graag de gegevens op de vorige pagina aanpassen</value></data>
-<data name="welcome_msg_serverVersion" xml:space="preserve"><value>OOTT versie</value></data>
+<data name="welcome_msg_serverVersion" xml:space="preserve"><value>Domoticz versie</value></data>
 <data name="welcome_msg_numberOfDevices" xml:space="preserve"><value>%1$d apparaten gevonden</value></data>
 <data name="welcome_msg_no_ssid_found" xml:space="preserve"><value>Geen toegangspunten gevonden</value></data>
 <data name="welcome_ssid_spinner_prompt" xml:space="preserve"><value>Selecteer uw Wi-Fi toegangspunt</value></data>
@@ -547,7 +587,7 @@ Instellingen voor externe verbindingen worden gebruikt wanneer niet verbonden me
 <data name="welcome_local_server_used_switch_title" xml:space="preserve"><value>Ander serveradres</value></data>
 <data name="welcome_local_server_used_switch_summary" xml:space="preserve"><value>Gebruik verschillende serveradressen voor uw thuisnetwerk</value></data>
 <data name="welcome_advancedSettings" xml:space="preserve"><value>Geavanceerde serverinstellingen</value></data>
-<data name="welcome_advancedSettings_summary" xml:space="preserve"><value>Wordt alleen gebruikt voor niet-standaard OOTT servers</value></data>
+<data name="welcome_advancedSettings_summary" xml:space="preserve"><value>Wordt alleen gebruikt voor niet-standaard Domoticz servers</value></data>
 <data name="welcome_local_server_ssid" xml:space="preserve"><value>Uw lokale toegangspunten</value></data>
 <data name="welcome_local_server_address" xml:space="preserve"><value>Lokaal serveradres</value></data>
 <data name="welcome_local_server_protocol" xml:space="preserve"><value>Lokaal protocol</value></data>
@@ -570,7 +610,7 @@ Instellingen voor externe verbindingen worden gebruikt wanneer niet verbonden me
 <data name="widget_transparent_light" xml:space="preserve"><value>Transparant voor lichte achtergrond</value></data>
 <data name="title_wizard" xml:space="preserve"><value>Welkom Wizard</value></data>
 <data name="wizard_welcome" xml:space="preserve"><value>Welkom</value></data>
-<data name="wizard_welcome_description" xml:space="preserve"><value>OOTT is een lichtgewicht huisautomatiserings systeem welke tal van apparaten centraal kan beheren.</value></data>
+<data name="wizard_welcome_description" xml:space="preserve"><value>Domoticz is een lichtgewicht huisautomatiserings systeem welke tal van apparaten centraal kan beheren.</value></data>
 <data name="wizard_favorites" xml:space="preserve"><value>Favorieten</value></data>
 <data name="wizard_favorites_description" xml:space="preserve"><value>U kunt apparaten toevoegen aan het Dashboard door ze op te slaan als favorieten. Hou een item lang ingedrukt om deze op te slaan als favoriet!</value></data>
 <data name="wizard_startup" xml:space="preserve"><value>Beginscherm</value></data>
@@ -578,13 +618,13 @@ Instellingen voor externe verbindingen worden gebruikt wanneer niet verbonden me
 <data name="wizard_notifications" xml:space="preserve"><value>Notificaties ontvangen</value></data>
 <data name="wizard_notifications_description" xml:space="preserve"><value>U kunt nu notificaties ontvangen op uw Android toestel! Bepaal zelf welke notificaties worden verstuurd via het instellingen menu.</value></data>
 <data name="wizard_multiserver" xml:space="preserve"><value>Meerdere servers</value></data>
-<data name="wizard_multiserver_description" xml:space="preserve"><value>U kunt meerdere OOTT servers configureren in het instellingen menu.</value></data>
+<data name="wizard_multiserver_description" xml:space="preserve"><value>U kunt meerdere Domoticz servers configureren in het instellingen menu.</value></data>
 <data name="wizard_geo" xml:space="preserve"><value>Geofencing</value></data>
 <data name="wizard_geo_description" xml:space="preserve"><value>Activeer geofencing in het instellingen menu en stel hier de gewenste gebieden in.</value></data>
 <data name="wizard_wear" xml:space="preserve"><value>Android Wear</value></data>
 <data name="wizard_wear_description" xml:space="preserve"><value>Specificeer welke schakelaars u graag wilt bedienen vanaf uw Android Wear apparaat!</value></data>
 <data name="wizard_auto" xml:space="preserve"><value>Android Auto</value></data>
-<data name="wizard_auto_description" xml:space="preserve"><value>Ontvang de notificaties van OOTT direct op uw Android Auto-apparaat!</value></data>
+<data name="wizard_auto_description" xml:space="preserve"><value>Ontvang de notificaties van Domoticz direct op uw Android Auto-apparaat!</value></data>
 <data name="wizard_graph" xml:space="preserve"><value>Grafieken</value></data>
 <data name="wizard_graph_description" xml:space="preserve"><value>Bekijk historische grafieken van een toepassing, het weer of de temperatuur!</value></data>
 <data name="wizard_filter" xml:space="preserve"><value>Filters</value></data>
@@ -595,6 +635,7 @@ Instellingen voor externe verbindingen worden gebruikt wanneer niet verbonden me
 <data name="wizard_menuitem_description" xml:space="preserve"><value>U kunt nu deze Wizard uit het menu verwijderen!</value></data>
 <data name="wizard_nfc" xml:space="preserve"><value>NFC</value></data>
 <data name="wizard_nfc_description" xml:space="preserve"><value>Schakel uw apparatuur aan of uit via NFC!</value></data>
+<data name="wizard_bluetooth_description" xml:space="preserve"><value>Schakel schakelaars uit via het scannen van beacons!</value></data>
 <data name="wizard_qrcode" xml:space="preserve"><value>QR-Code</value></data>
 <data name="wizard_qrcode_description" xml:space="preserve"><value>Bedien schakelaars door middel van het scannen van een QR-Code!</value></data>
 <data name="wizard_speech" xml:space="preserve"><value>Spraakopdrachten</value></data>
@@ -605,4 +646,5 @@ Instellingen voor externe verbindingen worden gebruikt wanneer niet verbonden me
 <data name="wizard_button_wizard" xml:space="preserve"><value>Verwijder</value></data>
 <data name="wizard_button_utilities" xml:space="preserve"><value>Overige</value></data>
 <data name="wizard_button_done" xml:space="preserve"><value>Klaar!</value></data>
+<data name="wizard_beacon_description" xml:space="preserve"><value>Bedien schakelaars door middel van het scannen van beacons!</value></data>
 </root>

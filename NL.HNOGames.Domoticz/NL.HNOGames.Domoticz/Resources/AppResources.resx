@@ -351,6 +351,9 @@
   <data name="something_deleted" xml:space="preserve">
     <value>%1$s deleted</value>
   </data>
+  <data name="remove_last_server" xml:space="preserve">
+    <value>You can\'t remove the last server in the list.</value>
+  </data>
   <data name="switch_on" xml:space="preserve">
     <value>Turning switch on</value>
   </data>
@@ -362,6 +365,9 @@
   </data>
   <data name="switch_full" xml:space="preserve">
     <value>Turning switch to full light</value>
+  </data>
+  <data name="switch_connection_removed" xml:space="preserve">
+    <value>Switch connection removed.</value>
   </data>
   <data name="blind_up" xml:space="preserve">
     <value>Turning blind up</value>
@@ -392,6 +398,9 @@
   </data>
   <data name="filter_devices" xml:space="preserve">
     <value>Filter devices</value>
+  </data>
+  <data name="filter_range" xml:space="preserve">
+    <value>Set range</value>
   </data>
   <data name="filter_graph_empty" xml:space="preserve">
     <value>Please specify a filter</value>
@@ -450,8 +459,20 @@
   <data name="auto_refresh_time" xml:space="preserve">
     <value>Refresh timer</value>
   </data>
-  <data name="setautorefreshtime" xml:space="preserve">
-    <value>Set a specific timer for the auto refresh in seconds.</value>
+  <data name="error_authentication_basicauth" xml:space="preserve">
+    <value>IMPORTANT: Please check if your Domoticz system uses Login Page as the authentication method. Basic Auth is going to be removed from Domoticz from next update!</value>
+  </data>
+  <data name="category_other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="tasker_title" xml:space="preserve">
+    <value>Setup automation rules with Tasker for Domoticz</value>
+  </data>
+  <data name="category_tasker" xml:space="preserve">
+    <value>Tasker</value>
+  </data>
+  <data name="wizard_widgets_tasker" xml:space="preserve">
+    <value>Setup automation rules within Tasker for Domoticz!</value>
   </data>
   <data name="action_switch_server" xml:space="preserve">
     <value>Switch Server</value>
@@ -479,6 +500,78 @@
   </data>
   <data name="send" xml:space="preserve">
     <value>Send</value>
+  </data>
+  <data name="action_graph" xml:space="preserve">
+    <value>Graph</value>
+  </data>
+  <data name="beacon_not_supported" xml:space="preserve">
+    <value>Beacons are not supported on this device</value>
+  </data>
+  <data name="beacon_register" xml:space="preserve">
+    <value>Connect a beacon</value>
+  </data>
+  <data name="beacon_found" xml:space="preserve">
+    <value>New beacon found</value>
+  </data>
+  <data name="beacon_edit" xml:space="preserve">
+    <value>Edit beacon</value>
+  </data>
+  <data name="beacon_name" xml:space="preserve">
+    <value>Give this beacon a proper name. </value>
+  </data>
+  <data name="beacon_desc" xml:space="preserve">
+    <value>Check the list of paired beacon devices. </value>
+  </data>
+  <data name="beacon_exists" xml:space="preserve">
+    <value>Beacon already configured on Domoticz. </value>
+  </data>
+  <data name="beacon_turned_off" xml:space="preserve">
+    <value>Bluetooth needs to be turned on in your device settings. </value>
+  </data>
+  <data name="beacon_saved" xml:space="preserve">
+    <value>Saved a new beacon connection. </value>
+  </data>
+  <data name="action_beacon_show" xml:space="preserve">
+    <value>Add new beacon</value>
+  </data>
+  <data name="beacon" xml:space="preserve">
+    <value>Beacon</value>
+  </data>
+  <data name="beacon_disabled" xml:space="preserve">
+    <value>Beacon automation disabled, please setup via settings. </value>
+  </data>
+  <data name="noSwitchSelected_explanation_beacon" xml:space="preserve">
+    <value>For a Beacon device to automate something in Domoticz, a switch should be linked to an beacon. </value>
+  </data>
+  <data name="beacon_UUID" xml:space="preserve">
+    <value>UUID</value>
+  </data>
+  <data name="beacon_major" xml:space="preserve">
+    <value>Major (optional)</value>
+  </data>
+  <data name="beacon_minor" xml:space="preserve">
+    <value>Minor (optional)</value>
+  </data>
+  <data name="beacon_scan" xml:space="preserve">
+    <value>Beacon</value>
+  </data>
+  <data name="beacon_scan_desc" xml:space="preserve">
+    <value>Scanning for beacons</value>
+  </data>
+  <data name="beacon_notifications" xml:space="preserve">
+    <value>Enable notifications for entering and leaving a beacon region.</value>
+  </data>
+  <data name="beacon_entering" xml:space="preserve">
+    <value>"Entering %1$s"</value>
+  </data>
+  <data name="beacon_leaving" xml:space="preserve">
+    <value>Leaving  %1$s</value>
+  </data>
+  <data name="beacon_entering_text" xml:space="preserve">
+    <value>Entering one of the beacons</value>
+  </data>
+  <data name="beacon_leaving_text" xml:space="preserve">
+    <value>Leaving one of the beacons</value>
   </data>
   <data name="bluetooth_not_supported" xml:space="preserve">
     <value>Bluetooth is not supported on this device</value>
@@ -521,6 +614,9 @@
   </data>
   <data name="title_dashboard" xml:space="preserve">
     <value>Dashboard</value>
+  </data>
+  <data name="delivery" xml:space="preserve">
+    <value>Delivery</value>
   </data>
   <data name="usage" xml:space="preserve">
     <value>Usage</value>
@@ -575,6 +671,12 @@
   </data>
   <data name="radius" xml:space="preserve">
     <value>Radius (meter)</value>
+  </data>
+  <data name="save_as" xml:space="preserve">
+    <value>Save as</value>
+  </data>
+  <data name="filename" xml:space="preserve">
+    <value>Filename</value>
   </data>
   <data name="connectedSwitch" xml:space="preserve">
     <value>Connected switch</value>
@@ -1050,6 +1152,12 @@
   <data name="show_dashboard_clock" xml:space="preserve">
     <value>Show a clock on the dashboard</value>
   </data>
+  <data name="dashboard_camera" xml:space="preserve">
+    <value>Camera</value>
+  </data>
+  <data name="show_dashboard_camera" xml:space="preserve">
+    <value>Load the camera for connected switches</value>
+  </data>
   <data name="enable_wear_select" xml:space="preserve">
     <value>Android Wear custom items</value>
   </data>
@@ -1160,6 +1268,12 @@
   </data>
   <data name="enable_bluetooth" xml:space="preserve">
     <value>Enable Bluetooth functionality</value>
+  </data>
+  <data name="beacon_settings" xml:space="preserve">
+    <value>Setup Beacons</value>
+  </data>
+  <data name="enable_beacon" xml:space="preserve">
+    <value>Enable Beacon functionality</value>
   </data>
   <data name="translate_description" xml:space="preserve">
     <value>You can help make our translations better, and even add new languages to this app via our Crowdin project</value>
@@ -1302,6 +1416,12 @@
   <data name="theme_blue" xml:space="preserve">
     <value>Blue</value>
   </data>
+  <data name="theme_green" xml:space="preserve">
+    <value>Green</value>
+  </data>
+  <data name="theme_dark_blue" xml:space="preserve">
+    <value>Dark blue</value>
+  </data>
   <data name="default_values" xml:space="preserve">
     <value>Default values</value>
   </data>
@@ -1421,6 +1541,12 @@
   </data>
   <data name="check_settings" xml:space="preserve">
     <value>Check your settings</value>
+  </data>
+  <data name="report_error" xml:space="preserve">
+    <value>Report an error</value>
+  </data>
+  <data name="support" xml:space="preserve">
+    <value>Support</value>
   </data>
   <data name="Speech_not_supported" xml:space="preserve">
     <value>Speech is not supported on this device</value>
@@ -1647,9 +1773,6 @@
   <data name="title_utilities" xml:space="preserve">
     <value>Utilities</value>
   </data>
-  <data name="settemperature" xml:space="preserve">
-    <value>Set</value>
-  </data>
   <data name="title_vars" xml:space="preserve">
     <value>User Variables</value>
   </data>
@@ -1679,6 +1802,9 @@
   </data>
   <data name="humidity" xml:space="preserve">
     <value>Hum</value>
+  </data>
+  <data name="barometer" xml:space="preserve">
+    <value>Baro</value>
   </data>
   <data name="speed" xml:space="preserve">
     <value>Speed</value>
@@ -1718,9 +1844,9 @@
   </data>
   <data name="welcome_info_domoticz" xml:space="preserve">
     <value>Domoticz is a Home Automation System that lets you monitor
-and configure various devices like: Lights, Switches, various sensors/meters like
-Temperature, Rain, Wind, UV, Electra, Gas, Water and much more. Notifications/Alerts can
-be sent to any mobile device.</value>
+        and configure various devices like: Lights, Switches, various sensors/meters like
+        Temperature, Rain, Wind, UV, Electra, Gas, Water and much more. Notifications/Alerts can
+        be sent to any mobile device.</value>
   </data>
   <data name="welcome_info_swipe" xml:space="preserve">
     <value>Swipe to the right or use the navigation buttons at the bottom to continue</value>
@@ -1730,16 +1856,19 @@ be sent to any mobile device.</value>
   </data>
   <data name="welcome_info_settings2" xml:space="preserve">
     <value>
-You can specify a local and a remote server setting.
-The local settings are for when you are connected to your home wifi network.
-Remote settings are used when not connected to your home wifi network or when connected
-to cellular data (2G, 3G, 4G etc).</value>
+        You can specify a local and a remote server setting.
+        The local settings are for when you are connected to your home wifi network.
+        Remote settings are used when not connected to your home wifi network or when connected
+        to cellular data (2G, 3G, 4G etc).</value>
   </data>
   <data name="welcome_info_checkingConnection" xml:space="preserve">
     <value>Verifying your connection settings</value>
   </data>
   <data name="welcome_msg_connectionDataIncomplete" xml:space="preserve">
     <value>Connection data incomplete or empty</value>
+  </data>
+  <data name="welcome_msg_connectionDataIncompleteName" xml:space="preserve">
+    <value>Please fill in a name.</value>
   </data>
   <data name="welcome_msg_connectionDataInvalid" xml:space="preserve">
     <value>URL should not start with http</value>
@@ -1990,17 +2119,50 @@ to cellular data (2G, 3G, 4G etc).</value>
   <data name="wizard_button_done" xml:space="preserve">
     <value>Done</value>
   </data>
-  <data name="beacon" xml:space="preserve">
-    <value>iBeacon</value>
+  <data name="wizard_beacon_description" xml:space="preserve">
+    <value>Toggle switches by scanning for beacons!</value>
+  </data>
+  <data name="app_name" xml:space="preserve">
+    <value>Domoticz</value>
+  </data>
+  <data name="beacon_desc_notifications" xml:space="preserve">
+    <value>Show a notification when an iBeacon is detected or disappeared</value>
   </data>
   <data name="beacon_max_error" xml:space="preserve">
     <value>Only max 20 iBeacons are allowed</value>
+  </data>
+  <data name="bluetooth_desc_notifications" xml:space="preserve">
+    <value>Show a notification when a bluetooth device is connected or disconnected.</value>
+  </data>
+  <data name="button_support" xml:space="preserve">
+    <value>Report an error</value>
+  </data>
+  <data name="category_beacon" xml:space="preserve">
+    <value>Registed iBeacons</value>
+  </data>
+  <data name="description_beacon" xml:space="preserve">
+    <value>Use iBeacons to toggle switches</value>
   </data>
   <data name="http_certificate" xml:space="preserve">
     <value>Please check your https certificate</value>
   </data>
   <data name="noswitchselected_explanation_beacons" xml:space="preserve">
     <value>Connect the new iBeacon to a switch to make it active</value>
+  </data>
+  <data name="packageId" xml:space="preserve">
+    <value>nl.hnogames.domoticz</value>
+  </data>
+  <data name="premium_message" xml:space="preserve">
+    <value>There are several features in the domoticz app that are locked until you buy the premium version\r\n- no ads!!\r\n-notification support\r\n- theming\r\n- talkback\r\n- qrcode scanning\r\n\r\n- and more features in the future</value>
+  </data>
+  <data name="productId" xml:space="preserve">
+    <value>134845</value>
+  </data>
+  <data name="setautorefreshtime" xml:space="preserve">
+    <value>Set a specific timer for the auto refresh in seconds.</value>
+  </data>
+  <data name="settemperature" xml:space="preserve">
+    <value>Set</value>
   </data>
   <data name="shortcut_nfc" xml:space="preserve">
     <value>NFC</value>
@@ -2011,29 +2173,11 @@ to cellular data (2G, 3G, 4G etc).</value>
   <data name="shortcut_speech" xml:space="preserve">
     <value>Speech</value>
   </data>
+  <data name="support_url" xml:space="preserve">
+    <value>https://www.domoticz.com/forum/</value>
+  </data>
   <data name="title_add_beacon" xml:space="preserve">
     <value>Add a new iBeacon</value>
-  </data>
-  <data name="txt_beacon_UUID_error" xml:space="preserve">
-    <value>Please fill in the UUID from the iBeacon</value>
-  </data>
-  <data name="txt_beacon_UUID_error2" xml:space="preserve">
-    <value>The UUID should be a guid, for example 00000000-0000-0000-0000-000000000000</value>
-  </data>
-  <data name="app_name" xml:space="preserve">
-    <value>Domoticz</value>
-  </data>
-  <data name="beacon_desc_notifications" xml:space="preserve">
-    <value>Show a notification when an iBeacon is detected or disappeared</value>
-  </data>
-  <data name="bluetooth_desc_notifications" xml:space="preserve">
-    <value>Show a notification when a bluetooth device is connected or disconnected.</value>
-  </data>
-  <data name="category_beacon" xml:space="preserve">
-    <value>Registed iBeacons</value>
-  </data>
-  <data name="description_beacon" xml:space="preserve">
-    <value>Use iBeacons to toggle switches</value>
   </data>
   <data name="txt_beacon_MajorId" xml:space="preserve">
     <value>Marjor Id (optional)</value>
@@ -2044,16 +2188,10 @@ to cellular data (2G, 3G, 4G etc).</value>
   <data name="txt_beacon_UUID" xml:space="preserve">
     <value>UUID (for example 3699EFBC-64AD-4CAA-9987-FA6D70C3C425)</value>
   </data>
-  <data name="button_support" xml:space="preserve">
-    <value>Report an error</value>
+  <data name="txt_beacon_UUID_error" xml:space="preserve">
+    <value>Please fill in the UUID from the iBeacon</value>
   </data>
-  <data name="support_url" xml:space="preserve">
-    <value>https://www.domoticz.com/forum/</value>
-  </data>
-  <data name="premium_message" xml:space="preserve">
-    <value>There are several features in the domoticz app that are locked until you buy the premium version\r\n- no ads!!\r\n-notification support\r\n- theming\r\n- talkback\r\n- qrcode scanning\r\n\r\n- and more features in the future</value>
-  </data>
-  <data name="productId" xml:space="preserve">
-    <value>134845</value>
+  <data name="txt_beacon_UUID_error2" xml:space="preserve">
+    <value>The UUID should be a guid, for example 00000000-0000-0000-0000-000000000000</value>
   </data>
 </root>

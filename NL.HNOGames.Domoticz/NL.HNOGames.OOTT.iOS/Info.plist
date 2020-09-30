@@ -87,8 +87,8 @@
 	<key>MinimumOSVersion</key>
 	<string>10.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.1.51</string>
+	<string>0.1.55</string>
 	<key>CFBundleVersion</key>
-	<string>151</string>
+	<string>155</string>
 </dict>
 </plist>

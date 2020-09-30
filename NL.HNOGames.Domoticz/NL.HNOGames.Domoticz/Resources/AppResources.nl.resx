@@ -76,10 +76,12 @@
 <data name="retry" xml:space="preserve"><value>Opnieuw proberen</value></data>
 <data name="undo" xml:space="preserve"><value>Ongedaan maken</value></data>
 <data name="something_deleted" xml:space="preserve"><value>%1$s is verwijderd</value></data>
+<data name="remove_last_server" xml:space="preserve"><value>U kunt de laatste server in de lijst niet verwijderen.</value></data>
 <data name="switch_on" xml:space="preserve"><value>Zet schakelaar aan</value></data>
 <data name="switch_off" xml:space="preserve"><value>Zet schakelaar uit</value></data>
 <data name="switch_night" xml:space="preserve"><value>Verander schakelaar naar nachtverlichting</value></data>
 <data name="switch_full" xml:space="preserve"><value>Verander schakelaar naar vol aan</value></data>
+<data name="switch_connection_removed" xml:space="preserve"><value>Apparaat verbinding verwijderd.</value></data>
 <data name="blind_up" xml:space="preserve"><value>Draai rolluik omhoog</value></data>
 <data name="blind_down" xml:space="preserve"><value>Draai rolluik naar beneden</value></data>
 <data name="blind_stop" xml:space="preserve"><value>Stop rolluik</value></data>
@@ -109,7 +111,12 @@
 <data name="filter_error" xml:space="preserve"><value>Error</value></data>
 <data name="use_demo_setup" xml:space="preserve"><value>Gebruik demo-instellingen</value></data>
 <data name="auto_refresh_time" xml:space="preserve"><value>Timer</value></data>
-<data name="setautorefreshtime" xml:space="preserve"><value>Stel een specifieke timer in voor het automatisch verversen van je scherm (in seconden).</value></data>
+<data name="set_auto_refresh_time" xml:space="preserve"><value>Stel een specifieke timer in voor het automatisch verversen van je scherm (in seconden).</value></data>
+<data name="error_authentication_basicauth" xml:space="preserve"><value>BELANGRIJK: Controleer of uw Domoticz systeem de  \'Login Pagina\' als authenticatiemethode gebruikt. De \'Basis Auth\' zal worden verwijderd van Domoticz uit de volgende update!</value></data>
+<data name="category_other" xml:space="preserve"><value>Overige</value></data>
+<data name="tasker_title" xml:space="preserve"><value>Automatiseringsregels instellen met Tasker voor Domoticz</value></data>
+<data name="category_tasker" xml:space="preserve"><value>Tasker</value></data>
+<data name="wizard_widgets_tasker" xml:space="preserve"><value>Automatiseringsregels instellen binnen Tasker voor Domoticz!</value></data>
 <data name="action_switch_server" xml:space="preserve"><value>Verander Server</value></data>
 <data name="action_settings" xml:space="preserve"><value>Instellingen</value></data>
 <data name="action_filter" xml:space="preserve"><value>Filter</value></data>
@@ -119,6 +126,29 @@
 <data name="action_bluetooth_show" xml:space="preserve"><value>Toon gekoppelde apparaten</value></data>
 <data name="action_speech" xml:space="preserve"><value>Spraakherkenning</value></data>
 <data name="send" xml:space="preserve"><value>Verstuur</value></data>
+<data name="beacon_not_supported" xml:space="preserve"><value>Beacons worden niet ondersteund op dit apparaat</value></data>
+<data name="beacon_register" xml:space="preserve"><value>Verbinding maken met een beacon</value></data>
+<data name="beacon_found" xml:space="preserve"><value>Nieuwe beacon gevonden</value></data>
+<data name="beacon_edit" xml:space="preserve"><value>Beacon aanpassen</value></data>
+<data name="beacon_name" xml:space="preserve"><value>Geef deze beacon een juiste naam</value></data>
+<data name="beacon_desc" xml:space="preserve"><value>Controleer de lijst van gekoppelde beacons. </value></data>
+<data name="beacon_exists" xml:space="preserve"><value>Deze beacon is al geconfigureerd op Domoticz. </value></data>
+<data name="beacon_turned_off" xml:space="preserve"><value>Bluetooth moet worden ingeschakeld in uw telefoon instellingen. </value></data>
+<data name="beacon_saved" xml:space="preserve"><value>Er is een nieuwe beacon opgeslagen</value></data>
+<data name="action_beacon_show" xml:space="preserve"><value>Voeg nieuwe beacon toe</value></data>
+<data name="beacon" xml:space="preserve"><value>Beacon</value></data>
+<data name="beacon_disabled" xml:space="preserve"><value>Beacon automatisering uitgeschakeld, controleer uw instellingen.</value></data>
+<data name="noSwitchSelected_explanation_beacon" xml:space="preserve"><value>Er moet eerst een schakelaar worden gekoppeld aan deze beacon</value></data>
+<data name="beacon_UUID" xml:space="preserve"><value>UUID</value></data>
+<data name="beacon_major" xml:space="preserve"><value>Major (optioneel)</value></data>
+<data name="beacon_minor" xml:space="preserve"><value>Minor (optioneel)</value></data>
+<data name="beacon_scan" xml:space="preserve"><value>Beacon</value></data>
+<data name="beacon_scan_desc" xml:space="preserve"><value>Scannen naar beacons.</value></data>
+<data name="beacon_notifications" xml:space="preserve"><value>Meldingen inschakelen voor het binnenkomen en verlaten van een beacon regio</value></data>
+<data name="beacon_entering" xml:space="preserve"><value>"Betreed %1$s"</value></data>
+<data name="beacon_leaving" xml:space="preserve"><value>Verlaat %1$s</value></data>
+<data name="beacon_entering_text" xml:space="preserve"><value>Betreedt een van de beacon regios</value></data>
+<data name="beacon_leaving_text" xml:space="preserve"><value>Verlaat een van de beacon regios</value></data>
 <data name="bluetooth_not_supported" xml:space="preserve"><value>Bluetooth wordt niet ondersteund door dit apparaat</value></data>
 <data name="bluetooth_register" xml:space="preserve"><value>Verbinding maken met bluetooth apparaat</value></data>
 <data name="bluetooth_found" xml:space="preserve"><value>Nieuw bluetooth apparaat gevonden</value></data>
@@ -133,6 +163,7 @@
 <data name="noSwitchSelected_explanation_bluetooth" xml:space="preserve"><value>Er moet eerst een schakelaar worden gekoppeld aan dit bluetooth apparaat</value></data>
 <data name="title_cameras" xml:space="preserve"><value>Camera\'s</value></data>
 <data name="title_dashboard" xml:space="preserve"><value>Dashboard</value></data>
+<data name="delivery" xml:space="preserve"><value>Levering</value></data>
 <data name="usage" xml:space="preserve"><value>Verbruik</value></data>
 <data name="today" xml:space="preserve"><value>Vandaag</value></data>
 <data name="total" xml:space="preserve"><value>Totaal</value></data>
@@ -303,6 +334,8 @@
 <data name="show_dashboard_list_off" xml:space="preserve"><value>Dashboard weergeven als raster</value></data>
 <data name="dashboard_clock" xml:space="preserve"><value>Klok</value></data>
 <data name="show_dashboard_clock" xml:space="preserve"><value>Een klok weergeven op het dashboard</value></data>
+<data name="dashboard_camera" xml:space="preserve"><value>Camera</value></data>
+<data name="show_dashboard_camera" xml:space="preserve"><value>Laad de camera achter verbonden schakelaars</value></data>
 <data name="enable_wear_select" xml:space="preserve"><value>Aangepaste lijst</value></data>
 <data name="custom_wear_select" xml:space="preserve"><value>Selecteer schakelaars</value></data>
 <data name="custom_wear_select_desc" xml:space="preserve"><value>Selecteer welke schakelaars u graag wilt zien op uw apparaat</value></data>
@@ -340,6 +373,8 @@
 <data name="qrcode_enable_settings" xml:space="preserve"><value>QR-Code scanner inschakelen</value></data>
 <data name="bluetooth_settings" xml:space="preserve"><value>Stel bluetooth apparaten in</value></data>
 <data name="enable_bluetooth" xml:space="preserve"><value>Inschakelen van de bluetooth functionaliteit</value></data>
+<data name="beacon_settings" xml:space="preserve"><value>Beacons configureren</value></data>
+<data name="enable_beacon" xml:space="preserve"><value>Beacon scanner/functionaliteit inschakelen</value></data>
 <data name="translate_description" xml:space="preserve"><value>U kunt onze vertalingen beter maken, of zelfs nieuwe talen toe voegen aan deze applicatie via ons Crowdin project</value></data>
 <data name="translate_title" xml:space="preserve"><value>Vertalingen</value></data>
 <data name="security_settings" xml:space="preserve"><value>Beveiligingsinstellingen</value></data>
@@ -366,6 +401,7 @@
 <data name="enable_notifications" xml:space="preserve"><value>Notificaties op dit apparaat inschakelen</value></data>
 <data name="notification_screen_title" xml:space="preserve"><value>Notificatie instellingen</value></data>
 <data name="notification_history" xml:space="preserve"><value>Notificatie geschiedenis</value></data>
+<data name="notification_inbox" xml:space="preserve"><value>Inbox</value></data>
 <data name="notification_vibrate_title" xml:space="preserve"><value>Trillen</value></data>
 <data name="notification_vibrate_on" xml:space="preserve"><value>Trillen bij het ontvangen van een notificatie</value></data>
 <data name="notification_vibrate_off" xml:space="preserve"><value>Niet trillen bij het ontvangen van een notificatie</value></data>
@@ -386,6 +422,8 @@
 <data name="theme_orange" xml:space="preserve"><value>Oranje</value></data>
 <data name="theme_pink" xml:space="preserve"><value>Roze</value></data>
 <data name="theme_blue" xml:space="preserve"><value>Blauw</value></data>
+<data name="theme_green" xml:space="preserve"><value>Groen</value></data>
+<data name="theme_dark_blue" xml:space="preserve"><value>Donkerblauw</value></data>
 <data name="default_values" xml:space="preserve"><value>Standaardwaarden</value></data>
 <data name="default_values_min_error" xml:space="preserve"><value>Maximale waarde moet hoger zijn dan minimale waarde</value></data>
 <data name="default_values_max_error" xml:space="preserve"><value>Minimale waarde moet lager zijn dan maximale waarde</value></data>
@@ -425,6 +463,8 @@
 <data name="restart_required_title" xml:space="preserve"><value>Opnieuw opstarten vereist</value></data>
 <data name="restart_now" xml:space="preserve"><value>Nu opnieuw opstarten?</value></data>
 <data name="check_settings" xml:space="preserve"><value>Controleer je instellingen</value></data>
+<data name="report_error" xml:space="preserve"><value>Fout rapporteren</value></data>
+<data name="support" xml:space="preserve"><value>Ondersteuning</value></data>
 <data name="Speech_not_supported" xml:space="preserve"><value>Spraakherkenning wordt niet ondersteund op dit apparaat</value></data>
 <data name="Speech_register" xml:space="preserve"><value>Registreer een spraak opdracht</value></data>
 <data name="Speech_found" xml:space="preserve"><value>Nieuwe spraak opdracht gevonden</value></data>
@@ -496,7 +536,7 @@
 <data name="fourth" xml:space="preserve"><value>Vierde</value></data>
 <data name="last" xml:space="preserve"><value>Laatste</value></data>
 <data name="title_utilities" xml:space="preserve"><value>Overige</value></data>
-<data name="settemperature" xml:space="preserve"><value>Zet</value></data>
+<data name="set_temperature" xml:space="preserve"><value>Zet</value></data>
 <data name="title_vars" xml:space="preserve"><value>Gebruikersvariabelen</value></data>
 <data name="var_input" xml:space="preserve"><value>Input waarde is niet geldig</value></data>
 <data name="var_input_error" xml:space="preserve"><value>Bijwerken van de gebruikersvariabele mislukt</value></data>
@@ -518,9 +558,9 @@
 <data name="welcome_info_domoticz" xml:space="preserve"><value>Domoticz is een huisautomatisering systeem welke tal van apparaten centraal beheert. Denk hier bij aan Verlichting, Schakelaars en Sensoren. Maar ook meters voor bijvoorbeeld temperatuur, neerslag, wind, UV, stroom, gas, water en nog veel meer. Notificaties en andere meldingen kunnen naar elk mobiel apparaat gestuurd worden.</value></data>
 <data name="welcome_info_swipe" xml:space="preserve"><value>Veeg naar rechts of gebruik de knoppen onderaan om verder te gaan</value></data>
 <data name="welcome_info_settings1" xml:space="preserve"><value>De volgende pagina is voor uw Domoticz instellingen</value></data>
-<data name="welcome_info_settings2" xml:space="preserve"><value>U kunt lokale en externe verbindingsgegevens instellen.
-De lokale instellingen zijn voor wanneer u met uw thuisnetwerk verbonden bent.
-Instellingen voor externe verbindingen worden gebruikt wanneer niet verbonden met uw thuisnetwerk. Via 4G bijvoorbeeld.</value></data>
+<data name="welcome_info_settings2" xml:space="preserve"><value>        U kunt lokale en externe verbindingsgegevens instellen.
+        De lokale instellingen zijn voor wanneer u met uw thuisnetwerk verbonden bent.
+        Instellingen voor externe verbindingen worden gebruikt wanneer niet verbonden met uw thuisnetwerk. Via 4G bijvoorbeeld.</value></data>
 <data name="welcome_info_checkingConnection" xml:space="preserve"><value>Verbindingsgegevens controleren</value></data>
 <data name="welcome_msg_connectionDataIncomplete" xml:space="preserve"><value>Verbindingsgegevens niet volledig ingevuld</value></data>
 <data name="welcome_msg_connectionDataInvalid" xml:space="preserve"><value>De URL mag niet beginnen met http</value></data>
@@ -595,6 +635,7 @@ Instellingen voor externe verbindingen worden gebruikt wanneer niet verbonden me
 <data name="wizard_menuitem_description" xml:space="preserve"><value>U kunt nu deze Wizard uit het menu verwijderen!</value></data>
 <data name="wizard_nfc" xml:space="preserve"><value>NFC</value></data>
 <data name="wizard_nfc_description" xml:space="preserve"><value>Schakel uw apparatuur aan of uit via NFC!</value></data>
+<data name="wizard_bluetooth_description" xml:space="preserve"><value>Schakel schakelaars uit via het scannen van beacons!</value></data>
 <data name="wizard_qrcode" xml:space="preserve"><value>QR-Code</value></data>
 <data name="wizard_qrcode_description" xml:space="preserve"><value>Bedien schakelaars door middel van het scannen van een QR-Code!</value></data>
 <data name="wizard_speech" xml:space="preserve"><value>Spraakopdrachten</value></data>
@@ -605,4 +646,5 @@ Instellingen voor externe verbindingen worden gebruikt wanneer niet verbonden me
 <data name="wizard_button_wizard" xml:space="preserve"><value>Verwijder</value></data>
 <data name="wizard_button_utilities" xml:space="preserve"><value>Overige</value></data>
 <data name="wizard_button_done" xml:space="preserve"><value>Klaar!</value></data>
+<data name="wizard_beacon_description" xml:space="preserve"><value>Bedien schakelaars door middel van het scannen van beacons!</value></data>
 </root>

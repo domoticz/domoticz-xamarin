@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>  <root> <resheader name="resmimetype">		<value>text/microsoft-resx</value>	</resheader>	<resheader name="version">		<value>2.0</value>	</resheader>	<resheader name="reader">		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>	<resheader name="writer">		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>
+<?xml version="1.0" encoding="utf-8"?> <root> <resheader name="resmimetype">		<value>text/microsoft-resx</value>	</resheader>	<resheader name="version">		<value>2.0</value>	</resheader>	<resheader name="reader">		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>	<resheader name="writer">		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>
 <data name="premium_category" xml:space="preserve"><value>Купить премиум!</value></data>
 <data name="premium_title" xml:space="preserve"><value>Получите премиум-версию!</value></data>
 <data name="premium_feature" xml:space="preserve"><value>Это Премиум-функция, пожалуйста купите платную версию для поддержки разработчиков!</value></data>
@@ -76,10 +76,12 @@
 <data name="retry" xml:space="preserve"><value>Повторить</value></data>
 <data name="undo" xml:space="preserve"><value>Отменить последнее действие</value></data>
 <data name="something_deleted" xml:space="preserve"><value>%1$s удалено</value></data>
+<data name="remove_last_server" xml:space="preserve"><value>You can\'t remove the last server in the list.</value></data>
 <data name="switch_on" xml:space="preserve"><value>Включение переключателя</value></data>
 <data name="switch_off" xml:space="preserve"><value>Выключение переключателя</value></data>
 <data name="switch_night" xml:space="preserve"><value>Переключить в ночной свет</value></data>
 <data name="switch_full" xml:space="preserve"><value>Переключить в полный свет</value></data>
+<data name="switch_connection_removed" xml:space="preserve"><value>Switch connection removed.</value></data>
 <data name="blind_up" xml:space="preserve"><value>Поднять занавески</value></data>
 <data name="blind_down" xml:space="preserve"><value>Опустить занавески</value></data>
 <data name="blind_stop" xml:space="preserve"><value>Остановить занавески</value></data>
@@ -92,13 +94,13 @@
 <data name="filter_devices" xml:space="preserve"><value>Фильтр устройств</value></data>
 <data name="filter_graph_empty" xml:space="preserve"><value>Пожалуйста, укажите фильтр</value></data>
 <data name="choose_color" xml:space="preserve"><value>Выберите цвет</value></data>
-<data name="no_data_on_domoticz" xml:space="preserve"><value>Нет данных на сервере OOTT</value></data>
+<data name="no_data_on_domoticz" xml:space="preserve"><value>Нет данных на сервере Domoticz</value></data>
 <data name="row_icon_description" xml:space="preserve"><value>значок строки</value></data>
 <data name="error_image_description" xml:space="preserve"><value>Изображение ошибки</value></data>
 <data name="device_image_description" xml:space="preserve"><value>Изображение устройства</value></data>
 <data name="white" xml:space="preserve"><value>Белый</value></data>
 <data name="refresh" xml:space="preserve"><value>Обновить</value></data>
-<data name="domoticz_logo" xml:space="preserve"><value>OOTT лого</value></data>
+<data name="domoticz_logo" xml:space="preserve"><value>Domoticz лого</value></data>
 <data name="this_take_minutes" xml:space="preserve"><value>Это может занять несколько минут.</value></data>
 <data name="continue_question" xml:space="preserve"><value>Продолжить?</value></data>
 <data name="cant_remove_default_server" xml:space="preserve"><value>Не удается удалить сервер по умолчанию</value></data>
@@ -109,7 +111,12 @@
 <data name="filter_error" xml:space="preserve"><value>Ошибка</value></data>
 <data name="use_demo_setup" xml:space="preserve"><value>Use demo setup</value></data>
 <data name="auto_refresh_time" xml:space="preserve"><value>Refresh timer</value></data>
-<data name="setautorefreshtime" xml:space="preserve"><value>Set a specific timer for the auto refresh in seconds.</value></data>
+<data name="set_auto_refresh_time" xml:space="preserve"><value>Set a specific timer for the auto refresh in seconds.</value></data>
+<data name="error_authentication_basicauth" xml:space="preserve"><value>IMPORTANT: Please check if your Domoticz system uses Login Page as the authentication method. Basic Auth is going to be removed from Domoticz from next update!</value></data>
+<data name="category_other" xml:space="preserve"><value>Other</value></data>
+<data name="tasker_title" xml:space="preserve"><value>Setup automation rules with Tasker for Domoticz</value></data>
+<data name="category_tasker" xml:space="preserve"><value>Tasker</value></data>
+<data name="wizard_widgets_tasker" xml:space="preserve"><value>Setup automation rules within Tasker for Domoticz!</value></data>
 <data name="action_switch_server" xml:space="preserve"><value>Переключить сервер</value></data>
 <data name="action_settings" xml:space="preserve"><value>Настройки</value></data>
 <data name="action_filter" xml:space="preserve"><value>Фильтр</value></data>
@@ -119,20 +126,44 @@
 <data name="action_bluetooth_show" xml:space="preserve"><value>Показать подключенные устройства</value></data>
 <data name="action_speech" xml:space="preserve"><value>Распознавание речи</value></data>
 <data name="send" xml:space="preserve"><value>Send</value></data>
+<data name="beacon_not_supported" xml:space="preserve"><value>Beacons are not supported on this device</value></data>
+<data name="beacon_register" xml:space="preserve"><value>Connect a beacon</value></data>
+<data name="beacon_found" xml:space="preserve"><value>New beacon found</value></data>
+<data name="beacon_edit" xml:space="preserve"><value>Edit beacon</value></data>
+<data name="beacon_name" xml:space="preserve"><value>Give this beacon a proper name. </value></data>
+<data name="beacon_desc" xml:space="preserve"><value>Check the list of paired beacon devices. </value></data>
+<data name="beacon_exists" xml:space="preserve"><value>Beacon already configured on Domoticz. </value></data>
+<data name="beacon_turned_off" xml:space="preserve"><value>Bluetooth needs to be turned on in your device settings. </value></data>
+<data name="beacon_saved" xml:space="preserve"><value>Saved a new beacon connection. </value></data>
+<data name="action_beacon_show" xml:space="preserve"><value>Add new beacon</value></data>
+<data name="beacon" xml:space="preserve"><value>Beacon</value></data>
+<data name="beacon_disabled" xml:space="preserve"><value>Beacon automation disabled, please setup via settings. </value></data>
+<data name="noSwitchSelected_explanation_beacon" xml:space="preserve"><value>For a Beacon device to automate something in Domoticz, a switch should be linked to an beacon. </value></data>
+<data name="beacon_UUID" xml:space="preserve"><value>UUID</value></data>
+<data name="beacon_major" xml:space="preserve"><value>Major (optional)</value></data>
+<data name="beacon_minor" xml:space="preserve"><value>Minor (optional)</value></data>
+<data name="beacon_scan" xml:space="preserve"><value>Beacon</value></data>
+<data name="beacon_scan_desc" xml:space="preserve"><value>Scanning for beacons</value></data>
+<data name="beacon_notifications" xml:space="preserve"><value>Enable notifications for entering and leaving a beacon region.</value></data>
+<data name="beacon_entering" xml:space="preserve"><value>"Entering %1$s"</value></data>
+<data name="beacon_leaving" xml:space="preserve"><value>Leaving  %1$s</value></data>
+<data name="beacon_entering_text" xml:space="preserve"><value>Entering one of the beacons</value></data>
+<data name="beacon_leaving_text" xml:space="preserve"><value>Leaving one of the beacons</value></data>
 <data name="bluetooth_not_supported" xml:space="preserve"><value>Bluetooth не поддерживается на этом устройстве</value></data>
 <data name="bluetooth_register" xml:space="preserve"><value>Подключить Bluetooth устройство</value></data>
 <data name="bluetooth_found" xml:space="preserve"><value>Новое Bluetooth устройство найдено</value></data>
 <data name="bluetooth_edit" xml:space="preserve"><value>Редактировать Bluetooth устройство</value></data>
 <data name="bluetooth_name" xml:space="preserve"><value>Присвойте правильное имя Bluetooth устройству. </value></data>
 <data name="bluetooth_desc" xml:space="preserve"><value>Проверьте список подключенных Bluetooth устройств. </value></data>
-<data name="bluetooth_exists" xml:space="preserve"><value>Bluetooth устройство уже настроено в OOTT. </value></data>
+<data name="bluetooth_exists" xml:space="preserve"><value>Bluetooth устройство уже настроено в Domoticz. </value></data>
 <data name="bluetooth_turned_off" xml:space="preserve"><value>Включите Bluetooth в настройках вашего устройства. </value></data>
 <data name="bluetooth_saved" xml:space="preserve"><value>Bluetooth соединение сохранено. </value></data>
 <data name="bluetooth" xml:space="preserve"><value>Bluetooth</value></data>
 <data name="bluetooth_disabled" xml:space="preserve"><value>Bluetooth автоматизация отключена, пожалуйста включите в настройках.</value></data>
-<data name="noSwitchSelected_explanation_bluetooth" xml:space="preserve"><value>Для автоматизации Bluetooth устройств в OOTT, переключатель должен привязан к Bluetooth</value></data>
+<data name="noSwitchSelected_explanation_bluetooth" xml:space="preserve"><value>Для автоматизации Bluetooth устройств в Domoticz, переключатель должен привязан к Bluetooth</value></data>
 <data name="title_cameras" xml:space="preserve"><value>Камеры</value></data>
 <data name="title_dashboard" xml:space="preserve"><value>Панель управления</value></data>
+<data name="delivery" xml:space="preserve"><value>Delivery</value></data>
 <data name="usage" xml:space="preserve"><value>Использование</value></data>
 <data name="today" xml:space="preserve"><value>Сегодня</value></data>
 <data name="total" xml:space="preserve"><value>Всего</value></data>
@@ -203,14 +234,14 @@
 <data name="verylow" xml:space="preserve"><value>Очень низкий</value></data>
 <data name="allsystems" xml:space="preserve"><value>Все системы</value></data>
 <data name="systems" xml:space="preserve"><value>Системы</value></data>
-<data name="send_notification" xml:space="preserve"><value>Send notification</value></data>
+<data name="send_notification" xml:space="preserve"><value>Настройка уведомлений</value></data>
 <data name="notification_subject" xml:space="preserve"><value>Subject</value></data>
 <data name="notification_message" xml:space="preserve"><value>Message</value></data>
 <data name="notification_error_system" xml:space="preserve"><value>Please choose a system to send the notification to</value></data>
 <data name="notification_error_message" xml:space="preserve"><value>Please fill in a message</value></data>
 <data name="notification_error_subject" xml:space="preserve"><value>Please fill in a subject</value></data>
-<data name="notification_error_send" xml:space="preserve"><value>Could not send the notification to OOTT</value></data>
-<data name="notification_send" xml:space="preserve"><value>Notification send to OOTT</value></data>
+<data name="notification_error_send" xml:space="preserve"><value>Could not send the notification to Domoticz</value></data>
+<data name="notification_send" xml:space="preserve"><value>Notification send to Domoticz</value></data>
 <data name="permission_title" xml:space="preserve"><value>Доступ запрещен</value></data>
 <data name="permission_prefs_title" xml:space="preserve"><value>Права доступа</value></data>
 <data name="permission_config" xml:space="preserve"><value>Настройте установки доступа для этого приложения</value></data>
@@ -303,6 +334,8 @@
 <data name="show_dashboard_list_off" xml:space="preserve"><value>Показать панель как сетку</value></data>
 <data name="dashboard_clock" xml:space="preserve"><value>Часы</value></data>
 <data name="show_dashboard_clock" xml:space="preserve"><value>Показывать часы на панели устройств</value></data>
+<data name="dashboard_camera" xml:space="preserve"><value>Camera</value></data>
+<data name="show_dashboard_camera" xml:space="preserve"><value>Load the camera for connected switches</value></data>
 <data name="enable_wear_select" xml:space="preserve"><value>Android Wear элементы</value></data>
 <data name="custom_wear_select" xml:space="preserve"><value>Выбрать Wear переключатель</value></data>
 <data name="custom_wear_select_desc" xml:space="preserve"><value>Выберите какие переключатели Вы хотите видеть на Вашем устройстве Android Wear</value></data>
@@ -314,11 +347,11 @@
 <data name="config_theme" xml:space="preserve"><value>Установить тему</value></data>
 <data name="set_dark_theme" xml:space="preserve"><value>Переключить тему в темный режим</value></data>
 <data name="set_light_theme" xml:space="preserve"><value>Переключить тему в светлый режим</value></data>
-<data name="set_talk_back_on" xml:space="preserve"><value>Разрешить OOTT отвечать вам</value></data>
+<data name="set_talk_back_on" xml:space="preserve"><value>Разрешить Domoticz отвечать вам</value></data>
 <data name="set_talk_back_off" xml:space="preserve"><value>Отключить функцию Talk back</value></data>
-<data name="settings_imported" xml:space="preserve"><value>Параметры загружены, пожалуйста перезапустите OOTT</value></data>
+<data name="settings_imported" xml:space="preserve"><value>Параметры загружены, пожалуйста перезапустите Domoticz</value></data>
 <data name="settings_import_failed" xml:space="preserve"><value>Не удалось импортировать настройки</value></data>
-<data name="settings_exported" xml:space="preserve"><value>Параметры экспортированы, пожалуйста перезапустите OOTT</value></data>
+<data name="settings_exported" xml:space="preserve"><value>Параметры экспортированы, пожалуйста перезапустите Domoticz</value></data>
 <data name="settings_export_failed" xml:space="preserve"><value>Не удалось экспортировать настройки</value></data>
 <data name="server_settings" xml:space="preserve"><value>Настройки подключения к серверу</value></data>
 <data name="server_force_fetch_config" xml:space="preserve"><value>Получить конфигурацию сервера</value></data>
@@ -340,6 +373,8 @@
 <data name="qrcode_enable_settings" xml:space="preserve"><value>Включение функции QR-кодов</value></data>
 <data name="bluetooth_settings" xml:space="preserve"><value>Настройка Bluetooth устройств</value></data>
 <data name="enable_bluetooth" xml:space="preserve"><value>Enable Bluetooth functionality</value></data>
+<data name="beacon_settings" xml:space="preserve"><value>Setup Beacons</value></data>
+<data name="enable_beacon" xml:space="preserve"><value>Enable Beacon functionality</value></data>
 <data name="translate_description" xml:space="preserve"><value>Вы можете помочь улучшить перевод и добавить новые Языки в приложение с помощью Crowdin project</value></data>
 <data name="translate_title" xml:space="preserve"><value>Переводы</value></data>
 <data name="security_settings" xml:space="preserve"><value>Настройка безопасности</value></data>
@@ -348,15 +383,15 @@
 <data name="setup_fingerprints" xml:space="preserve"><value>Установка распознавания отпечатков пальцев через экраны настройки Android</value></data>
 <data name="fingerprint_not_supported" xml:space="preserve"><value>Ввод отпечатков пальцев не поддерживается на этом устройстве</value></data>
 <data name="fingerprint_not_setup_in_android" xml:space="preserve"><value>Сначала настройте/подключите распознавание отпечатков пальцев для этого устройства</value></data>
-<data name="fingerprint_sure" xml:space="preserve"><value>Вы уверены? Пароль вашей учетной записи OOTT это пароль отказа.</value></data>
-<data name="category_widgets" xml:space="preserve"><value>Виджеты не включены на этом предмете, пожалуйста, проверьте свои настройки OOTT</value></data>
+<data name="fingerprint_sure" xml:space="preserve"><value>Вы уверены? Пароль вашей учетной записи Domoticz это пароль отказа.</value></data>
+<data name="category_widgets" xml:space="preserve"><value>Виджеты не включены на этом предмете, пожалуйста, проверьте свои настройки Domoticz</value></data>
 <data name="widget_description" xml:space="preserve"><value>Включить или отключить виджет на этом устройстве</value></data>
-<data name="widget_disabled" xml:space="preserve"><value>Виджеты не включены на этом предмете, пожалуйста, проверьте свои настройки OOTT6</value></data>
+<data name="widget_disabled" xml:space="preserve"><value>Виджеты не включены на этом предмете, пожалуйста, проверьте свои настройки Domoticz6</value></data>
 <data name="widget_warning" xml:space="preserve"><value>Использование виджетов только на свой страх и риск! В настоящее время виджеты находятся в стадии бета-тестирования и могут содержать ошибки. Это может привести к чрезмерному использованию данных и быстрому разряду батареи...</value></data>
 <data name="notification_settings_id" xml:space="preserve"><value>ID сообщений Google Cloud</value></data>
-<data name="notification_settings_push" xml:space="preserve"><value>Использовать Ваш регистрационный идентификатор для OOTT</value></data>
-<data name="notification_settings_pushed" xml:space="preserve"><value>Ваш регистрационный идентификатор сохранен в OOTT</value></data>
-<data name="notification_settings_push_failed" xml:space="preserve"><value>Невозможно сохранить Ваш регистрационный код в OOTT, повторите попытку позже.</value></data>
+<data name="notification_settings_push" xml:space="preserve"><value>Использовать Ваш регистрационный идентификатор для Domoticz</value></data>
+<data name="notification_settings_pushed" xml:space="preserve"><value>Ваш регистрационный идентификатор сохранен в Domoticz</value></data>
+<data name="notification_settings_push_failed" xml:space="preserve"><value>Невозможно сохранить Ваш регистрационный код в Domoticz, повторите попытку позже.</value></data>
 <data name="notification_show_title" xml:space="preserve"><value>Последние уведомления</value></data>
 <data name="notification_show_nothing" xml:space="preserve"><value>Уведомления не найдены</value></data>
 <data name="notification_show" xml:space="preserve"><value>Показать последние несколько уведомлений</value></data>
@@ -366,6 +401,7 @@
 <data name="enable_notifications" xml:space="preserve"><value>Включить уведомления на этом устройстве</value></data>
 <data name="notification_screen_title" xml:space="preserve"><value>Настройки уведомлений</value></data>
 <data name="notification_history" xml:space="preserve"><value>Notification history</value></data>
+<data name="notification_inbox" xml:space="preserve"><value>Inbox</value></data>
 <data name="notification_vibrate_title" xml:space="preserve"><value>Вибросигнал</value></data>
 <data name="notification_vibrate_on" xml:space="preserve"><value>Вибросигнал при получении уведомления</value></data>
 <data name="notification_vibrate_off" xml:space="preserve"><value>Выкл вибросигнала</value></data>
@@ -386,14 +422,16 @@
 <data name="theme_orange" xml:space="preserve"><value>Orange</value></data>
 <data name="theme_pink" xml:space="preserve"><value>Pink</value></data>
 <data name="theme_blue" xml:space="preserve"><value>Blue</value></data>
+<data name="theme_green" xml:space="preserve"><value>Green</value></data>
+<data name="theme_dark_blue" xml:space="preserve"><value>Dark blue</value></data>
 <data name="default_values" xml:space="preserve"><value>Значения по умолчанию</value></data>
 <data name="default_values_min_error" xml:space="preserve"><value>Макс значение должно быть больше, чем минимальное значение</value></data>
 <data name="default_values_max_error" xml:space="preserve"><value>Макс значение должно быть больше, чем минимальное значение</value></data>
 <data name="info_version" xml:space="preserve"><value>Версия</value></data>
-<data name="info_domoticz_version" xml:space="preserve"><value>Версия OOTT</value></data>
-<data name="info_about" xml:space="preserve"><value>О OOTT</value></data>
+<data name="info_domoticz_version" xml:space="preserve"><value>Версия Domoticz</value></data>
+<data name="info_about" xml:space="preserve"><value>О Domoticz</value></data>
 <data name="info_credits" xml:space="preserve"><value>Создатели</value></data>
-<data name="info_credits_text" xml:space="preserve"><value>OOTT для Android создано с использованием нескольких библиотек с открытым исходным кодом</value></data>
+<data name="info_credits_text" xml:space="preserve"><value>Domoticz для Android создано с использованием нескольких библиотек с открытым исходным кодом</value></data>
 <data name="debug_switch_title" xml:space="preserve"><value>Отладка</value></data>
 <data name="debug_switch_summary_on" xml:space="preserve"><value>Включена отладка</value></data>
 <data name="debug_switch_summary_off" xml:space="preserve"><value>Отладки отключена</value></data>
@@ -401,10 +439,10 @@
 <data name="title_activity_update" xml:space="preserve"><value>Обновить сервер</value></data>
 <data name="error_couldNotCheckForVersion" xml:space="preserve"><value>"Невозможно проверить версию: %1$s"</value></data>
 <data name="error_couldNotCheckForUpdates" xml:space="preserve"><value>"Невозможно проверить наличие обновлений: %1$s"</value></data>
-<data name="error_couldNotCheckForConfig" xml:space="preserve"><value>"Не удалось получить конфигурацию сервера OOTT: %1$s"</value></data>
+<data name="error_couldNotCheckForConfig" xml:space="preserve"><value>"Не удалось получить конфигурацию сервера Domoticz: %1$s"</value></data>
 <data name="update_available_enhanced" xml:space="preserve"><value>Доступно обновление сервера: %1$s до версии: %2$s</value></data>
 <data name="check_for_update_title" xml:space="preserve"><value>Проверить обновления</value></data>
-<data name="check_for_update" xml:space="preserve"><value>Вы хотели бы проверить наличие обновлений системы OOTT?</value></data>
+<data name="check_for_update" xml:space="preserve"><value>Вы хотели бы проверить наличие обновлений системы Domoticz?</value></data>
 <data name="update_server_warning" xml:space="preserve"><value>Во время обновления сервера приложение не будет работать оптимально.</value></data>
 <data name="update_server_downloadNotReady1" xml:space="preserve"><value>Обновление не загружено (полностью).</value></data>
 <data name="update_server_downloadNotReady2" xml:space="preserve"><value>Повторите попытку позднее.</value></data>
@@ -425,6 +463,8 @@
 <data name="restart_required_title" xml:space="preserve"><value>Требуется перезапуск</value></data>
 <data name="restart_now" xml:space="preserve"><value>Перезапустить?</value></data>
 <data name="check_settings" xml:space="preserve"><value>Check your settings</value></data>
+<data name="report_error" xml:space="preserve"><value>Report an error</value></data>
+<data name="support" xml:space="preserve"><value>Support</value></data>
 <data name="Speech_not_supported" xml:space="preserve"><value>Голосовые команды не поддерживаются на этом устройстве</value></data>
 <data name="Speech_register" xml:space="preserve"><value>Зарегистрировать голосовую команду</value></data>
 <data name="Speech_found" xml:space="preserve"><value>Найдена новая голосовая команда</value></data>
@@ -496,7 +536,7 @@
 <data name="fourth" xml:space="preserve"><value>Четвертый</value></data>
 <data name="last" xml:space="preserve"><value>Последний</value></data>
 <data name="title_utilities" xml:space="preserve"><value>Утилиты</value></data>
-<data name="settemperature" xml:space="preserve"><value>Установить</value></data>
+<data name="set_temperature" xml:space="preserve"><value>Установить</value></data>
 <data name="title_vars" xml:space="preserve"><value>Пользовательские переменные</value></data>
 <data name="var_input" xml:space="preserve"><value>Введено недопустимое значение</value></data>
 <data name="var_input_error" xml:space="preserve"><value>Не удалось обновить пользовательскую переменную</value></data>
@@ -515,17 +555,17 @@
 <data name="co2min" xml:space="preserve"><value>CO2 мин</value></data>
 <data name="co2max" xml:space="preserve"><value>CO2 макс</value></data>
 <data name="welcome_title_activity_welcome" xml:space="preserve"><value>Добро пожаловать</value></data>
-<data name="welcome_info_domoticz" xml:space="preserve"><value>OOTT это домашняя система автоматизации, которая позволяет контролировать и настраивать различные устройства, такие как: свет, переключатели, различные датчики такие как температуры, дождя, ветера, электричества, газа, воды и многое другое. Предупреждения/уведомления могут быть отправлены на любое мобильное устройство.</value></data>
+<data name="welcome_info_domoticz" xml:space="preserve"><value>Domoticz это домашняя система автоматизации, которая позволяет контролировать и настраивать различные устройства, такие как: свет, переключатели, различные датчики такие как температуры, дождя, ветера, электричества, газа, воды и многое другое. Предупреждения/уведомления могут быть отправлены на любое мобильное устройство.</value></data>
 <data name="welcome_info_swipe" xml:space="preserve"><value>Проведите пальцем вправо или используйте кнопки перехода внизу для продолжения</value></data>
-<data name="welcome_info_settings1" xml:space="preserve"><value>Следующая страница предназначена для настройки OOTT.</value></data>
-<data name="welcome_info_settings2" xml:space="preserve"><value>Вы можете указать установки для локального и удаленного сервера.
-Локальные параметры предназначены для подключения через домашней wifi сеть.
-Параметры удаленного сервера используются, когда нет подключения через Вашу домашнюю wifi сеть или при подключении к сотовой сети (2G, 3G, 4G и т.д.).</value></data>
+<data name="welcome_info_settings1" xml:space="preserve"><value>Следующая страница предназначена для настройки Domoticz.</value></data>
+<data name="welcome_info_settings2" xml:space="preserve"><value>        Вы можете указать установки для локального и удаленного сервера.
+        Локальные параметры предназначены для подключения через домашней wifi сеть.
+        Параметры удаленного сервера используются, когда нет подключения через Вашу домашнюю wifi сеть или при подключении к сотовой сети (2G, 3G, 4G и т.д.).</value></data>
 <data name="welcome_info_checkingConnection" xml:space="preserve"><value>Проверка настроек подключения</value></data>
 <data name="welcome_msg_connectionDataIncomplete" xml:space="preserve"><value>Данные подключения, неполные или пустые</value></data>
 <data name="welcome_msg_connectionDataInvalid" xml:space="preserve"><value>URL-адрес не должен начинаться с http</value></data>
 <data name="welcome_msg_correctOnPreviousPage" xml:space="preserve"><value>Пожалуйста, исправьте данные на предыдущей странице</value></data>
-<data name="welcome_msg_serverVersion" xml:space="preserve"><value>Версия OOTT</value></data>
+<data name="welcome_msg_serverVersion" xml:space="preserve"><value>Версия Domoticz</value></data>
 <data name="welcome_msg_numberOfDevices" xml:space="preserve"><value>Устройство %1$d не найдено</value></data>
 <data name="welcome_msg_no_ssid_found" xml:space="preserve"><value>Не нейдено SSID wifi</value></data>
 <data name="welcome_ssid_spinner_prompt" xml:space="preserve"><value>Выберите домашний SSID</value></data>
@@ -547,7 +587,7 @@
 <data name="welcome_local_server_used_switch_title" xml:space="preserve"><value>Адрес другого сервера</value></data>
 <data name="welcome_local_server_used_switch_summary" xml:space="preserve"><value>Используйте другой адрес для локального подключения</value></data>
 <data name="welcome_advancedSettings" xml:space="preserve"><value>Дополнительные установки сервера</value></data>
-<data name="welcome_advancedSettings_summary" xml:space="preserve"><value>Используется только для нестандартных серверов OOTT</value></data>
+<data name="welcome_advancedSettings_summary" xml:space="preserve"><value>Используется только для нестандартных серверов Domoticz</value></data>
 <data name="welcome_local_server_ssid" xml:space="preserve"><value>Местные SSID wifi</value></data>
 <data name="welcome_local_server_address" xml:space="preserve"><value>Адрес локального сервера</value></data>
 <data name="welcome_local_server_protocol" xml:space="preserve"><value>Локальный протокол</value></data>
@@ -570,7 +610,7 @@
 <data name="widget_transparent_light" xml:space="preserve"><value>Светлый прозрачный</value></data>
 <data name="title_wizard" xml:space="preserve"><value>Установщик приветствия</value></data>
 <data name="wizard_welcome" xml:space="preserve"><value>Добро пожаловать</value></data>
-<data name="wizard_welcome_description" xml:space="preserve"><value>OOTT является легковесной системой домашней автоматизации, которая позволяет контролировать и настраивать различные устройства.</value></data>
+<data name="wizard_welcome_description" xml:space="preserve"><value>Domoticz является легковесной системой домашней автоматизации, которая позволяет контролировать и настраивать различные устройства.</value></data>
 <data name="wizard_favorites" xml:space="preserve"><value>Избранные</value></data>
 <data name="wizard_favorites_description" xml:space="preserve"><value>Устройства можно добавить на панель мониторинга, сохранив их как избранные. Долго нажмите на элемент, чтобы сохранить его как любимый!</value></data>
 <data name="wizard_startup" xml:space="preserve"><value>Начальный экран</value></data>
@@ -578,13 +618,13 @@
 <data name="wizard_notifications" xml:space="preserve"><value>Настройка уведомлений</value></data>
 <data name="wizard_notifications_description" xml:space="preserve"><value>Теперь вы можете получать уведомления на Вашем устройстве! Изменить настройки уведомлений</value></data>
 <data name="wizard_multiserver" xml:space="preserve"><value>Использование нескольких серверов</value></data>
-<data name="wizard_multiserver_description" xml:space="preserve"><value>В настройках можно настроить несколько серверов OOTT.</value></data>
+<data name="wizard_multiserver_description" xml:space="preserve"><value>В настройках можно настроить несколько серверов Domoticz.</value></data>
 <data name="wizard_geo" xml:space="preserve"><value>Geofencing</value></data>
 <data name="wizard_geo_description" xml:space="preserve"><value>Вы можете установить начальный экран в настройках!</value></data>
 <data name="wizard_wear" xml:space="preserve"><value>Android Wear</value></data>
 <data name="wizard_wear_description" xml:space="preserve"><value>Вы можете указать, какие переключатели Вы хотите контроллировать через Android wear!</value></data>
 <data name="wizard_auto" xml:space="preserve"><value>Android Auto</value></data>
-<data name="wizard_auto_description" xml:space="preserve"><value>Получаете уведомления от OOTT прямо на вашем устройстве Android авто!</value></data>
+<data name="wizard_auto_description" xml:space="preserve"><value>Получаете уведомления от Domoticz прямо на вашем устройстве Android авто!</value></data>
 <data name="wizard_graph" xml:space="preserve"><value>Графики</value></data>
 <data name="wizard_graph_description" xml:space="preserve"><value>Доступен график истории Утилит. Погоды или температуры!</value></data>
 <data name="wizard_filter" xml:space="preserve"><value>Фильтры</value></data>
@@ -595,6 +635,7 @@
 <data name="wizard_menuitem_description" xml:space="preserve"><value>Теперь вы можете удалить этот Мастер из меню навигации!</value></data>
 <data name="wizard_nfc" xml:space="preserve"><value>NFC</value></data>
 <data name="wizard_nfc_description" xml:space="preserve"><value>Вы можете изменить переключения через NFC!</value></data>
+<data name="wizard_bluetooth_description" xml:space="preserve"><value>You are able to toggle switches via Bluetooth connections!</value></data>
 <data name="wizard_qrcode" xml:space="preserve"><value>QR-код</value></data>
 <data name="wizard_qrcode_description" xml:space="preserve"><value>Переключите тумблеры сканируя QR-код (или штрихкод)!</value></data>
 <data name="wizard_speech" xml:space="preserve"><value>Голосовые команды</value></data>
@@ -605,4 +646,5 @@
 <data name="wizard_button_wizard" xml:space="preserve"><value>Удалить</value></data>
 <data name="wizard_button_utilities" xml:space="preserve"><value>Утилиты</value></data>
 <data name="wizard_button_done" xml:space="preserve"><value>Готово</value></data>
+<data name="wizard_beacon_description" xml:space="preserve"><value>Toggle switches by scanning for beacons!</value></data>
 </root>

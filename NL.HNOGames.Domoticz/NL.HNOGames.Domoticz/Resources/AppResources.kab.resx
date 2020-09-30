@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>  <root> <resheader name="resmimetype">		<value>text/microsoft-resx</value>	</resheader>	<resheader name="version">		<value>2.0</value>	</resheader>	<resheader name="reader">		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>	<resheader name="writer">		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>
+<?xml version="1.0" encoding="utf-8"?> <root> <resheader name="resmimetype">		<value>text/microsoft-resx</value>	</resheader>	<resheader name="version">		<value>2.0</value>	</resheader>	<resheader name="reader">		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>	<resheader name="writer">		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>
 <data name="premium_category" xml:space="preserve"><value>Aɣ premium</value></data>
 <data name="premium_title" xml:space="preserve"><value>Awi lqem premium!</value></data>
 <data name="premium_feature" xml:space="preserve"><value>d tamahilt premium, Aɣ lqem unṣib akken ad tmuddeḍ afus i yineflayen!</value></data>
@@ -76,10 +76,12 @@
 <data name="retry" xml:space="preserve"><value>Ales</value></data>
 <data name="undo" xml:space="preserve"><value>semmet</value></data>
 <data name="something_deleted" xml:space="preserve"><value>%1$s yettwakkes</value></data>
+<data name="remove_last_server" xml:space="preserve"><value>You can\'t remove the last server in the list.</value></data>
 <data name="switch_on" xml:space="preserve"><value>Skker</value></data>
 <data name="switch_off" xml:space="preserve"><value>Sens</value></data>
 <data name="switch_night" xml:space="preserve"><value>Turning switch to night light</value></data>
 <data name="switch_full" xml:space="preserve"><value>Turning switch to full light</value></data>
+<data name="switch_connection_removed" xml:space="preserve"><value>Switch connection removed.</value></data>
 <data name="blind_up" xml:space="preserve"><value>Bren-kkan</value></data>
 <data name="blind_down" xml:space="preserve"><value>Bren mezlagu</value></data>
 <data name="blind_stop" xml:space="preserve"><value>Ḥbes</value></data>
@@ -109,7 +111,12 @@
 <data name="filter_error" xml:space="preserve"><value>Tuccḍa</value></data>
 <data name="use_demo_setup" xml:space="preserve"><value>Seqdec tawila n waskan</value></data>
 <data name="auto_refresh_time" xml:space="preserve"><value>Refresh timer</value></data>
-<data name="setautorefreshtime" xml:space="preserve"><value>Set a specific timer for the auto refresh in seconds.</value></data>
+<data name="set_auto_refresh_time" xml:space="preserve"><value>Set a specific timer for the auto refresh in seconds.</value></data>
+<data name="error_authentication_basicauth" xml:space="preserve"><value>IMPORTANT: Please check if your Domoticz system uses Login Page as the authentication method. Basic Auth is going to be removed from Domoticz from next update!</value></data>
+<data name="category_other" xml:space="preserve"><value>Other</value></data>
+<data name="tasker_title" xml:space="preserve"><value>Setup automation rules with Tasker for Domoticz</value></data>
+<data name="category_tasker" xml:space="preserve"><value>Tasker</value></data>
+<data name="wizard_widgets_tasker" xml:space="preserve"><value>Setup automation rules within Tasker for Domoticz!</value></data>
 <data name="action_switch_server" xml:space="preserve"><value> Asenfal n uqeddac</value></data>
 <data name="action_settings" xml:space="preserve"><value>Iɣewwaṛen</value></data>
 <data name="action_filter" xml:space="preserve"><value>sti</value></data>
@@ -119,6 +126,29 @@
 <data name="action_bluetooth_show" xml:space="preserve"><value>Show paired devices</value></data>
 <data name="action_speech" xml:space="preserve"><value>Tukza n wawal</value></data>
 <data name="send" xml:space="preserve"><value>Send</value></data>
+<data name="beacon_not_supported" xml:space="preserve"><value>Beacons are not supported on this device</value></data>
+<data name="beacon_register" xml:space="preserve"><value>Connect a beacon</value></data>
+<data name="beacon_found" xml:space="preserve"><value>New beacon found</value></data>
+<data name="beacon_edit" xml:space="preserve"><value>Edit beacon</value></data>
+<data name="beacon_name" xml:space="preserve"><value>Give this beacon a proper name. </value></data>
+<data name="beacon_desc" xml:space="preserve"><value>Check the list of paired beacon devices. </value></data>
+<data name="beacon_exists" xml:space="preserve"><value>Beacon already configured on Domoticz. </value></data>
+<data name="beacon_turned_off" xml:space="preserve"><value>Bluetooth needs to be turned on in your device settings. </value></data>
+<data name="beacon_saved" xml:space="preserve"><value>Saved a new beacon connection. </value></data>
+<data name="action_beacon_show" xml:space="preserve"><value>Add new beacon</value></data>
+<data name="beacon" xml:space="preserve"><value>Beacon</value></data>
+<data name="beacon_disabled" xml:space="preserve"><value>Beacon automation disabled, please setup via settings. </value></data>
+<data name="noSwitchSelected_explanation_beacon" xml:space="preserve"><value>For a Beacon device to automate something in Domoticz, a switch should be linked to an beacon. </value></data>
+<data name="beacon_UUID" xml:space="preserve"><value>UUID</value></data>
+<data name="beacon_major" xml:space="preserve"><value>Major (optional)</value></data>
+<data name="beacon_minor" xml:space="preserve"><value>Minor (optional)</value></data>
+<data name="beacon_scan" xml:space="preserve"><value>Beacon</value></data>
+<data name="beacon_scan_desc" xml:space="preserve"><value>Scanning for beacons</value></data>
+<data name="beacon_notifications" xml:space="preserve"><value>Enable notifications for entering and leaving a beacon region.</value></data>
+<data name="beacon_entering" xml:space="preserve"><value>"Entering %1$s"</value></data>
+<data name="beacon_leaving" xml:space="preserve"><value>Leaving  %1$s</value></data>
+<data name="beacon_entering_text" xml:space="preserve"><value>Entering one of the beacons</value></data>
+<data name="beacon_leaving_text" xml:space="preserve"><value>Leaving one of the beacons</value></data>
 <data name="bluetooth_not_supported" xml:space="preserve"><value>Bluetooth is not supported on this device</value></data>
 <data name="bluetooth_register" xml:space="preserve"><value>Connect a bluetooth device</value></data>
 <data name="bluetooth_found" xml:space="preserve"><value>New bluetooth device found</value></data>
@@ -133,6 +163,7 @@
 <data name="noSwitchSelected_explanation_bluetooth" xml:space="preserve"><value>For a bluetooth device to automate something in Domoticz, a switch should be linked to an bluetooth</value></data>
 <data name="title_cameras" xml:space="preserve"><value>Takamiṛat</value></data>
 <data name="title_dashboard" xml:space="preserve"><value>Tafelwit n usenqed</value></data>
+<data name="delivery" xml:space="preserve"><value>Delivery</value></data>
 <data name="usage" xml:space="preserve"><value>Aseqdec</value></data>
 <data name="today" xml:space="preserve"><value>Assagi</value></data>
 <data name="total" xml:space="preserve"><value>Umid</value></data>
@@ -303,6 +334,8 @@
 <data name="show_dashboard_list_off" xml:space="preserve"><value>Beqqeḍ tafelwit n wenẓad d iẓiki</value></data>
 <data name="dashboard_clock" xml:space="preserve"><value>Clock</value></data>
 <data name="show_dashboard_clock" xml:space="preserve"><value>Show a clock on the dashboard</value></data>
+<data name="dashboard_camera" xml:space="preserve"><value>Camera</value></data>
+<data name="show_dashboard_camera" xml:space="preserve"><value>Load the camera for connected switches</value></data>
 <data name="enable_wear_select" xml:space="preserve"><value>Amagrad yettwaggan Android n usiweḍ</value></data>
 <data name="custom_wear_select" xml:space="preserve"><value>Fren isnegziyen usiweḍ</value></data>
 <data name="custom_wear_select_desc" xml:space="preserve"><value>Fren ayen tebɣiḍ attwaliḍ deg allal innek Android usiweḍ</value></data>
@@ -340,6 +373,8 @@
 <data name="qrcode_enable_settings" xml:space="preserve"><value>Rmed tangalin n tamseɣnat  n QR</value></data>
 <data name="bluetooth_settings" xml:space="preserve"><value>Setup Bluetooth devices</value></data>
 <data name="enable_bluetooth" xml:space="preserve"><value>Enable Bluetooth functionality</value></data>
+<data name="beacon_settings" xml:space="preserve"><value>Setup Beacons</value></data>
+<data name="enable_beacon" xml:space="preserve"><value>Enable Beacon functionality</value></data>
 <data name="translate_description" xml:space="preserve"><value>You can help make our translations better, and even add new languages to this app via our Crowdin project</value></data>
 <data name="translate_title" xml:space="preserve"><value>Translations</value></data>
 <data name="security_settings" xml:space="preserve"><value>Taɣlist n userkeb</value></data>
@@ -366,6 +401,7 @@
 <data name="enable_notifications" xml:space="preserve"><value>Rmed tulɣiwin seg wallal agi</value></data>
 <data name="notification_screen_title" xml:space="preserve"><value>Iɣewwaren n walɣu</value></data>
 <data name="notification_history" xml:space="preserve"><value>Notification history</value></data>
+<data name="notification_inbox" xml:space="preserve"><value>Inbox</value></data>
 <data name="notification_vibrate_title" xml:space="preserve"><value>Senhez</value></data>
 <data name="notification_vibrate_on" xml:space="preserve"><value>Rgigi mara d-yettwaṭef walɣu</value></data>
 <data name="notification_vibrate_off" xml:space="preserve"><value>Ur senhaz ara</value></data>
@@ -386,6 +422,8 @@
 <data name="theme_orange" xml:space="preserve"><value>Orange</value></data>
 <data name="theme_pink" xml:space="preserve"><value>Pink</value></data>
 <data name="theme_blue" xml:space="preserve"><value>Blue</value></data>
+<data name="theme_green" xml:space="preserve"><value>Green</value></data>
+<data name="theme_dark_blue" xml:space="preserve"><value>Dark blue</value></data>
 <data name="default_values" xml:space="preserve"><value>Azalen s lexṣas</value></data>
 <data name="default_values_min_error" xml:space="preserve"><value>Azal n afellay yesefkk ad yilli nnig n wazal n wadday</value></data>
 <data name="default_values_max_error" xml:space="preserve"><value>Azal n afellay yesefkk ad yilli nnig n wazal n wadday</value></data>
@@ -425,6 +463,8 @@
 <data name="restart_required_title" xml:space="preserve"><value>Tulsa n tnekra tlaq</value></data>
 <data name="restart_now" xml:space="preserve"><value>Ales tanekra tura?</value></data>
 <data name="check_settings" xml:space="preserve"><value>Check your settings</value></data>
+<data name="report_error" xml:space="preserve"><value>Report an error</value></data>
+<data name="support" xml:space="preserve"><value>Support</value></data>
 <data name="Speech_not_supported" xml:space="preserve"><value>Awal ur i-teddu yara ɣef wallal agi</value></data>
 <data name="Speech_register" xml:space="preserve"><value>Sekles awal s unezḍay</value></data>
 <data name="Speech_found" xml:space="preserve"><value>Awal amaynut yettwufan s anezḍay </value></data>
@@ -496,7 +536,7 @@
 <data name="fourth" xml:space="preserve"><value>Fourth</value></data>
 <data name="last" xml:space="preserve"><value>Last</value></data>
 <data name="title_utilities" xml:space="preserve"><value>Tiwaletin n uzayez</value></data>
-<data name="settemperature" xml:space="preserve"><value>Sumata</value></data>
+<data name="set_temperature" xml:space="preserve"><value>Sumata</value></data>
 <data name="title_vars" xml:space="preserve"><value>Asqedac imutiyen</value></data>
 <data name="var_input" xml:space="preserve"><value>Azal n unekcum ur iɣbel</value></data>
 <data name="var_input_error" xml:space="preserve"><value>Dawezɣi amucceḍ n umuti aseqdac</value></data>
@@ -518,7 +558,7 @@
 <data name="welcome_info_domoticz" xml:space="preserve"><value>Domoticz d anagraw n tiswwurment n waxxam ara kwen yeǧǧen a tesefqed-em</value></data>
 <data name="welcome_info_swipe" xml:space="preserve"><value>Cicceḍ ɣer yefus naɣ seqdec taqefalt n iminig yellan swadda iw akken attkkemel-eḍ</value></data>
 <data name="welcome_info_settings1" xml:space="preserve"><value>Asebtar id i-teddun yemezg ɣer s iɣewwaren Domoticz.</value></data>
-<data name="welcome_info_settings2" xml:space="preserve"><value>Tzemer-eḍ attsefru-ḍ aɣewwar n uqeddac adigan u amestam</value></data>
+<data name="welcome_info_settings2" xml:space="preserve"><value>        Tzemer-eḍ attsefru-ḍ aɣewwar n uqeddac adigan u amestam</value></data>
 <data name="welcome_info_checkingConnection" xml:space="preserve"><value>Aselken n iɣewwaren innek n tuqqna </value></data>
 <data name="welcome_msg_connectionDataIncomplete" xml:space="preserve"><value>Isefka n tuqqna ur semden ara naɣ d ilmawen</value></data>
 <data name="welcome_msg_connectionDataInvalid" xml:space="preserve"><value>URL ur yessefk ara ad yebdu s HTML</value></data>
@@ -593,6 +633,7 @@
 <data name="wizard_menuitem_description" xml:space="preserve"><value>Tzemer-eḍ tura att sefeḍ-eḍ adhel agi seg umuɣ n iminig!</value></data>
 <data name="wizard_nfc" xml:space="preserve"><value>NFC</value></data>
 <data name="wizard_nfc_description" xml:space="preserve"><value>Tzemer-eḍ att sqluqel-eḍ isenfalen seg NFC!</value></data>
+<data name="wizard_bluetooth_description" xml:space="preserve"><value>You are able to toggle switches via Bluetooth connections!</value></data>
 <data name="wizard_qrcode" xml:space="preserve"><value>QR Tangalt </value></data>
 <data name="wizard_qrcode_description" xml:space="preserve"><value>Sqluqel isenfalen s taɣuri n tangalt QR (naɣ tangalt n tifeggagin)!</value></data>
 <data name="wizard_speech" xml:space="preserve"><value>Inezḍayen n wawal</value></data>
@@ -603,4 +644,5 @@
 <data name="wizard_button_wizard" xml:space="preserve"><value>Ekkes</value></data>
 <data name="wizard_button_utilities" xml:space="preserve"><value>Imeẓla i wagdud</value></data>
 <data name="wizard_button_done" xml:space="preserve"><value>Ikkfa</value></data>
+<data name="wizard_beacon_description" xml:space="preserve"><value>Toggle switches by scanning for beacons!</value></data>
 </root>

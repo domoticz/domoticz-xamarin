@@ -611,7 +611,7 @@
                                             HorizontalOptions="Start"
                                             LineBreakMode="NoWrap"
                                             Style="{StaticResource SettingsDetailType}"
-                                            Text="{resources:Translate button_support}"
+                                            Text="{resources:Translate report_error}"
                                             VerticalOptions="CenterAndExpand" />
                                     </StackLayout>
                                     <custcontrol:TintedCachedImage

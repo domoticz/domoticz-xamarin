@@ -22,7 +22,6 @@ namespace NL.HNOGames.Domoticz.Helpers
                App.AddLog("Currently we can't connect to the app store. Try again later.");
                return false;
             }
-
             var purchases = await CrossInAppBilling.Current.GetPurchasesAsync(ItemType.InAppPurchase);
             //check for null just incase
             if (purchases?.Any(p => p.ProductId == productId) ?? false)
@@ -75,13 +74,7 @@ namespace NL.HNOGames.Domoticz.Helpers
       /// <summary>
       /// Purchase item
       /// </summary>
-#if OOTT
-      public static async Task<bool> PurchaseItem(string productId = "122842", string payload = "nl.hnogames.oott")
-#elif RELEASE
-         public static async Task<bool> PurchaseItem(string productId = "134845", string payload = "nl.hnogames.domoticz")
-#elif DEBUG
-      public static async Task<bool> PurchaseItem(string productId = "134845", string payload = "nl.hnogames.domoticz")
-#endif
+      public static async Task<bool> PurchaseItem(string productId, string payload)
       {
          if (!CrossInAppBilling.IsSupported)
          {

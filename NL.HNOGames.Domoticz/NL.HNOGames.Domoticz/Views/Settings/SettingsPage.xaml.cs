@@ -396,7 +396,7 @@ namespace NL.HNOGames.Domoticz.Views.Settings
             });
             if (!result)
                 return;
-            if (await InAppPurchaseHelper.PurchaseItem())
+            if (await InAppPurchaseHelper.PurchaseItem(AppResources.productId, AppResources.packageId))
                 App.ShowToast("Thanks for buying premium!!");
             PremiumScreenSetup();
         }

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>  <root> <resheader name="resmimetype">		<value>text/microsoft-resx</value>	</resheader>	<resheader name="version">		<value>2.0</value>	</resheader>	<resheader name="reader">		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>	<resheader name="writer">		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>
+<?xml version="1.0" encoding="utf-8"?> <root> <resheader name="resmimetype">		<value>text/microsoft-resx</value>	</resheader>	<resheader name="version">		<value>2.0</value>	</resheader>	<resheader name="reader">		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>	<resheader name="writer">		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>
 <data name="premium_category" xml:space="preserve"><value>Köp premium!</value></data>
 <data name="premium_title" xml:space="preserve"><value>Skaffa premiumversionen!</value></data>
 <data name="premium_feature" xml:space="preserve"><value>är en premiumfunktion, vänligen köp betalversionen för att stödja utvecklarna!</value></data>
@@ -76,10 +76,12 @@
 <data name="retry" xml:space="preserve"><value>Försök igen</value></data>
 <data name="undo" xml:space="preserve"><value>Ångra</value></data>
 <data name="something_deleted" xml:space="preserve"><value>%1$s togs bort</value></data>
+<data name="remove_last_server" xml:space="preserve"><value>You can\'t remove the last server in the list.</value></data>
 <data name="switch_on" xml:space="preserve"><value>Slår på brytare</value></data>
 <data name="switch_off" xml:space="preserve"><value>Slår av brytare</value></data>
 <data name="switch_night" xml:space="preserve"><value>Växla om till nattljus</value></data>
 <data name="switch_full" xml:space="preserve"><value>Växla om till fullt ljus</value></data>
+<data name="switch_connection_removed" xml:space="preserve"><value>Switch connection removed.</value></data>
 <data name="blind_up" xml:space="preserve"><value>Rullar upp rullgardinen</value></data>
 <data name="blind_down" xml:space="preserve"><value>Rullar ner rullgardinen</value></data>
 <data name="blind_stop" xml:space="preserve"><value>Stoppa rullgardinen</value></data>
@@ -92,13 +94,13 @@
 <data name="filter_devices" xml:space="preserve"><value>Filtrera enheter</value></data>
 <data name="filter_graph_empty" xml:space="preserve"><value>Ange ett filter</value></data>
 <data name="choose_color" xml:space="preserve"><value>Välj färg</value></data>
-<data name="no_data_on_domoticz" xml:space="preserve"><value>Ingen data på OOTT-server</value></data>
+<data name="no_data_on_domoticz" xml:space="preserve"><value>Ingen data på Domoticz-server</value></data>
 <data name="row_icon_description" xml:space="preserve"><value>rad-ikon</value></data>
 <data name="error_image_description" xml:space="preserve"><value>Felbild</value></data>
 <data name="device_image_description" xml:space="preserve"><value>Enhetsbild</value></data>
 <data name="white" xml:space="preserve"><value>Vit</value></data>
 <data name="refresh" xml:space="preserve"><value>Uppdatera</value></data>
-<data name="domoticz_logo" xml:space="preserve"><value>OOTT logotyp</value></data>
+<data name="domoticz_logo" xml:space="preserve"><value>Domoticz logotyp</value></data>
 <data name="this_take_minutes" xml:space="preserve"><value>Detta kan ta flera minuter.</value></data>
 <data name="continue_question" xml:space="preserve"><value>Vill du fortsätta?</value></data>
 <data name="cant_remove_default_server" xml:space="preserve"><value>Kan inte ta bort standardserver</value></data>
@@ -109,7 +111,12 @@
 <data name="filter_error" xml:space="preserve"><value>Fel</value></data>
 <data name="use_demo_setup" xml:space="preserve"><value>Använd demoinställningar</value></data>
 <data name="auto_refresh_time" xml:space="preserve"><value>Uppdatera timer</value></data>
-<data name="setautorefreshtime" xml:space="preserve"><value>Ange en specifik timer för automatisk uppdatering på några sekunder.</value></data>
+<data name="set_auto_refresh_time" xml:space="preserve"><value>Ange en specifik timer för automatisk uppdatering på några sekunder.</value></data>
+<data name="error_authentication_basicauth" xml:space="preserve"><value>IMPORTANT: Please check if your Domoticz system uses Login Page as the authentication method. Basic Auth is going to be removed from Domoticz from next update!</value></data>
+<data name="category_other" xml:space="preserve"><value>Other</value></data>
+<data name="tasker_title" xml:space="preserve"><value>Setup automation rules with Tasker for Domoticz</value></data>
+<data name="category_tasker" xml:space="preserve"><value>Tasker</value></data>
+<data name="wizard_widgets_tasker" xml:space="preserve"><value>Setup automation rules within Tasker for Domoticz!</value></data>
 <data name="action_switch_server" xml:space="preserve"><value>Växla server</value></data>
 <data name="action_settings" xml:space="preserve"><value>Inställningar</value></data>
 <data name="action_filter" xml:space="preserve"><value>Filter</value></data>
@@ -119,20 +126,44 @@
 <data name="action_bluetooth_show" xml:space="preserve"><value>Visa parade enheter</value></data>
 <data name="action_speech" xml:space="preserve"><value>Taligenkänning</value></data>
 <data name="send" xml:space="preserve"><value>Send</value></data>
+<data name="beacon_not_supported" xml:space="preserve"><value>Beacons stöds inte av denna enhet</value></data>
+<data name="beacon_register" xml:space="preserve"><value>Anslut en Beacon</value></data>
+<data name="beacon_found" xml:space="preserve"><value>Ny beacon hittats</value></data>
+<data name="beacon_edit" xml:space="preserve"><value>Redigera beacon</value></data>
+<data name="beacon_name" xml:space="preserve"><value>Ge denna beacon ett passande namn</value></data>
+<data name="beacon_desc" xml:space="preserve"><value>Kontrollera listan över ihopparade beacon enheter</value></data>
+<data name="beacon_exists" xml:space="preserve"><value>Denna beacon finns redan konfigurerad på Domoticz</value></data>
+<data name="beacon_turned_off" xml:space="preserve"><value>Bluetooth behöver vara aktiverat i din enhets inställningar. </value></data>
+<data name="beacon_saved" xml:space="preserve"><value>Ny beacon anslutning sparad</value></data>
+<data name="action_beacon_show" xml:space="preserve"><value>Lägg till beacon</value></data>
+<data name="beacon" xml:space="preserve"><value>Beacon</value></data>
+<data name="beacon_disabled" xml:space="preserve"><value>Beacon automation inaktiverad, aktivera via inställningarna</value></data>
+<data name="noSwitchSelected_explanation_beacon" xml:space="preserve"><value>För att en beacon enhet skall kunna automatisera något i Domoticz behöver en brytare kopplas till en beacon. </value></data>
+<data name="beacon_UUID" xml:space="preserve"><value>UUID</value></data>
+<data name="beacon_major" xml:space="preserve"><value>Major (optional)</value></data>
+<data name="beacon_minor" xml:space="preserve"><value>Minor (optional)</value></data>
+<data name="beacon_scan" xml:space="preserve"><value>Beacon</value></data>
+<data name="beacon_scan_desc" xml:space="preserve"><value>Letar efter Beacons</value></data>
+<data name="beacon_notifications" xml:space="preserve"><value>Enable notifications for entering and leaving a beacon region.</value></data>
+<data name="beacon_entering" xml:space="preserve"><value>"Entering %1$s"</value></data>
+<data name="beacon_leaving" xml:space="preserve"><value>Leaving  %1$s</value></data>
+<data name="beacon_entering_text" xml:space="preserve"><value>Entering one of the beacons</value></data>
+<data name="beacon_leaving_text" xml:space="preserve"><value>Leaving one of the beacons</value></data>
 <data name="bluetooth_not_supported" xml:space="preserve"><value>Denna enhet har inte stöd för Bluetooth</value></data>
 <data name="bluetooth_register" xml:space="preserve"><value>Anslut en Bluetooth-enhet</value></data>
 <data name="bluetooth_found" xml:space="preserve"><value>Ny Bluetooth-enhet hittas</value></data>
 <data name="bluetooth_edit" xml:space="preserve"><value>Redigera Bluetooth-enhet</value></data>
 <data name="bluetooth_name" xml:space="preserve"><value>Ge denna Bluetooth ett namn. </value></data>
 <data name="bluetooth_desc" xml:space="preserve"><value>Kontrollera listan över parade bluetooth-enheter. </value></data>
-<data name="bluetooth_exists" xml:space="preserve"><value>Bluetooth är redan konfigurerat i OOTT. </value></data>
+<data name="bluetooth_exists" xml:space="preserve"><value>Bluetooth är redan konfigurerat i Domoticz. </value></data>
 <data name="bluetooth_turned_off" xml:space="preserve"><value>Bluetooth måste aktiveras i din enhets inställningar. </value></data>
 <data name="bluetooth_saved" xml:space="preserve"><value>Sparade anslutningen till en ny Bluetooth-enhet. </value></data>
 <data name="bluetooth" xml:space="preserve"><value>Bluetooth</value></data>
 <data name="bluetooth_disabled" xml:space="preserve"><value>Bluetooth-automation inaktiverad, vänligen ställ in via inställningar.</value></data>
-<data name="noSwitchSelected_explanation_bluetooth" xml:space="preserve"><value>För att få en bluetooth-enhet att automatisera något i OOTT måste en switch kopplas till en bluetooth</value></data>
+<data name="noSwitchSelected_explanation_bluetooth" xml:space="preserve"><value>För att få en bluetooth-enhet att automatisera något i Domoticz måste en switch kopplas till en bluetooth</value></data>
 <data name="title_cameras" xml:space="preserve"><value>Kameror</value></data>
 <data name="title_dashboard" xml:space="preserve"><value>Skrivbord</value></data>
+<data name="delivery" xml:space="preserve"><value>Delivery</value></data>
 <data name="usage" xml:space="preserve"><value>Användning</value></data>
 <data name="today" xml:space="preserve"><value>Idag</value></data>
 <data name="total" xml:space="preserve"><value>Totalt</value></data>
@@ -203,14 +234,14 @@
 <data name="verylow" xml:space="preserve"><value>Mycket låg</value></data>
 <data name="allsystems" xml:space="preserve"><value>Alla system</value></data>
 <data name="systems" xml:space="preserve"><value>System</value></data>
-<data name="send_notification" xml:space="preserve"><value>Send notification</value></data>
+<data name="send_notification" xml:space="preserve"><value>Skicka notifieringar</value></data>
 <data name="notification_subject" xml:space="preserve"><value>Subject</value></data>
-<data name="notification_message" xml:space="preserve"><value>Message</value></data>
-<data name="notification_error_system" xml:space="preserve"><value>Please choose a system to send the notification to</value></data>
-<data name="notification_error_message" xml:space="preserve"><value>Please fill in a message</value></data>
-<data name="notification_error_subject" xml:space="preserve"><value>Please fill in a subject</value></data>
-<data name="notification_error_send" xml:space="preserve"><value>Could not send the notification to OOTT</value></data>
-<data name="notification_send" xml:space="preserve"><value>Notification send to OOTT</value></data>
+<data name="notification_message" xml:space="preserve"><value>Meddelande</value></data>
+<data name="notification_error_system" xml:space="preserve"><value>Vänligen, välj ett notifieringssystem att skicka till</value></data>
+<data name="notification_error_message" xml:space="preserve"><value>Vänligen, fyll i ett meddelande</value></data>
+<data name="notification_error_subject" xml:space="preserve"><value>Vänligen, fyll i ett ämne</value></data>
+<data name="notification_error_send" xml:space="preserve"><value>Kunde inte skicka notifikationen till Domoticz</value></data>
+<data name="notification_send" xml:space="preserve"><value>Notifikation skickad till Domoticz</value></data>
 <data name="permission_title" xml:space="preserve"><value>Behörighet nekad</value></data>
 <data name="permission_prefs_title" xml:space="preserve"><value>Rättigheter</value></data>
 <data name="permission_config" xml:space="preserve"><value>Konfigurera behörigheter för denna app</value></data>
@@ -293,8 +324,8 @@
 <data name="always_on_on" xml:space="preserve"><value>Lås skärmen till alltid på</value></data>
 <data name="always_on_off" xml:space="preserve"><value>Lås inte skärmen till alltid på</value></data>
 <data name="always_auto_refresh" xml:space="preserve"><value>Uppdatera automatiskt</value></data>
-<data name="always_auto_refresh_on" xml:space="preserve"><value>Refresh the device state every couple of seconds</value></data>
-<data name="always_auto_refresh_off" xml:space="preserve"><value>Don\'t refresh the device state every couple of seconds</value></data>
+<data name="always_auto_refresh_on" xml:space="preserve"><value>Uppdatera enhetsstatus varannan sekund</value></data>
+<data name="always_auto_refresh_off" xml:space="preserve"><value>Uppdatera inte enhetsstatus varannan sekund</value></data>
 <data name="switch_buttons_title" xml:space="preserve"><value>Brytare</value></data>
 <data name="switch_buttons_on" xml:space="preserve"><value>Visa brytare med strömbrytare</value></data>
 <data name="switch_buttons_off" xml:space="preserve"><value>Visa brytare med knappbrytare</value></data>
@@ -303,6 +334,8 @@
 <data name="show_dashboard_list_off" xml:space="preserve"><value>Visa skrivbordet som rutnät</value></data>
 <data name="dashboard_clock" xml:space="preserve"><value>Klocka</value></data>
 <data name="show_dashboard_clock" xml:space="preserve"><value>Visa klocka på instrumentpanelen</value></data>
+<data name="dashboard_camera" xml:space="preserve"><value>Kamera</value></data>
+<data name="show_dashboard_camera" xml:space="preserve"><value>Load the camera for connected switches</value></data>
 <data name="enable_wear_select" xml:space="preserve"><value>Android Wear-anpassade objekt</value></data>
 <data name="custom_wear_select" xml:space="preserve"><value>Välj Wear-brytare</value></data>
 <data name="custom_wear_select_desc" xml:space="preserve"><value>Välj vilka brytare som du vill kunna se på din Android wear-enhet</value></data>
@@ -314,11 +347,11 @@
 <data name="config_theme" xml:space="preserve"><value>Sätt tema</value></data>
 <data name="set_dark_theme" xml:space="preserve"><value>Ändra till mörkt tema</value></data>
 <data name="set_light_theme" xml:space="preserve"><value>Ändra till ljust tema</value></data>
-<data name="set_talk_back_on" xml:space="preserve"><value>Låt OOTT prata med dig</value></data>
+<data name="set_talk_back_on" xml:space="preserve"><value>Låt Domoticz prata med dig</value></data>
 <data name="set_talk_back_off" xml:space="preserve"><value>Inaktivera pratfunktionen</value></data>
-<data name="settings_imported" xml:space="preserve"><value>Inställningarna importerade, vänligen starta om OOTT</value></data>
+<data name="settings_imported" xml:space="preserve"><value>Inställningarna importerade, vänligen starta om Domoticz</value></data>
 <data name="settings_import_failed" xml:space="preserve"><value>Det gick inte att importera inställningarna</value></data>
-<data name="settings_exported" xml:space="preserve"><value>Inställningar exporterade, vänligen starta om OOTT</value></data>
+<data name="settings_exported" xml:space="preserve"><value>Inställningar exporterade, vänligen starta om Domoticz</value></data>
 <data name="settings_export_failed" xml:space="preserve"><value>Det gick inte att exportera inställningar</value></data>
 <data name="server_settings" xml:space="preserve"><value>Inställningar för anslutning till servern</value></data>
 <data name="server_force_fetch_config" xml:space="preserve"><value>Hämta serverinställningar</value></data>
@@ -340,6 +373,8 @@
 <data name="qrcode_enable_settings" xml:space="preserve"><value>Aktivera QR-kodsfunktionen</value></data>
 <data name="bluetooth_settings" xml:space="preserve"><value>Konfigurera Bluetooth-enheter</value></data>
 <data name="enable_bluetooth" xml:space="preserve"><value>Aktivera Bluetooth-funktion</value></data>
+<data name="beacon_settings" xml:space="preserve"><value>Ställ in Beacons</value></data>
+<data name="enable_beacon" xml:space="preserve"><value>Aktivera Beacon funktionalitet</value></data>
 <data name="translate_description" xml:space="preserve"><value>Du kan hjälpa till och göra våra översättningar bättre och även lägga till nya språk till denna app via vårt Crowdin projekt</value></data>
 <data name="translate_title" xml:space="preserve"><value>Översättningar</value></data>
 <data name="security_settings" xml:space="preserve"><value>Konfigurera säkerhet</value></data>
@@ -348,15 +383,15 @@
 <data name="setup_fingerprints" xml:space="preserve"><value>Ställ in fingeravtryck via Android inställningarna</value></data>
 <data name="fingerprint_not_supported" xml:space="preserve"><value>Fingeravtryckssäkerhet stöds inte av din enhet</value></data>
 <data name="fingerprint_not_setup_in_android" xml:space="preserve"><value>Först måste du koppla in/konfigurera en fingeravtrycksläsare till enheten</value></data>
-<data name="fingerprint_sure" xml:space="preserve"><value>Är du säker? Säkerhetslösenordet är samma som till ditt OOTT konto.</value></data>
+<data name="fingerprint_sure" xml:space="preserve"><value>Är du säker? Säkerhetslösenordet är samma som till ditt Domoticz konto.</value></data>
 <data name="category_widgets" xml:space="preserve"><value>Widgets (BETA)</value></data>
 <data name="widget_description" xml:space="preserve"><value>Aktivera eller inaktivera Widgets på denna enhet</value></data>
-<data name="widget_disabled" xml:space="preserve"><value>Widgets är inte aktiverade på den här enheten, kontrollera inställningarna i OOTT</value></data>
+<data name="widget_disabled" xml:space="preserve"><value>Widgets är inte aktiverade på den här enheten, kontrollera inställningarna i Domoticz</value></data>
 <data name="widget_warning" xml:space="preserve"><value>Använd widgets på egen risk!! Widgets är för närvarande i Beta-stadiet och innehåller förmodligen lite buggar. Det kan orsaka stor data/batterianvändning...</value></data>
 <data name="notification_settings_id" xml:space="preserve"><value>Google Cloud Messaging ID</value></data>
-<data name="notification_settings_push" xml:space="preserve"><value>Skicka ditt registrerings-id till OOTT</value></data>
-<data name="notification_settings_pushed" xml:space="preserve"><value>Ditt registrerings-id är nu sparat i OOTT</value></data>
-<data name="notification_settings_push_failed" xml:space="preserve"><value>Kunde inte spara ditt registrerings-id i OOTT, försök igen senare.</value></data>
+<data name="notification_settings_push" xml:space="preserve"><value>Skicka ditt registrerings-id till Domoticz</value></data>
+<data name="notification_settings_pushed" xml:space="preserve"><value>Ditt registrerings-id är nu sparat i Domoticz</value></data>
+<data name="notification_settings_push_failed" xml:space="preserve"><value>Kunde inte spara ditt registrerings-id i Domoticz, försök igen senare.</value></data>
 <data name="notification_show_title" xml:space="preserve"><value>Senaste aviseringar</value></data>
 <data name="notification_show_nothing" xml:space="preserve"><value>Inga aviseringar hittades</value></data>
 <data name="notification_show" xml:space="preserve"><value>Visa några av de senaste aviseringarna</value></data>
@@ -365,7 +400,8 @@
 <data name="enable_notifications_title" xml:space="preserve"><value>Aktivera notifieringar</value></data>
 <data name="enable_notifications" xml:space="preserve"><value>Aktivera notifieringar på den här enheten</value></data>
 <data name="notification_screen_title" xml:space="preserve"><value>Notifieringsinställningar</value></data>
-<data name="notification_history" xml:space="preserve"><value>Notification history</value></data>
+<data name="notification_history" xml:space="preserve"><value>Notifikationshistorik</value></data>
+<data name="notification_inbox" xml:space="preserve"><value>Inkommande</value></data>
 <data name="notification_vibrate_title" xml:space="preserve"><value>Vibrera</value></data>
 <data name="notification_vibrate_on" xml:space="preserve"><value>Vibrera när en notifiering tas emot</value></data>
 <data name="notification_vibrate_off" xml:space="preserve"><value>Vibrera inte</value></data>
@@ -381,19 +417,21 @@
 <data name="alarm" xml:space="preserve"><value>Alarm</value></data>
 <data name="alarmtimer_title" xml:space="preserve"><value>Alarmtimer</value></data>
 <data name="alarmtimer" xml:space="preserve"><value>Antal sekunder att larma</value></data>
-<data name="theme_default" xml:space="preserve"><value>Default</value></data>
-<data name="theme_daynight" xml:space="preserve"><value>Day/Night</value></data>
+<data name="theme_default" xml:space="preserve"><value>Grundinställning</value></data>
+<data name="theme_daynight" xml:space="preserve"><value>Dag/Natt</value></data>
 <data name="theme_orange" xml:space="preserve"><value>Orange</value></data>
-<data name="theme_pink" xml:space="preserve"><value>Pink</value></data>
-<data name="theme_blue" xml:space="preserve"><value>Blue</value></data>
+<data name="theme_pink" xml:space="preserve"><value>rosa</value></data>
+<data name="theme_blue" xml:space="preserve"><value>Blå</value></data>
+<data name="theme_green" xml:space="preserve"><value>Grön</value></data>
+<data name="theme_dark_blue" xml:space="preserve"><value>Mörkblå</value></data>
 <data name="default_values" xml:space="preserve"><value>Standardvärden</value></data>
 <data name="default_values_min_error" xml:space="preserve"><value>Maxvärde bör vara högre än Min värde</value></data>
 <data name="default_values_max_error" xml:space="preserve"><value>Maxvärde bör vara högre än Min värde</value></data>
 <data name="info_version" xml:space="preserve"><value>Version</value></data>
-<data name="info_domoticz_version" xml:space="preserve"><value>OOTT-version</value></data>
-<data name="info_about" xml:space="preserve"><value>Om OOTT</value></data>
+<data name="info_domoticz_version" xml:space="preserve"><value>Domoticz-version</value></data>
+<data name="info_about" xml:space="preserve"><value>Om Domoticz</value></data>
 <data name="info_credits" xml:space="preserve"><value>Tack till</value></data>
-<data name="info_credits_text" xml:space="preserve"><value>OOTT för Android görs möjligt av flera bibliotek med öppen källkod</value></data>
+<data name="info_credits_text" xml:space="preserve"><value>Domoticz för Android görs möjligt av flera bibliotek med öppen källkod</value></data>
 <data name="debug_switch_title" xml:space="preserve"><value>Felsökning</value></data>
 <data name="debug_switch_summary_on" xml:space="preserve"><value>Felsökning aktiverat</value></data>
 <data name="debug_switch_summary_off" xml:space="preserve"><value>Felsökning inaktiverad</value></data>
@@ -401,10 +439,10 @@
 <data name="title_activity_update" xml:space="preserve"><value>Uppdatera servern</value></data>
 <data name="error_couldNotCheckForVersion" xml:space="preserve"><value>"Kunde inte kontrollera för version: %1$s"</value></data>
 <data name="error_couldNotCheckForUpdates" xml:space="preserve"><value>"Kunde inte kontrollera uppdateringar: %1$s"</value></data>
-<data name="error_couldNotCheckForConfig" xml:space="preserve"><value>"Kunde inte hämta OOTT serverkonfiguration: %1$s"</value></data>
+<data name="error_couldNotCheckForConfig" xml:space="preserve"><value>"Kunde inte hämta Domoticz serverkonfiguration: %1$s"</value></data>
 <data name="update_available_enhanced" xml:space="preserve"><value>Serveruppdatering tillgänglig: %1$s version: %2$s</value></data>
 <data name="check_for_update_title" xml:space="preserve"><value>Sök efter uppdateringar</value></data>
-<data name="check_for_update" xml:space="preserve"><value>Vill du att vi söker efter uppdateringar till OOTT?</value></data>
+<data name="check_for_update" xml:space="preserve"><value>Vill du att vi söker efter uppdateringar till Domoticz?</value></data>
 <data name="update_server_warning" xml:space="preserve"><value>Under tiden som din server uppdateras kommer denna app inte fungera korrekt.</value></data>
 <data name="update_server_downloadNotReady1" xml:space="preserve"><value>Uppdateringen är inte (fullständigt) nedladdad.</value></data>
 <data name="update_server_downloadNotReady2" xml:space="preserve"><value>Försök igen senare.</value></data>
@@ -424,7 +462,9 @@
 <data name="debug_test_text" xml:space="preserve"><value>Testfelsökning</value></data>
 <data name="restart_required_title" xml:space="preserve"><value>Omstart krävs</value></data>
 <data name="restart_now" xml:space="preserve"><value>Starta om nu?</value></data>
-<data name="check_settings" xml:space="preserve"><value>Check your settings</value></data>
+<data name="check_settings" xml:space="preserve"><value>Kontrollera dina inställningar</value></data>
+<data name="report_error" xml:space="preserve"><value>Report an error</value></data>
+<data name="support" xml:space="preserve"><value>Support</value></data>
 <data name="Speech_not_supported" xml:space="preserve"><value>Tal stöds inte på denna enhet</value></data>
 <data name="Speech_register" xml:space="preserve"><value>Registrera ett röstkommando</value></data>
 <data name="Speech_found" xml:space="preserve"><value>Nytt röstkommando hittat</value></data>
@@ -456,7 +496,7 @@
 <data name="follow_schedule" xml:space="preserve"><value>Följ schemat</value></data>
 <data name="command" xml:space="preserve"><value>Kommando</value></data>
 <data name="type" xml:space="preserve"><value>Typ</value></data>
-<data name="notapplicable" xml:space="preserve"><value>Ej tillämpbar</value></data>
+<data name="notapplicable" xml:space="preserve"><value>Ej tillänglig</value></data>
 <data name="timer_before_sunset" xml:space="preserve"><value>Före solnedgången</value></data>
 <data name="timer_after_sunset" xml:space="preserve"><value>Efter solnedgången</value></data>
 <data name="timer_ontime" xml:space="preserve"><value>På utsatt tid</value></data>
@@ -466,25 +506,25 @@
 <data name="odd_day_numbers" xml:space="preserve"><value>Udda dagar</value></data>
 <data name="even_day_numbers" xml:space="preserve"><value>Jämna dagar</value></data>
 <data name="odd_week_numbers" xml:space="preserve"><value>Udda veckor</value></data>
-<data name="even_week_numbers" xml:space="preserve"><value>Jämna veckor</value></data>
+<data name="even_week_numbers" xml:space="preserve"><value>Jämna veckonummer</value></data>
 <data name="monthly" xml:space="preserve"><value>Månadsvis</value></data>
 <data name="monthly_weekday" xml:space="preserve"><value>Månadsvis (Veckodag)</value></data>
 <data name="yearly" xml:space="preserve"><value>Årligen</value></data>
 <data name="yearly_weekday" xml:space="preserve"><value>Årligen (Veckodag)</value></data>
 <data name="before_sun_at_south" xml:space="preserve"><value>Före solnedgång i syd</value></data>
 <data name="after_sun_at_south" xml:space="preserve"><value>Efter solnedgång i syd</value></data>
-<data name="before_civil_twilight_start" xml:space="preserve"><value>Before Civil Twilight Start</value></data>
-<data name="after_civil_twilight_start" xml:space="preserve"><value>After Civil Twilight Start</value></data>
-<data name="before_civil_twilight_end" xml:space="preserve"><value>Before Civil Twilight End</value></data>
-<data name="after_civil_twilight_end" xml:space="preserve"><value>After Civil Twilight End</value></data>
-<data name="before_nautical_twilight_start" xml:space="preserve"><value>Before Nautical Twilight Start</value></data>
-<data name="after_nautical_twilight_start" xml:space="preserve"><value>After Nautical Twilight Start</value></data>
-<data name="before_nautical_twilight_end" xml:space="preserve"><value>Before Nautical Twilight End</value></data>
-<data name="after_nautical_twilight_end" xml:space="preserve"><value>After Nautical Twilight End</value></data>
-<data name="before_austronomical_twilight_start" xml:space="preserve"><value>Before Austronomical Twilight Start</value></data>
-<data name="after_austronomical_twilight_start" xml:space="preserve"><value>After Austronomical Twilight Start</value></data>
-<data name="before_austronomical_twilight_end" xml:space="preserve"><value>Before Austronomical Twilight End</value></data>
-<data name="after_austronomical_twilight_end" xml:space="preserve"><value>After Austronomical Twilight End</value></data>
+<data name="before_civil_twilight_start" xml:space="preserve"><value>Före borgerlig skymning</value></data>
+<data name="after_civil_twilight_start" xml:space="preserve"><value>Efter borgerlig skymning startat</value></data>
+<data name="before_civil_twilight_end" xml:space="preserve"><value>Före borgerlig skymning slutar</value></data>
+<data name="after_civil_twilight_end" xml:space="preserve"><value>Efter borgerlig skymning slutat</value></data>
+<data name="before_nautical_twilight_start" xml:space="preserve"><value>Före Nautisk skymning startar</value></data>
+<data name="after_nautical_twilight_start" xml:space="preserve"><value>Efter Nautisk skymning startat</value></data>
+<data name="before_nautical_twilight_end" xml:space="preserve"><value>Före Nautisk skymning slutat</value></data>
+<data name="after_nautical_twilight_end" xml:space="preserve"><value>Efter Nautisk skymning slutat</value></data>
+<data name="before_austronomical_twilight_start" xml:space="preserve"><value>Före Astronomisk skymning startat</value></data>
+<data name="after_austronomical_twilight_start" xml:space="preserve"><value>Efter Astronomisk skymning startat</value></data>
+<data name="before_austronomical_twilight_end" xml:space="preserve"><value>Före Astronomisk skymning slutat</value></data>
+<data name="after_austronomical_twilight_end" xml:space="preserve"><value>Efter Astronomisk skymning slutat</value></data>
 <data name="timer_every_days" xml:space="preserve"><value>Varje dag</value></data>
 <data name="timer_working_days" xml:space="preserve"><value>Arbetsdagar</value></data>
 <data name="timer_weekend" xml:space="preserve"><value>Helg</value></data>
@@ -496,7 +536,7 @@
 <data name="fourth" xml:space="preserve"><value>Fjärde</value></data>
 <data name="last" xml:space="preserve"><value>Sista</value></data>
 <data name="title_utilities" xml:space="preserve"><value>Mätare</value></data>
-<data name="settemperature" xml:space="preserve"><value>Ställ in</value></data>
+<data name="set_temperature" xml:space="preserve"><value>Ställ in</value></data>
 <data name="title_vars" xml:space="preserve"><value>Användarvariabler</value></data>
 <data name="var_input" xml:space="preserve"><value>Indatavärdet är inte giltigt</value></data>
 <data name="var_input_error" xml:space="preserve"><value>Det gick inte att uppdatera användarvariabel</value></data>
@@ -515,17 +555,17 @@
 <data name="co2min" xml:space="preserve"><value>CO2 Min</value></data>
 <data name="co2max" xml:space="preserve"><value>CO2 Max</value></data>
 <data name="welcome_title_activity_welcome" xml:space="preserve"><value>Välkommen</value></data>
-<data name="welcome_info_domoticz" xml:space="preserve"><value>OOTT är ett hemautomatiseringssystem som låter dig övervaka och konfigurera olika enheter som: ljus, brytare, olika sensorer/mätare såsom temperatur, nederbörd, vind, UV, el, gas, vatten och mycket mer. Notifieringar/varningar kan skickas till alla mobila enheter.</value></data>
+<data name="welcome_info_domoticz" xml:space="preserve"><value>Domoticz är ett hemautomatiseringssystem som låter dig övervaka och konfigurera olika enheter som: ljus, brytare, olika sensorer/mätare såsom temperatur, nederbörd, vind, UV, el, gas, vatten och mycket mer. Notifieringar/varningar kan skickas till alla mobila enheter.</value></data>
 <data name="welcome_info_swipe" xml:space="preserve"><value>Svep till höger eller använd navigeringsknapparna längst ner för att fortsätta</value></data>
-<data name="welcome_info_settings1" xml:space="preserve"><value>Nästa sida innehåller inställningarna för OOTT.</value></data>
-<data name="welcome_info_settings2" xml:space="preserve"><value>Du kan ange en lokal- och fjärranslutna serverinställningar.
-De lokala inställningarna gäller för när du är ansluten till ditt hemnätverk via wifi.
-Fjärrinställningar används när du inte är ansluten till ditt hemnätverk eller när du är ansluten via mobila nätverk (2G, 3G, 4G etc).</value></data>
+<data name="welcome_info_settings1" xml:space="preserve"><value>Nästa sida innehåller inställningarna för Domoticz.</value></data>
+<data name="welcome_info_settings2" xml:space="preserve"><value>        Du kan ange en lokal- och fjärranslutna serverinställningar.
+        De lokala inställningarna gäller för när du är ansluten till ditt hemnätverk via wifi.
+        Fjärrinställningar används när du inte är ansluten till ditt hemnätverk eller när du är ansluten via mobila nätverk (2G, 3G, 4G etc).</value></data>
 <data name="welcome_info_checkingConnection" xml:space="preserve"><value>Kontrollerar inställningarna för anslutningen</value></data>
 <data name="welcome_msg_connectionDataIncomplete" xml:space="preserve"><value>Anslutningsdata ofullständiga eller ej angivna</value></data>
 <data name="welcome_msg_connectionDataInvalid" xml:space="preserve"><value>URL-adressen ska inte börja med http</value></data>
 <data name="welcome_msg_correctOnPreviousPage" xml:space="preserve"><value>Vänligen korrigera data på föregående sida</value></data>
-<data name="welcome_msg_serverVersion" xml:space="preserve"><value>OOTT-version</value></data>
+<data name="welcome_msg_serverVersion" xml:space="preserve"><value>Domoticz-version</value></data>
 <data name="welcome_msg_numberOfDevices" xml:space="preserve"><value>%1$d enheter hittades</value></data>
 <data name="welcome_msg_no_ssid_found" xml:space="preserve"><value>Ingen wifi-SSID hittades</value></data>
 <data name="welcome_ssid_spinner_prompt" xml:space="preserve"><value>Välj hem-SSIDs</value></data>
@@ -570,7 +610,7 @@ Fjärrinställningar används när du inte är ansluten till ditt hemnätverk el
 <data name="widget_transparent_light" xml:space="preserve"><value>Ljus transparent</value></data>
 <data name="title_wizard" xml:space="preserve"><value>Startguide</value></data>
 <data name="wizard_welcome" xml:space="preserve"><value>Välkommen</value></data>
-<data name="wizard_welcome_description" xml:space="preserve"><value>OOTT är ett mycket enkelt hemautomation system som låter dig övervaka och konfigurera olika enheter.</value></data>
+<data name="wizard_welcome_description" xml:space="preserve"><value>Domoticz är ett mycket enkelt hemautomation system som låter dig övervaka och konfigurera olika enheter.</value></data>
 <data name="wizard_favorites" xml:space="preserve"><value>Favoriter</value></data>
 <data name="wizard_favorites_description" xml:space="preserve"><value>Du kan lägga till enheter på skrivbordet genom att spara dem som favoriter. Klicka länge på ett objekt om du vill spara det som favorit!</value></data>
 <data name="wizard_startup" xml:space="preserve"><value>Startskärm</value></data>
@@ -578,13 +618,13 @@ Fjärrinställningar används när du inte är ansluten till ditt hemnätverk el
 <data name="wizard_notifications" xml:space="preserve"><value>Ställ in notifieringar</value></data>
 <data name="wizard_notifications_description" xml:space="preserve"><value>Du kan nu ta emot notifieringar på din Android-enhet! Ändra sättet på hur notifieringarna beter sig i inställningarna</value></data>
 <data name="wizard_multiserver" xml:space="preserve"><value>Använder flera servrar</value></data>
-<data name="wizard_multiserver_description" xml:space="preserve"><value>Du kan konfigurera flera OOTT-servrar i inställningarna.</value></data>
+<data name="wizard_multiserver_description" xml:space="preserve"><value>Du kan konfigurera flera Domoticz-servrar i inställningarna.</value></data>
 <data name="wizard_geo" xml:space="preserve"><value>Geofencing</value></data>
 <data name="wizard_geo_description" xml:space="preserve"><value>I inställningarna kan du välja din startskärm!</value></data>
 <data name="wizard_wear" xml:space="preserve"><value>Android Wear</value></data>
 <data name="wizard_wear_description" xml:space="preserve"><value>Du kan ange vilka enheter som du vill kontrollera från din Android Wear-enhet!</value></data>
 <data name="wizard_auto" xml:space="preserve"><value>Android Auto</value></data>
-<data name="wizard_auto_description" xml:space="preserve"><value>Få notifieringar från OOTT direkt i din Android Auto-enhet!</value></data>
+<data name="wizard_auto_description" xml:space="preserve"><value>Få notifieringar från Domoticz direkt i din Android Auto-enhet!</value></data>
 <data name="wizard_graph" xml:space="preserve"><value>Grafer</value></data>
 <data name="wizard_graph_description" xml:space="preserve"><value>Du kan se historisk graf för en enhet, väder eller temperatur!</value></data>
 <data name="wizard_filter" xml:space="preserve"><value>Filter</value></data>
@@ -595,6 +635,7 @@ Fjärrinställningar används när du inte är ansluten till ditt hemnätverk el
 <data name="wizard_menuitem_description" xml:space="preserve"><value>Du kan nu ta bort den här guiden från navigeringsmenyn!</value></data>
 <data name="wizard_nfc" xml:space="preserve"><value>NFC</value></data>
 <data name="wizard_nfc_description" xml:space="preserve"><value>Du har möjlighet att växla växlar via NFC!</value></data>
+<data name="wizard_bluetooth_description" xml:space="preserve"><value>Du kan växla strömbrytare via Bluetoothsanslutningar</value></data>
 <data name="wizard_qrcode" xml:space="preserve"><value>QR-kod</value></data>
 <data name="wizard_qrcode_description" xml:space="preserve"><value>Växla strömbrytare genom att skanna en QR-kod (eller streckkod)!</value></data>
 <data name="wizard_speech" xml:space="preserve"><value>Röstkommandon</value></data>
@@ -605,4 +646,5 @@ Fjärrinställningar används när du inte är ansluten till ditt hemnätverk el
 <data name="wizard_button_wizard" xml:space="preserve"><value>Ta bort</value></data>
 <data name="wizard_button_utilities" xml:space="preserve"><value>Verktyg</value></data>
 <data name="wizard_button_done" xml:space="preserve"><value>Klar</value></data>
+<data name="wizard_beacon_description" xml:space="preserve"><value>Växla strömbrytarna via sökning efter beacons!</value></data>
 </root>

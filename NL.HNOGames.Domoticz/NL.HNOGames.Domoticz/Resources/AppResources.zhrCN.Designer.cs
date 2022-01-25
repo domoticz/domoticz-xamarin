@@ -39,7 +39,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NL.HNOGames.Domoticz.Resources.AppResources.zhrCN", typeof(AppResources_zhrCN).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NL.HNOGames.OOTT.ResourcesOOTT.AppResources.zhrCN", typeof(AppResources_zhrCN).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -565,7 +565,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bluetooth already configured on Domoticz. .
+        ///   Looks up a localized string similar to Bluetooth already configured on OOTT. .
         /// </summary>
         public static string bluetooth_exists {
             get {
@@ -1060,7 +1060,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 需要要检查Domoticz系统更新吗？.
+        ///   Looks up a localized string similar to 需要要检查OOTT系统更新吗？.
         /// </summary>
         public static string check_for_update {
             get {
@@ -1465,7 +1465,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Domoticz标志.
+        ///   Looks up a localized string similar to OOTT标志.
         /// </summary>
         public static string domoticz_logo {
             get {
@@ -1627,7 +1627,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;无法获取Domoticz服务器配置︰%1$s&quot;.
+        ///   Looks up a localized string similar to &quot;无法获取OOTT服务器配置︰%1$s&quot;.
         /// </summary>
         public static string error_couldNotCheckForConfig {
             get {
@@ -1996,7 +1996,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 是否确定？备用密码是你的Domoticz帐户密码。.
+        ///   Looks up a localized string similar to 是否确定？备用密码是你的OOTT帐户密码。.
         /// </summary>
         public static string fingerprint_sure {
             get {
@@ -2221,7 +2221,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 关于Domoticz.
+        ///   Looks up a localized string similar to 关于OOTT.
         /// </summary>
         public static string info_about {
             get {
@@ -2239,7 +2239,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 靠许多开源库的支持才有了Android版Domoticz.
+        ///   Looks up a localized string similar to 靠许多开源库的支持才有了Android版OOTT.
         /// </summary>
         public static string info_credits_text {
             get {
@@ -2248,7 +2248,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Domoticz版本.
+        ///   Looks up a localized string similar to OOTT版本.
         /// </summary>
         public static string info_domoticz_version {
             get {
@@ -2545,7 +2545,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Domoticz服务器上没有数据.
+        ///   Looks up a localized string similar to OOTT服务器上没有数据.
         /// </summary>
         public static string no_data_on_domoticz {
             get {
@@ -2599,7 +2599,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For a bluetooth device to automate something in Domoticz, a switch should be linked to an bluetooth.
+        ///   Looks up a localized string similar to For a bluetooth device to automate something in OOTT, a switch should be linked to an bluetooth.
         /// </summary>
         public static string noSwitchSelected_explanation_bluetooth {
             get {
@@ -2671,7 +2671,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Could not send the notification to Domoticz.
+        ///   Looks up a localized string similar to Could not send the notification to OOTT.
         /// </summary>
         public static string notification_error_send {
             get {
@@ -2725,7 +2725,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Notification send to Domoticz.
+        ///   Looks up a localized string similar to Notification send to OOTT.
         /// </summary>
         public static string notification_send {
             get {
@@ -2743,7 +2743,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 将注册ID发送到Domoticz.
+        ///   Looks up a localized string similar to 将注册ID发送到OOTT.
         /// </summary>
         public static string notification_settings_push {
             get {
@@ -2752,7 +2752,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Domoticz无法保存你的注册ID，请稍候重试。.
+        ///   Looks up a localized string similar to OOTT无法保存你的注册ID，请稍候重试。.
         /// </summary>
         public static string notification_settings_push_failed {
             get {
@@ -2761,7 +2761,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 你的注册ID已保存到Domoticz.
+        ///   Looks up a localized string similar to 你的注册ID已保存到OOTT.
         /// </summary>
         public static string notification_settings_pushed {
             get {
@@ -3391,7 +3391,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 密码错误，你的Domoticz账户密码是指纹识别失败时的备用验证！.
+        ///   Looks up a localized string similar to 密码错误，你的OOTT账户密码是指纹识别失败时的备用验证！.
         /// </summary>
         public static string security_wrong_password_fingerprint {
             get {
@@ -3616,7 +3616,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 让Domoticz回应你.
+        ///   Looks up a localized string similar to 让OOTT回应你.
         /// </summary>
         public static string set_talk_back_on {
             get {
@@ -3652,7 +3652,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 设置已导出，请重新启动Domoticz.
+        ///   Looks up a localized string similar to 设置已导出，请重新启动OOTT.
         /// </summary>
         public static string settings_exported {
             get {
@@ -3670,7 +3670,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 设置已导入，请重新启动Domoticz.
+        ///   Looks up a localized string similar to 设置已导入，请重新启动OOTT.
         /// </summary>
         public static string settings_imported {
             get {
@@ -4741,7 +4741,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 仅用于非标准 Domoticz 服务器.
+        ///   Looks up a localized string similar to 仅用于非标准 OOTT 服务器.
         /// </summary>
         public static string welcome_advancedSettings_summary {
             get {
@@ -4786,7 +4786,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Domoticz是一个开源的智能家居系统，通过它你可以监测和控制各种设备比如：灯、开关 ，各种传感器、仪表比如：温度、雨、风、紫外线、电、气体、水 等等。 还可以向任一移动设备发送通知或警告。.
+        ///   Looks up a localized string similar to OOTT是一个开源的智能家居系统，通过它你可以监测和控制各种设备比如：灯、开关 ，各种传感器、仪表比如：温度、雨、风、紫外线、电、气体、水 等等。 还可以向任一移动设备发送通知或警告。.
         /// </summary>
         public static string welcome_info_domoticz {
             get {
@@ -4795,7 +4795,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 下一个页面设置你的Domoticz。.
+        ///   Looks up a localized string similar to 下一个页面设置你的OOTT。.
         /// </summary>
         public static string welcome_info_settings1 {
             get {
@@ -4950,7 +4950,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Domoticz 版本.
+        ///   Looks up a localized string similar to OOTT 版本.
         /// </summary>
         public static string welcome_msg_serverVersion {
             get {
@@ -5094,7 +5094,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 小部件未在此设备上启用，请检查您的Domoticz设置.
+        ///   Looks up a localized string similar to 小部件未在此设备上启用，请检查您的OOTT设置.
         /// </summary>
         public static string widget_disabled {
             get {
@@ -5157,7 +5157,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 在Android Auto汽车上接收来自Domoticz的通知！.
+        ///   Looks up a localized string similar to 在Android Auto汽车上接收来自OOTT的通知！.
         /// </summary>
         public static string wizard_auto_description {
             get {
@@ -5319,7 +5319,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 你可以在设置中配置多个Domoticz服务器。.
+        ///   Looks up a localized string similar to 你可以在设置中配置多个OOTT服务器。.
         /// </summary>
         public static string wizard_multiserver_description {
             get {
@@ -5445,7 +5445,7 @@ namespace NL.HNOGames.Domoticz.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Domoticz是一个轻量级智能家居系统，通过它你可以监测和控制各种设备。.
+        ///   Looks up a localized string similar to OOTT是一个轻量级智能家居系统，通过它你可以监测和控制各种设备。.
         /// </summary>
         public static string wizard_welcome_description {
             get {

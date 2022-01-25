@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>  <root> <resheader name="resmimetype">		<value>text/microsoft-resx</value>	</resheader>	<resheader name="version">		<value>2.0</value>	</resheader>	<resheader name="reader">		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>	<resheader name="writer">		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>
+<?xml version="1.0" encoding="utf-8"?> <root> <resheader name="resmimetype">		<value>text/microsoft-resx</value>	</resheader>	<resheader name="version">		<value>2.0</value>	</resheader>	<resheader name="reader">		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>	<resheader name="writer">		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>
 <data name="premium_category" xml:space="preserve"><value>Osta Premium!</value></data>
 <data name="premium_title" xml:space="preserve"><value>Hanki premium-versio!</value></data>
 <data name="premium_feature" xml:space="preserve"><value>on premium ominaisuus, osta maksullinen versio ja tue kehittäjiä!</value></data>
@@ -76,10 +76,12 @@
 <data name="retry" xml:space="preserve"><value>Yritä uudelleen</value></data>
 <data name="undo" xml:space="preserve"><value>Peru</value></data>
 <data name="something_deleted" xml:space="preserve"><value>%1$s on poistettu</value></data>
+<data name="remove_last_server" xml:space="preserve"><value>You can\'t remove the last server in the list.</value></data>
 <data name="switch_on" xml:space="preserve"><value>Kytkin päälle</value></data>
 <data name="switch_off" xml:space="preserve"><value>Kytkin pois päältä</value></data>
 <data name="switch_night" xml:space="preserve"><value>Turning switch to night light</value></data>
 <data name="switch_full" xml:space="preserve"><value>Turning switch to full light</value></data>
+<data name="switch_connection_removed" xml:space="preserve"><value>Switch connection removed.</value></data>
 <data name="blind_up" xml:space="preserve"><value>Kaihdin ylös</value></data>
 <data name="blind_down" xml:space="preserve"><value>Kaihdin alas</value></data>
 <data name="blind_stop" xml:space="preserve"><value>Pysäytä kaihdin</value></data>
@@ -92,13 +94,13 @@
 <data name="filter_devices" xml:space="preserve"><value>Suodata laitteet</value></data>
 <data name="filter_graph_empty" xml:space="preserve"><value>Määritä suodatin</value></data>
 <data name="choose_color" xml:space="preserve"><value>Valitse väri</value></data>
-<data name="no_data_on_domoticz" xml:space="preserve"><value>OOTT palvelimella ei ole dataa</value></data>
+<data name="no_data_on_domoticz" xml:space="preserve"><value>Domoticz palvelimella ei ole dataa</value></data>
 <data name="row_icon_description" xml:space="preserve"><value>rivi-kuvake</value></data>
 <data name="error_image_description" xml:space="preserve"><value>Virhekuva</value></data>
 <data name="device_image_description" xml:space="preserve"><value>Laitekuva</value></data>
 <data name="white" xml:space="preserve"><value>Valkoinen</value></data>
 <data name="refresh" xml:space="preserve"><value>Päivitä</value></data>
-<data name="domoticz_logo" xml:space="preserve"><value>OOTT-logo</value></data>
+<data name="domoticz_logo" xml:space="preserve"><value>Domoticz-logo</value></data>
 <data name="this_take_minutes" xml:space="preserve"><value>Tämä voi kestää useita minuutteja.</value></data>
 <data name="continue_question" xml:space="preserve"><value>Haluatko jatkaa?</value></data>
 <data name="cant_remove_default_server" xml:space="preserve"><value>Oletuspalvelinta ei voi poistaa</value></data>
@@ -109,7 +111,12 @@
 <data name="filter_error" xml:space="preserve"><value>Error</value></data>
 <data name="use_demo_setup" xml:space="preserve"><value>Use demo setup</value></data>
 <data name="auto_refresh_time" xml:space="preserve"><value>Refresh timer</value></data>
-<data name="setautorefreshtime" xml:space="preserve"><value>Set a specific timer for the auto refresh in seconds.</value></data>
+<data name="set_auto_refresh_time" xml:space="preserve"><value>Set a specific timer for the auto refresh in seconds.</value></data>
+<data name="error_authentication_basicauth" xml:space="preserve"><value>IMPORTANT: Please check if your Domoticz system uses Login Page as the authentication method. Basic Auth is going to be removed from Domoticz from next update!</value></data>
+<data name="category_other" xml:space="preserve"><value>Other</value></data>
+<data name="tasker_title" xml:space="preserve"><value>Setup automation rules with Tasker for Domoticz</value></data>
+<data name="category_tasker" xml:space="preserve"><value>Tasker</value></data>
+<data name="wizard_widgets_tasker" xml:space="preserve"><value>Setup automation rules within Tasker for Domoticz!</value></data>
 <data name="action_switch_server" xml:space="preserve"><value>Vaihda palvelinta</value></data>
 <data name="action_settings" xml:space="preserve"><value>Asetukset</value></data>
 <data name="action_filter" xml:space="preserve"><value>Suodatus</value></data>
@@ -119,20 +126,44 @@
 <data name="action_bluetooth_show" xml:space="preserve"><value>Show paired devices</value></data>
 <data name="action_speech" xml:space="preserve"><value>Puheentunnistus</value></data>
 <data name="send" xml:space="preserve"><value>Send</value></data>
+<data name="beacon_not_supported" xml:space="preserve"><value>Beacons are not supported on this device</value></data>
+<data name="beacon_register" xml:space="preserve"><value>Connect a beacon</value></data>
+<data name="beacon_found" xml:space="preserve"><value>New beacon found</value></data>
+<data name="beacon_edit" xml:space="preserve"><value>Edit beacon</value></data>
+<data name="beacon_name" xml:space="preserve"><value>Give this beacon a proper name. </value></data>
+<data name="beacon_desc" xml:space="preserve"><value>Check the list of paired beacon devices. </value></data>
+<data name="beacon_exists" xml:space="preserve"><value>Beacon already configured on Domoticz. </value></data>
+<data name="beacon_turned_off" xml:space="preserve"><value>Bluetooth needs to be turned on in your device settings. </value></data>
+<data name="beacon_saved" xml:space="preserve"><value>Saved a new beacon connection. </value></data>
+<data name="action_beacon_show" xml:space="preserve"><value>Add new beacon</value></data>
+<data name="beacon" xml:space="preserve"><value>Beacon</value></data>
+<data name="beacon_disabled" xml:space="preserve"><value>Beacon automation disabled, please setup via settings. </value></data>
+<data name="noSwitchSelected_explanation_beacon" xml:space="preserve"><value>For a Beacon device to automate something in Domoticz, a switch should be linked to an beacon. </value></data>
+<data name="beacon_UUID" xml:space="preserve"><value>UUID</value></data>
+<data name="beacon_major" xml:space="preserve"><value>Major (optional)</value></data>
+<data name="beacon_minor" xml:space="preserve"><value>Minor (optional)</value></data>
+<data name="beacon_scan" xml:space="preserve"><value>Beacon</value></data>
+<data name="beacon_scan_desc" xml:space="preserve"><value>Scanning for beacons</value></data>
+<data name="beacon_notifications" xml:space="preserve"><value>Enable notifications for entering and leaving a beacon region.</value></data>
+<data name="beacon_entering" xml:space="preserve"><value>"Entering %1$s"</value></data>
+<data name="beacon_leaving" xml:space="preserve"><value>Leaving  %1$s</value></data>
+<data name="beacon_entering_text" xml:space="preserve"><value>Entering one of the beacons</value></data>
+<data name="beacon_leaving_text" xml:space="preserve"><value>Leaving one of the beacons</value></data>
 <data name="bluetooth_not_supported" xml:space="preserve"><value>Bluetooth is not supported on this device</value></data>
 <data name="bluetooth_register" xml:space="preserve"><value>Connect a bluetooth device</value></data>
 <data name="bluetooth_found" xml:space="preserve"><value>New bluetooth device found</value></data>
 <data name="bluetooth_edit" xml:space="preserve"><value>Edit bluetooth device</value></data>
 <data name="bluetooth_name" xml:space="preserve"><value>Give this bluetooth device a proper name. </value></data>
 <data name="bluetooth_desc" xml:space="preserve"><value>Check the list of paired bluetooth devices. </value></data>
-<data name="bluetooth_exists" xml:space="preserve"><value>Bluetooth already configured on OOTT. </value></data>
+<data name="bluetooth_exists" xml:space="preserve"><value>Bluetooth already configured on Domoticz. </value></data>
 <data name="bluetooth_turned_off" xml:space="preserve"><value>Bluetooth needs to be turned on in your device settings. </value></data>
 <data name="bluetooth_saved" xml:space="preserve"><value>Saved a new bluetooth device connection. </value></data>
 <data name="bluetooth" xml:space="preserve"><value>Bluetooth</value></data>
 <data name="bluetooth_disabled" xml:space="preserve"><value>Bluetooth automation disabled, please setup via settings.</value></data>
-<data name="noSwitchSelected_explanation_bluetooth" xml:space="preserve"><value>For a bluetooth device to automate something in OOTT, a switch should be linked to an bluetooth</value></data>
+<data name="noSwitchSelected_explanation_bluetooth" xml:space="preserve"><value>For a bluetooth device to automate something in Domoticz, a switch should be linked to an bluetooth</value></data>
 <data name="title_cameras" xml:space="preserve"><value>Kamerat</value></data>
 <data name="title_dashboard" xml:space="preserve"><value>Työpöytä</value></data>
+<data name="delivery" xml:space="preserve"><value>Delivery</value></data>
 <data name="usage" xml:space="preserve"><value>Käyttö</value></data>
 <data name="today" xml:space="preserve"><value>Tänään</value></data>
 <data name="total" xml:space="preserve"><value>Yhteensä</value></data>
@@ -209,8 +240,8 @@
 <data name="notification_error_system" xml:space="preserve"><value>Please choose a system to send the notification to</value></data>
 <data name="notification_error_message" xml:space="preserve"><value>Please fill in a message</value></data>
 <data name="notification_error_subject" xml:space="preserve"><value>Please fill in a subject</value></data>
-<data name="notification_error_send" xml:space="preserve"><value>Could not send the notification to OOTT</value></data>
-<data name="notification_send" xml:space="preserve"><value>Notification send to OOTT</value></data>
+<data name="notification_error_send" xml:space="preserve"><value>Could not send the notification to Domoticz</value></data>
+<data name="notification_send" xml:space="preserve"><value>Notification send to Domoticz</value></data>
 <data name="permission_title" xml:space="preserve"><value>Käyttöoikeudet evätty</value></data>
 <data name="permission_prefs_title" xml:space="preserve"><value>Käyttöoikeudet</value></data>
 <data name="permission_config" xml:space="preserve"><value>Määritä sovelluksen käyttöoikeudet</value></data>
@@ -245,7 +276,7 @@
 <data name="security_wrong_code" xml:space="preserve"><value>Väärä koodi!</value></data>
 <data name="security_no_rights" xml:space="preserve"><value>You do not have the rights for this action!</value></data>
 <data name="security_generic_error" xml:space="preserve"><value>Tilaa ei voitu muuttaa</value></data>
-<data name="security_wrong_password_fingerprint" xml:space="preserve"><value>Väärä salasana syötetty, sinun OOTT-tilisi salasana on sormenjälkitunnistuksen varasalasana...!</value></data>
+<data name="security_wrong_password_fingerprint" xml:space="preserve"><value>Väärä salasana syötetty, sinun Domoticz-tilisi salasana on sormenjälkitunnistuksen varasalasana...!</value></data>
 <data name="show_password" xml:space="preserve"><value>Näytä salasana</value></data>
 <data name="fingerprint_make_sure" xml:space="preserve"><value>We need to make sure its you</value></data>
 <data name="fingerprint_dialog_description" xml:space="preserve"><value>Touch your finger on the fingerprint sensor to authorise your account.</value></data>
@@ -303,6 +334,8 @@
 <data name="show_dashboard_list_off" xml:space="preserve"><value>Näytä työpöytä ruudukkona</value></data>
 <data name="dashboard_clock" xml:space="preserve"><value>Clock</value></data>
 <data name="show_dashboard_clock" xml:space="preserve"><value>Show a clock on the dashboard</value></data>
+<data name="dashboard_camera" xml:space="preserve"><value>Camera</value></data>
+<data name="show_dashboard_camera" xml:space="preserve"><value>Load the camera for connected switches</value></data>
 <data name="enable_wear_select" xml:space="preserve"><value>Mukautetut Android Wear-kohteet</value></data>
 <data name="custom_wear_select" xml:space="preserve"><value>Valitse Wear-kytkimet</value></data>
 <data name="custom_wear_select_desc" xml:space="preserve"><value>Valitse kytkimet jotka haluat nähdä Android Wear-laitteessasi</value></data>
@@ -314,11 +347,11 @@
 <data name="config_theme" xml:space="preserve"><value>Aseta teema</value></data>
 <data name="set_dark_theme" xml:space="preserve"><value>Vaihda tummaan teemaan</value></data>
 <data name="set_light_theme" xml:space="preserve"><value>Vaihda vaaleaan teemaan</value></data>
-<data name="set_talk_back_on" xml:space="preserve"><value>Anna OOTTin puhua sinulle takaisin</value></data>
+<data name="set_talk_back_on" xml:space="preserve"><value>Anna Domoticzin puhua sinulle takaisin</value></data>
 <data name="set_talk_back_off" xml:space="preserve"><value>Kytke Talk Back pois</value></data>
-<data name="settings_imported" xml:space="preserve"><value>Asetukset tuotu, käynnistä OOTT uudelleen</value></data>
+<data name="settings_imported" xml:space="preserve"><value>Asetukset tuotu, käynnistä Domoticz uudelleen</value></data>
 <data name="settings_import_failed" xml:space="preserve"><value>Asetusten tuominen epäonnistui</value></data>
-<data name="settings_exported" xml:space="preserve"><value>Asetukset viety, käynnistä OOTT uudelleen</value></data>
+<data name="settings_exported" xml:space="preserve"><value>Asetukset viety, käynnistä Domoticz uudelleen</value></data>
 <data name="settings_export_failed" xml:space="preserve"><value>Asetusten tuominen epäonnistui</value></data>
 <data name="server_settings" xml:space="preserve"><value>Palvelimen yhteysasetukset</value></data>
 <data name="server_force_fetch_config" xml:space="preserve"><value>Nouda palvelinasetukset</value></data>
@@ -340,6 +373,8 @@
 <data name="qrcode_enable_settings" xml:space="preserve"><value>Kytke QR-koodien toiminnallisuudet päälle</value></data>
 <data name="bluetooth_settings" xml:space="preserve"><value>Setup Bluetooth devices</value></data>
 <data name="enable_bluetooth" xml:space="preserve"><value>Enable Bluetooth functionality</value></data>
+<data name="beacon_settings" xml:space="preserve"><value>Setup Beacons</value></data>
+<data name="enable_beacon" xml:space="preserve"><value>Enable Beacon functionality</value></data>
 <data name="translate_description" xml:space="preserve"><value>You can help make our translations better, and even add new languages to this app via our Crowdin project</value></data>
 <data name="translate_title" xml:space="preserve"><value>Translations</value></data>
 <data name="security_settings" xml:space="preserve"><value>Asetusten suojaus</value></data>
@@ -348,15 +383,15 @@
 <data name="setup_fingerprints" xml:space="preserve"><value>Määritä sormenjäljet Androidin asetuksista</value></data>
 <data name="fingerprint_not_supported" xml:space="preserve"><value>Tämä laite ei tue sormenjälkitunnistusta</value></data>
 <data name="fingerprint_not_setup_in_android" xml:space="preserve"><value>Määritä ensin sormenjäljet tähän laitteeseen</value></data>
-<data name="fingerprint_sure" xml:space="preserve"><value>Oletko varma? Varasalasana on OOTT-tilisi salasana.</value></data>
+<data name="fingerprint_sure" xml:space="preserve"><value>Oletko varma? Varasalasana on Domoticz-tilisi salasana.</value></data>
 <data name="category_widgets" xml:space="preserve"><value>Widgetit (BETA)</value></data>
 <data name="widget_description" xml:space="preserve"><value>Ota käyttöön tai poista käytöstä widgetit tässä laitteessa</value></data>
 <data name="widget_disabled" xml:space="preserve"><value>Widgetit ei ole päällä tässä laitteessa, tarkista asetukset</value></data>
 <data name="widget_warning" xml:space="preserve"><value>Widgettien käyttö omalla vastuulla! Widgetit ovat tällä hetkellä beta-vaiheessa ja ne todennäköisesti sisältävät bugeja. Bugit voivat aiheuttaa suurta datan / akun kulutusta...</value></data>
 <data name="notification_settings_id" xml:space="preserve"><value>Google Cloud Messaging -tunnus</value></data>
-<data name="notification_settings_push" xml:space="preserve"><value>Lähetä rekisteröintitunnuksesi OOTTiin</value></data>
-<data name="notification_settings_pushed" xml:space="preserve"><value>Rekisteröintitunnuksesi on nyt tallennettu OOTTiin</value></data>
-<data name="notification_settings_push_failed" xml:space="preserve"><value>Rekisteröintitunnuksen tallennus OOTTiin epäonnistui, yritä myöhemmin uudelleen.</value></data>
+<data name="notification_settings_push" xml:space="preserve"><value>Lähetä rekisteröintitunnuksesi Domoticziin</value></data>
+<data name="notification_settings_pushed" xml:space="preserve"><value>Rekisteröintitunnuksesi on nyt tallennettu Domoticziin</value></data>
+<data name="notification_settings_push_failed" xml:space="preserve"><value>Rekisteröintitunnuksen tallennus Domoticziin epäonnistui, yritä myöhemmin uudelleen.</value></data>
 <data name="notification_show_title" xml:space="preserve"><value>Viimeisimmät ilmoitukset</value></data>
 <data name="notification_show_nothing" xml:space="preserve"><value>Ei ilmoituksia</value></data>
 <data name="notification_show" xml:space="preserve"><value>Näytä viimeisimmät ilmoitukset</value></data>
@@ -366,6 +401,7 @@
 <data name="enable_notifications" xml:space="preserve"><value>Ota ilmoitukset käyttöön tässä laitteessa</value></data>
 <data name="notification_screen_title" xml:space="preserve"><value>Ilmoitusasetukset</value></data>
 <data name="notification_history" xml:space="preserve"><value>Notification history</value></data>
+<data name="notification_inbox" xml:space="preserve"><value>Inbox</value></data>
 <data name="notification_vibrate_title" xml:space="preserve"><value>Värinä</value></data>
 <data name="notification_vibrate_on" xml:space="preserve"><value>Värise, kun ilmoitus saapuu</value></data>
 <data name="notification_vibrate_off" xml:space="preserve"><value>Värinä pois</value></data>
@@ -386,14 +422,16 @@
 <data name="theme_orange" xml:space="preserve"><value>Orange</value></data>
 <data name="theme_pink" xml:space="preserve"><value>Pink</value></data>
 <data name="theme_blue" xml:space="preserve"><value>Blue</value></data>
+<data name="theme_green" xml:space="preserve"><value>Green</value></data>
+<data name="theme_dark_blue" xml:space="preserve"><value>Dark blue</value></data>
 <data name="default_values" xml:space="preserve"><value>Oletusarvot</value></data>
 <data name="default_values_min_error" xml:space="preserve"><value>Maksimiarvon pitää olla suurempi kuin minimiarvon</value></data>
 <data name="default_values_max_error" xml:space="preserve"><value>Maksimiarvon pitää olla suurempi kuin minimiarvon</value></data>
 <data name="info_version" xml:space="preserve"><value>Versio</value></data>
-<data name="info_domoticz_version" xml:space="preserve"><value>OOTT versio</value></data>
-<data name="info_about" xml:space="preserve"><value>Tietoja OOTTista</value></data>
+<data name="info_domoticz_version" xml:space="preserve"><value>Domoticz versio</value></data>
+<data name="info_about" xml:space="preserve"><value>Tietoja Domoticzista</value></data>
 <data name="info_credits" xml:space="preserve"><value>Tekijät</value></data>
-<data name="info_credits_text" xml:space="preserve"><value>OOTTin Android-sovelluksen mahdollistavat useat avoimen lähdekoodin kirjastot</value></data>
+<data name="info_credits_text" xml:space="preserve"><value>Domoticzin Android-sovelluksen mahdollistavat useat avoimen lähdekoodin kirjastot</value></data>
 <data name="debug_switch_title" xml:space="preserve"><value>Virheenkorjaus</value></data>
 <data name="debug_switch_summary_on" xml:space="preserve"><value>Virheenkorjaus käytössä</value></data>
 <data name="debug_switch_summary_off" xml:space="preserve"><value>Virheenkorjaus ei käytössä</value></data>
@@ -401,10 +439,10 @@
 <data name="title_activity_update" xml:space="preserve"><value>Päivitä palvelin</value></data>
 <data name="error_couldNotCheckForVersion" xml:space="preserve"><value>"Could not check for version: %1$s"</value></data>
 <data name="error_couldNotCheckForUpdates" xml:space="preserve"><value>"Päivityksiä ei voitu tarkistaa: %1$s"</value></data>
-<data name="error_couldNotCheckForConfig" xml:space="preserve"><value>"OOTT-palvelimen asetuksia ei voitu hakea: %1$s"</value></data>
+<data name="error_couldNotCheckForConfig" xml:space="preserve"><value>"Domoticz-palvelimen asetuksia ei voitu hakea: %1$s"</value></data>
 <data name="update_available_enhanced" xml:space="preserve"><value>Palvelimen päivitys saatavilla versiosta %1$s versioon %2$s</value></data>
 <data name="check_for_update_title" xml:space="preserve"><value>Tarkista päivitykset</value></data>
-<data name="check_for_update" xml:space="preserve"><value>Haluatko meidän tarkastavan päivitykset OOTTiin?</value></data>
+<data name="check_for_update" xml:space="preserve"><value>Haluatko meidän tarkastavan päivitykset Domoticziin?</value></data>
 <data name="update_server_warning" xml:space="preserve"><value>Tämä sovellus ei toimi oikein palvelimen päivityksen aikana.</value></data>
 <data name="update_server_downloadNotReady1" xml:space="preserve"><value>Päivitystä ei ole ladattu (kokonaan).</value></data>
 <data name="update_server_downloadNotReady2" xml:space="preserve"><value>Yritä myöhemmin uudelleen.</value></data>
@@ -425,6 +463,8 @@
 <data name="restart_required_title" xml:space="preserve"><value>Uudelleenkäynnistys tarvitaan</value></data>
 <data name="restart_now" xml:space="preserve"><value>Käynnistä uudelleen nyt?</value></data>
 <data name="check_settings" xml:space="preserve"><value>Check your settings</value></data>
+<data name="report_error" xml:space="preserve"><value>Report an error</value></data>
+<data name="support" xml:space="preserve"><value>Support</value></data>
 <data name="Speech_not_supported" xml:space="preserve"><value>Tämä laite ei tue puheentunnistusta</value></data>
 <data name="Speech_register" xml:space="preserve"><value>Määritä puhekomento</value></data>
 <data name="Speech_found" xml:space="preserve"><value>Uusi puhekomento löydetty</value></data>
@@ -496,7 +536,7 @@
 <data name="fourth" xml:space="preserve"><value>Fourth</value></data>
 <data name="last" xml:space="preserve"><value>Last</value></data>
 <data name="title_utilities" xml:space="preserve"><value>Mittarit</value></data>
-<data name="settemperature" xml:space="preserve"><value>Aseta</value></data>
+<data name="set_temperature" xml:space="preserve"><value>Aseta</value></data>
 <data name="title_vars" xml:space="preserve"><value>Käyttäjän muuttujat</value></data>
 <data name="var_input" xml:space="preserve"><value>Syötetty arvo ei kelpaa</value></data>
 <data name="var_input_error" xml:space="preserve"><value>Käyttäjän muuttujan päivitys epäonnistui</value></data>
@@ -515,15 +555,15 @@
 <data name="co2min" xml:space="preserve"><value>CO2 Min</value></data>
 <data name="co2max" xml:space="preserve"><value>CO2 Max</value></data>
 <data name="welcome_title_activity_welcome" xml:space="preserve"><value>Tervetuloa</value></data>
-<data name="welcome_info_domoticz" xml:space="preserve"><value>OOTT on kotiautomaatiojärjestelmä jonka avulla voit ohjata erilaisia laitteita, kuten valoja ja kytkimiä. Lisäksi voit kytkeä järjestelmään erilaisia antureita esimerkiksi lämpötilan, sateen, tuulen, sähkön-, kaasun- tai vedenkulutuksen mittaamiseen. Järjestelmästä on mahdollista saada ilmoituksia ja hälytyksiä mobiililaitteisiin.</value></data>
+<data name="welcome_info_domoticz" xml:space="preserve"><value>Domoticz on kotiautomaatiojärjestelmä jonka avulla voit ohjata erilaisia laitteita, kuten valoja ja kytkimiä. Lisäksi voit kytkeä järjestelmään erilaisia antureita esimerkiksi lämpötilan, sateen, tuulen, sähkön-, kaasun- tai vedenkulutuksen mittaamiseen. Järjestelmästä on mahdollista saada ilmoituksia ja hälytyksiä mobiililaitteisiin.</value></data>
 <data name="welcome_info_swipe" xml:space="preserve"><value>Pyyhkäise oikealle tai käytä siirtymispainikkeita alareunassa jatkaaksesi</value></data>
-<data name="welcome_info_settings1" xml:space="preserve"><value>Seuraavalla sivulla määritetään OOTT-asetukset.</value></data>
+<data name="welcome_info_settings1" xml:space="preserve"><value>Seuraavalla sivulla määritetään Domoticz-asetukset.</value></data>
 <data name="welcome_info_settings2" xml:space="preserve"><value>Voit määrittää paikallisen ja etäpalvelimen asetukset. Paikalliset asetukset ovat voimassa kun olet liittyneenä kotisi wifi-verkkoon. Etäpalvelinasetukset ovat käytössä kun et ole liittyneenä kotisi wifi-verkkoon tai käytät mobiilidataa (2G, 3G, 4G tmv.).</value></data>
 <data name="welcome_info_checkingConnection" xml:space="preserve"><value>Vahvistetaan yhteysasetukset</value></data>
 <data name="welcome_msg_connectionDataIncomplete" xml:space="preserve"><value>Yhteysasetukset ovat puutteelliset tai puuttuvat kokonaan</value></data>
 <data name="welcome_msg_connectionDataInvalid" xml:space="preserve"><value>URL ei saa alkaa \"http\"</value></data>
 <data name="welcome_msg_correctOnPreviousPage" xml:space="preserve"><value>Korjaa tiedot edellisellä sivulla</value></data>
-<data name="welcome_msg_serverVersion" xml:space="preserve"><value>OOTTin versio</value></data>
+<data name="welcome_msg_serverVersion" xml:space="preserve"><value>Domoticzin versio</value></data>
 <data name="welcome_msg_numberOfDevices" xml:space="preserve"><value>%1$d laitetta löydetty</value></data>
 <data name="welcome_msg_no_ssid_found" xml:space="preserve"><value>Yhtään SSID:tä ei löytynyt</value></data>
 <data name="welcome_ssid_spinner_prompt" xml:space="preserve"><value>Valitse kotisi SSID</value></data>
@@ -545,7 +585,7 @@
 <data name="welcome_local_server_used_switch_title" xml:space="preserve"><value>Eri palvelimen osoite</value></data>
 <data name="welcome_local_server_used_switch_summary" xml:space="preserve"><value>Käytä eri osoitetta paikallisverkossa</value></data>
 <data name="welcome_advancedSettings" xml:space="preserve"><value>Palvelimen lisäasetukset</value></data>
-<data name="welcome_advancedSettings_summary" xml:space="preserve"><value>Käytetään vain ei-standardeilla OOTT-palvelimilla</value></data>
+<data name="welcome_advancedSettings_summary" xml:space="preserve"><value>Käytetään vain ei-standardeilla Domoticz-palvelimilla</value></data>
 <data name="welcome_local_server_ssid" xml:space="preserve"><value>Paikalliset SSID:t</value></data>
 <data name="welcome_local_server_address" xml:space="preserve"><value>Paikallisen palvelimen osoite</value></data>
 <data name="welcome_local_server_protocol" xml:space="preserve"><value>Paikallinen protokolla</value></data>
@@ -568,7 +608,7 @@
 <data name="widget_transparent_light" xml:space="preserve"><value>Vaalea läpinäkyvä</value></data>
 <data name="title_wizard" xml:space="preserve"><value>Ohjattu käyttöönotto</value></data>
 <data name="wizard_welcome" xml:space="preserve"><value>Tervetuloa</value></data>
-<data name="wizard_welcome_description" xml:space="preserve"><value>OOTT on erittäin kevyt kotiautomaatiojärjestelmä, jonka avulla voit seurata ja ohjata erilaisia antureita ja laitteita.</value></data>
+<data name="wizard_welcome_description" xml:space="preserve"><value>Domoticz on erittäin kevyt kotiautomaatiojärjestelmä, jonka avulla voit seurata ja ohjata erilaisia antureita ja laitteita.</value></data>
 <data name="wizard_favorites" xml:space="preserve"><value>Suosikit</value></data>
 <data name="wizard_favorites_description" xml:space="preserve"><value>Voit lisätä laitteita työpöydälle tallentamalla ne suosikiksi. Pitkä painallus tallentaa suosikin!</value></data>
 <data name="wizard_startup" xml:space="preserve"><value>Aloitusnäyttö</value></data>
@@ -576,13 +616,13 @@
 <data name="wizard_notifications" xml:space="preserve"><value>Määritä ilmoitukset</value></data>
 <data name="wizard_notifications_description" xml:space="preserve"><value>Voit nyt vastaanottaa ilmoituksia Android-laitteeseesi! Voit muuttaa ilmoitusten käyttäytymistä asetuksista</value></data>
 <data name="wizard_multiserver" xml:space="preserve"><value>Käytössä useita palvelimia</value></data>
-<data name="wizard_multiserver_description" xml:space="preserve"><value>Voit määrittää useita OOTT-palvelimia asetuksista.</value></data>
+<data name="wizard_multiserver_description" xml:space="preserve"><value>Voit määrittää useita Domoticz-palvelimia asetuksista.</value></data>
 <data name="wizard_geo" xml:space="preserve"><value>Geo-aidat</value></data>
 <data name="wizard_geo_description" xml:space="preserve"><value>Voit valita aloitusnäytön asetuksista!</value></data>
 <data name="wizard_wear" xml:space="preserve"><value>Android Wear</value></data>
 <data name="wizard_wear_description" xml:space="preserve"><value>Voit määrittää ohjattavat kytkimet Android wear-laitteestasi!</value></data>
 <data name="wizard_auto" xml:space="preserve"><value>Android Auto</value></data>
-<data name="wizard_auto_description" xml:space="preserve"><value>Vastaanota OOTT-ilmoitukset suoraan Android Auto-laitteeseesi!</value></data>
+<data name="wizard_auto_description" xml:space="preserve"><value>Vastaanota Domoticz-ilmoitukset suoraan Android Auto-laitteeseesi!</value></data>
 <data name="wizard_graph" xml:space="preserve"><value>Kuvaajat</value></data>
 <data name="wizard_graph_description" xml:space="preserve"><value>Voit katsoa kuvaajia mittareista, säästä tai lämpötilasta!</value></data>
 <data name="wizard_filter" xml:space="preserve"><value>Suodattimet</value></data>
@@ -593,6 +633,7 @@
 <data name="wizard_menuitem_description" xml:space="preserve"><value>Voit nyt poistaa tämän ohjatun käyttöönoton navigaatiopalkista!</value></data>
 <data name="wizard_nfc" xml:space="preserve"><value>NFC</value></data>
 <data name="wizard_nfc_description" xml:space="preserve"><value>Voit ohjata kytkimiä NFC:n avulla!</value></data>
+<data name="wizard_bluetooth_description" xml:space="preserve"><value>You are able to toggle switches via Bluetooth connections!</value></data>
 <data name="wizard_qrcode" xml:space="preserve"><value>QR-koodi</value></data>
 <data name="wizard_qrcode_description" xml:space="preserve"><value>Ohjaa kytkimiä skannaamalla QR-koodi (tai viivakoodi)!</value></data>
 <data name="wizard_speech" xml:space="preserve"><value>Puhekomennot</value></data>
@@ -603,4 +644,5 @@
 <data name="wizard_button_wizard" xml:space="preserve"><value>Poista</value></data>
 <data name="wizard_button_utilities" xml:space="preserve"><value>Mittarit</value></data>
 <data name="wizard_button_done" xml:space="preserve"><value>Valmis</value></data>
+<data name="wizard_beacon_description" xml:space="preserve"><value>Toggle switches by scanning for beacons!</value></data>
 </root>

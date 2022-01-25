@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>  <root> <resheader name="resmimetype">		<value>text/microsoft-resx</value>	</resheader>	<resheader name="version">		<value>2.0</value>	</resheader>	<resheader name="reader">		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>	<resheader name="writer">		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>
+<?xml version="1.0" encoding="utf-8"?> <root> <resheader name="resmimetype">		<value>text/microsoft-resx</value>	</resheader>	<resheader name="version">		<value>2.0</value>	</resheader>	<resheader name="reader">		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>	<resheader name="writer">		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>
 <data name="premium_category" xml:space="preserve"><value>Pro versiyon satın alın</value></data>
 <data name="premium_title" xml:space="preserve"><value>Pro versiyona geç!</value></data>
 <data name="premium_feature" xml:space="preserve"><value>is a premium feature, please buy the paid version to support the developers!</value></data>
@@ -76,10 +76,12 @@
 <data name="retry" xml:space="preserve"><value>Tekrar dene</value></data>
 <data name="undo" xml:space="preserve"><value>Geri</value></data>
 <data name="something_deleted" xml:space="preserve"><value>%1$s silindi</value></data>
+<data name="remove_last_server" xml:space="preserve"><value>You can\'t remove the last server in the list.</value></data>
 <data name="switch_on" xml:space="preserve"><value>Anahtar açma</value></data>
 <data name="switch_off" xml:space="preserve"><value>Anahtarı kapatma</value></data>
 <data name="switch_night" xml:space="preserve"><value>Turning switch to night light</value></data>
 <data name="switch_full" xml:space="preserve"><value>Turning switch to full light</value></data>
+<data name="switch_connection_removed" xml:space="preserve"><value>Switch connection removed.</value></data>
 <data name="blind_up" xml:space="preserve"><value>Yukarıya çevir</value></data>
 <data name="blind_down" xml:space="preserve"><value>Aşağıya çevir</value></data>
 <data name="blind_stop" xml:space="preserve"><value>Çevirmeyi Durdur</value></data>
@@ -109,7 +111,12 @@
 <data name="filter_error" xml:space="preserve"><value>Error</value></data>
 <data name="use_demo_setup" xml:space="preserve"><value>Use demo setup</value></data>
 <data name="auto_refresh_time" xml:space="preserve"><value>Refresh timer</value></data>
-<data name="setautorefreshtime" xml:space="preserve"><value>Set a specific timer for the auto refresh in seconds.</value></data>
+<data name="set_auto_refresh_time" xml:space="preserve"><value>Set a specific timer for the auto refresh in seconds.</value></data>
+<data name="error_authentication_basicauth" xml:space="preserve"><value>IMPORTANT: Please check if your Domoticz system uses Login Page as the authentication method. Basic Auth is going to be removed from Domoticz from next update!</value></data>
+<data name="category_other" xml:space="preserve"><value>Other</value></data>
+<data name="tasker_title" xml:space="preserve"><value>Setup automation rules with Tasker for Domoticz</value></data>
+<data name="category_tasker" xml:space="preserve"><value>Tasker</value></data>
+<data name="wizard_widgets_tasker" xml:space="preserve"><value>Setup automation rules within Tasker for Domoticz!</value></data>
 <data name="action_switch_server" xml:space="preserve"><value>Sunucu Değiştir</value></data>
 <data name="action_settings" xml:space="preserve"><value>Ayarlar</value></data>
 <data name="action_filter" xml:space="preserve"><value>Filtre</value></data>
@@ -119,6 +126,29 @@
 <data name="action_bluetooth_show" xml:space="preserve"><value>Show paired devices</value></data>
 <data name="action_speech" xml:space="preserve"><value>Ses tanıma</value></data>
 <data name="send" xml:space="preserve"><value>Send</value></data>
+<data name="beacon_not_supported" xml:space="preserve"><value>Beacons are not supported on this device</value></data>
+<data name="beacon_register" xml:space="preserve"><value>Connect a beacon</value></data>
+<data name="beacon_found" xml:space="preserve"><value>New beacon found</value></data>
+<data name="beacon_edit" xml:space="preserve"><value>Edit beacon</value></data>
+<data name="beacon_name" xml:space="preserve"><value>Give this beacon a proper name. </value></data>
+<data name="beacon_desc" xml:space="preserve"><value>Check the list of paired beacon devices. </value></data>
+<data name="beacon_exists" xml:space="preserve"><value>Beacon already configured on Domoticz. </value></data>
+<data name="beacon_turned_off" xml:space="preserve"><value>Bluetooth needs to be turned on in your device settings. </value></data>
+<data name="beacon_saved" xml:space="preserve"><value>Saved a new beacon connection. </value></data>
+<data name="action_beacon_show" xml:space="preserve"><value>Add new beacon</value></data>
+<data name="beacon" xml:space="preserve"><value>Beacon</value></data>
+<data name="beacon_disabled" xml:space="preserve"><value>Beacon automation disabled, please setup via settings. </value></data>
+<data name="noSwitchSelected_explanation_beacon" xml:space="preserve"><value>For a Beacon device to automate something in Domoticz, a switch should be linked to an beacon. </value></data>
+<data name="beacon_UUID" xml:space="preserve"><value>UUID</value></data>
+<data name="beacon_major" xml:space="preserve"><value>Major (optional)</value></data>
+<data name="beacon_minor" xml:space="preserve"><value>Minor (optional)</value></data>
+<data name="beacon_scan" xml:space="preserve"><value>Beacon</value></data>
+<data name="beacon_scan_desc" xml:space="preserve"><value>Scanning for beacons</value></data>
+<data name="beacon_notifications" xml:space="preserve"><value>Enable notifications for entering and leaving a beacon region.</value></data>
+<data name="beacon_entering" xml:space="preserve"><value>"Entering %1$s"</value></data>
+<data name="beacon_leaving" xml:space="preserve"><value>Leaving  %1$s</value></data>
+<data name="beacon_entering_text" xml:space="preserve"><value>Entering one of the beacons</value></data>
+<data name="beacon_leaving_text" xml:space="preserve"><value>Leaving one of the beacons</value></data>
 <data name="bluetooth_not_supported" xml:space="preserve"><value>Bluetooth is not supported on this device</value></data>
 <data name="bluetooth_register" xml:space="preserve"><value>Connect a bluetooth device</value></data>
 <data name="bluetooth_found" xml:space="preserve"><value>New bluetooth device found</value></data>
@@ -133,6 +163,7 @@
 <data name="noSwitchSelected_explanation_bluetooth" xml:space="preserve"><value>For a bluetooth device to automate something in Domoticz, a switch should be linked to an bluetooth</value></data>
 <data name="title_cameras" xml:space="preserve"><value>Kameralar</value></data>
 <data name="title_dashboard" xml:space="preserve"><value>Kontrol paneli</value></data>
+<data name="delivery" xml:space="preserve"><value>Delivery</value></data>
 <data name="usage" xml:space="preserve"><value>Kullanım</value></data>
 <data name="today" xml:space="preserve"><value>Bugün</value></data>
 <data name="total" xml:space="preserve"><value>Toplam</value></data>
@@ -303,6 +334,8 @@
 <data name="show_dashboard_list_off" xml:space="preserve"><value>Kontrol panelini tablo olarak göster</value></data>
 <data name="dashboard_clock" xml:space="preserve"><value>Clock</value></data>
 <data name="show_dashboard_clock" xml:space="preserve"><value>Show a clock on the dashboard</value></data>
+<data name="dashboard_camera" xml:space="preserve"><value>Camera</value></data>
+<data name="show_dashboard_camera" xml:space="preserve"><value>Load the camera for connected switches</value></data>
 <data name="enable_wear_select" xml:space="preserve"><value>Android Wear özel öğeleri</value></data>
 <data name="custom_wear_select" xml:space="preserve"><value>Android Wear anahtarlarını seçin</value></data>
 <data name="custom_wear_select_desc" xml:space="preserve"><value>Android Wear cihazınızda hangi anahtarları görmek istediğinizi seçin</value></data>
@@ -340,6 +373,8 @@
 <data name="qrcode_enable_settings" xml:space="preserve"><value>QR kodları işlevini etkinleştir</value></data>
 <data name="bluetooth_settings" xml:space="preserve"><value>Setup Bluetooth devices</value></data>
 <data name="enable_bluetooth" xml:space="preserve"><value>Enable Bluetooth functionality</value></data>
+<data name="beacon_settings" xml:space="preserve"><value>Setup Beacons</value></data>
+<data name="enable_beacon" xml:space="preserve"><value>Enable Beacon functionality</value></data>
 <data name="translate_description" xml:space="preserve"><value>You can help make our translations better, and even add new languages to this app via our Crowdin project</value></data>
 <data name="translate_title" xml:space="preserve"><value>Translations</value></data>
 <data name="security_settings" xml:space="preserve"><value>Kurulum güvenliği</value></data>
@@ -366,6 +401,7 @@
 <data name="enable_notifications" xml:space="preserve"><value>Enable notifications on this device</value></data>
 <data name="notification_screen_title" xml:space="preserve"><value>Notification settings</value></data>
 <data name="notification_history" xml:space="preserve"><value>Notification history</value></data>
+<data name="notification_inbox" xml:space="preserve"><value>Inbox</value></data>
 <data name="notification_vibrate_title" xml:space="preserve"><value>Vibrate</value></data>
 <data name="notification_vibrate_on" xml:space="preserve"><value>Vibrate when an notification is received</value></data>
 <data name="notification_vibrate_off" xml:space="preserve"><value>Do not vibrate</value></data>
@@ -386,6 +422,8 @@
 <data name="theme_orange" xml:space="preserve"><value>Orange</value></data>
 <data name="theme_pink" xml:space="preserve"><value>Pink</value></data>
 <data name="theme_blue" xml:space="preserve"><value>Blue</value></data>
+<data name="theme_green" xml:space="preserve"><value>Green</value></data>
+<data name="theme_dark_blue" xml:space="preserve"><value>Dark blue</value></data>
 <data name="default_values" xml:space="preserve"><value>Varsayılan değerlerler</value></data>
 <data name="default_values_min_error" xml:space="preserve"><value>Max değeri Min değerinden yüksek olmalıdır</value></data>
 <data name="default_values_max_error" xml:space="preserve"><value>Max değeri Min değerinden yüksek olmalıdır</value></data>
@@ -425,6 +463,8 @@
 <data name="restart_required_title" xml:space="preserve"><value>Yeniden başlatmak gerekli!</value></data>
 <data name="restart_now" xml:space="preserve"><value>Şimdi yeniden başlatılsın mı?</value></data>
 <data name="check_settings" xml:space="preserve"><value>Check your settings</value></data>
+<data name="report_error" xml:space="preserve"><value>Report an error</value></data>
+<data name="support" xml:space="preserve"><value>Support</value></data>
 <data name="Speech_not_supported" xml:space="preserve"><value>Speech is not supported on this device</value></data>
 <data name="Speech_register" xml:space="preserve"><value>Register a Speech Command</value></data>
 <data name="Speech_found" xml:space="preserve"><value>New Speech Command found</value></data>
@@ -496,7 +536,7 @@
 <data name="fourth" xml:space="preserve"><value>Fourth</value></data>
 <data name="last" xml:space="preserve"><value>Last</value></data>
 <data name="title_utilities" xml:space="preserve"><value>Utilities</value></data>
-<data name="settemperature" xml:space="preserve"><value>Set</value></data>
+<data name="set_temperature" xml:space="preserve"><value>Set</value></data>
 <data name="title_vars" xml:space="preserve"><value>User Variables</value></data>
 <data name="var_input" xml:space="preserve"><value>Input value is not valid</value></data>
 <data name="var_input_error" xml:space="preserve"><value>Failed to update user variable</value></data>
@@ -516,15 +556,15 @@
 <data name="co2max" xml:space="preserve"><value>CO2 Max</value></data>
 <data name="welcome_title_activity_welcome" xml:space="preserve"><value>Welcome</value></data>
 <data name="welcome_info_domoticz" xml:space="preserve"><value>Domoticz is a Home Automation System that lets you monitor
-and configure various devices like: Lights, Switches, various sensors/meters like
-Temperature, Rain, Wind, UV, Electra, Gas, Water and much more. Notifications/Alerts can
-be sent to any mobile device.</value></data>
+        and configure various devices like: Lights, Switches, various sensors/meters like
+        Temperature, Rain, Wind, UV, Electra, Gas, Water and much more. Notifications/Alerts can
+        be sent to any mobile device.</value></data>
 <data name="welcome_info_swipe" xml:space="preserve"><value>Swipe to the right or use the navigation buttons at the bottom to continue</value></data>
 <data name="welcome_info_settings1" xml:space="preserve"><value>The next page is for your Domoticz settings.</value></data>
-<data name="welcome_info_settings2" xml:space="preserve"><value>You can specify a local and a remote server setting.
-The local settings are for when you are connected to your home wifi network.
-Remote settings are used when not connected to your home wifi network or when connected
-to cellular data (2G, 3G, 4G etc).</value></data>
+<data name="welcome_info_settings2" xml:space="preserve"><value>        You can specify a local and a remote server setting.
+        The local settings are for when you are connected to your home wifi network.
+        Remote settings are used when not connected to your home wifi network or when connected
+        to cellular data (2G, 3G, 4G etc).</value></data>
 <data name="welcome_info_checkingConnection" xml:space="preserve"><value>Verifying your connection settings</value></data>
 <data name="welcome_msg_connectionDataIncomplete" xml:space="preserve"><value>Connection data incomplete or empty</value></data>
 <data name="welcome_msg_connectionDataInvalid" xml:space="preserve"><value>URL should not start with http</value></data>
@@ -593,12 +633,13 @@ to cellular data (2G, 3G, 4G etc).</value></data>
 <data name="wizard_graph_description" xml:space="preserve"><value>You can see the history graph of an Utility, Weather or Temperature!</value></data>
 <data name="wizard_filter" xml:space="preserve"><value>Filters</value></data>
 <data name="wizard_filter_description" xml:space="preserve"><value>You can filter devices per status (on/off). Check the right upper menu icon for filtering!</value></data>
-<data name="wizard_widgets" xml:space="preserve"><value>Widgets!!</value></data>
+<data name="wizard_widgets" xml:space="preserve"><value>Widgets (Beta)</value></data>
 <data name="wizard_widgets_description" xml:space="preserve"><value>You can put some widgets on your home screen!</value></data>
 <data name="wizard_menuitem" xml:space="preserve"><value>Disable Wizard</value></data>
 <data name="wizard_menuitem_description" xml:space="preserve"><value>You can now remove this Wizard from the navigation menu!</value></data>
 <data name="wizard_nfc" xml:space="preserve"><value>NFC</value></data>
 <data name="wizard_nfc_description" xml:space="preserve"><value>You are able to toggle switches via NFC!</value></data>
+<data name="wizard_bluetooth_description" xml:space="preserve"><value>You are able to toggle switches via Bluetooth connections!</value></data>
 <data name="wizard_qrcode" xml:space="preserve"><value>QR Code</value></data>
 <data name="wizard_qrcode_description" xml:space="preserve"><value>Toggle switches by scanning a QR Code (or barcode)!</value></data>
 <data name="wizard_speech" xml:space="preserve"><value>Speech Commands</value></data>
@@ -609,4 +650,5 @@ to cellular data (2G, 3G, 4G etc).</value></data>
 <data name="wizard_button_wizard" xml:space="preserve"><value>Remove</value></data>
 <data name="wizard_button_utilities" xml:space="preserve"><value>Utilities</value></data>
 <data name="wizard_button_done" xml:space="preserve"><value>Done</value></data>
+<data name="wizard_beacon_description" xml:space="preserve"><value>Toggle switches by scanning for beacons!</value></data>
 </root>

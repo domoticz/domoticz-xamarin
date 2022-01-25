@@ -597,6 +597,33 @@
                         </TableSection>
 
                         <TableSection Title="{resources:Translate timer_other}">
+                            <ViewCell Tapped="btnReportError_Clicked">
+                                <StackLayout
+                                    HorizontalOptions="FillAndExpand"
+                                    Orientation="Horizontal"
+                                    Style="{StaticResource SettingsRowStackLayout}"
+                                    VerticalOptions="StartAndExpand">
+                                    <StackLayout
+                                        HorizontalOptions="StartAndExpand"
+                                        Orientation="Vertical"
+                                        VerticalOptions="Center">
+                                        <Label
+                                            HorizontalOptions="Start"
+                                            LineBreakMode="NoWrap"
+                                            Style="{StaticResource SettingsDetailType}"
+                                            Text="{resources:Translate report_error}"
+                                            VerticalOptions="CenterAndExpand" />
+                                    </StackLayout>
+                                    <custcontrol:TintedCachedImage
+                                        HorizontalOptions="EndAndExpand"
+                                        Source="baseline_arrow_right_black_24.png"
+                                        Style="{DynamicResource expendIcon}"
+                                        VerticalOptions="CenterAndExpand" />
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="btnReportError_Clicked" />
+                                    </StackLayout.GestureRecognizers>
+                                </StackLayout>
+                            </ViewCell>
                             <ViewCell Tapped="btnShowLog_Clicked">
                                 <StackLayout
                                     HorizontalOptions="FillAndExpand"

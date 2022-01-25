@@ -437,7 +437,7 @@ namespace NL.HNOGames.Domoticz
                     if (string.IsNullOrEmpty(title))
                         title = p.Data.ContainsKey("subject") ? p.Data["subject"].ToString() : null;
                     if (string.Compare(title, body, true) == 0)
-                        title = "Domoticz";
+                        title = AppResources.app_name;
 
                     // Show dialog
                     UserDialogs.Instance.Alert(body, title, AppResources.ok);

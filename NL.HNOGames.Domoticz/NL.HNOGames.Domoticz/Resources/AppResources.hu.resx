@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>  <root> <resheader name="resmimetype">		<value>text/microsoft-resx</value>	</resheader>	<resheader name="version">		<value>2.0</value>	</resheader>	<resheader name="reader">		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>	<resheader name="writer">		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>
+<?xml version="1.0" encoding="utf-8"?> <root> <resheader name="resmimetype">		<value>text/microsoft-resx</value>	</resheader>	<resheader name="version">		<value>2.0</value>	</resheader>	<resheader name="reader">		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>	<resheader name="writer">		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>
 <data name="premium_category" xml:space="preserve"><value>Válts Prémiumra!</value></data>
 <data name="premium_title" xml:space="preserve"><value>Prémium változat beszerzése!</value></data>
 <data name="premium_feature" xml:space="preserve"><value>e funkció csak a prémium változatban érhető el! Vásárold meg, hogy ezzel is támogasd a további fejlesztést!</value></data>
@@ -76,10 +76,12 @@
 <data name="retry" xml:space="preserve"><value>Újra</value></data>
 <data name="undo" xml:space="preserve"><value>Visszavonás</value></data>
 <data name="something_deleted" xml:space="preserve"><value>%1$s törölve</value></data>
+<data name="remove_last_server" xml:space="preserve"><value>You can\'t remove the last server in the list.</value></data>
 <data name="switch_on" xml:space="preserve"><value>Kapcsoló bekapcsolása</value></data>
 <data name="switch_off" xml:space="preserve"><value>Kapcsoló kikapcsolása</value></data>
 <data name="switch_night" xml:space="preserve"><value>Kapcsolás éjszakai fényre</value></data>
 <data name="switch_full" xml:space="preserve"><value>Kapcsolás teljes fényerőre</value></data>
+<data name="switch_connection_removed" xml:space="preserve"><value>Switch connection removed.</value></data>
 <data name="blind_up" xml:space="preserve"><value>Redőny felhúzása</value></data>
 <data name="blind_down" xml:space="preserve"><value>Redőny leengedése</value></data>
 <data name="blind_stop" xml:space="preserve"><value>Redőny megállítása</value></data>
@@ -109,7 +111,12 @@
 <data name="filter_error" xml:space="preserve"><value>Hiba</value></data>
 <data name="use_demo_setup" xml:space="preserve"><value>Demó beállítások</value></data>
 <data name="auto_refresh_time" xml:space="preserve"><value>Időzítő frissítése</value></data>
-<data name="setautorefreshtime" xml:space="preserve"><value>Set a specific timer for the auto refresh in seconds.</value></data>
+<data name="set_auto_refresh_time" xml:space="preserve"><value>az automatikus frissítés beállítása másodpercben</value></data>
+<data name="error_authentication_basicauth" xml:space="preserve"><value>FONTOS:: A Basic Auth bejelentkezés a következő Domoticz frissítéstől kivezetésre került, kérjük váltson Login Page authentication módszerre</value></data>
+<data name="category_other" xml:space="preserve"><value>egyéb</value></data>
+<data name="tasker_title" xml:space="preserve"><value>automatizmusok beállítása Tasker for Domoticz-al</value></data>
+<data name="category_tasker" xml:space="preserve"><value>Tasker - feladat automatizáló</value></data>
+<data name="wizard_widgets_tasker" xml:space="preserve"><value>automatizmusok beállítása Tasker for Domoticz-ban</value></data>
 <data name="action_switch_server" xml:space="preserve"><value>Szerver váltása</value></data>
 <data name="action_settings" xml:space="preserve"><value>Beállítások</value></data>
 <data name="action_filter" xml:space="preserve"><value>Szűrő</value></data>
@@ -118,7 +125,30 @@
 <data name="action_qrcode_scan" xml:space="preserve"><value>QR kód beolvasása</value></data>
 <data name="action_bluetooth_show" xml:space="preserve"><value>Párosított eszközök megtekintése</value></data>
 <data name="action_speech" xml:space="preserve"><value>Beszédfelismerés</value></data>
-<data name="send" xml:space="preserve"><value>Send</value></data>
+<data name="send" xml:space="preserve"><value>küldés</value></data>
+<data name="beacon_not_supported" xml:space="preserve"><value>Beacons are not supported on this device</value></data>
+<data name="beacon_register" xml:space="preserve"><value>Connect a beacon</value></data>
+<data name="beacon_found" xml:space="preserve"><value>New beacon found</value></data>
+<data name="beacon_edit" xml:space="preserve"><value>Edit beacon</value></data>
+<data name="beacon_name" xml:space="preserve"><value>Give this beacon a proper name. </value></data>
+<data name="beacon_desc" xml:space="preserve"><value>Check the list of paired beacon devices. </value></data>
+<data name="beacon_exists" xml:space="preserve"><value>Beacon already configured on Domoticz. </value></data>
+<data name="beacon_turned_off" xml:space="preserve"><value>Bluetooth needs to be turned on in your device settings. </value></data>
+<data name="beacon_saved" xml:space="preserve"><value>Saved a new beacon connection. </value></data>
+<data name="action_beacon_show" xml:space="preserve"><value>Add new beacon</value></data>
+<data name="beacon" xml:space="preserve"><value>Beacon</value></data>
+<data name="beacon_disabled" xml:space="preserve"><value>Beacon automation disabled, please setup via settings. </value></data>
+<data name="noSwitchSelected_explanation_beacon" xml:space="preserve"><value>For a Beacon device to automate something in Domoticz, a switch should be linked to an beacon. </value></data>
+<data name="beacon_UUID" xml:space="preserve"><value>UUID</value></data>
+<data name="beacon_major" xml:space="preserve"><value>Major (optional)</value></data>
+<data name="beacon_minor" xml:space="preserve"><value>Minor (optional)</value></data>
+<data name="beacon_scan" xml:space="preserve"><value>Beacon</value></data>
+<data name="beacon_scan_desc" xml:space="preserve"><value>Scanning for beacons</value></data>
+<data name="beacon_notifications" xml:space="preserve"><value>Enable notifications for entering and leaving a beacon region.</value></data>
+<data name="beacon_entering" xml:space="preserve"><value>"Entering %1$s"</value></data>
+<data name="beacon_leaving" xml:space="preserve"><value>Leaving  %1$s</value></data>
+<data name="beacon_entering_text" xml:space="preserve"><value>Entering one of the beacons</value></data>
+<data name="beacon_leaving_text" xml:space="preserve"><value>Leaving one of the beacons</value></data>
 <data name="bluetooth_not_supported" xml:space="preserve"><value>A Bluetooth nem támogatott ezen az eszközön</value></data>
 <data name="bluetooth_register" xml:space="preserve"><value>Csatlakozás Bluetooth-eszközhöz</value></data>
 <data name="bluetooth_found" xml:space="preserve"><value>Új Bluetooth eszköz érhető el</value></data>
@@ -133,6 +163,7 @@
 <data name="noSwitchSelected_explanation_bluetooth" xml:space="preserve"><value>A Bluetooth automatizálás használatához kapcsolót kell rendelni hozzá a Domoticzban</value></data>
 <data name="title_cameras" xml:space="preserve"><value>Kamerák</value></data>
 <data name="title_dashboard" xml:space="preserve"><value>Vezérlőpult</value></data>
+<data name="delivery" xml:space="preserve"><value>Delivery</value></data>
 <data name="usage" xml:space="preserve"><value>Használat</value></data>
 <data name="today" xml:space="preserve"><value>Ma</value></data>
 <data name="total" xml:space="preserve"><value>Összesen</value></data>
@@ -269,7 +300,7 @@
 <data name="category_debug" xml:space="preserve"><value>Hibakeresés</value></data>
 <data name="category_export" xml:space="preserve"><value>Beállítások Exportálása/Importálása</value></data>
 <data name="category_theme" xml:space="preserve"><value>Téma</value></data>
-<data name="category_clock" xml:space="preserve"><value>Clock</value></data>
+<data name="category_clock" xml:space="preserve"><value>óra</value></data>
 <data name="category_nfc" xml:space="preserve"><value>NFC kapcsolatok</value></data>
 <data name="category_startup_security" xml:space="preserve"><value>Biztonság</value></data>
 <data name="category_account" xml:space="preserve"><value>Felhasználói fiókok</value></data>
@@ -277,14 +308,14 @@
 <data name="category_bluetooth" xml:space="preserve"><value>Bluetooth</value></data>
 <data name="category_Speech" xml:space="preserve"><value>Beszéd</value></data>
 <data name="category_Reset" xml:space="preserve"><value>Visszaállitás</value></data>
-<data name="category_help" xml:space="preserve"><value>Contribute</value></data>
+<data name="category_help" xml:space="preserve"><value>hozzájárulás</value></data>
 <data name="startup_screen" xml:space="preserve"><value>Kezdőképernyő</value></data>
 <data name="enable_items" xml:space="preserve"><value>Elemek engedélyezése/tiltása</value></data>
-<data name="sort_server_title" xml:space="preserve"><value>Sorting</value></data>
-<data name="sort_server_on" xml:space="preserve"><value>Sort devices like sorted on the server</value></data>
-<data name="sort_custom_on" xml:space="preserve"><value>Custom sorting, drag and drop devices to sort them</value></data>
-<data name="sort_lock_server_title" xml:space="preserve"><value>Lock</value></data>
-<data name="sort_lock_custom_on" xml:space="preserve"><value>Lock the current custom sorting (disable drag/drop)</value></data>
+<data name="sort_server_title" xml:space="preserve"><value>sorba rendezés</value></data>
+<data name="sort_server_on" xml:space="preserve"><value>eszközök sorba rendezése a szerver kiosztás alapján</value></data>
+<data name="sort_custom_on" xml:space="preserve"><value>egyéni sorba rakás drag and drop módszerrel</value></data>
+<data name="sort_lock_server_title" xml:space="preserve"><value>zárolás</value></data>
+<data name="sort_lock_custom_on" xml:space="preserve"><value>egyéni eszköz sorrend zárolása</value></data>
 <data name="sort_dashboardLikeServer_off" xml:space="preserve"><value>Kezdőlap rendezése betűrendbe</value></data>
 <data name="extra_data_title" xml:space="preserve"><value>Extra elemek a kezdőlapon</value></data>
 <data name="show_extra_data_on" xml:space="preserve"><value>Extra elemek mutatása a kezdőlapon</value></data>
@@ -293,16 +324,18 @@
 <data name="always_on_on" xml:space="preserve"><value>A képernyő mindig bekapcsolva marad</value></data>
 <data name="always_on_off" xml:space="preserve"><value>A képernyő nem marad bekapcsolva</value></data>
 <data name="always_auto_refresh" xml:space="preserve"><value>Automatikus frissítés</value></data>
-<data name="always_auto_refresh_on" xml:space="preserve"><value>Refresh the device state every couple of seconds</value></data>
-<data name="always_auto_refresh_off" xml:space="preserve"><value>Don\'t refresh the device state every couple of seconds</value></data>
+<data name="always_auto_refresh_on" xml:space="preserve"><value>frissítsd az eszközök állapotát pár másodpercenként</value></data>
+<data name="always_auto_refresh_off" xml:space="preserve"><value>ne frissítsd az eszközök állapotát pár másodpercenként</value></data>
 <data name="switch_buttons_title" xml:space="preserve"><value>Kapcsolók</value></data>
 <data name="switch_buttons_on" xml:space="preserve"><value>KI/BE kapcsolók mutatása</value></data>
 <data name="switch_buttons_off" xml:space="preserve"><value>KI/BE gombú kapcsolók mutatása</value></data>
 <data name="dashboard_list_title" xml:space="preserve"><value>Kezdőlap rács</value></data>
 <data name="show_dashboard_list_on" xml:space="preserve"><value>Kezdőlap megjelenítése listaként</value></data>
 <data name="show_dashboard_list_off" xml:space="preserve"><value>Kezdőlap megjelenítése rácsként</value></data>
-<data name="dashboard_clock" xml:space="preserve"><value>Clock</value></data>
-<data name="show_dashboard_clock" xml:space="preserve"><value>Show a clock on the dashboard</value></data>
+<data name="dashboard_clock" xml:space="preserve"><value>óra</value></data>
+<data name="show_dashboard_clock" xml:space="preserve"><value>óra megjelenítése a vezérlő pulton</value></data>
+<data name="dashboard_camera" xml:space="preserve"><value>Kamera</value></data>
+<data name="show_dashboard_camera" xml:space="preserve"><value>kamera képének betöltése a csatlakoztatott kapcsolónál</value></data>
 <data name="enable_wear_select" xml:space="preserve"><value>Android Wear egyéni elemek</value></data>
 <data name="custom_wear_select" xml:space="preserve"><value>Wear kapcsolók kiválasztása</value></data>
 <data name="custom_wear_select_desc" xml:space="preserve"><value>Válaszd ki, hogy melyik kapcsolókat szeretnéd az Android Wear eszközön látni</value></data>
@@ -338,10 +371,12 @@
 <data name="qrcode_settings" xml:space="preserve"><value>QR kód beállítása</value></data>
 <data name="enable_qrcode" xml:space="preserve"><value>QR kód engedélyezése</value></data>
 <data name="qrcode_enable_settings" xml:space="preserve"><value>QR kód funkció engedélyezése</value></data>
-<data name="bluetooth_settings" xml:space="preserve"><value>Setup Bluetooth devices</value></data>
-<data name="enable_bluetooth" xml:space="preserve"><value>Enable Bluetooth functionality</value></data>
-<data name="translate_description" xml:space="preserve"><value>You can help make our translations better, and even add new languages to this app via our Crowdin project</value></data>
-<data name="translate_title" xml:space="preserve"><value>Translations</value></data>
+<data name="bluetooth_settings" xml:space="preserve"><value>Bluetooth eszközök beállítása</value></data>
+<data name="enable_bluetooth" xml:space="preserve"><value>Bluetooth engedélyezése</value></data>
+<data name="beacon_settings" xml:space="preserve"><value>Beacons beállítása</value></data>
+<data name="enable_beacon" xml:space="preserve"><value>Beacons funkció engedélyezése</value></data>
+<data name="translate_description" xml:space="preserve"><value>Segítsen az applikáció fordításában a Crowdin projecten keresztül</value></data>
+<data name="translate_title" xml:space="preserve"><value>fordítások</value></data>
 <data name="security_settings" xml:space="preserve"><value>Biztonság beállítása</value></data>
 <data name="enable_security" xml:space="preserve"><value>Ujjlenyomat kérése programindításkor</value></data>
 <data name="disable_security" xml:space="preserve"><value>Ne kérjen ujjlenyomatot a program indításkor</value></data>
@@ -365,7 +400,8 @@
 <data name="enable_notifications_title" xml:space="preserve"><value>Értesítések engedélyezése</value></data>
 <data name="enable_notifications" xml:space="preserve"><value>Engedélyezi az értesítéseket ezen az eszközön</value></data>
 <data name="notification_screen_title" xml:space="preserve"><value>Értesítési beálllítások</value></data>
-<data name="notification_history" xml:space="preserve"><value>Notification history</value></data>
+<data name="notification_history" xml:space="preserve"><value>értesítési napló</value></data>
+<data name="notification_inbox" xml:space="preserve"><value>inbox</value></data>
 <data name="notification_vibrate_title" xml:space="preserve"><value>Rezgés</value></data>
 <data name="notification_vibrate_on" xml:space="preserve"><value>Rezgés értesítésnél</value></data>
 <data name="notification_vibrate_off" xml:space="preserve"><value>Ne rezegjen</value></data>
@@ -381,11 +417,13 @@
 <data name="alarm" xml:space="preserve"><value>Riasztás</value></data>
 <data name="alarmtimer_title" xml:space="preserve"><value>Riasztás időzítő</value></data>
 <data name="alarmtimer" xml:space="preserve"><value>A riasztás ideje másodpercben</value></data>
-<data name="theme_default" xml:space="preserve"><value>Default</value></data>
-<data name="theme_daynight" xml:space="preserve"><value>Day/Night</value></data>
-<data name="theme_orange" xml:space="preserve"><value>Orange</value></data>
-<data name="theme_pink" xml:space="preserve"><value>Pink</value></data>
-<data name="theme_blue" xml:space="preserve"><value>Blue</value></data>
+<data name="theme_default" xml:space="preserve"><value>alapértelmezett</value></data>
+<data name="theme_daynight" xml:space="preserve"><value>nappal/éjszaka</value></data>
+<data name="theme_orange" xml:space="preserve"><value>Narancssárga</value></data>
+<data name="theme_pink" xml:space="preserve"><value>Rózsaszín</value></data>
+<data name="theme_blue" xml:space="preserve"><value>Kék</value></data>
+<data name="theme_green" xml:space="preserve"><value>Zöld</value></data>
+<data name="theme_dark_blue" xml:space="preserve"><value>Sötétkék</value></data>
 <data name="default_values" xml:space="preserve"><value>Alap értékek</value></data>
 <data name="default_values_min_error" xml:space="preserve"><value>A Maximális értéknek nagyobbnak kell lennie a Minimumnál</value></data>
 <data name="default_values_max_error" xml:space="preserve"><value>A Maximális értéknek nagyobbnak kell lennie a Minimumnál</value></data>
@@ -399,7 +437,7 @@
 <data name="debug_switch_summary_off" xml:space="preserve"><value>Hibakeresési letiltva</value></data>
 <data name="error_atLeastOneItemInDrawer" xml:space="preserve"><value>Legalább egy elemnek lennie kell</value></data>
 <data name="title_activity_update" xml:space="preserve"><value>Szerver frissítés</value></data>
-<data name="error_couldNotCheckForVersion" xml:space="preserve"><value>"Could not check for version: %1$s"</value></data>
+<data name="error_couldNotCheckForVersion" xml:space="preserve"><value>"Nem tudtuk ellenőrzni a verziót"</value></data>
 <data name="error_couldNotCheckForUpdates" xml:space="preserve"><value>"Nem tudtam ellenőrizni a frissítéseket: %1$s"</value></data>
 <data name="error_couldNotCheckForConfig" xml:space="preserve"><value>"Nem sikerült beolvasni a Domoticz szerver konfigurációt: %1$s"</value></data>
 <data name="update_available_enhanced" xml:space="preserve"><value>Szerver frissítés érhető el: %1$s új verzió: %2$s</value></data>
@@ -424,7 +462,9 @@
 <data name="debug_test_text" xml:space="preserve"><value>Hibakeresés teszt</value></data>
 <data name="restart_required_title" xml:space="preserve"><value>Újraindítás szükséges</value></data>
 <data name="restart_now" xml:space="preserve"><value>Újraindítás most?</value></data>
-<data name="check_settings" xml:space="preserve"><value>Check your settings</value></data>
+<data name="check_settings" xml:space="preserve"><value>Ellenőrizze a beállításait.</value></data>
+<data name="report_error" xml:space="preserve"><value>Hibajelentés</value></data>
+<data name="support" xml:space="preserve"><value>Támogatás</value></data>
 <data name="Speech_not_supported" xml:space="preserve"><value>A hangutasítás nem támogatott ezen az eszközön</value></data>
 <data name="Speech_register" xml:space="preserve"><value>Vegyél fel egy hangutasítást</value></data>
 <data name="Speech_found" xml:space="preserve"><value>Új hangutasítás felvéve</value></data>
@@ -496,7 +536,7 @@
 <data name="fourth" xml:space="preserve"><value>Fourth</value></data>
 <data name="last" xml:space="preserve"><value>Last</value></data>
 <data name="title_utilities" xml:space="preserve"><value>Kiegészítők</value></data>
-<data name="settemperature" xml:space="preserve"><value>Beállít</value></data>
+<data name="set_temperature" xml:space="preserve"><value>Beállít</value></data>
 <data name="title_vars" xml:space="preserve"><value>Felhasználói változók</value></data>
 <data name="var_input" xml:space="preserve"><value>Bemeneti érték érvénytelen</value></data>
 <data name="var_input_error" xml:space="preserve"><value>Nem sikerült frissíteni a felhasználói változót</value></data>
@@ -518,9 +558,9 @@
 <data name="welcome_info_domoticz" xml:space="preserve"><value>A Domoticz egy otthonautomatizálási rendszer, amelynek segítségével különböző kapcsolók, érzékelők (pl. hőmérők, esőérzékelők, UV érzékelők) és mérők (mint víz-, villany- és gázfogyasztás) monitorozása és távvezérlése lehetséges. A rendszer képes értesítést/riasztást küldeni bármilyen mobileszközre.</value></data>
 <data name="welcome_info_swipe" xml:space="preserve"><value>A folytatáshoz lapozz jobbra, vagy használd a navigációs gombot a képernyő alján</value></data>
 <data name="welcome_info_settings1" xml:space="preserve"><value>A következő képernyőn megadhatja a Domoticz beállításait.</value></data>
-<data name="welcome_info_settings2" xml:space="preserve"><value>Megadhatsz helyi és a távoli kiszolgáló beállításokat.
-A helyi beállítások az otthoni wifi hálózatra kapcsolódáskor érvényesek.
-A távoli beállítások esetén az alkalmazás nem csatlakozik az otthoni wifi hálózatra, mobilnetes (2G, 3G, 4G stb.) hozzáférést használ.</value></data>
+<data name="welcome_info_settings2" xml:space="preserve"><value>        Megadhatsz helyi és a távoli kiszolgáló beállításokat.
+        A helyi beállítások az otthoni wifi hálózatra kapcsolódáskor érvényesek.
+        A távoli beállítások esetén az alkalmazás nem csatlakozik az otthoni wifi hálózatra, mobilnetes (2G, 3G, 4G stb.) hozzáférést használ.</value></data>
 <data name="welcome_info_checkingConnection" xml:space="preserve"><value>A kapcsolat beállításainak ellenőrzése</value></data>
 <data name="welcome_msg_connectionDataIncomplete" xml:space="preserve"><value>A csatlakozási adat hiányos vagy üres</value></data>
 <data name="welcome_msg_connectionDataInvalid" xml:space="preserve"><value>Az URL nem kell kezdődhet http-vel</value></data>
@@ -595,6 +635,7 @@ A távoli beállítások esetén az alkalmazás nem csatlakozik az otthoni wifi 
 <data name="wizard_menuitem_description" xml:space="preserve"><value>Most már eltávolíthatja a Varázslót a navigációs menüből!</value></data>
 <data name="wizard_nfc" xml:space="preserve"><value>NFC</value></data>
 <data name="wizard_nfc_description" xml:space="preserve"><value>Kapcsolókat lehet vezérelni NFC-n keresztül!</value></data>
+<data name="wizard_bluetooth_description" xml:space="preserve"><value>You are able to toggle switches via Bluetooth connections!</value></data>
 <data name="wizard_qrcode" xml:space="preserve"><value>QR kód</value></data>
 <data name="wizard_qrcode_description" xml:space="preserve"><value>Kapcsolók vezérlése QR kód (vagy vonalkód) segítségével!</value></data>
 <data name="wizard_speech" xml:space="preserve"><value>Hangutasítások</value></data>
@@ -605,4 +646,5 @@ A távoli beállítások esetén az alkalmazás nem csatlakozik az otthoni wifi 
 <data name="wizard_button_wizard" xml:space="preserve"><value>Eltávolítás</value></data>
 <data name="wizard_button_utilities" xml:space="preserve"><value>Vegyes</value></data>
 <data name="wizard_button_done" xml:space="preserve"><value>Kész</value></data>
+<data name="wizard_beacon_description" xml:space="preserve"><value>Toggle switches by scanning for beacons!</value></data>
 </root>

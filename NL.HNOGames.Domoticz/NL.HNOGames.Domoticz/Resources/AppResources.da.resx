@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>  <root> <resheader name="resmimetype">		<value>text/microsoft-resx</value>	</resheader>	<resheader name="version">		<value>2.0</value>	</resheader>	<resheader name="reader">		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>	<resheader name="writer">		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>
+<?xml version="1.0" encoding="utf-8"?> <root> <resheader name="resmimetype">		<value>text/microsoft-resx</value>	</resheader>	<resheader name="version">		<value>2.0</value>	</resheader>	<resheader name="reader">		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>	<resheader name="writer">		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>	</resheader>
 <data name="premium_category" xml:space="preserve"><value>Køb premium!</value></data>
 <data name="premium_title" xml:space="preserve"><value>Køb premium udgaven!</value></data>
 <data name="premium_feature" xml:space="preserve"><value>er en premium funktion, venligst køb den betalte version for at støtte udviklerne!</value></data>
@@ -76,10 +76,12 @@
 <data name="retry" xml:space="preserve"><value>Prøv igen</value></data>
 <data name="undo" xml:space="preserve"><value>Fortryd</value></data>
 <data name="something_deleted" xml:space="preserve"><value>%1$s slettet</value></data>
+<data name="remove_last_server" xml:space="preserve"><value>You can\'t remove the last server in the list.</value></data>
 <data name="switch_on" xml:space="preserve"><value>Tænder switch</value></data>
 <data name="switch_off" xml:space="preserve"><value>Slukker switch</value></data>
 <data name="switch_night" xml:space="preserve"><value>Turning switch to night light</value></data>
 <data name="switch_full" xml:space="preserve"><value>Turning switch to full light</value></data>
+<data name="switch_connection_removed" xml:space="preserve"><value>Switch connection removed.</value></data>
 <data name="blind_up" xml:space="preserve"><value>Ruller persienner op</value></data>
 <data name="blind_down" xml:space="preserve"><value>Ruller persienner ned</value></data>
 <data name="blind_stop" xml:space="preserve"><value>Stop persienner</value></data>
@@ -109,7 +111,12 @@
 <data name="filter_error" xml:space="preserve"><value>Error</value></data>
 <data name="use_demo_setup" xml:space="preserve"><value>Use demo setup</value></data>
 <data name="auto_refresh_time" xml:space="preserve"><value>Refresh timer</value></data>
-<data name="setautorefreshtime" xml:space="preserve"><value>Set a specific timer for the auto refresh in seconds.</value></data>
+<data name="set_auto_refresh_time" xml:space="preserve"><value>Set a specific timer for the auto refresh in seconds.</value></data>
+<data name="error_authentication_basicauth" xml:space="preserve"><value>IMPORTANT: Please check if your Domoticz system uses Login Page as the authentication method. Basic Auth is going to be removed from Domoticz from next update!</value></data>
+<data name="category_other" xml:space="preserve"><value>Other</value></data>
+<data name="tasker_title" xml:space="preserve"><value>Setup automation rules with Tasker for Domoticz</value></data>
+<data name="category_tasker" xml:space="preserve"><value>Tasker</value></data>
+<data name="wizard_widgets_tasker" xml:space="preserve"><value>Setup automation rules within Tasker for Domoticz!</value></data>
 <data name="action_switch_server" xml:space="preserve"><value>Skift server</value></data>
 <data name="action_settings" xml:space="preserve"><value>Indstillinger</value></data>
 <data name="action_filter" xml:space="preserve"><value>Filter</value></data>
@@ -119,6 +126,29 @@
 <data name="action_bluetooth_show" xml:space="preserve"><value>Show paired devices</value></data>
 <data name="action_speech" xml:space="preserve"><value>Speech Recognition</value></data>
 <data name="send" xml:space="preserve"><value>Send</value></data>
+<data name="beacon_not_supported" xml:space="preserve"><value>Beacons are not supported on this device</value></data>
+<data name="beacon_register" xml:space="preserve"><value>Connect a beacon</value></data>
+<data name="beacon_found" xml:space="preserve"><value>New beacon found</value></data>
+<data name="beacon_edit" xml:space="preserve"><value>Edit beacon</value></data>
+<data name="beacon_name" xml:space="preserve"><value>Give this beacon a proper name. </value></data>
+<data name="beacon_desc" xml:space="preserve"><value>Check the list of paired beacon devices. </value></data>
+<data name="beacon_exists" xml:space="preserve"><value>Beacon already configured on Domoticz. </value></data>
+<data name="beacon_turned_off" xml:space="preserve"><value>Bluetooth needs to be turned on in your device settings. </value></data>
+<data name="beacon_saved" xml:space="preserve"><value>Saved a new beacon connection. </value></data>
+<data name="action_beacon_show" xml:space="preserve"><value>Add new beacon</value></data>
+<data name="beacon" xml:space="preserve"><value>Beacon</value></data>
+<data name="beacon_disabled" xml:space="preserve"><value>Beacon automation disabled, please setup via settings. </value></data>
+<data name="noSwitchSelected_explanation_beacon" xml:space="preserve"><value>For a Beacon device to automate something in Domoticz, a switch should be linked to an beacon. </value></data>
+<data name="beacon_UUID" xml:space="preserve"><value>UUID</value></data>
+<data name="beacon_major" xml:space="preserve"><value>Major (optional)</value></data>
+<data name="beacon_minor" xml:space="preserve"><value>Minor (optional)</value></data>
+<data name="beacon_scan" xml:space="preserve"><value>Beacon</value></data>
+<data name="beacon_scan_desc" xml:space="preserve"><value>Scanning for beacons</value></data>
+<data name="beacon_notifications" xml:space="preserve"><value>Enable notifications for entering and leaving a beacon region.</value></data>
+<data name="beacon_entering" xml:space="preserve"><value>"Entering %1$s"</value></data>
+<data name="beacon_leaving" xml:space="preserve"><value>Leaving  %1$s</value></data>
+<data name="beacon_entering_text" xml:space="preserve"><value>Entering one of the beacons</value></data>
+<data name="beacon_leaving_text" xml:space="preserve"><value>Leaving one of the beacons</value></data>
 <data name="bluetooth_not_supported" xml:space="preserve"><value>Bluetooth is not supported on this device</value></data>
 <data name="bluetooth_register" xml:space="preserve"><value>Connect a bluetooth device</value></data>
 <data name="bluetooth_found" xml:space="preserve"><value>New bluetooth device found</value></data>
@@ -133,6 +163,7 @@
 <data name="noSwitchSelected_explanation_bluetooth" xml:space="preserve"><value>For a bluetooth device to automate something in Domoticz, a switch should be linked to an bluetooth</value></data>
 <data name="title_cameras" xml:space="preserve"><value>Kameraer</value></data>
 <data name="title_dashboard" xml:space="preserve"><value>Betjeningspanel</value></data>
+<data name="delivery" xml:space="preserve"><value>Delivery</value></data>
 <data name="usage" xml:space="preserve"><value>Anvendelse</value></data>
 <data name="today" xml:space="preserve"><value>I dag</value></data>
 <data name="total" xml:space="preserve"><value>Total</value></data>
@@ -303,6 +334,8 @@
 <data name="show_dashboard_list_off" xml:space="preserve"><value>Vis betjeningspanel som gitter</value></data>
 <data name="dashboard_clock" xml:space="preserve"><value>Clock</value></data>
 <data name="show_dashboard_clock" xml:space="preserve"><value>Show a clock on the dashboard</value></data>
+<data name="dashboard_camera" xml:space="preserve"><value>Camera</value></data>
+<data name="show_dashboard_camera" xml:space="preserve"><value>Load the camera for connected switches</value></data>
 <data name="enable_wear_select" xml:space="preserve"><value>Android wear brugerdefinerede elementer</value></data>
 <data name="custom_wear_select" xml:space="preserve"><value>Vælg wear switche</value></data>
 <data name="custom_wear_select_desc" xml:space="preserve"><value>Vælg hvilke switche du gerne se på enheden Android wear enheden</value></data>
@@ -340,6 +373,8 @@
 <data name="qrcode_enable_settings" xml:space="preserve"><value>Aktivere QR koders funktionalitet</value></data>
 <data name="bluetooth_settings" xml:space="preserve"><value>Setup Bluetooth devices</value></data>
 <data name="enable_bluetooth" xml:space="preserve"><value>Enable Bluetooth functionality</value></data>
+<data name="beacon_settings" xml:space="preserve"><value>Setup Beacons</value></data>
+<data name="enable_beacon" xml:space="preserve"><value>Enable Beacon functionality</value></data>
 <data name="translate_description" xml:space="preserve"><value>You can help make our translations better, and even add new languages to this app via our Crowdin project</value></data>
 <data name="translate_title" xml:space="preserve"><value>Translations</value></data>
 <data name="security_settings" xml:space="preserve"><value>Setup Security</value></data>
@@ -366,6 +401,7 @@
 <data name="enable_notifications" xml:space="preserve"><value>Aktivere notifikationer på denne enhed</value></data>
 <data name="notification_screen_title" xml:space="preserve"><value>Notifikationsindstillinger</value></data>
 <data name="notification_history" xml:space="preserve"><value>Notification history</value></data>
+<data name="notification_inbox" xml:space="preserve"><value>Inbox</value></data>
 <data name="notification_vibrate_title" xml:space="preserve"><value>Vibrer</value></data>
 <data name="notification_vibrate_on" xml:space="preserve"><value>Vibrer når en meddelelse er modtaget</value></data>
 <data name="notification_vibrate_off" xml:space="preserve"><value>Vibrer ikke</value></data>
@@ -386,6 +422,8 @@
 <data name="theme_orange" xml:space="preserve"><value>Orange</value></data>
 <data name="theme_pink" xml:space="preserve"><value>Pink</value></data>
 <data name="theme_blue" xml:space="preserve"><value>Blue</value></data>
+<data name="theme_green" xml:space="preserve"><value>Green</value></data>
+<data name="theme_dark_blue" xml:space="preserve"><value>Dark blue</value></data>
 <data name="default_values" xml:space="preserve"><value>Default values</value></data>
 <data name="default_values_min_error" xml:space="preserve"><value>Max value should be higher than Min value</value></data>
 <data name="default_values_max_error" xml:space="preserve"><value>Max value should be higher than Min value</value></data>
@@ -425,6 +463,8 @@
 <data name="restart_required_title" xml:space="preserve"><value>Genstart påkrævet</value></data>
 <data name="restart_now" xml:space="preserve"><value>Genstart nu?</value></data>
 <data name="check_settings" xml:space="preserve"><value>Check your settings</value></data>
+<data name="report_error" xml:space="preserve"><value>Report an error</value></data>
+<data name="support" xml:space="preserve"><value>Support</value></data>
 <data name="Speech_not_supported" xml:space="preserve"><value>Speech is not supported on this device</value></data>
 <data name="Speech_register" xml:space="preserve"><value>Register a Speech Command</value></data>
 <data name="Speech_found" xml:space="preserve"><value>New Speech Command found</value></data>
@@ -496,7 +536,7 @@
 <data name="fourth" xml:space="preserve"><value>Fourth</value></data>
 <data name="last" xml:space="preserve"><value>Last</value></data>
 <data name="title_utilities" xml:space="preserve"><value>Værktøjer</value></data>
-<data name="settemperature" xml:space="preserve"><value>Definer</value></data>
+<data name="set_temperature" xml:space="preserve"><value>Definer</value></data>
 <data name="title_vars" xml:space="preserve"><value>Bruger variabler</value></data>
 <data name="var_input" xml:space="preserve"><value>Input value is not valid</value></data>
 <data name="var_input_error" xml:space="preserve"><value>Failed to update user variable</value></data>
@@ -518,9 +558,9 @@
 <data name="welcome_info_domoticz" xml:space="preserve"><value>Domoticz er et Home Automation System, der lader dig overvåge og konfigurere forskellige enheder som: lys, switche, forskellige sensorer/målere som temperatur, regn, vind, UV, Electra, Gas, vand og meget mere. Meddelelser/beskeder kan sendes til alle mobile enheder.</value></data>
 <data name="welcome_info_swipe" xml:space="preserve"><value>Swipe til højre eller Brug navigationsknapperne nederst til at fortsætte</value></data>
 <data name="welcome_info_settings1" xml:space="preserve"><value>Næste side er for dine indstillinger for Domoticz.</value></data>
-<data name="welcome_info_settings2" xml:space="preserve"><value>Du kan angive en lokal og en ekstern server indstilling.
-De lokale indstillinger er til når du har forbindelse til dit hjemme wifi-netværk.
-Remote indstillinger bruges, når der ikke er forbindelse til dit hjemme wifi netværk, eller når tilsluttet mobilt data (2G, 3G, 4G osv).</value></data>
+<data name="welcome_info_settings2" xml:space="preserve"><value>        Du kan angive en lokal og en ekstern server indstilling.
+        De lokale indstillinger er til når du har forbindelse til dit hjemme wifi-netværk.
+        Remote indstillinger bruges, når der ikke er forbindelse til dit hjemme wifi netværk, eller når tilsluttet mobilt data (2G, 3G, 4G osv).</value></data>
 <data name="welcome_info_checkingConnection" xml:space="preserve"><value>Kontrollere dine forbindelsesindstillinger</value></data>
 <data name="welcome_msg_connectionDataIncomplete" xml:space="preserve"><value>Forbindelsesdata ufuldstændige eller tomme</value></data>
 <data name="welcome_msg_connectionDataInvalid" xml:space="preserve"><value>URL-adressen skal ikke begynde med http</value></data>
@@ -595,6 +635,7 @@ Remote indstillinger bruges, når der ikke er forbindelse til dit hjemme wifi ne
 <data name="wizard_menuitem_description" xml:space="preserve"><value>Du kan nu fjerne denne guide fra navigationsmenuen!</value></data>
 <data name="wizard_nfc" xml:space="preserve"><value>NFC</value></data>
 <data name="wizard_nfc_description" xml:space="preserve"><value>Du er i stand til skifte switche via NFC!</value></data>
+<data name="wizard_bluetooth_description" xml:space="preserve"><value>You are able to toggle switches via Bluetooth connections!</value></data>
 <data name="wizard_qrcode" xml:space="preserve"><value>QR kode</value></data>
 <data name="wizard_qrcode_description" xml:space="preserve"><value>Skift switches ved at scanne en QR kode (eller stregkode)!</value></data>
 <data name="wizard_speech" xml:space="preserve"><value>Speech Commands</value></data>
@@ -605,4 +646,5 @@ Remote indstillinger bruges, når der ikke er forbindelse til dit hjemme wifi ne
 <data name="wizard_button_wizard" xml:space="preserve"><value>Fjern</value></data>
 <data name="wizard_button_utilities" xml:space="preserve"><value>Værktøjer</value></data>
 <data name="wizard_button_done" xml:space="preserve"><value>Færdig</value></data>
+<data name="wizard_beacon_description" xml:space="preserve"><value>Toggle switches by scanning for beacons!</value></data>
 </root>

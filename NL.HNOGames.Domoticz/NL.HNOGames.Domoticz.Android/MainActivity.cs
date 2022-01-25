@@ -36,7 +36,7 @@ namespace NL.HNOGames.Domoticz.Droid
 
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
             UserDialogs.Init(this);
-            Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
+            Rg.Plugins.Popup.Popup.Init(this);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
             CrossNFC.Init(this);
@@ -69,7 +69,7 @@ namespace NL.HNOGames.Domoticz.Droid
             PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             global::ZXing.Net.Mobile.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-            AndroidShinyHost.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            this.ShinyOnRequestPermissionsResult(requestCode, permissions, grantResults);
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 

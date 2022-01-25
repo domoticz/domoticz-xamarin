@@ -6,6 +6,7 @@ using CoreNFC;
 using Plugin.FirebasePushNotification;
 using NL.HNOGames.Domoticz.Service;
 using Plugin.NFC;
+using Shiny;
 
 namespace NL.HNOGames.Domoticz.iOS
 {
@@ -65,7 +66,7 @@ namespace NL.HNOGames.Domoticz.iOS
             Rg.Plugins.Popup.Popup.Init();
             OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();
             XamEffects.iOS.Effects.Init();
-            Shiny.iOSShinyHost.Init(new MyShinyStartup());
+            this.ShinyFinishedLaunching(new MyShinyStartup());
             Xamarin.FormsMaps.Init();
 
             FirebasePushNotificationManager.Initialize(launchOptions, true);

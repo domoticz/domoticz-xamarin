@@ -42,9 +42,6 @@ namespace NL.HNOGames.Domoticz.Droid.Renderer
             };
 
             var requestbuilder = new Android.Gms.Ads.AdRequest.Builder();
-#if DEBUG
-            requestbuilder.AddTestDevice("83DBECBB403C3E924CAA8B529F7E848E");
-#endif
             ad.LoadAd(requestbuilder.Build());
             SetNativeControl(ad);
         }

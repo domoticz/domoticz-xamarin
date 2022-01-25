@@ -8,6 +8,7 @@ using Android.Runtime;
 using Plugin.CurrentActivity;
 using Plugin.FirebasePushNotification;
 using NL.HNOGames.Domoticz.Service;
+using Shiny;
 
 namespace NL.HNOGames.Domoticz.Droid
 {
@@ -27,16 +28,13 @@ namespace NL.HNOGames.Domoticz.Droid
 
         public override void OnCreate()
         {
+            this.ShinyOnCreate(new MyShinyStartup());
             base.OnCreate();
             RegisterActivityLifecycleCallbacks(this);
 
             FirebaseApp.InitializeApp(this);
             AppContext = ApplicationContext;
             CrossCurrentActivity.Current.Init(this);
-            Shiny.AndroidShinyHost.Init(
-                this,
-                new MyShinyStartup()
-            );
 
             //Set the default notification channel for your app when running Android Oreo
             if (Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.O)

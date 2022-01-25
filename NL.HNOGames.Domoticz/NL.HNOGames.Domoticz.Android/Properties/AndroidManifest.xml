@@ -1,28 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="nl.hnogames.domoticz" android:installLocation="preferExternal" android:versionCode="50" android:versionName="0.0.50">
-	<uses-sdk android:minSdkVersion="23" android:targetSdkVersion="28" />
-
-  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-  <uses-permission android:name="android.permission.INTERNET" />
-  <uses-permission android:name="android.permission.CAMERA" />
-  <uses-permission android:name="android.permission.FLASHLIGHT" />
-  <uses-permission android:name="android.permission.NFC" />
-  <uses-permission android:name="com.android.vending.BILLING" />
-  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-  <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-  <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
-  <uses-permission android:name="android.permission.RECORD_AUDIO" />
-  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-  <uses-permission android:name="android.permission.USE_FINGERPRINT" />
-  <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-  <uses-permission android:name="android.permission.BLUETOOTH" />
-
-  <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY" />
-  
-  <application android:label="@string/app_name" android:icon="@drawable/ic_launcher" android:usesCleartextTraffic="true">
-    <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-2210179934394995~9090126662"/>
-    <activity android:name="com.google.android.gms.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:theme="@android:style/Theme.Translucent" />
-  </application>
+	<uses-sdk android:minSdkVersion="23" android:targetSdkVersion="30" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.CAMERA" />
+	<uses-permission android:name="android.permission.FLASHLIGHT" />
+	<uses-permission android:name="android.permission.NFC" />
+	<uses-permission android:name="com.android.vending.BILLING" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+	<uses-permission android:name="android.permission.RECORD_AUDIO" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.USE_FINGERPRINT" />
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+	<uses-permission android:name="android.permission.BLUETOOTH" />
+	<uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY" />
+	<application android:label="@string/app_name" android:icon="@drawable/ic_launcher" android:usesCleartextTraffic="true">
+		<meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-2210179934394995~9090126662" />
+		<activity android:name="com.google.android.gms.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:theme="@android:style/Theme.Translucent" />
+	</application>
 </manifest>

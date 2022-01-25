@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace NL.HNOGames.Domoticz.Service
 {
-    class MyBeaconDelegate : IBeaconDelegate
+    class MyBeaconDelegate : IBeaconMonitorDelegate
     {
         /// <summary>
         /// On beacon changed

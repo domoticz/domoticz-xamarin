@@ -93,8 +93,8 @@ namespace NL.HNOGames.Domoticz.Views.Settings
         {
             try
             {
-                var Beacons = ShinyHost.Resolve<IBeaconManager>();
-                var status = await Beacons.RequestAccess(true);
+                var Beacons = ShinyHost.Resolve<IBeaconMonitoringManager>();
+                var status = await Beacons.RequestAccess();
                 if (status != AccessState.Available)
                 {
                     App.AddLog("Permission denied for getting your beacons");

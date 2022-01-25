@@ -616,7 +616,7 @@ namespace NL.HNOGames.Domoticz.Views
             if (App.AppSettings.BeaconEnabled)
             {
                 App.AddLog("Recreating all registed beacons");
-                var beacons = ShinyHost.Resolve<IBeaconManager>();
+                var beacons = ShinyHost.Resolve<IBeaconMonitoringManager>();
                 await beacons.StopAllMonitoring();
                 foreach (var b in App.AppSettings.Beacons)
                 {
